@@ -1,0 +1,490 @@
+<title>松田晴史 / 制作記録</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500&family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap">
+
+<style>
+:root {
+  --ground: #FFFFFF;
+  --ink:    #2B2B2B;
+  --muted:  #767676;
+  --faint:  #A8A8A8;
+  --fill:   #F2F2F2;
+  --line:   #E4E4E4;
+  --rule:   #CFCFCF;
+
+  --sans: "Archivo", "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", sans-serif;
+
+  --gutter: clamp(1.5rem, 6vw, 6rem);
+  --measure: 34rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #101010;
+    --ink:    #EDEDED;
+    --muted:  #9A9A9A;
+    --faint:  #6A6A6A;
+    --fill:   #1B1B1B;
+    --line:   #272727;
+    --rule:   #3A3A3A;
+  }
+}
+
+:root[data-theme="dark"] {
+  --ground: #101010;
+  --ink:    #EDEDED;
+  --muted:  #9A9A9A;
+  --faint:  #6A6A6A;
+  --fill:   #1B1B1B;
+  --line:   #272727;
+  --rule:   #3A3A3A;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 2;
+  letter-spacing: 0.02em;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "palt" 1;
+}
+
+.page {
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* ============ hero ============ */
+
+.hero {
+  min-height: 62vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-top: clamp(4rem, 14vh, 9rem);
+  padding-bottom: clamp(4rem, 12vh, 8rem);
+}
+
+.eyebrow {
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin: 0 0 2.5rem;
+}
+
+.hero h1 {
+  margin: 0;
+  font-weight: 300;
+  font-size: clamp(2.4rem, 8vw, 4.4rem);
+  line-height: 1.22;
+  letter-spacing: 0.01em;
+  text-wrap: balance;
+}
+
+.hero h1 .en {
+  display: block;
+  font-weight: 300;
+  letter-spacing: 0.005em;
+}
+
+.hero h1 .jp {
+  display: block;
+  font-size: 0.42em;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-top: 1.1rem;
+}
+
+.hero-note {
+  margin: 3.5rem 0 0;
+  max-width: var(--measure);
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 2.1;
+}
+
+/* ============ section scaffold ============ */
+
+section {
+  padding: clamp(4rem, 11vh, 8rem) 0;
+  border-top: 1px solid var(--line);
+}
+
+.sec-grid {
+  display: grid;
+  grid-template-columns: 11rem 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.sec-label {
+  position: sticky;
+  top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.sec-label .en {
+  font-size: 0.68rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.sec-label .jp {
+  font-size: 0.92rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: var(--ink);
+}
+
+.sec-body { min-width: 0; }
+
+/* ============ work ============ */
+
+.entry {
+  padding: 0 0 3.75rem;
+  margin-bottom: 3.75rem;
+  border-bottom: 1px solid var(--line);
+}
+.entry:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+.entry-index {
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  color: var(--faint);
+  font-variant-numeric: tabular-nums;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.entry-title {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0 1.1rem;
+  margin: 0 0 1.4rem;
+  font-weight: 400;
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+}
+
+.state {
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+  background: var(--fill);
+  padding: 0.3rem 0.7rem;
+  white-space: nowrap;
+  align-self: center;
+}
+
+.entry-desc {
+  margin: 0 0 2.2rem;
+  max-width: var(--measure);
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 2.15;
+}
+.entry-desc em {
+  font-style: normal;
+  color: var(--ink);
+}
+
+.data {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  gap: 0.9rem 1.75rem;
+  font-size: 0.86rem;
+  line-height: 1.9;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+.data dt {
+  font-size: 0.67rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--faint);
+  padding-top: 0.32rem;
+}
+.data dd { margin: 0; color: var(--muted); }
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.1rem;
+  color: var(--muted);
+  font-size: 0.83rem;
+  letter-spacing: 0.04em;
+}
+
+/* ============ links & marks ============ */
+
+a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 1px;
+  transition: border-color .18s ease;
+}
+a:hover { border-bottom-color: var(--ink); }
+a:focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+
+.todo {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  background: var(--fill);
+  padding: 0.15rem 0.5rem;
+  border: 1px dashed var(--rule);
+}
+
+/* ============ prose ============ */
+
+.prose {
+  max-width: var(--measure);
+  display: flex;
+  flex-direction: column;
+  gap: 1.9rem;
+}
+.prose p { margin: 0; color: var(--muted); font-size: 0.95rem; line-height: 2.15; }
+.prose p .lead { color: var(--ink); }
+
+.note {
+  font-size: 0.85rem;
+  color: var(--faint);
+  line-height: 2;
+  padding-left: 1.25rem;
+  border-left: 1px solid var(--line);
+}
+
+.terms {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  gap: 1.1rem 1.75rem;
+  font-size: 0.9rem;
+  line-height: 1.95;
+}
+.terms dt {
+  font-size: 0.67rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--faint);
+  padding-top: 0.3rem;
+}
+.terms dd { margin: 0; color: var(--ink); }
+
+.mail {
+  font-size: clamp(1.05rem, 3vw, 1.5rem);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  word-break: break-all;
+}
+
+/* ============ footer ============ */
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 3rem 0 5rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem 2rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--faint);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 760px) {
+  .sec-grid { grid-template-columns: 1fr; gap: 1.75rem; }
+  .sec-label { position: static; flex-direction: row; align-items: baseline; gap: 1rem; }
+  .data, .terms { grid-template-columns: 1fr; gap: 0.15rem; }
+  .data dt, .terms dt { padding-top: 1rem; }
+  .hero { min-height: auto; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
+</style>
+
+<div class="page">
+
+  <header class="hero">
+    <p class="eyebrow">Matsuda Harufumi — Independent Developer</p>
+    <h1>
+      <span class="en">One person,<br>start to finish.</span>
+      <span class="jp">つくって、出して、直しつづける。</span>
+    </h1>
+    <p class="hero-note">
+      Webサービスをつくっています。企画から実装、公開して運用するところまで、
+      ひと通りを一人で通します。屋号 ZAX、東京・大田区。
+    </p>
+  </header>
+
+  <section>
+    <div class="sec-grid">
+      <div class="sec-label">
+        <span class="en">Work</span>
+        <span class="jp">つくったもの</span>
+      </div>
+      <div class="sec-body">
+
+        <article class="entry">
+          <span class="entry-index">01 / 03</span>
+          <h2 class="entry-title">musa-link <span class="state">公開中</span></h2>
+          <p class="entry-desc">
+            武蔵野大学の学生だけが使えるフリマアプリ。学内で<em>直接手渡しする</em>前提で設計したので、
+            配送も住所の交換もいりません。学生証で本人確認をして、学外の人は入れないようにしています。
+          </p>
+          <dl class="data">
+            <dt>Role</dt><dd>企画・設計・実装（2名体制）</dd>
+            <dt>Stack</dt><dd><span class="todo">要記入：使用技術</span></dd>
+            <dt>Link</dt><dd><span class="todo">要記入：サービスURL</span></dd>
+          </dl>
+        </article>
+
+        <article class="entry">
+          <span class="entry-index">02 / 03</span>
+          <h2 class="entry-title">Self-OS <span class="state">個人運用中</span></h2>
+          <p class="entry-desc">
+            日記とスマートウォッチの生体データを読ませて、<em>その日にとるべき行動を提案させる</em>パーソナルAI。
+            出した提案の結果をフィードバックとして戻すと、AIが自分の判断ルールを書き換えていきます。
+          </p>
+          <dl class="data">
+            <dt>Role</dt><dd>設計・実装（個人開発）</dd>
+            <dt>Stack</dt><dd>
+              <div class="tags">
+                <span>Python</span><span>Gemini API</span><span>Obsidian</span><span>ADB</span><span>時系列処理</span>
+              </div>
+            </dd>
+            <dt>Detail</dt><dd>生体データのZスコア化、視聴履歴の分類、外部データの自動収集</dd>
+          </dl>
+        </article>
+
+        <article class="entry">
+          <span class="entry-index">03 / 03</span>
+          <h2 class="entry-title">ZAX <span class="state">開発中</span></h2>
+          <p class="entry-desc">
+            自己理解と他者理解を繰り返して深めていくためのシステム。
+            顔や肩書きで判断が始まる前に、<em>内面から先に繋がる順番</em>をつくれないか、という問いから作っています。
+            いまは十数人規模で試している段階です。
+          </p>
+          <dl class="data">
+            <dt>Role</dt><dd>企画・設計・実装（個人開発）</dd>
+            <dt>Stack</dt><dd><span class="todo">要記入：使用技術</span></dd>
+          </dl>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-grid">
+      <div class="sec-label">
+        <span class="en">Writing</span>
+        <span class="jp">書いたもの</span>
+      </div>
+      <div class="sec-body">
+        <article class="entry">
+          <h2 class="entry-title">個人情報を預ける怖さを、設計で減らす</h2>
+          <p class="entry-desc">
+            musa-link で、利用者の個人情報をどう<em>持たない</em>設計にしたかを書いた技術記事。
+            できないことは「できない」と書く方針で、実装コードも載せています。
+          </p>
+          <dl class="data">
+            <dt>Media</dt><dd>Zenn — 2026年7月</dd>
+            <dt>Link</dt><dd><span class="todo">要記入：記事URL</span></dd>
+          </dl>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-grid">
+      <div class="sec-label">
+        <span class="en">Skills</span>
+        <span class="jp">できること</span>
+      </div>
+      <div class="sec-body">
+        <div class="prose">
+          <p><span class="lead">Webサービスを、動く形にして公開するところまで。</span>
+          画面をつくる、データベースを設計する、ログインや決済を組み込む、サーバーに載せて公開する。
+          このひと通りを一人でやってきました。</p>
+          <div class="tags">
+            <span>TypeScript</span><span>React</span><span>Next.js</span><span>Python</span>
+            <span>Firebase</span><span>Supabase</span><span>Gemini API</span><span>Git</span>
+          </div>
+          <p class="note">
+            ここに挙げた技術は、実際に手を動かして使ったものだけです。使ったことがないものは書いていません。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-grid">
+      <div class="sec-label">
+        <span class="en">For Business</span>
+        <span class="jp">お店・事業者の方へ</span>
+      </div>
+      <div class="sec-body">
+        <div class="prose">
+          <p><span class="lead">上に挙げたものは、すべて企画から運用まで一人で通したものです。</span>
+          つくって終わりではなく、実際に人が使う状態まで持っていって、そこから直し続けています。</p>
+          <dl class="terms">
+            <dt>Scope</dt><dd>Webサービス、予約や注文の仕組み、社内向けツール、手作業の自動化</dd>
+            <dt>Process</dt><dd>まず何に困っているかを伺い、つくる前に「これで解決するか」を一緒に確認します</dd>
+            <dt>Report</dt><dd>途中の画面をこまめにお見せします。完成まで見えない、ということはありません</dd>
+            <dt>Fee</dt><dd><span class="todo">要記入：目安金額</span></dd>
+          </dl>
+          <p class="note">
+            できないことは、先に「できません」とお伝えします。
+            引き受けてから止まるより、そのほうがお互いに損が少ないと考えています。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-grid">
+      <div class="sec-label">
+        <span class="en">Contact</span>
+        <span class="jp">連絡先</span>
+      </div>
+      <div class="sec-body">
+        <div class="prose">
+          <p class="mail"><a href="mailto:zax-official@fumiproject.dev">zax-official@fumiproject.dev</a></p>
+          <p>ご相談は無料です。「こういうことをしたい」だけ書いて送ってください。
+          実現できるかどうか、いくらぐらいかを整理してお返しします。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Harufumi Matsuda</span>
+    <span>Ota, Tokyo</span>
+    <span>Updated 2026.08.24</span>
+  </footer>
+
+</div>

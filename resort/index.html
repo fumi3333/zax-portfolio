@@ -1,0 +1,292 @@
+<title>あなたに合うリゾバ会社診断</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap">
+
+<style>
+:root{
+  --ground:#FFFFFF; --ink:#1C1C1C; --muted:#6F6F6F; --faint:#A8A8A8;
+  --fill:#F5F5F5; --line:#E8E8E8; --rule:#CACACA;
+  --accent:#1C1C1C; --accent-fg:#FFFFFF;
+  --sans:"Archivo","Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#0D0D0D; --ink:#F2F2F2; --muted:#949494; --faint:#5F5F5F;
+  --fill:#181818; --line:#232323; --rule:#3B3B3B;
+  --accent:#F2F2F2; --accent-fg:#0D0D0D;
+}}
+:root[data-theme="dark"]{
+  --ground:#0D0D0D; --ink:#F2F2F2; --muted:#949494; --faint:#5F5F5F;
+  --fill:#181818; --line:#232323; --rule:#3B3B3B;
+  --accent:#F2F2F2; --accent-fg:#0D0D0D;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
+  font-weight:400;font-size:15px;line-height:1.9;letter-spacing:.01em;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:38rem;margin:0 auto;padding:clamp(2rem,7vw,4rem) 1.5rem 6rem}
+
+.top{display:flex;justify-content:space-between;align-items:baseline;
+  font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--faint);
+  padding-bottom:1.5rem;margin-bottom:2.5rem;border-bottom:1px solid var(--line)}
+.top b{color:var(--ink);letter-spacing:.28em}
+
+h1{font-weight:300;font-size:clamp(1.8rem,6vw,2.5rem);line-height:1.4;
+  letter-spacing:-.01em;margin:0 0 .8rem}
+.lede{color:var(--muted);font-size:.92rem;margin:0 0 2.5rem}
+
+/* ---- progress ---- */
+.progress{display:flex;gap:.35rem;margin-bottom:2.5rem}
+.progress i{flex:1;height:2px;background:var(--line);border-radius:1px;transition:background .3s}
+.progress i.done{background:var(--ink)}
+
+/* ---- quiz ---- */
+.card{display:none}
+.card.active{display:block;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+.qn{font-size:.68rem;letter-spacing:.2em;color:var(--faint);margin-bottom:.8rem}
+.qtext{font-size:clamp(1.15rem,4vw,1.5rem);font-weight:400;line-height:1.6;margin:0 0 2rem}
+
+.opts{display:flex;flex-direction:column;gap:.6rem}
+.opt{
+  text-align:left;padding:1rem 1.2rem;border:1px solid var(--line);background:var(--ground);
+  color:var(--ink);font-family:inherit;font-size:.94rem;cursor:pointer;
+  border-radius:2px;transition:border-color .15s,background .15s;
+}
+.opt:hover{border-color:var(--rule);background:var(--fill)}
+.opt:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+
+.back{margin-top:1.6rem;font-size:.8rem;color:var(--faint);background:none;border:none;
+  cursor:pointer;padding:0;font-family:inherit;text-decoration:underline;
+  text-underline-offset:3px;text-decoration-color:var(--rule)}
+.back:hover{color:var(--ink)}
+
+/* ---- result ---- */
+.result{display:none}
+.result.active{display:block;animation:fade .4s ease}
+.rtag{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--faint);margin-bottom:1rem}
+.rname{font-weight:300;font-size:clamp(2.1rem,7vw,3rem);margin:0 0 1.2rem;letter-spacing:-.01em}
+.rdesc{color:var(--muted);font-size:.95rem;line-height:2.1;margin:0 0 2rem;max-width:32rem}
+.rdesc b{color:var(--ink);font-weight:500}
+
+.rfacts{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);
+  border:1px solid var(--line);margin-bottom:2rem}
+.rfact{background:var(--ground);padding:1.1rem 1.2rem}
+.rfact .k{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:.4rem}
+.rfact .v{font-size:.98rem}
+
+.cta{display:inline-flex;align-items:center;gap:.8rem;padding:.95rem 1.8rem;
+  background:var(--accent);color:var(--accent-fg);text-decoration:none;font-size:.92rem;
+  letter-spacing:.06em;border-radius:2px;transition:opacity .15s}
+.cta:hover{opacity:.85}
+.retry{display:block;margin-top:1.6rem;font-size:.82rem;color:var(--faint);
+  background:none;border:none;cursor:pointer;padding:0;font-family:inherit;
+  text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--rule)}
+.retry:hover{color:var(--ink)}
+
+.othertag{font-size:.68rem;letter-spacing:.14em;color:var(--faint);margin:2.2rem 0 .8rem;
+  text-transform:uppercase;padding-top:1.6rem;border-top:1px solid var(--line)}
+.otherlist{display:flex;flex-direction:column;gap:.5rem}
+.otherrow{display:flex;justify-content:space-between;align-items:baseline;
+  font-size:.85rem;color:var(--muted);padding:.4rem 0}
+.otherrow b{color:var(--ink);font-weight:500}
+
+footer{margin-top:4rem;padding-top:1.6rem;border-top:1px solid var(--line);
+  font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem 1.5rem}
+</style>
+
+<div class="wrap">
+  <div class="top"><b>RESORT MATCH</b><span>β</span></div>
+
+  <div id="intro">
+    <h1>あなたに合うリゾバ会社、<br>5問で診断。</h1>
+    <p class="lede">派遣会社は5社それぞれ強みが違います。求人票を1件ずつ比べる代わりに、<br>何を優先したいかだけ答えてください。</p>
+    <div class="progress" id="progress"></div>
+  </div>
+
+  <div id="quiz"></div>
+  <div class="result" id="result"></div>
+
+  <footer>
+    <span>Resort Match</span>
+    <span>2026.08.26</span>
+  </footer>
+</div>
+
+<script>
+const QUESTIONS = [
+  {
+    q: "一番の優先順位は？",
+    opts: [
+      {t:"とにかく時給が高い方がいい", w:{goodman:2, alpha:1}},
+      {t:"初めてなので安心できる方がいい", w:{dive:2}},
+      {t:"求人の選択肢が多い方がいい", w:{humanic:2}},
+      {t:"寮や職場の実物を先に見て決めたい", w:{worktrip:2}},
+    ]
+  },
+  {
+    q: "リゾバは初めて？",
+    opts: [
+      {t:"初めて。不安が大きい", w:{dive:2, worktrip:1}},
+      {t:"何回か経験がある", w:{humanic:1, goodman:1}},
+    ]
+  },
+  {
+    q: "気になる職種は？",
+    opts: [
+      {t:"温泉旅館・仲居の仕事", w:{alpha:3}},
+      {t:"ホテル・スキー場・観光地全般", w:{humanic:1, goodman:1}},
+      {t:"特にこだわりはない", w:{dive:1, worktrip:1}},
+    ]
+  },
+  {
+    q: "困った時、どう相談したい？",
+    opts: [
+      {t:"LINEでいつでも気軽に聞きたい", w:{dive:2}},
+      {t:"担当者としっかり話したい", w:{worktrip:2, alpha:1}},
+      {t:"自分で調べて自分で決めたい", w:{humanic:1, goodman:1}},
+    ]
+  },
+  {
+    q: "働く前に一番不安なのは？",
+    opts: [
+      {t:"「聞いてた話と違う」が一番怖い", w:{dive:3}},
+      {t:"女性一人でも安全に働けるか", w:{alpha:2}},
+      {t:"稼げる金額が想像とズレないか", w:{goodman:2}},
+      {t:"寮の写真だけだと不安", w:{worktrip:2}},
+    ]
+  },
+];
+
+const RESULTS = {
+  goodman: {
+    name: "リゾートバイト.com",
+    op: "グッドマンサービス",
+    tag: "稼ぐことを最優先する人向け",
+    desc: "同じ勤務先でも他社より高めの時給を設定していることが多い会社です。寮費・食費が無料の案件も多く、<b>「まず稼ぎたい」が最優先</b>なら、ここから見るのが早いです。",
+    facts: [["強み","業界トップ級の高時給"],["向いてる人","短期間でしっかり貯金したい人"]],
+    url: "https://www.resortbaito.com/"
+  },
+  dive: {
+    name: "リゾートバイトダイブ",
+    op: "株式会社ダイブ",
+    tag: "初めてで不安が大きい人向け",
+    desc: "「ギャップ0宣言」を掲げ、求人と実際の待遇の差を減らす取り組みをしています。7,000件超の口コミと、寮の詳細写真を事前に確認できるのが強みです。<b>利用者の9割が未経験スタート</b>。",
+    facts: [["強み","口コミ7,000件超・LINEサポート"],["向いてる人","初めてのリゾバで不安な人"]],
+    url: "https://resortbaito-dive.com/"
+  },
+  humanic: {
+    name: "リゾバ.com",
+    op: "株式会社ヒューマニック",
+    tag: "とにかく選択肢が欲しい人向け",
+    desc: "業界最古参で、常時2,000件を超える求人数を保有しています。全国800ヶ所以上のリゾート地から探せるので、<b>「まず色々な求人を見てから決めたい」</b>人に向いています。",
+    facts: [["強み","求人数No.1クラス"],["向いてる人","比較検討をじっくりしたい人"]],
+    url: "https://www.rizoba.com/"
+  },
+  alpha: {
+    name: "アルファリゾート",
+    op: "株式会社アルファスタッフ",
+    tag: "仲居・女性向けサポート重視の人向け",
+    desc: "温泉旅館の仲居（客室係）求人に強く、<b>女性支持率No.1</b>を掲げています。個室寮の求人が充実していて、未経験でも二部式着物からスタートできる現場もあります。",
+    facts: [["強み","仲居時給・女性サポートに強い"],["向いてる人","旅館の仕事・安心重視の女性"]],
+    url: "https://www.a-resort.jp/"
+  },
+  worktrip: {
+    name: "ワクトリ",
+    op: "株式会社PONSTAFF",
+    tag: "入る前に実物を確認したい人向け",
+    desc: "2020年開始の後発サービスで、求人に<b>寮の写真</b>が載っているのが特徴です。無料のオンライン英会話など、他社にない付帯サービスもあります。担当者が丁寧という声が多い会社です。",
+    facts: [["強み","寮の写真を事前公開"],["向いてる人","雰囲気を先に確認してから決めたい人"]],
+    url: "https://work-trip.jp/"
+  },
+};
+
+let current = 0;
+const scores = {goodman:0, dive:0, humanic:0, alpha:0, worktrip:0};
+const history = [];
+
+const introEl = document.getElementById('intro');
+const quizEl = document.getElementById('quiz');
+const resultEl = document.getElementById('result');
+const progressEl = document.getElementById('progress');
+
+function buildProgress(){
+  progressEl.innerHTML = QUESTIONS.map((_, i) => `<i data-i="${i}"></i>`).join('');
+}
+function updateProgress(){
+  [...progressEl.children].forEach((el, i) => {
+    el.classList.toggle('done', i < current);
+  });
+}
+
+function renderQuestion(){
+  const qd = QUESTIONS[current];
+  quizEl.innerHTML = `
+    <div class="card active">
+      <div class="qn">Q${current+1} / ${QUESTIONS.length}</div>
+      <p class="qtext">${qd.q}</p>
+      <div class="opts">
+        ${qd.opts.map((o,i) => `<button class="opt" data-i="${i}">${o.t}</button>`).join('')}
+      </div>
+      ${current > 0 ? '<button class="back" id="backBtn">ひとつ前に戻る</button>' : ''}
+    </div>
+  `;
+  updateProgress();
+  quizEl.querySelectorAll('.opt').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const oi = parseInt(btn.dataset.i, 10);
+      const chosen = qd.opts[oi];
+      history.push(chosen.w);
+      Object.entries(chosen.w).forEach(([k,v]) => scores[k] += v);
+      current++;
+      if (current >= QUESTIONS.length) { showResult(); }
+      else { renderQuestion(); }
+    });
+  });
+  const back = document.getElementById('backBtn');
+  if (back) back.addEventListener('click', () => {
+    current--;
+    const w = history.pop();
+    Object.entries(w).forEach(([k,v]) => scores[k] -= v);
+    renderQuestion();
+  });
+}
+
+function showResult(){
+  introEl.style.display = 'none';
+  quizEl.innerHTML = '';
+  const ranked = Object.entries(scores).sort((a,b) => b[1]-a[1]);
+  const top = ranked[0][0];
+  const r = RESULTS[top];
+  const others = ranked.slice(1,3).map(([k]) => RESULTS[k]);
+
+  resultEl.innerHTML = `
+    <div class="rtag">${r.tag}</div>
+    <h2 class="rname">${r.name}</h2>
+    <p class="rdesc">運営：${r.op}<br><br>${r.desc}</p>
+    <div class="rfacts">
+      ${r.facts.map(([k,v]) => `<div class="rfact"><div class="k">${k}</div><div class="v">${v}</div></div>`).join('')}
+    </div>
+    <a class="cta" href="${r.url}" target="_blank" rel="noopener">公式サイトを見る →</a>
+    <button class="retry" id="retryBtn">もう一度診断する</button>
+
+    <div class="othertag">他にも気になるなら</div>
+    <div class="otherlist">
+      ${others.map(o => `<div class="otherrow"><b>${o.name}</b><span>${o.tag}</span></div>`).join('')}
+    </div>
+  `;
+  resultEl.classList.add('active');
+  document.getElementById('retryBtn').addEventListener('click', () => {
+    current = 0; history.length = 0;
+    Object.keys(scores).forEach(k => scores[k]=0);
+    resultEl.classList.remove('active');
+    introEl.style.display = 'block';
+    renderQuestion();
+  });
+}
+
+buildProgress();
+renderQuestion();
+</script>

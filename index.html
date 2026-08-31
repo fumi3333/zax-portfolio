@@ -1,4 +1,24 @@
-<title>人を、つなげる。</title>
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>人を、つなげる。｜ZAX</title>
+<meta name="description" content="Webサービスの企画・開発・運用。つないで終わりにせず、その先の変化まで設計します。">
+<link rel="canonical" href="https://works.fumiproject.dev/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ZAX">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://works.fumiproject.dev/">
+<meta property="og:title" content="人を、つなげる。｜ZAX">
+<meta property="og:description" content="Webサービスの企画・開発・運用。つないで終わりにせず、その先の変化まで設計します。">
+<meta property="og:image" content="https://works.fumiproject.dev/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="人を、つなげる。｜ZAX">
+<meta name="twitter:description" content="Webサービスの企画・開発・運用。つないで終わりにせず、その先の変化まで設計します。">
+<meta name="twitter:image" content="https://works.fumiproject.dev/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500&family=JetBrains+Mono:wght@400&family=Noto+Sans+JP:wght@100;200;300;400;500&display=swap">
@@ -29,6 +49,10 @@ body{margin:0;background:var(--ground);color:var(--ink);
   font-feature-settings:"palt" 1;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 p,dd,summary,h1,h2,h3,.jpface{font-family:var(--jp),var(--lat)}
 .shell{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+/* 日本語の小ラベルは等幅の広い字送りだと間延びするので詰める */
+.defs dt.mono,.node .mono,.stat .k.mono,footer .mono,.mark .now{
+  font-family:var(--jp),var(--mono);letter-spacing:.08em}
+
 .mono{font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;
   text-transform:uppercase;color:var(--faint);font-variant-numeric:tabular-nums}
 
@@ -66,8 +90,7 @@ p,dd,summary,h1,h2,h3,.jpface{font-family:var(--jp),var(--lat)}
 .sheet.on a{transform:none}
 .sheet a:hover{color:var(--muted)}
 .sheet a .n{font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;color:var(--faint);min-width:2rem}
-.sheet a .en{font-family:var(--lat);font-size:clamp(1.5rem,5vw,2.6rem);font-weight:400;letter-spacing:-.02em}
-.sheet a .ja{font-size:.82rem;font-weight:300;color:var(--muted);letter-spacing:.1em;margin-left:auto}
+.sheet a .lbl{font-family:var(--jp),var(--lat);font-size:clamp(1.35rem,4.4vw,2.3rem);font-weight:200;letter-spacing:.06em}
 
 /* ================= hero (split, KOKUYO-style) ================= */
 .hero{position:relative;min-height:100svh;display:grid;
@@ -82,10 +105,10 @@ p,dd,summary,h1,h2,h3,.jpface{font-family:var(--jp),var(--lat)}
   letter-spacing:.04em;color:var(--ink)}
 .eyebrow .rule{width:2.25rem;height:1px;background:var(--rule)}
 
-h1{margin:0;font-weight:100;font-size:clamp(2.7rem,7.4vw,6.4rem);
+h1{margin:0;font-weight:100;font-size:clamp(2.45rem,5.4vw,5rem);word-break:keep-all;
   line-height:1.06;letter-spacing:-.035em}
 
-.lede{margin:clamp(1.75rem,4vh,2.5rem) 0 0;max-width:26rem;
+.lede{margin:clamp(1.75rem,4vh,2.5rem) 0 0;max-width:min(26rem,100%);
   color:var(--muted);font-weight:300;font-size:.97rem;line-height:2.2}
 
 .stats{display:flex;flex-wrap:wrap;gap:clamp(1.5rem,4vw,3rem);
@@ -230,9 +253,11 @@ footer{border-top:1px solid var(--line);padding:2.5rem 0 4rem;
   .two{grid-template-columns:1fr;gap:2.5rem}
   .defs,.meta{grid-template-columns:1fr;gap:.1rem}
   .defs dt,.meta dt{padding-top:.9rem}
-  .sheet a .ja{display:none}
 }
 </style>
+
+</head>
+<body>
 
 <nav class="bar" id="bar">
   <div class="bar-in">
@@ -245,24 +270,23 @@ footer{border-top:1px solid var(--line);padding:2.5rem 0 4rem;
 
 <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="サイトメニュー">
   <ol>
-    <li><a href="#work"><span class="n">01</span><span class="en">Work</span><span class="ja">つくったもの</span></a></li>
-    <li><a href="#process"><span class="n">02</span><span class="en">Process</span><span class="ja">進め方</span></a></li>
-    <li><a href="#skills"><span class="n">03</span><span class="en">Skills</span><span class="ja">できること</span></a></li>
-    <li><a href="#faq"><span class="n">04</span><span class="en">FAQ</span><span class="ja">よくある質問</span></a></li>
-    <li><a href="#about"><span class="n">05</span><span class="en">About</span><span class="ja">事業概要</span></a></li>
-    <li><a href="#contact"><span class="n">06</span><span class="en">Contact</span><span class="ja">お問い合わせ</span></a></li>
+    <li><a href="#work"><span class="n">01</span><span class="lbl">つくったもの</span></a></li>
+    <li><a href="#process"><span class="n">02</span><span class="lbl">進め方</span></a></li>
+    <li><a href="#skills"><span class="n">03</span><span class="lbl">できること</span></a></li>
+    <li><a href="#faq"><span class="n">04</span><span class="lbl">よくある質問</span></a></li>
+    <li><a href="#about"><span class="n">05</span><span class="lbl">事業概要</span></a></li>
+    <li><a href="#contact"><span class="n">06</span><span class="lbl">お問い合わせ</span></a></li>
   </ol>
 </div>
 
 <div class="hero" id="top">
   <div class="hero-copy">
     <div class="eyebrow">
-      <span class="en">Connection by Design</span>
       <span class="rule"></span>
     </div>
     <h1>人を、つなげる。</h1>
     <p class="lede">
-      これからは、つながった先の変化まで、設計の範囲にしていく。
+      つないで終わりにしない。その先の変化まで設計します。
     </p>
     <div class="stats">
       <div class="stat"><div class="v">3</div><div class="k mono">公開・運用中</div></div>
@@ -287,7 +311,7 @@ footer{border-top:1px solid var(--line);padding:2.5rem 0 4rem;
 
 <div class="shell">
 
-<section id="mission" data-label="Mission">
+<section id="mission" data-label="使命">
   <div class="band rv">
     <p>多くのアプリは、<b>滞在時間や既読数</b>を伸ばすことを目的にAIを動かしています。
     それだと人は、属性やヒエラルキーの檻に閉じ込められていく。</p>
@@ -296,7 +320,7 @@ footer{border-top:1px solid var(--line);padding:2.5rem 0 4rem;
   </div>
 </section>
 
-<section id="work" data-label="Work">
+<section id="work" data-label="つくったもの">
   <div class="head rv"><span class="mono">01</span><h2>つくったもの</h2><span class="hr"></span></div>
   <div class="work">
 
@@ -313,9 +337,9 @@ footer{border-top:1px solid var(--line);padding:2.5rem 0 4rem;
           だから配送も、住所の交換もいりません。
         </p>
         <dl class="meta">
-          <dt class="mono">Role</dt><dd>企画・設計・実装（2名体制）</dd>
-          <dt class="mono">Stack</dt><dd><div class="stack"><span>Next.js</span><span>React</span><span>TypeScript</span><span>Firebase Auth</span><span>Stripe</span><span>Tailwind</span><span>Vitest</span></div></dd>
-          <dt class="mono">Link</dt><dd><a class="go" href="https://musa-link-prod.web.app" target="_blank" rel="noopener">musa-link-prod.web.app ↗</a></dd>
+          <dt class="mono">担当</dt><dd>企画・設計・実装（2名体制）</dd>
+          <dt class="mono">使用技術</dt><dd><div class="stack"><span>Next.js</span><span>React</span><span>TypeScript</span><span>Firebase Auth</span><span>Stripe</span><span>Tailwind</span><span>Vitest</span></div></dd>
+          <dt class="mono">公開先</dt><dd><a class="go" href="https://musa-link-prod.web.app" target="_blank" rel="noopener">musa-link-prod.web.app ↗</a></dd>
         </dl>
       </div>
     </article>
@@ -333,9 +357,9 @@ footer{border-top:1px solid var(--line);padding:2.5rem 0 4rem;
           出会って終わりではなく、<em>もう一度診断すると答えが変わる</em>——そこまでを一つの循環として設計しています。
         </p>
         <dl class="meta">
-          <dt class="mono">Role</dt><dd>企画・設計・実装（個人開発）</dd>
-          <dt class="mono">Stack</dt><dd><div class="stack"><span>Next.js</span><span>TypeScript</span><span>Prisma</span><span>Gemini API</span></div></dd>
-          <dt class="mono">Link</dt><dd><a class="go" href="https://zax.fumiproject.dev" target="_blank" rel="noopener">zax.fumiproject.dev ↗</a></dd>
+          <dt class="mono">担当</dt><dd>企画・設計・実装（個人開発）</dd>
+          <dt class="mono">使用技術</dt><dd><div class="stack"><span>Next.js</span><span>TypeScript</span><span>Prisma</span><span>Gemini API</span></div></dd>
+          <dt class="mono">公開先</dt><dd><a class="go" href="https://zax.fumiproject.dev" target="_blank" rel="noopener">zax.fumiproject.dev ↗</a></dd>
         </dl>
       </div>
     </article>
@@ -350,9 +374,9 @@ footer{border-top:1px solid var(--line);padding:2.5rem 0 4rem;
           人とつながる前に、まず自分を理解するための道具として作りました。
         </p>
         <dl class="meta">
-          <dt class="mono">Role</dt><dd>設計・実装（個人開発）</dd>
-          <dt class="mono">Stack</dt><dd><div class="stack"><span>Python</span><span>Gemini API</span><span>Obsidian</span><span>ADB</span><span>時系列処理</span></div></dd>
-          <dt class="mono">Detail</dt><dd>生体データのZスコア化、視聴履歴の分類、外部データの自動収集</dd>
+          <dt class="mono">担当</dt><dd>設計・実装（個人開発）</dd>
+          <dt class="mono">使用技術</dt><dd><div class="stack"><span>Python</span><span>Gemini API</span><span>Obsidian</span><span>ADB</span><span>時系列処理</span></div></dd>
+          <dt class="mono">内容</dt><dd>生体データのZスコア化、視聴履歴の分類、外部データの自動収集</dd>
         </dl>
       </div>
     </article>
@@ -360,28 +384,28 @@ footer{border-top:1px solid var(--line);padding:2.5rem 0 4rem;
   </div>
 </section>
 
-<section id="process" data-label="Process">
+<section id="process" data-label="進め方">
   <div class="head rv"><span class="mono">02</span><h2>進め方</h2><span class="hr"></span></div>
   <div class="flow rv" id="flow">
-    <div class="node"><span class="mono">Step 01</span>
+    <div class="node"><span class="mono">手順 01</span>
       <h3>まず、困っていることを伺います</h3>
       <p>いきなり「何を作るか」から入りません。今どこで手間がかかっているか、何が売上を止めているかを先に聞きます。オンラインでも対面でも構いません。</p></div>
-    <div class="node"><span class="mono">Step 02</span>
+    <div class="node"><span class="mono">手順 02</span>
       <h3>つくる前に、解決するかを確認します</h3>
       <p>「これを作れば解決しますか」を、簡単な画面イメージや文章で先にお見せします。ここで違うとなれば、作らずに方針を変えます。着手前なので費用は発生しません。</p></div>
-    <div class="node"><span class="mono">Step 03</span>
+    <div class="node"><span class="mono">手順 03</span>
       <h3>費用とスケジュールをお出しします</h3>
       <p>やることを分解して、金額と期間を書面でお渡しします。あとから追加費用が発生する場合は、その時点で必ず先にご相談します。</p></div>
-    <div class="node"><span class="mono">Step 04</span>
+    <div class="node"><span class="mono">手順 04</span>
       <h3>途中経過を、こまめにお見せします</h3>
       <p>完成まで何も見えない、という進め方はしません。動く画面を段階的にお見せして、その都度ご意見を反映します。</p></div>
-    <div class="node"><span class="mono">Step 05</span>
+    <div class="node"><span class="mono">手順 05</span>
       <h3>公開して、そこから直します</h3>
       <p>公開して終わりではありません。実際に使われて分かることの方が多いので、そこからの調整までを想定して設計します。</p></div>
   </div>
 </section>
 
-<section id="skills" data-label="Skills">
+<section id="skills" data-label="できること">
   <div class="head rv"><span class="mono">03</span><h2>できること</h2><span class="hr"></span></div>
   <div class="two rv">
     <div class="prose">
@@ -403,7 +427,7 @@ footer{border-top:1px solid var(--line);padding:2.5rem 0 4rem;
   </div>
 </section>
 
-<section id="faq" data-label="FAQ">
+<section id="faq" data-label="よくある質問">
   <div class="head rv"><span class="mono">04</span><h2>よくある質問</h2><span class="hr"></span></div>
   <div class="rv">
     <details class="qa"><summary>費用はどのくらいかかりますか？</summary>
@@ -423,7 +447,7 @@ footer{border-top:1px solid var(--line);padding:2.5rem 0 4rem;
   </div>
 </section>
 
-<section id="about" data-label="About">
+<section id="about" data-label="事業概要">
   <div class="head rv"><span class="mono">05</span><h2>事業概要</h2><span class="hr"></span></div>
   <div class="two rv">
     <dl class="defs">
@@ -439,7 +463,7 @@ footer{border-top:1px solid var(--line);padding:2.5rem 0 4rem;
   </div>
 </section>
 
-<section id="contact" data-label="Contact">
+<section id="contact" data-label="お問い合わせ">
   <div class="head rv"><span class="mono">06</span><h2>お問い合わせ</h2><span class="hr"></span></div>
   <div class="two rv">
     <div class="prose">
@@ -456,7 +480,7 @@ footer{border-top:1px solid var(--line);padding:2.5rem 0 4rem;
 
 <footer>
   <span class="mono">ZAX</span>
-  <span class="mono">Ota, Tokyo</span>
+  <span class="mono">東京都大田区</span>
 </footer>
 
 </div>
@@ -515,3 +539,6 @@ const io=new IntersectionObserver(es=>{
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 })();
 </script>
+
+</body>
+</html>

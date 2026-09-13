@@ -1,11 +1,93 @@
 {
   "redirects": [
     {
-      "source": "/:path*",
-      "has": [
-        { "type": "header", "key": "host", "value": "resort-sort.fumiproject.dev" }
-      ],
-      "destination": "https://fumiproject.dev/resort/:path*",
+      "source": "/about/:path*",
+      "destination": "https://fumiproject.dev/resort/about/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/area/:path*",
+      "destination": "https://fumiproject.dev/resort/area/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/article/:path*",
+      "destination": "https://fumiproject.dev/resort/article/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/compare/:path*",
+      "destination": "https://fumiproject.dev/resort/compare/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/data/:path*",
+      "destination": "https://fumiproject.dev/resort/data/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/feature/:path*",
+      "destination": "https://fumiproject.dev/resort/feature/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/ranking/:path*",
+      "destination": "https://fumiproject.dev/resort/ranking/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/spot/:path*",
+      "destination": "https://fumiproject.dev/resort/spot/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/analysis/:path*",
+      "destination": "https://fumiproject.dev/resort/analysis/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "https://fumiproject.dev/resort/about/",
+      "permanent": true
+    },
+    {
+      "source": "/area",
+      "destination": "https://fumiproject.dev/resort/area/",
+      "permanent": true
+    },
+    {
+      "source": "/article",
+      "destination": "https://fumiproject.dev/resort/article/",
+      "permanent": true
+    },
+    {
+      "source": "/compare",
+      "destination": "https://fumiproject.dev/resort/compare/",
+      "permanent": true
+    },
+    {
+      "source": "/data",
+      "destination": "https://fumiproject.dev/resort/data/",
+      "permanent": true
+    },
+    {
+      "source": "/feature",
+      "destination": "https://fumiproject.dev/resort/feature/",
+      "permanent": true
+    },
+    {
+      "source": "/ranking",
+      "destination": "https://fumiproject.dev/resort/ranking/",
+      "permanent": true
+    },
+    {
+      "source": "/spot",
+      "destination": "https://fumiproject.dev/resort/spot/",
+      "permanent": true
+    },
+    {
+      "source": "/analysis",
+      "destination": "https://fumiproject.dev/resort/analysis/",
       "permanent": true
     }
   ]

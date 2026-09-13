@@ -12,6 +12,17 @@
       "permanent": true
     },
     {
+      "source": "/resort/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "sort.fumiproject.dev"
+        }
+      ],
+      "destination": "https://fumiproject.dev/resort/$1",
+      "permanent": true
+    },
+    {
       "source": "/(.*)",
       "has": [
         {
@@ -19,7 +30,7 @@
           "value": "sort.fumiproject.dev"
         }
       ],
-      "destination": "https://fumiproject.dev/$1",
+      "destination": "https://fumiproject.dev/resort/$1",
       "permanent": true
     },
     {

@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap><loc>https://fumiproject.dev/sitemap-pages.xml</loc></sitemap>
+  <sitemap><loc>https://fumiproject.dev/resort/sitemap-age.xml</loc></sitemap>
   <sitemap><loc>https://fumiproject.dev/resort/sitemap-analysis.xml</loc></sitemap>
   <sitemap><loc>https://fumiproject.dev/resort/sitemap-area-features.xml</loc></sitemap>
   <sitemap><loc>https://fumiproject.dev/resort/sitemap-articles.xml</loc></sitemap>
   <sitemap><loc>https://fumiproject.dev/resort/sitemap-diary.xml</loc></sitemap>
   <sitemap><loc>https://fumiproject.dev/resort/sitemap-spots.xml</loc></sitemap>
+  <sitemap><loc>https://fumiproject.dev/resort/sitemap-start.xml</loc></sitemap>
   <sitemap><loc>https://fumiproject.dev/resort/sitemap-worry.xml</loc></sitemap>
   <sitemap><loc>https://fumiproject.dev/resort/sitemap.xml</loc></sitemap>
 </sitemapindex>

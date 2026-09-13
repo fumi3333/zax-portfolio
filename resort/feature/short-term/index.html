@@ -142,12 +142,21 @@ a.cta:hover{background:#7c3aed;color:#ffffff;transform:translateY(-1px);box-shad
 <body>
 <header>
   <div style="font-size:16px;font-weight:700">
-    <a href="/resort/" style="color:var(--ink);text-decoration:none">リゾートソート（resort sort）</a>
+    <a href="/resort/" style="color:var(--ink);text-decoration:none">リゾートソート</a>
   </div>
-  <div>
+  <div style="display:flex;align-items:center;gap:10px">
+    <!-- ★2026-09-13：このページ群は各50本のアフィリエイトリンクを持つのに
+         PR表記が1つも無かった。2023年10月施行のステマ規制（景表法の指定告示）に
+         抵触する。広告を含むページには必ず表示する。 -->
+    <span style="font-size:11px;color:var(--sub);border:1px solid var(--line);border-radius:3px;padding:1px 5px;letter-spacing:0.04em">PR</span>
     <a href="/resort/" class="back-btn">← 全求人ソートへ</a>
   </div>
 </header>
+<div style="max-width:980px;margin:0 auto;padding:10px 16px 0;font-size:12px;color:var(--sub)">
+  このページには広告（アフィリエイトリンク）が含まれます。リンク経由で各社に登録された場合、
+  当サイトに紹介手数料が支払われることがありますが、求職者の給与や待遇に不利な影響はありません。
+  <a href="/resort/about/" style="color:var(--sub)">掲載基準について</a>
+</div>
 <main>
   <div class="breadcrumb">
     <a href="/resort/">リゾートソート TOP</a> &gt; <span>短期・超短期求人一覧</span>

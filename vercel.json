@@ -1,15 +1,26 @@
 {
   "redirects": [
     {
-      "source": "/__hosttest",
+      "source": "/(.*)",
       "has": [
         {
           "type": "host",
           "value": "resort-sort.fumiproject.dev"
         }
       ],
-      "destination": "https://fumiproject.dev/resort/",
-      "permanent": false
+      "destination": "https://fumiproject.dev/resort/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "sort.fumiproject.dev"
+        }
+      ],
+      "destination": "https://fumiproject.dev/$1",
+      "permanent": true
     },
     {
       "source": "/about/(.*)",

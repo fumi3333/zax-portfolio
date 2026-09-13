@@ -1,0 +1,96 @@
+name: リゾートソート 毎日の鮮度更新
+
+# 掲載中の求人がまだ生きているかを毎日少しずつ確かめ直し、
+# 死んだ求人を落として再ビルド・再デプロイする。
+#
+# なぜ必要か：取得済み19,233件のうち5,359件（28%）は集めた時点で既に募集終了だった。
+# 募集は日々入れ替わるので、放置すれば掲載中の求人も順に死んでいく。
+# /resort/about/ に「ゾンビ求人を放置しない」と書いている以上、実態が伴わないと嘘になる。
+#
+# SEOの効き方は正直に：日付だけ変えて再ビルドしても意味がない（lastmod だけ動くと
+# サイトマップの信頼を落とす）。中身が実際に変わって初めてクロール頻度が上がる。
+#
+# ★なぜ resort-sort ではなくこのリポジトリに置くか
+#   本番の配信元はこのリポジトリなので、ここで動かせば自分のリポジトリへの push になり、
+#   GITHUB_TOKEN だけで完結する。リポジトリをまたぐための個人アクセストークンを
+#   作らずに済む。resort-sort は public なので、読み取りにトークンは要らない。
+
+on:
+  schedule:
+    # 毎日 03:10 JST（UTC 18:10）
+    - cron: "10 18 * * *"
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "確認する件数"
+        default: "1500"
+      dry_run:
+        description: "書き込まずに結果だけ見る"
+        type: boolean
+        default: false
+
+concurrency:
+  group: resort-daily-refresh
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: 配信先（このリポジトリ）を取得
+        uses: actions/checkout@v4
+        with:
+          path: zax-portfolio
+
+      - name: ビルド元を取得
+        uses: actions/checkout@v4
+        with:
+          repository: fumi3333/resort-sort
+          path: resort-sort
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # 求人の生死を確認する。前回確認が古いものから順に回す。
+      # daily_refresh.py は、取得がブロックされた等で「終了」と判定した割合が
+      # 異常に高い場合に異常終了する。生きている求人をまとめて消す事故を防ぐため。
+      - name: 求人の生死を再確認
+        working-directory: resort-sort
+        run: |
+          python tools/daily_refresh.py \
+            --limit "${{ github.event.inputs.limit || 1500 }}" \
+            --per-agency 400 \
+            --sleep 1.2 \
+            ${{ github.event.inputs.dry_run == 'true' && '--dry-run' || '' }}
+
+      - name: サイトを再生成
+        if: github.event.inputs.dry_run != 'true'
+        working-directory: resort-sort
+        run: |
+          python build_public.py
+          python migrate_to_apex.py
+
+      - name: 壊れたリンクが無いか検査
+        if: github.event.inputs.dry_run != 'true'
+        working-directory: resort-sort
+        continue-on-error: true
+        run: python check_live.py
+
+      - name: 本番へ反映
+        if: github.event.inputs.dry_run != 'true'
+        working-directory: zax-portfolio
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "掲載内容に変化なし。デプロイしない"
+          else
+            git commit -m "deploy: リゾートソート 掲載求人の鮮度更新（自動）"
+            git push
+          fi

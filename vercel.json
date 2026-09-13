@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "resort-sort.fumiproject.dev" }],
+      "destination": "https://fumiproject.dev/resort/:path*",
+      "permanent": true
+    }
+  ]
+}

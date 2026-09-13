@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>同じ住所なのに時給が最大400円ちがう｜派遣会社20か所の実測</title>
+<meta name="description" content="同じ住所に複数の派遣会社が出している求人30か所を突き合わせ、20か所で時給差を確認しました。差の中央値は80円、最大400円です。">
+<link rel="canonical" href="https://fumiproject.dev/resort/analysis/same-place/">
+<meta property="og:title" content="同じ住所なのに時給が最大400円ちがう｜派遣会社20か所の実測">
+<meta property="og:description" content="同じ住所に複数の派遣会社が出している求人30か所を突き合わせ、20か所で時給差を確認しました。差の中央値は80円、最大400円です。">
+<meta property="og:url" content="https://fumiproject.dev/resort/analysis/same-place/">
+<style>:root{--bg:#fff;--ink:#111;--sub:#666;--line:#e2e2e2;--mark:#f6f6f4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+ font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+ line-height:1.85;font-size:15px}
+main{max-width:860px;margin:0 auto;padding:22px 16px 60px}
+h1{font-size:25px;line-height:1.45;margin:6px 0 4px}
+h2{font-size:19px;margin:34px 0 10px;padding-top:16px;border-top:1px solid var(--line)}
+p{margin:12px 0}
+ul{padding-left:20px}li{margin:6px 0}
+a{color:var(--ink)}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:14px 0;
+ display:block;overflow-x:auto;white-space:nowrap}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:left}
+th{background:var(--mark)}
+td.n{text-align:right}
+.meta{font-size:13px;color:var(--sub);margin:0 0 16px}
+.lead{background:var(--mark);border:1px solid var(--line);border-radius:8px;
+ padding:14px 16px;margin:16px 0}
+.links{font-size:13px;line-height:2.1}
+footer{margin-top:44px;padding-top:14px;border-top:1px solid var(--line);
+ font-size:12px;color:var(--sub)}
+</style>
+
+</head>
+<body>
+<main>
+<p class="meta"><a href="/resort/">リゾートソート</a> ＞ <a href="/resort/analysis/">分析</a> ＞ 同じ住所での会社間の差</p>
+<h1>同じ住所の求人を突き合わせると、会社の違いだけで時給が最大400円ちがった</h1>
+<p class="meta">集計日 2026-09-13／掲載中の求人13,870件のうち、住所が一致した30か所</p>
+
+<div class="lead">
+<b>分かったこと</b>
+<ul>
+<li>同じ住所に2社以上が求人を出していたのは<b>30か所</b>。
+うち<b>20か所で時給に差</b>があり、10か所は同額でした</li>
+<li>差の中央値は<b>80円</b>、最大は<b>400円</b>
+（北海道虻田郡留寿都村字：株式会社ダイブ2,000円 と
+株式会社アルファスタッフ1,600円）</li>
+<li>常に同じ会社が高いわけではありません。どの会社も、高いほうにも安いほうにも立ちます</li>
+</ul>
+</div>
+
+<h2>なぜこの比べ方に意味があるのか</h2>
+<p>別ページの<a href="/resort/analysis/agency-effect/">重回帰の分析</a>では、県・職種・寮・期間をそろえると
+会社による差は時給63円ぶんまで縮みました。つまり「どの会社か」より「どこで何をするか」のほうが
+ずっと大きく効きます。</p>
+<p>ただしあれは全国をならした話で、県より細かい条件まではそろえられていません。
+ここでは<b>同じ住所に出ている求人だけ</b>を比べています。施設も仕事も寮も立地も丸ごと同じなので、
+残る違いは通す会社だけです。統計で調整するより強く条件がそろいます。</p>
+<p>その状態でも20か所で差が残り、中央値で80円ありました。
+平均すると小さい会社差が、個別の現場では無視できない大きさで出ることがある、ということです。</p>
+
+<h2>どちらの側に立つかは会社で決まっていない</h2>
+<table>
+<thead><tr><th>派遣会社</th><th>高いほうだった回数</th><th>安いほうだった回数</th></tr></thead>
+<tbody><tr><td>株式会社ダイブ</td><td class='n'>9</td><td class='n'>6</td></tr><tr><td>株式会社RESORT CROSS</td><td class='n'>4</td><td class='n'>9</td></tr><tr><td>株式会社アルファスタッフ</td><td class='n'>7</td><td class='n'>5</td></tr></tbody>
+</table>
+<p class="meta">どの会社も両方の側に現れます。「この会社が一番高い」という言い方は、
+少なくともこのデータからは出てきません。</p>
+
+<h2>差が出た20か所</h2>
+<table>
+<thead><tr><th>勤務地</th><th>職種</th><th>高いほう</th><th>時給</th><th>安いほう</th><th>時給</th><th>差</th></tr></thead>
+<tbody><tr><td>北海道虻田郡留寿都村字</td><td>調理</td><td>株式会社ダイブ</td><td class='n'>2,000円</td><td>株式会社アルファスタッフ</td><td class='n'>1,600円</td><td class='n'><b>400円</b></td></tr><tr><td>長野県茅野市</td><td>調理</td><td>株式会社ダイブ</td><td class='n'>1,600円</td><td>株式会社RESORT CROSS</td><td class='n'>1,250円</td><td class='n'><b>350円</b></td></tr><tr><td>北海道勇払郡占冠村</td><td>その他リゾートバイト</td><td>株式会社ダイブ</td><td class='n'>1,700円</td><td>株式会社アルファスタッフ</td><td class='n'>1,450円</td><td class='n'><b>250円</b></td></tr><tr><td>山形県上山市</td><td>調理</td><td>株式会社ダイブ</td><td class='n'>1,350円</td><td>株式会社RESORT CROSS</td><td class='n'>1,100円</td><td class='n'><b>250円</b></td></tr><tr><td>岐阜県下呂市</td><td>仲居・客室係（本式着物）</td><td>株式会社ダイブ</td><td class='n'>1,500円</td><td>株式会社アルファスタッフ</td><td class='n'>1,400円</td><td class='n'><b>100円</b></td></tr><tr><td>兵庫県南あわじ市阿那賀</td><td>レストランサービス</td><td>株式会社RESORT CROSS</td><td class='n'>1,300円</td><td>株式会社ダイブ</td><td class='n'>1,200円</td><td class='n'><b>100円</b></td></tr><tr><td>静岡県下田市</td><td>調理</td><td>株式会社ダイブ</td><td class='n'>1,500円</td><td>株式会社RESORT CROSS</td><td class='n'>1,400円</td><td class='n'><b>100円</b></td></tr><tr><td>兵庫県豊岡市</td><td>仲居(作務衣)</td><td>株式会社アルファスタッフ</td><td class='n'>1,500円</td><td>株式会社RESORT CROSS</td><td class='n'>1,400円</td><td class='n'><b>100円</b></td></tr><tr><td>岐阜県高山市</td><td>業務全般</td><td>株式会社アルファスタッフ</td><td class='n'>1,300円</td><td>株式会社RESORT CROSS</td><td class='n'>1,200円</td><td class='n'><b>100円</b></td></tr><tr><td>静岡県伊豆市</td><td>調理</td><td>株式会社アルファスタッフ</td><td class='n'>1,500円</td><td>株式会社RESORT CROSS</td><td class='n'>1,400円</td><td class='n'><b>100円</b></td></tr><tr><td>北海道虻田郡ニセコ町</td><td>レストランサービス</td><td>株式会社ダイブ</td><td class='n'>1,200円</td><td>株式会社RESORT CROSS</td><td class='n'>1,140円</td><td class='n'><b>60円</b></td></tr><tr><td>栃木県日光市</td><td>仲居(作務衣)</td><td>株式会社アルファスタッフ</td><td class='n'>1,360円</td><td>株式会社RESORT CROSS</td><td class='n'>1,300円</td><td class='n'><b>60円</b></td></tr><tr><td>栃木県那須塩原市</td><td>駐車場</td><td>株式会社アルファスタッフ</td><td class='n'>1,350円</td><td>株式会社ダイブ</td><td class='n'>1,300円</td><td class='n'><b>50円</b></td></tr><tr><td>長野県北佐久郡立科町</td><td>調理補助</td><td>株式会社ダイブ</td><td class='n'>1,300円</td><td>株式会社RESORT CROSS</td><td class='n'>1,250円</td><td class='n'><b>50円</b></td></tr><tr><td>兵庫県南あわじ市松帆古津路</td><td>館内全般業務</td><td>株式会社RESORT CROSS</td><td class='n'>1,250円</td><td>株式会社ダイブ</td><td class='n'>1,200円</td><td class='n'><b>50円</b></td></tr><tr><td>福島県会津若松市</td><td>仲居(作務衣)</td><td>株式会社アルファスタッフ</td><td class='n'>1,300円</td><td>株式会社ダイブ</td><td class='n'>1,250円</td><td class='n'><b>50円</b></td></tr><tr><td>群馬県吾妻郡草津町</td><td>カフェ</td><td>株式会社RESORT CROSS</td><td class='n'>1,350円</td><td>株式会社ダイブ</td><td class='n'>1,300円</td><td class='n'><b>50円</b></td></tr><tr><td>岐阜県高山市</td><td>館内全般業務</td><td>株式会社RESORT CROSS</td><td class='n'>1,300円</td><td>株式会社アルファスタッフ</td><td class='n'>1,250円</td><td class='n'><b>50円</b></td></tr><tr><td>北海道上川郡上川町</td><td>調理補助</td><td>株式会社ダイブ</td><td class='n'>1,240円</td><td>株式会社アルファスタッフ</td><td class='n'>1,200円</td><td class='n'><b>40円</b></td></tr><tr><td>北海道登別市</td><td>レストランホール</td><td>株式会社アルファスタッフ</td><td class='n'>1,220円</td><td>株式会社ダイブ</td><td class='n'>1,200円</td><td class='n'><b>20円</b></td></tr></tbody>
+</table>
+<p class="meta">上位20件を表示しています。
+勤務先の施設名は各社とも公開していないため、
+求人ページの構造化データに入っている郵便番号と番地が一致するものを同じ勤務地とみなしました。
+職種は高いほうの求人の表記です。</p>
+
+<h2>この数字の限界</h2>
+<ul>
+<li>住所で同定できるのは全体の一部です。多くの求人は番地まで公開していないため、
+実際にはもっと多くの重複があるはずですが、確認できたぶんだけを載せています</li>
+<li>時給が同じでも、寮費・食事・交通費の扱いで手取りは変わります。
+ここで比べているのは時給の額面だけです</li>
+<li>募集時期がずれている場合、差が会社ではなく時期によるものである可能性があります</li>
+</ul>
+
+<p><a href="/resort/">同じ条件で全13,870件を比べる →</a></p>
+
+<footer>
+リゾートソート（ZAX）／ 掲載各社が公開している求人ページの集計です。
+最新の募集状況は各社の公式ページでご確認ください。
+</footer>
+</main>
+</body>
+</html>

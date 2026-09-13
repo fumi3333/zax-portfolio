@@ -1,13 +1,10 @@
 {
   "redirects": [
     {
-      "source": "/__vercel-json-test",
-      "destination": "https://fumiproject.dev/resort/",
-      "permanent": false
-    },
-    {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "resort-sort.fumiproject.dev" }],
+      "has": [
+        { "type": "header", "key": "host", "value": "resort-sort.fumiproject.dev" }
+      ],
       "destination": "https://fumiproject.dev/resort/:path*",
       "permanent": true
     }

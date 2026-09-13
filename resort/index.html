@@ -4466,6 +4466,23 @@ function init(){
       });
     }
   });
+  applyUrlParams();
+}
+
+function applyUrlParams(){
+  // /shindan/ の「この条件で求人を見る」から来たとき、選んだ条件を引き継ぐ。
+  // ?q=沖縄県+調理補助 のように渡す。q は県名・職種・会社名などを
+  // まとめて対象にするAND検索なので、これ1つで県×職種を再現できる。
+  const q = new URLSearchParams(location.search).get("q");
+  if (!q) return;
+  const el = document.getElementById("f-q");
+  if (!el) return;
+  el.value = q;
+  const panel = document.getElementById("filter-panel");
+  const btn = document.getElementById("filter-toggle");
+  if (panel) panel.classList.add("open");
+  if (btn) btn.setAttribute("aria-expanded", "true");
+  render();
 }
 
 function passes(j){

@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://fumiproject.dev/sitemap-pages.xml
 Sitemap: https://fumiproject.dev/resort/sitemap-analysis.xml
 Sitemap: https://fumiproject.dev/resort/sitemap-area-features.xml
 Sitemap: https://fumiproject.dev/resort/sitemap-articles.xml

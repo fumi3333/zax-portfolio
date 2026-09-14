@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://resort-sort.fumiproject.dev/sitemap.xml
+Sitemap: https://resort-sort.fumiproject.dev/sitemap-spots.xml
+Sitemap: https://resort-sort.fumiproject.dev/sitemap-articles.xml
+Sitemap: https://resort-sort.fumiproject.dev/sitemap-area-features.xml
+Sitemap: https://resort-sort.fumiproject.dev/sitemap-worry.xml
+Sitemap: https://resort-sort.fumiproject.dev/sitemap-diary.xml
+Sitemap: https://resort-sort.fumiproject.dev/sitemap-age.xml
+Sitemap: https://resort-sort.fumiproject.dev/sitemap-start.xml
+Sitemap: https://resort-sort.fumiproject.dev/sitemap-job.xml
+Sitemap: https://resort-sort.fumiproject.dev/sitemap-analysis.xml

@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="icon" href="/resort/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/resort/apple-touch-icon.png"><meta property="og:image" content="https://fumiproject.dev/resort/ogp.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta property="og:image" content="https://resort-sort.fumiproject.dev/ogp.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
 <title>行き先と仕事から、どの派遣会社が強いかを実測で見る｜リゾートバイト</title>
 <meta name="description" content="リゾートバイトの求人13,859件から、都道府県×職種ごとに各派遣会社の求人数と時給の中央値を出します。宣伝文ではなく実測値で比べられます。">
-<link rel="canonical" href="https://fumiproject.dev/resort/shindan/">
+<link rel="canonical" href="https://resort-sort.fumiproject.dev/shindan/">
 <meta property="og:title" content="行き先と仕事から、どの派遣会社が強いかを実測で見る｜リゾートバイト">
 <meta property="og:description" content="リゾートバイトの求人13,859件から、都道府県×職種ごとに各派遣会社の求人数と時給の中央値を出します。宣伝文ではなく実測値で比べられます。">
-<meta property="og:url" content="https://fumiproject.dev/resort/shindan/">
+<meta property="og:url" content="https://resort-sort.fumiproject.dev/shindan/">
 <style>:root{--bg:#fff;--ink:#111;--sub:#666;--line:#e2e2e2;--mark:#f6f6f4}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);
@@ -39,7 +39,7 @@ footer{margin-top:44px;padding-top:14px;border-top:1px solid var(--line);
 </head>
 <body>
 <main>
-<p id="pr-notice" style="margin:0 0 14px;padding:6px 10px;border:1px solid #e2e2e2;border-radius:6px;font-size:12px;color:#666">PR：このページには広告（アフィリエイトリンク）が含まれます。リンク経由の応募で当サイトに紹介料が入ることがありますが、掲載順は各社から受け取る金額では決めていません。<a href="/resort/about/" style="color:#666">掲載基準について</a></p>
+<p id="pr-notice" style="margin:0 0 14px;padding:6px 10px;border:1px solid #e2e2e2;border-radius:6px;font-size:12px;color:#666">PR：このページには広告（アフィリエイトリンク）が含まれます。リンク経由の応募で当サイトに紹介料が入ることがありますが、掲載順は各社から受け取る金額では決めていません。<a href="/about/" style="color:#666">掲載基準について</a></p>
 
 <h1>行き先と仕事から、どの会社が強いかを実測で見る</h1>
 <p class=lead>「初めてならこの会社」のような性格診断はしません。
@@ -62,9 +62,9 @@ footer{margin-top:44px;padding-top:14px;border-top:1px solid var(--line);
 <b>会社そのものによる時給の差は最大63円</b>まで縮みました。1社は
 「差があるとは言えない」（信頼区間が0をまたぐ）という結果でした。
 平均だけ見て1社を勧めるのは、この結果と合いません。</p>
-<p>一方で<a href="/resort/analysis/agency-gap/">個別の県×職種では300円ひらく組み合わせ</a>があります。
+<p>一方で<a href="/analysis/agency-gap/">個別の県×職種では300円ひらく組み合わせ</a>があります。
 だから「どの会社がいいか」ではなく「<b>あなたの条件でどの会社が強いか</b>」を見るのが正しい問いです。
-くわしくは<a href="/resort/analysis/agency-effect/">重回帰で会社の効果を分離した記事</a>に書いています。</p>
+くわしくは<a href="/analysis/agency-effect/">重回帰で会社の効果を分離した記事</a>に書いています。</p>
 
 <h2>この数字で言えないこと</h2>
 <ul>
@@ -75,8 +75,8 @@ footer{margin-top:44px;padding-top:14px;border-top:1px solid var(--line);
 <li>寮費は求人票に記載が少なく集計できていません。時給が高くても手元に残る額は変わります。</li>
 </ul>
 
-<p class=updated>集計日：2026-09-14　対象：公開中の求人 13,859件／比較できる組み合わせ 526通り</p>
-<p><a href="/resort/">求人を条件で検索する</a>　<a href="/resort/data/">全体の調査データを見る</a></p>
+<p class=updated>集計日：2026-09-15　対象：公開中の求人 13,859件／比較できる組み合わせ 526通り</p>
+<p><a href="/">求人を条件で検索する</a>　<a href="/data/">全体の調査データを見る</a></p>
 
 <style>
 .pick{display:flex;gap:16px;flex-wrap:wrap;margin:20px 0;padding:16px;
@@ -128,7 +128,7 @@ function show() {
         + '条件の良い求人を多く持っています。どちらを取るかは人によります。</p>';
   // 横断検索の q は県名・職種をまとめて対象にするAND検索なので、
   // 選んだ2つを渡すだけで、同じ条件の求人一覧がそのまま開く。
-  html += '<p><a class=cta href="/resort/?q=' + encodeURIComponent(p + ' ' + j)
+  html += '<p><a class=cta href="/?q=' + encodeURIComponent(p + ' ' + j)
         + '">この条件で求人を見る（' + total + '件）</a></p>';
   out.innerHTML = html;
 }

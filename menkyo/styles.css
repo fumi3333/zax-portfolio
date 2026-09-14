@@ -1,0 +1,675 @@
+/* Neubrutalism Design System for menkyo-sort */
+:root {
+  --bg: #fafafa;
+  --card: #ffffff;
+  --ink: #111111;
+  --sub: #555555;
+  --line: #111111;
+  --accent: #7c3aed;
+  --accent-light: #ede9fe;
+  --accent-hover: #6d28d9;
+  --neon-yellow: #fde047;
+  --neon-green: #4ade80;
+  --neon-red: #f87171;
+  --border-thick: 2px solid #111111;
+  --border-heavy: 3px solid #111111;
+  --shadow-main: 4px 4px 0px #111111;
+  --shadow-hover: 6px 6px 0px #111111;
+  --shadow-sm: 2px 2px 0px #111111;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0d0d11;
+    --card: #18181f;
+    --ink: #f4f4f5;
+    --sub: #a1a1aa;
+    --line: #f4f4f5;
+    --accent: #8b5cf6;
+    --accent-light: #2e1065;
+    --accent-hover: #a78bfa;
+    --neon-yellow: #facc15;
+    --border-thick: 2px solid #f4f4f5;
+    --border-heavy: 3px solid #f4f4f5;
+    --shadow-main: 4px 4px 0px #f4f4f5;
+    --shadow-hover: 6px 6px 0px #f4f4f5;
+    --shadow-sm: 2px 2px 0px #f4f4f5;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  border-radius: 0 !important;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Header & Navigation */
+header {
+  background: var(--card);
+  border-bottom: var(--border-heavy);
+  padding: 16px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.logo-area {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  background: var(--neon-yellow);
+  color: #111;
+  padding: 4px 10px;
+  border: var(--border-thick);
+  box-shadow: var(--shadow-sm);
+  display: inline-block;
+}
+
+.tagline {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--sub);
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.badge-pr {
+  font-size: 11px;
+  font-weight: 800;
+  border: 1px solid var(--line);
+  padding: 2px 6px;
+  background: transparent;
+  color: var(--sub);
+}
+
+/* Hero Section */
+.hero {
+  max-width: 1140px;
+  margin: 24px auto 16px;
+  padding: 0 16px;
+}
+
+.hero-banner {
+  background: var(--card);
+  border: var(--border-heavy);
+  box-shadow: var(--shadow-main);
+  padding: 24px 20px;
+}
+
+.hero-title {
+  font-size: 28px;
+  font-weight: 900;
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+
+.hero-title mark {
+  background: var(--neon-yellow);
+  color: #111;
+  padding: 2px 8px;
+  border: var(--border-thick);
+}
+
+.hero-desc {
+  font-size: 15px;
+  color: var(--sub);
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Filter Bar */
+.filter-container {
+  max-width: 1140px;
+  margin: 0 auto 24px;
+  padding: 0 16px;
+}
+
+.filter-box {
+  background: var(--card);
+  border: var(--border-heavy);
+  box-shadow: var(--shadow-main);
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.filter-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-label {
+  font-size: 13px;
+  font-weight: 900;
+  min-width: 90px;
+  background: var(--ink);
+  color: var(--bg);
+  padding: 4px 8px;
+  text-align: center;
+}
+
+.pill-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill-btn {
+  background: var(--card);
+  border: var(--border-thick);
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.1s ease;
+  color: var(--ink);
+}
+
+.pill-btn:hover {
+  background: var(--accent);
+  color: #ffffff;
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px var(--line);
+}
+
+.pill-btn.active {
+  background: var(--accent);
+  color: #ffffff;
+  box-shadow: none;
+  transform: translate(2px, 2px);
+}
+
+.search-input {
+  flex: 1;
+  min-width: 220px;
+  padding: 8px 12px;
+  border: var(--border-thick);
+  font-size: 14px;
+  font-weight: 600;
+  background: var(--card);
+  color: var(--ink);
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Sort & Meta row */
+.meta-bar {
+  max-width: 1140px;
+  margin: 0 auto 16px;
+  padding: 0 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.count-info {
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.count-info strong {
+  color: var(--accent);
+  font-size: 20px;
+}
+
+.sort-select {
+  padding: 8px 12px;
+  border: var(--border-thick);
+  background: var(--card);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+
+/* School Cards Grid */
+.school-grid {
+  max-width: 1140px;
+  margin: 0 auto 40px;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.school-card {
+  background: var(--card);
+  border: var(--border-heavy);
+  box-shadow: var(--shadow-main);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.school-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.card-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pref-badge {
+  font-size: 12px;
+  font-weight: 800;
+  display: inline-block;
+  background: var(--ink);
+  color: var(--bg);
+  padding: 2px 8px;
+  width: fit-content;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 900;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.highlight-badge {
+  font-size: 12px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border: var(--border-thick);
+  background: var(--neon-yellow);
+  color: #111;
+  box-shadow: var(--shadow-sm);
+}
+
+.diff-badge {
+  background: #fca5a5;
+  color: #7f1d1d;
+}
+
+.season-badge {
+  background: #bfdbfe;
+  color: #1e3a8a;
+}
+
+/* Price & Comparison Box */
+.price-comparison-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+  background: var(--bg);
+  border: var(--border-thick);
+  padding: 14px;
+}
+
+.price-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-label {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--sub);
+}
+
+.price-value {
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--accent);
+  line-height: 1.2;
+}
+
+.price-unit {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.diff-info {
+  font-size: 13px;
+  font-weight: 700;
+  color: #b91c1c;
+  margin-top: 4px;
+}
+
+/* Source Comparison Row */
+.source-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 6px;
+  border-top: 1px dashed var(--sub);
+}
+
+.sources-list {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--sub);
+}
+
+.sources-list span {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 2px 6px;
+  margin-right: 4px;
+}
+
+.card-btn {
+  background: var(--ink);
+  color: var(--bg);
+  border: var(--border-thick);
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.1s ease;
+}
+
+.card-btn:hover {
+  background: var(--accent);
+  color: #ffffff;
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px var(--line);
+}
+
+/* School Detail Page Styles */
+.detail-container {
+  max-width: 1140px;
+  margin: 24px auto 40px;
+  padding: 0 16px;
+}
+
+.detail-header {
+  background: var(--card);
+  border: var(--border-heavy);
+  box-shadow: var(--shadow-main);
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.comparison-table-wrap {
+  overflow-x: auto;
+  margin: 16px 0;
+  border: var(--border-thick);
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  background: var(--card);
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  font-size: 14px;
+}
+
+.comparison-table th {
+  background: var(--ink);
+  color: var(--bg);
+  font-weight: 800;
+}
+
+.comparison-table tr:hover {
+  background: var(--accent-light);
+}
+
+.cheapest-cell {
+  background: var(--neon-yellow) !important;
+  color: #111 !important;
+  font-weight: 900;
+}
+
+/* CTA & Outbound */
+.cta-box {
+  background: var(--neon-yellow);
+  border: var(--border-heavy);
+  box-shadow: var(--shadow-main);
+  padding: 20px;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.cta-title {
+  font-size: 20px;
+  font-weight: 900;
+  color: #111;
+  margin: 0 0 12px;
+}
+
+.cta-btn-group {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.cta-btn {
+  background: var(--ink);
+  color: var(--bg);
+  border: var(--border-thick);
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 900;
+  box-shadow: var(--shadow-sm);
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.cta-btn:hover {
+  background: var(--accent);
+  color: #ffffff;
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #111;
+}
+
+/* Content & FAQ */
+.content-section {
+  max-width: 1140px;
+  margin: 0 auto 40px;
+  padding: 0 16px;
+}
+
+.content-card {
+  background: var(--card);
+  border: var(--border-heavy);
+  box-shadow: var(--shadow-main);
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.content-card h2 {
+  font-size: 20px;
+  font-weight: 900;
+  margin: 0 0 12px;
+  border-left: 6px solid var(--accent);
+  padding-left: 10px;
+}
+
+.faq-item {
+  border-bottom: 1px solid var(--line);
+  padding: 14px 0;
+}
+
+.faq-q {
+  font-weight: 800;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.faq-a {
+  font-size: 14px;
+  color: var(--sub);
+  margin: 0;
+}
+
+/* Footer */
+footer {
+  background: var(--card);
+  border-top: var(--border-heavy);
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--sub);
+  font-weight: 600;
+}
+
+footer a:hover {
+  text-decoration: underline;
+  color: var(--accent);
+}
+
+/* Deep Research Conversion & pSEO Elements */
+.cancel-free-banner {
+  background: var(--neon-green);
+  color: #064e3b;
+  border: var(--border-heavy);
+  box-shadow: var(--shadow-main);
+  padding: 14px 18px;
+  margin: 16px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.cancel-free-banner .badge {
+  background: #064e3b;
+  color: #ffffff;
+  padding: 3px 8px;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+}
+
+.line-alert-card {
+  background: #06c755;
+  color: #ffffff;
+  border: var(--border-heavy);
+  box-shadow: var(--shadow-main);
+  padding: 24px;
+  margin: 28px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.line-alert-card h3 {
+  font-size: 20px;
+  font-weight: 900;
+  margin: 0;
+  color: #ffffff;
+}
+
+.line-alert-card p {
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.line-btn {
+  background: #ffffff;
+  color: #06c755;
+  border: var(--border-thick);
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 900;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: all 0.1s ease;
+  width: fit-content;
+}
+
+.line-btn:hover {
+  background: var(--ink);
+  color: #ffffff;
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px #ffffff;
+}
+
+.discount-chip {
+  background: var(--neon-yellow);
+  color: #713f12;
+  border: 1px solid var(--line);
+  padding: 2px 6px;
+  font-size: 11px;
+  font-weight: 800;
+  display: inline-block;
+}

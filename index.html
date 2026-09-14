@@ -292,7 +292,7 @@ footer{border-top:1px solid var(--line);padding:2.5rem 0 4rem;
       つないで終わりにしない。その先の変化まで設計します。
     </p>
     <div class="stats">
-      <div class="stat"><div class="v">4</div><div class="k mono">公開・運用中</div></div>
+      <div class="stat"><div class="v">5</div><div class="k mono">公開・運用中</div></div>
       <div class="stat"><div class="v">100%</div><div class="k mono">企画から公開まで自社</div></div>
       <div class="stat"><div class="v">ZAX</div><div class="k mono">屋号・東京都大田区</div></div>
     </div>
@@ -381,6 +381,24 @@ footer{border-top:1px solid var(--line);padding:2.5rem 0 4rem;
           <dt class="mono">使用技術</dt><dd><div class="stack"><span>Python</span><span>JSON-LD</span><span>静的サイト生成</span><span>Cloudflare Workers</span><span>D1</span></div></dd>
           <dt class="mono">内容</dt><dd>会社ごとに違うHTML構造の正規化、募集終了の判定、寮・食事・期間の条件化</dd>
           <dt class="mono">公開先</dt><dd><a class="go" href="/resort/">fumiproject.dev/resort/ →</a></dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="piece rv">
+      <div>
+        <div class="ptop"><span class="pname">合宿免許ソート</span><span class="chip">公開中</span></div>
+        <div class="ptag mono">同じ教習所でも、サイトと日程で価格が違う</div>
+        <p class="pdesc">
+          合宿免許はリゾートバイトと違い、教習所名がどのサイトでも公開されているため横断比較が成立します。
+          3社の予約サイトから217校ぶんの料金表を集計し、<em>入校日・部屋タイプ・予約サイトの3軸</em>で
+          最安値を比較できるようにしています。入校日だけで最大30万円前後、価格が動く教習所もあります。
+        </p>
+        <dl class="meta">
+          <dt class="mono">担当</dt><dd>設計・実装（個人開発）</dd>
+          <dt class="mono">使用技術</dt><dd><div class="stack"><span>Python</span><span>JSON-LD</span><span>静的サイト生成</span><span>A8.net API連携</span></div></dd>
+          <dt class="mono">内容</dt><dd>3社の料金表を教習所名で名寄せ、期間区分の正規化、A8アフィリエイト連携（53校）</dd>
+          <dt class="mono">公開先</dt><dd><a class="go" href="/menkyo/">fumiproject.dev/menkyo/ →</a></dd>
         </dl>
       </div>
     </article>

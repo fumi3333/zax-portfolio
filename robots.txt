@@ -12,3 +12,4 @@ Sitemap: https://fumiproject.dev/resort/sitemap-spots.xml
 Sitemap: https://fumiproject.dev/resort/sitemap-start.xml
 Sitemap: https://fumiproject.dev/resort/sitemap-worry.xml
 Sitemap: https://fumiproject.dev/resort/sitemap.xml
+Sitemap: https://fumiproject.dev/menkyo/sitemap.xml

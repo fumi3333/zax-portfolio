@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-09-13T15:28:09+00:00",
+ "updated_at": "2026-09-14T21:45:21+00:00",
  "jobs": {
   "dive-146342": {
    "closed": true,
@@ -1424,6 +1424,5734 @@
   "dive-146345": {
    "closed": false,
    "checked": "2026-09-13T15:28:09+00:00"
+  },
+  "dive-194116": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28296": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13994": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000826": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-194115": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28295": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13993": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000825": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-194015": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28294": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13992": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000822": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-192782": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28293": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13987": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000820": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-188335": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28292": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13985": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000818": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-185388": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28291": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13983": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000814": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-181319": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28290": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13981": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000813": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-180210": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28289": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13979": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000812": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-179770": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28288": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13976": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000811": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-179769": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28287": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13975": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000810": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-176978": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28286": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13972": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000805": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-176472": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28285": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13970": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000800": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-175886": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28284": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13969": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000799": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-174207": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28283": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13966": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000798": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-173016": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28282": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13961": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000797": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-167707": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28281": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13950": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000796": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-164428": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28280": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13949": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000793": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-161824": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28279": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13947": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000792": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-161645": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28278": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13945": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000787": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-161240": {
+   "closed": true,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28277": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13943": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000774": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-158497": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28276": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13936": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000772": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-157505": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28275": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13935": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000768": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-157503": {
+   "closed": true,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28274": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13934": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000765": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-157450": {
+   "closed": true,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28273": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13933": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-157449": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28272": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13932": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000758": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-157448": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28270": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13931": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000752": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-157446": {
+   "closed": true,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28269": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13928": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000714": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-157445": {
+   "closed": true,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28268": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13927": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000706": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-157444": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28266": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13924": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000705": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-157442": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28262": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13916": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000701": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-157441": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28261": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13913": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000697": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-155775": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28260": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13912": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000696": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-155217": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28259": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13911": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000692": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-154310": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28258": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13904": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000691": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-154194": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28257": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13892": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000690": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-154114": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28256": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13891": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000685": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153174": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28255": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13890": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000684": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153170": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28252": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13887": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000681": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153169": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28251": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13885": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000678": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153168": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28245": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13883": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000677": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153165": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13881": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000676": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153149": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28241": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13879": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000675": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153144": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28240": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13874": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000674": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153142": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28239": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13869": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000670": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153139": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28236": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13867": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153136": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28235": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13862": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000663": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153119": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28233": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13859": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153114": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28229": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13855": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000660": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153104": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28228": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13847": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153096": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28227": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13842": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000658": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153092": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28223": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13840": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000656": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153091": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13839": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000655": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153089": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28211": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13838": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000653": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153088": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28210": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13831": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153087": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28209": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000650": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153086": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13826": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000649": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153085": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28206": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13825": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000646": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153084": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28205": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13823": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000644": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153081": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28204": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13822": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000643": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153079": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28202": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13821": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000640": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153072": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28201": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13820": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000638": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153069": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28200": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13815": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000636": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153065": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28199": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13814": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000632": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153064": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28198": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13813": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153060": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28197": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13808": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000630": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153059": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28196": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13807": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000626": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153058": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28195": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13806": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153056": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28194": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13805": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000624": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153051": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28193": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13804": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000623": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153049": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28192": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13800": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000620": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153044": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28191": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13790": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000619": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153036": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28177": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13789": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000618": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153033": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13786": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000615": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153031": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28173": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13784": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000610": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153013": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13777": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000609": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-153012": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28169": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13776": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000607": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152935": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28168": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13775": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000605": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152934": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28166": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13774": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000603": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152933": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28164": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13773": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000601": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152932": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28163": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13772": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000599": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152930": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28156": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13771": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000595": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152929": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28147": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13768": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000591": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152928": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28146": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13767": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000590": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152926": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28143": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13765": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000583": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152925": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13764": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000580": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152924": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28141": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13762": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000576": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152923": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13760": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000570": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152922": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28139": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13759": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000569": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152920": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28138": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13758": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000567": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152918": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13753": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000564": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152917": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28133": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13752": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000562": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152916": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28129": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13749": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000558": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152914": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28128": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13746": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000557": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152913": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28119": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13744": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000555": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152912": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28118": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13742": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000553": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152909": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28117": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13740": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000552": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152906": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28113": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000549": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152905": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28108": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000547": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152903": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28107": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13737": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000544": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152902": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13735": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000543": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152901": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28104": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13733": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000541": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152899": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28102": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13732": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000540": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152898": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28093": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13730": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000536": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152897": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28090": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13725": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000523": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152895": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28089": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13724": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152893": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28088": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13723": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152892": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28087": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13722": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000514": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152891": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28081": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13721": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000510": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152884": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28079": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13719": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000505": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152878": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28078": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13718": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000503": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152875": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28077": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13717": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152873": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28076": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13716": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152870": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28075": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13715": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000499": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152868": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28074": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13714": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000498": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152867": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28073": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13713": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000496": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152865": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28071": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13712": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000495": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152863": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28070": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13708": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000493": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152861": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28069": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13707": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000492": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152859": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28065": {
+   "closed": true,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13706": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000491": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152858": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28041": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13704": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000490": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152856": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-28010": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13703": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000488": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152855": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-27978": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13702": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000486": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152854": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-27977": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13696": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000485": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152851": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-27976": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13695": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000479": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152850": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-27975": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13694": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000475": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152849": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-27940": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13692": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000471": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152847": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-27936": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13691": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000470": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152846": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-27935": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13690": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000469": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152844": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-27934": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13688": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000467": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152843": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-27933": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13687": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000426": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152842": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-27879": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13686": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000425": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152841": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-27878": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13685": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000424": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152840": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-27877": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13684": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000423": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152838": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-27876": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13683": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000421": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152837": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-27858": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13682": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000411": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152836": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-27857": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13680": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000410": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152835": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13679": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000406": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152834": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13678": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000405": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152833": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-27770": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13676": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152832": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-27769": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13675": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152831": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-27577": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13674": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152829": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-27544": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13673": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000393": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152827": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-27456": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13671": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000392": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152824": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-27455": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13670": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000388": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152823": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-27381": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13669": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000386": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152822": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-25763": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13667": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000385": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152821": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-24968": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13666": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000376": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152820": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-24757": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13663": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000367": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152819": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-24756": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13659": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000365": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152817": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-24515": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13658": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000363": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152816": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-24451": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13656": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000361": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152814": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-24445": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13655": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000356": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152813": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000351": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152811": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-24297": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13652": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000350": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152807": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-24296": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000347": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152804": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-24175": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13649": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000345": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152803": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-24155": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13647": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000344": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152802": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-24154": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13646": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000343": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152800": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-24142": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13639": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000338": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152799": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-24092": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13637": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000336": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152797": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-24048": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13636": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000334": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152795": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-24025": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13635": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000333": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152794": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-24016": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13633": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000332": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152793": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13628": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000330": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152791": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-24006": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13624": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000328": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152790": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-24004": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13622": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000319": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152788": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-24000": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13621": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152776": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-23973": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13618": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000316": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152768": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-23839": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13617": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000314": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152767": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-23762": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13616": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000312": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152765": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-23761": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13615": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152764": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-23760": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13614": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000310": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152762": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-23759": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13613": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000308": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152759": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-23758": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13612": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000307": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152758": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-23757": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13611": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000306": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152757": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-23756": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13610": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000304": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152756": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-23738": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13609": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000303": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152755": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-23729": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13607": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000302": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152754": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13603": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000299": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152753": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-23684": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13602": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000290": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152752": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-23667": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13600": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000287": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152751": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13599": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000286": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152750": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13598": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000281": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152749": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-23620": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13593": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000280": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152748": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13591": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000278": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152747": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-23583": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13590": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000277": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152744": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-23564": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13589": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000276": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152743": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-23562": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13587": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000275": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152742": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-23502": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13583": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000274": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152739": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-23472": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000273": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152736": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-23461": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13580": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000270": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152735": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-23229": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13578": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000269": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152734": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-23225": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13577": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000268": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152728": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-23151": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13576": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000267": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152727": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-23028": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13574": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000266": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152724": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-22998": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13573": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000264": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152721": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-22860": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13568": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000262": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152719": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-22859": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13566": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000259": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152715": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-22821": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13565": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000258": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152713": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-22815": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13563": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000252": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152711": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-22712": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13562": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000249": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152710": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-22695": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13561": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000247": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152708": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-22669": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13558": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000246": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152706": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-22662": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13555": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000242": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152704": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-22626": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13553": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000235": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152701": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-22602": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13551": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000231": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152700": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13549": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000230": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152699": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-22571": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13546": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000229": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152698": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-22570": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13545": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000228": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152697": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-22546": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13544": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000227": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152696": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-22532": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13543": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000224": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152694": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-22521": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13542": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000221": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152693": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-22339": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13541": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000219": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152692": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-22095": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13539": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000214": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152691": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-22075": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13538": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000211": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152689": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-20831": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13537": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000209": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152687": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-20618": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13536": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000208": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152685": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-19652": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13535": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000203": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152684": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-18623": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13534": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000199": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152683": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-18175": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13532": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000198": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152681": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-17824": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13530": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152680": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-17085": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13528": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152679": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-16829": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13527": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000191": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152678": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-16802": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13525": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000190": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152677": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-16674": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13524": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000189": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152676": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13522": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000188": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152673": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-16620": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13515": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000179": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152672": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-16432": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13484": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000178": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152669": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-16416": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13479": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000177": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152667": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-16410": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13468": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000176": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152666": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-16348": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13463": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000173": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152664": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-16300": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13458": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000172": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152663": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-16149": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13448": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000170": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152661": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-16144": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13429": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000169": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152660": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13408": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000168": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152659": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-16004": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13404": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000167": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152657": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-16003": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13383": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000166": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152656": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15972": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000165": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152655": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15890": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13320": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000164": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152654": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15885": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13291": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000163": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152653": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15873": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13289": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000162": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152651": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15871": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13279": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000160": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152650": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15862": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13241": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000158": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152649": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15839": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13239": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000156": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152647": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15838": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13238": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000155": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152646": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15837": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13229": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000152": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152644": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15754": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13228": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000151": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152642": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15753": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13190": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000149": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152641": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13180": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000142": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152639": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15707": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13179": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000139": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152638": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15694": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13163": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000138": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152637": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15681": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13161": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000137": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152634": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15656": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13152": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000136": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152633": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15643": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13141": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000135": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152631": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15629": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13136": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152630": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15624": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13135": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000131": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152628": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15599": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13120": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000130": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152627": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15575": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13076": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000128": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152624": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15571": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13069": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000126": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152618": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15533": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13057": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000122": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152617": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15426": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13053": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000121": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152612": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15424": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13050": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000120": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152601": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15385": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13046": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000119": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152597": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13037": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000117": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152595": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15339": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13029": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000115": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152593": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-13007": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152592": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15315": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12994": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000111": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152591": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15313": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12986": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000108": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152590": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15288": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12973": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000106": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152589": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15210": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12965": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000105": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152588": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15165": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12964": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000103": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152585": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15159": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12955": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000100": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152584": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15142": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12951": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000097": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152582": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15138": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12946": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000094": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152581": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15119": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12941": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000092": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152580": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15096": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12918": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000090": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152579": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15055": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12905": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000089": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152578": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15042": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12901": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000088": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152575": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15004": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12890": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000087": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152574": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15003": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12874": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000085": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152572": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-15002": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12871": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000084": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152568": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14982": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12858": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000079": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152567": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14942": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12857": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000074": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152566": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14932": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12854": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000072": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152565": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14920": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12848": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000071": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152564": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12838": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000070": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152563": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14889": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12832": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000069": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152562": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14861": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12814": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000068": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152561": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14840": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12813": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000066": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152560": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14837": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12812": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000065": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152557": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14703": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12809": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000063": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152556": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14701": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12792": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000061": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152555": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14642": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12790": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000059": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152553": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14641": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12785": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000057": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152552": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14621": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12782": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000056": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152551": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14574": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12779": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000054": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152550": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14573": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12772": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "goodman-1000050": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152549": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14563": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12766": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152548": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14507": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12747": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152547": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14475": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12740": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152546": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14455": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12736": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152545": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14420": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12735": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152543": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14419": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12723": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152542": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14418": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12715": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152541": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14417": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12712": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152540": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14416": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12696": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152539": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14415": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12693": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152538": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14414": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12684": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152537": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14413": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12680": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152536": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14401": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12672": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152478": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14374": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12660": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152477": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14311": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12659": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152476": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14208": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12655": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152475": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12649": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152474": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14170": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12645": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152472": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14169": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12635": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152470": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14168": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12634": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152469": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14152": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12627": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152468": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14120": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12623": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152467": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14118": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12622": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152466": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14109": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12588": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152465": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14100": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12580": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152464": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-14025": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12574": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152463": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13996": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12564": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152461": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13994": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12562": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152459": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13992": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12559": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152458": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13990": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12557": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152457": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13978": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12547": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152455": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13918": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12546": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152432": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13914": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12545": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152431": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13913": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12531": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152430": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13907": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12526": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152429": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13888": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12517": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152427": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13880": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12502": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152426": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13853": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12498": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152425": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13840": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12494": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152424": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12492": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152422": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13729": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12490": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152421": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13689": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12488": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152420": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13688": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12481": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152419": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13647": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12474": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152418": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13607": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12444": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152417": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13595": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12424": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152416": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13586": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12419": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152415": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13584": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12413": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152413": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13578": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12394": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152412": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13571": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12385": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152411": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13568": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12381": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152410": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13520": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12374": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152409": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12371": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152408": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13461": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12362": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152407": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13455": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12340": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152406": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13394": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12327": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152405": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13393": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12324": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152404": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13309": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12314": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152403": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13277": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12313": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152402": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13199": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12292": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152401": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13195": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12290": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152400": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12284": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152398": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13191": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12283": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152397": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13174": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12280": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152396": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152394": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13147": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12259": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152391": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13146": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12256": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152389": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13124": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12255": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152388": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13119": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12253": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152387": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13097": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12245": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152386": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13094": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12241": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152385": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13091": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12238": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152384": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13089": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12231": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152383": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12227": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152382": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-13019": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12221": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152379": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-12966": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12206": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152378": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-12964": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12199": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152377": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12198": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152376": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-12876": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12168": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152375": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-12842": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12163": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152374": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-12808": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12160": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152372": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12152": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152371": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-12776": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12151": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152367": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-12775": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12150": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152366": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-12774": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12149": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152355": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-12768": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12125": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152353": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-12759": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12120": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152352": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-12683": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12112": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152350": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-12662": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12100": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152347": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-12651": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12098": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152339": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-12642": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12091": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152321": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12083": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152313": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-12612": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12078": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152311": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-12610": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12077": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152309": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-12566": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12072": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152306": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12071": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152301": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-12521": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12063": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152299": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-12517": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12058": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152297": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-12408": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12046": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152295": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12045": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152294": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "alpha-12233": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12041": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152289": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12030": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "dive-152286": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
+  },
+  "wakutori-12022": {
+   "closed": false,
+   "checked": "2026-09-14T21:45:21+00:00"
   }
  }
 }

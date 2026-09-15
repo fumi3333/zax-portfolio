@@ -1,331 +1,331 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://resort-sort.fumiproject.dev/</loc>
+    <loc>https://fumiproject.dev/resort/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/compare/</loc>
+    <loc>https://fumiproject.dev/resort/compare/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/data/</loc>
+    <loc>https://fumiproject.dev/resort/data/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/ranking/wage/</loc>
+    <loc>https://fumiproject.dev/resort/ranking/wage/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/ranking/jobs/</loc>
+    <loc>https://fumiproject.dev/resort/ranking/jobs/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/shindan/</loc>
+    <loc>https://fumiproject.dev/resort/shindan/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/shizuoka/</loc>
+    <loc>https://fumiproject.dev/resort/area/shizuoka/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/tochigi/</loc>
+    <loc>https://fumiproject.dev/resort/area/tochigi/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/tokyo/</loc>
+    <loc>https://fumiproject.dev/resort/area/tokyo/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/hokkaido/</loc>
+    <loc>https://fumiproject.dev/resort/area/hokkaido/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/osaka/</loc>
+    <loc>https://fumiproject.dev/resort/area/osaka/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/aichi/</loc>
+    <loc>https://fumiproject.dev/resort/area/aichi/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/fukuoka/</loc>
+    <loc>https://fumiproject.dev/resort/area/fukuoka/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/kyoto/</loc>
+    <loc>https://fumiproject.dev/resort/area/kyoto/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/okinawa/</loc>
+    <loc>https://fumiproject.dev/resort/area/okinawa/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/kagoshima/</loc>
+    <loc>https://fumiproject.dev/resort/area/kagoshima/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/oita/</loc>
+    <loc>https://fumiproject.dev/resort/area/oita/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/fukushima/</loc>
+    <loc>https://fumiproject.dev/resort/area/fukushima/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/aomori/</loc>
+    <loc>https://fumiproject.dev/resort/area/aomori/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/miyagi/</loc>
+    <loc>https://fumiproject.dev/resort/area/miyagi/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/iwate/</loc>
+    <loc>https://fumiproject.dev/resort/area/iwate/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/kumamoto/</loc>
+    <loc>https://fumiproject.dev/resort/area/kumamoto/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/kanagawa/</loc>
+    <loc>https://fumiproject.dev/resort/area/kanagawa/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/nagasaki/</loc>
+    <loc>https://fumiproject.dev/resort/area/nagasaki/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/niigata/</loc>
+    <loc>https://fumiproject.dev/resort/area/niigata/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/toyama/</loc>
+    <loc>https://fumiproject.dev/resort/area/toyama/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/yamanashi/</loc>
+    <loc>https://fumiproject.dev/resort/area/yamanashi/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/nagano/</loc>
+    <loc>https://fumiproject.dev/resort/area/nagano/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/mie/</loc>
+    <loc>https://fumiproject.dev/resort/area/mie/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/fukui/</loc>
+    <loc>https://fumiproject.dev/resort/area/fukui/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/gifu/</loc>
+    <loc>https://fumiproject.dev/resort/area/gifu/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/gunma/</loc>
+    <loc>https://fumiproject.dev/resort/area/gunma/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/ibaraki/</loc>
+    <loc>https://fumiproject.dev/resort/area/ibaraki/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/yamagata/</loc>
+    <loc>https://fumiproject.dev/resort/area/yamagata/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/chiba/</loc>
+    <loc>https://fumiproject.dev/resort/area/chiba/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/shiga/</loc>
+    <loc>https://fumiproject.dev/resort/area/shiga/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/hyogo/</loc>
+    <loc>https://fumiproject.dev/resort/area/hyogo/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/okayama/</loc>
+    <loc>https://fumiproject.dev/resort/area/okayama/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/tottori/</loc>
+    <loc>https://fumiproject.dev/resort/area/tottori/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/shimane/</loc>
+    <loc>https://fumiproject.dev/resort/area/shimane/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/ishikawa/</loc>
+    <loc>https://fumiproject.dev/resort/area/ishikawa/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/hiroshima/</loc>
+    <loc>https://fumiproject.dev/resort/area/hiroshima/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/yamaguchi/</loc>
+    <loc>https://fumiproject.dev/resort/area/yamaguchi/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/tokushima/</loc>
+    <loc>https://fumiproject.dev/resort/area/tokushima/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/wakayama/</loc>
+    <loc>https://fumiproject.dev/resort/area/wakayama/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/kagawa/</loc>
+    <loc>https://fumiproject.dev/resort/area/kagawa/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/area/akita/</loc>
+    <loc>https://fumiproject.dev/resort/area/akita/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/feature/short-term/</loc>
+    <loc>https://fumiproject.dev/resort/feature/short-term/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/feature/couple/</loc>
+    <loc>https://fumiproject.dev/resort/feature/couple/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/feature/high-wage/</loc>
+    <loc>https://fumiproject.dev/resort/feature/high-wage/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/feature/ski/</loc>
+    <loc>https://fumiproject.dev/resort/feature/ski/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/feature/dorm-free/</loc>
+    <loc>https://fumiproject.dev/resort/feature/dorm-free/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/ranking/wage/</loc>
+    <loc>https://fumiproject.dev/resort/ranking/wage/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/ranking/jobs/</loc>
+    <loc>https://fumiproject.dev/resort/ranking/jobs/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resort-sort.fumiproject.dev/about/</loc>
+    <loc>https://fumiproject.dev/resort/about/</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>

@@ -260,7 +260,7 @@
     #site-links{order:4}
   }
 </style>
-
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F1K4SHC9LB"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-F1K4SHC9LB");</script>
 </head>
 <body>
 <header>
@@ -4253,7 +4253,7 @@
 
   <details>
     <summary>掲載データについて（正確性と限界）</summary>
-    <p><b>取得元</b>：各派遣会社が公開している求人ページ。取得時点は 2026年09月14日 です。</p>
+    <p><b>取得元</b>：各派遣会社が公開している求人ページ。取得時点は 2026年09月15日 です。</p>
     <p><b>募集終了の扱い</b>：掲載期限が過ぎたものは除外していますが、
       当サイトの取得後に募集が終了している場合があります。
       最新の状況は必ずリンク先の公式ページでご確認ください。</p>
@@ -4482,7 +4482,7 @@ function logSearchDebounced(matched, unknown){
       mix: byAg,                                        // 結果の会社構成
       wmed: ws.length ? ws[Math.floor(ws.length / 2)] : ""  // 結果の時給中央値
     });
-    if (matched === 0) flushLog();       // 0件は取りこぼしたくないので即送信
+    flushLog();       // 検索が確定した時点で即時送信（キューに溜め込まず確実に記録する）
   }, 1200);
 }
 

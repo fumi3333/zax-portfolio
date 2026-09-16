@@ -3,6 +3,8 @@ Allow: /
 
 Sitemap: https://fumiproject.dev/sitemap-pages.xml
 Sitemap: https://fumiproject.dev/menkyo/sitemap.xml
+Sitemap: https://fumiproject.dev/taishoku/sitemap.xml
+Sitemap: https://fumiproject.dev/hikari/sitemap.xml
 Sitemap: https://fumiproject.dev/resort/sitemap-age.xml
 Sitemap: https://fumiproject.dev/resort/sitemap-analysis.xml
 Sitemap: https://fumiproject.dev/resort/sitemap-area-features.xml

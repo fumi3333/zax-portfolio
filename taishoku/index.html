@@ -1,0 +1,543 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>退職代行 横断比較ソート｜主要8社の料金・労働組合・弁護士対応を一発比較</title>
+<meta name="description" content="退職代行主要8社（TORIKESHI、ネルサポ、Jobs、ガーディアン、みやび等）の料金、運営元（労働組合/弁護士）、全額返金保証、即日対応を1画面で比較。明日から会社に行かずに最短即日退職できるサービスを整理。">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="canonical" href="https://fumiproject.dev/taishoku/">
+
+<style>
+  :root{
+    --bg:#ffffff; --card:#ffffff; --ink:#111111; --sub:#666666;
+    --line:#e8e8e8; --line-strong:#cccccc; --accent:#111111; --accent-hover:#333333;
+    --warn:#555555; --warnbg:#f4f4f4; --tagbg:#f8f9fa; --price-red:#dc2626;
+    --highlight-yellow:#fef08a; --accent-purple:#7c3aed; --accent-purple-light:#f3e8ff;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#09090b; --card:#121215; --ink:#ededed; --sub:#8e8e93;
+      --line:#27272a; --line-strong:#3f3f46; --accent:#ededed; --accent-hover:#cccccc;
+      --warn:#a1a1aa; --warnbg:#1c1c20; --tagbg:#18181b; --price-red:#ef4444;
+      --highlight-yellow:#854d0e; --accent-purple:#a855f7; --accent-purple-light:#3b0764;
+    }
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    font-size:14px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  }
+  header{
+    max-width:980px;margin:0 auto;padding:24px 16px 12px;
+    border-bottom:1px solid var(--line);
+  }
+  h1{font-size:21px;margin:0;letter-spacing:-0.02em;font-weight:700}
+  .lede{font-size:13.5px;color:var(--sub);margin:8px 0 0;line-height:1.65}
+
+  .hero-stats{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;
+    margin-top:14px;padding:12px;background:var(--tagbg);border:1px solid var(--line);border-radius:8px;
+  }
+  .hero-stat-cell{text-align:center}
+  .hero-stat-val{font-family:"JetBrains Mono",monospace;font-size:16px;font-weight:700;color:var(--ink)}
+  .hero-stat-lbl{font-size:11px;color:var(--sub);margin-top:1px}
+
+  main{max-width:980px;margin:0 auto;padding:16px}
+
+  .quick-chips-bar{
+    display:flex;gap:6px;overflow-x:auto;padding-bottom:10px;margin-bottom:14px;
+    scrollbar-width:none;-ms-overflow-style:none;
+  }
+  .quick-chips-bar::-webkit-scrollbar{display:none}
+  .chip-pill{
+    display:inline-flex;align-items:center;gap:4px;
+    background:var(--card);color:var(--ink);
+    border:1px solid var(--line-strong);border-radius:20px;
+    padding:6px 12px;font-size:12.5px;font-weight:600;
+    white-space:nowrap;cursor:pointer;transition:all 0.15s ease;
+    flex-shrink:0;user-select:none;
+  }
+  .chip-pill:hover{border-color:var(--ink);background:var(--tagbg)}
+  .chip-pill.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+  .service-list{display:flex;flex-direction:column;gap:14px}
+  .service-card{
+    background:var(--card);border:1px solid var(--line);border-radius:10px;
+    padding:18px;position:relative;transition:border-color 0.15s ease;
+  }
+  .service-card:hover{border-color:var(--line-strong)}
+  .sc-head{
+    display:flex;align-items:baseline;justify-content:space-between;
+    gap:10px;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:12px;flex-wrap:wrap;
+  }
+  .sc-title{font-size:17px;font-weight:700;color:var(--ink)}
+  .sc-badge{
+    font-size:11px;background:var(--ink);color:var(--bg);padding:2px 6px;border-radius:4px;font-weight:600;
+  }
+  .sc-price{font-family:"JetBrains Mono",monospace;font-size:20px;font-weight:700;color:var(--price-red)}
+
+  .meta-grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;
+    background:var(--tagbg);border-radius:6px;padding:10px 12px;margin-bottom:12px;font-size:12px;
+  }
+  .meta-cell{display:flex;flex-direction:column}
+  .meta-lbl{color:var(--sub);font-weight:600;font-size:10.5px}
+  .meta-val{font-weight:700;margin-top:2px}
+
+  .tag-row{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:12px}
+  .tag{
+    font-size:11px;padding:2px 7px;background:var(--tagbg);
+    border:1px solid var(--line);border-radius:4px;color:var(--sub);
+  }
+
+  .sc-foot{
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    padding-top:10px;border-top:1px solid var(--line);flex-wrap:wrap;
+  }
+  a.btn-cta{
+    display:inline-flex;align-items:center;gap:4px;
+    background:var(--accent);color:var(--bg);padding:8px 16px;
+    border-radius:6px;font-size:13px;font-weight:600;text-decoration:none;
+    transition:background 0.15s ease;
+  }
+  a.btn-cta:hover{background:var(--accent-hover)}
+
+  footer{
+    max-width:980px;margin:32px auto 0;padding:24px 16px 48px;
+    border-top:1px solid var(--line);text-align:center;color:var(--sub);font-size:12px;
+  }
+</style>
+
+</head>
+<body>
+<header>
+  <div style="display:flex;align-items:center;justify-content:space-between">
+    <h1><a href="https://fumiproject.dev/taishoku/" style="color:inherit;text-decoration:none">退職代行ソート</a></h1>
+    <span style="font-size:11px;color:var(--sub);border:1px solid var(--line);border-radius:3px;padding:1px 5px;">PR</span>
+  </div>
+  <p class="lede">明日から会社に行きたくない。有休を全部消化して辞めたい。主要退職代行8社の実勢料金・運営元種別（労働組合／弁護士／民間）・返金保証を中立に比較しました。</p>
+
+  <div class="hero-stats">
+    <div class="hero-stat-cell">
+      <div class="hero-stat-val">8 社</div>
+      <div class="hero-stat-lbl">厳選主要サービス</div>
+    </div>
+    <div class="hero-stat-cell">
+      <div class="hero-stat-val" style="color:var(--price-red);">¥22,000〜</div>
+      <div class="hero-stat-lbl">正社員最安水準</div>
+    </div>
+    <div class="hero-stat-cell">
+      <div class="hero-stat-val">100%</div>
+      <div class="hero-stat-lbl">退職成功実績</div>
+    </div>
+    <div class="hero-stat-cell">
+      <div class="hero-stat-val">24時間</div>
+      <div class="hero-stat-lbl">LINE即時相談</div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="quick-chips-bar" id="filter-bar">
+    <button type="button" class="chip-pill active" data-filter="all">すべて表示（8社）</button>
+    <button type="button" class="chip-pill" data-filter="労働組合">労働組合（安さ＋会社交渉権）</button>
+    <button type="button" class="chip-pill" data-filter="弁護士">弁護士対応（未払い給与・法的トラブル）</button>
+    <button type="button" class="chip-pill" data-filter="返金保証">全額返金保証あり</button>
+  </div>
+
+  <div class="service-list" id="service-list">
+    
+        <article class="service-card" data-type="労働組合">
+          <div class="sc-head">
+            <div>
+              <span class="sc-badge">20代支持率No.1</span>
+              <div style="font-size:11px;color:var(--sub);margin-top:4px;">労働組合（日本労働産業ユニオン）</div>
+              <div class="sc-title" style="margin-top:2px;">退職代行TORIKESHI</div>
+            </div>
+            <div style="text-align:right;">
+              <div style="font-size:11px;color:var(--sub);">一律料金（税込・追加料金ゼロ）</div>
+              <div class="sc-price">¥25,000</div>
+            </div>
+          </div>
+
+          <div class="meta-grid">
+            <div class="meta-cell">
+              <span class="meta-lbl">成功率・実績</span>
+              <span class="meta-val">100%（累計対応10,000件以上）</span>
+            </div>
+            <div class="meta-cell">
+              <span class="meta-lbl">対応スピード</span>
+              <span class="meta-val">24時間365日（LINE相談即日対応）</span>
+            </div>
+            <div class="meta-cell">
+              <span class="meta-lbl">返金保証</span>
+              <span class="meta-val">全額返金保証あり</span>
+            </div>
+            <div class="meta-cell">
+              <span class="meta-lbl">会社交渉権</span>
+              <span class="meta-val">団体交渉権あり（労働組合）</span>
+            </div>
+          </div>
+
+          <div class="tag-row"><span class="tag">即日退職</span><span class="tag">全額返金保証</span><span class="tag">LINE完結</span><span class="tag">会社連絡一切不要</span><span class="tag">有休消化交渉</span><span class="tag">失業保険サポート</span></div>
+
+          <div class="sc-foot">
+            <span style="font-size:12px;color:var(--sub);">LINE無料相談OK・会社への連絡は一切不要</span>
+            <a class="btn-cta" href="https://torikeshi.jp/" target="_blank" rel="noopener nofollow">
+              退職代行TORIKESHI 公式サイトで無料LINE相談 &rarr;
+            </a>
+          </div>
+        </article>
+        
+        <article class="service-card" data-type="労働組合">
+          <div class="sc-head">
+            <div>
+              <span class="sc-badge">最安級コスパ</span>
+              <div style="font-size:11px;color:var(--sub);margin-top:4px;">労働組合（合同労働組合ネルサポユニオン）</div>
+              <div class="sc-title" style="margin-top:2px;">退職代行ネルサポ</div>
+            </div>
+            <div style="text-align:right;">
+              <div style="font-size:11px;color:var(--sub);">一律料金（税込・追加料金ゼロ）</div>
+              <div class="sc-price">¥24,000</div>
+            </div>
+          </div>
+
+          <div class="meta-grid">
+            <div class="meta-cell">
+              <span class="meta-lbl">成功率・実績</span>
+              <span class="meta-val">100%（累計5,000件以上）</span>
+            </div>
+            <div class="meta-cell">
+              <span class="meta-lbl">対応スピード</span>
+              <span class="meta-val">24時間対応（即日実行可）</span>
+            </div>
+            <div class="meta-cell">
+              <span class="meta-lbl">返金保証</span>
+              <span class="meta-val">全額返金保証あり</span>
+            </div>
+            <div class="meta-cell">
+              <span class="meta-lbl">会社交渉権</span>
+              <span class="meta-val">団体交渉権あり（労働組合）</span>
+            </div>
+          </div>
+
+          <div class="tag-row"><span class="tag">業界最安級</span><span class="tag">全額返金保証</span><span class="tag">LINE無料相談</span><span class="tag">有休交渉可能</span><span class="tag">転職支援金あり</span></div>
+
+          <div class="sc-foot">
+            <span style="font-size:12px;color:var(--sub);">LINE無料相談OK・会社への連絡は一切不要</span>
+            <a class="btn-cta" href="https://nel-suppo.com/" target="_blank" rel="noopener nofollow">
+              退職代行ネルサポ 公式サイトで無料LINE相談 &rarr;
+            </a>
+          </div>
+        </article>
+        
+        <article class="service-card" data-type="労働組合提携・弁護士監修">
+          <div class="sc-head">
+            <div>
+              <span class="sc-badge">安心の弁護士監修</span>
+              <div style="font-size:11px;color:var(--sub);margin-top:4px;">労働組合提携・弁護士監修（株式会社アーク / 労働組合Jobs）</div>
+              <div class="sc-title" style="margin-top:2px;">退職代行Jobs</div>
+            </div>
+            <div style="text-align:right;">
+              <div style="font-size:11px;color:var(--sub);">一律料金（税込・追加料金ゼロ）</div>
+              <div class="sc-price">¥27,000</div>
+            </div>
+          </div>
+
+          <div class="meta-grid">
+            <div class="meta-cell">
+              <span class="meta-lbl">成功率・実績</span>
+              <span class="meta-val">100%（顧問弁護士（西前啓介氏）監修）</span>
+            </div>
+            <div class="meta-cell">
+              <span class="meta-lbl">対応スピード</span>
+              <span class="meta-val">24時間365日対応</span>
+            </div>
+            <div class="meta-cell">
+              <span class="meta-lbl">返金保証</span>
+              <span class="meta-val">全額返金保証あり</span>
+            </div>
+            <div class="meta-cell">
+              <span class="meta-lbl">会社交渉権</span>
+              <span class="meta-val">団体交渉権あり（労働組合）</span>
+            </div>
+          </div>
+
+          <div class="tag-row"><span class="tag">弁護士監修</span><span class="tag">労働組合提携</span><span class="tag">全額返金保証</span><span class="tag">LINE相談無料</span><span class="tag">求職票サポート</span><span class="tag">社宅退去対応</span></div>
+
+          <div class="sc-foot">
+            <span style="font-size:12px;color:var(--sub);">LINE無料相談OK・会社への連絡は一切不要</span>
+            <a class="btn-cta" href="https://jobs-service.com/" target="_blank" rel="noopener nofollow">
+              退職代行Jobs 公式サイトで無料LINE相談 &rarr;
+            </a>
+          </div>
+        </article>
+        
+        <article class="service-card" data-type="労働組合">
+          <div class="sc-head">
+            <div>
+              <span class="sc-badge">スピード対応</span>
+              <div style="font-size:11px;color:var(--sub);margin-top:4px;">労働組合（日本労働産業ユニオン）</div>
+              <div class="sc-title" style="margin-top:2px;">退職代行OITOMA</div>
+            </div>
+            <div style="text-align:right;">
+              <div style="font-size:11px;color:var(--sub);">一律料金（税込・追加料金ゼロ）</div>
+              <div class="sc-price">¥24,000</div>
+            </div>
+          </div>
+
+          <div class="meta-grid">
+            <div class="meta-cell">
+              <span class="meta-lbl">成功率・実績</span>
+              <span class="meta-val">100%（スピード対応実績多数）</span>
+            </div>
+            <div class="meta-cell">
+              <span class="meta-lbl">対応スピード</span>
+              <span class="meta-val">24時間LINE即時対応</span>
+            </div>
+            <div class="meta-cell">
+              <span class="meta-lbl">返金保証</span>
+              <span class="meta-val">全額返金保証あり</span>
+            </div>
+            <div class="meta-cell">
+              <span class="meta-lbl">会社交渉権</span>
+              <span class="meta-val">団体交渉権あり（労働組合）</span>
+            </div>
+          </div>
+
+          <div class="tag-row"><span class="tag">即日退職</span><span class="tag">全額返金保証</span><span class="tag">LINE完結</span><span class="tag">回数無制限相談</span><span class="tag">書類作成サポート</span></div>
+
+          <div class="sc-foot">
+            <span style="font-size:12px;color:var(--sub);">LINE無料相談OK・会社への連絡は一切不要</span>
+            <a class="btn-cta" href="https://oitoma-service.com/" target="_blank" rel="noopener nofollow">
+              退職代行OITOMA 公式サイトで無料LINE相談 &rarr;
+            </a>
+          </div>
+        </article>
+        
+        <article class="service-card" data-type="法認労働組合">
+          <div class="sc-head">
+            <div>
+              <span class="sc-badge">老舗の確実性</span>
+              <div style="font-size:11px;color:var(--sub);margin-top:4px;">法認労働組合（東京労働経済組合）</div>
+              <div class="sc-title" style="margin-top:2px;">退職代行ガーディアン</div>
+            </div>
+            <div style="text-align:right;">
+              <div style="font-size:11px;color:var(--sub);">一律料金（税込・追加料金ゼロ）</div>
+              <div class="sc-price">¥29,800</div>
+            </div>
+          </div>
+
+          <div class="meta-grid">
+            <div class="meta-cell">
+              <span class="meta-lbl">成功率・実績</span>
+              <span class="meta-val">100%（東京都労働委員会認証の合同労組）</span>
+            </div>
+            <div class="meta-cell">
+              <span class="meta-lbl">対応スピード</span>
+              <span class="meta-val">365日全国対応</span>
+            </div>
+            <div class="meta-cell">
+              <span class="meta-lbl">返金保証</span>
+              <span class="meta-val">相談の上対応</span>
+            </div>
+            <div class="meta-cell">
+              <span class="meta-lbl">会社交渉権</span>
+              <span class="meta-val">団体交渉権あり（労働組合）</span>
+            </div>
+          </div>
+
+          <div class="tag-row"><span class="tag">法認労組直営</span><span class="tag">非弁行為リスクゼロ</span><span class="tag">確実な団体交渉権</span><span class="tag">追加費用一切なし</span><span class="tag">即日対応</span></div>
+
+          <div class="sc-foot">
+            <span style="font-size:12px;color:var(--sub);">LINE無料相談OK・会社への連絡は一切不要</span>
+            <a class="btn-cta" href="https://taisyokudaiko.jp/" target="_blank" rel="noopener nofollow">
+              退職代行ガーディアン 公式サイトで無料LINE相談 &rarr;
+            </a>
+          </div>
+        </article>
+        
+        <article class="service-card" data-type="労働組合提携・弁護士監修">
+          <div class="sc-head">
+            <div>
+              <span class="sc-badge">アルバイト最安</span>
+              <div style="font-size:11px;color:var(--sub);margin-top:4px;">労働組合提携・弁護士監修（株式会社アルバトロス）</div>
+              <div class="sc-title" style="margin-top:2px;">退職代行モームリ</div>
+            </div>
+            <div style="text-align:right;">
+              <div style="font-size:11px;color:var(--sub);">一律料金（税込・追加料金ゼロ）</div>
+              <div class="sc-price">¥22,000</div>
+            </div>
+          </div>
+
+          <div class="meta-grid">
+            <div class="meta-cell">
+              <span class="meta-lbl">成功率・実績</span>
+              <span class="meta-val">99.8%（SNS・YouTube話題性No.1）</span>
+            </div>
+            <div class="meta-cell">
+              <span class="meta-lbl">対応スピード</span>
+              <span class="meta-val">24時間365日対応</span>
+            </div>
+            <div class="meta-cell">
+              <span class="meta-lbl">返金保証</span>
+              <span class="meta-val">全額返金保証あり</span>
+            </div>
+            <div class="meta-cell">
+              <span class="meta-lbl">会社交渉権</span>
+              <span class="meta-val">団体交渉権あり（労働組合）</span>
+            </div>
+          </div>
+
+          <div class="tag-row"><span class="tag">アルバイト12,000円</span><span class="tag">後払い対応</span><span class="tag">全額返金保証</span><span class="tag">弁護士監修</span><span class="tag">店舗来店相談可</span></div>
+
+          <div class="sc-foot">
+            <span style="font-size:12px;color:var(--sub);">LINE無料相談OK・会社への連絡は一切不要</span>
+            <a class="btn-cta" href="https://momuri.com/" target="_blank" rel="noopener nofollow">
+              退職代行モームリ 公式サイトで無料LINE相談 &rarr;
+            </a>
+          </div>
+        </article>
+        
+        <article class="service-card" data-type="弁護士法人">
+          <div class="sc-head">
+            <div>
+              <span class="sc-badge">法律トラブル完全解決</span>
+              <div style="font-size:11px;color:var(--sub);margin-top:4px;">弁護士法人（弁護士法人みやび（東京弁護士会所属））</div>
+              <div class="sc-title" style="margin-top:2px;">弁護士法人みやび</div>
+            </div>
+            <div style="text-align:right;">
+              <div style="font-size:11px;color:var(--sub);">一律料金（税込・追加料金ゼロ）</div>
+              <div class="sc-price">¥55,000</div>
+            </div>
+          </div>
+
+          <div class="meta-grid">
+            <div class="meta-cell">
+              <span class="meta-lbl">成功率・実績</span>
+              <span class="meta-val">100%（損害賠償請求・残業代回収実績多数）</span>
+            </div>
+            <div class="meta-cell">
+              <span class="meta-lbl">対応スピード</span>
+              <span class="meta-val">弁護士直通LINE対応</span>
+            </div>
+            <div class="meta-cell">
+              <span class="meta-lbl">返金保証</span>
+              <span class="meta-val">相談の上対応</span>
+            </div>
+            <div class="meta-cell">
+              <span class="meta-lbl">会社交渉権</span>
+              <span class="meta-val">弁護士直接交渉</span>
+            </div>
+          </div>
+
+          <div class="tag-row"><span class="tag">弁護士直接交渉</span><span class="tag">未払い残業代請求</span><span class="tag">退職金交渉</span><span class="tag">損害賠償脅迫への対抗</span><span class="tag">公務員・役員対応</span></div>
+
+          <div class="sc-foot">
+            <span style="font-size:12px;color:var(--sub);">LINE無料相談OK・会社への連絡は一切不要</span>
+            <a class="btn-cta" href="https://taishoku-miyabi.jp/" target="_blank" rel="noopener nofollow">
+              弁護士法人みやび 公式サイトで無料LINE相談 &rarr;
+            </a>
+          </div>
+        </article>
+        
+        <article class="service-card" data-type="弁護士法人">
+          <div class="sc-head">
+            <div>
+              <span class="sc-badge">弁護士対応最安級</span>
+              <div style="font-size:11px;color:var(--sub);margin-top:4px;">弁護士法人（弁護士法人フォーゲル綜合法律事務所）</div>
+              <div class="sc-title" style="margin-top:2px;">弁護士法人フォーゲル</div>
+            </div>
+            <div style="text-align:right;">
+              <div style="font-size:11px;color:var(--sub);">一律料金（税込・追加料金ゼロ）</div>
+              <div class="sc-price">¥33,000</div>
+            </div>
+          </div>
+
+          <div class="meta-grid">
+            <div class="meta-cell">
+              <span class="meta-lbl">成功率・実績</span>
+              <span class="meta-val">100%（メディア掲載多数・弁護士スピード対応）</span>
+            </div>
+            <div class="meta-cell">
+              <span class="meta-lbl">対応スピード</span>
+              <span class="meta-val">LINE相談即日受付</span>
+            </div>
+            <div class="meta-cell">
+              <span class="meta-lbl">返金保証</span>
+              <span class="meta-val">全額返金保証あり</span>
+            </div>
+            <div class="meta-cell">
+              <span class="meta-lbl">会社交渉権</span>
+              <span class="meta-val">弁護士直接交渉</span>
+            </div>
+          </div>
+
+          <div class="tag-row"><span class="tag">弁護士対応で3万円台</span><span class="tag">有給消化交渉</span><span class="tag">全額返金保証</span><span class="tag">給与未払い交渉</span><span class="tag">安心の直接対応</span></div>
+
+          <div class="sc-foot">
+            <span style="font-size:12px;color:var(--sub);">LINE無料相談OK・会社への連絡は一切不要</span>
+            <a class="btn-cta" href="https://vogel-law.jp/" target="_blank" rel="noopener nofollow">
+              弁護士法人フォーゲル 公式サイトで無料LINE相談 &rarr;
+            </a>
+          </div>
+        </article>
+        
+  </div>
+
+  <!-- ガイドセクション -->
+  <div style="margin-top:32px;background:var(--tagbg);border:1px solid var(--line);border-radius:10px;padding:20px;">
+    <h2 style="font-size:16px;margin-top:0;">退職代行選びで失敗しないための3つの基準</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;font-size:13px;line-height:1.7;">
+      <div>
+        <b>1. 運営元が「労働組合」か確認</b>
+        <p style="color:var(--sub);margin:4px 0 0;">民間企業が運営する格安業者は会社と交渉できず（非弁行為）、有給消化を拒否される恐れがあります。労働組合または弁護士対応を選びましょう。</p>
+      </div>
+      <div>
+        <b>2. 追加料金が一切発生しないか</b>
+        <p style="color:var(--sub);margin:4px 0 0;">当サイトに掲載している主要サービスは、書類作成や相談回数による追加料金のない「一律料金」のみを厳選しています。</p>
+      </div>
+      <div>
+        <b>3. 全額返金保証の有無</b>
+        <p style="color:var(--sub);margin:4px 0 0;">万が一退職できなかった場合に全額が戻る保証が付いているサービスを選ぶと、金銭的リスクがゼロになります。</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2026 taishoku-sort by ZAX. All rights reserved.</p>
+  <div style="margin-top:6px;display:flex;justify-content:center;gap:12px;">
+    <a href="https://fumiproject.dev/resort/">リゾートソート</a>
+    <a href="https://fumiproject.dev/menkyo/">合宿免許ソート</a>
+    <a href="https://fumiproject.dev/">ZAX ポートフォリオ</a>
+  </div>
+</footer>
+
+<script>
+  const buttons = document.querySelectorAll('.chip-pill');
+  const cards = document.querySelectorAll('.service-card');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+
+      cards.forEach(card => {
+        if (filter === 'all') {
+          card.style.display = 'block';
+        } else if (filter === '労働組合') {
+          card.style.display = card.dataset.type.includes('労働組合') ? 'block' : 'none';
+        } else if (filter === '弁護士') {
+          card.style.display = card.dataset.type.includes('弁護士') ? 'block' : 'none';
+        } else if (filter === '返金保証') {
+          card.style.display = card.innerText.includes('全額返金保証あり') ? 'block' : 'none';
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>

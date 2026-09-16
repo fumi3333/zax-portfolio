@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>光回線実質月額ソート | キャッシュバック・工事費・スマホ割込み実質費用で横断比較</title>
+  <meta name="description" content="主要光回線6社の月額料金、公式キャッシュバック、工事費無料条件、スマホセット割を実測反映。見せかけの月額ではなく「契約期間の実質負担額」で最安プランを横断比較できる中立ツール。">
+  <link rel="canonical" href="https://fumiproject.dev/hikari/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --primary-light: #e0f2fe;
+      --accent: #d97706;
+      --surface: #ffffff;
+      --bg: #f8fafc;
+      --border: #e2e8f0;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --badge-bg: #f1f5f9;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      --radius: 12px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', 'Noto Sans JP', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 800;
+      font-size: 1.15rem;
+    }
+    .brand-badge {
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.7rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+    .pr-badge {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .hero {
+      background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%);
+      padding: 32px 16px 24px;
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 1.7rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+    .hero-sub {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      max-width: 640px;
+      margin: 0 auto 16px;
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    .stat-box {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      padding: 8px 16px;
+      border-radius: 8px;
+      box-shadow: var(--shadow-sm);
+    }
+    .stat-val {
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--primary-dark);
+    }
+    .stat-lbl {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+    .main-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 16px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 768px) {
+      .main-container { grid-template-columns: 1fr; }
+    }
+    .filter-panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      height: fit-content;
+      position: sticky;
+      top: 72px;
+    }
+    .filter-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .filter-group {
+      margin-bottom: 16px;
+    }
+    .filter-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      display: block;
+    }
+    .select-box, .input-box {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.85rem;
+      background: #fff;
+    }
+    .plan-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: border-color 0.2s;
+    }
+    .plan-card:hover {
+      border-color: var(--primary);
+    }
+    .plan-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+    }
+    .plan-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .carrier-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      background: var(--primary-light);
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-top: 4px;
+    }
+    .price-box {
+      text-align: right;
+    }
+    .price-real {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #b91c1c;
+    }
+    .price-unit {
+      font-size: 0.75rem;
+      font-weight: normal;
+      color: var(--text-muted);
+    }
+    .price-official {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .grid-info {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      background: #f8fafc;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+    }
+    .info-item-label {
+      color: var(--text-muted);
+      font-size: 0.72rem;
+    }
+    .info-item-val {
+      font-weight: 600;
+      color: var(--text);
+    }
+    .tags-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .feature-tag {
+      font-size: 0.72rem;
+      background: var(--badge-bg);
+      color: #334155;
+      padding: 3px 8px;
+      border-radius: 4px;
+      border: 1px solid #e2e8f0;
+    }
+    .action-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 4px;
+    }
+    .calc-note {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      line-height: 1.3;
+    }
+    .btn-apply {
+      background: #ea580c;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.85rem;
+      display: inline-block;
+      text-align: center;
+      transition: background 0.15s;
+    }
+    .btn-apply:hover {
+      background: #c2410c;
+    }
+    .notice-section {
+      max-width: 1100px;
+      margin: 32px auto;
+      padding: 24px 16px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 0.82rem;
+      color: #475569;
+      line-height: 1.6;
+    }
+    footer {
+      border-top: 1px solid var(--border);
+      background: #ffffff;
+      padding: 24px 16px;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="/hikari/" class="brand">
+        <span>光回線実質月額ソート</span>
+        <span class="brand-badge">実測比較</span>
+      </a>
+      <span class="pr-badge">広告・PRを含む</span>
+    </div>
+  </header>
+
+  <div class="hero">
+    <h1>見せかけの基本料金に騙されない、光回線の「実質月額」横断比較</h1>
+    <p class="hero-sub">
+      「月額3,000円台！」と謳われても、高額な工事費分割金や複雑なキャッシュバック受取条件で損をすることが多発しています。
+      当サイトはキャッシュバック、工事費実質無料、スマホセット割を全て合算した「実際の総支払額」を中立に算出・ソートします。
+    </p>
+    <div class="hero-stats">
+      <div class="stat-box">
+        <div class="stat-val">主要6大回線</div>
+        <div class="stat-lbl">公式・優良代理店横断</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val">最大 ¥128,000</div>
+        <div class="stat-lbl">還元特典実測反映</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-val">¥0 登録不要</div>
+        <div class="stat-lbl">誰でも即時試算</div>
+      </div>
+    </div>
+  </div>
+
+  <main class="main-container">
+    <aside class="filter-panel">
+      <div class="filter-title">
+        <span>絞り込み条件</span>
+        <span id="match-count" style="font-size:0.8rem; color:var(--primary); font-weight:700;">6件</span>
+      </div>
+      
+      <div class="filter-group">
+        <label class="filter-label">住居タイプ</label>
+        <select id="filter-type" class="select-box" onchange="applyFilters()">
+          <option value="all">すべて（戸建て/マンション）</option>
+          <option value="mansion">マンション・集合住宅</option>
+          <option value="detached">戸建て（ファミリー）</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label class="filter-label">利用中のスマホ（セット割）</label>
+        <select id="filter-carrier" class="select-box" onchange="applyFilters()">
+          <option value="all">指定なし</option>
+          <option value="docomo">ドコモ（eximo/irumo/ギガホ）</option>
+          <option value="au">au / UQ mobile</option>
+          <option value="softbank">SoftBank / Y!mobile</option>
+          <option value="rakuten">楽天モバイル</option>
+          <option value="ahamo">格安SIM・ahamo・povo・LINEMO</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label class="filter-label">契約期間・縛り</label>
+        <select id="filter-contract" class="select-box" onchange="applyFilters()">
+          <option value="all">指定なし</option>
+          <option value="no-bound">契約期間縛りなし・違約金0円</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label class="filter-label">並び替え</label>
+        <select id="sort-order" class="select-box" onchange="applyFilters()">
+          <option value="real_price_asc">実質月額が安い順</option>
+          <option value="cashback_desc">キャッシュバック額が高い順</option>
+          <option value="speed_desc">通信速度・実測重視</option>
+        </select>
+      </div>
+    </aside>
+
+    <section>
+      <div id="plans-list"></div>
+    </section>
+  </main>
+
+  <section class="notice-section">
+    <h3 style="font-weight:700; margin-bottom:8px; color:var(--text);">実質月額の計算ロジックと注意点について</h3>
+    <p>
+      実質月額は【（月額基本料 × 契約想定期間36ヶ月 ＋ 事務手数料 ＋ 工事費実質負担額 － キャッシュバック特典額） ÷ 36ヶ月】で試算しています。スマホセット割（最大1,100円/月割引）は家族の回線数によって総家計負担がさらに下がるため、ご利用のスマホキャリアに合わせて最適なプランを選択してください。
+    </p>
+    <p style="margin-top:8px;">
+      各特典の受取時期（開通翌月〜12ヶ月後）や申請手続き（メール申請・アンケート回答等）は回線事業者ごとに異なります。詳細な適用条件は各社公式サイトをご確認ください。
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2026 光回線実質月額ソート / FumiProject. All rights reserved.</p>
+    <p style="margin-top:4px;"><a href="/" style="color:var(--text-muted); text-decoration:none;">総合トップ</a> | <a href="/resort/" style="color:var(--text-muted); text-decoration:none;">リゾートバイトソート</a> | <a href="/menkyo/" style="color:var(--text-muted); text-decoration:none;">合宿免許ソート</a> | <a href="/taishoku/" style="color:var(--text-muted); text-decoration:none;">退職代行ソート</a></p>
+  </footer>
+
+  <script>
+    const plans = [{"slug": "gmo-tokutoku", "name": "GMOとくとくBB光（GMO光アクセス）", "carrier": "独自コラボ光（v6プラス標準）", "monthly_mansion": 3773, "monthly_family": 4818, "cashback": 40000, "real_monthly_mansion": 2106, "real_monthly_family": 3151, "construction_fee": "実質無料（36ヶ月利用で0円）", "contract_period": "契約期間縛りなし・解約金0円", "speed": "最大1Gbps（次世代v6プラスWi-Fiルーター無料レンタル）", "smartphone_set": "格安SIM・キャリア問わず全員最安", "badge": "縛りなし実質最安No.1", "features": ["解約金0円", "契約縛りなし", "高性能ルーター無料", "他社解約金最大6万円還元"], "official_url": "https://gmobb.jp/service/gmohikari/", "affiliate_url": "https://gmobb.jp/service/gmohikari/"}, {"slug": "nuro-hikari", "name": "NURO光", "carrier": "ソニーネットワークコミュニケーションズ（独自網）", "monthly_mansion": 2090, "monthly_family": 5200, "cashback": 45000, "real_monthly_mansion": 1590, "real_monthly_family": 3325, "construction_fee": "実質無料（44,000円が全額割引）", "contract_period": "2年契約 / 3年契約", "speed": "下り最大2Gbps（超高速・オンラインゲーム向け）", "smartphone_set": "ソフトバンクスマホが毎月最大1,100円引", "badge": "通信速度No.1", "features": ["下り最大2Gbps", "最大45,000円キャッシュバック", "ソニー製Wi-Fiルーター標準", "PS5月額オプション"], "official_url": "https://www.nuro.jp/", "affiliate_url": "https://www.nuro.jp/"}, {"slug": "docomo-hikari", "name": "ドコモ光（GMOとくとくBBプロバイダ）", "carrier": "NTT光コラボレーション", "monthly_mansion": 4400, "monthly_family": 5720, "cashback": 38000, "real_monthly_mansion": 2816, "real_monthly_family": 4136, "construction_fee": "完全無料（特典で工事費が完全に0円）", "contract_period": "2年定期契約", "speed": "最大1Gbps（v6プラス対応）", "smartphone_set": "ドコモスマホが毎月最大1,100円引 / 台", "badge": "ドコモユーザー必須", "features": ["新規工事費完全無料", "dポイント付与", "最大38,000円キャッシュバック", "Wi-Fiルーター無料"], "official_url": "https://gmobb.jp/service/docomohikari/", "affiliate_url": "https://gmobb.jp/service/docomohikari/"}, {"slug": "au-hikari", "name": "auひかり（NNコミュニケーションズ窓口）", "carrier": "KDDI独自光回線", "monthly_mansion": 4180, "monthly_family": 5610, "cashback": 72000, "real_monthly_mansion": 2180, "real_monthly_family": 3610, "construction_fee": "初期費用相当額割引（実質0円）", "contract_period": "2年契約 / 3年契約", "speed": "下り最大1Gbps（5G/10Gプランあり・独自網で混雑なし）", "smartphone_set": "auスマートバリュー / UQ自宅セット割（最大1,100円引）", "badge": "キャッシュバック最高峰", "features": ["最大72,000円現金還元", "独自網で爆速", "au・UQセット割", "最短1ヶ月で現金振込"], "official_url": "https://nn-com.co.jp/auhikari/", "affiliate_url": "https://nn-com.co.jp/auhikari/"}, {"slug": "softbank-hikari", "name": "SoftBank光（エヌズカンパニー窓口）", "carrier": "NTT光コラボレーション", "monthly_mansion": 4180, "monthly_family": 5720, "cashback": 40000, "real_monthly_mansion": 2513, "real_monthly_family": 4053, "construction_fee": "他社乗り換え工事費全額負担 / 新規実質無料", "contract_period": "2年契約", "speed": "最大1Gbps（IPv6高速ハイブリッド）", "smartphone_set": "ソフトバンク / ワイモバイル（最大1,650円引 / 台）", "badge": "ワイモバ・SB最安", "features": ["他社違約金・撤去費用を満額還元（最大10万円）", "最短1ヶ月現金振込", "おうち割光セット"], "official_url": "https://ns-softbankhikari.com/", "affiliate_url": "https://ns-softbankhikari.com/"}, {"slug": "rakuten-hikari", "name": "楽天ひかり", "carrier": "NTT光コラボレーション", "monthly_mansion": 4180, "monthly_family": 5280, "cashback": 0, "real_monthly_mansion": 4180, "real_monthly_family": 5280, "construction_fee": "キャンペーン時無料", "contract_period": "契約期間縛りなし", "speed": "最大1Gbps（次世代IPv6対応）", "smartphone_set": "楽天市場のSPUが毎日＋2倍", "badge": "楽天経済圏ならこれ", "features": ["楽天市場ポイント常時+2倍", "IPv6対応", "楽天モバイルとまとめて管理"], "official_url": "https://network.mobile.rakuten.co.jp/hikari/", "affiliate_url": "https://network.mobile.rakuten.co.jp/hikari/"}];
+
+    function renderPlans(data) {
+      const container = document.getElementById('plans-list');
+      const countEl = document.getElementById('match-count');
+      countEl.innerText = data.length + '件';
+
+      if (data.length === 0) {
+        container.innerHTML = '<div style="background:#fff; padding:32px; border-radius:12px; border:1px solid #e2e8f0; text-align:center; color:#64748b;">条件に一致する光回線が見つかりませんでした。絞り込み条件を緩和してください。</div>';
+        return;
+      }
+
+      let html = '';
+      data.forEach(p => {
+        const tags = p.features.map(f => `<span class="feature-tag">${f}</span>`).join('');
+        html += `
+          <div class="plan-card">
+            <div class="plan-header">
+              <div>
+                <div class="plan-name">${p.name}</div>
+                <span class="carrier-tag">${p.carrier_support}</span>
+              </div>
+              <div class="price-box">
+                <div class="price-real">¥${p.real_monthly_mansion.toLocaleString()}<span class="price-unit"> /月 (実質)</span></div>
+                <div class="price-official">戸建て実質: ¥${p.real_monthly_detached.toLocaleString()}/月</div>
+              </div>
+            </div>
+
+            <div class="grid-info">
+              <div>
+                <div class="info-item-label">キャッシュバック最大</div>
+                <div class="info-item-val" style="color:#ea580c;">¥${p.max_cashback.toLocaleString()}</div>
+              </div>
+              <div>
+                <div class="info-item-label">工事費</div>
+                <div class="info-item-val">${p.construction_fee}</div>
+              </div>
+              <div>
+                <div class="info-item-label">ルーター特典</div>
+                <div class="info-item-val">${p.router}</div>
+              </div>
+              <div>
+                <div class="info-item-label">契約期間・解約金</div>
+                <div class="info-item-val">${p.contract_term}</div>
+              </div>
+            </div>
+
+            <div class="tags-row">${tags}</div>
+
+            <div class="action-row">
+              <div class="calc-note">
+                受取時期: ${p.cb_period}<br>
+                ${p.summary}
+              </div>
+              <a href="${p.url}" target="_blank" rel="noopener sponsored" class="btn-apply">公式特典で詳細確認</a>
+            </div>
+          </div>
+        `;
+      });
+      container.innerHTML = html;
+    }
+
+    function applyFilters() {
+      const type = document.getElementById('filter-type').value;
+      const carrier = document.getElementById('filter-carrier').value;
+      const contract = document.getElementById('filter-contract').value;
+      const sort = document.getElementById('sort-order').value;
+
+      let filtered = plans.filter(p => {
+        if (contract === 'no-bound' && !p.contract_term.includes('なし')) return false;
+        if (carrier === 'docomo' && !p.carrier_support.includes('ドコモ')) return false;
+        if (carrier === 'au' && !p.carrier_support.includes('au')) return false;
+        if (carrier === 'softbank' && !p.carrier_support.includes('SoftBank')) return false;
+        if (carrier === 'rakuten' && !p.carrier_support.includes('楽天')) return false;
+        if (carrier === 'ahamo' && !p.carrier_support.includes('縛りなし')) return false;
+        return true;
+      });
+
+      filtered.sort((a, b) => {
+        if (sort === 'real_price_asc') {
+          const priceA = type === 'detached' ? a.real_monthly_detached : a.real_monthly_mansion;
+          const priceB = type === 'detached' ? b.real_monthly_detached : b.real_monthly_mansion;
+          return priceA - priceB;
+        }
+        if (sort === 'cashback_desc') {
+          return b.max_cashback - a.max_cashback;
+        }
+        return 0;
+      });
+
+      renderPlans(filtered);
+    }
+
+    applyFilters();
+  </script>
+</body>
+</html>

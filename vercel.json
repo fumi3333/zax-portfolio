@@ -192,6 +192,26 @@
       "source": "/diary",
       "destination": "https://fumiproject.dev/resort/diary/",
       "permanent": true
+    },
+    {
+      "source": "/school/(.*)",
+      "destination": "https://fumiproject.dev/menkyo/school/$1",
+      "permanent": true
+    },
+    {
+      "source": "/school",
+      "destination": "https://fumiproject.dev/menkyo/",
+      "permanent": true
+    },
+    {
+      "source": "/month/(.*)",
+      "destination": "https://fumiproject.dev/menkyo/month/$1",
+      "permanent": true
+    },
+    {
+      "source": "/month",
+      "destination": "https://fumiproject.dev/menkyo/",
+      "permanent": true
     }
   ]
 }

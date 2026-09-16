@@ -673,3 +673,36 @@ footer a:hover {
   font-weight: 800;
   display: inline-block;
 }
+
+/* Mobile Floating Bottom Bar */
+.mobile-jump-bar {
+  display: none;
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  background: var(--ink);
+  color: #ffffff;
+  border: var(--border-heavy);
+  box-shadow: 4px 4px 0px var(--accent);
+  padding: 12px 24px;
+  font-weight: 900;
+  font-size: 15px;
+  cursor: pointer;
+  white-space: nowrap;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.1s ease;
+}
+
+.mobile-jump-bar:active {
+  transform: translateX(-50%) translate(2px, 2px);
+  box-shadow: 2px 2px 0px var(--accent);
+}
+
+@media (max-width: 768px) {
+  .mobile-jump-bar {
+    display: inline-flex;
+  }
+}

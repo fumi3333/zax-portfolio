@@ -1,4 +1,4 @@
-/* menkyo-sort Vanilla JS App */
+/* menkyo-sort Vanilla JS App with Demand Tracking */
 document.addEventListener('DOMContentLoaded', () => {
   const cardsContainer = document.getElementById('school-grid');
   if (!cardsContainer) return;
@@ -7,22 +7,90 @@ document.addEventListener('DOMContentLoaded', () => {
   const countDisplay = document.getElementById('count-display');
   const searchInput = document.getElementById('search-input');
   const sortSelect = document.getElementById('sort-select');
+  const mobileBar = document.getElementById('mobile-jump-bar');
+  const mobileCount = document.getElementById('mobile-jump-count');
 
   // Filter state
   let currentRegion = 'all';
   let currentCourse = 'all';
   let currentRoom = 'all';
   let searchQuery = '';
+  let logTimer = null;
+
+  // Demand Logging (Cloudflare Worker D1)
+  const DEMAND_ENDPOINT = 'https://resort-demand.hrf-mtd.workers.dev/';
+  function sendLog(eventType, payload) {
+    try {
+      const data = JSON.stringify({
+        type: eventType,
+        genre: 'menkyo',
+        timestamp: new Date().toISOString(),
+        url: window.location.href,
+        referrer: document.referrer || '',
+        ...payload
+      });
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon(DEMAND_ENDPOINT, data);
+      } else {
+        fetch(DEMAND_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: data,
+          keepalive: true
+        }).catch(() => {});
+      }
+    } catch (e) {}
+  }
+
+  // Track Outbound Click on school CTA links
+  document.addEventListener('click', (e) => {
+    const cta = e.target.closest('.cta-btn, .school-link, a[target="_blank"]');
+    if (!cta) return;
+    const card = cta.closest('.school-card') || document.querySelector('.school-detail-card');
+    const schoolName = card ? (card.dataset.name || card.querySelector('h1, h2')?.innerText?.trim() || '') : '';
+    const siteText = cta.innerText?.trim() || '';
+    const href = cta.getAttribute('href') || '';
+    
+    sendLog('outbound', {
+      school: schoolName,
+      label: siteText,
+      destination: href,
+      minPrice: card ? (card.dataset.minPrice || '') : ''
+    });
+  });
+
+  // URL Parameters Initialization
+  const urlParams = new URLSearchParams(window.location.search);
+  const paramQ = urlParams.get('q');
+  const paramRegion = urlParams.get('region');
+  const paramRoom = urlParams.get('room');
+
+  if (paramQ && searchInput) {
+    searchInput.value = paramQ;
+    searchQuery = paramQ.trim().toLowerCase();
+  }
+  if (paramRegion) currentRegion = paramRegion;
+  if (paramRoom) currentRoom = paramRoom;
 
   // Filter buttons listeners
   document.querySelectorAll('.filter-group').forEach(group => {
+    const filterType = group.dataset.filterType;
+    if (filterType === 'region' && paramRegion) {
+      group.querySelectorAll('.pill-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.value === paramRegion);
+      });
+    }
+    if (filterType === 'room' && paramRoom) {
+      group.querySelectorAll('.pill-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.value === paramRoom);
+      });
+    }
+
     group.addEventListener('click', (e) => {
       const btn = e.target.closest('.pill-btn');
       if (!btn) return;
 
-      const filterType = group.dataset.filterType;
       const value = btn.dataset.value;
-
       group.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
@@ -46,6 +114,13 @@ document.addEventListener('DOMContentLoaded', () => {
   if (sortSelect) {
     sortSelect.addEventListener('change', () => {
       applyFilters();
+    });
+  }
+
+  // Mobile Jump Bar click listener
+  if (mobileBar) {
+    mobileBar.addEventListener('click', () => {
+      cardsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   }
 
@@ -107,6 +182,23 @@ document.addEventListener('DOMContentLoaded', () => {
     if (countDisplay) {
       countDisplay.innerHTML = `表示中: <strong>${visibleCount}</strong> 校 / 全 ${cards.length} 校`;
     }
+    if (mobileCount) {
+      mobileCount.textContent = `${visibleCount.toLocaleString()}校 ▾`;
+    }
+
+    // Debounced Demand Search Logging
+    clearTimeout(logTimer);
+    logTimer = setTimeout(() => {
+      sendLog('search', {
+        region: currentRegion,
+        course: currentCourse,
+        room: currentRoom,
+        query: searchQuery,
+        sort: sortVal,
+        hitCount: visibleCount,
+        zeroResult: visibleCount === 0
+      });
+    }, 400);
   }
 
   // Initial filter application

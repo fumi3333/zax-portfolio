@@ -1,294 +1,487 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>光回線実質月額ソート | キャッシュバック・工事費・スマホ割込み実質費用で横断比較</title>
-  <meta name="description" content="主要光回線6社の月額料金、公式キャッシュバック、工事費無料条件、スマホセット割を実測反映。見せかけの月額ではなく「契約期間の実質負担額」で最安プランを横断比較できる中立ツール。">
-  <link rel="canonical" href="https://fumiproject.dev/hikari/">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #0284c7;
-      --primary-dark: #0369a1;
-      --primary-light: #e0f2fe;
-      --accent: #d97706;
-      --surface: #ffffff;
-      --bg: #f8fafc;
-      --border: #e2e8f0;
-      --text: #0f172a;
-      --text-muted: #64748b;
-      --badge-bg: #f1f5f9;
-      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-      --radius: 12px;
+<meta charset="utf-8">
+<title>光回線の実質月額を6社まとめて横断比較｜光回線実質月額ソート</title>
+<meta name="description" content="主要光回線6社の月額料金、公式キャッシュバック、工事費無料条件、スマホセット割を実測合算。見せかけの基本料ではなく「3年間の実質負担額」で最安プランを横断比較できる中立ツール。">
+<meta name="keywords" content="光回線 比較, 光回線 実質月額, 光回線 キャッシュバック, 工事費無料, ドコモ光, auひかり, SoftBank光, GMOとくとくBB光, NURO光">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:image" content="https://fumiproject.dev/og.png">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://fumiproject.dev/hikari/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fumiproject.dev/hikari/">
+<meta property="og:title" content="光回線の実質月額を6社まとめて横断比較｜光回線実質月額ソート">
+<meta property="og:description" content="キャッシュバック・工事費・スマホ割を全て合算した「実質月額」で横断比較。">
+<meta property="og:site_name" content="光回線実質月額ソート">
+<meta name="twitter:card" content="summary">
+
+<!-- 構造化データ (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://fumiproject.dev/#zax",
+      "name": "ZAX",
+      "url": "https://fumiproject.dev/"
+    },
+    {
+      "@type": "WebSite",
+      "name": "光回線実質月額ソート",
+      "url": "https://fumiproject.dev/hikari/",
+      "description": "主要光回線6社の月額料金・キャッシュバック・工事費・スマホ割を合算した実質負担額比較ツール。",
+      "publisher": { "@id": "https://fumiproject.dev/#zax" },
+      "inLanguage": "ja"
+    },
+    {
+      "@type": "WebApplication",
+      "name": "光回線実質月額ソート",
+      "url": "https://fumiproject.dev/hikari/",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "JPY"
+      },
+      "featureList": [
+        "契約期間3年間のトータルコスト（実質月額）算出",
+        "公式＆優良代理店キャッシュバック最大額反映",
+        "スマホキャリア別セット割連動",
+        "縛りなし・違約金0円フィルター"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "「実質月額」とは何ですか？基本月額と何が違いますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "実質月額とは、3年間に支払う基本料金と初期費用の総額から、キャッシュバック等の割引還元額を差し引いて月割りした金額です。基本料金が安く見えても工事費が高額だったり、キャッシュバックが大きければ実質負担が劇的に下がるため、実質月額で比較するのが最も正確です。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "光回線の開通工事費は本当に無料になりますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "多くの光回線では「実質無料（工事費の分割請求額と同額を毎月割引）」が適用されます。ただし分割期間の途中で解約すると残債が一括請求される点に注意が必要です。当サイトでは残債リスクのない縛りなし回線も明示しています。"
+          }
+        }
+      ]
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Inter', 'Noto Sans JP', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
-    }
-    header {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 50;
-    }
-    .header-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 12px 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      text-decoration: none;
-      color: var(--text);
-      font-weight: 800;
-      font-size: 1.15rem;
-    }
-    .brand-badge {
-      background: var(--primary);
-      color: #fff;
-      font-size: 0.7rem;
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-weight: 700;
-    }
-    .pr-badge {
-      font-size: 0.65rem;
-      color: var(--text-muted);
-      border: 1px solid var(--border);
-      padding: 2px 6px;
-      border-radius: 4px;
-    }
-    .hero {
-      background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%);
-      padding: 32px 16px 24px;
-      border-bottom: 1px solid var(--border);
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 1.7rem;
-      font-weight: 800;
-      margin-bottom: 8px;
-      letter-spacing: -0.02em;
-    }
-    .hero-sub {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      max-width: 640px;
-      margin: 0 auto 16px;
-    }
-    .hero-stats {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-top: 16px;
-    }
-    .stat-box {
-      background: #ffffff;
-      border: 1px solid var(--border);
-      padding: 8px 16px;
-      border-radius: 8px;
-      box-shadow: var(--shadow-sm);
-    }
-    .stat-val {
-      font-weight: 800;
-      font-size: 1.1rem;
-      color: var(--primary-dark);
-    }
-    .stat-lbl {
-      font-size: 0.72rem;
-      color: var(--text-muted);
-    }
-    .main-container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 24px 16px;
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 24px;
-    }
-    @media (max-width: 768px) {
-      .main-container { grid-template-columns: 1fr; }
-    }
-    .filter-panel {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 18px;
-      height: fit-content;
-      position: sticky;
-      top: 72px;
-    }
-    .filter-title {
-      font-weight: 700;
-      font-size: 0.95rem;
-      margin-bottom: 14px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .filter-group {
-      margin-bottom: 16px;
-    }
-    .filter-label {
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-      display: block;
-    }
-    .select-box, .input-box {
-      width: 100%;
-      padding: 8px 12px;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      font-size: 0.85rem;
-      background: #fff;
-    }
-    .plan-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 20px;
-      margin-bottom: 16px;
-      box-shadow: var(--shadow-sm);
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      transition: border-color 0.2s;
-    }
-    .plan-card:hover {
-      border-color: var(--primary);
-    }
-    .plan-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 12px;
-    }
-    .plan-name {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--text);
-    }
-    .carrier-tag {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 600;
-      color: var(--primary-dark);
-      background: var(--primary-light);
-      padding: 2px 8px;
-      border-radius: 4px;
-      margin-top: 4px;
-    }
-    .price-box {
-      text-align: right;
-    }
-    .price-real {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: #b91c1c;
-    }
-    .price-unit {
-      font-size: 0.75rem;
-      font-weight: normal;
-      color: var(--text-muted);
-    }
-    .price-official {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-    }
-    .grid-info {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 12px;
-      background: #f8fafc;
-      padding: 12px;
-      border-radius: 8px;
-      font-size: 0.82rem;
-    }
-    .info-item-label {
-      color: var(--text-muted);
-      font-size: 0.72rem;
-    }
-    .info-item-val {
-      font-weight: 600;
-      color: var(--text);
-    }
-    .tags-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-    .feature-tag {
-      font-size: 0.72rem;
-      background: var(--badge-bg);
-      color: #334155;
-      padding: 3px 8px;
-      border-radius: 4px;
-      border: 1px solid #e2e8f0;
-    }
-    .action-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 4px;
-    }
-    .calc-note {
-      font-size: 0.72rem;
-      color: var(--text-muted);
-      line-height: 1.3;
-    }
-    .btn-apply {
-      background: #ea580c;
-      color: #ffffff;
-      padding: 10px 20px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.85rem;
-      display: inline-block;
-      text-align: center;
-      transition: background 0.15s;
-    }
-    .btn-apply:hover {
-      background: #c2410c;
-    }
-    .notice-section {
-      max-width: 1100px;
-      margin: 32px auto;
-      padding: 24px 16px;
-      background: #ffffff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      font-size: 0.82rem;
-      color: #475569;
-      line-height: 1.6;
-    }
-    footer {
-      border-top: 1px solid var(--border);
-      background: #ffffff;
-      padding: 24px 16px;
-      text-align: center;
-      font-size: 0.75rem;
-      color: var(--text-muted);
-    }
-  </style>
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --ink: #0f172a;
+    --sub: #64748b;
+    --line: #e2e8f0;
+    --primary: #0284c7;
+    --primary-dark: #0369a1;
+    --accent: #ea580c;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  header {
+    background: #ffffff;
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  .header-inner {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .brand {
+    font-size: 1.15rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--ink);
+  }
+  .brand-badge {
+    background: var(--primary);
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+  .pr-badge {
+    font-size: 0.65rem;
+    color: var(--sub);
+    border: 1px solid var(--line);
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+
+  /* お知らせバナー */
+  .update-banner {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin: 12px auto;
+    max-width: 980px;
+    font-size: 13px;
+    color: #166534;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* ヒーロー */
+  .hero {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 20px 16px 12px;
+  }
+  .hero h1 {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+  }
+  .hero-sub {
+    font-size: 13.5px;
+    color: var(--sub);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+  .hero-stats {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+  .stat-card {
+    background: #fff;
+    border: 1px solid var(--line);
+    padding: 8px 16px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+  }
+  .stat-val {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--primary);
+  }
+  .stat-lbl {
+    font-size: 0.72rem;
+    color: var(--sub);
+  }
+
+  /* ワンタップ人気条件ピル */
+  .quick-chips-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 0 16px;
+    padding: 2px 0 6px;
+    scrollbar-width: none;
+  }
+  .quick-chips-wrapper::-webkit-scrollbar { display: none; }
+  .quick-chips-bar {
+    display: flex;
+    gap: 8px;
+    white-space: nowrap;
+    width: max-content;
+  }
+  .chip-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 7px 14px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--ink);
+    cursor: pointer;
+    user-select: none;
+    transition: all .15s ease;
+  }
+  .chip-pill:hover { border-color: var(--ink); }
+  .chip-pill.active {
+    background: var(--ink);
+    color: #fff;
+    border-color: var(--ink);
+  }
+  .chip-badge {
+    font-size: 10px;
+    padding: 1px 5px;
+    border-radius: 10px;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    color: var(--sub);
+  }
+  .chip-pill.active .chip-badge {
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    border-color: transparent;
+  }
+
+  /* ナビゲーションタブ */
+  .nav-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .nav-tab {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background: #fff;
+    border: 1px solid var(--line);
+    color: var(--sub);
+    white-space: nowrap;
+  }
+  .nav-tab.active {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+  }
+
+  /* フィルター */
+  .filters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 14px;
+  }
+  label {
+    display: block;
+    font-size: 11px;
+    color: var(--sub);
+    margin-bottom: 5px;
+    font-weight: 700;
+  }
+  select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 13.5px;
+  }
+
+  /* 検索ジャンプ */
+  .jump-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 14px 2px 10px;
+    font-size: 13px;
+    color: var(--sub);
+    font-weight: 600;
+  }
+
+  /* カード一覧 */
+  .cards-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 18px;
+    transition: border-color .15s;
+  }
+  .card:hover {
+    border-color: var(--primary);
+  }
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+  }
+  .card-title {
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--ink);
+  }
+  .carrier-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 4px;
+    margin-top: 4px;
+    background: #e0f2fe;
+    color: #0369a1;
+  }
+
+  .price-box { text-align: right; }
+  .price-val {
+    font-size: 22px;
+    font-weight: 800;
+    color: #b91c1c;
+    letter-spacing: -0.02em;
+  }
+  .price-sub {
+    font-size: 11px;
+    color: var(--sub);
+  }
+
+  .matrix-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 8px;
+    background: #f8fafc;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+  .matrix-item { display: flex; flex-direction: column; }
+  .matrix-lbl { font-size: 10px; color: var(--sub); }
+  .matrix-val { font-weight: 700; color: var(--ink); }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+  .tag {
+    font-size: 11px;
+    background: #f1f5f9;
+    color: #334155;
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid #e2e8f0;
+  }
+
+  .card-action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 4px;
+  }
+  .card-desc {
+    font-size: 12px;
+    color: var(--sub);
+    max-width: 65%;
+  }
+  .btn-cta {
+    background: var(--accent);
+    color: #fff !important;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background .15s;
+    white-space: nowrap;
+  }
+  .btn-cta:hover {
+    background: #c2410c;
+    text-decoration: none;
+  }
+
+  /* SEO折りたたみ解説 & FAQ */
+  .seo-content {
+    margin: 32px auto;
+  }
+  .seo-accordion {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .seo-summary {
+    padding: 14px 18px;
+    font-weight: 700;
+    font-size: 13.5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+  }
+  .seo-box {
+    padding: 16px 20px 24px;
+    border-top: 1px dashed var(--line);
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--sub);
+  }
+  .seo-box h2 { font-size: 16px; color: var(--ink); margin: 0 0 10px; }
+  .seo-box h3 { font-size: 14px; color: var(--ink); margin: 16px 0 6px; }
+  .faq-q { font-weight: 700; color: var(--ink); margin-top: 14px; }
+  .faq-a { margin: 4px 0 12px; }
+
+  /* 回遊フッター */
+  .internal-links {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 24px 0;
+  }
+  .links-title {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 8px;
+    font-size: 12.5px;
+  }
+  .links-grid a {
+    color: var(--primary);
+  }
+
+  footer {
+    border-top: 1px solid var(--line);
+    background: #fff;
+    padding: 24px 16px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--sub);
+  }
+</style>
 </head>
 <body>
   <header>
@@ -302,149 +495,227 @@
   </header>
 
   <div class="hero">
-    <h1>見せかけの基本料金に騙されない、光回線の「実質月額」横断比較</h1>
+    <div class="update-banner">
+      <span>2026年最新：主要6大回線の最新キャッシュバック還元条件＆工事費実質無料判定データを反映済み</span>
+    </div>
+
+    <h1>見せかけの基本料に騙されない、光回線の「実質月額」横断比較</h1>
     <p class="hero-sub">
-      「月額3,000円台！」と謳われても、高額な工事費分割金や複雑なキャッシュバック受取条件で損をすることが多発しています。
-      当サイトはキャッシュバック、工事費実質無料、スマホセット割を全て合算した「実際の総支払額」を中立に算出・ソートします。
+      「月額3,000円台！」と謳われても、高額な工事費分割請求や受取困難なキャッシュバックで結果的に損をする人が後を絶ちません。
+      当サイトはキャッシュバック、工事費実質無料、スマホセット割を全て合算した「3年間の真の支払総額」で最安回線を中立にソートします。
     </p>
+
     <div class="hero-stats">
-      <div class="stat-box">
+      <div class="stat-card">
         <div class="stat-val">主要6大回線</div>
         <div class="stat-lbl">公式・優良代理店横断</div>
       </div>
-      <div class="stat-box">
+      <div class="stat-card">
         <div class="stat-val">最大 ¥128,000</div>
-        <div class="stat-lbl">還元特典実測反映</div>
+        <div class="stat-lbl">特典還元実測反映</div>
       </div>
-      <div class="stat-box">
+      <div class="stat-card">
+        <div class="stat-val">縛りなし0円</div>
+        <div class="stat-lbl">解約金なしプラン網羅</div>
+      </div>
+      <div class="stat-card">
         <div class="stat-val">¥0 登録不要</div>
-        <div class="stat-lbl">誰でも即時試算</div>
+        <div class="stat-lbl">即時シミュレーション</div>
       </div>
     </div>
-  </div>
 
-  <main class="main-container">
-    <aside class="filter-panel">
-      <div class="filter-title">
-        <span>絞り込み条件</span>
-        <span id="match-count" style="font-size:0.8rem; color:var(--primary); font-weight:700;">6件</span>
+    <!-- ワンタップ人気条件ピル -->
+    <div class="quick-chips-wrapper">
+      <div class="quick-chips-bar">
+        <button type="button" class="chip-pill active" onclick="setQuickFilter('all', this)">
+          すべて表示 <span class="chip-badge" id="pill-count-all">6</span>
+        </button>
+        <button type="button" class="chip-pill" onclick="setQuickFilter('no-bound', this)">
+          契約縛りなし・違約金0円 <span class="chip-badge">1</span>
+        </button>
+        <button type="button" class="chip-pill" onclick="setQuickFilter('docomo', this)">
+          ドコモ光セット割 <span class="chip-badge">1</span>
+        </button>
+        <button type="button" class="chip-pill" onclick="setQuickFilter('au', this)">
+          au / UQセット割 <span class="chip-badge">2</span>
+        </button>
+        <button type="button" class="chip-pill" onclick="setQuickFilter('softbank', this)">
+          SoftBank / Y!mobile割 <span class="chip-badge">2</span>
+        </button>
+        <button type="button" class="chip-pill" onclick="setQuickFilter('high-cb', this)">
+          CB 6万円以上 <span class="chip-badge">3</span>
+        </button>
       </div>
-      
-      <div class="filter-group">
-        <label class="filter-label">住居タイプ</label>
-        <select id="filter-type" class="select-box" onchange="applyFilters()">
-          <option value="all">すべて（戸建て/マンション）</option>
+    </div>
+
+    <!-- 関連ツール・特集ナビ -->
+    <div class="nav-tabs">
+      <a href="/hikari/" class="nav-tab active">横断ソート</a>
+      <a href="/hikari/compare/" class="nav-tab">回線タイプ徹底比較</a>
+      <a href="/hikari/shindan/" class="nav-tab">30秒最安回線診断</a>
+      <a href="/hikari/worry/trap/" class="nav-tab">キャッシュバックの罠</a>
+      <a href="/hikari/worry/construction/" class="nav-tab">開通工事と繋ぎWiFi</a>
+      <a href="/hikari/feature/no-bound/" class="nav-tab">縛りなし光回線特集</a>
+    </div>
+
+    <!-- フィルター -->
+    <div class="filters">
+      <div>
+        <label>住居タイプ</label>
+        <select id="filter-type" onchange="applyFilters()">
           <option value="mansion">マンション・集合住宅</option>
           <option value="detached">戸建て（ファミリー）</option>
         </select>
       </div>
 
-      <div class="filter-group">
-        <label class="filter-label">利用中のスマホ（セット割）</label>
-        <select id="filter-carrier" class="select-box" onchange="applyFilters()">
+      <div>
+        <label>スマホキャリア（セット割）</label>
+        <select id="filter-carrier" onchange="applyFilters()">
           <option value="all">指定なし</option>
           <option value="docomo">ドコモ（eximo/irumo/ギガホ）</option>
           <option value="au">au / UQ mobile</option>
           <option value="softbank">SoftBank / Y!mobile</option>
           <option value="rakuten">楽天モバイル</option>
-          <option value="ahamo">格安SIM・ahamo・povo・LINEMO</option>
+          <option value="ahamo">ahamo / povo / LINEMO / 格安SIM</option>
         </select>
       </div>
 
-      <div class="filter-group">
-        <label class="filter-label">契約期間・縛り</label>
-        <select id="filter-contract" class="select-box" onchange="applyFilters()">
+      <div>
+        <label>契約期間の縛り</label>
+        <select id="filter-bound" onchange="applyFilters()">
           <option value="all">指定なし</option>
-          <option value="no-bound">契約期間縛りなし・違約金0円</option>
+          <option value="no-bound">縛りなし（違約金0円）のみ</option>
         </select>
       </div>
 
-      <div class="filter-group">
-        <label class="filter-label">並び替え</label>
-        <select id="sort-order" class="select-box" onchange="applyFilters()">
+      <div>
+        <label>並び替え</label>
+        <select id="sort-order" onchange="applyFilters()">
           <option value="real_price_asc">実質月額が安い順</option>
-          <option value="cashback_desc">キャッシュバック額が高い順</option>
-          <option value="speed_desc">通信速度・実測重視</option>
+          <option value="cb_desc">キャッシュバック額が高い順</option>
         </select>
       </div>
-    </aside>
+    </div>
 
-    <section>
-      <div id="plans-list"></div>
-    </section>
-  </main>
+    <div class="jump-bar">
+      <span>掲載プラン一覧</span>
+      <span id="match-count" style="color:var(--primary);">6件</span>
+    </div>
 
-  <section class="notice-section">
-    <h3 style="font-weight:700; margin-bottom:8px; color:var(--text);">実質月額の計算ロジックと注意点について</h3>
-    <p>
-      実質月額は【（月額基本料 × 契約想定期間36ヶ月 ＋ 事務手数料 ＋ 工事費実質負担額 － キャッシュバック特典額） ÷ 36ヶ月】で試算しています。スマホセット割（最大1,100円/月割引）は家族の回線数によって総家計負担がさらに下がるため、ご利用のスマホキャリアに合わせて最適なプランを選択してください。
-    </p>
-    <p style="margin-top:8px;">
-      各特典の受取時期（開通翌月〜12ヶ月後）や申請手続き（メール申請・アンケート回答等）は回線事業者ごとに異なります。詳細な適用条件は各社公式サイトをご確認ください。
-    </p>
-  </section>
+    <div id="cards-container" class="cards-grid"></div>
+
+    <!-- SEO解説 & FAQ 折りたたみセクション -->
+    <div class="seo-content">
+      <details class="seo-accordion">
+        <summary class="seo-summary">
+          <span>光回線の「実質月額」計算ロジックと後悔しない選び方ガイド</span>
+          <span style="font-size:11px; color:var(--sub);">詳細を読む ▼</span>
+        </summary>
+        <div class="seo-box">
+          <h2>なぜ光回線は「基本月額」で選ぶと大損するのか？</h2>
+          <p>
+            光回線の広告でよく見かける「月額実質1,000円台」「基本料金3,000円台」という表記には、初月だけ安く翌月から急激に値上がりするトラップや、高額なオプション（月額数千円）への強制加入が隠されているケースが多々あります。
+          </p>
+          <h3>実質月額の計算計算式</h3>
+          <p>
+            当サイトでは以下の共通基準で3年間の実質月額を算出しています：<br>
+            <strong>実質月額 ＝ 【（月額料金 × 36ヶ月 ＋ 事務手数料 ＋ 工事費自己負担額 － キャッシュバック特典） ÷ 36ヶ月】</strong>
+          </p>
+
+          <h2 style="margin-top:24px;">スマホセット割による実質負担の劇的低下</h2>
+          <p>
+            家族で同じ携帯キャリアを利用している場合、スマホ1台あたり毎月最大1,100円の割引が永年適用されます。家族4人なら月4,400円引きとなり、<strong>光回線の月額料金が実質ゼロ円以下になる</strong>ケースも珍しくありません。
+          </p>
+
+          <h2 style="margin-top:24px;">よくある質問（FAQ）</h2>
+          <div class="faq-q">Q. 賃貸マンションで工事ができない場合はどうすればいいですか？</div>
+          <div class="faq-a">A. すでに建物に光コンセントが設置されている場合は無派遣工事（立ち会いなし、工事費数千円）で即開通できます。光ファイバー引き込みが完全NGの物件では、コンセントに挿すだけのホームルーターを検討してください。</div>
+
+          <div class="faq-q">Q. キャッシュバックはいつ・どのように受け取れますか？</div>
+          <div class="faq-a">A. 回線事業者によって大きく異なります。GMOとくとくBB等の優良代理店は開通翌月〜数ヶ月後に振込口座指定メールが届きます。受取時期が1年後などの場合はカレンダー通知を設定し、もらい忘れを防ぐことが極めて重要です。</div>
+        </div>
+      </details>
+    </div>
+
+    <!-- 内部リンク回遊網 -->
+    <div class="internal-links">
+      <div class="links-title">光回線実質月額ソート 特集・お役立ちコンテンツ一覧</div>
+      <div class="links-grid">
+        <a href="/hikari/compare/">光コラボ vs 独自回線 速度・料金比較表</a>
+        <a href="/hikari/shindan/">30秒 最安光回線シミュレーター</a>
+        <a href="/hikari/worry/trap/">キャッシュバックの罠ともらい忘れ対策</a>
+        <a href="/hikari/worry/construction/">開通工事の遅れ対策と無料レンタルWiFi</a>
+        <a href="/hikari/worry/penalty/">他社解約違約金を満額補填してもらう方法</a>
+        <a href="/hikari/feature/no-bound/">契約縛りなし・違約金0円の光回線特集</a>
+        <a href="/hikari/feature/high-cashback/">キャッシュバック6万円以上の高還元回線</a>
+      </div>
+    </div>
+  </div>
 
   <footer>
     <p>© 2026 光回線実質月額ソート / FumiProject. All rights reserved.</p>
-    <p style="margin-top:4px;"><a href="/" style="color:var(--text-muted); text-decoration:none;">総合トップ</a> | <a href="/resort/" style="color:var(--text-muted); text-decoration:none;">リゾートバイトソート</a> | <a href="/menkyo/" style="color:var(--text-muted); text-decoration:none;">合宿免許ソート</a> | <a href="/taishoku/" style="color:var(--text-muted); text-decoration:none;">退職代行ソート</a></p>
+    <p style="margin-top:4px;"><a href="/" style="color:var(--sub);">総合トップ</a> | <a href="/resort/" style="color:var(--sub);">リゾートバイトソート</a> | <a href="/menkyo/" style="color:var(--sub);">合宿免許ソート</a> | <a href="/taishoku/" style="color:var(--sub);">退職代行ソート</a></p>
   </footer>
 
   <script>
     const plans = [{"slug": "gmo-tokutoku", "name": "GMOとくとくBB光（GMO光アクセス）", "carrier": "独自コラボ光（v6プラス標準）", "monthly_mansion": 3773, "monthly_family": 4818, "cashback": 40000, "real_monthly_mansion": 2106, "real_monthly_family": 3151, "construction_fee": "実質無料（36ヶ月利用で0円）", "contract_period": "契約期間縛りなし・解約金0円", "speed": "最大1Gbps（次世代v6プラスWi-Fiルーター無料レンタル）", "smartphone_set": "格安SIM・キャリア問わず全員最安", "badge": "縛りなし実質最安No.1", "features": ["解約金0円", "契約縛りなし", "高性能ルーター無料", "他社解約金最大6万円還元"], "official_url": "https://gmobb.jp/service/gmohikari/", "affiliate_url": "https://gmobb.jp/service/gmohikari/"}, {"slug": "nuro-hikari", "name": "NURO光", "carrier": "ソニーネットワークコミュニケーションズ（独自網）", "monthly_mansion": 2090, "monthly_family": 5200, "cashback": 45000, "real_monthly_mansion": 1590, "real_monthly_family": 3325, "construction_fee": "実質無料（44,000円が全額割引）", "contract_period": "2年契約 / 3年契約", "speed": "下り最大2Gbps（超高速・オンラインゲーム向け）", "smartphone_set": "ソフトバンクスマホが毎月最大1,100円引", "badge": "通信速度No.1", "features": ["下り最大2Gbps", "最大45,000円キャッシュバック", "ソニー製Wi-Fiルーター標準", "PS5月額オプション"], "official_url": "https://www.nuro.jp/", "affiliate_url": "https://www.nuro.jp/"}, {"slug": "docomo-hikari", "name": "ドコモ光（GMOとくとくBBプロバイダ）", "carrier": "NTT光コラボレーション", "monthly_mansion": 4400, "monthly_family": 5720, "cashback": 38000, "real_monthly_mansion": 2816, "real_monthly_family": 4136, "construction_fee": "完全無料（特典で工事費が完全に0円）", "contract_period": "2年定期契約", "speed": "最大1Gbps（v6プラス対応）", "smartphone_set": "ドコモスマホが毎月最大1,100円引 / 台", "badge": "ドコモユーザー必須", "features": ["新規工事費完全無料", "dポイント付与", "最大38,000円キャッシュバック", "Wi-Fiルーター無料"], "official_url": "https://gmobb.jp/service/docomohikari/", "affiliate_url": "https://gmobb.jp/service/docomohikari/"}, {"slug": "au-hikari", "name": "auひかり（NNコミュニケーションズ窓口）", "carrier": "KDDI独自光回線", "monthly_mansion": 4180, "monthly_family": 5610, "cashback": 72000, "real_monthly_mansion": 2180, "real_monthly_family": 3610, "construction_fee": "初期費用相当額割引（実質0円）", "contract_period": "2年契約 / 3年契約", "speed": "下り最大1Gbps（5G/10Gプランあり・独自網で混雑なし）", "smartphone_set": "auスマートバリュー / UQ自宅セット割（最大1,100円引）", "badge": "キャッシュバック最高峰", "features": ["最大72,000円現金還元", "独自網で爆速", "au・UQセット割", "最短1ヶ月で現金振込"], "official_url": "https://nn-com.co.jp/auhikari/", "affiliate_url": "https://nn-com.co.jp/auhikari/"}, {"slug": "softbank-hikari", "name": "SoftBank光（エヌズカンパニー窓口）", "carrier": "NTT光コラボレーション", "monthly_mansion": 4180, "monthly_family": 5720, "cashback": 40000, "real_monthly_mansion": 2513, "real_monthly_family": 4053, "construction_fee": "他社乗り換え工事費全額負担 / 新規実質無料", "contract_period": "2年契約", "speed": "最大1Gbps（IPv6高速ハイブリッド）", "smartphone_set": "ソフトバンク / ワイモバイル（最大1,650円引 / 台）", "badge": "ワイモバ・SB最安", "features": ["他社違約金・撤去費用を満額還元（最大10万円）", "最短1ヶ月現金振込", "おうち割光セット"], "official_url": "https://ns-softbankhikari.com/", "affiliate_url": "https://ns-softbankhikari.com/"}, {"slug": "rakuten-hikari", "name": "楽天ひかり", "carrier": "NTT光コラボレーション", "monthly_mansion": 4180, "monthly_family": 5280, "cashback": 0, "real_monthly_mansion": 4180, "real_monthly_family": 5280, "construction_fee": "キャンペーン時無料", "contract_period": "契約期間縛りなし", "speed": "最大1Gbps（次世代IPv6対応）", "smartphone_set": "楽天市場のSPUが毎日＋2倍", "badge": "楽天経済圏ならこれ", "features": ["楽天市場ポイント常時+2倍", "IPv6対応", "楽天モバイルとまとめて管理"], "official_url": "https://network.mobile.rakuten.co.jp/hikari/", "affiliate_url": "https://network.mobile.rakuten.co.jp/hikari/"}];
 
-    function renderPlans(data) {
-      const container = document.getElementById('plans-list');
+    function renderCards(data, houseType) {
+      const container = document.getElementById('cards-container');
       const countEl = document.getElementById('match-count');
       countEl.innerText = data.length + '件';
 
       if (data.length === 0) {
-        container.innerHTML = '<div style="background:#fff; padding:32px; border-radius:12px; border:1px solid #e2e8f0; text-align:center; color:#64748b;">条件に一致する光回線が見つかりませんでした。絞り込み条件を緩和してください。</div>';
+        container.innerHTML = '<div style="background:#fff; padding:32px; border-radius:10px; border:1px solid #e2e8f0; text-align:center; color:#64748b;">条件に一致する光回線が見つかりませんでした。条件を緩和してください。</div>';
         return;
       }
 
       let html = '';
       data.forEach(p => {
-        const tags = p.features.map(f => `<span class="feature-tag">${f}</span>`).join('');
+        const realPrice = houseType === 'detached' ? p.real_monthly_detached : p.real_monthly_mansion;
+        const basePrice = houseType === 'detached' ? p.monthly_detached : p.monthly_mansion;
+        const tagsHtml = p.features.map(f => `<span class="tag">${f}</span>`).join('');
+
         html += `
-          <div class="plan-card">
-            <div class="plan-header">
+          <div class="card">
+            <div class="card-top">
               <div>
-                <div class="plan-name">${p.name}</div>
+                <div class="card-title">${p.name}</div>
                 <span class="carrier-tag">${p.carrier_support}</span>
               </div>
               <div class="price-box">
-                <div class="price-real">¥${p.real_monthly_mansion.toLocaleString()}<span class="price-unit"> /月 (実質)</span></div>
-                <div class="price-official">戸建て実質: ¥${p.real_monthly_detached.toLocaleString()}/月</div>
+                <div class="price-val">実質 ¥${realPrice.toLocaleString()}<span style="font-size:12px; font-weight:normal; color:#64748b;"> /月</span></div>
+                <div class="price-sub">基本月額: ¥${basePrice.toLocaleString()}</div>
               </div>
             </div>
 
-            <div class="grid-info">
-              <div>
-                <div class="info-item-label">キャッシュバック最大</div>
-                <div class="info-item-val" style="color:#ea580c;">¥${p.max_cashback.toLocaleString()}</div>
+            <div class="matrix-grid">
+              <div class="matrix-item">
+                <span class="matrix-lbl">最大キャッシュバック</span>
+                <span class="matrix-val" style="color:#ea580c;">¥${p.max_cashback.toLocaleString()}</span>
               </div>
-              <div>
-                <div class="info-item-label">工事費</div>
-                <div class="info-item-val">${p.construction_fee}</div>
+              <div class="matrix-item">
+                <span class="matrix-lbl">工事費</span>
+                <span class="matrix-val">${p.construction_fee}</span>
               </div>
-              <div>
-                <div class="info-item-label">ルーター特典</div>
-                <div class="info-item-val">${p.router}</div>
+              <div class="matrix-item">
+                <span class="matrix-lbl">ルーター特典</span>
+                <span class="matrix-val">${p.router}</span>
               </div>
-              <div>
-                <div class="info-item-label">契約期間・解約金</div>
-                <div class="info-item-val">${p.contract_term}</div>
+              <div class="matrix-item">
+                <span class="matrix-lbl">契約縛り / 違約金</span>
+                <span class="matrix-val">${p.contract_term}</span>
               </div>
             </div>
 
-            <div class="tags-row">${tags}</div>
+            <div class="tags">${tagsHtml}</div>
 
-            <div class="action-row">
-              <div class="calc-note">
-                受取時期: ${p.cb_period}<br>
+            <div class="card-action">
+              <div class="card-desc">
+                特典受取時期: ${p.cb_period}<br>
                 ${p.summary}
               </div>
-              <a href="${p.url}" target="_blank" rel="noopener sponsored" class="btn-apply">公式特典で詳細確認</a>
+              <a href="${p.url}" target="_blank" rel="noopener sponsored" class="btn-cta">公式特典で申し込む</a>
             </div>
           </div>
         `;
@@ -452,14 +723,31 @@
       container.innerHTML = html;
     }
 
+    let currentQuick = 'all';
+
+    function setQuickFilter(type, btn) {
+      document.querySelectorAll('.chip-pill').forEach(el => el.classList.remove('active'));
+      btn.classList.add('active');
+      currentQuick = type;
+      applyFilters();
+    }
+
     function applyFilters() {
-      const type = document.getElementById('filter-type').value;
+      const houseType = document.getElementById('filter-type').value;
       const carrier = document.getElementById('filter-carrier').value;
-      const contract = document.getElementById('filter-contract').value;
+      const bound = document.getElementById('filter-bound').value;
       const sort = document.getElementById('sort-order').value;
 
       let filtered = plans.filter(p => {
-        if (contract === 'no-bound' && !p.contract_term.includes('なし')) return false;
+        // ピルフィルター
+        if (currentQuick === 'no-bound' && !p.contract_term.includes('なし')) return false;
+        if (currentQuick === 'docomo' && !p.carrier_support.includes('ドコモ')) return false;
+        if (currentQuick === 'au' && !p.carrier_support.includes('au')) return false;
+        if (currentQuick === 'softbank' && !p.carrier_support.includes('SoftBank')) return false;
+        if (currentQuick === 'high-cb' && p.max_cashback < 60000) return false;
+
+        // ドロップダウン
+        if (bound === 'no-bound' && !p.contract_term.includes('なし')) return false;
         if (carrier === 'docomo' && !p.carrier_support.includes('ドコモ')) return false;
         if (carrier === 'au' && !p.carrier_support.includes('au')) return false;
         if (carrier === 'softbank' && !p.carrier_support.includes('SoftBank')) return false;
@@ -470,17 +758,17 @@
 
       filtered.sort((a, b) => {
         if (sort === 'real_price_asc') {
-          const priceA = type === 'detached' ? a.real_monthly_detached : a.real_monthly_mansion;
-          const priceB = type === 'detached' ? b.real_monthly_detached : b.real_monthly_mansion;
-          return priceA - priceB;
+          const pA = houseType === 'detached' ? a.real_monthly_detached : a.real_monthly_mansion;
+          const pB = houseType === 'detached' ? b.real_monthly_detached : b.real_monthly_mansion;
+          return pA - pB;
         }
-        if (sort === 'cashback_desc') {
+        if (sort === 'cb_desc') {
           return b.max_cashback - a.max_cashback;
         }
         return 0;
       });
 
-      renderPlans(filtered);
+      renderCards(filtered, houseType);
     }
 
     applyFilters();

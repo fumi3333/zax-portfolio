@@ -412,6 +412,18 @@
       </select>
     </div>
     <div>
+      <label for="f-net-wage">想定手取り（月収目安）</label>
+      <select id="f-net-wage">
+        <option value="0">指定なし</option>
+        <option value="150000">手取15万〜 (月収約19万)</option>
+        <option value="180000">手取18万〜 (月収約22万)</option>
+        <option value="200000">手取20万〜 (月収約25万)</option>
+        <option value="220000">手取22万〜 (月収約27万)</option>
+        <option value="250000">手取25万〜 (月収約31万)</option>
+        <option value="280000">手取28万〜 (月収約35万)</option>
+      </select>
+    </div>
+    <div>
       <label for="f-meals">食事補助</label>
       <select id="f-meals">
         <option value="">指定なし</option>
@@ -421,8 +433,21 @@
       </select>
     </div>
     <div>
-      <label for="f-q">職種・施設名で検索</label>
-      <input id="f-q" type="search" placeholder="例：スキー場、フロント、レストラン">
+      <label for="f-cat">職種ジャンル</label>
+      <select id="f-cat">
+        <option value="">すべての職種</option>
+        <option value="レストラン|ホール|バイキング|配膳|飲食">レストラン・飲食（ホール・配膳）</option>
+        <option value="フロント|ベル|ナイトフロント|受付|案内">フロント・受付・ナイトフロント</option>
+        <option value="調理|調理補助|厨房|キッチン|洗い場">調理・調理補助・洗い場</option>
+        <option value="清掃|客室|ハウスキーピング|メイク|施設管理">清掃・客室メイク・施設管理</option>
+        <option value="スキー|リフト|レンタル|ゲレンデ|パトロール">スキー場・リフト・レンタル</option>
+        <option value="売店|ショップ|販売|レジ">売店・ショップ販売</option>
+        <option value="マリン|プール|アクティビティ|ゴルフ|レジャー">マリン・レジャー・アクティビティ</option>
+      </select>
+    </div>
+    <div>
+      <label for="f-q">フリーワード検索</label>
+      <input id="f-q" type="search" placeholder="例：温泉、ナイト、リフト券">
     </div>
   </div>
 
@@ -488,7 +513,8 @@
         <label><input type="checkbox" id="c-onsen"> 温泉・サウナ利用無料</label>
         <label><input type="checkbox" id="c-convenience"> コンビニ・スーパー徒歩圏内</label>
         <label><input type="checkbox" id="c-wifi"> 部屋Wi-Fiあり</label>
-        <label><input type="checkbox" id="c-dormfree"> 寮費・水光熱費無料（生活費0円）</label>
+        <label><input type="checkbox" id="c-dormfree"> 寮費・水光熱費無料</label>
+        <label><input type="checkbox" id="c-zerocost"> 生活費ゼロ（寮・光熱費無料＋食事付き・全額貯金可）</label>
       </div>
     </div>
 
@@ -577,6 +603,7 @@
     <label for="f-sort" style="font-weight:600;color:var(--ink)">並び順</label>
     <select id="f-sort" style="padding:6px 10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);font-size:13px">
       <option value="recommend">おすすめ順</option>
+      <option value="net_wage">手取り（月収目安）の高い順</option>
       <option value="wage">時給の高い順</option>
     </select>
     <span id="sort-note">時給・寮の種類・寮費・食事・勤務期間の記載を合わせて並べています。提携先の求人を少し上に表示しています。</span>
@@ -5361,7 +5388,9 @@ function currentConditions(){
     pref: v("f-pref"),
     region: v("f-region"), dorm: v("f-dorm"),
     wage: v("f-wage") === "0" ? "" : v("f-wage"),
+    net: v("f-net-wage") === "0" ? "" : v("f-net-wage"),
     meals: v("f-meals"),
+    cat: v("f-cat"),
     sort: v("f-sort"),
     // 日付は月に丸めず、入力された日そのものを残す。
     // 「2月14日から」「3月25日まで」という粒度が残っていないと、
@@ -5469,8 +5498,10 @@ function updateUrlParams(){
   if (c.pref) sp.set("pref", c.pref);
   if (c.region) sp.set("region", c.region);
   if (c.wage) sp.set("wage", c.wage);
+  if (c.net) sp.set("net", c.net);
   if (c.dorm) sp.set("dorm", c.dorm);
   if (c.meals) sp.set("meals", c.meals);
+  if (c.cat) sp.set("cat", c.cat);
   if (c.checks && c.checks.length) sp.set("c", c.checks.join(","));
   const qs = sp.toString();
   const newUrl = qs ? `${location.pathname}?${qs}` : location.pathname;
@@ -5491,8 +5522,10 @@ function applyUrlParams(){
   setVal("f-pref", "pref");
   setVal("f-region", "region");
   setVal("f-wage", "wage");
+  setVal("f-net-wage", "net");
   setVal("f-dorm", "dorm");
   setVal("f-meals", "meals");
+  setVal("f-cat", "cat");
 
   const cList = sp.get("c");
   if (cList) {
@@ -5516,7 +5549,9 @@ function passes(j){
   const pref = document.getElementById("f-pref").value;
   const dorm = document.getElementById("f-dorm").value;
   const wage = +document.getElementById("f-wage").value;
+  const netWage = +(document.getElementById("f-net-wage") ? document.getElementById("f-net-wage").value : 0);
   const meals = document.getElementById("f-meals").value;
+  const catPattern = document.getElementById("f-cat") ? document.getElementById("f-cat").value : "";
   const q = document.getElementById("f-q").value.trim().toLowerCase();
 
   if (reg && j.region !== reg) return false;
@@ -5524,7 +5559,23 @@ function passes(j){
   if (dorm === "完全個室" && j.dorm_type !== "完全個室") return false;
   if (dorm === "個室以上" && !["完全個室","個室（相部屋の可能性あり）"].includes(j.dorm_type)) return false;
   if (wage && (j.wage_min || 0) < wage) return false;
+  if (netWage > 0) {
+    let estNet = 0;
+    if (j.wage_type === "時給" && j.wage_min) {
+      estNet = j.wage_min * 8 * 22 * 0.81;
+    } else if (j.wage_type === "月給" && j.wage_min) {
+      estNet = j.wage_min * 0.81;
+    } else if (j.wage_type === "日給" && j.wage_min) {
+      estNet = j.wage_min * 22 * 0.81;
+    }
+    if (estNet < netWage) return false;
+  }
   if (meals && (j.meals_per_day || 0) < +meals) return false;
+  if (catPattern) {
+    const rx = new RegExp(catPattern, "i");
+    const hayCat = `${j.job_category || ""} ${j.workplace_name || ""} ${(j.job_tags || []).join(" ")}`;
+    if (!rx.test(hayCat)) return false;
+  }
 
   if (q) {
     // search_tags は地名の別名（ルスツ→留寿都、トマム→占冠 等）。
@@ -5630,6 +5681,11 @@ function passes(j){
   if (document.getElementById("c-immediate") && document.getElementById("c-immediate").checked && !j.immediate_ok) return false;
   if (document.getElementById("c-wifi") && document.getElementById("c-wifi").checked && !j.dorm_wifi) return false;
   if (document.getElementById("c-dormfree") && document.getElementById("c-dormfree").checked && j.dorm_cost !== 0) return false;
+  if (document.getElementById("c-zerocost") && document.getElementById("c-zerocost").checked) {
+    const dRaw = j.dorm_type_raw || "";
+    if (j.dorm_cost !== 0 || (j.meals_per_day || 0) < 2) return false;
+    if (dRaw.includes("一部負担") || dRaw.includes("一部自己負担") || dRaw.includes("有料")) return false;
+  }
   if (document.getElementById("c-newbie") && document.getElementById("c-newbie").checked && !j.inexperienced_ok) return false;
   if (document.getElementById("c-friends") && document.getElementById("c-friends").checked && !(j.friends_ok || j.couple_ok)) return false;
 
@@ -5650,9 +5706,9 @@ function updateToggleLabel(){
   const b = document.getElementById("filter-toggle");
   if (!b || b.getAttribute("aria-expanded") === "true") return;
   let n = 0;
-  // 「指定なし」を表す値はセレクトごとに違う（時給の下限だけ "0" が既定）。
+  // 「指定なし」を表す値はセレクトごとに違う（時給・手取りの下限だけ "0" が既定）。
   // 素朴に truthy で数えると、何も絞っていないのに「絞り込み中」と出る。
-  ["f-region","f-pref","f-dorm","f-wage","f-meals","f-q","f-start-date","f-end-date","f-term-select"]
+  ["f-region","f-pref","f-dorm","f-wage","f-net-wage","f-meals","f-cat","f-q","f-start-date","f-end-date","f-term-select"]
     .forEach(id => {
       const e = document.getElementById(id);
       if (e && e.value && e.value !== "0") n++;
@@ -5712,6 +5768,8 @@ function render(){
   if (sn) {
     sn.textContent = sortMode === "wage"
       ? "時給の高い順に並べています。ナイト系など一部の職種が上位に集まることがあります。"
+      : sortMode === "net_wage"
+      ? "想定手取り（月収目安）の高い順に並べています。税・社保控除後の手取り概算で比較できます。"
       : "時給・寮の種類・寮費・食事・勤務期間の記載を合わせて並べています。提携先の求人を少し上に表示しています。";
   }
   logSearchDebounced(matched.length, unknown);
@@ -5724,6 +5782,12 @@ function render(){
     else if (cond.region) condParts.push(cond.region);
     if (cond.q) condParts.push(`「${cond.q}」`);
     if (cond.wage) condParts.push(`時給${cond.wage}円〜`);
+    if (cond.net) condParts.push(`手取り月${Math.round(+cond.net/10000)}万〜`);
+    if (cond.cat) {
+      const catEl = document.getElementById("f-cat");
+      const catText = catEl && catEl.selectedIndex > 0 ? catEl.options[catEl.selectedIndex].text.split("（")[0] : "";
+      if (catText) condParts.push(catText);
+    }
     if (cond.dorm) condParts.push(cond.dorm);
     if (cond.checks && cond.checks.length) {
       const checkNames = {
@@ -5732,7 +5796,7 @@ function render(){
         newdorm: "新築・築浅寮", roombath: "部屋風呂トイレ", onsen: "温泉・サウナ無料",
         convenience: "コンビニ近い", ski: "スキー場", car: "車持込可",
         commute: "送迎・徒歩10分", immediate: "即日可", wifi: "部屋Wi-Fi",
-        dormfree: "寮費無料", newbie: "未経験歓迎", friends: "友達・カップル可"
+        dormfree: "寮費無料", zerocost: "生活費0円", newbie: "未経験歓迎", friends: "友達・カップル可"
       };
       cond.checks.forEach(c => { if (checkNames[c]) condParts.push(checkNames[c]); });
     }
@@ -5760,6 +5824,15 @@ function render(){
     const isHourlyB = b.wage_type === "時給";
     if (isHourlyA && !isHourlyB) return -1;
     if (!isHourlyA && isHourlyB) return 1;
+    if (sortMode === "net_wage") {
+      const getNet = x => {
+        if (x.wage_type === "時給" && x.wage_min) return Math.round(x.wage_min * 8 * 22 * 0.81);
+        if (x.wage_type === "月給" && x.wage_min) return Math.round(x.wage_min * 0.81);
+        if (x.wage_type === "日給" && x.wage_min) return Math.round(x.wage_min * 22 * 0.81);
+        return x.wage_min || 0;
+      };
+      return getNet(b) - getNet(a);
+    }
     if (sortMode === "wage") return (b.wage_min || 0) - (a.wage_min || 0);
     return score(b) - score(a);
   });

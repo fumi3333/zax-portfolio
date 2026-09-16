@@ -1,45 +1,47 @@
-/* Neubrutalism Design System for menkyo-sort (Resort-Sort Architecture) */
+/* menkyo-sort Design System — Exact Resort-Sort Minimalist Architecture */
 :root {
-  --bg: #fafafa;
+  --bg: #ffffff;
   --card: #ffffff;
   --ink: #111111;
-  --sub: #555555;
-  --line: #111111;
+  --sub: #666666;
+  --line: #e8e8e8;
+  --line-strong: #cccccc;
   --accent: #7c3aed;
-  --accent-light: #ede9fe;
+  --accent-light: #f3e8ff;
   --accent-hover: #6d28d9;
-  --neon-yellow: #fde047;
-  --neon-green: #4ade80;
-  --neon-red: #f87171;
-  --border-thick: 2px solid #111111;
-  --border-heavy: 3px solid #111111;
-  --shadow-main: 4px 4px 0px #111111;
-  --shadow-hover: 6px 6px 0px #111111;
-  --shadow-sm: 2px 2px 0px #111111;
+  --warn: #555555;
+  --warnbg: #f4f4f4;
+  --tagbg: #f8f9fa;
+  --price-red: #dc2626;
+  --success-green: #059669;
+  --highlight-yellow: #fef08a;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #0d0d11;
-    --card: #18181f;
-    --ink: #f4f4f5;
-    --sub: #a1a1aa;
-    --line: #f4f4f5;
+    --bg: #09090b;
+    --card: #121215;
+    --ink: #ededed;
+    --sub: #8e8e93;
+    --line: #27272a;
+    --line-strong: #3f3f46;
     --accent: #8b5cf6;
     --accent-light: #2e1065;
     --accent-hover: #a78bfa;
-    --neon-yellow: #facc15;
-    --border-thick: 2px solid #f4f4f5;
-    --border-heavy: 3px solid #f4f4f5;
-    --shadow-main: 4px 4px 0px #f4f4f5;
-    --shadow-hover: 6px 6px 0px #f4f4f5;
-    --shadow-sm: 2px 2px 0px #f4f4f5;
+    --warn: #a1a1aa;
+    --warnbg: #1c1c20;
+    --tagbg: #18181b;
+    --price-red: #ef4444;
+    --success-green: #10b981;
+    --highlight-yellow: #713f12;
   }
 }
 
 * {
   box-sizing: border-box;
-  border-radius: 0 !important;
 }
 
 body {
@@ -47,8 +49,7 @@ body {
   padding: 0;
   background: var(--bg);
   color: var(--ink);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
-  line-height: 1.6;
+  font: 15px/1.6 system-ui, -apple-system, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -57,19 +58,23 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 /* Header */
 header {
-  background: var(--card);
-  border-bottom: var(--border-heavy);
-  padding: 14px 20px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  padding: 16px 20px;
+  max-width: 980px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
 }
 
 .header-inner {
-  max-width: 1140px;
-  margin: 0 auto;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -84,179 +89,177 @@ header {
 }
 
 .logo {
-  font-size: 22px;
-  font-weight: 900;
-  letter-spacing: -0.04em;
-  background: var(--neon-yellow);
-  color: #111;
-  padding: 4px 10px;
-  border: var(--border-thick);
-  box-shadow: var(--shadow-sm);
-  display: inline-block;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+.logo:hover {
+  text-decoration: none;
 }
 
 .tagline {
   font-size: 13px;
-  font-weight: 700;
   color: var(--sub);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .badge-pr {
   font-size: 11px;
-  font-weight: 800;
-  background: var(--bg);
-  border: var(--border-thick);
-  padding: 2px 6px;
   color: var(--sub);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  background: var(--warnbg);
+  border: 1px solid var(--line);
+}
+
+/* Main Container */
+main {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 16px 40px;
 }
 
 /* Hero */
 .hero {
-  max-width: 1140px;
-  margin: 20px auto 16px;
-  padding: 0 16px;
-}
-
-.hero-banner {
-  background: var(--card);
-  border: var(--border-heavy);
-  box-shadow: var(--shadow-main);
-  padding: 24px;
+  margin: 20px 0 16px;
 }
 
 .hero-title {
-  font-size: 26px;
-  font-weight: 900;
-  line-height: 1.35;
-  margin: 0 0 12px;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.4;
+  margin: 0 0 8px;
   letter-spacing: -0.02em;
 }
 
 .hero-title mark {
-  background: var(--neon-yellow);
-  color: #111;
-  padding: 2px 6px;
+  background: transparent;
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .hero-desc {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--sub);
   margin: 0;
   line-height: 1.7;
 }
 
 .cancel-free-banner {
-  background: var(--neon-green);
-  color: #064e3b;
-  border: var(--border-heavy);
-  box-shadow: var(--shadow-sm);
-  padding: 12px 18px;
+  background: var(--warnbg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
   margin-top: 14px;
-  font-size: 13px;
-  font-weight: 800;
+  font-size: 12px;
+  color: var(--ink);
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
 .cancel-free-banner .badge {
-  background: #064e3b;
-  color: #ffffff;
+  background: var(--ink);
+  color: var(--bg);
   padding: 2px 6px;
-  font-size: 11px;
+  border-radius: var(--radius-sm);
+  font-size: 10px;
+  font-weight: 700;
   margin-right: 6px;
-  display: inline-block;
 }
 
-/* 入校時期カレンダー セクション */
+/* 入校時期カレンダー */
 .calendar-section {
-  max-width: 1140px;
-  margin: 0 auto 16px;
-  padding: 0 16px;
+  margin: 16px 0;
 }
 
 .calendar-card {
   background: var(--card);
-  border: var(--border-heavy);
-  box-shadow: var(--shadow-main);
-  padding: 16px 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 14px 16px;
 }
 
 .calendar-header {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 12px;
+  gap: 8px;
+  margin-bottom: 10px;
 }
 
 .cal-badge {
-  background: var(--accent);
-  color: #ffffff;
-  font-size: 12px;
-  font-weight: 900;
-  padding: 3px 8px;
-  border: var(--border-thick);
+  background: var(--accent-light);
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--accent);
 }
 
 .cal-title {
-  font-size: 14px;
-  font-weight: 900;
+  font-size: 13px;
+  font-weight: 700;
   color: var(--ink);
 }
 
 .calendar-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 8px;
 }
 
 .cal-month-btn {
-  background: var(--bg);
-  border: var(--border-thick);
-  padding: 10px 8px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 8px 6px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  box-shadow: var(--shadow-sm);
-  transition: all 0.1s ease;
+  transition: all 0.15s ease;
+  color: var(--ink);
 }
 
 .cal-month-btn:hover {
-  transform: translate(-1px, -1px);
-  box-shadow: 3px 3px 0px var(--line);
+  border-color: var(--accent);
   background: var(--accent-light);
 }
 
 .cal-month-btn.active {
-  background: var(--accent);
-  color: #ffffff;
-  border-color: var(--line);
-  box-shadow: 3px 3px 0px var(--line);
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
 }
 
 .cal-month-btn.active .cal-month-tag {
-  color: var(--neon-yellow);
+  color: #a78bfa;
 }
 
 .cal-month-name {
-  font-size: 16px;
-  font-weight: 900;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .cal-month-tag {
   font-size: 11px;
-  font-weight: 800;
   color: var(--sub);
   margin-top: 2px;
 }
 
 /* ワンタップ人気ピル群 */
 .quick-chips-section {
-  max-width: 1140px;
-  margin: 0 auto 16px;
-  padding: 0 16px;
+  margin: 14px 0;
 }
 
 .quick-chips-inner {
@@ -267,63 +270,59 @@ header {
 }
 
 .quick-label {
-  font-size: 13px;
-  font-weight: 900;
+  font-size: 12px;
+  font-weight: 700;
   color: var(--sub);
 }
 
 .quick-chip {
   background: var(--card);
-  border: var(--border-thick);
-  box-shadow: var(--shadow-sm);
-  padding: 6px 14px;
-  font-size: 13px;
-  font-weight: 800;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 12px;
   cursor: pointer;
-  transition: all 0.1s ease;
   color: var(--ink);
+  transition: all 0.15s ease;
 }
 
 .quick-chip:hover {
-  background: var(--neon-yellow);
-  color: #111;
-  transform: translate(-1px, -1px);
+  border-color: var(--ink);
 }
 
 .quick-chip.active {
   background: var(--ink);
   color: var(--bg);
-  box-shadow: 2px 2px 0px var(--accent);
+  border-color: var(--ink);
 }
 
 /* フィルターパネル */
 .filter-panel {
-  max-width: 1140px;
-  margin: 0 auto 20px;
-  padding: 18px 20px;
   background: var(--card);
-  border: var(--border-heavy);
-  box-shadow: var(--shadow-main);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  margin-bottom: 14px;
 }
 
 .filter-section-row {
   display: flex;
-  gap: 16px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
 .filter-col {
   flex: 1;
-  min-width: 260px;
+  min-width: 240px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
 }
 
 .filter-label {
-  font-size: 13px;
-  font-weight: 900;
-  color: var(--ink);
+  font-size: 12px;
+  color: var(--sub);
+  font-weight: 600;
 }
 
 .pill-group {
@@ -333,43 +332,44 @@ header {
 }
 
 .pill-btn {
-  background: var(--bg);
-  border: var(--border-thick);
-  padding: 6px 12px;
-  font-size: 13px;
-  font-weight: 800;
+  padding: 5px 12px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  font-size: 12px;
   cursor: pointer;
-  box-shadow: var(--shadow-sm);
   color: var(--ink);
-  transition: all 0.1s ease;
+  transition: all 0.15s;
 }
 
 .pill-btn:hover {
-  background: var(--accent-light);
-  transform: translate(-1px, -1px);
+  border-color: var(--ink);
 }
 
 .pill-btn.active {
-  background: var(--accent);
-  color: #ffffff;
+  background: var(--ink);
+  color: var(--bg);
+  border-color: var(--ink);
 }
 
 .custom-select, .search-input {
   width: 100%;
-  border: var(--border-thick);
-  padding: 8px 12px;
-  font-size: 14px;
-  font-weight: 700;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
   background: var(--bg);
   color: var(--ink);
-  box-shadow: var(--shadow-sm);
+  font-size: 13px;
+}
+
+.custom-select:focus, .search-input:focus {
+  outline: none;
+  border-color: var(--accent);
 }
 
 /* 検索結果ヘッダー */
 .results-header {
-  max-width: 1140px;
-  margin: 0 auto 14px;
-  padding: 0 16px;
+  margin: 14px 0 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -378,12 +378,14 @@ header {
 }
 
 .count-display {
-  font-size: 16px;
-  font-weight: 900;
-  background: var(--accent-light);
-  border: var(--border-thick);
-  padding: 4px 12px;
-  box-shadow: var(--shadow-sm);
+  font-size: 13px;
+  color: var(--sub);
+  font-weight: 600;
+}
+
+.count-display strong {
+  color: var(--ink);
+  font-size: 15px;
 }
 
 .sort-control {
@@ -394,28 +396,25 @@ header {
 
 /* 学校カード グリッド */
 .school-grid {
-  max-width: 1140px;
-  margin: 0 auto 30px;
-  padding: 0 16px;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 14px;
+  margin-bottom: 24px;
 }
 
 .school-card {
   background: var(--card);
-  border: var(--border-heavy);
-  box-shadow: var(--shadow-main);
-  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 16px 18px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  gap: 12px;
+  transition: border-color 0.15s ease;
 }
 
 .school-card:hover {
-  transform: translate(-2px, -2px);
-  box-shadow: var(--shadow-hover);
+  border-color: var(--line-strong);
 }
 
 .card-header {
@@ -423,28 +422,24 @@ header {
   justify-content: space-between;
   align-items: flex-start;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
 }
 
 .pref-badge {
   font-size: 11px;
-  font-weight: 800;
-  background: var(--bg);
-  border: var(--border-thick);
-  padding: 2px 6px;
-  display: inline-block;
-  margin-bottom: 4px;
+  color: var(--sub);
+  margin-bottom: 2px;
+  display: block;
 }
 
 .card-title {
-  font-size: 22px;
-  font-weight: 900;
+  font-size: 17px;
+  font-weight: 700;
   margin: 0;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 .card-title a:hover {
-  text-decoration: underline;
   color: var(--accent);
 }
 
@@ -455,73 +450,79 @@ header {
 }
 
 .highlight-badge {
-  font-size: 12px;
-  font-weight: 900;
-  padding: 3px 8px;
-  border: var(--border-thick);
-  background: var(--bg);
+  font-size: 11px;
+  padding: 2px 7px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: var(--tagbg);
+  color: var(--ink);
 }
 
 .diff-badge {
-  background: var(--neon-yellow);
+  background: #fef08a;
   color: #713f12;
+  border-color: #fde047;
+  font-weight: 700;
 }
 
 .season-badge {
-  background: var(--neon-green);
-  color: #064e3b;
+  background: #dcfce7;
+  color: #166534;
+  border-color: #86efac;
+  font-weight: 700;
 }
 
 .price-comparison-box {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 12px;
-  background: var(--bg);
-  border: var(--border-thick);
-  padding: 14px 18px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+  background: var(--tagbg);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
 }
 
 .price-item {
   display: flex;
   flex-direction: column;
-  gap: 2px;
 }
 
 .price-label {
   font-size: 11px;
-  font-weight: 800;
   color: var(--sub);
 }
 
 .price-value {
-  font-size: 24px;
-  font-weight: 900;
-  color: #b91c1c;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--price-red);
+  font-variant-numeric: tabular-nums;
 }
 
 .price-unit {
-  font-size: 14px;
+  font-size: 12px;
   color: var(--sub);
+  font-weight: 400;
 }
 
 .diff-info {
-  font-size: 14px;
-  font-weight: 900;
+  font-size: 13px;
+  font-weight: 700;
   color: var(--ink);
 }
 
 .card-features-row {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   flex-wrap: wrap;
 }
 
 .feature-tag {
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 11px;
+  color: var(--sub);
   background: var(--card);
   border: 1px solid var(--line);
-  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  padding: 2px 7px;
 }
 
 .source-row {
@@ -529,128 +530,139 @@ header {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 12px;
-  border-top: var(--border-thick);
-  padding-top: 12px;
+  gap: 10px;
+  border-top: 1px solid var(--line);
+  padding-top: 10px;
 }
 
 .agency-buttons-group {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   flex-wrap: wrap;
 }
 
 .agency-cta-btn {
   background: var(--card);
   color: var(--ink);
-  border: var(--border-thick);
-  padding: 6px 12px;
-  font-size: 12px;
-  font-weight: 900;
-  box-shadow: var(--shadow-sm);
-  transition: all 0.1s ease;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  transition: all 0.15s ease;
 }
 
 .agency-cta-btn:hover {
-  background: var(--neon-yellow);
-  color: #111;
-  transform: translate(-1px, -1px);
+  border-color: var(--accent);
+  color: var(--accent);
+  text-decoration: none;
 }
 
 .card-btn {
   background: var(--ink);
-  color: var(--bg);
-  border: var(--border-thick);
-  padding: 8px 18px;
-  font-size: 13px;
-  font-weight: 900;
-  box-shadow: var(--shadow-sm);
-  transition: all 0.1s ease;
+  color: var(--bg) !important;
+  border-radius: var(--radius-md);
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.15s ease;
 }
 
 .card-btn:hover {
   background: var(--accent);
-  color: #ffffff;
-  transform: translate(-1px, -1px);
+  text-decoration: none;
 }
 
 /* 比較テーブル */
+.table-container {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+}
+
 .comparison-table {
   width: 100%;
   border-collapse: collapse;
   font-size: 13px;
-  margin-top: 10px;
 }
 
 .comparison-table th, .comparison-table td {
-  border: var(--border-thick);
   padding: 10px 12px;
   text-align: left;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
 }
 
 .comparison-table th {
-  background: var(--bg);
-  font-weight: 900;
+  background: var(--tagbg);
+  color: var(--sub);
+  font-size: 11px;
+  font-weight: 600;
 }
 
 .cheapest-cell {
   background: #fef08a !important;
   color: #713f12 !important;
-  font-weight: 900 !important;
+  font-weight: 700 !important;
 }
 
 .cta-btn {
   background: var(--ink);
-  color: #ffffff;
-  border: var(--border-heavy);
-  padding: 12px 20px;
-  font-size: 15px;
-  font-weight: 900;
+  color: #ffffff !important;
+  border-radius: var(--radius-md);
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 700;
   text-align: center;
-  box-shadow: var(--shadow-main);
   display: block;
-  transition: all 0.1s ease;
+  transition: all 0.15s ease;
 }
 
 .cta-btn:hover {
   background: var(--accent);
-  transform: translate(-2px, -2px);
-  box-shadow: var(--shadow-hover);
+  text-decoration: none;
 }
 
 /* コンテンツ・FAQ */
 .content-section {
-  max-width: 1140px;
-  margin: 0 auto 40px;
-  padding: 0 16px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
+  margin-top: 30px;
 }
 
 .content-card {
   background: var(--card);
-  border: var(--border-heavy);
-  box-shadow: var(--shadow-main);
-  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
 }
 
 .content-card h2 {
-  font-size: 20px;
-  font-weight: 900;
-  margin: 0 0 12px;
-  border-left: 6px solid var(--accent);
-  padding-left: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.content-card p {
+  font-size: 13px;
+  color: var(--sub);
+  line-height: 1.8;
+  margin: 0 0 8px;
 }
 
 .faq-item {
   border-bottom: 1px solid var(--line);
-  padding: 14px 0;
+  padding: 10px 0;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
 }
 
 .faq-q {
-  font-weight: 900;
-  font-size: 15px;
+  font-weight: 700;
+  font-size: 14px;
   margin-bottom: 4px;
 }
 
@@ -667,8 +679,7 @@ header {
 
 /* Footer */
 footer {
-  background: var(--card);
-  border-top: var(--border-heavy);
+  border-top: 1px solid var(--line);
   padding: 30px 20px;
   text-align: center;
   margin-top: 40px;
@@ -684,21 +695,20 @@ footer {
   z-index: 999;
   background: var(--ink);
   color: #ffffff;
-  border: var(--border-heavy);
-  box-shadow: 4px 4px 0px var(--accent);
-  padding: 12px 24px;
-  font-weight: 900;
-  font-size: 15px;
+  border-radius: 30px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  padding: 10px 22px;
+  font-weight: 700;
+  font-size: 14px;
   cursor: pointer;
   white-space: nowrap;
   align-items: center;
-  gap: 8px;
-  transition: transform 0.1s ease;
+  gap: 6px;
+  transition: transform 0.15s ease;
 }
 
 .mobile-jump-bar:active {
-  transform: translateX(-50%) translate(2px, 2px);
-  box-shadow: 2px 2px 0px var(--accent);
+  transform: translateX(-50%) scale(0.96);
 }
 
 @media (max-width: 768px) {

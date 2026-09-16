@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>【価格差最大28万円】時期やサイトで安くなる教習所ランキングTOP15｜合宿免許ソート</title>
+  <meta name="description" content="入校時期をずらしたり、予約サイトを比較することで10万〜28万円も安くなる教習所まとめ。">
+  <link rel="canonical" href="https://fumiproject.dev/menkyo/ranking/large-discount/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap">
+  <style>
+    :root{
+      --bg:#ffffff; --card:#ffffff; --ink:#111111; --sub:#666666;
+      --line:#e8e8e8; --line-strong:#cccccc; --accent:#111111; --accent-hover:#333333;
+      --warn:#555555; --warnbg:#f4f4f4; --tagbg:#f8f9fa; --price-red:#dc2626;
+      --highlight-yellow:#fef08a; --accent-purple:#7c3aed; --accent-purple-light:#f3e8ff;
+    }
+    @media (prefers-color-scheme:dark){
+      :root{
+        --bg:#09090b; --card:#121215; --ink:#ededed; --sub:#8e8e93;
+        --line:#27272a; --line-strong:#3f3f46; --accent:#ededed; --accent-hover:#cccccc;
+        --warn:#a1a1aa; --warnbg:#1c1c20; --tagbg:#18181b; --price-red:#ef4444;
+      }
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP",sans-serif;font-size:14px;line-height:1.75;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:980px;margin:0 auto;padding:1.5rem 1rem}
+    
+    header{border-bottom:1px solid var(--line);padding-bottom:1.5rem;margin-bottom:2rem}
+    .site-title{font-family:"Instrument Sans",sans-serif;font-weight:700;font-size:1.6rem;letter-spacing:-0.03em;display:flex;align-items:center;gap:0.75rem}
+    .site-tag{font-family:"JetBrains Mono",monospace;font-size:0.7rem;background:var(--warnbg);border:1px solid var(--line);padding:0.2rem 0.5rem;border-radius:4px;color:var(--sub)}
+
+    .nav-tabs{display:flex;gap:0.75rem;margin-bottom:1.5rem;border-bottom:1px solid var(--line);padding-bottom:0.75rem;overflow-x:auto}
+    .nav-tab{padding:0.4rem 0.8rem;border-radius:6px;font-size:0.85rem;font-weight:500;color:var(--sub);white-space:nowrap}
+    .nav-tab.active{background:var(--ink);color:var(--bg)}
+    .nav-tab:hover:not(.active){background:var(--tagbg);color:var(--ink)}
+
+    .content-box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:2rem;margin-bottom:2rem}
+    h1{font-size:1.45rem;margin-top:0;border-bottom:2px solid var(--ink);padding-bottom:0.75rem;margin-bottom:1rem}
+    .lead{color:var(--sub);font-size:0.95rem;margin-bottom:2rem}
+
+    .rank-card{border:1px solid var(--line);border-radius:10px;padding:1.5rem;margin-bottom:1.25rem;background:var(--card)}
+    .rank-header{display:flex;align-items:baseline;gap:0.75rem;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:0.6rem;margin-bottom:1rem}
+    .rank-badge{font-family:"JetBrains Mono",monospace;font-size:0.85rem;font-weight:700;background:var(--ink);color:var(--bg);padding:0.2rem 0.6rem;border-radius:4px}
+    .rank-name{font-size:1.2rem;font-weight:700}
+    .rank-name a:hover{text-decoration:underline}
+    .rank-loc{font-size:0.85rem;color:var(--sub);margin-left:auto}
+
+    .rank-body{display:grid;grid-template-columns:180px 1fr;gap:1.5rem;align-items:center}
+    @media(max-width:640px){.rank-body{grid-template-columns:1fr}}
+
+    .rank-price-box{text-align:center;padding:1rem;background:var(--tagbg);border-radius:8px;border:1px solid var(--line)}
+    .rank-price{font-family:"JetBrains Mono",monospace;font-size:1.5rem;font-weight:700;color:var(--price-red)}
+    .rank-price-sub{font-size:0.75rem;color:var(--sub)}
+    .rank-diff-pill{font-size:0.75rem;background:#fef2f2;border:1px solid #fecaca;color:#b91c1c;padding:0.2rem 0.4rem;border-radius:4px;margin-top:0.4rem}
+
+    .tag{display:inline-block;font-size:0.75rem;background:var(--tagbg);border:1px solid var(--line);padding:0.2rem 0.5rem;border-radius:4px;margin-right:0.4rem;margin-bottom:0.4rem}
+    .rank-desc{font-size:0.88rem;color:var(--sub);margin:0.5rem 0}
+    .btn-detail{display:inline-block;background:var(--ink);color:var(--bg);padding:0.5rem 1rem;border-radius:6px;font-size:0.85rem;font-weight:600;margin-top:0.5rem}
+    .btn-detail:hover{opacity:0.85}
+
+    .other-ranks{margin-top:2.5rem;border-top:1px solid var(--line);padding-top:1.5rem}
+    .tab-link{display:block;padding:0.6rem 0.8rem;background:var(--tagbg);border:1px solid var(--line);border-radius:6px;margin-bottom:0.5rem;font-size:0.88rem}
+    .tab-link:hover{border-color:var(--line-strong)}
+
+    footer{border-top:1px solid var(--line);padding-top:2rem;margin-top:3rem;color:var(--sub);font-size:0.8rem;text-align:center}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="site-title">
+        <a href="https://fumiproject.dev/menkyo/">合宿免許ソート</a>
+        <span class="site-tag">ランキング特集</span>
+      </div>
+    </header>
+
+    <div class="nav-tabs">
+      <a class="nav-tab" href="https://fumiproject.dev/menkyo/">全国217校一覧</a>
+      <a class="nav-tab" href="https://fumiproject.dev/menkyo/shindan/">適性診断</a>
+      <a class="nav-tab" href="https://fumiproject.dev/menkyo/compare/">予約サイト3社比較</a>
+      <a class="nav-tab active" href="https://fumiproject.dev/menkyo/ranking/large-discount/">ランキング</a>
+      <a class="nav-tab" href="https://fumiproject.dev/menkyo/worry/single/">一人参加・不安解消</a>
+      <a class="nav-tab" href="https://fumiproject.dev/menkyo/article/how-it-works/">仕組みと価格差</a>
+    </div>
+
+    <div class="content-box">
+      <h1>価格差が大きい合宿免許ランキング TOP15</h1>
+      <p class="lead">閑散期と繁忙期の差や、予約サイトごとの価格差が大きく、「時期と窓口を工夫するだけで10万円以上得する」教習所上位15校です。</p>
+
+      
+        <div class="rank-card">
+          <div class="rank-header">
+            <div class="rank-badge">第 1 位</div>
+            <div class="rank-name"><a href="https://fumiproject.dev/menkyo/school/iwate-ad995f/">[岩手県]盛岡南ドライビングスクール</a></div>
+            <div class="rank-loc">東北・岩手県</div>
+          </div>
+          <div class="rank-body">
+            <div class="rank-price-box">
+              <div class="rank-price">¥206,800〜</div>
+              <div class="rank-price-sub">最安実測（税込）</div>
+              
+            </div>
+            <div class="rank-info">
+              <div class="rank-tags"></div>
+              <p class="rank-desc">JR各線主要駅より送迎バスあり</p>
+              <a class="btn-detail" href="https://fumiproject.dev/menkyo/school/iwate-ad995f/">詳細・カレンダー料金表を見る →</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="rank-card">
+          <div class="rank-header">
+            <div class="rank-badge">第 2 位</div>
+            <div class="rank-name"><a href="https://fumiproject.dev/menkyo/school/fukushima-f27eb7/">[福島県]南湖自動車学校</a></div>
+            <div class="rank-loc">東北・福島県</div>
+          </div>
+          <div class="rank-body">
+            <div class="rank-price-box">
+              <div class="rank-price">¥189,000〜</div>
+              <div class="rank-price-sub">最安実測（税込）</div>
+              
+            </div>
+            <div class="rank-info">
+              <div class="rank-tags"></div>
+              <p class="rank-desc">JR各線主要駅より送迎バスあり</p>
+              <a class="btn-detail" href="https://fumiproject.dev/menkyo/school/fukushima-f27eb7/">詳細・カレンダー料金表を見る →</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="rank-card">
+          <div class="rank-header">
+            <div class="rank-badge">第 3 位</div>
+            <div class="rank-name"><a href="https://fumiproject.dev/menkyo/school/kochi-bbad1a/">[高知県]高知県自動車学校</a></div>
+            <div class="rank-loc">中国・四国・高知県</div>
+          </div>
+          <div class="rank-body">
+            <div class="rank-price-box">
+              <div class="rank-price">¥182,600〜</div>
+              <div class="rank-price-sub">最安実測（税込）</div>
+              
+            </div>
+            <div class="rank-info">
+              <div class="rank-tags"></div>
+              <p class="rank-desc">JR各線主要駅より送迎バスあり</p>
+              <a class="btn-detail" href="https://fumiproject.dev/menkyo/school/kochi-bbad1a/">詳細・カレンダー料金表を見る →</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="rank-card">
+          <div class="rank-header">
+            <div class="rank-badge">第 4 位</div>
+            <div class="rank-name"><a href="https://fumiproject.dev/menkyo/school/suibara/">水原自動車学校</a></div>
+            <div class="rank-loc">甲信越・北陸・新潟県</div>
+          </div>
+          <div class="rank-body">
+            <div class="rank-price-box">
+              <div class="rank-price">¥193,600〜</div>
+              <div class="rank-price-sub">最安実測（税込）</div>
+              <div class="rank-diff-pill">サイト間最大 ¥42,900 差</div>
+            </div>
+            <div class="rank-info">
+              <div class="rank-tags"></div>
+              <p class="rank-desc">JR各線主要駅より送迎バスあり</p>
+              <a class="btn-detail" href="https://fumiproject.dev/menkyo/school/suibara/">詳細・カレンダー料金表を見る →</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="rank-card">
+          <div class="rank-header">
+            <div class="rank-badge">第 5 位</div>
+            <div class="rank-name"><a href="https://fumiproject.dev/menkyo/school/saga-1db826/">[佐賀県]伊万里自動車学校</a></div>
+            <div class="rank-loc">九州・沖縄・佐賀県</div>
+          </div>
+          <div class="rank-body">
+            <div class="rank-price-box">
+              <div class="rank-price">¥180,950〜</div>
+              <div class="rank-price-sub">最安実測（税込）</div>
+              
+            </div>
+            <div class="rank-info">
+              <div class="rank-tags"></div>
+              <p class="rank-desc">JR各線主要駅より送迎バスあり</p>
+              <a class="btn-detail" href="https://fumiproject.dev/menkyo/school/saga-1db826/">詳細・カレンダー料金表を見る →</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="rank-card">
+          <div class="rank-header">
+            <div class="rank-badge">第 6 位</div>
+            <div class="rank-name"><a href="https://fumiproject.dev/menkyo/school/shizuoka-d1d16c/">綜合自動車学校</a></div>
+            <div class="rank-loc">東海・静岡県</div>
+          </div>
+          <div class="rank-body">
+            <div class="rank-price-box">
+              <div class="rank-price">¥231,000〜</div>
+              <div class="rank-price-sub">最安実測（税込）</div>
+              
+            </div>
+            <div class="rank-info">
+              <div class="rank-tags"></div>
+              <p class="rank-desc">JR各線主要駅より送迎バスあり</p>
+              <a class="btn-detail" href="https://fumiproject.dev/menkyo/school/shizuoka-d1d16c/">詳細・カレンダー料金表を見る →</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="rank-card">
+          <div class="rank-header">
+            <div class="rank-badge">第 7 位</div>
+            <div class="rank-name"><a href="https://fumiproject.dev/menkyo/school/yonezawa/">米沢ドライビングスクール</a></div>
+            <div class="rank-loc">東北・山形県</div>
+          </div>
+          <div class="rank-body">
+            <div class="rank-price-box">
+              <div class="rank-price">¥190,300〜</div>
+              <div class="rank-price-sub">最安実測（税込）</div>
+              <div class="rank-diff-pill">サイト間最大 ¥96,800 差</div>
+            </div>
+            <div class="rank-info">
+              <div class="rank-tags"></div>
+              <p class="rank-desc">JR各線主要駅より送迎バスあり</p>
+              <a class="btn-detail" href="https://fumiproject.dev/menkyo/school/yonezawa/">詳細・カレンダー料金表を見る →</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="rank-card">
+          <div class="rank-header">
+            <div class="rank-badge">第 8 位</div>
+            <div class="rank-name"><a href="https://fumiproject.dev/menkyo/school/tochigi-3d5b8f/">[栃木県]さくら那須モータースクール</a></div>
+            <div class="rank-loc">関東・栃木県</div>
+          </div>
+          <div class="rank-body">
+            <div class="rank-price-box">
+              <div class="rank-price">¥180,400〜</div>
+              <div class="rank-price-sub">最安実測（税込）</div>
+              
+            </div>
+            <div class="rank-info">
+              <div class="rank-tags"></div>
+              <p class="rank-desc">JR各線主要駅より送迎バスあり</p>
+              <a class="btn-detail" href="https://fumiproject.dev/menkyo/school/tochigi-3d5b8f/">詳細・カレンダー料金表を見る →</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="rank-card">
+          <div class="rank-header">
+            <div class="rank-badge">第 9 位</div>
+            <div class="rank-name"><a href="https://fumiproject.dev/menkyo/school/tochigi-07b89e/">[栃木県]那須自動車学校</a></div>
+            <div class="rank-loc">関東・栃木県</div>
+          </div>
+          <div class="rank-body">
+            <div class="rank-price-box">
+              <div class="rank-price">¥180,400〜</div>
+              <div class="rank-price-sub">最安実測（税込）</div>
+              
+            </div>
+            <div class="rank-info">
+              <div class="rank-tags"></div>
+              <p class="rank-desc">JR各線主要駅より送迎バスあり</p>
+              <a class="btn-detail" href="https://fumiproject.dev/menkyo/school/tochigi-07b89e/">詳細・カレンダー料金表を見る →</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="rank-card">
+          <div class="rank-header">
+            <div class="rank-badge">第 10 位</div>
+            <div class="rank-name"><a href="https://fumiproject.dev/menkyo/school/tochigi-be0d21/">[栃木県]カーアカデミー那須高原</a></div>
+            <div class="rank-loc">関東・栃木県</div>
+          </div>
+          <div class="rank-body">
+            <div class="rank-price-box">
+              <div class="rank-price">¥180,400〜</div>
+              <div class="rank-price-sub">最安実測（税込）</div>
+              
+            </div>
+            <div class="rank-info">
+              <div class="rank-tags"></div>
+              <p class="rank-desc">JR各線主要駅より送迎バスあり</p>
+              <a class="btn-detail" href="https://fumiproject.dev/menkyo/school/tochigi-be0d21/">詳細・カレンダー料金表を見る →</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="rank-card">
+          <div class="rank-header">
+            <div class="rank-badge">第 11 位</div>
+            <div class="rank-name"><a href="https://fumiproject.dev/menkyo/school/fukushima-63c6e0/">[福島県]田村自動車教習所</a></div>
+            <div class="rank-loc">東北・福島県</div>
+          </div>
+          <div class="rank-body">
+            <div class="rank-price-box">
+              <div class="rank-price">¥180,400〜</div>
+              <div class="rank-price-sub">最安実測（税込）</div>
+              
+            </div>
+            <div class="rank-info">
+              <div class="rank-tags"></div>
+              <p class="rank-desc">JR各線主要駅より送迎バスあり</p>
+              <a class="btn-detail" href="https://fumiproject.dev/menkyo/school/fukushima-63c6e0/">詳細・カレンダー料金表を見る →</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="rank-card">
+          <div class="rank-header">
+            <div class="rank-badge">第 12 位</div>
+            <div class="rank-name"><a href="https://fumiproject.dev/menkyo/school/takata/">陸前高田ドライビングスクール</a></div>
+            <div class="rank-loc">東北・岩手県</div>
+          </div>
+          <div class="rank-body">
+            <div class="rank-price-box">
+              <div class="rank-price">¥209,000〜</div>
+              <div class="rank-price-sub">最安実測（税込）</div>
+              <div class="rank-diff-pill">サイト間最大 ¥88,000 差</div>
+            </div>
+            <div class="rank-info">
+              <div class="rank-tags"></div>
+              <p class="rank-desc">JR各線主要駅より送迎バスあり</p>
+              <a class="btn-detail" href="https://fumiproject.dev/menkyo/school/takata/">詳細・カレンダー料金表を見る →</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="rank-card">
+          <div class="rank-header">
+            <div class="rank-badge">第 13 位</div>
+            <div class="rank-name"><a href="https://fumiproject.dev/menkyo/school/tokushima-e1f5f0/">[徳島県]あほくドライビングスクール</a></div>
+            <div class="rank-loc">中国・四国・徳島県</div>
+          </div>
+          <div class="rank-body">
+            <div class="rank-price-box">
+              <div class="rank-price">¥187,000〜</div>
+              <div class="rank-price-sub">最安実測（税込）</div>
+              
+            </div>
+            <div class="rank-info">
+              <div class="rank-tags"></div>
+              <p class="rank-desc">JR各線主要駅より送迎バスあり</p>
+              <a class="btn-detail" href="https://fumiproject.dev/menkyo/school/tokushima-e1f5f0/">詳細・カレンダー料金表を見る →</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="rank-card">
+          <div class="rank-header">
+            <div class="rank-badge">第 14 位</div>
+            <div class="rank-name"><a href="https://fumiproject.dev/menkyo/school/shimane-19cf44/">[島根県]島根自動車学校</a></div>
+            <div class="rank-loc">中国・四国・島根県</div>
+          </div>
+          <div class="rank-body">
+            <div class="rank-price-box">
+              <div class="rank-price">¥187,000〜</div>
+              <div class="rank-price-sub">最安実測（税込）</div>
+              
+            </div>
+            <div class="rank-info">
+              <div class="rank-tags"></div>
+              <p class="rank-desc">JR各線主要駅より送迎バスあり</p>
+              <a class="btn-detail" href="https://fumiproject.dev/menkyo/school/shimane-19cf44/">詳細・カレンダー料金表を見る →</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="rank-card">
+          <div class="rank-header">
+            <div class="rank-badge">第 15 位</div>
+            <div class="rank-name"><a href="https://fumiproject.dev/menkyo/school/shizuoka-89d7c7/">[静岡県]スルガ自動車学校</a></div>
+            <div class="rank-loc">東海・静岡県</div>
+          </div>
+          <div class="rank-body">
+            <div class="rank-price-box">
+              <div class="rank-price">¥192,500〜</div>
+              <div class="rank-price-sub">最安実測（税込）</div>
+              
+            </div>
+            <div class="rank-info">
+              <div class="rank-tags"></div>
+              <p class="rank-desc">JR各線主要駅より送迎バスあり</p>
+              <a class="btn-detail" href="https://fumiproject.dev/menkyo/school/shizuoka-89d7c7/">詳細・カレンダー料金表を見る →</a>
+            </div>
+          </div>
+        </div>
+        
+
+      <div class="other-ranks">
+        <div style="font-weight:700;margin-bottom:0.75rem;">その他の合宿免許ランキング</div>
+        <a class="tab-link" href="https://fumiproject.dev/menkyo/ranking/cheap/">全国最安値 合宿免許ランキング TOP20</a><a class="tab-link" href="https://fumiproject.dev/menkyo/ranking/single/">個室シングル確約 合宿免許ランキング TOP15</a>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2026 合宿免許ソート by ZAX. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>

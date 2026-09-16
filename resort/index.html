@@ -462,19 +462,46 @@
   </div>
 
   <div class="filters" style="display:block">
-    <div class="checks">
-      <label><input type="checkbox" id="c-tooshi"> 通しシフト（中抜けなし）</label>
-      <label><input type="checkbox" id="c-extend"> 延長率が高い（職場環境◎）</label>
-      <label><input type="checkbox" id="c-friendly"> 人間関係・雰囲気良好</label>
-      <label><input type="checkbox" id="c-convenience"> コンビニ徒歩圏内</label>
-      <label><input type="checkbox" id="c-ski"> スキー場・リフト券付き</label>
-      <label><input type="checkbox" id="c-car"> 車・マイカー持込可</label>
-      <label><input type="checkbox" id="c-commute"> 通勤徒歩10分以内 / 送迎あり</label>
-      <label><input type="checkbox" id="c-immediate"> 即日スタート可</label>
-      <label><input type="checkbox" id="c-wifi"> 部屋Wi-Fiあり</label>
-      <label><input type="checkbox" id="c-dormfree"> 寮費無料</label>
-      <label><input type="checkbox" id="c-newbie"> 未経験歓迎</label>
-      <label><input type="checkbox" id="c-friends"> 友達・カップル可</label>
+    <div style="margin-bottom:12px">
+      <div style="font-weight:700;font-size:13px;color:var(--ink);margin-bottom:6px">【勤務シフト・残業】</div>
+      <div class="checks">
+        <label><input type="checkbox" id="c-tooshi"> 通しシフト（中抜けなし）</label>
+        <label><input type="checkbox" id="c-nakanuke"> 中抜けシフトあり（昼休み長め）</label>
+        <label><input type="checkbox" id="c-lessot"> 残業少なめ</label>
+      </div>
+    </div>
+
+    <div style="margin-bottom:12px;border-top:1px dashed var(--line);padding-top:10px">
+      <div style="font-weight:700;font-size:13px;color:var(--ink);margin-bottom:6px">【職場の満足度・人間関係】</div>
+      <div class="checks">
+        <label><input type="checkbox" id="c-extend"> 延長率が高い（職場環境◎）</label>
+        <label><input type="checkbox" id="c-friendly"> 人間関係・雰囲気良好</label>
+        <label><input type="checkbox" id="c-deai"> 同世代多数・出会いあり</label>
+      </div>
+    </div>
+
+    <div style="margin-bottom:12px;border-top:1px dashed var(--line);padding-top:10px">
+      <div style="font-weight:700;font-size:13px;color:var(--ink);margin-bottom:6px">【寮の設備・築年数・周辺環境】</div>
+      <div class="checks">
+        <label><input type="checkbox" id="c-newdorm"> 新築・築浅・リフォーム済み寮</label>
+        <label><input type="checkbox" id="c-roombath"> 部屋風呂・部屋トイレ完備</label>
+        <label><input type="checkbox" id="c-onsen"> 温泉・サウナ利用無料</label>
+        <label><input type="checkbox" id="c-convenience"> コンビニ・スーパー徒歩圏内</label>
+        <label><input type="checkbox" id="c-wifi"> 部屋Wi-Fiあり</label>
+        <label><input type="checkbox" id="c-dormfree"> 寮費無料</label>
+      </div>
+    </div>
+
+    <div style="border-top:1px dashed var(--line);padding-top:10px">
+      <div style="font-weight:700;font-size:13px;color:var(--ink);margin-bottom:6px">【通勤・応募条件】</div>
+      <div class="checks">
+        <label><input type="checkbox" id="c-commute"> 通勤徒歩10分以内 / 送迎あり</label>
+        <label><input type="checkbox" id="c-car"> 車・マイカー持込可</label>
+        <label><input type="checkbox" id="c-ski"> スキー場・リフト券付き</label>
+        <label><input type="checkbox" id="c-immediate"> 即日スタート可</label>
+        <label><input type="checkbox" id="c-newbie"> 未経験歓迎</label>
+        <label><input type="checkbox" id="c-friends"> 友達・カップル可</label>
+      </div>
     </div>
   </div>
 
@@ -598,6 +625,10 @@
           
           
           
+          
+          
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩2分</span>
           <span class="badge">Wi-Fi</span>
@@ -638,6 +669,10 @@
           <span class="badge badge-partner">提携公式</span>
           
           
+          
+          
+          
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
           
           <span class="badge">車持込可</span>
           <span class="badge">徒歩3分</span>
@@ -680,6 +715,10 @@
           
           
           
+          
+          
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩2分</span>
           <span class="badge">Wi-Fi</span>
@@ -721,6 +760,10 @@
           
           <span class="badge" style="background:#fef3c7;color:#92400e;border-color:#fde68a;font-weight:600">延長率高</span>
           <span class="badge" style="background:#dcfce7;color:#166534;border-color:#bbf7d0">職場環境◎</span>
+          
+          <span class="badge" style="background:#f1f5f9;color:#334155;border-color:#cbd5e1">部屋風呂トイレ</span>
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩5分</span>
           <span class="badge">Wi-Fi</span>
@@ -762,6 +805,10 @@
           
           <span class="badge" style="background:#fef3c7;color:#92400e;border-color:#fde68a;font-weight:600">延長率高</span>
           <span class="badge" style="background:#dcfce7;color:#166534;border-color:#bbf7d0">職場環境◎</span>
+          
+          <span class="badge" style="background:#f1f5f9;color:#334155;border-color:#cbd5e1">部屋風呂トイレ</span>
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩5分</span>
           <span class="badge">Wi-Fi</span>
@@ -802,6 +849,10 @@
           <span class="badge badge-partner">提携公式</span>
           
           
+          
+          <span class="badge" style="background:#fae8ff;color:#86198f;border-color:#f5d0fe;font-weight:600">新築・築浅</span>
+          
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
           
           <span class="badge">車持込可</span>
           <span class="badge">送迎あり</span>
@@ -844,6 +895,10 @@
           
           
           
+          
+          
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           <span class="badge">車持込可</span>
           <span class="badge">送迎あり</span>
           <span class="badge">Wi-Fi</span>
@@ -881,6 +936,10 @@
           <b>2食無料</b>
         </td>
         <td>
+          
+          
+          
+          
           
           
           
@@ -926,6 +985,10 @@
           
           
           
+          
+          
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩2分</span>
           <span class="badge">Wi-Fi</span>
@@ -966,6 +1029,10 @@
           <span class="badge badge-partner">提携公式</span>
           
           
+          
+          
+          
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
           
           <span class="badge">車持込可</span>
           <span class="badge">徒歩2分</span>
@@ -1008,6 +1075,10 @@
           
           
           
+          
+          
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩15分</span>
           <span class="badge">Wi-Fi</span>
@@ -1049,6 +1120,10 @@
           
           <span class="badge" style="background:#fef3c7;color:#92400e;border-color:#fde68a;font-weight:600">延長率高</span>
           
+          
+          <span class="badge" style="background:#f1f5f9;color:#334155;border-color:#cbd5e1">部屋風呂トイレ</span>
+          
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩10分</span>
           <span class="badge">Wi-Fi</span>
@@ -1088,6 +1163,10 @@
         <td>
           <span class="badge badge-partner">提携公式</span>
           
+          
+          
+          
+          <span class="badge" style="background:#f1f5f9;color:#334155;border-color:#cbd5e1">部屋風呂トイレ</span>
           
           
           <span class="badge">車持込可</span>
@@ -1131,6 +1210,10 @@
           
           <span class="badge" style="background:#fef3c7;color:#92400e;border-color:#fde68a;font-weight:600">延長率高</span>
           
+          
+          
+          
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩15分</span>
           <span class="badge">Wi-Fi</span>
@@ -1171,6 +1254,10 @@
           <span class="badge badge-partner">提携公式</span>
           
           
+          
+          
+          
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
           
           <span class="badge">車持込可</span>
           <span class="badge">徒歩2分</span>
@@ -1213,6 +1300,10 @@
           
           
           
+          
+          
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩2分</span>
           <span class="badge">Wi-Fi</span>
@@ -1254,6 +1345,10 @@
           
           <span class="badge" style="background:#fef3c7;color:#92400e;border-color:#fde68a;font-weight:600">延長率高</span>
           <span class="badge" style="background:#dcfce7;color:#166534;border-color:#bbf7d0">職場環境◎</span>
+          
+          <span class="badge" style="background:#f1f5f9;color:#334155;border-color:#cbd5e1">部屋風呂トイレ</span>
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩15分</span>
           <span class="badge">Wi-Fi</span>
@@ -1293,6 +1388,10 @@
         <td>
           <span class="badge badge-partner">提携公式</span>
           <span class="badge" style="background:#e0f2fe;color:#0369a1;border-color:#bae6fd;font-weight:600">通し勤務</span>
+          
+          
+          
+          
           
           
           <span class="badge">車持込可</span>
@@ -1337,6 +1436,10 @@
           
           
           
+          
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
+          
           <span class="badge">徒歩5分</span>
           <span class="badge">Wi-Fi</span>
           <span class="badge">2ヶ月〜6ヶ月以上</span>
@@ -1377,6 +1480,10 @@
           
           <span class="badge" style="background:#fef3c7;color:#92400e;border-color:#fde68a;font-weight:600">延長率高</span>
           <span class="badge" style="background:#dcfce7;color:#166534;border-color:#bbf7d0">職場環境◎</span>
+          
+          <span class="badge" style="background:#f1f5f9;color:#334155;border-color:#cbd5e1">部屋風呂トイレ</span>
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩5分</span>
           <span class="badge">Wi-Fi</span>
@@ -1418,6 +1525,10 @@
           
           <span class="badge" style="background:#fef3c7;color:#92400e;border-color:#fde68a;font-weight:600">延長率高</span>
           <span class="badge" style="background:#dcfce7;color:#166534;border-color:#bbf7d0">職場環境◎</span>
+          
+          <span class="badge" style="background:#f1f5f9;color:#334155;border-color:#cbd5e1">部屋風呂トイレ</span>
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩5分</span>
           <span class="badge">Wi-Fi</span>
@@ -1458,6 +1569,10 @@
           <span class="badge badge-partner">提携公式</span>
           
           
+          
+          
+          
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
           
           <span class="badge">車持込可</span>
           <span class="badge">徒歩5分</span>
@@ -1500,6 +1615,10 @@
           
           
           
+          <span class="badge" style="background:#fae8ff;color:#86198f;border-color:#f5d0fe;font-weight:600">新築・築浅</span>
+          
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           <span class="badge">車持込可</span>
           <span class="badge">送迎あり</span>
           <span class="badge">Wi-Fi</span>
@@ -1541,6 +1660,10 @@
           
           
           
+          
+          
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩6分</span>
           <span class="badge">Wi-Fi</span>
@@ -1579,6 +1702,10 @@
         </td>
         <td>
           <span class="badge badge-partner">提携公式</span>
+          
+          
+          
+          
           
           
           
@@ -1623,6 +1750,10 @@
           
           
           
+          
+          
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           <span class="badge">車持込可</span>
           <span class="badge">送迎あり</span>
           <span class="badge">Wi-Fi</span>
@@ -1664,6 +1795,10 @@
           
           
           
+          
+          
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           <span class="badge">車持込可</span>
           <span class="badge">送迎あり</span>
           <span class="badge">Wi-Fi</span>
@@ -1703,6 +1838,10 @@
         <td>
           <span class="badge badge-partner">提携公式</span>
           <span class="badge" style="background:#e0f2fe;color:#0369a1;border-color:#bae6fd;font-weight:600">通し勤務</span>
+          
+          
+          
+          
           
           
           <span class="badge">車持込可</span>
@@ -1746,6 +1885,10 @@
           <span class="badge" style="background:#e0f2fe;color:#0369a1;border-color:#bae6fd;font-weight:600">通し勤務</span>
           
           
+          
+          
+          
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩15分</span>
           <span class="badge">Wi-Fi</span>
@@ -1785,6 +1928,10 @@
         <td>
           <span class="badge badge-partner">提携公式</span>
           <span class="badge" style="background:#e0f2fe;color:#0369a1;border-color:#bae6fd;font-weight:600">通し勤務</span>
+          
+          
+          
+          
           
           
           <span class="badge">車持込可</span>
@@ -1828,6 +1975,10 @@
           <span class="badge" style="background:#e0f2fe;color:#0369a1;border-color:#bae6fd;font-weight:600">通し勤務</span>
           
           
+          
+          
+          
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩15分</span>
           <span class="badge">Wi-Fi</span>
@@ -1867,6 +2018,10 @@
         <td>
           <span class="badge badge-partner">提携公式</span>
           <span class="badge" style="background:#e0f2fe;color:#0369a1;border-color:#bae6fd;font-weight:600">通し勤務</span>
+          
+          
+          
+          
           
           
           <span class="badge">車持込可</span>
@@ -1910,6 +2065,10 @@
           <span class="badge" style="background:#e0f2fe;color:#0369a1;border-color:#bae6fd;font-weight:600">通し勤務</span>
           
           
+          
+          
+          
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩15分</span>
           <span class="badge">Wi-Fi</span>
@@ -1949,6 +2108,10 @@
         <td>
           <span class="badge badge-partner">提携公式</span>
           <span class="badge" style="background:#e0f2fe;color:#0369a1;border-color:#bae6fd;font-weight:600">通し勤務</span>
+          
+          
+          
+          
           
           
           <span class="badge">車持込可</span>
@@ -1992,6 +2155,10 @@
           <span class="badge" style="background:#e0f2fe;color:#0369a1;border-color:#bae6fd;font-weight:600">通し勤務</span>
           
           
+          
+          
+          
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩15分</span>
           <span class="badge">Wi-Fi</span>
@@ -2031,6 +2198,10 @@
         <td>
           <span class="badge badge-partner">提携公式</span>
           <span class="badge" style="background:#e0f2fe;color:#0369a1;border-color:#bae6fd;font-weight:600">通し勤務</span>
+          
+          
+          
+          
           
           
           <span class="badge">車持込可</span>
@@ -2074,6 +2245,10 @@
           <span class="badge" style="background:#e0f2fe;color:#0369a1;border-color:#bae6fd;font-weight:600">通し勤務</span>
           
           
+          
+          
+          
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩15分</span>
           <span class="badge">Wi-Fi</span>
@@ -2115,6 +2290,10 @@
           
           
           <span class="badge" style="background:#dcfce7;color:#166534;border-color:#bbf7d0">職場環境◎</span>
+          <span class="badge" style="background:#fae8ff;color:#86198f;border-color:#f5d0fe;font-weight:600">新築・築浅</span>
+          <span class="badge" style="background:#f1f5f9;color:#334155;border-color:#cbd5e1">部屋風呂トイレ</span>
+          
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩15分</span>
           <span class="badge">Wi-Fi</span>
@@ -2153,6 +2332,10 @@
         </td>
         <td>
           <span class="badge badge-partner">提携公式</span>
+          
+          
+          
+          
           
           
           
@@ -2197,6 +2380,10 @@
           
           
           
+          
+          
+          
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩5分</span>
           <span class="badge">Wi-Fi</span>
@@ -2236,6 +2423,10 @@
         <td>
           <span class="badge badge-partner">提携公式</span>
           
+          
+          
+          <span class="badge" style="background:#fae8ff;color:#86198f;border-color:#f5d0fe;font-weight:600">新築・築浅</span>
+          <span class="badge" style="background:#f1f5f9;color:#334155;border-color:#cbd5e1">部屋風呂トイレ</span>
           
           
           
@@ -2279,6 +2470,10 @@
           <span class="badge" style="background:#e0f2fe;color:#0369a1;border-color:#bae6fd;font-weight:600">通し勤務</span>
           
           
+          
+          
+          
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩10分</span>
           <span class="badge">Wi-Fi</span>
@@ -2318,6 +2513,10 @@
         <td>
           <span class="badge badge-partner">提携公式</span>
           <span class="badge" style="background:#e0f2fe;color:#0369a1;border-color:#bae6fd;font-weight:600">通し勤務</span>
+          
+          
+          
+          
           
           
           <span class="badge">車持込可</span>
@@ -2361,6 +2560,10 @@
           
           
           
+          
+          <span class="badge" style="background:#f1f5f9;color:#334155;border-color:#cbd5e1">部屋風呂トイレ</span>
+          
+          
           <span class="badge">車持込可</span>
           <span class="badge">館内・敷地内</span>
           <span class="badge">Wi-Fi</span>
@@ -2401,6 +2604,10 @@
           <span class="badge badge-partner">提携公式</span>
           
           
+          
+          
+          
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
           
           <span class="badge">車持込可</span>
           <span class="badge">館内・敷地内</span>
@@ -2443,6 +2650,10 @@
           <span class="badge" style="background:#e0f2fe;color:#0369a1;border-color:#bae6fd;font-weight:600">通し勤務</span>
           
           <span class="badge" style="background:#dcfce7;color:#166534;border-color:#bbf7d0">職場環境◎</span>
+          <span class="badge" style="background:#fae8ff;color:#86198f;border-color:#f5d0fe;font-weight:600">新築・築浅</span>
+          
+          
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩15分</span>
           <span class="badge">Wi-Fi</span>
@@ -2483,6 +2694,10 @@
           <span class="badge badge-partner">提携公式</span>
           
           
+          
+          
+          
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
           
           <span class="badge">車持込可</span>
           <span class="badge">徒歩10分</span>
@@ -2525,6 +2740,10 @@
           
           
           <span class="badge" style="background:#dcfce7;color:#166534;border-color:#bbf7d0">職場環境◎</span>
+          
+          <span class="badge" style="background:#f1f5f9;color:#334155;border-color:#cbd5e1">部屋風呂トイレ</span>
+          
+          <span class="badge">出会い◎</span>
           <span class="badge">車持込可</span>
           <span class="badge">送迎あり</span>
           <span class="badge">Wi-Fi</span>
@@ -2563,6 +2782,10 @@
         </td>
         <td>
           <span class="badge badge-partner">提携公式</span>
+          
+          
+          
+          
           
           
           
@@ -2607,6 +2830,10 @@
           
           
           
+          
+          
+          
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩5分</span>
           <span class="badge">Wi-Fi</span>
@@ -2647,6 +2874,10 @@
           <span class="badge badge-partner">提携公式</span>
           
           
+          
+          
+          
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
           
           <span class="badge">車持込可</span>
           <span class="badge">送迎あり</span>
@@ -2689,6 +2920,10 @@
           
           
           
+          <span class="badge" style="background:#fae8ff;color:#86198f;border-color:#f5d0fe;font-weight:600">新築・築浅</span>
+          
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩10分</span>
           <span class="badge">Wi-Fi</span>
@@ -2727,6 +2962,10 @@
         </td>
         <td>
           <span class="badge badge-partner">提携公式</span>
+          
+          
+          
+          
           
           
           
@@ -2771,6 +3010,10 @@
           
           
           
+          
+          
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩3分</span>
           <span class="badge">Wi-Fi</span>
@@ -2808,6 +3051,10 @@
           —
         </td>
         <td>
+          
+          
+          
+          
           
           
           
@@ -2853,6 +3100,10 @@
           
           
           
+          
+          
+          
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩9分</span>
           <span class="badge">Wi-Fi</span>
@@ -2890,6 +3141,10 @@
           —
         </td>
         <td>
+          
+          
+          
+          
           
           
           
@@ -2935,6 +3190,10 @@
           
           
           
+          
+          
+          
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩9分</span>
           <span class="badge">Wi-Fi</span>
@@ -2972,6 +3231,10 @@
           —
         </td>
         <td>
+          
+          
+          
+          
           
           
           
@@ -3017,6 +3280,10 @@
           
           <span class="badge" style="background:#fef3c7;color:#92400e;border-color:#fde68a;font-weight:600">延長率高</span>
           
+          
+          <span class="badge" style="background:#f1f5f9;color:#334155;border-color:#cbd5e1">部屋風呂トイレ</span>
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩10分</span>
           <span class="badge">Wi-Fi</span>
@@ -3058,6 +3325,10 @@
           
           
           <span class="badge" style="background:#dcfce7;color:#166534;border-color:#bbf7d0">職場環境◎</span>
+          
+          <span class="badge" style="background:#f1f5f9;color:#334155;border-color:#cbd5e1">部屋風呂トイレ</span>
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          <span class="badge">出会い◎</span>
           <span class="badge">車持込可</span>
           <span class="badge">館内・敷地内</span>
           <span class="badge">Wi-Fi</span>
@@ -3099,6 +3370,10 @@
           
           
           <span class="badge" style="background:#dcfce7;color:#166534;border-color:#bbf7d0">職場環境◎</span>
+          
+          <span class="badge" style="background:#f1f5f9;color:#334155;border-color:#cbd5e1">部屋風呂トイレ</span>
+          
+          <span class="badge">出会い◎</span>
           <span class="badge">車持込可</span>
           <span class="badge">徒歩1分</span>
           <span class="badge">Wi-Fi</span>
@@ -3139,6 +3414,10 @@
           
           
           <span class="badge" style="background:#fef3c7;color:#92400e;border-color:#fde68a;font-weight:600">延長率高</span>
+          
+          
+          <span class="badge" style="background:#f1f5f9;color:#334155;border-color:#cbd5e1">部屋風呂トイレ</span>
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
           
           <span class="badge">車持込可</span>
           <span class="badge">徒歩10分</span>
@@ -3181,6 +3460,10 @@
           
           
           <span class="badge" style="background:#dcfce7;color:#166534;border-color:#bbf7d0">職場環境◎</span>
+          
+          <span class="badge" style="background:#f1f5f9;color:#334155;border-color:#cbd5e1">部屋風呂トイレ</span>
+          
+          <span class="badge">出会い◎</span>
           <span class="badge">車持込可</span>
           <span class="badge">館内・敷地内</span>
           <span class="badge">Wi-Fi</span>
@@ -3220,6 +3503,10 @@
         <td>
           
           
+          
+          
+          
+          <span class="badge" style="background:#f1f5f9;color:#334155;border-color:#cbd5e1">部屋風呂トイレ</span>
           
           
           <span class="badge">車持込可</span>
@@ -3263,6 +3550,10 @@
           
           
           
+          
+          
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           <span class="badge">車持込可</span>
           <span class="badge">送迎あり</span>
           <span class="badge">Wi-Fi</span>
@@ -3303,6 +3594,10 @@
           <span class="badge badge-partner">提携公式</span>
           
           
+          
+          
+          
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
           
           <span class="badge">車持込可</span>
           <span class="badge">徒歩10分</span>
@@ -3345,6 +3640,10 @@
           
           
           
+          
+          
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           <span class="badge">車持込可</span>
           <span class="badge">送迎あり</span>
           <span class="badge">Wi-Fi</span>
@@ -3383,6 +3682,10 @@
         </td>
         <td>
           <span class="badge badge-partner">提携公式</span>
+          
+          
+          
+          
           
           
           
@@ -3427,6 +3730,10 @@
           <span class="badge" style="background:#e0f2fe;color:#0369a1;border-color:#bae6fd;font-weight:600">通し勤務</span>
           <span class="badge" style="background:#fef3c7;color:#92400e;border-color:#fde68a;font-weight:600">延長率高</span>
           <span class="badge" style="background:#dcfce7;color:#166534;border-color:#bbf7d0">職場環境◎</span>
+          <span class="badge" style="background:#fae8ff;color:#86198f;border-color:#f5d0fe;font-weight:600">新築・築浅</span>
+          
+          
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩2分</span>
           <span class="badge">Wi-Fi</span>
@@ -3468,6 +3775,10 @@
           
           <span class="badge" style="background:#fef3c7;color:#92400e;border-color:#fde68a;font-weight:600">延長率高</span>
           <span class="badge" style="background:#dcfce7;color:#166534;border-color:#bbf7d0">職場環境◎</span>
+          <span class="badge" style="background:#fae8ff;color:#86198f;border-color:#f5d0fe;font-weight:600">新築・築浅</span>
+          <span class="badge" style="background:#f1f5f9;color:#334155;border-color:#cbd5e1">部屋風呂トイレ</span>
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩10分</span>
           <span class="badge">Wi-Fi</span>
@@ -3509,6 +3820,10 @@
           
           <span class="badge" style="background:#fef3c7;color:#92400e;border-color:#fde68a;font-weight:600">延長率高</span>
           <span class="badge" style="background:#dcfce7;color:#166534;border-color:#bbf7d0">職場環境◎</span>
+          <span class="badge" style="background:#fae8ff;color:#86198f;border-color:#f5d0fe;font-weight:600">新築・築浅</span>
+          <span class="badge" style="background:#f1f5f9;color:#334155;border-color:#cbd5e1">部屋風呂トイレ</span>
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩10分</span>
           <span class="badge">Wi-Fi</span>
@@ -3550,6 +3865,10 @@
           
           <span class="badge" style="background:#fef3c7;color:#92400e;border-color:#fde68a;font-weight:600">延長率高</span>
           <span class="badge" style="background:#dcfce7;color:#166534;border-color:#bbf7d0">職場環境◎</span>
+          <span class="badge" style="background:#fae8ff;color:#86198f;border-color:#f5d0fe;font-weight:600">新築・築浅</span>
+          <span class="badge" style="background:#f1f5f9;color:#334155;border-color:#cbd5e1">部屋風呂トイレ</span>
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩10分</span>
           <span class="badge">Wi-Fi</span>
@@ -3591,6 +3910,10 @@
           
           
           <span class="badge" style="background:#dcfce7;color:#166534;border-color:#bbf7d0">職場環境◎</span>
+          <span class="badge" style="background:#fae8ff;color:#86198f;border-color:#f5d0fe;font-weight:600">新築・築浅</span>
+          <span class="badge" style="background:#f1f5f9;color:#334155;border-color:#cbd5e1">部屋風呂トイレ</span>
+          
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩15分</span>
           <span class="badge">Wi-Fi</span>
@@ -3632,6 +3955,10 @@
           
           
           <span class="badge" style="background:#dcfce7;color:#166534;border-color:#bbf7d0">職場環境◎</span>
+          <span class="badge" style="background:#fae8ff;color:#86198f;border-color:#f5d0fe;font-weight:600">新築・築浅</span>
+          <span class="badge" style="background:#f1f5f9;color:#334155;border-color:#cbd5e1">部屋風呂トイレ</span>
+          
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩15分</span>
           <span class="badge">Wi-Fi</span>
@@ -3673,6 +4000,10 @@
           
           
           <span class="badge" style="background:#dcfce7;color:#166534;border-color:#bbf7d0">職場環境◎</span>
+          <span class="badge" style="background:#fae8ff;color:#86198f;border-color:#f5d0fe;font-weight:600">新築・築浅</span>
+          <span class="badge" style="background:#f1f5f9;color:#334155;border-color:#cbd5e1">部屋風呂トイレ</span>
+          
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩15分</span>
           <span class="badge">Wi-Fi</span>
@@ -3714,6 +4045,10 @@
           
           <span class="badge" style="background:#fef3c7;color:#92400e;border-color:#fde68a;font-weight:600">延長率高</span>
           <span class="badge" style="background:#dcfce7;color:#166534;border-color:#bbf7d0">職場環境◎</span>
+          <span class="badge" style="background:#fae8ff;color:#86198f;border-color:#f5d0fe;font-weight:600">新築・築浅</span>
+          <span class="badge" style="background:#f1f5f9;color:#334155;border-color:#cbd5e1">部屋風呂トイレ</span>
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩10分</span>
           <span class="badge">Wi-Fi</span>
@@ -3755,6 +4090,10 @@
           
           <span class="badge" style="background:#fef3c7;color:#92400e;border-color:#fde68a;font-weight:600">延長率高</span>
           <span class="badge" style="background:#dcfce7;color:#166534;border-color:#bbf7d0">職場環境◎</span>
+          <span class="badge" style="background:#fae8ff;color:#86198f;border-color:#f5d0fe;font-weight:600">新築・築浅</span>
+          <span class="badge" style="background:#f1f5f9;color:#334155;border-color:#cbd5e1">部屋風呂トイレ</span>
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩10分</span>
           <span class="badge">Wi-Fi</span>
@@ -3796,6 +4135,10 @@
           
           <span class="badge" style="background:#fef3c7;color:#92400e;border-color:#fde68a;font-weight:600">延長率高</span>
           <span class="badge" style="background:#dcfce7;color:#166534;border-color:#bbf7d0">職場環境◎</span>
+          <span class="badge" style="background:#fae8ff;color:#86198f;border-color:#f5d0fe;font-weight:600">新築・築浅</span>
+          <span class="badge" style="background:#f1f5f9;color:#334155;border-color:#cbd5e1">部屋風呂トイレ</span>
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩10分</span>
           <span class="badge">Wi-Fi</span>
@@ -3833,6 +4176,10 @@
           <b>3食無料</b>
         </td>
         <td>
+          
+          
+          
+          
           
           
           
@@ -3878,6 +4225,10 @@
           
           
           
+          <span class="badge" style="background:#fae8ff;color:#86198f;border-color:#f5d0fe;font-weight:600">新築・築浅</span>
+          
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩10分</span>
           <span class="badge">Wi-Fi</span>
@@ -3919,6 +4270,10 @@
           
           
           
+          <span class="badge" style="background:#fae8ff;color:#86198f;border-color:#f5d0fe;font-weight:600">新築・築浅</span>
+          
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           
           <span class="badge">徒歩5分</span>
           <span class="badge">Wi-Fi</span>
@@ -3957,6 +4312,10 @@
         </td>
         <td>
           <span class="badge badge-partner">提携公式</span>
+          
+          
+          
+          
           
           
           
@@ -4001,6 +4360,10 @@
           
           
           
+          
+          
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           <span class="badge">車持込可</span>
           
           <span class="badge">Wi-Fi</span>
@@ -4042,6 +4405,10 @@
           
           <span class="badge" style="background:#fef3c7;color:#92400e;border-color:#fde68a;font-weight:600">延長率高</span>
           
+          
+          
+          
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩15分</span>
           <span class="badge">Wi-Fi</span>
@@ -4082,6 +4449,10 @@
           <span class="badge badge-partner">提携公式</span>
           
           
+          
+          <span class="badge" style="background:#fae8ff;color:#86198f;border-color:#f5d0fe;font-weight:600">新築・築浅</span>
+          
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
           
           
           <span class="badge">送迎あり</span>
@@ -4125,6 +4496,10 @@
           
           
           
+          
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
+          
           <span class="badge">徒歩3分</span>
           <span class="badge">Wi-Fi</span>
           <span class="badge">1ヶ月〜6ヶ月</span>
@@ -4164,6 +4539,10 @@
           <span class="badge badge-partner">提携公式</span>
           
           
+          
+          
+          
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
           
           <span class="badge">車持込可</span>
           <span class="badge">徒歩15分</span>
@@ -4206,6 +4585,10 @@
           
           <span class="badge" style="background:#fef3c7;color:#92400e;border-color:#fde68a;font-weight:600">延長率高</span>
           <span class="badge" style="background:#dcfce7;color:#166534;border-color:#bbf7d0">職場環境◎</span>
+          
+          <span class="badge" style="background:#f1f5f9;color:#334155;border-color:#cbd5e1">部屋風呂トイレ</span>
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩5分</span>
           <span class="badge">Wi-Fi</span>
@@ -4247,6 +4630,10 @@
           
           <span class="badge" style="background:#fef3c7;color:#92400e;border-color:#fde68a;font-weight:600">延長率高</span>
           <span class="badge" style="background:#dcfce7;color:#166534;border-color:#bbf7d0">職場環境◎</span>
+          
+          <span class="badge" style="background:#f1f5f9;color:#334155;border-color:#cbd5e1">部屋風呂トイレ</span>
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩5分</span>
           <span class="badge">Wi-Fi</span>
@@ -4288,6 +4675,10 @@
           
           
           <span class="badge" style="background:#dcfce7;color:#166534;border-color:#bbf7d0">職場環境◎</span>
+          
+          <span class="badge" style="background:#f1f5f9;color:#334155;border-color:#cbd5e1">部屋風呂トイレ</span>
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩3分</span>
           <span class="badge">Wi-Fi</span>
@@ -4328,6 +4719,10 @@
           
           <span class="badge" style="background:#e0f2fe;color:#0369a1;border-color:#bae6fd;font-weight:600">通し勤務</span>
           
+          
+          
+          <span class="badge" style="background:#f1f5f9;color:#334155;border-color:#cbd5e1">部屋風呂トイレ</span>
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
           
           <span class="badge">車持込可</span>
           <span class="badge">徒歩5分</span>
@@ -4370,6 +4765,10 @@
           
           
           
+          
+          
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           <span class="badge">車持込可</span>
           <span class="badge">送迎あり</span>
           <span class="badge">Wi-Fi</span>
@@ -4411,6 +4810,10 @@
           
           
           
+          
+          
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           <span class="badge">車持込可</span>
           <span class="badge">送迎あり</span>
           <span class="badge">Wi-Fi</span>
@@ -4449,6 +4852,10 @@
         </td>
         <td>
           <span class="badge badge-partner">提携公式</span>
+          
+          
+          
+          
           
           
           
@@ -4493,6 +4900,10 @@
           
           
           
+          
+          
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩10分</span>
           <span class="badge">Wi-Fi</span>
@@ -4534,6 +4945,10 @@
           
           
           
+          
+          
+          <span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>
+          
           <span class="badge">車持込可</span>
           <span class="badge">徒歩1分</span>
           <span class="badge">Wi-Fi</span>
@@ -4572,6 +4987,10 @@
         </td>
         <td>
           <span class="badge badge-partner">提携公式</span>
+          
+          
+          
+          
           
           
           
@@ -4616,6 +5035,10 @@
           
           
           
+          
+          
+          
+          
           <span class="badge">車持込可</span>
           <span class="badge">送迎あり</span>
           <span class="badge">Wi-Fi</span>
@@ -4654,6 +5077,10 @@
         </td>
         <td>
           <span class="badge badge-partner">提携公式</span>
+          
+          
+          
+          
           
           
           
@@ -5156,6 +5583,14 @@ function passes(j){
     const tags = (j.job_tags || []).join(" ");
     if (!tags.includes("通しシフト") && !tags.includes("通し勤務")) return false;
   }
+  if (document.getElementById("c-nakanuke") && document.getElementById("c-nakanuke").checked) {
+    const tags = (j.job_tags || []).join(" ");
+    if (tags.includes("通しシフト") || tags.includes("通し勤務")) return false;
+  }
+  if (document.getElementById("c-lessot") && document.getElementById("c-lessot").checked) {
+    const tags = (j.job_tags || []).join(" ");
+    if (!tags.includes("残業少") && !tags.includes("残業ほぼ無")) return false;
+  }
   if (document.getElementById("c-extend") && document.getElementById("c-extend").checked) {
     const tags = (j.job_tags || []).join(" ");
     if (!tags.includes("延長率高い") && !tags.includes("延長")) return false;
@@ -5164,21 +5599,39 @@ function passes(j){
     const tags = (j.job_tags || []).join(" ");
     if (!tags.includes("人間関係良好") && !tags.includes("職場の雰囲気良好")) return false;
   }
+  if (document.getElementById("c-deai") && document.getElementById("c-deai").checked) {
+    const tags = (j.job_tags || []).join(" ");
+    if (!tags.includes("出会い") && !tags.includes("20代30代多い") && !tags.includes("同世代") && !tags.includes("同僚多い")) return false;
+  }
+  if (document.getElementById("c-newdorm") && document.getElementById("c-newdorm").checked) {
+    const tags = (j.job_tags || []).join(" ");
+    const dRaw = j.dorm_type_raw || "";
+    if (!tags.includes("新築") && !tags.includes("築浅") && !tags.includes("リフォーム") && !dRaw.includes("新築") && !dRaw.includes("築浅") && !dRaw.includes("リフォーム")) return false;
+  }
+  if (document.getElementById("c-roombath") && document.getElementById("c-roombath").checked) {
+    const tags = (j.job_tags || []).join(" ");
+    const dRaw = j.dorm_type_raw || "";
+    if (!tags.includes("風呂") && !tags.includes("トイレ") && !dRaw.includes("バストイレ") && !dRaw.includes("風呂")) return false;
+  }
+  if (document.getElementById("c-onsen") && document.getElementById("c-onsen").checked) {
+    const tags = (j.job_tags || []).join(" ");
+    if (!tags.includes("温泉") && !tags.includes("サウナ")) return false;
+  }
   if (document.getElementById("c-convenience") && document.getElementById("c-convenience").checked) {
     const tags = (j.job_tags || []).join(" ");
     if (!tags.includes("コンビニ") && !tags.includes("スーパー")) return false;
   }
-  if (document.getElementById("c-ski").checked) {
+  if (document.getElementById("c-ski") && document.getElementById("c-ski").checked) {
     const haySki = [j.workplace_name, j.prefecture, j.city, j.job_category, j.dorm_type_raw, j.period_raw].filter(Boolean).join(" ").toLowerCase();
     if (!haySki.includes("スキー")) return false;
   }
-  if (document.getElementById("c-car").checked && !j.car_ok) return false;
-  if (document.getElementById("c-commute").checked && !j.commute_easy) return false;
-  if (document.getElementById("c-immediate").checked && !j.immediate_ok) return false;
-  if (document.getElementById("c-wifi").checked && !j.dorm_wifi) return false;
-  if (document.getElementById("c-dormfree").checked && j.dorm_cost !== 0) return false;
-  if (document.getElementById("c-newbie").checked && !j.inexperienced_ok) return false;
-  if (document.getElementById("c-friends").checked && !(j.friends_ok || j.couple_ok)) return false;
+  if (document.getElementById("c-car") && document.getElementById("c-car").checked && !j.car_ok) return false;
+  if (document.getElementById("c-commute") && document.getElementById("c-commute").checked && !j.commute_easy) return false;
+  if (document.getElementById("c-immediate") && document.getElementById("c-immediate").checked && !j.immediate_ok) return false;
+  if (document.getElementById("c-wifi") && document.getElementById("c-wifi").checked && !j.dorm_wifi) return false;
+  if (document.getElementById("c-dormfree") && document.getElementById("c-dormfree").checked && j.dorm_cost !== 0) return false;
+  if (document.getElementById("c-newbie") && document.getElementById("c-newbie").checked && !j.inexperienced_ok) return false;
+  if (document.getElementById("c-friends") && document.getElementById("c-friends").checked && !(j.friends_ok || j.couple_ok)) return false;
 
   return true;
 }
@@ -5274,7 +5727,9 @@ function render(){
     if (cond.dorm) condParts.push(cond.dorm);
     if (cond.checks && cond.checks.length) {
       const checkNames = {
-        tooshi: "通しシフト", extend: "延長率高", friendly: "職場環境良好",
+        tooshi: "通しシフト", nakanuke: "中抜けシフト", lessot: "残業少なめ",
+        extend: "延長率高", friendly: "職場環境良好", deai: "同世代・出会い",
+        newdorm: "新築・築浅寮", roombath: "部屋風呂トイレ", onsen: "温泉・サウナ無料",
         convenience: "コンビニ近い", ski: "スキー場", car: "車持込可",
         commute: "送迎・徒歩10分", immediate: "即日可", wifi: "部屋Wi-Fi",
         dormfree: "寮費無料", newbie: "未経験歓迎", friends: "友達・カップル可"
@@ -5327,6 +5782,15 @@ function render(){
     const partBadge = isPart ? '<span class="badge badge-partner">提携公式</span>' : '';
     const btnText = isPart ? '空き確認・応募（公式）' : '空き状況・詳細（公式）';
 
+    const jTags = j.job_tags || [];
+    const hasTooshi = jTags.some(t => t.includes("通し"));
+    const hasExtend = jTags.some(t => t.includes("延長"));
+    const hasFriendly = jTags.some(t => t.includes("人間関係") || t.includes("雰囲気"));
+    const hasNewDorm = jTags.some(t => t.includes("新築") || t.includes("築浅") || t.includes("リフォーム")) || dRaw.includes("新築") || dRaw.includes("築浅");
+    const hasRoomBath = jTags.some(t => t.includes("風呂") || t.includes("トイレ")) || dRaw.includes("バストイレ") || dRaw.includes("風呂");
+    const hasOnsen = jTags.some(t => t.includes("温泉") || t.includes("サウナ"));
+    const hasDeai = jTags.some(t => t.includes("出会い") || t.includes("20代30代多い") || t.includes("同僚多い"));
+
     return `
       <tr>
         <td>
@@ -5347,9 +5811,13 @@ function render(){
         </td>
         <td>
           ${partBadge}
-          ${(j.job_tags || []).some(t => t.includes("通し")) ? '<span class="badge" style="background:#e0f2fe;color:#0369a1;border-color:#bae6fd;font-weight:600">通し勤務</span>' : ""}
-          ${(j.job_tags || []).some(t => t.includes("延長")) ? '<span class="badge" style="background:#fef3c7;color:#92400e;border-color:#fde68a;font-weight:600">延長率高</span>' : ""}
-          ${(j.job_tags || []).some(t => t.includes("人間関係") || t.includes("雰囲気")) ? '<span class="badge" style="background:#dcfce7;color:#166534;border-color:#bbf7d0">職場環境◎</span>' : ""}
+          ${hasTooshi ? '<span class="badge" style="background:#e0f2fe;color:#0369a1;border-color:#bae6fd;font-weight:600">通し勤務</span>' : ""}
+          ${hasExtend ? '<span class="badge" style="background:#fef3c7;color:#92400e;border-color:#fde68a;font-weight:600">延長率高</span>' : ""}
+          ${hasFriendly ? '<span class="badge" style="background:#dcfce7;color:#166534;border-color:#bbf7d0">職場環境◎</span>' : ""}
+          ${hasNewDorm ? '<span class="badge" style="background:#fae8ff;color:#86198f;border-color:#f5d0fe;font-weight:600">新築・築浅</span>' : ""}
+          ${hasRoomBath ? '<span class="badge" style="background:#f1f5f9;color:#334155;border-color:#cbd5e1">部屋風呂トイレ</span>' : ""}
+          ${hasOnsen ? '<span class="badge" style="background:#ffedd5;color:#9a3412;border-color:#fed7aa">温泉利用可</span>' : ""}
+          ${hasDeai ? '<span class="badge">出会い◎</span>' : ""}
           ${j.car_ok ? '<span class="badge">車持込可</span>' : ""}
           ${j.commute_text ? `<span class="badge">${j.commute_text}</span>` : ""}
           ${j.dorm_wifi ? '<span class="badge">Wi-Fi</span>' : ""}

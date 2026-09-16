@@ -5294,6 +5294,7 @@ function render(){
           保存用条件：${condSummary}
         </div>
       </div>`;
+    updateUrlParams();
     return;
   }
 
@@ -5334,8 +5335,8 @@ function render(){
         </td>
         <td>
           <div class="wage">${yen(j.wage_min)}</div>
-          <div style="font-size:11px;color:var(--sub)">${j.wage_type || "時給"}${j.wage_min ? ` (月約${Math.round(j.wage_min * 8 * 22 / 10000)}万)` : ""}</div>
-          ${j.wage_min ? `<div style="font-size:10px;color:var(--sub);margin-top:2px">手取約${Math.round(j.wage_min * 8 * 22 * 0.81 / 10000)}万円</div>` : ""}
+          <div style="font-size:11px;color:var(--sub)">${j.wage_type || "時給"}${j.wage_type === "時給" && j.wage_min ? ` (月約${Math.round(j.wage_min * 8 * 22 / 10000)}万)` : ""}</div>
+          ${j.wage_type === "時給" && j.wage_min ? `<div style="font-size:10px;color:var(--sub);margin-top:2px">手取約${Math.round(j.wage_min * 8 * 22 * 0.81 / 10000)}万円</div>` : ""}
         </td>
         <td class="${DORM_CLASS[j.dorm_type] || ""}">${j.dorm_type || "不明"}
           ${dBadge}

@@ -366,51 +366,6 @@
     background:#05b34c;transform:translateY(-1px);box-shadow:0 6px 18px rgba(6,199,85,0.4);
   }
 
-  /* 検索結果ジャンプボタン（PC/スマホ共通） */
-  .results-jump-bar{
-    margin:12px 0 16px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:10px;
-    padding:10px 16px;
-  }
-  .results-jump-btn{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    padding:9px 20px;
-    background:var(--ink);
-    color:var(--bg);
-    border:none;
-    border-radius:24px;
-    font-size:14px;
-    font-weight:700;
-    cursor:pointer;
-    font-family:inherit;
-    box-shadow:0 3px 10px rgba(0,0,0,0.12);
-    transition:transform .15s ease, opacity .15s ease;
-  }
-  .results-jump-btn:hover{
-    opacity:0.92;
-    transform:translateY(-1px);
-  }
-  .results-jump-count{
-    background:#059669;
-    color:#fff;
-    padding:2px 9px;
-    border-radius:12px;
-    font-size:13px;
-    font-weight:800;
-    font-variant-numeric:tabular-nums;
-  }
-  .results-jump-hint{
-    font-size:12px;
-    color:var(--sub);
-  }
-
   /* スマホ最適化 */
   #filter-toggle{display:none}
   @media (max-width:720px){
@@ -736,15 +691,6 @@
   </details>
 
   </div><!-- /#filter-panel -->
-
-  <!-- 検索結果ジャンプバー（PC・スマホ共通） -->
-  <div class="results-jump-bar">
-    <button type="button" class="results-jump-btn" onclick="scrollToResults()">
-      <span>検索結果を見る ▾</span>
-      <span class="results-jump-count" id="jump-count">12,497件</span>
-    </button>
-    <span class="results-jump-hint">※ 条件を変更するとリアルタイムに結果が更新されます</span>
-  </div>
 
   <div class="count" id="count">該当 12,497 件 / 全 12,497 件</div>
   <!-- 収集19,233件との差がどこから来るのかトップに説明が無く、

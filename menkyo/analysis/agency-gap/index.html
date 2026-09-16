@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>【実測分析】予約サイト間で料金はいくら違うか？全国217校の価格差データ｜合宿免許ソート</title>
+  <meta name="description" content="全国217校・主要3大予約サイトの掲載料金を突合し、同一教習所・同一プランにおけるサイト間価格差の実測データを公開。">
+  <link rel="canonical" href="https://fumiproject.dev/menkyo/analysis/agency-gap/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap">
+  
+<style>
+  :root{
+    --bg:#ffffff; --card:#ffffff; --ink:#111111; --sub:#666666;
+    --line:#e8e8e8; --line-strong:#cccccc; --accent:#111111; --accent-hover:#333333;
+    --warn:#555555; --warnbg:#f4f4f4; --tagbg:#f8f9fa; --price-red:#dc2626;
+    --highlight-yellow:#fef08a; --accent-purple:#7c3aed; --accent-purple-light:#f3e8ff;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#09090b; --card:#121215; --ink:#ededed; --sub:#8e8e93;
+      --line:#27272a; --line-strong:#3f3f46; --accent:#ededed; --accent-hover:#cccccc;
+      --warn:#a1a1aa; --warnbg:#1c1c20; --tagbg:#18181b; --price-red:#ef4444;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP",sans-serif;font-size:14.5px;line-height:1.8;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:880px;margin:0 auto;padding:1.5rem 1rem}
+  
+  header{border-bottom:1px solid var(--line);padding-bottom:1.5rem;margin-bottom:2rem}
+  .site-title{font-family:"Instrument Sans",sans-serif;font-weight:700;font-size:1.6rem;letter-spacing:-0.03em;display:flex;align-items:center;gap:0.75rem}
+  .site-tag{font-family:"JetBrains Mono",monospace;font-size:0.7rem;background:var(--warnbg);border:1px solid var(--line);padding:0.2rem 0.5rem;border-radius:4px;color:var(--sub)}
+
+  .nav-tabs{display:flex;gap:0.75rem;margin-bottom:1.5rem;border-bottom:1px solid var(--line);padding-bottom:0.75rem;overflow-x:auto}
+  .nav-tab{padding:0.4rem 0.8rem;border-radius:6px;font-size:0.85rem;font-weight:500;color:var(--sub);white-space:nowrap}
+  .nav-tab.active{background:var(--ink);color:var(--bg)}
+  .nav-tab:hover:not(.active){background:var(--tagbg);color:var(--ink)}
+
+  .article-box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:2.2rem;margin-bottom:2rem}
+  h1{font-size:1.45rem;line-height:1.4;margin-top:0;margin-bottom:1rem;border-bottom:2px solid var(--ink);padding-bottom:0.75rem}
+  .lead{font-size:0.95rem;color:var(--sub);margin-bottom:2rem}
+  h2{font-size:1.2rem;margin-top:2.2rem;border-left:4px solid var(--ink);padding-left:0.75rem}
+  h3{font-size:1.05rem;margin-top:1.5rem}
+
+  .stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin:1.5rem 0}
+  .stat-card{background:var(--tagbg);border:1px solid var(--line);border-radius:8px;padding:1.2rem;text-align:center}
+  .stat-val{font-family:"JetBrains Mono",monospace;font-size:1.8rem;font-weight:700;color:var(--price-red)}
+  .stat-lbl{font-size:0.8rem;color:var(--sub);margin-top:0.25rem}
+
+  .table-wrap{overflow-x:auto;margin:1.5rem 0}
+  table{width:100%;border-collapse:collapse;font-size:0.88rem;text-align:left}
+  th, td{padding:0.75rem 0.9rem;border:1px solid var(--line)}
+  th{background:var(--tagbg);font-weight:700;white-space:nowrap}
+
+  .btn-cta{display:inline-block;background:var(--ink);color:var(--bg);padding:0.75rem 1.5rem;border-radius:6px;font-weight:700;font-size:0.95rem;margin-top:0.75rem}
+  .btn-cta:hover{opacity:0.85}
+
+  footer{border-top:1px solid var(--line);padding-top:2rem;margin-top:3rem;color:var(--sub);font-size:0.8rem;text-align:center}
+</style>
+
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="site-title">
+        <a href="https://fumiproject.dev/menkyo/">合宿免許ソート</a>
+        <span class="site-tag">実測データ分析</span>
+      </div>
+    </header>
+
+    <div class="nav-tabs">
+      <a class="nav-tab" href="https://fumiproject.dev/menkyo/">全国217校一覧</a>
+      <a class="nav-tab" href="https://fumiproject.dev/menkyo/shindan/">適性診断</a>
+      <a class="nav-tab" href="https://fumiproject.dev/menkyo/compare/">予約サイト3社比較</a>
+      <a class="nav-tab active" href="https://fumiproject.dev/menkyo/analysis/agency-gap/">実測分析</a>
+      <a class="nav-tab" href="https://fumiproject.dev/menkyo/ranking/cheap/">最安値ランキング</a>
+      <a class="nav-tab" href="https://fumiproject.dev/menkyo/worry/single/">一人参加ガイド</a>
+    </div>
+
+    <div class="article-box">
+      <h1>【実測分析】予約サイト間で料金はいくら違うのか？全217校のデータ検証</h1>
+      <p class="lead">「同じ教習所ならどこで申し込んでも同じ料金」という誤解を解くため、全国217校の公開プランを毎日収集・突合した実測レポートです。</p>
+
+      <div class="stat-grid">
+        <div class="stat-card">
+          <div class="stat-val">¥96,800</div>
+          <div class="stat-lbl">最大サイト間価格差</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">¥43,781</div>
+          <div class="stat-lbl">価格差あり校の平均差額</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val">8 校</div>
+          <div class="stat-lbl">サイト間で料金差がある教習所数</div>
+        </div>
+      </div>
+
+      <h2>1. なぜ同じ教習所なのにサイトによって料金が違うのか？</h2>
+      <p>合宿免許の予約窓口（免許合宿ライブ、合宿免許受付センター、合宿免許エキスパート等）は、それぞれ教習所から部屋枠や教習枠を独自の契約条件で仕入れています。</p>
+      <ul>
+        <li><b>仕入れルートの違い</b>：大量送客実績のある代理店には教習所から特別卸値が設定される。</li>
+        <li><b>空き枠消化のための独自割引</b>：直前の空室を埋めるため、特定のサイト限定で5万〜10万円の値下げが行われる。</li>
+        <li><b>食事プラン・部屋タイプの排他枠</b>：あるサイトは「自炊プラン最安枠」を持ち、別のサイトは「ホテルシングル枠」のみを持っている。</li>
+      </ul>
+
+      <h2>2. サイト間価格差が大きい教習所 TOP 10</h2>
+      <p>以下の教習所は、申し込む予約サイトを切り替えるだけで数万〜十数万円の差額が発生する代表的な教習所です。</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>教習所名</th>
+              <th>エリア</th>
+              <th>最大価格差</th>
+              <th>最安値実測</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+        <tr>
+          <td><a href="https://fumiproject.dev/menkyo/school/yonezawa/" style="text-decoration:underline;font-weight:600;">米沢ドライビングスクール</a></td>
+          <td>東北・山形県</td>
+          <td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--price-red);">¥96,800</td>
+          <td>¥190,300〜</td>
+        </tr>
+        
+        <tr>
+          <td><a href="https://fumiproject.dev/menkyo/school/takata/" style="text-decoration:underline;font-weight:600;">陸前高田ドライビングスクール</a></td>
+          <td>東北・岩手県</td>
+          <td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--price-red);">¥88,000</td>
+          <td>¥209,000〜</td>
+        </tr>
+        
+        <tr>
+          <td><a href="https://fumiproject.dev/menkyo/school/kuji/" style="text-decoration:underline;font-weight:600;">久慈自動車学校</a></td>
+          <td>東北・岩手県</td>
+          <td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--price-red);">¥52,800</td>
+          <td>¥203,500〜</td>
+        </tr>
+        
+        <tr>
+          <td><a href="https://fumiproject.dev/menkyo/school/suibara/" style="text-decoration:underline;font-weight:600;">水原自動車学校</a></td>
+          <td>甲信越・北陸・新潟県</td>
+          <td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--price-red);">¥42,900</td>
+          <td>¥193,600〜</td>
+        </tr>
+        
+        <tr>
+          <td><a href="https://fumiproject.dev/menkyo/school/fukushima-0edf52/" style="text-decoration:underline;font-weight:600;">南湖自動車学校</a></td>
+          <td>東北・福島県</td>
+          <td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--price-red);">¥35,000</td>
+          <td>¥258,000〜</td>
+        </tr>
+        
+        <tr>
+          <td><a href="https://fumiproject.dev/menkyo/school/tottori-2d65cc/" style="text-decoration:underline;font-weight:600;">山陰中央自動車学校</a></td>
+          <td>中国・四国・鳥取県</td>
+          <td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--price-red);">¥13,750</td>
+          <td>¥242,000〜</td>
+        </tr>
+        
+        <tr>
+          <td><a href="https://fumiproject.dev/menkyo/school/fukushima-57644f/" style="text-decoration:underline;font-weight:600;">湯本自動車学校</a></td>
+          <td>東北・福島県</td>
+          <td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--price-red);">¥11,000</td>
+          <td>¥225,500〜</td>
+        </tr>
+        
+        <tr>
+          <td><a href="https://fumiproject.dev/menkyo/school/max/" style="text-decoration:underline;font-weight:600;">[長野県]MAXドライビングスクール千曲</a></td>
+          <td>甲信越・北陸・長野県</td>
+          <td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--price-red);">¥10,000</td>
+          <td>¥209,000〜</td>
+        </tr>
+        
+        <tr>
+          <td><a href="https://fumiproject.dev/menkyo/school/tochigi-be0d21/" style="text-decoration:underline;font-weight:600;">[栃木県]カーアカデミー那須高原</a></td>
+          <td>関東・栃木県</td>
+          <td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--price-red);">¥0</td>
+          <td>¥180,400〜</td>
+        </tr>
+        
+        <tr>
+          <td><a href="https://fumiproject.dev/menkyo/school/kochi-d81c54/" style="text-decoration:underline;font-weight:600;">[高知県]安芸自動車学校</a></td>
+          <td>中国・四国・高知県</td>
+          <td style="font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--price-red);">¥0</td>
+          <td>¥180,400〜</td>
+        </tr>
+        
+          </tbody>
+        </table>
+      </div>
+
+      <h2>3. 結論：各サイトを個別に見回る手間を横断検索でゼロにする</h2>
+      <p>従来は3〜4社の予約サイトを別々のタブで開き、それぞれの検索フォームに条件を入力して見比べる必要がありました。</p>
+      <p>当サイト（合宿免許ソート）では、217校の全プランを1つの画面に集約し、最安値順・サイト間価格差順に一発で並べ替えられるため、検索疲れや見落としによる損を防ぐことができます。</p>
+
+      <div style="text-align:center;margin-top:2.5rem;padding:2rem;background:var(--warnbg);border-radius:8px;">
+        <div style="font-weight:700;font-size:1.15rem;">217校のサイト間価格差をリアルタイムに確認</div>
+        <a class="btn-cta" href="https://fumiproject.dev/menkyo/">合宿免許ソートで最安値を探す →</a>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2026 合宿免許ソート by ZAX. All rights reserved.</p>
+    </footer>
+  </div>
+</body>
+</html>

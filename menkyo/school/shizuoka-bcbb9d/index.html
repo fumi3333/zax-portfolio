@@ -32,10 +32,19 @@
     max-width:980px;margin:0 auto;padding:24px 16px 12px;
     border-bottom:1px solid var(--line);
   }
-  h1{font-size:20px;margin:0;letter-spacing:-0.02em;font-weight:700}
-  .lede{font-size:13px;color:var(--sub);margin:6px 0 0;line-height:1.6}
+  h1{font-size:21px;margin:0;letter-spacing:-0.02em;font-weight:700}
+  .lede{font-size:13.5px;color:var(--sub);margin:8px 0 0;line-height:1.65}
 
-  /* 更新バナー（リゾートソート同等） */
+  /* Hero Stats Strip */
+  .hero-stats{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;
+    margin-top:14px;padding:12px;background:var(--tagbg);border:1px solid var(--line);border-radius:8px;
+  }
+  .hero-stat-cell{text-align:center}
+  .hero-stat-val{font-family:"JetBrains Mono",monospace;font-size:16px;font-weight:700;color:var(--ink)}
+  .hero-stat-lbl{font-size:11px;color:var(--sub);margin-top:1px}
+
+  /* 更新バナー */
   .update-banner{
     max-width:980px;margin:12px auto 0;padding:10px 14px;
     background:var(--warnbg);border:1px solid var(--line);border-radius:8px;
@@ -58,7 +67,7 @@
 
   main{max-width:980px;margin:0 auto;padding:16px}
 
-  /* 横スクロール人気条件ピルバー（リゾートソート完全一致） */
+  /* 横スクロール人気条件ピルバー */
   .quick-chips-wrapper{
     position:relative;margin-bottom:14px;
   }

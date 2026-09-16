@@ -122,6 +122,76 @@
       "source": "/analysis",
       "destination": "https://fumiproject.dev/resort/analysis/",
       "permanent": true
+    },
+    {
+      "source": "/shindan/(.*)",
+      "destination": "https://fumiproject.dev/resort/shindan/$1",
+      "permanent": true
+    },
+    {
+      "source": "/shindan",
+      "destination": "https://fumiproject.dev/resort/shindan/",
+      "permanent": true
+    },
+    {
+      "source": "/worry/(.*)",
+      "destination": "https://fumiproject.dev/resort/worry/$1",
+      "permanent": true
+    },
+    {
+      "source": "/worry",
+      "destination": "https://fumiproject.dev/resort/worry/",
+      "permanent": true
+    },
+    {
+      "source": "/age/(.*)",
+      "destination": "https://fumiproject.dev/resort/age/$1",
+      "permanent": true
+    },
+    {
+      "source": "/age",
+      "destination": "https://fumiproject.dev/resort/age/",
+      "permanent": true
+    },
+    {
+      "source": "/start/(.*)",
+      "destination": "https://fumiproject.dev/resort/start/$1",
+      "permanent": true
+    },
+    {
+      "source": "/start",
+      "destination": "https://fumiproject.dev/resort/start/",
+      "permanent": true
+    },
+    {
+      "source": "/season/(.*)",
+      "destination": "https://fumiproject.dev/resort/season/$1",
+      "permanent": true
+    },
+    {
+      "source": "/season",
+      "destination": "https://fumiproject.dev/resort/season/",
+      "permanent": true
+    },
+    {
+      "source": "/job/(.*)",
+      "destination": "https://fumiproject.dev/resort/job/$1",
+      "permanent": true
+    },
+    {
+      "source": "/job",
+      "destination": "https://fumiproject.dev/resort/job/",
+      "permanent": true
+    },
+    {
+      "source": "/diary/(.*)",
+      "destination": "https://fumiproject.dev/resort/diary/$1",
+      "permanent": true
+    },
+    {
+      "source": "/diary",
+      "destination": "https://fumiproject.dev/resort/diary/",
+      "permanent": true
     }
   ]
 }

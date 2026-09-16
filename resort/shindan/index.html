@@ -61,9 +61,9 @@ footer{margin-top:44px;padding-top:14px;border-top:1px solid var(--line);
 <p>実際の求人データを分析すると、エリア・職種・寮の条件をそろえた場合、
 <b>会社の違いによる時給の差は平均すると最大63円程度</b>しかありません。
 全体の平均だけを見て「この会社が一番おすすめ」と決めることには意味がありません。</p>
-<p>一方で、<a href="/analysis/agency-gap/">「特定の県×職種」に絞ると、会社間で時給300円以上の開きが出る組み合わせ</a>が普通に存在します。
+<p>一方で、<a href="/resort/analysis/agency-gap/">「特定の県×職種」に絞ると、会社間で時給300円以上の開きが出る組み合わせ</a>が普通に存在します。
 だからこそ、「どの会社が有名か」ではなく「<b>自分の行きたい条件でどの会社が強いか</b>」を比較するのが一番損をしない選び方です。
-より詳しい分析データは<a href="/analysis/agency-effect/">派遣会社ごとの時給差を検証した記事</a>をご覧ください。</p>
+より詳しい分析データは<a href="/resort/analysis/agency-effect/">派遣会社ごとの時給差を検証した記事</a>をご覧ください。</p>
 
 <h2>この数字で言えないこと</h2>
 <ul>
@@ -75,7 +75,7 @@ footer{margin-top:44px;padding-top:14px;border-top:1px solid var(--line);
 </ul>
 
 <p class=updated>集計日：2026-09-17　対象：公開中の求人 12,497件／比較できる組み合わせ 494通り</p>
-<p><a href="/resort/">求人を条件で検索する</a>　<a href="/data/">全体の調査データを見る</a></p>
+<p><a href="/resort/">求人を条件で検索する</a>　<a href="/resort/data/">全体の調査データを見る</a></p>
 
 <style>
 .pick{display:flex;gap:16px;flex-wrap:wrap;margin:20px 0;padding:16px;
@@ -127,7 +127,7 @@ function show() {
         + '条件の良い求人を多く持っています。どちらを取るかは人によります。</p>';
   // 横断検索の q は県名・職種をまとめて対象にするAND検索なので、
   // 選んだ2つを渡すだけで、同じ条件の求人一覧がそのまま開く。
-  html += '<p><a class=cta href="/?q=' + encodeURIComponent(p + ' ' + j)
+  html += '<p><a class=cta href="/resort/?q=' + encodeURIComponent(p + ' ' + j)
         + '">この条件で求人を見る（' + total + '件）</a></p>';
   out.innerHTML = html;
 }

@@ -1,23 +1,21 @@
-/* menkyo-sort Vanilla JS App with Calendar & Quick Chips */
+/* menkyo-sort Vanilla JS App (Exact Resort-Sort Architecture) */
 document.addEventListener('DOMContentLoaded', () => {
   const cardsContainer = document.getElementById('school-grid');
   if (!cardsContainer) return;
 
   const cards = Array.from(cardsContainer.querySelectorAll('.school-card'));
   const countDisplay = document.getElementById('count-display');
-  const searchInput = document.getElementById('search-input');
-  const sortSelect = document.getElementById('sort-select');
-  const budgetSelect = document.getElementById('budget-select');
-  const mobileBar = document.getElementById('mobile-jump-bar');
-  const mobileCount = document.getElementById('mobile-jump-count');
+  const searchInput = document.getElementById('f-q');
+  const sortSelect = document.getElementById('f-sort');
+  const regionSelect = document.getElementById('f-region');
+  const roomSelect = document.getElementById('f-room');
+  const budgetSelect = document.getElementById('f-budget');
+  const mobileBar = document.getElementById('mobile-sticky-btn');
+  const mobileCount = document.getElementById('mobile-sticky-count');
 
   // Filter state
-  let currentRegion = 'all';
-  let currentRoom = 'all';
   let currentMonth = 'all';
   let currentQuickChip = null;
-  let maxBudget = 0;
-  let searchQuery = '';
   let logTimer = null;
 
   // Demand Logging (Cloudflare Worker D1)
@@ -47,10 +45,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Track Outbound Click on school CTA links
   document.addEventListener('click', (e) => {
-    const cta = e.target.closest('.cta-btn, .agency-cta-btn, .school-link, a[target="_blank"]');
+    const cta = e.target.closest('.cta, .agency-link, a[target="_blank"]');
     if (!cta) return;
-    const card = cta.closest('.school-card') || document.querySelector('.school-detail-card');
-    const schoolName = card ? (card.dataset.name || card.querySelector('h1, h2')?.innerText?.trim() || '') : '';
+    const card = cta.closest('.school-card') || document.querySelector('.school-card');
+    const schoolName = card ? (card.dataset.name || card.querySelector('h1, h2, .place')?.innerText?.trim() || '') : '';
     const siteText = cta.innerText?.trim() || '';
     const href = cta.getAttribute('href') || '';
     
@@ -88,49 +86,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Filter groups (Region, Room)
-  document.querySelectorAll('.filter-group').forEach(group => {
-    group.addEventListener('click', (e) => {
-      const btn = e.target.closest('.pill-btn');
-      if (!btn) return;
-
-      const filterType = group.dataset.filterType;
-      const value = btn.dataset.value;
-
-      group.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      if (filterType === 'region') currentRegion = value;
-      if (filterType === 'room') currentRoom = value;
-
-      applyFilters();
-    });
+  // Select Inputs
+  [regionSelect, roomSelect, budgetSelect, sortSelect].filter(Boolean).forEach(el => {
+    el.addEventListener('change', applyFilters);
   });
 
-  // Budget Select
-  if (budgetSelect) {
-    budgetSelect.addEventListener('change', () => {
-      maxBudget = parseInt(budgetSelect.value, 10) || 0;
-      applyFilters();
-    });
-  }
-
-  // Search input listener
+  // Search input
   if (searchInput) {
-    searchInput.addEventListener('input', (e) => {
-      searchQuery = e.target.value.trim().toLowerCase();
-      applyFilters();
-    });
+    searchInput.addEventListener('input', applyFilters);
   }
 
-  // Sort listener
-  if (sortSelect) {
-    sortSelect.addEventListener('change', () => {
-      applyFilters();
-    });
-  }
-
-  // Mobile Jump Bar click listener
+  // Mobile Jump Button
   if (mobileBar) {
     mobileBar.addEventListener('click', () => {
       cardsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -139,6 +105,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function applyFilters() {
     let visibleCount = 0;
+    const regionVal = regionSelect ? regionSelect.value : 'all';
+    const roomVal = roomSelect ? roomSelect.value : 'all';
+    const budgetVal = budgetSelect ? parseInt(budgetSelect.value, 10) : 0;
+    const searchVal = searchInput ? searchInput.value.trim().toLowerCase() : '';
 
     cards.forEach(card => {
       const cardRegion = card.dataset.region || '';
@@ -152,13 +122,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const seasonDiff = parseInt(card.dataset.seasonDiff || 0, 10);
 
       // 1. Region
-      let matchRegion = (currentRegion === 'all') || (cardRegion === currentRegion) || (cardPref === currentRegion);
+      let matchRegion = (regionVal === 'all') || (cardRegion === regionVal) || (cardPref.includes(regionVal));
 
       // 2. Room
       let matchRoom = true;
-      if (currentRoom === 'single') matchRoom = cardRooms.includes('シングル');
-      if (currentRoom === 'self') matchRoom = cardRooms.includes('自炊');
-      if (currentRoom === 'shared') matchRoom = cardRooms.includes('相部屋') || cardRooms.includes('ツイン') || cardRooms.includes('グループ');
+      if (roomVal === 'single') matchRoom = cardRooms.includes('シングル');
+      if (roomVal === 'self') matchRoom = cardRooms.includes('自炊');
+      if (roomVal === 'shared') matchRoom = cardRooms.includes('相部屋') || cardRooms.includes('ツイン') || cardRooms.includes('グループ');
 
       // 3. Calendar Month
       let matchMonth = true;
@@ -176,20 +146,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // 5. Budget Max
       let matchBudget = true;
-      if (maxBudget > 0) {
-        matchBudget = (minPrice > 0 && minPrice <= maxBudget);
+      if (budgetVal > 0) {
+        matchBudget = (minPrice > 0 && minPrice <= budgetVal);
       }
 
       // 6. Search Query
       let matchSearch = true;
-      if (searchQuery) {
-        matchSearch = cardName.includes(searchQuery) ||
-                      cardPref.toLowerCase().includes(searchQuery) ||
-                      cardFeatures.includes(searchQuery);
+      if (searchVal) {
+        matchSearch = cardName.includes(searchVal) ||
+                      cardPref.toLowerCase().includes(searchVal) ||
+                      cardFeatures.includes(searchVal);
       }
 
       if (matchRegion && matchRoom && matchMonth && matchQuick && matchBudget && matchSearch) {
-        card.style.display = 'flex';
+        card.style.display = 'block';
         visibleCount++;
       } else {
         card.style.display = 'none';
@@ -217,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sortedCards.forEach(c => cardsContainer.appendChild(c));
 
     if (countDisplay) {
-      countDisplay.innerHTML = `表示中: <strong>${visibleCount}</strong> 校 / 全 ${cards.length} 校`;
+      countDisplay.innerHTML = `該当 <strong>${visibleCount}</strong> 校 / 全 ${cards.length} 校`;
     }
     if (mobileCount) {
       mobileCount.textContent = `${visibleCount.toLocaleString()}校 ▾`;
@@ -227,12 +197,12 @@ document.addEventListener('DOMContentLoaded', () => {
     clearTimeout(logTimer);
     logTimer = setTimeout(() => {
       sendLog('search', {
-        region: currentRegion,
-        room: currentRoom,
+        region: regionVal,
+        room: roomVal,
         month: currentMonth,
         quick: currentQuickChip,
-        budget: maxBudget,
-        query: searchQuery,
+        budget: budgetVal,
+        query: searchVal,
         sort: sortVal,
         hitCount: visibleCount,
         zeroResult: visibleCount === 0

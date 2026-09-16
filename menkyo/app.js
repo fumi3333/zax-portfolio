@@ -1,4 +1,4 @@
-/* menkyo-sort Vanilla JS App with Demand Tracking */
+/* menkyo-sort Vanilla JS App with Calendar & Quick Chips */
 document.addEventListener('DOMContentLoaded', () => {
   const cardsContainer = document.getElementById('school-grid');
   if (!cardsContainer) return;
@@ -7,13 +7,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const countDisplay = document.getElementById('count-display');
   const searchInput = document.getElementById('search-input');
   const sortSelect = document.getElementById('sort-select');
+  const budgetSelect = document.getElementById('budget-select');
   const mobileBar = document.getElementById('mobile-jump-bar');
   const mobileCount = document.getElementById('mobile-jump-count');
 
   // Filter state
   let currentRegion = 'all';
-  let currentCourse = 'all';
   let currentRoom = 'all';
+  let currentMonth = 'all';
+  let currentQuickChip = null;
+  let maxBudget = 0;
   let searchQuery = '';
   let logTimer = null;
 
@@ -44,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Track Outbound Click on school CTA links
   document.addEventListener('click', (e) => {
-    const cta = e.target.closest('.cta-btn, .school-link, a[target="_blank"]');
+    const cta = e.target.closest('.cta-btn, .agency-cta-btn, .school-link, a[target="_blank"]');
     if (!cta) return;
     const card = cta.closest('.school-card') || document.querySelector('.school-detail-card');
     const schoolName = card ? (card.dataset.name || card.querySelector('h1, h2')?.innerText?.trim() || '') : '';
@@ -59,48 +62,58 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // URL Parameters Initialization
-  const urlParams = new URLSearchParams(window.location.search);
-  const paramQ = urlParams.get('q');
-  const paramRegion = urlParams.get('region');
-  const paramRoom = urlParams.get('room');
+  // Calendar Month Buttons
+  document.querySelectorAll('.cal-month-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.cal-month-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentMonth = btn.dataset.month || 'all';
+      applyFilters();
+    });
+  });
 
-  if (paramQ && searchInput) {
-    searchInput.value = paramQ;
-    searchQuery = paramQ.trim().toLowerCase();
-  }
-  if (paramRegion) currentRegion = paramRegion;
-  if (paramRoom) currentRoom = paramRoom;
+  // Quick Filter Chips
+  document.querySelectorAll('.quick-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const filter = chip.dataset.filter;
+      if (currentQuickChip === filter) {
+        currentQuickChip = null;
+        chip.classList.remove('active');
+      } else {
+        document.querySelectorAll('.quick-chip').forEach(c => c.classList.remove('active'));
+        currentQuickChip = filter;
+        chip.classList.add('active');
+      }
+      applyFilters();
+    });
+  });
 
-  // Filter buttons listeners
+  // Filter groups (Region, Room)
   document.querySelectorAll('.filter-group').forEach(group => {
-    const filterType = group.dataset.filterType;
-    if (filterType === 'region' && paramRegion) {
-      group.querySelectorAll('.pill-btn').forEach(b => {
-        b.classList.toggle('active', b.dataset.value === paramRegion);
-      });
-    }
-    if (filterType === 'room' && paramRoom) {
-      group.querySelectorAll('.pill-btn').forEach(b => {
-        b.classList.toggle('active', b.dataset.value === paramRoom);
-      });
-    }
-
     group.addEventListener('click', (e) => {
       const btn = e.target.closest('.pill-btn');
       if (!btn) return;
 
+      const filterType = group.dataset.filterType;
       const value = btn.dataset.value;
+
       group.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
       if (filterType === 'region') currentRegion = value;
-      if (filterType === 'course') currentCourse = value;
       if (filterType === 'room') currentRoom = value;
 
       applyFilters();
     });
   });
+
+  // Budget Select
+  if (budgetSelect) {
+    budgetSelect.addEventListener('change', () => {
+      maxBudget = parseInt(budgetSelect.value, 10) || 0;
+      applyFilters();
+    });
+  }
 
   // Search input listener
   if (searchInput) {
@@ -132,18 +145,42 @@ document.addEventListener('DOMContentLoaded', () => {
       const cardPref = card.dataset.pref || '';
       const cardName = (card.dataset.name || '').toLowerCase();
       const cardRooms = card.dataset.rooms || '';
+      const cardMonths = card.dataset.months || '';
       const cardFeatures = (card.dataset.features || '').toLowerCase();
+      const minPrice = parseInt(card.dataset.minPrice || 0, 10);
+      const siteDiff = parseInt(card.dataset.siteDiff || 0, 10);
+      const seasonDiff = parseInt(card.dataset.seasonDiff || 0, 10);
 
-      // Check region
+      // 1. Region
       let matchRegion = (currentRegion === 'all') || (cardRegion === currentRegion) || (cardPref === currentRegion);
 
-      // Check room
+      // 2. Room
       let matchRoom = true;
       if (currentRoom === 'single') matchRoom = cardRooms.includes('シングル');
       if (currentRoom === 'self') matchRoom = cardRooms.includes('自炊');
       if (currentRoom === 'shared') matchRoom = cardRooms.includes('相部屋') || cardRooms.includes('ツイン') || cardRooms.includes('グループ');
 
-      // Check search query
+      // 3. Calendar Month
+      let matchMonth = true;
+      if (currentMonth !== 'all') {
+        matchMonth = cardMonths.includes(currentMonth);
+      }
+
+      // 4. Quick Filter Chips
+      let matchQuick = true;
+      if (currentQuickChip === 'cheap20') matchQuick = (minPrice > 0 && minPrice <= 250000);
+      if (currentQuickChip === 'single') matchQuick = cardRooms.includes('シングル');
+      if (currentQuickChip === 'self') matchQuick = cardRooms.includes('自炊');
+      if (currentQuickChip === 'sitediff') matchQuick = (siteDiff >= 80000);
+      if (currentQuickChip === 'seasondiff') matchQuick = (seasonDiff >= 100000);
+
+      // 5. Budget Max
+      let matchBudget = true;
+      if (maxBudget > 0) {
+        matchBudget = (minPrice > 0 && minPrice <= maxBudget);
+      }
+
+      // 6. Search Query
       let matchSearch = true;
       if (searchQuery) {
         matchSearch = cardName.includes(searchQuery) ||
@@ -151,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
                       cardFeatures.includes(searchQuery);
       }
 
-      if (matchRegion && matchRoom && matchSearch) {
+      if (matchRegion && matchRoom && matchMonth && matchQuick && matchBudget && matchSearch) {
         card.style.display = 'flex';
         visibleCount++;
       } else {
@@ -191,8 +228,10 @@ document.addEventListener('DOMContentLoaded', () => {
     logTimer = setTimeout(() => {
       sendLog('search', {
         region: currentRegion,
-        course: currentCourse,
         room: currentRoom,
+        month: currentMonth,
+        quick: currentQuickChip,
+        budget: maxBudget,
         query: searchQuery,
         sort: sortVal,
         hitCount: visibleCount,

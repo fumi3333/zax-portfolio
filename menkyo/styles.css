@@ -1,4 +1,4 @@
-/* Neubrutalism Design System for menkyo-sort */
+/* Neubrutalism Design System for menkyo-sort (Resort-Sort Architecture) */
 :root {
   --bg: #fafafa;
   --card: #ffffff;
@@ -57,11 +57,11 @@ a {
   text-decoration: none;
 }
 
-/* Header & Navigation */
+/* Header */
 header {
   background: var(--card);
   border-bottom: var(--border-heavy);
-  padding: 16px 20px;
+  padding: 14px 20px;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -84,7 +84,7 @@ header {
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 900;
   letter-spacing: -0.04em;
   background: var(--neon-yellow);
@@ -101,25 +101,19 @@ header {
   color: var(--sub);
 }
 
-.header-actions {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-
 .badge-pr {
   font-size: 11px;
   font-weight: 800;
-  border: 1px solid var(--line);
+  background: var(--bg);
+  border: var(--border-thick);
   padding: 2px 6px;
-  background: transparent;
   color: var(--sub);
 }
 
-/* Hero Section */
+/* Hero */
 .hero {
   max-width: 1140px;
-  margin: 24px auto 16px;
+  margin: 20px auto 16px;
   padding: 0 16px;
 }
 
@@ -127,117 +121,254 @@ header {
   background: var(--card);
   border: var(--border-heavy);
   box-shadow: var(--shadow-main);
-  padding: 24px 20px;
+  padding: 24px;
 }
 
 .hero-title {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 900;
-  margin: 0 0 10px;
-  line-height: 1.3;
+  line-height: 1.35;
+  margin: 0 0 12px;
+  letter-spacing: -0.02em;
 }
 
 .hero-title mark {
   background: var(--neon-yellow);
   color: #111;
-  padding: 2px 8px;
-  border: var(--border-thick);
+  padding: 2px 6px;
 }
 
 .hero-desc {
-  font-size: 15px;
+  font-size: 14px;
   color: var(--sub);
   margin: 0;
-  font-weight: 500;
+  line-height: 1.7;
 }
 
-/* Filter Bar */
-.filter-container {
+.cancel-free-banner {
+  background: var(--neon-green);
+  color: #064e3b;
+  border: var(--border-heavy);
+  box-shadow: var(--shadow-sm);
+  padding: 12px 18px;
+  margin-top: 14px;
+  font-size: 13px;
+  font-weight: 800;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cancel-free-banner .badge {
+  background: #064e3b;
+  color: #ffffff;
+  padding: 2px 6px;
+  font-size: 11px;
+  margin-right: 6px;
+  display: inline-block;
+}
+
+/* 入校時期カレンダー セクション */
+.calendar-section {
   max-width: 1140px;
-  margin: 0 auto 24px;
+  margin: 0 auto 16px;
   padding: 0 16px;
 }
 
-.filter-box {
+.calendar-card {
   background: var(--card);
   border: var(--border-heavy);
   box-shadow: var(--shadow-main);
   padding: 16px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
 }
 
-.filter-row {
+.calendar-header {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
   gap: 10px;
+  margin-bottom: 12px;
+}
+
+.cal-badge {
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 900;
+  padding: 3px 8px;
+  border: var(--border-thick);
+}
+
+.cal-title {
+  font-size: 14px;
+  font-weight: 900;
+  color: var(--ink);
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+  gap: 8px;
+}
+
+.cal-month-btn {
+  background: var(--bg);
+  border: var(--border-thick);
+  padding: 10px 8px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.1s ease;
+}
+
+.cal-month-btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0px var(--line);
+  background: var(--accent-light);
+}
+
+.cal-month-btn.active {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--line);
+  box-shadow: 3px 3px 0px var(--line);
+}
+
+.cal-month-btn.active .cal-month-tag {
+  color: var(--neon-yellow);
+}
+
+.cal-month-name {
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.cal-month-tag {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--sub);
+  margin-top: 2px;
+}
+
+/* ワンタップ人気ピル群 */
+.quick-chips-section {
+  max-width: 1140px;
+  margin: 0 auto 16px;
+  padding: 0 16px;
+}
+
+.quick-chips-inner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.quick-label {
+  font-size: 13px;
+  font-weight: 900;
+  color: var(--sub);
+}
+
+.quick-chip {
+  background: var(--card);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-sm);
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  color: var(--ink);
+}
+
+.quick-chip:hover {
+  background: var(--neon-yellow);
+  color: #111;
+  transform: translate(-1px, -1px);
+}
+
+.quick-chip.active {
+  background: var(--ink);
+  color: var(--bg);
+  box-shadow: 2px 2px 0px var(--accent);
+}
+
+/* フィルターパネル */
+.filter-panel {
+  max-width: 1140px;
+  margin: 0 auto 20px;
+  padding: 18px 20px;
+  background: var(--card);
+  border: var(--border-heavy);
+  box-shadow: var(--shadow-main);
+}
+
+.filter-section-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.filter-col {
+  flex: 1;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .filter-label {
   font-size: 13px;
   font-weight: 900;
-  min-width: 90px;
-  background: var(--ink);
-  color: var(--bg);
-  padding: 4px 8px;
-  text-align: center;
+  color: var(--ink);
 }
 
 .pill-group {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 6px;
 }
 
 .pill-btn {
-  background: var(--card);
+  background: var(--bg);
   border: var(--border-thick);
-  padding: 6px 14px;
+  padding: 6px 12px;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 800;
   cursor: pointer;
   box-shadow: var(--shadow-sm);
-  transition: all 0.1s ease;
   color: var(--ink);
+  transition: all 0.1s ease;
 }
 
 .pill-btn:hover {
-  background: var(--accent);
-  color: #ffffff;
+  background: var(--accent-light);
   transform: translate(-1px, -1px);
-  box-shadow: 3px 3px 0px var(--line);
 }
 
 .pill-btn.active {
   background: var(--accent);
   color: #ffffff;
-  box-shadow: none;
-  transform: translate(2px, 2px);
 }
 
-.search-input {
-  flex: 1;
-  min-width: 220px;
-  padding: 8px 12px;
+.custom-select, .search-input {
+  width: 100%;
   border: var(--border-thick);
+  padding: 8px 12px;
   font-size: 14px;
-  font-weight: 600;
-  background: var(--card);
+  font-weight: 700;
+  background: var(--bg);
   color: var(--ink);
-  outline: none;
-}
-
-.search-input:focus {
-  border-color: var(--accent);
   box-shadow: var(--shadow-sm);
 }
 
-/* Sort & Meta row */
-.meta-bar {
+/* 検索結果ヘッダー */
+.results-header {
   max-width: 1140px;
-  margin: 0 auto 16px;
+  margin: 0 auto 14px;
   padding: 0 16px;
   display: flex;
   justify-content: space-between;
@@ -246,35 +377,29 @@ header {
   gap: 10px;
 }
 
-.count-info {
-  font-size: 15px;
-  font-weight: 800;
-}
-
-.count-info strong {
-  color: var(--accent);
-  font-size: 20px;
-}
-
-.sort-select {
-  padding: 8px 12px;
+.count-display {
+  font-size: 16px;
+  font-weight: 900;
+  background: var(--accent-light);
   border: var(--border-thick);
-  background: var(--card);
-  color: var(--ink);
-  font-size: 13px;
-  font-weight: 700;
-  cursor: pointer;
+  padding: 4px 12px;
   box-shadow: var(--shadow-sm);
 }
 
-/* School Cards Grid */
+.sort-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 学校カード グリッド */
 .school-grid {
   max-width: 1140px;
-  margin: 0 auto 40px;
+  margin: 0 auto 30px;
   padding: 0 16px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
 }
 
 .school-card {
@@ -285,7 +410,7 @@ header {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
 }
 
 .school-card:hover {
@@ -301,132 +426,145 @@ header {
   gap: 10px;
 }
 
-.card-title-group {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
 .pref-badge {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 800;
+  background: var(--bg);
+  border: var(--border-thick);
+  padding: 2px 6px;
   display: inline-block;
-  background: var(--ink);
-  color: var(--bg);
-  padding: 2px 8px;
-  width: fit-content;
+  margin-bottom: 4px;
 }
 
 .card-title {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 900;
   margin: 0;
-  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.card-title a:hover {
+  text-decoration: underline;
+  color: var(--accent);
 }
 
 .badge-row {
   display: flex;
-  flex-wrap: wrap;
   gap: 6px;
+  flex-wrap: wrap;
 }
 
 .highlight-badge {
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 900;
   padding: 3px 8px;
   border: var(--border-thick);
-  background: var(--neon-yellow);
-  color: #111;
-  box-shadow: var(--shadow-sm);
+  background: var(--bg);
 }
 
 .diff-badge {
-  background: #fca5a5;
-  color: #7f1d1d;
+  background: var(--neon-yellow);
+  color: #713f12;
 }
 
 .season-badge {
-  background: #bfdbfe;
-  color: #1e3a8a;
+  background: var(--neon-green);
+  color: #064e3b;
 }
 
-/* Price & Comparison Box */
 .price-comparison-box {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 12px;
   background: var(--bg);
   border: var(--border-thick);
-  padding: 14px;
+  padding: 14px 18px;
 }
 
 .price-item {
   display: flex;
   flex-direction: column;
+  gap: 2px;
 }
 
 .price-label {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 800;
   color: var(--sub);
 }
 
 .price-value {
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 900;
-  color: var(--accent);
-  line-height: 1.2;
+  color: #b91c1c;
 }
 
 .price-unit {
   font-size: 14px;
-  font-weight: 700;
-  color: var(--ink);
-}
-
-.diff-info {
-  font-size: 13px;
-  font-weight: 700;
-  color: #b91c1c;
-  margin-top: 4px;
-}
-
-/* Source Comparison Row */
-.source-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding-top: 6px;
-  border-top: 1px dashed var(--sub);
-}
-
-.sources-list {
-  font-size: 12px;
-  font-weight: 700;
   color: var(--sub);
 }
 
-.sources-list span {
+.diff-info {
+  font-size: 14px;
+  font-weight: 900;
+  color: var(--ink);
+}
+
+.card-features-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.feature-tag {
+  font-size: 12px;
+  font-weight: 700;
   background: var(--card);
   border: 1px solid var(--line);
-  padding: 2px 6px;
-  margin-right: 4px;
+  padding: 2px 8px;
+}
+
+.source-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  border-top: var(--border-thick);
+  padding-top: 12px;
+}
+
+.agency-buttons-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.agency-cta-btn {
+  background: var(--card);
+  color: var(--ink);
+  border: var(--border-thick);
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 900;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.1s ease;
+}
+
+.agency-cta-btn:hover {
+  background: var(--neon-yellow);
+  color: #111;
+  transform: translate(-1px, -1px);
 }
 
 .card-btn {
   background: var(--ink);
   color: var(--bg);
   border: var(--border-thick);
-  padding: 10px 20px;
-  font-size: 14px;
-  font-weight: 800;
-  cursor: pointer;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 900;
   box-shadow: var(--shadow-sm);
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
   transition: all 0.1s ease;
 }
 
@@ -434,109 +572,60 @@ header {
   background: var(--accent);
   color: #ffffff;
   transform: translate(-1px, -1px);
-  box-shadow: 4px 4px 0px var(--line);
 }
 
-/* School Detail Page Styles */
-.detail-container {
-  max-width: 1140px;
-  margin: 24px auto 40px;
-  padding: 0 16px;
-}
-
-.detail-header {
-  background: var(--card);
-  border: var(--border-heavy);
-  box-shadow: var(--shadow-main);
-  padding: 24px;
-  margin-bottom: 24px;
-}
-
-.comparison-table-wrap {
-  overflow-x: auto;
-  margin: 16px 0;
-  border: var(--border-thick);
-}
-
+/* 比較テーブル */
 .comparison-table {
   width: 100%;
   border-collapse: collapse;
-  text-align: left;
-  background: var(--card);
+  font-size: 13px;
+  margin-top: 10px;
 }
 
-.comparison-table th,
-.comparison-table td {
-  padding: 12px 14px;
-  border: 1px solid var(--line);
-  font-size: 14px;
+.comparison-table th, .comparison-table td {
+  border: var(--border-thick);
+  padding: 10px 12px;
+  text-align: left;
 }
 
 .comparison-table th {
-  background: var(--ink);
-  color: var(--bg);
-  font-weight: 800;
-}
-
-.comparison-table tr:hover {
-  background: var(--accent-light);
+  background: var(--bg);
+  font-weight: 900;
 }
 
 .cheapest-cell {
-  background: var(--neon-yellow) !important;
-  color: #111 !important;
-  font-weight: 900;
-}
-
-/* CTA & Outbound */
-.cta-box {
-  background: var(--neon-yellow);
-  border: var(--border-heavy);
-  box-shadow: var(--shadow-main);
-  padding: 20px;
-  text-align: center;
-  margin: 30px 0;
-}
-
-.cta-title {
-  font-size: 20px;
-  font-weight: 900;
-  color: #111;
-  margin: 0 0 12px;
-}
-
-.cta-btn-group {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
+  background: #fef08a !important;
+  color: #713f12 !important;
+  font-weight: 900 !important;
 }
 
 .cta-btn {
   background: var(--ink);
-  color: var(--bg);
-  border: var(--border-thick);
-  padding: 12px 24px;
-  font-size: 16px;
+  color: #ffffff;
+  border: var(--border-heavy);
+  padding: 12px 20px;
+  font-size: 15px;
   font-weight: 900;
-  box-shadow: var(--shadow-sm);
-  display: inline-block;
-  cursor: pointer;
+  text-align: center;
+  box-shadow: var(--shadow-main);
+  display: block;
   transition: all 0.1s ease;
 }
 
 .cta-btn:hover {
   background: var(--accent);
-  color: #ffffff;
   transform: translate(-2px, -2px);
-  box-shadow: 6px 6px 0px #111;
+  box-shadow: var(--shadow-hover);
 }
 
-/* Content & FAQ */
+/* コンテンツ・FAQ */
 .content-section {
   max-width: 1140px;
   margin: 0 auto 40px;
   padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .content-card {
@@ -544,7 +633,6 @@ header {
   border: var(--border-heavy);
   box-shadow: var(--shadow-main);
   padding: 24px;
-  margin-bottom: 20px;
 }
 
 .content-card h2 {
@@ -561,15 +649,20 @@ header {
 }
 
 .faq-q {
-  font-weight: 800;
+  font-weight: 900;
   font-size: 15px;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
+}
+
+.faq-q::before {
+  content: "Q. ";
+  color: var(--accent);
 }
 
 .faq-a {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--sub);
-  margin: 0;
+  line-height: 1.7;
 }
 
 /* Footer */
@@ -578,103 +671,10 @@ footer {
   border-top: var(--border-heavy);
   padding: 30px 20px;
   text-align: center;
-  font-size: 13px;
-  color: var(--sub);
-  font-weight: 600;
+  margin-top: 40px;
 }
 
-footer a:hover {
-  text-decoration: underline;
-  color: var(--accent);
-}
-
-/* Deep Research Conversion & pSEO Elements */
-.cancel-free-banner {
-  background: var(--neon-green);
-  color: #064e3b;
-  border: var(--border-heavy);
-  box-shadow: var(--shadow-main);
-  padding: 14px 18px;
-  margin: 16px 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
-  font-weight: 800;
-  font-size: 14px;
-}
-
-.cancel-free-banner .badge {
-  background: #064e3b;
-  color: #ffffff;
-  padding: 3px 8px;
-  font-size: 12px;
-  font-weight: 900;
-  letter-spacing: 0.05em;
-}
-
-.line-alert-card {
-  background: #06c755;
-  color: #ffffff;
-  border: var(--border-heavy);
-  box-shadow: var(--shadow-main);
-  padding: 24px;
-  margin: 28px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.line-alert-card h3 {
-  font-size: 20px;
-  font-weight: 900;
-  margin: 0;
-  color: #ffffff;
-}
-
-.line-alert-card p {
-  font-size: 14px;
-  margin: 0;
-  line-height: 1.6;
-  opacity: 0.95;
-}
-
-.line-btn {
-  background: #ffffff;
-  color: #06c755;
-  border: var(--border-thick);
-  padding: 12px 20px;
-  font-size: 15px;
-  font-weight: 900;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  box-shadow: var(--shadow-sm);
-  cursor: pointer;
-  transition: all 0.1s ease;
-  width: fit-content;
-}
-
-.line-btn:hover {
-  background: var(--ink);
-  color: #ffffff;
-  transform: translate(-1px, -1px);
-  box-shadow: 4px 4px 0px #ffffff;
-}
-
-.discount-chip {
-  background: var(--neon-yellow);
-  color: #713f12;
-  border: 1px solid var(--line);
-  padding: 2px 6px;
-  font-size: 11px;
-  font-weight: 800;
-  display: inline-block;
-}
-
-/* Mobile Floating Bottom Bar */
+/* スマホ下部固定フローティングバー */
 .mobile-jump-bar {
   display: none;
   position: fixed;

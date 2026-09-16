@@ -189,6 +189,8 @@
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--ink);
        font:15px/1.6 system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif}
+  a{color:inherit;text-decoration:none}
+  a:hover{text-decoration:underline}
   header{padding:20px 16px 10px;max-width:980px;margin:0 auto}
   h1{font-size:22px;margin:0 0 6px;display:flex;align-items:baseline;letter-spacing:-0.02em}
   .lede{color:var(--sub);font-size:13px;margin:0}
@@ -213,11 +215,11 @@
   .wage{font-weight:700;font-size:16px;color:var(--ink);font-variant-numeric:tabular-nums}
   .dorm-full{color:var(--ink);font-weight:600}
   .dorm-maybe{color:var(--sub);font-weight:600}
-  .raw{font-size:11px;color:var(--sub);white-space:normal;max-width:200px}
+  .raw{font-size:11px;color:var(--sub);white-space:normal;max-width:180px;line-height:1.4}
   .lic{font-size:11px;color:var(--sub)}
   .badge{display:inline-block;padding:2px 7px;border-radius:4px;font-size:11px;margin-right:4px;background:var(--bg);border:1px solid var(--line);color:var(--ink)}
-  a.cta{display:inline-block;padding:7px 15px;background:var(--accent);color:var(--bg);font-weight:600;text-decoration:none;border-radius:6px;font-size:12px;transition:all .15s}
-  a.cta:hover{background:#7c3aed;color:#ffffff;transform:translateY(-1px);box-shadow:0 2px 8px rgba(124,58,237,0.3)}
+  a.cta{display:inline-block;padding:7px 15px;background:var(--accent);color:var(--bg)!important;font-weight:600;text-decoration:none!important;border-radius:6px;font-size:12px;transition:all .15s}
+  a.cta:hover{background:#7c3aed;color:#ffffff!important;transform:translateY(-1px);box-shadow:0 2px 8px rgba(124,58,237,0.3)}
   .badge-partner{background:#f3e8ff;color:#6b21a8;border-color:#d8b4fe;font-weight:600}
   @media (prefers-color-scheme:dark){
     .badge-partner{background:#2e1065;color:#d8b4fe;border-color:#581c87}
@@ -227,15 +229,20 @@
   .btn-chip.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
   .empty{padding:50px 16px;text-align:center;color:var(--sub)}
   
-  /* SEO解説・FAQセクション */
-  .seo-content{max-width:980px;margin:0 auto 30px;padding:0 16px}
-  .seo-box{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:24px;margin-bottom:20px}
-  .seo-box h2{font-size:18px;margin:0 0 12px;color:var(--ink);letter-spacing:-0.01em}
-  .seo-box h3{font-size:15px;margin:16px 0 8px;color:var(--ink)}
+  /* SEO解説・FAQセクション（検索結果の邪魔にならないよう折りたたみ化） */
+  .seo-content{max-width:980px;margin:20px auto 30px;padding:0 16px}
+  .seo-accordion{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+  .seo-summary{padding:14px 18px;font-weight:700;font-size:13px;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:space-between;list-style:none;user-select:none}
+  .seo-summary::-webkit-details-marker{display:none}
+  .seo-summary:hover{background:var(--bg)}
+  .seo-toggle-badge{font-size:11px;padding:3px 8px;border-radius:4px;background:var(--bg);border:1px solid var(--line);color:var(--sub);font-weight:400}
+  .seo-box{padding:14px 20px 24px;border-top:1px dashed var(--line)}
+  .seo-box h2{font-size:17px;margin:0 0 12px;color:var(--ink);letter-spacing:-0.01em}
+  .seo-box h3{font-size:14px;margin:16px 0 8px;color:var(--ink)}
   .seo-box p{font-size:13px;line-height:1.8;color:var(--sub);margin:0 0 12px}
   .seo-box ul{margin:0 0 12px;padding-left:20px;font-size:13px;color:var(--sub);line-height:1.8}
   .seo-box li{margin-bottom:4px}
-  .faq-q{font-weight:700;color:var(--ink);font-size:14px;margin-top:14px}
+  .faq-q{font-weight:700;color:var(--ink);font-size:13px;margin-top:14px}
   .faq-a{margin:4px 0 12px;font-size:13px;color:var(--sub);line-height:1.7}
 
   footer{max-width:980px;margin:0 auto;padding:0 16px 16px;font-size:12px;color:var(--sub)}
@@ -245,9 +252,7 @@
   .legal p{margin:8px 0;line-height:1.7}
   .note{font-size:12px;color:var(--sub);margin:10px 0 0}
 
-  /* 検索から来た人が最初に見るべきなのは求人であって、空のフォームではない。
-     スマホでは絞り込みを畳み、件数と求人リストを先に出す。
-     PCは横に余裕があるので従来どおり全部開いたまま。 */
+  /* スマホ最適化 */
   #filter-toggle{display:none}
   @media (max-width:720px){
     main{display:flex;flex-direction:column}
@@ -257,33 +262,25 @@
       border-radius:8px;font-size:15px;font-weight:600;text-align:left;cursor:pointer;
       font-family:inherit}
     #filter-toggle[aria-expanded="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-    /* 絞り込みは最初から開いておく。検索ツールなので、開く操作を挟む意味がない。
-       閉じたい人のためにボタンは残すが、初期状態は開。 */
     #filter-panel{display:block;order:1}
     #filter-panel.closed{display:none}
-    .count{order:2}
-    #results{order:3}
-    #site-links{order:4}
+    .count{order:2;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;margin:10px 0;font-size:13px}
+    #sortbar{order:3}
+    #results{order:4}
+    #site-links{order:5}
     .scroll-hint{display:block!important}
     /* スマホで横スクロールしても応募ボタンが常に右端に見えるように固定しつつ、
-       左側の列（時給・寮・期間）が奥に隠れていることが透けてわかるよう半透明＋すりガラス化 */
+       背景を不透明にして背後のテキストが透けて重なるのを防止 */
     th:last-child,
     td:last-child{
       position:sticky;
       right:0;
-      background:rgba(255, 255, 255, 0.85);
-      backdrop-filter:blur(6px);
-      -webkit-backdrop-filter:blur(6px);
-      box-shadow:-6px 0 12px rgba(0,0,0,0.08);
+      background:var(--card);
+      box-shadow:-4px 0 8px rgba(0,0,0,0.06);
       z-index:2;
     }
-    @media (prefers-color-scheme:dark){
-      th:last-child,
-      td:last-child{
-        background:rgba(24, 24, 27, 0.85);
-      }
-    }
     th:last-child{
+      background:var(--bg);
       z-index:3;
     }
   }
@@ -602,7 +599,8 @@
   <div id="sortbar" style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:6px 0 10px;font-size:13px;color:var(--sub)">
     <label for="f-sort" style="font-weight:600;color:var(--ink)">並び順</label>
     <select id="f-sort" style="padding:6px 10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);font-size:13px">
-      <option value="recommend">おすすめ順</option>
+      <option value="recommend">おすすめ順（条件・新着バランス）</option>
+      <option value="recent">新着・更新順（最新確認優先）</option>
       <option value="net_wage">手取り（月収目安）の高い順</option>
       <option value="wage">時給の高い順</option>
     </select>
@@ -777,7 +775,7 @@
         </td>
         <td class="dorm-full">完全個室
           <span class="badge badge-accent">寮費無料</span>
-          <div class="raw">個室（共有スペース有り） / 男女共通寮</div>
+          <div class="raw">個室（共有スペース有り）</div>
         </td>
         <td>
           <b>2食無料</b>
@@ -822,7 +820,7 @@
         </td>
         <td class="dorm-full">完全個室
           <span class="badge badge-accent">寮費無料</span>
-          <div class="raw">個室（共有スペース有り） / 男女共通寮</div>
+          <div class="raw">個室（共有スペース有り）</div>
         </td>
         <td>
           <b>2食無料</b>
@@ -1137,7 +1135,7 @@
         </td>
         <td class="dorm-full">完全個室
           <span class="badge badge-accent">寮費無料</span>
-          <div class="raw">個室 / 男女共通寮</div>
+          <div class="raw">個室</div>
         </td>
         <td>
           <b>2食無料</b>
@@ -1227,7 +1225,7 @@
         </td>
         <td class="">相部屋
           <span class="badge badge-accent">寮費無料</span>
-          <div class="raw">相部屋（2人） / 男女共通寮</div>
+          <div class="raw">相部屋（2人）</div>
         </td>
         <td>
           <b>2食無料</b>
@@ -1362,7 +1360,7 @@
         </td>
         <td class="dorm-full">完全個室
           
-          <div class="raw">個室 / 男女共通寮</div>
+          <div class="raw">個室</div>
         </td>
         <td>
           <b>2食無料</b>
@@ -1407,7 +1405,7 @@
         </td>
         <td class="dorm-full">完全個室
           
-          <div class="raw">個室（共有スペース有り） / 男女共通寮</div>
+          <div class="raw">個室（共有スペース有り）</div>
         </td>
         <td>
           <b>2食無料</b>
@@ -1497,7 +1495,7 @@
         </td>
         <td class="dorm-full">完全個室
           <span class="badge badge-accent">寮費無料</span>
-          <div class="raw">個室（共有スペース有り） / 男女共通寮</div>
+          <div class="raw">個室（共有スペース有り）</div>
         </td>
         <td>
           <b>2食無料</b>
@@ -1542,7 +1540,7 @@
         </td>
         <td class="dorm-full">完全個室
           <span class="badge badge-accent">寮費無料</span>
-          <div class="raw">個室（共有スペース有り） / 男女共通寮</div>
+          <div class="raw">個室（共有スペース有り）</div>
         </td>
         <td>
           <b>2食無料</b>
@@ -1857,7 +1855,7 @@
         </td>
         <td class="dorm-full">完全個室
           
-          <div class="raw">個室（共有スペース有り） / 男女共通寮</div>
+          <div class="raw">個室（共有スペース有り）</div>
         </td>
         <td>
           <b>2食無料</b>
@@ -1902,7 +1900,7 @@
         </td>
         <td class="dorm-full">完全個室
           
-          <div class="raw">個室（共有スペース有り） / 男女共通寮</div>
+          <div class="raw">個室（共有スペース有り）</div>
         </td>
         <td>
           <b>2食無料</b>
@@ -1947,7 +1945,7 @@
         </td>
         <td class="dorm-full">完全個室
           
-          <div class="raw">個室（共有スペース有り） / 男女共通寮</div>
+          <div class="raw">個室（共有スペース有り）</div>
         </td>
         <td>
           <b>2食無料</b>
@@ -1992,7 +1990,7 @@
         </td>
         <td class="dorm-full">完全個室
           
-          <div class="raw">個室（共有スペース有り） / 男女共通寮</div>
+          <div class="raw">個室（共有スペース有り）</div>
         </td>
         <td>
           <b>2食無料</b>
@@ -2037,7 +2035,7 @@
         </td>
         <td class="dorm-full">完全個室
           
-          <div class="raw">個室（共有スペース有り） / 男女共通寮</div>
+          <div class="raw">個室（共有スペース有り）</div>
         </td>
         <td>
           <b>2食無料</b>
@@ -2082,7 +2080,7 @@
         </td>
         <td class="dorm-full">完全個室
           
-          <div class="raw">個室（共有スペース有り） / 男女共通寮</div>
+          <div class="raw">個室（共有スペース有り）</div>
         </td>
         <td>
           <b>2食無料</b>
@@ -2127,7 +2125,7 @@
         </td>
         <td class="dorm-full">完全個室
           
-          <div class="raw">個室（共有スペース有り） / 男女共通寮</div>
+          <div class="raw">個室（共有スペース有り）</div>
         </td>
         <td>
           <b>2食無料</b>
@@ -2172,7 +2170,7 @@
         </td>
         <td class="dorm-full">完全個室
           
-          <div class="raw">個室（共有スペース有り） / 男女共通寮</div>
+          <div class="raw">個室（共有スペース有り）</div>
         </td>
         <td>
           <b>2食無料</b>
@@ -2217,7 +2215,7 @@
         </td>
         <td class="dorm-full">完全個室
           
-          <div class="raw">個室（共有スペース有り） / 男女共通寮</div>
+          <div class="raw">個室（共有スペース有り）</div>
         </td>
         <td>
           <b>2食無料</b>
@@ -2262,7 +2260,7 @@
         </td>
         <td class="dorm-full">完全個室
           
-          <div class="raw">個室（共有スペース有り） / 男女共通寮</div>
+          <div class="raw">個室（共有スペース有り）</div>
         </td>
         <td>
           <b>2食無料</b>
@@ -2307,7 +2305,7 @@
         </td>
         <td class="dorm-full">完全個室
           
-          <div class="raw">個室 / 男女共通寮</div>
+          <div class="raw">個室</div>
         </td>
         <td>
           <b>2食無料</b>
@@ -2487,7 +2485,7 @@
         </td>
         <td class="dorm-full">完全個室
           
-          <div class="raw">個室（共有スペース有り） / 男女共通寮</div>
+          <div class="raw">個室（共有スペース有り）</div>
         </td>
         <td>
           <b>2食無料</b>
@@ -2532,7 +2530,7 @@
         </td>
         <td class="dorm-full">完全個室
           
-          <div class="raw">個室（共有スペース有り） / 男女共通寮</div>
+          <div class="raw">個室（共有スペース有り）</div>
         </td>
         <td>
           <b>2食無料</b>
@@ -2667,7 +2665,7 @@
         </td>
         <td class="dorm-full">完全個室
           
-          <div class="raw">個室（共有スペース有り） / 男女共通寮</div>
+          <div class="raw">個室（共有スペース有り）</div>
         </td>
         <td>
           <b>1食無料</b>
@@ -3747,7 +3745,7 @@
         </td>
         <td class="dorm-full">完全個室
           
-          <div class="raw">個室（共有スペース有り） / 男女共通寮</div>
+          <div class="raw">個室（共有スペース有り）</div>
         </td>
         <td>
           <b>2食無料</b>
@@ -3792,7 +3790,7 @@
         </td>
         <td class="dorm-full">完全個室
           
-          <div class="raw">個室 / 男女共通寮</div>
+          <div class="raw">個室</div>
         </td>
         <td>
           <b>2食無料</b>
@@ -3837,7 +3835,7 @@
         </td>
         <td class="dorm-full">完全個室
           
-          <div class="raw">個室 / 男女共通寮</div>
+          <div class="raw">個室</div>
         </td>
         <td>
           <b>2食無料</b>
@@ -3882,7 +3880,7 @@
         </td>
         <td class="dorm-full">完全個室
           
-          <div class="raw">個室 / 男女共通寮</div>
+          <div class="raw">個室</div>
         </td>
         <td>
           <b>2食無料</b>
@@ -3927,7 +3925,7 @@
         </td>
         <td class="dorm-full">完全個室
           
-          <div class="raw">個室 / 男女共通寮</div>
+          <div class="raw">個室</div>
         </td>
         <td>
           <b>3食無料</b>
@@ -3972,7 +3970,7 @@
         </td>
         <td class="dorm-full">完全個室
           
-          <div class="raw">個室 / 男女共通寮</div>
+          <div class="raw">個室</div>
         </td>
         <td>
           <b>3食無料</b>
@@ -4017,7 +4015,7 @@
         </td>
         <td class="dorm-full">完全個室
           
-          <div class="raw">個室 / 男女共通寮</div>
+          <div class="raw">個室</div>
         </td>
         <td>
           <b>3食無料</b>
@@ -4062,7 +4060,7 @@
         </td>
         <td class="dorm-full">完全個室
           
-          <div class="raw">個室 / 男女共通寮</div>
+          <div class="raw">個室</div>
         </td>
         <td>
           <b>2食無料</b>
@@ -4107,7 +4105,7 @@
         </td>
         <td class="dorm-full">完全個室
           
-          <div class="raw">個室 / 男女共通寮</div>
+          <div class="raw">個室</div>
         </td>
         <td>
           <b>2食無料</b>
@@ -4152,7 +4150,7 @@
         </td>
         <td class="dorm-full">完全個室
           
-          <div class="raw">個室 / 男女共通寮</div>
+          <div class="raw">個室</div>
         </td>
         <td>
           <b>2食無料</b>
@@ -4422,7 +4420,7 @@
         </td>
         <td class="dorm-full">完全個室
           <span class="badge badge-accent">寮費無料</span>
-          <div class="raw">個室（共有スペース有り） / 男女共通寮</div>
+          <div class="raw">個室（共有スペース有り）</div>
         </td>
         <td>
           <b>2食無料</b>
@@ -4557,7 +4555,7 @@
         </td>
         <td class="dorm-full">完全個室
           <span class="badge badge-accent">寮費無料</span>
-          <div class="raw">1ルーム個室 / 個室</div>
+          <div class="raw">1ルーム個室 個室</div>
         </td>
         <td>
           <b>2食無料</b>
@@ -4602,7 +4600,7 @@
         </td>
         <td class="dorm-full">完全個室
           <span class="badge badge-accent">寮費無料</span>
-          <div class="raw">個室（共有スペース有り） / 男女共通寮</div>
+          <div class="raw">個室（共有スペース有り）</div>
         </td>
         <td>
           <b>2食無料</b>
@@ -4647,7 +4645,7 @@
         </td>
         <td class="dorm-full">完全個室
           <span class="badge badge-accent">寮費無料</span>
-          <div class="raw">個室（共有スペース有り） / 男女共通寮</div>
+          <div class="raw">個室（共有スペース有り）</div>
         </td>
         <td>
           <b>2食無料</b>
@@ -5141,7 +5139,12 @@
 </main>
 
 <section class="seo-content">
-  <div class="seo-box">
+  <details class="seo-accordion">
+    <summary class="seo-summary">
+      <span>リゾートソートの特徴・よくあるご質問（FAQ）</span>
+      <span class="seo-toggle-badge">サイト解説を見る ▾</span>
+    </summary>
+    <div class="seo-box">
     <h2>リゾートバイト横断比較ツール「リゾートソート（resort sort）」とは</h2>
     <p>
       <b>リゾートソート（resort sort）</b>は、全国のホテル・温泉旅館・スキー場・テーマパーク等のリゾートバイト求人を、派遣会社各社（株式会社ダイブ、株式会社グッドマンサービス、株式会社アルファスタッフなど）の枠を超えて一括検索・条件比較できる独立系横断ソートエンジンです。
@@ -5191,7 +5194,8 @@
 
     <div class="faq-q">Q. 掲載されている求人は最新ですか？</div>
     <div class="faq-a">A. 各社が公開している求人データを定期的に自動巡回して更新しています。募集枠の変動に即応していますが、リアルタイムの最新採用枠状況は必ず「空き状況・詳細（公式）」ボタンから各社公式サイトでご確認ください。</div>
-  </div>
+    </div>
+  </details>
 </section>
 
 <section class="legal">
@@ -5749,7 +5753,25 @@ function score(j){
   if (NIGHT.test(j.job_category || "")) s -= 70;
   // 提携先。画面に明記したうえで加点する
   if (PARTNERS.some(p => (j.agency || "").includes(p))) s += 12;
+  // 直近確認・更新の鮮度加点（直近3日以内を上位に優遇し、上位の固定化を防止）
+  if (j.fetched_at) {
+    const ageDays = (Date.now() - new Date(j.fetched_at).getTime()) / 86400000;
+    if (ageDays <= 1) s += 16;
+    else if (ageDays <= 3) s += 8;
+    else if (ageDays <= 7) s += 3;
+  }
   return s;
+}
+
+function cleanDormRaw(raw){
+  if (!raw) return "";
+  return raw
+    .replace(/男女共通(?:寮)?|男女共用(?:寮)?/g, "")
+    .replace(/ワンルームタイプ/g, "1R")
+    .replace(/バストイレ別/g, "BT別")
+    .replace(/バストイレ付き?/g, "BT付")
+    .replace(/[\s、,／/・]+/g, " ")
+    .trim().slice(0, 36);
 }
 
 function render(){
@@ -5770,7 +5792,9 @@ function render(){
       ? "時給の高い順に並べています。ナイト系など一部の職種が上位に集まることがあります。"
       : sortMode === "net_wage"
       ? "想定手取り（月収目安）の高い順に並べています。税・社保控除後の手取り概算で比較できます。"
-      : "時給・寮の種類・寮費・食事・勤務期間の記載を合わせて並べています。提携先の求人を少し上に表示しています。";
+      : sortMode === "recent"
+      ? "新着・最新確認された順に並べています。募集枠が直近で確認されたフレッシュな求人から確認できます。"
+      : "時給・寮の種類・寮費・食事・勤務期間の記載を合わせて並べています。直近確認された求人を優先しています。";
   }
   logSearchDebounced(matched.length, unknown);
 
@@ -5824,6 +5848,11 @@ function render(){
     const isHourlyB = b.wage_type === "時給";
     if (isHourlyA && !isHourlyB) return -1;
     if (!isHourlyA && isHourlyB) return 1;
+    if (sortMode === "recent") {
+      const tA = a.fetched_at ? new Date(a.fetched_at).getTime() : 0;
+      const tB = b.fetched_at ? new Date(b.fetched_at).getTime() : 0;
+      return tB - tA;
+    }
     if (sortMode === "net_wage") {
       const getNet = x => {
         if (x.wage_type === "時給" && x.wage_min) return Math.round(x.wage_min * 8 * 22 * 0.81);
@@ -5842,6 +5871,7 @@ function render(){
   const rows = shown.map(j => {
     const dCost = j.dorm_cost;
     const dRaw = j.dorm_type_raw || "";
+    const dRawClean = cleanDormRaw(dRaw);
     let dBadge = "";
     if (dCost === 0) {
       dBadge = '<span class="badge" style="background:var(--ink);color:var(--bg);border-color:var(--ink);font-weight:600">寮費無料</span>';
@@ -5891,7 +5921,7 @@ function render(){
         </td>
         <td class="${DORM_CLASS[j.dorm_type] || ""}">${j.dorm_type || "不明"}
           ${dBadge}
-          <div class="raw">${j.dorm_type_raw || ""}</div>
+          <div class="raw">${dRawClean}</div>
         </td>
         <td>
           ${j.meals_per_day != null ? `<b>${j.meals_per_day}食無料</b>` : "—"}

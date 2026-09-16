@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta property="og:image" content="https://resort-sort.fumiproject.dev/ogp.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta property="og:image" content="https://fumiproject.dev/resort/ogp.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
 <title>リゾートバイト求人を4社から集めて横断検索を作るまで｜構造化データと2つの罠｜リゾートソート</title>
 <meta name="description" content="各社が公開している求人データをどう集め、どう共通の項目に揃えているか。素朴な文字列マッチが壊れた実例も含めて、このサイトの作り方を公開しています。">
-<link rel="canonical" href="https://resort-sort.fumiproject.dev/article/how-it-works/">
+<link rel="canonical" href="https://fumiproject.dev/resort/article/how-it-works/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="リゾートバイト求人を4社から集めて横断検索を作るまで｜構造化データと2つの罠">
 <meta property="og:description" content="各社が公開している求人データをどう集め、どう共通の項目に揃えているか。素朴な文字列マッチが壊れた実例も含めて、このサイトの作り方を公開しています。">
-<meta property="og:url" content="https://resort-sort.fumiproject.dev/article/how-it-works/">
+<meta property="og:url" content="https://fumiproject.dev/resort/article/how-it-works/">
 <style>:root{--bg:#fff;--ink:#111;--sub:#666;--line:#e2e2e2;--mark:#f6f6f4}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);
@@ -39,15 +39,15 @@ blockquote{margin:16px 0;padding:2px 16px;border-left:3px solid var(--line);colo
 </head>
 <body>
 <main>
-<p id="pr-notice" style="margin:0 0 14px;padding:6px 10px;border:1px solid #e2e2e2;border-radius:6px;font-size:12px;color:#666">PR：このページには広告（アフィリエイトリンク）が含まれます。リンク経由の応募で当サイトに紹介料が入ることがありますが、掲載順は各社から受け取る金額では決めていません。<a href="/about/" style="color:#666">掲載基準について</a></p>
-<p class="meta"><a href="/">リゾートソート</a> ＞ 記事</p>
+<p id="pr-notice" style="margin:0 0 14px;padding:6px 10px;border:1px solid #e2e2e2;border-radius:6px;font-size:12px;color:#666">PR：このページには広告（アフィリエイトリンク）が含まれます。リンク経由の応募で当サイトに紹介料が入ることがありますが、掲載順は各社から受け取る金額では決めていません。<a href="/resort/about/" style="color:#666">掲載基準について</a></p>
+<p class="meta"><a href="/resort/">リゾートソート</a> ＞ 記事</p>
 <h1>リゾートバイト求人を4社から集めて横断検索を作るまで｜構造化データと2つの罠</h1>
 <p class="meta">リゾートソート（ZAX）／ 求人データの実測にもとづく記事です</p>
 <p class="meta">※この記事は執筆時点のデータセット（14,328件）にもとづく調査記録です。
 数字をあとから書き換えると調査の記録として成立しなくなるため、本文はそのままにしています。
 現在の集計値は<a href="/data/">調査データのページ</a>でご確認ください。</p>
 <p>resort sort（リゾートソート）：リゾートバイトの求人を、派遣会社をまたいで条件で絞り込めるWebアプリです。時給・寮タイプ・食事・通勤条件で横断検索でき、各社の公式求人ページへ直接遷移します。現在3社・6,704件を掲載しています。</p>
-<p>https://sort.fumiproject.dev/resort/</p>
+<p>https://fumiproject.dev/resort/</p>
 <p>作るにあたって4社から14,328件の求人を取得し、共通のスキーマに正規化しました。この記事は、その過程で分かったことの記録です。</p>
 <h3>結論として、こうなりました</h3>
 <ul>
@@ -184,7 +184,7 @@ if p.get(&quot;postal&quot;) and p.get(&quot;street&quot;):
 <p>「JavaScriptで描画されているから機械では取れない」という最初の見立ては間違いでした。取れないどころか、各社は検索エンジンのために構造化データを整えて公開していました。</p>
 <p>同じように、「1件見てJSON-LDが無かったから、この会社は無い」も間違いでした。求人サイトを相手にするときは、まずJSON-LDを疑う。そして1件で結論を出さない。この2つだけでも、最初からやっていれば数日は縮まったと思います。</p>
 <p>コードは resort sort の中で動いています。実測データ（時給の分布、募集終了率、会社間の時給差）は下にまとめました。</p>
-<p>https://sort.fumiproject.dev/resort/data/</p>
+<p>https://fumiproject.dev/resort/data/</p>
 
 <h2>この条件の求人</h2>
 <p class="meta">おすすめ順の上位12件です。時給・寮の種類・寮費・食事・
@@ -196,7 +196,7 @@ if p.get(&quot;postal&quot;) and p.get(&quot;street&quot;):
 </table>
 <p><a href="/">条件を決めて求人を探す →</a></p>
 
-<a class="back" href="/">求人を時給順で比較する</a>
+<a class="back" href="/resort/">求人を時給順で比較する</a>
 </main>
 <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2" alt=""><img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4BC7V7+5SZ642+51UO+5YJRM" alt=""><img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4BC7V7+5SZ642+51UO+5YJRM" alt=""><img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2" alt=""><img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4BC7V7+5RSAWI+42GS+63WO2" alt=""><img src="https://t.afi-b.com/lead/A16713U/h993989i/A534498g" width="1" height="1" style="border:none;" alt="" />
 </body>

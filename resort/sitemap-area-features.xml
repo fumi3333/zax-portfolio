@@ -1,39 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://resort-sort.fumiproject.dev/area/hokkaido/couple/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://resort-sort.fumiproject.dev/area/hokkaido/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://resort-sort.fumiproject.dev/area/shizuoka/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://resort-sort.fumiproject.dev/area/nagano/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://resort-sort.fumiproject.dev/area/hokkaido/couple/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://resort-sort.fumiproject.dev/area/shizuoka/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://resort-sort.fumiproject.dev/area/kanagawa/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://resort-sort.fumiproject.dev/area/hokkaido/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://resort-sort.fumiproject.dev/area/okinawa/couple/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://resort-sort.fumiproject.dev/area/hokkaido/high-wage/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://resort-sort.fumiproject.dev/area/hokkaido/dorm-free/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://resort-sort.fumiproject.dev/area/gunma/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://resort-sort.fumiproject.dev/area/hokkaido/dorm-free/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://resort-sort.fumiproject.dev/area/nagano/dorm-free/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://resort-sort.fumiproject.dev/area/tochigi/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://resort-sort.fumiproject.dev/area/hokkaido/high-wage/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://resort-sort.fumiproject.dev/area/niigata/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://resort-sort.fumiproject.dev/area/gifu/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://resort-sort.fumiproject.dev/area/shizuoka/dorm-free/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://resort-sort.fumiproject.dev/area/tochigi/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://resort-sort.fumiproject.dev/area/tokyo/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://resort-sort.fumiproject.dev/area/hyogo/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://resort-sort.fumiproject.dev/area/gifu/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://resort-sort.fumiproject.dev/area/okinawa/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://resort-sort.fumiproject.dev/area/mie/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://resort-sort.fumiproject.dev/area/okinawa/dorm-free/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://resort-sort.fumiproject.dev/area/hyogo/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://resort-sort.fumiproject.dev/area/yamanashi/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://resort-sort.fumiproject.dev/area/gifu/dorm-free/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://resort-sort.fumiproject.dev/area/okinawa/dorm-free/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://resort-sort.fumiproject.dev/area/kumamoto/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://resort-sort.fumiproject.dev/area/wakayama/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://resort-sort.fumiproject.dev/area/kanagawa/dorm-free/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://resort-sort.fumiproject.dev/area/yamagata/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://resort-sort.fumiproject.dev/area/fukushima/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://resort-sort.fumiproject.dev/area/hyogo/dorm-free/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://resort-sort.fumiproject.dev/area/wakayama/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://resort-sort.fumiproject.dev/area/gunma/dorm-free/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://resort-sort.fumiproject.dev/area/kyoto/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://resort-sort.fumiproject.dev/area/hyogo/dorm-free/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://resort-sort.fumiproject.dev/area/fukushima/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://resort-sort.fumiproject.dev/area/niigata/dorm-free/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://resort-sort.fumiproject.dev/area/chiba/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://resort-sort.fumiproject.dev/area/yamagata/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://resort-sort.fumiproject.dev/area/tochigi/dorm-free/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://resort-sort.fumiproject.dev/area/chiba/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://resort-sort.fumiproject.dev/area/kyoto/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://resort-sort.fumiproject.dev/area/toyama/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://resort-sort.fumiproject.dev/area/akita/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://resort-sort.fumiproject.dev/area/hiroshima/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://resort-sort.fumiproject.dev/area/oita/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://resort-sort.fumiproject.dev/area/akita/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
 </urlset>

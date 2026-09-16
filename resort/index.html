@@ -5011,42 +5011,77 @@ document.addEventListener("visibilitychange", () => {
 });
 
 function init(){
-  ["f-region","f-pref","f-dorm","f-wage","f-meals","f-q","f-sort",
-   "f-start-date","f-end-date","f-term-select",
-   "c-ski","c-car","c-commute","c-immediate","c-wifi","c-dormfree","c-newbie","c-friends"].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.addEventListener("input", () => {
-        if (id.startsWith("f-start") || id.startsWith("f-end") || id.startsWith("f-term")) {
-          // 開始日を入力して終了日が空の場合、逆転防止や連動
-          const s = document.getElementById('f-start-date').value;
-          const e = document.getElementById('f-end-date').value;
-          if (s && e && new Date(e) < new Date(s)) {
-            document.getElementById('f-end-date').value = s;
-          }
-          updatePeriodDisplay();
+  const inputs = [
+    ...document.querySelectorAll("#filter-panel input"),
+    ...document.querySelectorAll("#filter-panel select"),
+    document.getElementById("f-sort")
+  ].filter(Boolean);
+
+  inputs.forEach(el => {
+    const handler = () => {
+      if (el.id.startsWith("f-start") || el.id.startsWith("f-end") || el.id.startsWith("f-term")) {
+        const s = document.getElementById('f-start-date').value;
+        const e = document.getElementById('f-end-date').value;
+        if (s && e && new Date(e) < new Date(s)) {
+          document.getElementById('f-end-date').value = s;
         }
-        render();
-      });
-    }
+        updatePeriodDisplay();
+      }
+      render();
+    };
+    el.addEventListener("input", handler);
+    el.addEventListener("change", handler);
   });
   applyUrlParams();
 }
 
+function updateUrlParams(){
+  const c = currentConditions();
+  const sp = new URLSearchParams();
+  if (c.q) sp.set("q", c.q);
+  if (c.pref) sp.set("pref", c.pref);
+  if (c.region) sp.set("region", c.region);
+  if (c.wage) sp.set("wage", c.wage);
+  if (c.dorm) sp.set("dorm", c.dorm);
+  if (c.meals) sp.set("meals", c.meals);
+  if (c.checks && c.checks.length) sp.set("c", c.checks.join(","));
+  const qs = sp.toString();
+  const newUrl = qs ? `${location.pathname}?${qs}` : location.pathname;
+  if (location.search !== (qs ? `?${qs}` : "")) {
+    try { history.replaceState(null, "", newUrl); } catch(e){}
+  }
+}
+
 function applyUrlParams(){
-  // /shindan/ の「この条件で求人を見る」から来たとき、選んだ条件を引き継ぐ。
-  // ?q=沖縄県+調理補助 のように渡す。q は県名・職種・会社名などを
-  // まとめて対象にするAND検索なので、これ1つで県×職種を再現できる。
-  const q = new URLSearchParams(location.search).get("q");
-  if (!q) return;
-  const el = document.getElementById("f-q");
-  if (!el) return;
-  el.value = q;
-  const panel = document.getElementById("filter-panel");
-  const btn = document.getElementById("filter-toggle");
-  if (panel) panel.classList.remove("closed");
-  if (btn) btn.setAttribute("aria-expanded", "true");
-  render();
+  const sp = new URLSearchParams(location.search);
+  let changed = false;
+  const setVal = (id, param) => {
+    const v = sp.get(param);
+    const el = document.getElementById(id);
+    if (v && el) { el.value = v; changed = true; }
+  };
+  setVal("f-q", "q");
+  setVal("f-pref", "pref");
+  setVal("f-region", "region");
+  setVal("f-wage", "wage");
+  setVal("f-dorm", "dorm");
+  setVal("f-meals", "meals");
+
+  const cList = sp.get("c");
+  if (cList) {
+    cList.split(",").forEach(cid => {
+      const chk = document.getElementById(`c-${cid}`);
+      if (chk) { chk.checked = true; changed = true; }
+    });
+  }
+
+  if (changed) {
+    const panel = document.getElementById("filter-panel");
+    const btn = document.getElementById("filter-toggle");
+    if (panel) panel.classList.remove("closed");
+    if (btn) btn.setAttribute("aria-expanded", "true");
+    render();
+  }
 }
 
 function passes(j){
@@ -5230,7 +5265,35 @@ function render(){
 
   const el = document.getElementById("results");
   if (!matched.length) {
-    el.innerHTML = '<div class="empty">条件に合う求人が見つかりませんでした。<br>条件を緩めてお試しください。</div>';
+    const cond = currentConditions();
+    const condParts = [];
+    if (cond.pref) condParts.push(cond.pref);
+    else if (cond.region) condParts.push(cond.region);
+    if (cond.q) condParts.push(`「${cond.q}」`);
+    if (cond.wage) condParts.push(`時給${cond.wage}円〜`);
+    if (cond.dorm) condParts.push(cond.dorm);
+    if (cond.checks && cond.checks.length) {
+      const checkNames = {
+        tooshi: "通しシフト", extend: "延長率高", friendly: "職場環境良好",
+        convenience: "コンビニ近い", ski: "スキー場", car: "車持込可",
+        commute: "送迎・徒歩10分", immediate: "即日可", wifi: "部屋Wi-Fi",
+        dormfree: "寮費無料", newbie: "未経験歓迎", friends: "友達・カップル可"
+      };
+      cond.checks.forEach(c => { if (checkNames[c]) condParts.push(checkNames[c]); });
+    }
+    const condSummary = condParts.length ? condParts.join(" ＋ ") : "ご指定の条件";
+
+    el.innerHTML = `
+      <div class="empty" style="background:var(--card);border:1px solid var(--line);border-radius:10px;padding:28px 18px;text-align:center;margin:16px 0">
+        <div style="font-weight:700;font-size:16px;color:var(--ink);margin-bottom:8px">現在、${condSummary} に合う求人は0件です</div>
+        <p style="font-size:13px;color:var(--sub);margin:0 auto 16px;max-width:540px;line-height:1.8">
+          リゾートソートでは求人の生存確認と新着入荷を毎日自動で行っています。<br>
+          このページを<b>ブックマーク（お気に入り保存）</b>しておくと、条件に合う求人が入荷した際に自動でここに表示されます。
+        </p>
+        <div style="display:inline-block;background:var(--bg);border:1px dashed var(--line);border-radius:8px;padding:8px 16px;font-size:12px;color:var(--ink);font-weight:600">
+          保存用条件：${condSummary}
+        </div>
+      </div>`;
     return;
   }
 
@@ -5332,6 +5395,7 @@ function render(){
         上位 ${shown.length} 件を表示しています。該当求人はあと ${more.toLocaleString()} 件あります。
         上のエリアや条件で絞り込んでください。</div>` : ""}
     </section>`;
+  updateUrlParams();
 }
 
 load();

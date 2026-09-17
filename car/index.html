@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <title>中古車・過走行車買取を主要5社まとめて比較｜クルマソート</title>
-<meta name="description" content="車買取・廃車買取・オークション主要5社を1つにまとめ、査定形式や買取力で並べ替えて比べられます。過走行・10万km超・電話ラッシュなし・事故車などの条件で横断検索。同じ車でも業者によって査定額が違うことを客観的に比較できます。">
-<meta name="keywords" content="クルマソート, くるまそーと, car sort, 車買取, 廃車買取, 過走行車, MOTA, カーネクスト, ソコカラ, 相見積もり">
+<meta name="description" content="中古車買取・廃車買取・オークション主要5社の受付条件や査定方式を整理して比較できます。過走行車、低年式車、事故車、連絡頻度の少ないオークション形式など条件別に分類。">
+<meta name="keywords" content="クルマソート, 車買取, 廃車買取, 過走行車, 査定比較, オークション">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22></text></svg>">
+<link rel="icon" href="/favicon.ico">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://fumiproject.dev/car/">
 
@@ -14,7 +14,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://fumiproject.dev/car/">
 <meta property="og:title" content="中古車・過走行車買取を主要5社まとめて比較｜クルマソート">
-<meta property="og:description" content="過走行車・廃車・オークション買取を横断比較。電話なし・最高値・即日手放しで一発ソート。">
+<meta property="og:description" content="中古車買取・廃車買取・オークション主要5社の受付条件や査定方式を一括比較。">
 <meta property="og:site_name" content="クルマソート">
 <meta property="og:locale" content="ja_JP">
 
@@ -45,9 +45,6 @@
   label{display:block;font-size:12px;color:var(--sub);margin-bottom:5px;font-weight:600}
   select,input{width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:6px;
                background:var(--bg);color:var(--ink);font-size:14px}
-  .checks{display:flex;flex-wrap:wrap;gap:10px 20px}
-  .checks label{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--ink);margin:0;cursor:pointer;font-weight:400}
-  .checks input{width:auto;cursor:pointer}
   .count{font-size:13px;color:var(--sub);margin:14px 2px;font-weight:600}
   .group{background:var(--card);border:1px solid var(--line);border-radius:10px;margin-bottom:16px;overflow:hidden}
   .group-head{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
@@ -57,9 +54,8 @@
   th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
   th{font-size:11px;color:var(--sub);font-weight:600;background:var(--bg)}
   .scroller{overflow-x:auto}
-  .wage{font-weight:700;font-size:16px;color:var(--ink);font-variant-numeric:tabular-nums}
   .dorm-full{color:var(--ink);font-weight:600}
-  .raw{font-size:11px;color:var(--sub);white-space:normal;max-width:240px;line-height:1.4}
+  .raw{font-size:11px;color:var(--sub);white-space:normal;max-width:260px;line-height:1.5}
   .badge{display:inline-block;padding:2px 7px;border-radius:4px;font-size:11px;margin-right:4px;background:var(--bg);border:1px solid var(--line);color:var(--ink)}
   a.cta{display:inline-block;padding:8px 18px;background:var(--accent);color:var(--bg)!important;font-weight:600;text-decoration:none!important;border-radius:6px;font-size:13px;transition:all .15s}
   a.cta:hover{background:#7c3aed;color:#ffffff!important;transform:translateY(-1px);box-shadow:0 2px 8px rgba(124,58,237,0.3)}
@@ -68,7 +64,6 @@
     .badge-partner{background:#2e1065;color:#d8b4fe;border-color:#581c87}
   }
 
-  /* お知らせバナー */
   .update-banner{
     background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;
     padding:10px 14px;margin:8px auto 12px;max-width:980px;
@@ -80,7 +75,6 @@
   }
   .banner-close{background:none;border:none;color:inherit;font-size:16px;cursor:pointer;padding:0 6px;line-height:1}
 
-  /* ワンタップ人気条件ピル */
   .quick-chips-wrapper{
     overflow-x:auto;-webkit-overflow-scrolling:touch;
     margin:0 0 12px;padding:2px 0 6px;
@@ -107,16 +101,11 @@
     background:rgba(255,255,255,0.2);color:#fff;border-color:transparent;
   }
 
-  /* 相見積もり解説カード */
   .tip-box{
-    background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;
-    padding:14px 18px;margin-bottom:16px;font-size:13px;color:#1e3a8a;line-height:1.6;
-  }
-  @media (prefers-color-scheme:dark){
-    .tip-box{background:#08214d;border-color:#1e40af;color:#93c5fd;}
+    background:var(--card);border:1px solid var(--line);border-radius:10px;
+    padding:14px 18px;margin-bottom:16px;font-size:13px;color:var(--sub);line-height:1.6;
   }
 
-  /* SEO解説アコーディオン */
   .seo-accordion{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:20px}
   .seo-summary{padding:14px 18px;font-weight:700;font-size:13px;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:space-between;list-style:none}
   .seo-summary::-webkit-details-marker{display:none}
@@ -138,46 +127,42 @@
       <span style="font-size:11px;color:var(--sub);border:1px solid var(--line);border-radius:3px;padding:1px 5px;letter-spacing:0.04em">PR</span>
     </div>
   </div>
-  <p class="lede">中古車買取・廃車買取・オークション主要5社（MOTA・ソコカラ・カーネクスト・ハイシャル・CTN）を一括横断比較。過走行・10万km超・電話ラッシュなし・事故車などの条件で一発ソート。</p>
+  <p class="lede">中古車買取・廃車買取・オークション主要5社（MOTA・ソコカラ・カーネクスト・ハイシャル・CTN）の受付条件および査定形式を横断比較。過走行・10万km超・連絡方式・事故車などの条件でソート。</p>
 </header>
 
 <div class="update-banner" id="update-banner">
-  <span><b>【機能更新】</b> 走行10万km〜30万km超の過走行車でも、複数社を競わせることで査定額が数万円上乗せされる実証データを確認済み。</span>
+  <span>【更新】 MOTA・ソコカラ・カーネクスト・ハイシャル・CTNの5社の受付方針および査定方式データを更新しました。</span>
   <button type="button" class="banner-close" onclick="document.getElementById('update-banner').style.display='none'" aria-label="閉じる">✕</button>
 </div>
 
 <main>
-  <!-- ワンタップ人気条件ピル -->
   <div class="quick-chips-wrapper">
     <div class="quick-chips-bar">
       <button type="button" class="chip-pill active" onclick="filterChip('all', this)">
-        <span>すべて表示</span><span class="chip-badge">5社</span>
+        <span>全件表示</span><span class="chip-badge">5社</span>
       </button>
       <button type="button" class="chip-pill" onclick="filterChip('over10', this)">
-        <span>10万km超・過走行歓迎</span><span class="chip-badge">注目</span>
+        <span>10万km超・過走行対応</span>
       </button>
       <button type="button" class="chip-pill" onclick="filterChip('no-call', this)">
-        <span>電話ラッシュなし（オークション）</span>
+        <span>オークション入札（連絡限定）</span>
       </button>
       <button type="button" class="chip-pill" onclick="filterChip('scrap', this)">
-        <span>事故車・不動車・廃車0円</span>
+        <span>廃車・事故車・不動車</span>
       </button>
       <button type="button" class="chip-pill" onclick="filterChip('high-bid', this)">
-        <span>専門店・高額入札</span>
+        <span>専門店入札</span>
       </button>
     </div>
   </div>
 
-  <!-- 相見積もりアドバイス -->
   <div class="tip-box">
-    <strong>相見積もりの基本仕様：</strong><br>
-    買取業者1社だけに決めるのではなく、「オークション型（MOTA）」と「直販・輸出型（ソコカラ、カーネクスト）」の2〜3社で相見積もりを取り、「他社で〇〇万円出てる」とぶつけるのが最も査定額を吊り上げる合法的なコツです。
+    査定形式の違いについて：オークション形式（MOTA）と直販・輸出専門買取（ソコカラ、カーネクスト等）では評価基準が異なります。過走行車や低年式車両は業者ごとの販路（国内再販・海外輸出・部品取り）によって提示額に差異が生じるため、複数サービスでの並行確認が推奨されます。
   </div>
 
-  <!-- 検索フィルター -->
   <div class="filters">
     <div>
-      <label>走行距離</label>
+      <label>走行距離の区分</label>
       <select id="sel-mileage" onchange="applyFilters()">
         <option value="all">指定なし</option>
         <option value="over10" selected>10万km以上 / 過走行</option>
@@ -186,46 +171,42 @@
       </select>
     </div>
     <div>
-      <label>重視するポイント</label>
+      <label>重視する条件</label>
       <select id="sel-priority" onchange="applyFilters()">
         <option value="all">指定なし</option>
-        <option value="no-call">電話ラッシュなし（上位3社のみ）</option>
-        <option value="high-price">相見積もりで最高値を狙う</option>
-        <option value="quick">廃車費用0円・即日手放したい</option>
+        <option value="no-call">連絡先限定（上位3社のみ）</option>
+        <option value="high-price">複数社提示の比較</option>
+        <option value="quick">引取・廃車手続き無償</option>
       </select>
     </div>
     <div>
-      <label>車両状態</label>
+      <label>車両状態の区分</label>
       <select id="sel-condition" onchange="applyFilters()">
         <option value="all">指定なし</option>
-        <option value="old">年式古い・キズあり</option>
-        <option value="broken">事故車・動かない・車検切れ</option>
-        <option value="good">状態良好・人気車</option>
+        <option value="old">低年式・傷凹みあり</option>
+        <option value="broken">不動車・事故車・車検切れ</option>
+        <option value="good">通常状態</option>
       </select>
     </div>
   </div>
 
   <div class="count" id="item-count">全5件中 5件の買取サービスを表示</div>
 
-  <!-- サービス一覧テーブル・カード -->
-  <div id="service-container">
-    <!-- Rendered by JS -->
-  </div>
+  <div id="service-container"></div>
 
-  <!-- SEO / FAQ アコーディオン -->
   <div class="seo-accordion">
     <details>
       <summary class="seo-summary">
-        <span>過走行車（10万km〜30万km超）でも高く売れる理由・査定の仕組み</span>
-        <span style="font-size:11px;color:var(--sub)">▼ 詳しく見る</span>
+        <span>過走行車（10万km〜30万km以上）の買取流通構造について</span>
+        <span style="font-size:11px;color:var(--sub)">表示</span>
       </summary>
       <div class="seo-box">
-        <h2>なぜ地球9周（30万km以上）走った車でも数万円の値がつくのか？</h2>
-        <p>ディーラーや一般的な下取りでは「走行距離10万km」を超えた時点で査定額が0円になり、逆に「廃車手数料やレッカー代」を請求されることがあります。しかし、廃車専門やオークション業者では以下のルートが存在するため、高値で買い取られます：</p>
+        <h2>過走行車に査定額が付く要因</h2>
+        <p>走行距離が一定水準を超えた車両でも、以下の流通ルートにより買取価格が成立します：</p>
         <ul>
-          <li><strong>海外輸出ルート</strong>：東南アジアやアフリカ、ロシアなどでは日本車の耐久性が絶大に評価されており、30万km以上でも現役で高値取引されます。</li>
-          <li><strong>リビルトパーツ（部品取り）需要</strong>：エンジン、ミッション、ドア、オルタネーターなどのパーツ単体で再販されるため、車体全体が古くても価値が残ります。</li>
-          <li><strong>鉄スクラップ＋重量税・自賠責保険の還付金</strong>：車両重量に応じた金属価値と、車検残に応じた税金の還付が保証されます。</li>
+          <li><strong>海外輸出流通</strong>：日本車の耐久性評価により、東南アジアや中東、アフリカ等で20万km〜30万km超の車両需要が存在します。</li>
+          <li><strong>リビルトパーツ（部品取り）需要</strong>：エンジン、ミッション、外装パネル等の再利用需要により、車体単体での査定がつきます。</li>
+          <li><strong>スクラップ金属価値および法定還付</strong>：鉄・非鉄金属の資源価値に加え、車検残存期間に応じた自動車重量税・自賠責保険料の還付対象となります。</li>
         </ul>
       </div>
     </details>
@@ -234,8 +215,8 @@
 </main>
 
 <footer>
-  <p>© 2026 クルマソート (fumiproject.dev/car/) — 独立系自動車価格比較・オークション横断エンジン</p>
-  <p style="margin-top:6px">当サイトは公式公開データおよび実際の査定受付方針に基づき、中立的な情報提供を行っています。</p>
+  <p>© 2026 クルマソート (fumiproject.dev/car/) — 自動車買取・オークション比較整理データベース</p>
+  <p style="margin-top:6px">公開情報および各サービスの受付仕様に基づく客観的比較データを提供しています。</p>
 </footer>
 
 <script>
@@ -243,66 +224,66 @@ const servicesData = [
   {
     id: "mota",
     name: "MOTA車買取",
-    type: "オークション入札型",
-    badge: "確定率99% / 翌日18時入札",
-    features: "電話ラッシュなし / 最大20社が入札 / 高額上位3社のみ連絡",
-    desc: "車輌情報を登録すると翌日18時に全国最大20社がオークション入札。高値をつけた上位3社とだけやり取りするため、一括査定特有の鬼電がありません。",
-    target: "全車種・状態良好・競らせたい車",
-    url: "https://autoc-one.jp/ullo/", // A8リンク差し替え箇所
-    cta: "MOTAで無料入札を見る",
-    subtext: "翌日18時に概算査定額が判明",
+    type: "事前入札オークション型",
+    badge: "翌日18時入札（上位3社選定）",
+    features: "連絡は上位3社のみ / 最大20社事前入札 / 現車確認前の概算開示",
+    desc: "車両情報登録後、翌日18時に最大20社が入札を実施。高額提示の上位3社のみと連絡を取る形式。",
+    target: "通常状態の中古車・複数社比較",
+    url: "https://autoc-one.jp/ullo/",
+    cta: "MOTAで入札確認",
+    subtext: "翌日18時に概算提示",
     category: ["all", "no-call", "high-bid"]
   },
   {
     id: "sokocara",
     name: "車買取ソコカラ",
-    type: "直販・輸出買取型",
-    badge: "過走行・どんな車も買取 / 相見積もりの本命",
-    features: "10万km超大歓迎 / 出張査定無料 / 他社対抗で高値引き上げ",
-    desc: "自社で海外輸出・直販ルートを持つため、他社で0円と言われた過走行車でも強気の値がつきます。カーネクストと競わせる相見積もり先として最適。",
+    type: "自社輸出・直販型",
+    badge: "海外輸出ルート保有 / 過走行対応",
+    features: "自社オークション保有 / 10万km超対応 / 出張査定対応",
+    desc: "自社で海外輸出・中古車流通網を保有。低年式車や10万km以上の過走行車の査定に対応。",
     target: "10万km超・低年式・過走行車",
-    url: "https://www.hanamaru870.net/lp/pfm/pu/", // A8リンク差し替え箇所
-    cta: "ソコカラで無料査定",
-    subtext: "他社の査定額をぶつけて競り上げ可能",
+    url: "https://www.hanamaru870.net/lp/pfm/pu/",
+    cta: "ソコカラで査定",
+    subtext: "過走行車両対応",
     category: ["all", "over10"]
   },
   {
     id: "carnext",
     name: "カーネクスト",
     type: "廃車・過走行買取型",
-    badge: "過走行・廃車の決定版 / 38万km実績",
-    features: "全国レッカー無料 / 書類代行0円 / 電話1本で即決査定",
-    desc: "どんな古い車・動かない車でも原則0円以上買取保証。過走行38万kmの軽自動車でも6.5万円の値付け実績がある最大手サービス。",
-    target: "10万〜30万km超・廃車・古い車",
-    url: "https://carnext-haishakaitori.jp/", // A8リンク差し替え箇所
+    badge: "廃車・過走行・解体対応",
+    features: "レッカー引取無償 / 書類代行無償 / 電話査定対応",
+    desc: "過走行車、不動車、低年式車両の買取および引取・廃車代行を一括して受け付けるサービス。",
+    target: "10万km超・低年式・廃車対象車",
+    url: "https://carnext-haishakaitori.jp/",
     cta: "カーネクストで査定",
-    subtext: "電話1本ですぐに金額提示",
+    subtext: "引取手数料0円対応",
     category: ["all", "over10", "scrap"]
   },
   {
     id: "haishall",
     name: "廃車買取ハイシャル",
-    type: "事故車・不動車専門",
-    badge: "故障・事故車専門 / 手数料完全無料",
-    features: "水没車・動かない車OK / パーツ解体輸出 / 即日レッカー手配",
-    desc: "動かなくなった車、事故車、車検切れの車の解体・パーツ輸出に特化。他社で処分費用を請求された場合の最後の砦。",
+    type: "事故車・不動車解体型",
+    badge: "事故車・不動車専門",
+    features: "動かない車両対応 / 解体パーツ販路 / 全国引き取り",
+    desc: "事故現状車や故障車、不動車の解体・パーツ流通に特化した買取サービス。",
     target: "不動車・事故車・車検切れ",
-    url: "https://haishall.jp/", // A8リンク差し替え箇所
-    cta: "ハイシャルで無料査定",
-    subtext: "ご自宅まで無料引き取り対応",
+    url: "https://haishall.jp/",
+    cta: "ハイシャルで査定",
+    subtext: "不動車の引取対応",
     category: ["all", "scrap"]
   },
   {
     id: "ctn",
     name: "CTN車一括査定",
     type: "専門店マッチング型",
-    badge: "確定率98% / 専門店が高額査定",
-    features: "専門店入札 / SUV・軽・輸出特化 / 電話対応厳選",
-    desc: "軽自動車やSUV、輸出向けなど各ジャンルの専門店が直接査定。特化店だからこそ出せる高額入札を狙えます。",
-    target: "専門店に高く評価させたい車",
-    url: "https://ctn-net.jp/kaitori/car/ad3/", // A8リンク差し替え箇所
-    cta: "CTNで専門店査定",
-    subtext: "専門店による高額査定を狙う",
+    badge: "ジャンル専門店直接査定",
+    features: "車種別専門店入札 / SUV・軽・輸出 / 電話対応先限定",
+    desc: "車両のジャンル（軽自動車、SUV、輸出向け等）に応じた専門店が直接入札するシステム。",
+    target: "専門店での査定を希望する車両",
+    url: "https://ctn-net.jp/kaitori/car/ad3/",
+    cta: "CTNで査定",
+    subtext: "専門店マッチング",
     category: ["all", "high-bid"]
   }
 ];
@@ -330,10 +311,10 @@ function renderServices(items) {
         <table>
           <thead>
             <tr>
-              <th>特徴・システム</th>
-              <th>得意な車両・対象</th>
+              <th>仕様・特徴</th>
+              <th>対象車両</th>
               <th>概要</th>
-              <th>査定・手続き</th>
+              <th>査定条件</th>
             </tr>
           </thead>
           <tbody>
@@ -342,7 +323,7 @@ function renderServices(items) {
               <td>${item.target}</td>
               <td class="raw">${item.desc}</td>
               <td>
-                <span class="badge">無料</span>
+                <span class="badge">無償</span>
                 <span style="font-size:11px;color:var(--sub)">${item.subtext}</span>
               </td>
             </tr>
@@ -386,7 +367,6 @@ function applyFilters() {
   renderServices(list);
 }
 
-// Initial render
 renderServices(servicesData);
 </script>
 

@@ -1,589 +1,393 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>クルマソート — 過走行・廃車・中古車 独立系価格比較＆オークション横断ソート</title>
-  <meta name="description" content="走行38万kmの軽自動車でも6.5万円で売れる！過走行・廃車・事故車・中古車を一番高く買い取る業者を一発診断・横断ソート。電話ラッシュなしのオークションから相見積もりまで徹底比較。">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚗</text></svg>">
-  <style>
-    :root {
-      --bg: #fdfdfd;
-      --card: #ffffff;
-      --ink: #111111;
-      --sub: #555555;
-      --line: #000000;
-      --line-light: #e5e5e5;
-      --accent: #7c3aed;
-      --accent-light: #f3e8ff;
-      --accent-hover: #6d28d9;
-      --highlight: #fef08a;
-      --tagbg: #f3f4f6;
-      --price-red: #dc2626;
-      --shadow: 3px 3px 0 #000000;
-      --shadow-sm: 2px 2px 0 #000000;
-      --shadow-active: 1px 1px 0 #000000;
-    }
+<meta charset="utf-8">
+<title>中古車・過走行車買取を主要5社まとめて比較｜クルマソート</title>
+<meta name="description" content="車買取・廃車買取・オークション主要5社を1つにまとめ、査定形式や買取力で並べ替えて比べられます。過走行・10万km超・電話ラッシュなし・事故車などの条件で横断検索。同じ車でも業者によって査定額が違うことを客観的に比較できます。">
+<meta name="keywords" content="クルマソート, くるまそーと, car sort, 車買取, 廃車買取, 過走行車, MOTA, カーネクスト, ソコカラ, 相見積もり">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚗</text></svg>">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://fumiproject.dev/car/">
 
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #09090b;
-        --card: #141418;
-        --ink: #f4f4f5;
-        --sub: #a1a1aa;
-        --line: #3f3f46;
-        --line-light: #27272a;
-        --accent: #a78bfa;
-        --accent-light: #2e1065;
-        --accent-hover: #c4b5fd;
-        --highlight: #713f12;
-        --tagbg: #1f1f23;
-        --price-red: #f87171;
-        --shadow: 3px 3px 0 #3f3f46;
-        --shadow-sm: 2px 2px 0 #3f3f46;
-        --shadow-active: 1px 1px 0 #3f3f46;
-      }
-    }
+<!-- Open Graph / Facebook / X -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://fumiproject.dev/car/">
+<meta property="og:title" content="中古車・過走行車買取を主要5社まとめて比較｜クルマソート">
+<meta property="og:description" content="過走行車・廃車・オークション買取を横断比較。電話なし・最高値・即日手放しで一発ソート。">
+<meta property="og:site_name" content="クルマソート">
+<meta property="og:locale" content="ja_JP">
 
-    * { box-sizing: border-box; margin: 0; padding: 0; border-radius: 0 !important; }
-    body {
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      padding-bottom: 80px;
+<style>
+  :root{
+    --bg:#ffffff; --card:#ffffff; --ink:#111111; --sub:#666666;
+    --line:#e8e8e8; --accent:#111111; --accent-hover:#333333;
+    --warn:#555555; --warnbg:#f4f4f4;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#09090b; --card:#121215; --ink:#ededed; --sub:#8e8e93;
+      --line:#27272a; --accent:#ededed; --accent-hover:#cccccc;
+      --warn:#a1a1aa; --warnbg:#1c1c20;
     }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font:15px/1.6 system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif}
+  a{color:inherit;text-decoration:none}
+  a:hover{text-decoration:underline}
+  header{padding:20px 16px 10px;max-width:980px;margin:0 auto}
+  h1{font-size:22px;margin:0 0 6px;display:flex;align-items:baseline;letter-spacing:-0.02em}
+  .lede{color:var(--sub);font-size:13px;margin:0}
+  main{max-width:980px;margin:0 auto;padding:0 16px 40px}
+  .filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;
+           background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:14px}
+  label{display:block;font-size:12px;color:var(--sub);margin-bottom:5px;font-weight:600}
+  select,input{width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:6px;
+               background:var(--bg);color:var(--ink);font-size:14px}
+  .checks{display:flex;flex-wrap:wrap;gap:10px 20px}
+  .checks label{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--ink);margin:0;cursor:pointer;font-weight:400}
+  .checks input{width:auto;cursor:pointer}
+  .count{font-size:13px;color:var(--sub);margin:14px 2px;font-weight:600}
+  .group{background:var(--card);border:1px solid var(--line);border-radius:10px;margin-bottom:16px;overflow:hidden}
+  .group-head{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+  .place{font-weight:700;font-size:16px}
+  .place-sub{font-size:12px;color:var(--sub);margin-top:2px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+  th{font-size:11px;color:var(--sub);font-weight:600;background:var(--bg)}
+  .scroller{overflow-x:auto}
+  .wage{font-weight:700;font-size:16px;color:var(--ink);font-variant-numeric:tabular-nums}
+  .dorm-full{color:var(--ink);font-weight:600}
+  .raw{font-size:11px;color:var(--sub);white-space:normal;max-width:240px;line-height:1.4}
+  .badge{display:inline-block;padding:2px 7px;border-radius:4px;font-size:11px;margin-right:4px;background:var(--bg);border:1px solid var(--line);color:var(--ink)}
+  a.cta{display:inline-block;padding:8px 18px;background:var(--accent);color:var(--bg)!important;font-weight:600;text-decoration:none!important;border-radius:6px;font-size:13px;transition:all .15s}
+  a.cta:hover{background:#7c3aed;color:#ffffff!important;transform:translateY(-1px);box-shadow:0 2px 8px rgba(124,58,237,0.3)}
+  .badge-partner{background:#f3e8ff;color:#6b21a8;border-color:#d8b4fe;font-weight:600}
+  @media (prefers-color-scheme:dark){
+    .badge-partner{background:#2e1065;color:#d8b4fe;border-color:#581c87}
+  }
 
-    header {
-      border-bottom: 2px solid var(--line);
-      background: var(--card);
-      padding: 14px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .header-inner {
-      max-width: 960px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .brand {
-      font-size: 20px;
-      font-weight: 900;
-      letter-spacing: -0.03em;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .brand-badge {
-      font-size: 11px;
-      background: #000;
-      color: #fff;
-      padding: 2px 6px;
-      font-weight: 700;
-    }
-    .nav-links a {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--sub);
-      text-decoration: none;
-      margin-left: 14px;
-    }
-    .nav-links a:hover { color: var(--accent); }
+  /* お知らせバナー */
+  .update-banner{
+    background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;
+    padding:10px 14px;margin:8px auto 12px;max-width:980px;
+    display:flex;align-items:center;justify-content:space-between;
+    font-size:13px;color:#166534;line-height:1.5;
+  }
+  @media (prefers-color-scheme:dark){
+    .update-banner{background:#052e16;border-color:#166534;color:#bbf7d0;}
+  }
+  .banner-close{background:none;border:none;color:inherit;font-size:16px;cursor:pointer;padding:0 6px;line-height:1}
 
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 24px 16px;
-    }
+  /* ワンタップ人気条件ピル */
+  .quick-chips-wrapper{
+    overflow-x:auto;-webkit-overflow-scrolling:touch;
+    margin:0 0 12px;padding:2px 0 6px;
+    scrollbar-width:none;
+  }
+  .quick-chips-wrapper::-webkit-scrollbar{display:none}
+  .quick-chips-bar{
+    display:flex;gap:8px;white-space:nowrap;width:max-content;align-items:center;
+  }
+  .chip-pill{
+    display:inline-flex;align-items:center;gap:5px;
+    padding:7px 14px;background:var(--card);border:1px solid var(--line);
+    border-radius:20px;font-size:13px;font-weight:600;color:var(--ink);
+    cursor:pointer;user-select:none;transition:all .15s ease;font-family:inherit;
+  }
+  .chip-pill:hover{border-color:var(--ink)}
+  .chip-pill.active{
+    background:var(--ink);color:var(--bg);border-color:var(--ink);
+  }
+  .chip-badge{
+    font-size:10px;padding:1px 5px;border-radius:10px;background:var(--bg);border:1px solid var(--line);color:var(--sub);font-weight:500;
+  }
+  .chip-pill.active .chip-badge{
+    background:rgba(255,255,255,0.2);color:#fff;border-color:transparent;
+  }
 
-    /* Hero */
-    .hero {
-      border: 2px solid var(--line);
-      background: var(--card);
-      padding: 24px;
-      box-shadow: var(--shadow);
-      margin-bottom: 28px;
-    }
-    .hero h1 {
-      font-size: 26px;
-      font-weight: 900;
-      line-height: 1.3;
-      margin-bottom: 12px;
-      letter-spacing: -0.02em;
-    }
-    .hero p {
-      font-size: 14px;
-      color: var(--sub);
-      margin-bottom: 16px;
-    }
+  /* 相見積もり解説カード */
+  .tip-box{
+    background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;
+    padding:14px 18px;margin-bottom:16px;font-size:13px;color:#1e3a8a;line-height:1.6;
+  }
+  @media (prefers-color-scheme:dark){
+    .tip-box{background:#08214d;border-color:#1e40af;color:#93c5fd;}
+  }
 
-    /* Case Study Card (Raw Data) */
-    .case-box {
-      border: 2px solid var(--line);
-      background: var(--highlight);
-      color: #111;
-      padding: 16px;
-      margin-bottom: 28px;
-      box-shadow: var(--shadow);
-    }
-    .case-title {
-      font-size: 15px;
-      font-weight: 900;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 12px;
-    }
-    .case-tag {
-      background: #000;
-      color: #fff;
-      font-size: 11px;
-      padding: 2px 6px;
-    }
-    .photo-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 8px;
-      margin-bottom: 12px;
-    }
-    .photo-grid img {
-      width: 100%;
-      height: 130px;
-      object-fit: cover;
-      border: 1px solid #000;
-      background: #ddd;
-    }
-    @media (max-width: 640px) {
-      .photo-grid { grid-template-columns: repeat(2, 1fr); }
-      .photo-grid img { height: 110px; }
-    }
-    .case-desc {
-      font-size: 13px;
-      line-height: 1.5;
-    }
-    .case-stat {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-top: 8px;
-      font-weight: 800;
-      font-size: 14px;
-    }
+  /* SEO解説アコーディオン */
+  .seo-accordion{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:20px}
+  .seo-summary{padding:14px 18px;font-weight:700;font-size:13px;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:space-between;list-style:none}
+  .seo-summary::-webkit-details-marker{display:none}
+  .seo-summary:hover{background:var(--bg)}
+  .seo-box{padding:16px 20px 24px;border-top:1px dashed var(--line);font-size:13px;color:var(--sub);line-height:1.8}
+  .seo-box h2{font-size:16px;margin:0 0 10px;color:var(--ink)}
+  .seo-box p{margin:0 0 10px}
 
-    /* Diagnosis Tool Box */
-    .filter-box {
-      border: 2px solid var(--line);
-      background: var(--card);
-      padding: 20px;
-      box-shadow: var(--shadow);
-      margin-bottom: 28px;
-    }
-    .filter-header {
-      font-size: 18px;
-      font-weight: 900;
-      margin-bottom: 16px;
-      border-bottom: 2px solid var(--line-light);
-      padding-bottom: 8px;
-    }
-    .filter-group {
-      margin-bottom: 16px;
-    }
-    .filter-label {
-      font-size: 12px;
-      font-weight: 800;
-      color: var(--sub);
-      text-transform: uppercase;
-      margin-bottom: 8px;
-      display: block;
-    }
-    .btn-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .filter-btn {
-      padding: 8px 14px;
-      font-size: 13px;
-      font-weight: 800;
-      background: var(--card);
-      color: var(--ink);
-      border: 2px solid var(--line);
-      box-shadow: var(--shadow-sm);
-      cursor: pointer;
-      transition: all 0.1s ease;
-    }
-    .filter-btn:hover {
-      background: var(--accent);
-      color: #ffffff;
-      border-color: #000;
-    }
-    .filter-btn.active {
-      background: var(--accent);
-      color: #ffffff;
-      box-shadow: var(--shadow-active);
-      transform: translate(1px, 1px);
-    }
-
-    /* Recommendation Banner */
-    .recommend-alert {
-      background: #eff6ff;
-      border: 2px solid #3b82f6;
-      color: #1e3a8a;
-      padding: 14px 18px;
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 24px;
-      box-shadow: var(--shadow-sm);
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-    }
-
-    /* Results Section */
-    .results-count {
-      font-size: 14px;
-      font-weight: 800;
-      margin-bottom: 14px;
-    }
-    .service-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .service-card {
-      border: 2px solid var(--line);
-      background: var(--card);
-      padding: 20px;
-      box-shadow: var(--shadow);
-      display: grid;
-      grid-template-columns: 80px 1fr auto;
-      gap: 18px;
-      align-items: center;
-      transition: transform 0.1s ease;
-    }
-    @media (max-width: 768px) {
-      .service-card {
-        grid-template-columns: 1fr;
-        gap: 14px;
-      }
-    }
-    .card-rank {
-      font-size: 28px;
-      font-weight: 900;
-      text-align: center;
-      line-height: 1;
-      padding: 10px 0;
-      border: 2px solid var(--line);
-      background: var(--tagbg);
-    }
-    .card-content h3 {
-      font-size: 18px;
-      font-weight: 900;
-      margin-bottom: 6px;
-    }
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 8px;
-    }
-    .tag {
-      font-size: 11px;
-      font-weight: 800;
-      background: var(--tagbg);
-      border: 1px solid var(--line);
-      padding: 2px 6px;
-    }
-    .tag.highlight {
-      background: #fef08a;
-      color: #000;
-    }
-    .card-desc {
-      font-size: 13px;
-      color: var(--sub);
-      line-height: 1.5;
-    }
-    .card-action {
-      text-align: center;
-    }
-    .cta-btn {
-      display: inline-block;
-      padding: 12px 22px;
-      font-size: 14px;
-      font-weight: 900;
-      background: var(--accent);
-      color: #fff;
-      text-decoration: none;
-      border: 2px solid #000;
-      box-shadow: var(--shadow-sm);
-      white-space: nowrap;
-      transition: all 0.1s;
-    }
-    .cta-btn:hover {
-      background: var(--accent-hover);
-      box-shadow: var(--shadow-active);
-      transform: translate(1px, 1px);
-    }
-    .cta-sub {
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--sub);
-      margin-top: 6px;
-    }
-
-    footer {
-      max-width: 960px;
-      margin: 40px auto 0;
-      padding: 20px;
-      border-top: 2px solid var(--line);
-      font-size: 12px;
-      color: var(--sub);
-      text-align: center;
-    }
-  </style>
+  footer{max-width:980px;margin:40px auto 0;padding:0 16px 40px;font-size:12px;color:var(--sub);text-align:center}
+</style>
 </head>
 <body>
 
 <header>
-  <div class="header-inner">
-    <div class="brand">
-      <span>クルマソート</span>
-      <span class="brand-badge">BETA / 独立系</span>
-    </div>
-    <div class="nav-links">
-      <a href="https://fumiproject.dev/">ZAX Home</a>
-      <a href="https://fumiproject.dev/resort/">リゾートソート</a>
-      <a href="https://fumiproject.dev/menkyo/">免許ソート</a>
+  <div style="display:flex;align-items:center;justify-content:space-between">
+    <h1><a href="/car/" style="color:inherit;text-decoration:none">クルマソート</a></h1>
+    <div style="display:flex;align-items:center;gap:10px">
+      <a href="https://fumiproject.dev/" style="font-size:12px;color:var(--ink);text-decoration:none;font-weight:600;padding:4px 9px;border:1px solid var(--line);border-radius:6px;background:var(--card)">ZAX ポートフォリオ</a>
+      <span style="font-size:11px;color:var(--sub);border:1px solid var(--line);border-radius:3px;padding:1px 5px;letter-spacing:0.04em">PR</span>
     </div>
   </div>
+  <p class="lede">中古車買取・廃車買取・オークション主要5社（MOTA・ソコカラ・カーネクスト・ハイシャル・CTN）を一括横断比較。過走行・10万km超・電話ラッシュなし・事故車などの条件で一発ソート。</p>
 </header>
 
-<div class="container">
-
-  <!-- Hero Section -->
-  <div class="hero">
-    <h1>古い車・過走行車を一番高く売る。<br>しつこい電話なしの独立系一括ソート。</h1>
-    <p>「10万キロ超えだから0円」「一括査定に申し込んだら鬼電で後悔した」をゼロに。走行距離・状態・希望スタイルに合わせて、最も高値で競り合う買取先を一発判定します。</p>
-  </div>
-
-  <!-- General Over-mileage Case Info -->
-  <div class="case-box">
-    <div class="case-title">
-      <span class="case-tag">検証データ</span>
-      <span>10万km〜30万km超の過走行車・低年式車が売れる理由</span>
-    </div>
-    <p class="case-desc">
-      一般的に「軽自動車は10万km〜15万kmが寿命」と言われ、ディーラーや一般中古車店では0円査定や廃車手数料（数万円）を請求されるケースが大半です。<br>
-      しかし、<strong>海外輸出（ロシア・東南アジア・アフリカ等での日本車需要）やリビルトパーツ（部品取り）直販ルートを持つ専門業者</strong>を選ぶことで、20万km〜30万km超の過走行車でも数万円以上の高価買取が成立します。諦めずに相見積もりを取ることが重要です。
-    </p>
-    <div class="case-stat">
-      <span>一般的な査定: 0円（処分費発生リスク）</span>
-      <span style="color: var(--price-red);">輸出・解体直販ルート: 数万円〜買取可能</span>
-    </div>
-  </div>
-
-  <!-- Interactive Diagnosis Box -->
-  <div class="filter-box">
-    <div class="filter-header">🚗 車両条件 & 希望スタイル診断</div>
-    
-    <div class="filter-group">
-      <span class="filter-label">1. 走行距離</span>
-      <div class="btn-group" id="mileage-group">
-        <button class="filter-btn active" data-filter="mileage" data-val="over10">10万km以上 / 過走行</button>
-        <button class="filter-btn" data-filter="mileage" data-val="mid">5万〜10万km</button>
-        <button class="filter-btn" data-filter="mileage" data-val="low">5万km未満（低走行）</button>
-      </div>
-    </div>
-
-    <div class="filter-group">
-      <span class="filter-label">2. 車両の状態</span>
-      <div class="btn-group" id="condition-group">
-        <button class="filter-btn active" data-filter="condition" data-val="old">年式古い・キズ凹みあり</button>
-        <button class="filter-btn" data-filter="condition" data-val="broken">不動車・事故車・車検切れ</button>
-        <button class="filter-btn" data-filter="condition" data-val="good">状態良好・きれい</button>
-      </div>
-    </div>
-
-    <div class="filter-group">
-      <span class="filter-label">3. 重視するポイント</span>
-      <div class="btn-group" id="priority-group">
-        <button class="filter-btn active" data-filter="priority" data-val="no-call">電話ラッシュ絶対嫌（オークション/連絡少）</button>
-        <button class="filter-btn" data-filter="priority" data-val="high-price">とにかく最高値で競らせたい</button>
-        <button class="filter-btn" data-filter="priority" data-val="quick">廃車費用0円・即日手放したい</button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Pro Tip Alert -->
-  <div class="recommend-alert">
-    <span style="font-size: 20px;">💡</span>
-    <div>
-      <strong>高価売却の鉄則（相見積もりルール）：</strong><br>
-      車を一番高く売るコツは、<strong>「上位2〜3社に査定を出し、出た金額を競わせること」</strong>です。「他社で〇〇万円出てるんですけど超えられますか？」と聞くだけで、数千円〜数万円の上乗せが簡単に引き出せます。
-    </div>
-  </div>
-
-  <!-- Dynamic Results Section -->
-  <div class="results-header">
-    <div class="results-count" id="results-count">診断結果：あなたの条件に最適な買取サービス（3社推奨）</div>
-  </div>
-
-  <div class="service-grid" id="service-list">
-    <!-- Rendered by JavaScript -->
-  </div>
-
+<div class="update-banner" id="update-banner">
+  <span><b>【相見積もり機能】</b> 走行10万km〜30万km超の過走行車でも、複数社を競わせることで査定額が数万円上乗せされる実証データを確認済み。</span>
+  <button type="button" class="banner-close" onclick="document.getElementById('update-banner').style.display='none'" aria-label="閉じる">✕</button>
 </div>
 
+<main>
+  <!-- ワンタップ人気条件ピル -->
+  <div class="quick-chips-wrapper">
+    <div class="quick-chips-bar">
+      <button type="button" class="chip-pill active" onclick="filterChip('all', this)">
+        <span>すべて表示</span><span class="chip-badge">5社</span>
+      </button>
+      <button type="button" class="chip-pill" onclick="filterChip('over10', this)">
+        <span>10万km超・過走行歓迎</span><span class="chip-badge">注目</span>
+      </button>
+      <button type="button" class="chip-pill" onclick="filterChip('no-call', this)">
+        <span>電話ラッシュなし（オークション）</span>
+      </button>
+      <button type="button" class="chip-pill" onclick="filterChip('scrap', this)">
+        <span>事故車・不動車・廃車0円</span>
+      </button>
+      <button type="button" class="chip-pill" onclick="filterChip('high-bid', this)">
+        <span>専門店・高額入札</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- 相見積もりアドバイス -->
+  <div class="tip-box">
+    <strong>💡 車を一番高く売る鉄則：</strong><br>
+    買取業者1社だけに決めるのではなく、**「オークション型（MOTA）」と「直販・輸出型（ソコカラ、カーネクスト）」の2〜3社で相見積もり**を取り、「他社で〇〇万円出てる」とぶつけるのが最も査定額を吊り上げる合法的なコツです。
+  </div>
+
+  <!-- 検索フィルター -->
+  <div class="filters">
+    <div>
+      <label>走行距離</label>
+      <select id="sel-mileage" onchange="applyFilters()">
+        <option value="all">指定なし</option>
+        <option value="over10" selected>10万km以上 / 過走行</option>
+        <option value="mid">5万〜10万km</option>
+        <option value="low">5万km未満</option>
+      </select>
+    </div>
+    <div>
+      <label>重視するポイント</label>
+      <select id="sel-priority" onchange="applyFilters()">
+        <option value="all">指定なし</option>
+        <option value="no-call">電話ラッシュなし（上位3社のみ）</option>
+        <option value="high-price">相見積もりで最高値を狙う</option>
+        <option value="quick">廃車費用0円・即日手放したい</option>
+      </select>
+    </div>
+    <div>
+      <label>車両状態</label>
+      <select id="sel-condition" onchange="applyFilters()">
+        <option value="all">指定なし</option>
+        <option value="old">年式古い・キズあり</option>
+        <option value="broken">事故車・動かない・車検切れ</option>
+        <option value="good">状態良好・人気車</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="count" id="item-count">全5件中 5件の買取サービスを表示</div>
+
+  <!-- サービス一覧テーブル・カード -->
+  <div id="service-container">
+    <!-- Rendered by JS -->
+  </div>
+
+  <!-- SEO / FAQ アコーディオン -->
+  <div class="seo-accordion">
+    <details>
+      <summary class="seo-summary">
+        <span>過走行車（10万km〜30万km超）でも高く売れる理由・査定の仕組み</span>
+        <span style="font-size:11px;color:var(--sub)">▼ 詳しく見る</span>
+      </summary>
+      <div class="seo-box">
+        <h2>なぜ地球9周（30万km以上）走った車でも数万円の値がつくのか？</h2>
+        <p>ディーラーや一般的な下取りでは「走行距離10万km」を超えた時点で査定額が0円になり、逆に「廃車手数料やレッカー代」を請求されることがあります。しかし、廃車専門やオークション業者では以下のルートが存在するため、高値で買い取られます：</p>
+        <ul>
+          <li><strong>海外輸出ルート</strong>：東南アジアやアフリカ、ロシアなどでは日本車の耐久性が絶大に評価されており、30万km以上でも現役で高値取引されます。</li>
+          <li><strong>リビルトパーツ（部品取り）需要</strong>：エンジン、ミッション、ドア、オルタネーターなどのパーツ単体で再販されるため、車体全体が古くても価値が残ります。</li>
+          <li><strong>鉄スクラップ＋重量税・自賠責保険の還付金</strong>：車両重量に応じた金属価値と、車検残に応じた税金の還付が保証されます。</li>
+        </ul>
+      </div>
+    </details>
+  </div>
+
+</main>
+
 <footer>
-  <p>© 2026 クルマソート (fumiproject.dev/car/) — Independent Vehicle Valuation Engine</p>
-  <p style="margin-top: 6px;">当サイトは公平な価格比較を提供するため、各社公式の査定条件・受付方針を定期的に検証しています。</p>
+  <p>© 2026 クルマソート (fumiproject.dev/car/) — 独立系自動車価格比較・オークション横断エンジン</p>
+  <p style="margin-top:6px">当サイトは公式公開データおよび実際の査定受付方針に基づき、中立的な情報提供を行っています。</p>
 </footer>
 
 <script>
-const services = [
+const servicesData = [
   {
     id: "mota",
     name: "MOTA車買取",
+    type: "オークション入札型",
     badge: "確定率99% / 翌日18時入札",
-    tags: ["電話ラッシュなし", "最大20社が入札", "上位3社のみやり取り", "高価買取"],
-    desc: "写真をアップすると翌日18時に全国最大20社がオークション入札。競り合って高値をつけた上位3社とだけやり取りするため、電話攻勢に遭いません。",
-    url: "https://autoc-one.jp/ullo/", // A8差し替え可能
+    features: "電話ラッシュなし / 最大20社が入札 / 高額上位3社のみ連絡",
+    desc: "車輌情報を登録すると翌日18時に全国最大20社がオークション入札。高値をつけた上位3社とだけやり取りするため、一括査定特有の鬼電がありません。",
+    target: "全車種・状態良好・競らせたい車",
+    url: "https://autoc-one.jp/ullo/", // A8リンク差し替え箇所
     cta: "MOTAで無料入札を見る",
-    sub: "翌日18時に概算査定額がズラリと判明",
-    scores: {
-      mileage: { over10: 2, mid: 3, low: 3 },
-      condition: { old: 2, broken: 1, good: 3 },
-      priority: { "no-call": 3, "high-price": 3, quick: 1 }
-    }
+    subtext: "翌日18時に概算査定額が判明",
+    category: ["all", "no-call", "high-bid"]
   },
   {
     id: "sokocara",
     name: "車買取ソコカラ",
-    badge: "どんな車も高価買取 / 相見積もりの主役",
-    tags: ["過走行車OK", "10万km超歓迎", "出張査定無料", "相見積もり推奨"],
-    desc: "独自の直販・輸出ルートを持つため、他社で断られた過走行車・低年式車でも強気の高値がつきます。カーネクストと競わせる相見積もり先として最強。",
-    url: "https://www.hanamaru870.net/lp/pfm/pu/", // A8差し替え可能
-    cta: "ソコカラで無料査定する",
-    sub: "他社の査定額をぶつけて高値引き上げ可能",
-    scores: {
-      mileage: { over10: 3, mid: 3, low: 2 },
-      condition: { old: 3, broken: 2, good: 2 },
-      priority: { "no-call": 2, "high-price": 3, quick: 3 }
-    }
+    type: "直販・輸出買取型",
+    badge: "過走行・どんな車も買取 / 相見積もりの本命",
+    features: "10万km超大歓迎 / 出張査定無料 / 他社対抗で高値引き上げ",
+    desc: "自社で海外輸出・直販ルートを持つため、他社で0円と言われた過走行車でも強気の値がつきます。カーネクストと競わせる相見積もり先として最適。",
+    target: "10万km超・低年式・過走行車",
+    url: "https://www.hanamaru870.net/lp/pfm/pu/", // A8リンク差し替え箇所
+    cta: "ソコカラで無料査定",
+    subtext: "他社の査定額をぶつけて競り上げ可能",
+    category: ["all", "over10"]
   },
   {
     id: "carnext",
     name: "カーネクスト",
-    badge: "10万km超・過走行・廃車の決定版",
-    tags: ["38万km実績あり", "全国レッカー無料", "廃車手続き0円", "電話一発完結"],
-    desc: "実証実験で38万キロのハスラーに6.5万円の値付けを出した最大手。どんな古い車・過走行車でも原則0円以上買取保証＆レッカー・書類代行すべて無料。",
-    url: "https://carnext-haishakaitori.jp/", // A8差し替え可能
-    cta: "カーネクストで無料査定する",
-    sub: "電話1本でその場で査定額が確定",
-    scores: {
-      mileage: { over10: 3, mid: 2, low: 1 },
-      condition: { old: 3, broken: 3, good: 1 },
-      priority: { "no-call": 2, "high-price": 2, quick: 3 }
-    }
+    type: "廃車・過走行買取型",
+    badge: "過走行・廃車の決定版 / 38万km実績",
+    features: "全国レッカー無料 / 書類代行0円 / 電話1本で即決査定",
+    desc: "どんな古い車・動かない車でも原則0円以上買取保証。過走行38万kmの軽自動車でも6.5万円の値付け実績がある最大手サービス。",
+    target: "10万〜30万km超・廃車・古い車",
+    url: "https://carnext-haishakaitori.jp/", // A8リンク差し替え箇所
+    cta: "カーネクストで査定",
+    subtext: "電話1本ですぐに金額提示",
+    category: ["all", "over10", "scrap"]
   },
   {
     id: "haishall",
     name: "廃車買取ハイシャル",
-    badge: "事故車・不動車・故障車専門",
-    tags: ["不動車・水没車OK", "パーツ輸出", "年中無休受付", "手数料完全0円"],
-    desc: "動かない車、事故車、ボロボロの車の解体・パーツ取りに特化。他社で「処分費用がかかる」と言われた車の最後の砦として最適です。",
-    url: "https://haishall.jp/", // A8差し替え可能
-    cta: "ハイシャルで無料査定する",
-    sub: "動かない車もご自宅まで無料引き取り",
-    scores: {
-      mileage: { over10: 3, mid: 1, low: 1 },
-      condition: { old: 2, broken: 3, good: 1 },
-      priority: { "no-call": 2, "high-price": 2, quick: 3 }
-    }
+    type: "事故車・不動車専門",
+    badge: "故障・事故車専門 / 手数料完全無料",
+    features: "水没車・動かない車OK / パーツ解体輸出 / 即日レッカー手配",
+    desc: "動かなくなった車、事故車、車検切れの車の解体・パーツ輸出に特化。他社で処分費用を請求された場合の最後の砦。",
+    target: "不動車・事故車・車検切れ",
+    url: "https://haishall.jp/", // A8リンク差し替え箇所
+    cta: "ハイシャルで無料査定",
+    subtext: "ご自宅まで無料引き取り対応",
+    category: ["all", "scrap"]
   },
   {
     id: "ctn",
     name: "CTN車一括査定",
-    badge: "専門店比較 / 確定率98%",
-    tags: ["専門店が高額入札", "解体・輸出ルート", "一括比較"],
-    desc: "全国の専門店（SUV専門、輸出専門、軽専門など）が直接あなたの車を値付け。特化した業者だからこそ出せる高額査定を狙えます。",
-    url: "https://ctn-net.jp/kaitori/car/ad3/", // A8差し替え可能
-    cta: "CTNで専門店査定を受ける",
-    sub: "専門業者による高額入札を狙う",
-    scores: {
-      mileage: { over10: 2, mid: 3, low: 3 },
-      condition: { old: 2, broken: 2, good: 3 },
-      priority: { "no-call": 1, "high-price": 3, quick: 2 }
-    }
+    type: "専門店マッチング型",
+    badge: "確定率98% / 専門店が高額査定",
+    features: "専門店入札 / SUV・軽・輸出特化 / 電話対応厳選",
+    desc: "軽自動車やSUV、輸出向けなど各ジャンルの専門店が直接査定。特化店だからこそ出せる高額入札を狙えます。",
+    target: "専門店に高く評価させたい車",
+    url: "https://ctn-net.jp/kaitori/car/ad3/", // A8リンク差し替え箇所
+    cta: "CTNで専門店査定",
+    subtext: "専門店による高額査定を狙う",
+    category: ["all", "high-bid"]
   }
 ];
 
-let state = {
-  mileage: "over10",
-  condition: "old",
-  priority: "no-call"
-};
+let currentFilter = "all";
 
-function render() {
-  // Calculate matching scores
-  const scored = services.map(s => {
-    let score = 0;
-    score += s.scores.mileage[state.mileage] * 3;
-    score += s.scores.condition[state.condition] * 2.5;
-    score += s.scores.priority[state.priority] * 3;
-    return { ...s, score };
-  });
+function renderServices(items) {
+  const container = document.getElementById("service-container");
+  const countEl = document.getElementById("item-count");
+  countEl.innerText = `全5件中 ${items.length}件の買取サービスを表示`;
 
-  scored.sort((a, b) => b.score - a.score);
-
-  const container = document.getElementById("service-list");
-  container.innerHTML = scored.map((s, index) => {
-    const isTop = index === 0;
-    return `
-      <div class="service-card" style="${isTop ? 'border-color: var(--accent);' : ''}">
-        <div class="card-rank" style="${isTop ? 'background: var(--accent); color: #fff;' : ''}">
-          #${index + 1}
+  container.innerHTML = items.map((item, idx) => `
+    <div class="group">
+      <div class="group-head">
+        <div>
+          <span class="badge ${idx === 0 ? 'badge-partner' : ''}">${item.type}</span>
+          <span class="place">${item.name}</span>
+          <div class="place-sub">${item.badge}</div>
         </div>
-        <div class="card-content">
-          <div style="display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap;">
-            <h3>${s.name}</h3>
-            <span style="font-size: 11px; font-weight: 800; color: var(--price-red);">${s.badge}</span>
-          </div>
-          <div class="tags">
-            ${s.tags.map(t => `<span class="tag ${t.includes('なし') || t.includes('実績') ? 'highlight' : ''}">${t}</span>`).join('')}
-          </div>
-          <p class="card-desc">${s.desc}</p>
-        </div>
-        <div class="card-action">
-          <a href="${s.url}" target="_blank" rel="noopener noreferrer" class="cta-btn">${s.cta}</a>
-          <div class="cta-sub">${s.sub}</div>
+        <div>
+          <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="cta">${item.cta} →</a>
         </div>
       </div>
-    `;
-  }).join('');
+      <div class="scroller">
+        <table>
+          <thead>
+            <tr>
+              <th>特徴・システム</th>
+              <th>得意な車両・対象</th>
+              <th>概要</th>
+              <th>査定・手続き</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="dorm-full">${item.features}</td>
+              <td>${item.target}</td>
+              <td class="raw">${item.desc}</td>
+              <td>
+                <span class="badge">無料</span>
+                <span style="font-size:11px;color:var(--sub)">${item.subtext}</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  `).join('');
 }
 
-// Attach event listeners
-document.querySelectorAll(".filter-btn").forEach(btn => {
-  btn.addEventListener("click", (e) => {
-    const filter = btn.getAttribute("data-filter");
-    const val = btn.getAttribute("data-val");
-    
-    // Update active class
-    btn.parentElement.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
+function filterChip(cat, btn) {
+  document.querySelectorAll(".chip-pill").forEach(b => b.classList.remove("active"));
+  btn.classList.add("active");
+  currentFilter = cat;
 
-    state[filter] = val;
-    render();
-  });
-});
+  if (cat === "all") {
+    renderServices(servicesData);
+  } else {
+    const filtered = servicesData.filter(s => s.category.includes(cat));
+    renderServices(filtered);
+  }
+}
+
+function applyFilters() {
+  const mileage = document.getElementById("sel-mileage").value;
+  const priority = document.getElementById("sel-priority").value;
+  const condition = document.getElementById("sel-condition").value;
+
+  let list = [...servicesData];
+
+  if (mileage === "over10") {
+    list.sort((a, b) => (b.category.includes("over10") ? 1 : 0) - (a.category.includes("over10") ? 1 : 0));
+  }
+  if (priority === "no-call") {
+    list.sort((a, b) => (b.id === "mota" ? 1 : 0) - (a.id === "mota" ? 1 : 0));
+  }
+  if (condition === "broken") {
+    list.sort((a, b) => (b.category.includes("scrap") ? 1 : 0) - (a.category.includes("scrap") ? 1 : 0));
+  }
+
+  renderServices(list);
+}
 
 // Initial render
-render();
+renderServices(servicesData);
 </script>
 
 </body>

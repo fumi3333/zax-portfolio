@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta property="og:image" content="https://fumiproject.dev/resort/ogp.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
-<title>ショウジョウバエ全脳配線図（FlyHash）を応用した求人突合・時給格差抽出アルゴリズム｜リゾートソート</title>
-<meta name="description" content="Google Research / Janelia 研究所の脳神経科学モデル（Mushroom Body）を応用し、曖昧な求人表現から同一現場と時給差を高精度に自動特定する技術設計の解説。">
+<link rel="icon" href="/resort/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/resort/apple-touch-icon.png"><meta property="og:image" content="https://fumiproject.dev/resort/ogp.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
+<title>ショウジョウバエの嗅覚回路を使って、派遣会社をまたいだ求人の時給差を出す｜リゾートソート</title>
+<meta name="description" content="ショウジョウバエのキノコ体を模したハッシュ（FlyHash）で、同じエリア・同じ職種の求人を派遣会社をまたいで突き合わせています。実装と、この方法で言えないことを書きました。">
 <link rel="canonical" href="https://fumiproject.dev/resort/article/connectome-engine/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ショウジョウバエ全脳配線図（FlyHash）を応用した求人突合・時給格差抽出アルゴリズム">
-<meta property="og:description" content="Google Research / Janelia 研究所の脳神経科学モデル（Mushroom Body）を応用し、曖昧な求人表現から同一現場と時給差を高精度に自動特定する技術設計の解説。">
+<meta property="og:title" content="ショウジョウバエの嗅覚回路を使って、派遣会社をまたいだ求人の時給差を出す">
+<meta property="og:description" content="ショウジョウバエのキノコ体を模したハッシュ（FlyHash）で、同じエリア・同じ職種の求人を派遣会社をまたいで突き合わせています。実装と、この方法で言えないことを書きました。">
 <meta property="og:url" content="https://fumiproject.dev/resort/article/connectome-engine/">
 <style>:root{--bg:#fff;--ink:#111;--sub:#666;--line:#e2e2e2;--mark:#f6f6f4}
 *{box-sizing:border-box}
@@ -39,66 +39,93 @@ blockquote{margin:16px 0;padding:2px 16px;border-left:3px solid var(--line);colo
 </head>
 <body>
 <main>
-<p id="pr-notice" style="margin:0 0 14px;padding:6px 10px;border:1px solid #e2e2e2;border-radius:6px;font-size:12px;color:#666">PR：このページには広告（アフィリエイトリンク）が含まれます。リンク経由の応募で当サイトに紹介料が入ることがありますが、掲載順は各社から受け取る金額では決めていません。<a href="/resort/about/" style="color:#666">掲載基準について</a></p>
-<p class="meta"><a href="/resort/">リゾートソート</a> ＞ 記事</p>
-<h1>ショウジョウバエ全脳配線図（FlyHash）を応用した求人突合・時給格差抽出アルゴリズム</h1>
+<p id="pr-notice" style="margin:0 0 14px;padding:6px 10px;border:1px solid #e2e2e2;border-radius:6px;font-size:12px;color:#666">PR：このページには広告（アフィリエイトリンク）が含まれます。リンク経由の応募で当サイトに紹介料が入ることがありますが、掲載順は各社から受け取る金額では決めていません。<a href="/resort/resort/about/" style="color:#666">掲載基準について</a></p>
+<p class="meta"><a href="/resort/resort/">リゾートソート</a> ＞ 記事</p>
+<h1>ショウジョウバエの嗅覚回路を使って、派遣会社をまたいだ求人の時給差を出す</h1>
 <p class="meta">リゾートソート（ZAX）／ 求人データの実測にもとづく記事です</p>
 <p class="meta">※この記事は執筆時点のデータセット（14,328件）にもとづく調査記録です。
 数字をあとから書き換えると調査の記録として成立しなくなるため、本文はそのままにしています。
-現在の集計値は<a href="/resort/data/">調査データのページ</a>でご確認ください。</p>
-<h3>1. はじめに：表記が揺れる同一求人の同定問題</h3>
-<p>リゾートバイト業界において、各派遣会社（ヒューマニック、ダイブ、グッドマンサービス、ワクトリ等）は、同一のホテルや旅館の求人を同時に掲載しています。</p>
-<p>しかし、契約上の理由や自社サイトへの囲い込みのため、多くの派遣会社は「具体的な施設名・ホテル名」を非公開にし、「箱根の高級温泉旅館」「軽井沢の高原リゾートホテル」といった曖昧な表現（表記揺れ）で掲載しています。</p>
-<p>従来の文字列一致（Edit DistanceやTF-IDF）のみでは、以下の問題が発生していました：</p>
+現在の集計値は<a href="/resort/resort/data/">調査データのページ</a>でご確認ください。</p>
+<p>リゾートソートには、掲載中の求人から「同じエリア・同じ職種なのに、派遣会社によって時給が違う組み合わせ」を自動で拾い出す仕組みがあります。ショウジョウバエの脳にある嗅覚回路の構造をそのまま計算に使っていて、実装は229行です。この記事では、その中身と、この方法で何が言えて何が言えないのかを書きます。</p>
+<p>先に結論を書きます。</p>
 <ul>
-<li>「箱根湯本 温泉ホテル」と「箱根 高級リゾート旅館」が同一現場であるか判定困難。</li>
-<li>大量の全件総当たり（O(N^2)）比較による計算コスト爆発。</li>
+<li>求人12,497件から、時給差のある組み合わせを<b>85,377ペア</b>抽出しています</li>
+<li>使っているのは FlyHash という、ショウジョウバエのキノコ体（Mushroom Body）を模した局所性鋭敏型ハッシュです</li>
+<li>ただし、これが同定しているのは<b>「同じエリア・同じ職種」であって「同じホテル」ではありません</b>。ここは誤解されやすいので、記事の後半で正直に書きます</li>
+<li>厳密な「同じ施設」の比較は、別の方法（郵便番号＋番地の一致）で15か所だけ確認できています。桁が4つ違います</li>
 </ul>
-<p>この問題を解決するため、リゾートソートでは Google Research / Janelia 研究所が解明した<b>ショウジョウバエ全脳配線図（Mushroom Body: PN-KC-APL 回路）</b>の生体シナプス結合構造をアルゴリズムとして数理モデル化し、求人突合エンジン「FlyHash Engine」を構築しました。</p>
-<h3>2. 生体脳キノコ体（Mushroom Body）の数理モデル</h3>
-<p>ショウジョウバエの脳内にあるキノコ体（Mushroom Body）は、数千種類の匂い刺激を高次元疎性符号化（Sparse Coding）し、瞬時に記憶・識別する非常に洗練された神経回路を持っています。</p>
-<h4>構成要素と数理マッピング</h4>
-<ol>
-<li><b>PN（Projection Neurons: 射影ニューロン層）</b>:</li>
-</ol>
-<ul>
-<li>入力受容層にあたります。求人の属性情報（都道府県、市区町村、職種、施設キー文字列、3-gram部分文字列）を各次元に対応させます（次元数 d ≈ 7,500次元）。</li>
-</ul>
-<ol>
-<li><b>KC（Kenyon Cells: ケニオン細胞層）</b>:</li>
-</ol>
-<ul>
-<li>高次元展開層にあたります。PN層の情報をスパース（疎）に変換・表現します（次元数 m = 2,048個）。</li>
-</ul>
-<ol>
-<li><b>シナプス結合行列 (W)</b>:</li>
-</ol>
-<ul>
-<li>各KCは、全PNの中からランダムにk個（k = 6）の入力のみを選択してシナプス結合を形成します。結合重みは対数正規分布に従います。</li>
-</ul>
-<ol>
-<li><b>APL（Anterior Paired Lateral: 抑制性ニューロン）</b>:</li>
-</ol>
-<ul>
-<li>KC層全体の興奮を監視し、Top-K%（上位5%）のKCのみを発火（1）させ、他をすべて抑制（0）する勝者総取り（Winner-Take-All）制御を行います。</li>
-</ul>
-<h3>3. FlyHash によるハミング距離計算と時給格差抽出</h3>
-<p>求人データを入力すると、FlyHash Engine は各求人を2,048ビットのバイナリコード（うち発火ビットは約100個）へ高速変換します。</p>
-<p>同一バイナリコード同士の類似度は、XOR演算とポップカウントを用いた<b>ハミング距離（Hamming Distance）</b>で高速計算されます：</p>
-<ul>
-<li>ハミング距離 ≤ 8: <b>同一現場・同一求人である可能性が極めて高い（信頼度 98%+）</b></li>
-</ul>
-<p>突合された求人ペアから、時給の差分（時給格差）および月200時間勤務想定の手取り差額を自動算出します。</p>
+<h3>なぜ普通の文字列比較では足りなかったか</h3>
+<p>派遣会社は、勤務先の施設名をほとんど公開していません。求人票に出てくるのは「北海道／ニセコ／調理補助」「長野県／白馬／ホール」といった粒度です。掲載している12,497件のうち、施設名（<code>workplace_name</code>）が入っているものはごく一部です。</p>
+<p>そのため、A社の求人とB社の求人が同じ現場なのかを、文字列の一致で判定することができません。表記も揃っていません。「賀茂郡河津町」と書く会社もあれば「河津」と書く会社もあります。</p>
+<p>さらに、総当たりで比較すると 12,497 の2乗で約7,800万通りになります。素朴に回すと時間がかかります。</p>
+<h3>キノコ体がやっていること</h3>
+<p>ショウジョウバエは、数千種類の匂いを嗅ぎ分けます。その処理をしているのがキノコ体という部位で、構造がかなり変わっています。</p>
+<p>入力側の射影ニューロン（PN）は数十次元しかないのに、その先のケニオン細胞（KC）は2,000個以上あります。<b>情報を圧縮するのではなく、いったん高次元に広げます。</b> そして各KCは、全PNの中からランダムに数本だけ枝を伸ばして結合しています。最後にAPLという抑制性ニューロンが全体を見張っていて、強く反応した上位数%のKCだけを残し、残りを黙らせます。</p>
+<p>結果として、1つの匂いは「2,000個のうち100個くらいだけが光っているパターン」になります。似た匂いは似たパターンになり、違う匂いは重ならないパターンになります。</p>
+<p>これを「似ているものを似たハッシュ値にする」アルゴリズムとして定式化したのが FlyHash です（Dasgupta, Stevens, Navlakha, *Science*, 2017）。普通のハッシュ関数は、入力が少し違えば全く違う値を返すように設計されています。FlyHash はその逆で、<b>似た入力を意図的に似た値に落とします。</b></p>
+<h3>実装</h3>
+<p>求人1件を、こういう素性の集合に変換します。</p>
 <pre><code>
-# ハミング距離の高速計算例
-hamming_dist = np.count_nonzero(kc_hash_a != kc_hash_b)
-if hamming_dist &lt;= 8 and wage_a != wage_b:
-    wage_diff = abs(wage_a - wage_b)
-    monthly_diff = wage_diff * 200
+def extract_features(job):
+    tokens = []
+    if job.get(&quot;prefecture&quot;): tokens.append(f&quot;pref:{job[&#x27;prefecture&#x27;]}&quot;)
+    if job.get(&quot;city&quot;):       tokens.append(f&quot;city:{job[&#x27;city&#x27;]}&quot;)
+    if job.get(&quot;job_category&quot;): tokens.append(f&quot;cat:{job[&#x27;job_category&#x27;]}&quot;)
+
+    text = f&quot;{job.get(&#x27;workplace_name&#x27;) or &#x27;&#x27;} {job.get(&#x27;workplace_key&#x27;) or &#x27;&#x27;} {job.get(&#x27;city&#x27;) or &#x27;&#x27;}&quot;
+    clean = re.sub(r&quot;[【】\[\]\s★♪◆◇◎※・\-_/0-9]&quot;, &quot;&quot;, text)
+    for i in range(len(clean) - 2):
+        tokens.append(f&quot;ng3:{clean[i:i+3]}&quot;)   # 3文字ずつの部分文字列
+    return tokens
 </code></pre>
-<h3>4. GEO (Generative Engine Optimization) と LLM/AI エージェント対応</h3>
-<p>本エンジンで抽出されたデータは、人間用の比較画面（<code>/compare/wage-gap/</code>）だけでなく、LLM（ChatGPT, Perplexity, Claude等）が直接機械読取可能な形式（<code>llms.txt</code> および JSON-LD 構造化データ）として常時公開されています。</p>
-<p>AIエージェントは、本サイトの <code>llms.txt</code> を参照することで、全国12,497件の最新求人統計および時給格差の実測データを即座に取得・引用することが可能です。</p>
+<p>全求人を通すと、素性の語彙は <b>7,588種類</b> になりました。これが入力側（PN層）の次元数です。</p>
+<p>ここから先が回路の再現です。</p>
+<pre><code>
+class FlyConnectomeEngine:
+    def __init__(self, n_kc=2048, syn_per_kc=6, top_k_ratio=0.05):
+        ...
+</code></pre>
+<ul>
+<li><code>n_kc=2048</code>：KC層を2,048個用意します。7,588次元の入力を、いったん2,048個の細胞に投げます</li>
+<li><code>syn_per_kc=6</code>：各KCは、7,588個の入力からランダムに<b>6本だけ</b>結合します。結合の重みは対数正規分布から引きます。生体でも結合はまばらで、重みは一様ではありません</li>
+<li><code>top_k_ratio=0.05</code>：反応が強かった上位5%（102個）だけを1、残りを0にします。APLの抑制にあたります</li>
+</ul>
+<p>こうして各求人が「2,048ビットのうち102ビットが立ったパターン」になります。あとは2つのパターンのXORを取って立っているビットを数えれば、似ている度合いが出ます（ハミング距離）。</p>
+<pre><code>
+dist = int(np.sum(hashes[idx1] ^ hashes[idx2]))
+if dist &lt;= max_hamming:      # max_hamming = 18
+    ...
+</code></pre>
+<p>総当たりを避けるため、比較は（都道府県, 職種）で区切ったブロックの中だけで行っています。</p>
+<h3>何が出てくるか</h3>
+<p>実際に抽出されたものを、そのまま出します。</p>
+<pre><code>
+距離5  北海道定山渓／洗い場    ワクトリ 1,300円  vs  ヒューマニック 1,120円
+距離8  北海道ニセコ／調理補助  ワクトリ 1,500円  vs  ヒューマニック 1,200円
+距離6  長野県白馬／ホール      ヒューマニック 1,400円  vs  ワクトリ 1,100円
+距離5  静岡県賀茂郡河津町／調理補助  グッドマン 1,400円  vs  アルファ 1,280円
+</code></pre>
+<p>時給差が30円以上あるものだけを残して、85,377ペアになりました。時給以外（月給・日給）は混ぜていません。極端な値を除くため、800円〜3,500円の範囲外も外しています。</p>
+<h3>ここからが正直な話</h3>
+<p>この記事を書くにあたって、自分の実装を読み直しました。<b>説明できないことが2つ見つかったので、先に書いておきます。</b></p>
+<h4>これは「同じホテル」を特定していません</h4>
+<p>素性を見てもらうと分かる通り、使っているのは都道府県・市区町村・職種と、市区町村名の3-gramです。施設名はほとんどのデータに入っていないので、実質的に効いているのは<b>地名と職種だけ</b>です。</p>
+<p>つまり距離5で一致した「北海道定山渓／洗い場」の2件は、<b>定山渓にある別々の旅館かもしれません。</b> 定山渓には宿が何十軒もあります。</p>
+<p>なので、この数字を「同じ職場なのに時給が違う」と読むのは正しくありません。正しくは「<b>同じ温泉地の同じ職種で、会社によって出している時給が違う</b>」です。求職者にとっては十分に意味のある情報ですが、言葉は変えるべきだと考えています。</p>
+<p>厳密な「同じ施設」の比較は、<a href="/resort/analysis/same-place/">別の分析</a>で行っています。そちらは各社のJSON-LDに入っている郵便番号と番地が一致するものだけを同じ勤務地とみなす方法で、<b>確認できたのは15か所</b>です。85,377と15。この差が、そのまま「手法の緩さ」の差です。</p>
+<h4>精度を測っていません</h4>
+<p>ハミング距離の閾値18は、出力を眺めて決めた値です。正解データを用意して精度を測る作業を、まだやっていません。「信頼度98%」のような数字は、出せません。</p>
+<p>閾値を8まで厳しくすると36,192ペア（42.4%）に減ります。どちらが妥当かを判断する根拠が、今は手元にありません。</p>
+<h3>想定される指摘</h3>
+<p><b>「それ、FlyHashである必要ある？」</b></p>
+<p>正直、この用途ではありません。素性が地名と職種しかないので、（都道府県, 市区町村, 職種）で辞書を引けば同じことができます。FlyHash が効いてくるのは、施設名や求人本文のような表記揺れのあるテキストを素性に入れたときです。そこまでデータが揃っていないので、<b>現状は回路の性能を使い切れていません。</b> 施設名の取得率を上げるのが次の課題です。</p>
+<p><b>「ランダムな投影で意味のある比較ができるの？」</b></p>
+<p>できます。Johnson–Lindenstrauss の補題が保証しているのは「ランダム射影は距離をおおむね保つ」ことで、FlyHash はその疎・二値版にあたります。元論文でも、局所性鋭敏型ハッシュの標準手法と比べて同等以上の近傍検索性能が示されています。ただし乱数シードを固定しないと結果が変わるので、<code>np.random.seed(42)</code> で固定しています。</p>
+<p><b>「毎回2,048×7,588の行列を作るの？」</b></p>
+<p>疎行列（<code>scipy.sparse.csr_matrix</code>）です。結合は 2,048 × 6 = 12,288 本だけなので、密行列の 0.08% です。ここは生体の構造がそのまま計算量の節約になっています。</p>
+<h3>まだできていないこと</h3>
+<p>施設名が取れていないのが、すべての制約の根っこです。ここが埋まれば、FlyHash は本来の使い方になり、「同じ施設」の判定も15か所から大きく増やせます。精度の検証も、それができてから手作業で正解を作るのが順当だと考えています。</p>
+<p>現時点の出力は<a href="/resort/compare/wage-gap/">時給差の一覧</a>で公開しています。上に書いた制約を踏まえて見ていただければと思います。</p>
 
 <h2>この条件の求人</h2>
 <p class="meta">おすすめ順の上位12件です。時給・寮の種類・寮費・食事・
@@ -108,9 +135,9 @@ if hamming_dist &lt;= 8 and wage_a != wage_b:
 <thead><tr><th>勤務地・職種</th><th>給与</th><th>寮</th><th>会社</th><th></th></tr></thead>
 <tbody><tr><td>長野県下高井郡<br><span class='meta'>調理（資格不要）</span></td><td class='n'><b>¥1,900</b><br><span class='meta'>時給</span></td><td>完全個室<br><span class='meta'>寮費無料 3食</span></td><td>グッドマンサービス</td><td><a href='https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&amp;a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1006668%2F' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr><tr><td>長野県下高井郡<br><span class='meta'>調理（要資格）</span></td><td class='n'><b>¥1,850</b><br><span class='meta'>時給</span></td><td>完全個室<br><span class='meta'>寮費無料 2食</span></td><td>グッドマンサービス</td><td><a href='https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&amp;a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1005971%2F' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr><tr><td>長野県下高井郡<br><span class='meta'>調理（資格不要）</span></td><td class='n'><b>¥1,800</b><br><span class='meta'>時給</span></td><td>完全個室<br><span class='meta'>寮費無料 3食</span></td><td>グッドマンサービス</td><td><a href='https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&amp;a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1006334%2F' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr><tr><td>長野県下高井郡山ノ内町<br><span class='meta'>調理</span></td><td class='n'><b>¥1,800</b><br><span class='meta'>時給</span></td><td>完全個室<br><span class='meta'>寮費無料 2食</span></td><td>株式会社ダイブ</td><td><a href='https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&amp;a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F220652' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr><tr><td>長野県下高井郡山ノ内町<br><span class='meta'>調理</span></td><td class='n'><b>¥1,800</b><br><span class='meta'>時給</span></td><td>完全個室<br><span class='meta'>寮費無料 2食</span></td><td>株式会社ダイブ</td><td><a href='https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&amp;a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F220653' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr><tr><td>神奈川県柄下郡<br><span class='meta'>調理（資格不要）</span></td><td class='n'><b>¥1,800</b><br><span class='meta'>時給</span></td><td>完全個室<br><span class='meta'>寮費無料 2食</span></td><td>グッドマンサービス</td><td><a href='https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&amp;a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1000246%2F' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr><tr><td>静岡県伊東市<br><span class='meta'>レストランサービス</span></td><td class='n'><b>¥1,700</b><br><span class='meta'>時給</span></td><td>完全個室<br><span class='meta'>寮費無料 2食</span></td><td>グッドマンサービス</td><td><a href='https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&amp;a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1006468%2F' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr><tr><td>長野県下高井郡野沢温泉村<br><span class='meta'>調理</span></td><td class='n'><b>¥1,900</b><br><span class='meta'>時給</span></td><td>完全個室<br><span class='meta'>寮費無料 2食</span></td><td>株式会社アルファスタッフ</td><td><a href='https://www.a-resort.jp/job/28108' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr><tr><td>長野県下高井郡<br><span class='meta'>調理補助</span></td><td class='n'><b>¥1,600</b><br><span class='meta'>時給</span></td><td>完全個室<br><span class='meta'>寮費無料 3食</span></td><td>グッドマンサービス</td><td><a href='https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&amp;a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1006667%2F' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr><tr><td>長野県下高井郡<br><span class='meta'>調理補助</span></td><td class='n'><b>¥1,600</b><br><span class='meta'>時給</span></td><td>完全個室<br><span class='meta'>寮費無料 3食</span></td><td>グッドマンサービス</td><td><a href='https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&amp;a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1007947%2F' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr><tr><td>群馬県吾妻郡<br><span class='meta'>調理（資格不要）</span></td><td class='n'><b>¥1,700</b><br><span class='meta'>時給</span></td><td>完全個室<br><span class='meta'>寮費無料 2食</span></td><td>グッドマンサービス</td><td><a href='https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&amp;a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1002802%2F' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr><tr><td>愛知県<br><span class='meta'>その他</span></td><td class='n'><b>¥1,950</b><br><span class='meta'>時給</span></td><td>完全個室<br><span class='meta'>3食</span></td><td>株式会社ヒューマニック</td><td><a href='https://px.a8.net/svt/ejp?a8mat=4BC7V7+5RSAWI+42GS+63WO2&amp;a8ejpredirect=https%3A%2F%2Fwww.rizoba.com%2Fwork%2F99283%2F' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr></tbody>
 </table>
-<p><a href="/">条件を決めて求人を探す →</a></p>
+<p><a href="/resort/">条件を決めて求人を探す →</a></p>
 
-<a class="back" href="/resort/">求人を時給順で比較する</a>
+<a class="back" href="/resort/resort/">求人を時給順で比較する</a>
 </main>
 <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2" alt=""><img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4BC7V7+5SZ642+51UO+5YJRM" alt=""><img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4BC7V7+5SZ642+51UO+5YJRM" alt=""><img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2" alt=""><img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4BC7V7+5RSAWI+42GS+63WO2" alt=""><img src="https://t.afi-b.com/lead/A16713U/h993989i/A534498g" width="1" height="1" style="border:none;" alt="" />
 </body>

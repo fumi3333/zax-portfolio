@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<title>リゾートソート｜リゾートバイト求人12,870件を主要6社横断で時給順に比較</title>
+<title>リゾートバイト求人12,870件を6社横断で時給順に比較</title>
 <meta name="description" content="【リゾートソート公式】主要6社のリゾートバイト求人12,870件を時給順に横断比較。同じホテルでも派遣会社によって最大450円（月9万円）違う時給格差を実測データで可視化。完全個室・寮費無料・短期などの条件で一括絞り込み。">
 <meta name="keywords" content="リゾートソート, りぞーとそーと, resort sort, リゾートバイトソート, リゾートバイト, 横断比較, 時給比較, リゾバ求人">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +14,7 @@
 <!-- Open Graph / Facebook / X -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://fumiproject.dev/resort/">
-<meta property="og:title" content="リゾートソート｜リゾートバイト求人を主要6社横断で時給順に比較">
+<meta property="og:title" content="リゾートバイト求人12,870件を6社横断で時給順に比較">
 <meta property="og:description" content="主要6社の求人12,870件を時給順に横断比較。同じ現場での時給格差や手取り額を可視化。完全個室・寮費無料・短期などの条件で絞り込めます。">
 <meta property="og:site_name" content="リゾートソート">
 <meta property="og:locale" content="ja_JP">
@@ -412,11 +412,6 @@
   </div>
   <p class="lede">主要6社（ダイブ・グッドマン・アルファ・ワクトリ・ヒューマニック・リゾートクロス）の公開求人 12,870 件を一括横断比較。時給・個室寮・生活費0円で一発ソート。</p>
 </header>
-
-<div class="update-banner" id="update-banner">
-  <span><b>【NEW】</b> スマホ検索がリアルタイムに進化！「通し勤務」「残業少なめ」「個室寮」を触ると即座に件数が連動します。</span>
-  <button type="button" class="banner-close" onclick="dismissBanner()" aria-label="閉じる">✕</button>
-</div>
 
 <main>
   <!-- 最上部：ワンタップ人気条件ピル（横スクロールで即座にリアルタイム絞り込み） -->
@@ -5859,6 +5854,27 @@ function init(){
     el.addEventListener("change", handler);
   });
   applyUrlParams();
+  collapseFiltersOnPhone();
+}
+
+// ★2026-09-18：スマホ実測で、最初の求人が画面の1,137px下にあった。
+//   812pxの端末では、10個以上の選択欄を抜けるまで求人が1件も見えない。
+//   「リゾートバイト 沖縄」と検索して来た人が最初に見るのが選択欄の壁になる。
+//   人気条件のボタン（上部の横スクロール）は残したまま、詳細な絞り込みだけ
+//   畳んでおく。開くボタンはすぐ下にあり、件数も表示される。
+//   URLで条件を指定して来た場合（共有リンク）は、その条件が見えないと
+//   困るので畳まない。
+function collapseFiltersOnPhone(){
+  try {
+    if (window.innerWidth >= 768) return;
+    if (location.search && location.search.length > 1) return;
+    const p = document.getElementById("filter-panel");
+    const b = document.getElementById("filter-toggle");
+    if (!p || !b || p.classList.contains("closed")) return;
+    p.classList.add("closed");
+    b.setAttribute("aria-expanded", "false");
+    updateToggleLabel();
+  } catch (e) {}
 }
 
 function updateUrlParams(){

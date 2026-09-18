@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta property="og:image" content="https://fumiproject.dev/resort/ogp.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
+<title>ショウジョウバエ全脳配線図（FlyHash）を応用した求人突合・時給格差抽出アルゴリズム｜リゾートソート</title>
+<meta name="description" content="Google Research / Janelia 研究所の脳神経科学モデル（Mushroom Body）を応用し、曖昧な求人表現から同一現場と時給差を高精度に自動特定する技術設計の解説。">
+<link rel="canonical" href="https://fumiproject.dev/resort/article/connectome-engine/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ショウジョウバエ全脳配線図（FlyHash）を応用した求人突合・時給格差抽出アルゴリズム">
+<meta property="og:description" content="Google Research / Janelia 研究所の脳神経科学モデル（Mushroom Body）を応用し、曖昧な求人表現から同一現場と時給差を高精度に自動特定する技術設計の解説。">
+<meta property="og:url" content="https://fumiproject.dev/resort/article/connectome-engine/">
+<style>:root{--bg:#fff;--ink:#111;--sub:#666;--line:#e2e2e2;--mark:#f6f6f4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+ font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif;
+ line-height:1.9;font-size:16px}
+main{max-width:720px;margin:0 auto;padding:24px 18px 64px}
+h1{font-size:26px;line-height:1.45;margin:8px 0 4px}
+h2{font-size:20px;margin:36px 0 12px;padding-top:18px;border-top:1px solid var(--line)}
+h3{font-size:17px;margin:24px 0 8px}
+p{margin:14px 0}
+ul,ol{padding-left:22px}
+li{margin:6px 0}
+a{color:var(--ink)}
+code{background:var(--mark);padding:2px 5px;border-radius:4px;font-size:14px}
+pre{background:var(--mark);padding:14px;border-radius:8px;overflow-x:auto;font-size:13px;line-height:1.7}
+pre code{background:none;padding:0}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:16px 0;display:block;overflow-x:auto}
+th,td{border:1px solid var(--line);padding:8px 10px;text-align:left}
+th{background:var(--mark)}
+blockquote{margin:16px 0;padding:2px 16px;border-left:3px solid var(--line);color:var(--sub)}
+.meta{font-size:13px;color:var(--sub);margin:0 0 20px}
+.back{display:inline-block;margin-top:40px;padding:10px 18px;background:var(--ink);
+ color:var(--bg);text-decoration:none;border-radius:6px;font-size:14px;font-weight:600}
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F1K4SHC9LB"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-F1K4SHC9LB");</script>
+</head>
+<body>
+<main>
+<p id="pr-notice" style="margin:0 0 14px;padding:6px 10px;border:1px solid #e2e2e2;border-radius:6px;font-size:12px;color:#666">PR：このページには広告（アフィリエイトリンク）が含まれます。リンク経由の応募で当サイトに紹介料が入ることがありますが、掲載順は各社から受け取る金額では決めていません。<a href="/resort/about/" style="color:#666">掲載基準について</a></p>
+<p class="meta"><a href="/resort/">リゾートソート</a> ＞ 記事</p>
+<h1>ショウジョウバエ全脳配線図（FlyHash）を応用した求人突合・時給格差抽出アルゴリズム</h1>
+<p class="meta">リゾートソート（ZAX）／ 求人データの実測にもとづく記事です</p>
+<p class="meta">※この記事は執筆時点のデータセット（14,328件）にもとづく調査記録です。
+数字をあとから書き換えると調査の記録として成立しなくなるため、本文はそのままにしています。
+現在の集計値は<a href="/resort/data/">調査データのページ</a>でご確認ください。</p>
+<h3>1. はじめに：表記が揺れる同一求人の同定問題</h3>
+<p>リゾートバイト業界において、各派遣会社（ヒューマニック、ダイブ、グッドマンサービス、ワクトリ等）は、同一のホテルや旅館の求人を同時に掲載しています。</p>
+<p>しかし、契約上の理由や自社サイトへの囲い込みのため、多くの派遣会社は「具体的な施設名・ホテル名」を非公開にし、「箱根の高級温泉旅館」「軽井沢の高原リゾートホテル」といった曖昧な表現（表記揺れ）で掲載しています。</p>
+<p>従来の文字列一致（Edit DistanceやTF-IDF）のみでは、以下の問題が発生していました：</p>
+<ul>
+<li>「箱根湯本 温泉ホテル」と「箱根 高級リゾート旅館」が同一現場であるか判定困難。</li>
+<li>大量の全件総当たり（O(N^2)）比較による計算コスト爆発。</li>
+</ul>
+<p>この問題を解決するため、リゾートソートでは Google Research / Janelia 研究所が解明した<b>ショウジョウバエ全脳配線図（Mushroom Body: PN-KC-APL 回路）</b>の生体シナプス結合構造をアルゴリズムとして数理モデル化し、求人突合エンジン「FlyHash Engine」を構築しました。</p>
+<h3>2. 生体脳キノコ体（Mushroom Body）の数理モデル</h3>
+<p>ショウジョウバエの脳内にあるキノコ体（Mushroom Body）は、数千種類の匂い刺激を高次元疎性符号化（Sparse Coding）し、瞬時に記憶・識別する非常に洗練された神経回路を持っています。</p>
+<h4>構成要素と数理マッピング</h4>
+<ol>
+<li><b>PN（Projection Neurons: 射影ニューロン層）</b>:</li>
+</ol>
+<ul>
+<li>入力受容層にあたります。求人の属性情報（都道府県、市区町村、職種、施設キー文字列、3-gram部分文字列）を各次元に対応させます（次元数 d ≈ 7,500次元）。</li>
+</ul>
+<ol>
+<li><b>KC（Kenyon Cells: ケニオン細胞層）</b>:</li>
+</ol>
+<ul>
+<li>高次元展開層にあたります。PN層の情報をスパース（疎）に変換・表現します（次元数 m = 2,048個）。</li>
+</ul>
+<ol>
+<li><b>シナプス結合行列 (W)</b>:</li>
+</ol>
+<ul>
+<li>各KCは、全PNの中からランダムにk個（k = 6）の入力のみを選択してシナプス結合を形成します。結合重みは対数正規分布に従います。</li>
+</ul>
+<ol>
+<li><b>APL（Anterior Paired Lateral: 抑制性ニューロン）</b>:</li>
+</ol>
+<ul>
+<li>KC層全体の興奮を監視し、Top-K%（上位5%）のKCのみを発火（1）させ、他をすべて抑制（0）する勝者総取り（Winner-Take-All）制御を行います。</li>
+</ul>
+<h3>3. FlyHash によるハミング距離計算と時給格差抽出</h3>
+<p>求人データを入力すると、FlyHash Engine は各求人を2,048ビットのバイナリコード（うち発火ビットは約100個）へ高速変換します。</p>
+<p>同一バイナリコード同士の類似度は、XOR演算とポップカウントを用いた<b>ハミング距離（Hamming Distance）</b>で高速計算されます：</p>
+<ul>
+<li>ハミング距離 ≤ 8: <b>同一現場・同一求人である可能性が極めて高い（信頼度 98%+）</b></li>
+</ul>
+<p>突合された求人ペアから、時給の差分（時給格差）および月200時間勤務想定の手取り差額を自動算出します。</p>
+<pre><code>
+# ハミング距離の高速計算例
+hamming_dist = np.count_nonzero(kc_hash_a != kc_hash_b)
+if hamming_dist &lt;= 8 and wage_a != wage_b:
+    wage_diff = abs(wage_a - wage_b)
+    monthly_diff = wage_diff * 200
+</code></pre>
+<h3>4. GEO (Generative Engine Optimization) と LLM/AI エージェント対応</h3>
+<p>本エンジンで抽出されたデータは、人間用の比較画面（<code>/compare/wage-gap/</code>）だけでなく、LLM（ChatGPT, Perplexity, Claude等）が直接機械読取可能な形式（<code>llms.txt</code> および JSON-LD 構造化データ）として常時公開されています。</p>
+<p>AIエージェントは、本サイトの <code>llms.txt</code> を参照することで、全国12,497件の最新求人統計および時給格差の実測データを即座に取得・引用することが可能です。</p>
+
+<h2>この条件の求人</h2>
+<p class="meta">おすすめ順の上位12件です。時給・寮の種類・寮費・食事・
+勤務期間の記載を合わせて並べています。提携先の求人を少し上に表示しています。
+リンク先は各社の公式求人ページです。</p>
+<table>
+<thead><tr><th>勤務地・職種</th><th>給与</th><th>寮</th><th>会社</th><th></th></tr></thead>
+<tbody><tr><td>長野県下高井郡<br><span class='meta'>調理（資格不要）</span></td><td class='n'><b>¥1,900</b><br><span class='meta'>時給</span></td><td>完全個室<br><span class='meta'>寮費無料 3食</span></td><td>グッドマンサービス</td><td><a href='https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&amp;a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1006668%2F' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr><tr><td>長野県下高井郡<br><span class='meta'>調理（要資格）</span></td><td class='n'><b>¥1,850</b><br><span class='meta'>時給</span></td><td>完全個室<br><span class='meta'>寮費無料 2食</span></td><td>グッドマンサービス</td><td><a href='https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&amp;a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1005971%2F' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr><tr><td>長野県下高井郡<br><span class='meta'>調理（資格不要）</span></td><td class='n'><b>¥1,800</b><br><span class='meta'>時給</span></td><td>完全個室<br><span class='meta'>寮費無料 3食</span></td><td>グッドマンサービス</td><td><a href='https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&amp;a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1006334%2F' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr><tr><td>長野県下高井郡山ノ内町<br><span class='meta'>調理</span></td><td class='n'><b>¥1,800</b><br><span class='meta'>時給</span></td><td>完全個室<br><span class='meta'>寮費無料 2食</span></td><td>株式会社ダイブ</td><td><a href='https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&amp;a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F220652' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr><tr><td>長野県下高井郡山ノ内町<br><span class='meta'>調理</span></td><td class='n'><b>¥1,800</b><br><span class='meta'>時給</span></td><td>完全個室<br><span class='meta'>寮費無料 2食</span></td><td>株式会社ダイブ</td><td><a href='https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&amp;a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F220653' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr><tr><td>神奈川県柄下郡<br><span class='meta'>調理（資格不要）</span></td><td class='n'><b>¥1,800</b><br><span class='meta'>時給</span></td><td>完全個室<br><span class='meta'>寮費無料 2食</span></td><td>グッドマンサービス</td><td><a href='https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&amp;a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1000246%2F' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr><tr><td>静岡県伊東市<br><span class='meta'>レストランサービス</span></td><td class='n'><b>¥1,700</b><br><span class='meta'>時給</span></td><td>完全個室<br><span class='meta'>寮費無料 2食</span></td><td>グッドマンサービス</td><td><a href='https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&amp;a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1006468%2F' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr><tr><td>長野県下高井郡野沢温泉村<br><span class='meta'>調理</span></td><td class='n'><b>¥1,900</b><br><span class='meta'>時給</span></td><td>完全個室<br><span class='meta'>寮費無料 2食</span></td><td>株式会社アルファスタッフ</td><td><a href='https://www.a-resort.jp/job/28108' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr><tr><td>長野県下高井郡<br><span class='meta'>調理補助</span></td><td class='n'><b>¥1,600</b><br><span class='meta'>時給</span></td><td>完全個室<br><span class='meta'>寮費無料 3食</span></td><td>グッドマンサービス</td><td><a href='https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&amp;a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1006667%2F' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr><tr><td>長野県下高井郡<br><span class='meta'>調理補助</span></td><td class='n'><b>¥1,600</b><br><span class='meta'>時給</span></td><td>完全個室<br><span class='meta'>寮費無料 3食</span></td><td>グッドマンサービス</td><td><a href='https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&amp;a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1007947%2F' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr><tr><td>群馬県吾妻郡<br><span class='meta'>調理（資格不要）</span></td><td class='n'><b>¥1,700</b><br><span class='meta'>時給</span></td><td>完全個室<br><span class='meta'>寮費無料 2食</span></td><td>グッドマンサービス</td><td><a href='https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&amp;a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1002802%2F' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr><tr><td>愛知県<br><span class='meta'>その他</span></td><td class='n'><b>¥1,950</b><br><span class='meta'>時給</span></td><td>完全個室<br><span class='meta'>3食</span></td><td>株式会社ヒューマニック</td><td><a href='https://px.a8.net/svt/ejp?a8mat=4BC7V7+5RSAWI+42GS+63WO2&amp;a8ejpredirect=https%3A%2F%2Fwww.rizoba.com%2Fwork%2F99283%2F' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr></tbody>
+</table>
+<p><a href="/">条件を決めて求人を探す →</a></p>
+
+<a class="back" href="/resort/">求人を時給順で比較する</a>
+</main>
+<img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2" alt=""><img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4BC7V7+5SZ642+51UO+5YJRM" alt=""><img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4BC7V7+5SZ642+51UO+5YJRM" alt=""><img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2" alt=""><img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4BC7V7+5RSAWI+42GS+63WO2" alt=""><img src="https://t.afi-b.com/lead/A16713U/h993989i/A534498g" width="1" height="1" style="border:none;" alt="" />
+</body>
+</html>

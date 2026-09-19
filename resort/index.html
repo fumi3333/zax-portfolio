@@ -311,16 +311,39 @@
     padding:14px 16px 18px;border-top:1px dashed var(--line);
   }
 
-  /* スマホ最下部固定リアルタイム件数バー (Sticky Bottom Bar) */
+  /* 横スクロールしても応募ボタンが右端に貼り付いて見えるようにする。
+     背景を不透明にして、背後の文字が透けて重なるのを防ぐ。
+     ★2026-09-19：これはスマホ用のメディアクエリの中にだけ書いてあった。
+       結果テーブルの幅は実測 2,430px あり、1,280pxのPCでも1,100px以上が
+       画面の外に出る。応募リンクは一番右の列なので、PCでは横スクロール
+       しないと押せなかった。幅の問題はスマホ固有ではない。 */
+  th:last-child,
+  td:last-child{
+    position:sticky;
+    right:0;
+    background:var(--card);
+    box-shadow:-4px 0 8px rgba(0,0,0,0.06);
+    z-index:2;
+  }
+  th:last-child{
+    background:var(--bg);
+    z-index:3;
+  }
+
+  /* 画面下に追従する件数バー
+     ★2026-09-19：スマホだけに出していた。PCでも、条件をいじった結果が
+       何件になったのかは同じように知りたい。画面の幅で必要性は変わらない。 */
   .mobile-sticky-bar{
-    display:none;
+    display:block;position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
+    width:min(420px, calc(100% - 32px));
+    z-index:9999;pointer-events:none;
   }
   @media (max-width:768px){
     .mobile-sticky-bar{
-      display:block;position:fixed;bottom:16px;left:16px;right:16px;
-      z-index:9999;pointer-events:none;
+      bottom:16px;left:16px;right:16px;width:auto;transform:none;
     }
-    .mobile-sticky-btn{
+  }
+  .mobile-sticky-btn{
       pointer-events:auto;width:100%;
       background:var(--ink);color:var(--bg);
       border:none;border-radius:30px;padding:12px 20px;
@@ -329,12 +352,11 @@
       display:flex;align-items:center;justify-content:space-between;
       cursor:pointer;transition:transform .15s ease,background .15s ease;
     }
-    .mobile-sticky-btn:active{transform:scale(0.98)}
-    .mobile-sticky-count{
+  .mobile-sticky-btn:active{transform:scale(0.98)}
+  .mobile-sticky-count{
       background:#059669;color:#fff;padding:3px 10px;border-radius:12px;
       font-size:13px;font-weight:800;font-variant-numeric:tabular-nums;
       transition:all .2s ease;
-    }
   }
 
   /* LINE新着アラート通知カード */
@@ -383,20 +405,6 @@
     #results{order:4}
     #site-links{order:5}
     .scroll-hint{display:block!important}
-    /* スマホで横スクロールしても応募ボタンが常に右端に見えるように固定しつつ、
-       背景を不透明にして背後のテキストが透けて重なるのを防止 */
-    th:last-child,
-    td:last-child{
-      position:sticky;
-      right:0;
-      background:var(--card);
-      box-shadow:-4px 0 8px rgba(0,0,0,0.06);
-      z-index:2;
-    }
-    th:last-child{
-      background:var(--bg);
-      z-index:3;
-    }
   }
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F1K4SHC9LB"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-F1K4SHC9LB");</script>
@@ -768,7 +776,7 @@
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1006668%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="長野県"
              data-cat="調理（資格不要）" data-wage="1900">空き確認・応募（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -815,7 +823,7 @@
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1005971%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="長野県"
              data-cat="調理（要資格）" data-wage="1850">空き確認・応募（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -862,7 +870,7 @@
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1006334%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="長野県"
              data-cat="調理（資格不要）" data-wage="1800">空き確認・応募（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -909,7 +917,7 @@
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F220652" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="長野県"
              data-cat="調理" data-wage="1800">空き確認・応募（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -956,7 +964,7 @@
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F220653" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="長野県"
              data-cat="調理" data-wage="1800">空き確認・応募（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1050,7 +1058,7 @@
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1006468%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="静岡県"
              data-cat="レストランサービス" data-wage="1700">空き確認・応募（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1144,7 +1152,7 @@
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1006667%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="長野県"
              data-cat="調理補助" data-wage="1600">空き確認・応募（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1191,7 +1199,7 @@
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1007947%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="長野県"
              data-cat="調理補助" data-wage="1600">空き確認・応募（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1238,7 +1246,7 @@
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1002802%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="群馬県"
              data-cat="調理（資格不要）" data-wage="1700">空き確認・応募（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1379,7 +1387,7 @@
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F232147" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="北海道"
              data-cat="調理" data-wage="2000">空き確認・応募（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1426,7 +1434,7 @@
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1002155%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="長野県"
              data-cat="調理補助" data-wage="1600">空き確認・応募（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1473,7 +1481,7 @@
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1005591%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="長野県"
              data-cat="調理（資格不要）" data-wage="1600">空き確認・応募（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1614,7 +1622,7 @@
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F220654" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="長野県"
              data-cat="調理" data-wage="1600">空き確認・応募（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1661,7 +1669,7 @@
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F220655" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="長野県"
              data-cat="調理" data-wage="1600">空き確認・応募（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1708,7 +1716,7 @@
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1002552%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="群馬県"
              data-cat="調理（資格不要）" data-wage="1600">空き確認・応募（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1755,7 +1763,7 @@
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1004563%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="兵庫県"
              data-cat="調理（資格不要）" data-wage="1600">空き確認・応募（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1802,7 +1810,7 @@
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1005947%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="静岡県"
              data-cat="調理（資格不要）" data-wage="1600">空き確認・応募（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1849,7 +1857,7 @@
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1007933%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="沖縄県"
              data-cat="調理（資格不要）" data-wage="2000">空き確認・応募（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1896,7 +1904,7 @@
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1007522%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="新潟県"
              data-cat="調理（要資格）" data-wage="1500">空き確認・応募（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1943,7 +1951,7 @@
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1007546%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="新潟県"
              data-cat="調理（要資格）" data-wage="1500">空き確認・応募（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3118,7 +3126,7 @@
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1006080%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="岐阜県"
              data-cat="調理（資格不要）" data-wage="1550">空き確認・応募（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3165,7 +3173,7 @@
           <a class="cta" href="https://www.a-resort.jp/job/28288" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社アルファスタッフ（アルファ・リゾート）" data-pref="福井県"
              data-cat="調理" data-wage="1800">空き状況・詳細（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3212,7 +3220,7 @@
           <a class="cta" href="https://www.a-resort.jp/job/28290" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社アルファスタッフ（アルファ・リゾート）" data-pref="福井県"
              data-cat="調理" data-wage="1800">空き状況・詳細（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3259,7 +3267,7 @@
           <a class="cta" href="https://www.a-resort.jp/job/28291" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社アルファスタッフ（アルファ・リゾート）" data-pref="福井県"
              data-cat="調理" data-wage="1800">空き状況・詳細（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3306,7 +3314,7 @@
           <a class="cta" href="https://www.a-resort.jp/job/28292" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社アルファスタッフ（アルファ・リゾート）" data-pref="福井県"
              data-cat="調理" data-wage="1800">空き状況・詳細（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3353,7 +3361,7 @@
           <a class="cta" href="https://www.a-resort.jp/job/28293" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社アルファスタッフ（アルファ・リゾート）" data-pref="福井県"
              data-cat="調理" data-wage="1800">空き状況・詳細（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3400,7 +3408,7 @@
           <a class="cta" href="https://work-trip.jp/search/details/?job_id=14275" target="_blank" rel="noopener nofollow sponsored"
              data-ag="ワクトリ" data-pref="群馬県"
              data-cat="調理全般" data-wage="1800">空き状況・詳細（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3494,7 +3502,7 @@
           <a class="cta" href="https://work-trip.jp/search/details/?job_id=17046" target="_blank" rel="noopener nofollow sponsored"
              data-ag="ワクトリ" data-pref="長野県"
              data-cat="調理全般" data-wage="1800">空き状況・詳細（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3541,7 +3549,7 @@
           <a class="cta" href="https://work-trip.jp/search/details/?job_id=18977" target="_blank" rel="noopener nofollow sponsored"
              data-ag="ワクトリ" data-pref="群馬県"
              data-cat="調理全般" data-wage="1800">空き状況・詳細（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3588,7 +3596,7 @@
           <a class="cta" href="https://work-trip.jp/search/details/?job_id=20415" target="_blank" rel="noopener nofollow sponsored"
              data-ag="ワクトリ" data-pref="長野県"
              data-cat="調理全般" data-wage="1800">空き状況・詳細（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3635,7 +3643,7 @@
           <a class="cta" href="https://work-trip.jp/search/details/?job_id=21673" target="_blank" rel="noopener nofollow sponsored"
              data-ag="ワクトリ" data-pref="岐阜県"
              data-cat="調理補助" data-wage="1800">空き状況・詳細（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3823,7 +3831,7 @@
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1007097%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="長野県"
              data-cat="調理（資格不要）" data-wage="1600">空き確認・応募（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3917,7 +3925,7 @@
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F230180" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="静岡県"
              data-cat="調理" data-wage="1700">空き確認・応募（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3964,7 +3972,7 @@
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F230181" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="静岡県"
              data-cat="調理" data-wage="1700">空き確認・応募（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4011,7 +4019,7 @@
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F230182" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="静岡県"
              data-cat="調理" data-wage="1700">空き確認・応募（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4058,7 +4066,7 @@
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F233206" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="静岡県"
              data-cat="調理" data-wage="1700">空き確認・応募（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4105,7 +4113,7 @@
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F233207" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="静岡県"
              data-cat="調理" data-wage="1700">空き確認・応募（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4152,7 +4160,7 @@
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F233208" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="静岡県"
              data-cat="調理" data-wage="1700">空き確認・応募（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4199,7 +4207,7 @@
           <a class="cta" href="https://www.a-resort.jp/job/13195" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社アルファスタッフ（アルファ・リゾート）" data-pref="兵庫県"
              data-cat="仲居(本式着物)" data-wage="1600">空き状況・詳細（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4340,7 +4348,7 @@
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1005590%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="北海道"
              data-cat="裏方全般" data-wage="1700">空き確認・応募（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4528,7 +4536,7 @@
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1005647%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="兵庫県"
              data-cat="仲居・客室係" data-wage="1550">空き確認・応募（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4575,7 +4583,7 @@
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F220650" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="長野県"
              data-cat="調理補助" data-wage="1500">空き確認・応募（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4622,7 +4630,7 @@
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F220651" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="長野県"
              data-cat="調理補助" data-wage="1500">空き確認・応募（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4716,7 +4724,7 @@
           <a class="cta" href="https://work-trip.jp/search/details/?job_id=21793" target="_blank" rel="noopener nofollow sponsored"
              data-ag="ワクトリ" data-pref="長野県"
              data-cat="和食調理" data-wage="1800">空き状況・詳細（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5280,7 +5288,7 @@
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1002102%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="大分県"
              data-cat="調理（資格不要）" data-wage="1500">空き確認・応募（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5421,7 +5429,7 @@
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1004709%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="沖縄県"
              data-cat="調理（資格不要）" data-wage="1500">空き確認・応募（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
           </tbody>
@@ -5855,7 +5863,7 @@ function init(){
   ].filter(Boolean);
 
   inputs.forEach(el => {
-    const handler = () => {
+    const handler = (ev) => {
       if (el.id.startsWith("f-start") || el.id.startsWith("f-end") || el.id.startsWith("f-term")) {
         const s = document.getElementById('f-start-date').value;
         const e = document.getElementById('f-end-date').value;
@@ -5864,7 +5872,11 @@ function init(){
         }
         updatePeriodDisplay();
       }
-      render();
+      // ★2026-09-19：1文字打つたびに全件の絞り込みと描画が走っていた。
+      //   実測で1回140ms（速いPC）。スマホでは1秒近く固まる。
+      //   打ち終わるのを少し待ってから1回だけ動かす。
+      //   選択欄（change）は1回きりの操作なので待たせない。
+      scheduleRender(ev && ev.type === "input" ? 180 : 0);
     };
     el.addEventListener("input", handler);
     el.addEventListener("change", handler);
@@ -5946,22 +5958,71 @@ function applyUrlParams(){
   }
 }
 
-function passes(j){
-  const reg = document.getElementById("f-region").value;
-  const pref = document.getElementById("f-pref").value;
-  const dorm = document.getElementById("f-dorm").value;
-  const wage = +document.getElementById("f-wage").value;
-  const netWage = +(document.getElementById("f-net-wage") ? document.getElementById("f-net-wage").value : 0);
-  const meals = document.getElementById("f-meals").value;
-  const catPattern = document.getElementById("f-cat") ? document.getElementById("f-cat").value : "";
-  const q = document.getElementById("f-q").value.trim().toLowerCase();
+// ★2026-09-19：ここは求人1件ごとに document.getElementById を20回以上
+//   引いていた。12,879件 × 20 = 1回の描画で約26万回のDOM検索になる。
+//   実測で filter 79ms + render 62ms（速いPCで）。入力1文字ごとに
+//   これが走り、待ち時間を入れる処理も無かったので、スマホでは
+//   1文字ごとに1秒近く固まっていた。
+//   絞り込みの条件は「1回の描画のあいだ変わらない」ので、先に1回だけ読む。
+let F = null;
 
-  if (reg && j.region !== reg) return false;
-  if (pref && !(j.prefecture || "").includes(pref)) return false;
-  if (dorm === "完全個室" && j.dorm_type !== "完全個室") return false;
-  if (dorm === "個室以上" && !["完全個室","個室（相部屋の可能性あり）"].includes(j.dorm_type)) return false;
-  if (wage && (j.wage_min || 0) < wage) return false;
-  if (netWage > 0) {
+function readFilters(){
+  const v = id => { const e = document.getElementById(id); return e ? e.value : ""; };
+  const c = id => { const e = document.getElementById(id); return !!(e && e.checked); };
+  const catPattern = v("f-cat");
+  const sDate = v("f-start-date");
+  const eDate = v("f-end-date");
+  const tSel = v("f-term-select");
+  let maxDays = null;
+  if (sDate && eDate) {
+    const diff = Math.round((new Date(eDate) - new Date(sDate)) / (1000 * 60 * 60 * 24));
+    if (diff > 0) maxDays = diff;
+  } else if (tSel) {
+    maxDays = parseInt(tSel, 10);
+  } else if (sDate && !eDate) {
+    maxDays = 30;   // 開始日だけのときは最低1ヶ月として見る
+  }
+  const q = v("f-q").trim().toLowerCase();
+  return {
+    reg: v("f-region"), pref: v("f-pref"), dorm: v("f-dorm"),
+    wage: +v("f-wage"), netWage: +v("f-net-wage"), meals: v("f-meals"),
+    // 正規表現も1回だけ作る。求人ごとに new RegExp していた。
+    catRx: catPattern ? new RegExp(catPattern, "i") : null,
+    q: q, qWords: q ? q.split(/\s+/) : [],
+    sDate: sDate, maxDays: maxDays,
+    dateSpecified: (maxDays !== null) || !!sDate,
+    sMonth: sDate ? (new Date(sDate).getMonth() + 1) : null,
+    tooshi: c("c-tooshi"), nakanuke: c("c-nakanuke"), lessot: c("c-lessot"),
+    extend: c("c-extend"), friendly: c("c-friendly"), deai: c("c-deai"),
+    newdorm: c("c-newdorm"), roombath: c("c-roombath"), onsen: c("c-onsen"),
+    convenience: c("c-convenience"), ski: c("c-ski"), car: c("c-car"),
+    commute: c("c-commute"), immediate: c("c-immediate"), wifi: c("c-wifi"),
+    dormfree: c("c-dormfree"), zerocost: c("c-zerocost"),
+    newbie: c("c-newbie"), friends: c("c-friends")
+  };
+}
+
+// 検索用の文字列は求人ごとに1回だけ作って持たせる。
+// 毎回 join + toLowerCase していたぶんが、そのまま入力の待ち時間になっていた。
+function hayOf(j){
+  if (j._hay === undefined) {
+    j._hay = [j.workplace_name, j.prefecture, j.city, j.job_category,
+              j.dorm_type_raw, j.period_label, j.agency,
+              (j.search_tags || []).join(" ")]
+             .filter(Boolean).join(" ").toLowerCase();
+  }
+  return j._hay;
+}
+
+function passes(j){
+  const f = F || (F = readFilters());
+
+  if (f.reg && j.region !== f.reg) return false;
+  if (f.pref && !(j.prefecture || "").includes(f.pref)) return false;
+  if (f.dorm === "完全個室" && j.dorm_type !== "完全個室") return false;
+  if (f.dorm === "個室以上" && !["完全個室","個室（相部屋の可能性あり）"].includes(j.dorm_type)) return false;
+  if (f.wage && (j.wage_min || 0) < f.wage) return false;
+  if (f.netWage > 0) {
     let estNet = 0;
     if (j.wage_type === "時給" && j.wage_min) {
       estNet = j.wage_min * 8 * 22 * 0.81;
@@ -5970,51 +6031,30 @@ function passes(j){
     } else if (j.wage_type === "日給" && j.wage_min) {
       estNet = j.wage_min * 22 * 0.81;
     }
-    if (estNet < netWage) return false;
+    if (estNet < f.netWage) return false;
   }
-  if (meals && (j.meals_per_day || 0) < +meals) return false;
-  if (catPattern) {
-    const rx = new RegExp(catPattern, "i");
-    const hayCat = `${j.job_category || ""} ${j.workplace_name || ""} ${j.feature_words || ""}`;
-    if (!rx.test(hayCat)) return false;
+  if (f.meals && (j.meals_per_day || 0) < +f.meals) return false;
+  if (f.catRx) {
+    const hayCat = (j.job_category || "") + " " + (j.workplace_name || "") + " " + (j.feature_words || "");
+    if (!f.catRx.test(hayCat)) return false;
   }
 
-  if (q) {
+  if (f.q) {
     // search_tags は地名の別名（ルスツ→留寿都、トマム→占冠 等）。
     // 求人データ側は市区町村名しか持たないので、これが無いと観光地名で検索しても出ない。
-    const hay = [j.workplace_name, j.prefecture, j.city, j.job_category, j.dorm_type_raw,
-                 j.period_label, j.agency, (j.search_tags || []).join(" ")]
-                .filter(Boolean).join(" ").toLowerCase();
-    if (!q.split(/\s+/).every(w => hay.includes(w))) return false;
-  }
-
-  // 期間フィルター（精密マッチ）
-  const sDate = document.getElementById("f-start-date").value;
-  const eDate = document.getElementById("f-end-date").value;
-  const tSel = document.getElementById("f-term-select").value;
-  let maxDays = null;
-  if (sDate && eDate) {
-    const diff = Math.round((new Date(eDate) - new Date(sDate)) / (1000 * 60 * 60 * 24));
-    if (diff > 0) maxDays = diff;
-  } else if (tSel) {
-    maxDays = parseInt(tSel, 10);
-  } else if (sDate && !eDate) {
-    // 開始日だけ入れた場合は最低1ヶ月として期間判定しつつ、開始月で照合
-    maxDays = 30;
+    const hay = hayOf(j);
+    for (let i = 0; i < f.qWords.length; i++) {
+      if (!hay.includes(f.qWords[i])) return false;
+    }
   }
 
   // 期間の記載がない求人は、日程を指定された時点で「判定できない」扱いにする。
   // 除外もせず合格にもせず、件数表示で別に数える（UNKNOWN_PERIOD）。
-  const dateSpecified = (maxDays !== null) || !!sDate;
-  if (dateSpecified && getJobMinMonths(j) === null) {
-    j._periodUnknown = true;
-  } else {
-    j._periodUnknown = false;
-  }
+  j._periodUnknown = !!(f.dateSpecified && getJobMinMonths(j) === null);
 
-  if (maxDays !== null) {
+  if (f.maxDays !== null) {
     const jobMin = getJobMinMonths(j);
-    const userMonths = maxDays / 30;
+    const userMonths = f.maxDays / 30;
     // 空いている期間が求人の最低勤務期間に届かなければ、その人は応募できない
     if (jobMin !== null && userMonths < jobMin * 0.9) return false;
   }
@@ -6022,62 +6062,37 @@ function passes(j){
   // 開始可能月の照合（求人側が開始月を限定している場合だけ効かせる）。
   // 求人が「12月開始」と自分で書いているなら、それが答え。immediate_ok を
   // 逃げ道にすると、2月から働きたい人に12月開始の求人を出すことになる。
-  // 開始月の記載が無い求人は、そもそもこのブロックに入らない。
-  if (sDate && Array.isArray(j.start_months) && j.start_months.length) {
-    const sMonth = new Date(sDate).getMonth() + 1;
-    const ok = j.start_months.some(jm => {
-      const diff = ((jm - sMonth) + 12) % 12;   // 年をまたぐ場合を考慮
-      return diff <= 2;                          // 希望日から2ヶ月以内に開始枠がある
-    });
+  if (f.sMonth !== null && Array.isArray(j.start_months) && j.start_months.length) {
+    let ok = false;
+    for (let i = 0; i < j.start_months.length; i++) {
+      if ((((j.start_months[i] - f.sMonth) + 12) % 12) <= 2) { ok = true; break; }
+    }
     if (!ok) return false;
   }
 
-  if (document.getElementById("c-tooshi") && document.getElementById("c-tooshi").checked) {
-    if (!j.f_tooshi) return false;
-  }
-  if (document.getElementById("c-nakanuke") && document.getElementById("c-nakanuke").checked) {
-    if (j.f_tooshi) return false;
-  }
-  if (document.getElementById("c-lessot") && document.getElementById("c-lessot").checked) {
-    if (!j.f_lessot) return false;
-  }
-  if (document.getElementById("c-extend") && document.getElementById("c-extend").checked) {
-    if (!j.f_extend) return false;
-  }
-  if (document.getElementById("c-friendly") && document.getElementById("c-friendly").checked) {
-    if (!j.f_friendly) return false;
-  }
-  if (document.getElementById("c-deai") && document.getElementById("c-deai").checked) {
-    if (!j.f_deai) return false;
-  }
-  if (document.getElementById("c-newdorm") && document.getElementById("c-newdorm").checked) {
-    if (!j.f_newdorm) return false;
-  }
-  if (document.getElementById("c-roombath") && document.getElementById("c-roombath").checked) {
-    if (!j.f_roombath) return false;
-  }
-  if (document.getElementById("c-onsen") && document.getElementById("c-onsen").checked) {
-    if (!j.f_onsen) return false;
-  }
-  if (document.getElementById("c-convenience") && document.getElementById("c-convenience").checked) {
-    if (!j.f_convenience) return false;
-  }
-  if (document.getElementById("c-ski") && document.getElementById("c-ski").checked) {
-    const haySki = [j.workplace_name, j.prefecture, j.city, j.job_category, j.dorm_type_raw, j.period_label].filter(Boolean).join(" ").toLowerCase();
-    if (!haySki.includes("スキー")) return false;
-  }
-  if (document.getElementById("c-car") && document.getElementById("c-car").checked && !j.car_ok) return false;
-  if (document.getElementById("c-commute") && document.getElementById("c-commute").checked && !j.commute_easy) return false;
-  if (document.getElementById("c-immediate") && document.getElementById("c-immediate").checked && !j.immediate_ok) return false;
-  if (document.getElementById("c-wifi") && document.getElementById("c-wifi").checked && !j.dorm_wifi) return false;
-  if (document.getElementById("c-dormfree") && document.getElementById("c-dormfree").checked && j.dorm_cost !== 0) return false;
-  if (document.getElementById("c-zerocost") && document.getElementById("c-zerocost").checked) {
+  if (f.tooshi && !j.f_tooshi) return false;
+  if (f.nakanuke && j.f_tooshi) return false;
+  if (f.lessot && !j.f_lessot) return false;
+  if (f.extend && !j.f_extend) return false;
+  if (f.friendly && !j.f_friendly) return false;
+  if (f.deai && !j.f_deai) return false;
+  if (f.newdorm && !j.f_newdorm) return false;
+  if (f.roombath && !j.f_roombath) return false;
+  if (f.onsen && !j.f_onsen) return false;
+  if (f.convenience && !j.f_convenience) return false;
+  if (f.ski && !hayOf(j).includes("スキー")) return false;
+  if (f.car && !j.car_ok) return false;
+  if (f.commute && !j.commute_easy) return false;
+  if (f.immediate && !j.immediate_ok) return false;
+  if (f.wifi && !j.dorm_wifi) return false;
+  if (f.dormfree && j.dorm_cost !== 0) return false;
+  if (f.zerocost) {
     const dRaw = j.dorm_type_raw || "";
     if (j.dorm_cost !== 0 || (j.meals_per_day || 0) < 2) return false;
     if (dRaw.includes("一部負担") || dRaw.includes("一部自己負担") || dRaw.includes("有料")) return false;
   }
-  if (document.getElementById("c-newbie") && document.getElementById("c-newbie").checked && !j.inexperienced_ok) return false;
-  if (document.getElementById("c-friends") && document.getElementById("c-friends").checked && !(j.friends_ok || j.couple_ok)) return false;
+  if (f.newbie && !j.inexperienced_ok) return false;
+  if (f.friends && !(j.friends_ok || j.couple_ok)) return false;
 
   return true;
 }
@@ -6313,7 +6328,17 @@ async function startLineAlert(btn) {
   }
 }
 
+let RENDER_TIMER = null;
+function scheduleRender(waitMs){
+  if (RENDER_TIMER) clearTimeout(RENDER_TIMER);
+  if (!waitMs) { RENDER_TIMER = null; render(); return; }
+  RENDER_TIMER = setTimeout(() => { RENDER_TIMER = null; render(); }, waitMs);
+}
+
 function render(){
+  // 絞り込みの条件を、この描画のあいだ1回だけ読む。
+  // 以前は求人1件ごとにDOMを引いていて、12,879件×20回になっていた。
+  F = readFilters();
   const matched = JOBS.filter(passes);
   const sortMode = (document.getElementById("f-sort") || {}).value || "recommend";
   const unknown = matched.filter(j => j._periodUnknown).length;

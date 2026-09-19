@@ -7,6 +7,7 @@ Sitemap: https://fumiproject.dev/resort/sitemap-analysis.xml
 Sitemap: https://fumiproject.dev/resort/sitemap-area-features.xml
 Sitemap: https://fumiproject.dev/resort/sitemap-articles.xml
 Sitemap: https://fumiproject.dev/resort/sitemap-diary.xml
+Sitemap: https://fumiproject.dev/resort/sitemap-hubs.xml
 Sitemap: https://fumiproject.dev/resort/sitemap-job.xml
 Sitemap: https://fumiproject.dev/resort/sitemap-spots.xml
 Sitemap: https://fumiproject.dev/resort/sitemap-start.xml

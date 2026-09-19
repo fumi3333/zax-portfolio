@@ -2990,7 +2990,7 @@
           <a class="cta" href="https://work-trip.jp/search/details/?job_id=14275" target="_blank" rel="noopener nofollow sponsored"
              data-ag="ワクトリ" data-pref="群馬県"
              data-cat="調理全般" data-wage="1800">空き状況・詳細（公式）</a>
-          <div class="lic">7時間前に掲載を確認</div>
+          <div class="lic">8時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -6484,7 +6484,12 @@ function render(){
   }
 
   const PAGE = 100;
-  const partnerAgencies = ["グッドマン", "スタッフエージェント", "RESORT CROSS"];
+  // ★2026-09-19：ここだけ3社を直書きしていた。A8で9/14にダイブと
+  //   ヒューマニックの提携が承認され、PARTNERS（おすすめ順の加点）には
+  //   反映されていたのに、「提携公式」バッジと応募ボタンの文言は
+  //   古い3社のままだった。派遣会社には「加点幅は提携先であれば全社同じ」
+  //   と説明しているので、表示だけ食い違うのは良くない。PARTNERS から引く。
+  const partnerAgencies = PARTNERS;
   const sorted = matched.sort((a,b) => {
     const isHourlyA = a.wage_type === "時給";
     const isHourlyB = b.wage_type === "時給";

@@ -33,6 +33,17 @@
 - https://fumiproject.dev/resort/diary/ : 実際に働いている本人の記録
 - https://fumiproject.dev/resort/about/ : 掲載基準と派遣事業許可番号
 
+## 区分ごとの一覧
+
+- https://fumiproject.dev/resort/area/ : 都道府県ごとの求人数と時給の中央値
+- https://fumiproject.dev/resort/spot/ : ニセコ・白馬などリゾート地ごとの求人
+- https://fumiproject.dev/resort/job/ : 職種ごとの求人数と時給
+- https://fumiproject.dev/resort/feature/ : 完全個室・寮費無料などの条件別
+- https://fumiproject.dev/resort/start/ : 開始月ごとの求人数
+- https://fumiproject.dev/resort/age/ : 年代の記載がある求人の集計
+- https://fumiproject.dev/resort/worry/ : 「短期は可能か」等をデータで答えたページ
+- https://fumiproject.dev/resort/ranking/ : 派遣会社別・職種別の平均時給
+
 ## 統計（2026-09-19 時点）
 
 - 掲載求人：12,879件

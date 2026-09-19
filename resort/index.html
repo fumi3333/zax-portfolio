@@ -1340,7 +1340,7 @@
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5RSAWI+42GS+63WO2&a8ejpredirect=https%3A%2F%2Fwww.rizoba.com%2Fwork%2F99283%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社ヒューマニック（リゾバ.com）" data-pref="愛知県"
              data-cat="その他" data-wage="1950">空き確認・応募（公式）</a>
-          <div class="lic">14時間前に掲載を確認</div>
+          <div class="lic">15時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -6139,11 +6139,20 @@ const NIGHT = /ナイトスタッフ|ホスト|コンパニオン|キャバ/;  /
 //   点数は求人ごとに決まり、描画のあいだ変わらない。1回だけ計算して持たせる。
 //   日付の加点だけは日をまたぐと変わるので、その日付を一緒に覚えておく。
 let SCORE_DAY = "";
-function scoreOf(j){
+let SCORE_GEN = 0;
+// 日付が変わったかの確認は、1回の描画につき1回でいい。
+// ★2026-09-19：最初これを scoreOf() の中でやってしまい、
+//   new Date().toDateString() が比較のたび（約35万回）走って、
+//   キャッシュを入れたのに並べ替えが268msのままだった。
+//   「1回でいい処理を内側に置く」のが、そもそもの遅さの原因だった。
+function refreshScoreDay(){
   const today = new Date().toDateString();
-  if (j._score === undefined || SCORE_DAY !== today) {
-    if (SCORE_DAY !== today) SCORE_DAY = today;
+  if (SCORE_DAY !== today) { SCORE_DAY = today; SCORE_GEN++; }
+}
+function scoreOf(j){
+  if (j._score === undefined || j._scoreGen !== SCORE_GEN) {
     j._score = score(j);
+    j._scoreGen = SCORE_GEN;
   }
   return j._score;
 }
@@ -6370,6 +6379,7 @@ function render(){
   // 絞り込みの条件を、この描画のあいだ1回だけ読む。
   // 以前は求人1件ごとにDOMを引いていて、12,879件×20回になっていた。
   F = readFilters();
+  refreshScoreDay();
   const matched = JOBS.filter(passes);
   const sortMode = (document.getElementById("f-sort") || {}).value || "recommend";
   const unknown = matched.filter(j => j._periodUnknown).length;

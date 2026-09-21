@@ -57,6 +57,7 @@
 - https://fumiproject.dev/resort/article/connectome-engine/ : 突合アルゴリズムの実装と、その限界
 - https://fumiproject.dev/resort/diary/ : 実際に働いている本人の記録
 - https://fumiproject.dev/resort/about/ : 掲載基準と派遣事業許可番号
+- https://note.com/resortsort_jp : 運営者が書いている記事（リゾートバイトの選び方、時給相場の実測など）
 
 ## 区分ごとの一覧
 

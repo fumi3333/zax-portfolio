@@ -6227,8 +6227,117 @@ function nearMissOptions(){
         () => { const e = document.getElementById("f-pref"); if (e) e.value = ""; },
         f => { f.pref = ""; });
   }
+  // ===== 日程・期間・開始時期のニアミス提案（条件緩和・シフト提案） =====
+  if (base.sDate && base.sMonth) {
+    const origParts = base.sDate.split("-");
+    const origY = parseInt(origParts[0], 10);
+    const origM = parseInt(origParts[1], 10) - 1; // 0-11
+    const origD = parseInt(origParts[2], 10);
+
+    // ① スタート日を10日前後早める（前倒し）
+    if (origD > 10) {
+      const earlyMonth = origM + 1;
+      const earlyStr = `${origY}-${String(earlyMonth).padStart(2, "0")}-01`;
+      add(`開始日を早めて【${earlyMonth}月1日〜】可能にする`, 1,
+          () => { const e = document.getElementById("f-start-date"); if (e) e.value = earlyStr; },
+          f => { f.sDate = earlyStr; f.sMonth = earlyMonth; });
+    }
+
+    // ② スタート月を1ヶ月早める（例：10月→9月）
+    let prevY = origY;
+    let prevM = origM - 1;
+    if (prevM < 0) { prevM = 11; prevY--; }
+    const prevMonthNum = prevM + 1;
+    const prevMStr = `${prevY}-${String(prevMonthNum).padStart(2, "0")}-01`;
+    add(`開始時期を1ヶ月早めて【${prevMonthNum}月スタート】にする`, 2,
+        () => { const e = document.getElementById("f-start-date"); if (e) e.value = prevMStr; },
+        f => { f.sDate = prevMStr; f.sMonth = prevMonthNum; });
+
+    // ③ スタート月を1ヶ月遅らせる（例：10月→11月）
+    let nextY = origY;
+    let nextM = origM + 1;
+    if (nextM > 11) { nextM = 0; nextY++; }
+    const nextMonthNum = nextM + 1;
+    const nextMStr = `${nextY}-${String(nextMonthNum).padStart(2, "0")}-01`;
+    add(`開始時期を1ヶ月遅らせて【${nextMonthNum}月スタート】にする`, 2,
+        () => { const e = document.getElementById("f-start-date"); if (e) e.value = nextMStr; },
+        f => { f.sDate = nextMStr; f.sMonth = nextMonthNum; });
+
+    // ④ スタート月を2ヶ月遅らせる（例：10月→12月冬シーズン開始）
+    let next2Y = origY;
+    let next2M = origM + 2;
+    if (next2M > 11) { next2M -= 12; next2Y++; }
+    const next2MonthNum = next2M + 1;
+    const next2MStr = `${next2Y}-${String(next2MonthNum).padStart(2, "0")}-01`;
+    add(`開始時期を【${next2MonthNum}月スタート】にする`, 3,
+        () => { const e = document.getElementById("f-start-date"); if (e) e.value = next2MStr; },
+        f => { f.sDate = next2MStr; f.sMonth = next2MonthNum; });
+  }
+
+  // 2. 勤務可能期間（maxDays）または終了日（eDate）が指定されている場合
+  if (base.maxDays !== null) {
+    const curDays = base.maxDays;
+    
+    // ① 最短期間を延ばす（30日→60日/90日など）
+    if (curDays <= 45) {
+      add(`勤務期間を【最短2ヶ月〜（約60日）】まで可能にする`, 1,
+          () => {
+            const ts = document.getElementById("f-term-select"); if (ts) ts.value = "60";
+            if (base.sDate) {
+              const d = new Date(base.sDate); d.setDate(d.getDate() + 60);
+              const ed = document.getElementById("f-end-date"); if (ed) ed.value = d.toISOString().slice(0, 10);
+            }
+          },
+          f => { f.maxDays = 60; });
+      add(`勤務期間を【最短3ヶ月〜（約90日）】まで可能にする`, 2,
+          () => {
+            const ts = document.getElementById("f-term-select"); if (ts) ts.value = "90";
+            if (base.sDate) {
+              const d = new Date(base.sDate); d.setDate(d.getDate() + 90);
+              const ed = document.getElementById("f-end-date"); if (ed) ed.value = d.toISOString().slice(0, 10);
+            }
+          },
+          f => { f.maxDays = 90; });
+    } else if (curDays <= 75) {
+      add(`勤務期間を【最短3ヶ月〜（約90日）】まで可能にする`, 1,
+          () => {
+            const ts = document.getElementById("f-term-select"); if (ts) ts.value = "90";
+            if (base.sDate) {
+              const d = new Date(base.sDate); d.setDate(d.getDate() + 90);
+              const ed = document.getElementById("f-end-date"); if (ed) ed.value = d.toISOString().slice(0, 10);
+            }
+          },
+          f => { f.maxDays = 90; });
+    }
+
+    // ② 終了日（eDate）が具体的に入力されている場合：終了日を延長する
+    const eDateInput = document.getElementById("f-end-date");
+    if (eDateInput && eDateInput.value) {
+      const eParts = eDateInput.value.split("-");
+      if (eParts.length === 3) {
+        const eDateVal = new Date(parseInt(eParts[0],10), parseInt(eParts[1],10)-1, parseInt(eParts[2],10));
+        
+        // +14日延長
+        const ext14 = new Date(eDateVal); ext14.setDate(ext14.getDate() + 14);
+        const ext14Str = `${ext14.getFullYear()}-${String(ext14.getMonth()+1).padStart(2,"0")}-${String(ext14.getDate()).padStart(2,"0")}`;
+        const newDays14 = curDays + 14;
+        add(`終了日を延ばして【${ext14.getMonth()+1}月${ext14.getDate()}日まで】可能にする`, 1,
+            () => { if (eDateInput) eDateInput.value = ext14Str; },
+            f => { f.maxDays = newDays14; });
+
+        // +30日延長
+        const ext30 = new Date(eDateVal); ext30.setDate(ext30.getDate() + 30);
+        const ext30Str = `${ext30.getFullYear()}-${String(ext30.getMonth()+1).padStart(2,"0")}-${String(ext30.getDate()).padStart(2,"0")}`;
+        const newDays30 = curDays + 30;
+        add(`終了日を延ばして【${ext30.getMonth()+1}月${ext30.getDate()}日まで】可能にする`, 2,
+            () => { if (eDateInput) eDateInput.value = ext30Str; },
+            f => { f.maxDays = newDays30; });
+      }
+    }
+  }
+
   if (base.maxDays !== null || base.sDate) {
-    add("期間の指定をやめる", 4,
+    add("期間・日程の指定をやめる", 4,
         () => { ["f-start-date","f-end-date","f-term-select"].forEach(id => {
                   const e = document.getElementById(id); if (e) e.value = ""; }); },
         f => { f.maxDays = null; f.sDate = ""; f.sMonth = null; f.dateSpecified = false; });
@@ -6242,7 +6351,7 @@ function nearMissOptions(){
 
   // 妥協の小さい順。同じ妥協度なら件数の多い順。
   out.sort((a, b) => (a.cost - b.cost) || (b.n - a.n));
-  return out.slice(0, 3);
+  return out.slice(0, 4);
 }
 
 // 代替案のボタンが押されたとき。条件を実際に書き換えて引き直す。

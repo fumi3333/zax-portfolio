@@ -205,6 +205,36 @@
       "permanent": true
     },
     {
+      "source": "/how-to-find/(.*)",
+      "destination": "https://fumiproject.dev/resort/how-to-find/$1",
+      "permanent": true
+    },
+    {
+      "source": "/how-to-find",
+      "destination": "https://fumiproject.dev/resort/how-to-find/",
+      "permanent": true
+    },
+    {
+      "source": "/movement/(.*)",
+      "destination": "https://fumiproject.dev/resort/movement/$1",
+      "permanent": true
+    },
+    {
+      "source": "/movement",
+      "destination": "https://fumiproject.dev/resort/movement/",
+      "permanent": true
+    },
+    {
+      "source": "/for-agencies/(.*)",
+      "destination": "https://fumiproject.dev/resort/for-agencies/$1",
+      "permanent": true
+    },
+    {
+      "source": "/for-agencies",
+      "destination": "https://fumiproject.dev/resort/for-agencies/",
+      "permanent": true
+    },
+    {
       "source": "/school/(.*)",
       "destination": "https://fumiproject.dev/menkyo/school/$1",
       "permanent": true

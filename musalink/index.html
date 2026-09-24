@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F1K4SHC9LB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-F1K4SHC9LB');
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Musalink（ムサリンク）｜武蔵野大学生専用教科書フリマアプリ</title>
+  <meta name="description" content="先輩から、次の誰かへ。Musalink（ムサリンク）は、武蔵野大学の学生限定で教科書や学用品を安全・手渡しで売買・継承できるマーケットプレイスです。大学メール認証・QRコード対面取引で安心。">
+  <link rel="canonical" href="https://fumiproject.dev/musalink/">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- OGP / Twitter Card -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Musalink">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:url" content="https://fumiproject.dev/musalink/">
+  <meta property="og:title" content="Musalink（ムサリンク）｜武蔵野大学生専用教科書フリマアプリ">
+  <meta property="og:description" content="先輩から、次の誰かへ。Musalinkは武蔵野大学の学生限定で教科書を安全に手渡しできる学内フリマアプリです。">
+  <meta property="og:image" content="https://fumiproject.dev/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Musalink（ムサリンク）｜武蔵野大学生専用教科書フリマアプリ">
+  <meta name="twitter:description" content="先輩から、次の誰かへ。武蔵野大学の学生限定で教科書を安全・手渡しで売買できる学内フリマアプリ。">
+  <meta name="twitter:image" content="https://fumiproject.dev/og.png">
+
+  <!-- Tailwind CSS CDN & Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap">
+
+  <style>
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+  </style>
+
+  <!-- JSON-LD 構造化データ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://fumiproject.dev/musalink/#website",
+        "name": "Musalink",
+        "alternateName": "ムサリンク",
+        "url": "https://fumiproject.dev/musalink/",
+        "description": "武蔵野大学の学生同士が教科書や生活用品を対面で受け渡しするフリマアプリ（学生による個人開発。大学公式のサービスではありません）。",
+        "inLanguage": "ja"
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://fumiproject.dev/musalink/#webapp",
+        "name": "Musalink",
+        "url": "https://fumiproject.dev/musalink/",
+        "applicationCategory": "ShoppingApplication",
+        "operatingSystem": "Web",
+        "browserRequirements": "JavaScriptが有効なブラウザ",
+        "inLanguage": "ja",
+        "description": "武蔵野大学の在学生だけが使えるフリマアプリ。大学メールアドレスで在学確認を行い、キャンパス周辺での対面手渡しとQRコードの読み取りで取引が完了します。",
+        "audience": {
+          "@type": "EducationalAudience",
+          "educationalRole": "student",
+          "audienceType": "武蔵野大学の在学生"
+        },
+        "isPartOf": { "@id": "https://fumiproject.dev/musalink/#website" }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="min-h-screen bg-white text-slate-800 antialiased selection:bg-violet-500 selection:text-white">
+
+  <!-- ヘッダー -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+    <div class="container mx-auto px-4 h-16 flex items-center justify-between">
+      <!-- ロゴ -->
+      <a href="https://fumiproject.dev/musalink/" class="flex items-center gap-2 group">
+        <div class="w-8 h-8 bg-gradient-to-br from-violet-600 to-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-lg shadow-sm group-hover:scale-105 transition-transform">
+          M
+        </div>
+        <span class="font-bold text-xl tracking-tight text-slate-900">
+          Musalink
+        </span>
+      </a>
+
+      <!-- ナビゲーション（PC） -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#how-it-works" class="text-sm font-medium text-slate-600 hover:text-violet-600 transition-colors">取引の流れ</a>
+        <a href="#demo" class="text-sm font-medium text-slate-600 hover:text-violet-600 transition-colors">操作デモ</a>
+        <a href="#guide" class="text-sm font-medium text-slate-600 hover:text-violet-600 transition-colors">教科書の買い方・売り方</a>
+        <a href="#philosophy" class="text-sm font-medium text-slate-600 hover:text-violet-600 transition-colors">理念</a>
+      </nav>
+
+      <!-- アクションボタン -->
+      <div class="flex items-center gap-3">
+        <a href="https://musa-link-prod.web.app/items" class="hidden sm:inline-flex items-center gap-2 text-sm font-bold text-slate-700 hover:text-violet-600 px-4 py-2 rounded-lg hover:bg-slate-100 transition-colors">
+          <svg class="w-4 h-4 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          探す
+        </a>
+        <a href="https://musa-link-prod.web.app/" class="inline-flex items-center justify-center bg-violet-600 hover:bg-violet-700 text-white text-sm font-bold px-5 py-2 rounded-full shadow-sm hover:shadow transition-all">
+          アプリを開く
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-slate-900 text-white pb-24 pt-32 lg:pt-48">
+    <!-- 背景グラデーション -->
+    <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
+      <div class="absolute -top-[30%] -left-[10%] w-[70%] h-[70%] rounded-full bg-violet-600/30 blur-[100px]"></div>
+      <div class="absolute top-[20%] -right-[10%] w-[60%] h-[60%] rounded-full bg-blue-500/20 blur-[100px]"></div>
+      <div class="absolute -bottom-[20%] left-[20%] w-[50%] h-[50%] rounded-full bg-emerald-500/10 blur-[100px]"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10 text-center">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm text-sm font-medium mb-8">
+        <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        武蔵野大学生専用マーケットプレイス
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-6 bg-gradient-to-r from-white via-white to-slate-300 bg-clip-text text-transparent leading-tight">
+        先輩から、<br class="sm:hidden">次の誰かへ。
+      </h1>
+
+      <p class="text-base sm:text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+        Musalinkは、先輩から後輩へ、教科書やアイテムを
+        <br class="hidden md:block">
+        安全に継承するための武蔵野大学生限定フリマアプリです。
+      </p>
+
+      <div class="mb-10 p-5 bg-white/5 rounded-2xl border border-white/10 backdrop-blur-sm inline-block max-w-xl text-left sm:text-center">
+        <p class="text-sm text-slate-200 flex items-center sm:justify-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          <span class="font-bold text-white">安心・安全への取り組み</span>
+        </p>
+        <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+          武蔵野大学のメールアドレス（@stu.musashino-u.ac.jp など）をお持ちの方のみが登録・利用できるため、学外の不審なユーザーは存在しません。安心してご利用ください。
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto sm:max-w-none">
+        <a href="https://musa-link-prod.web.app/items" class="w-full sm:w-auto inline-flex items-center justify-center bg-violet-600 hover:bg-violet-700 text-white font-bold px-8 py-4 rounded-xl text-lg shadow-xl hover:-translate-y-0.5 transition-all">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          教科書を探す
+        </a>
+        <a href="https://musa-link-prod.web.app/items/create" class="w-full sm:w-auto inline-flex items-center justify-center border-2 border-white/30 text-white hover:bg-white/10 rounded-xl px-8 py-4 text-lg font-bold backdrop-blur-sm transition-all hover:scale-105 bg-black/40">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          教科書を出品
+        </a>
+      </div>
+
+      <div class="mt-16 flex items-center justify-center gap-8 opacity-60">
+        <span class="text-xs font-semibold tracking-widest text-slate-400 uppercase">武蔵野大学 学生専用プラットフォーム</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how-it-works" class="py-24 bg-slate-50 border-b border-slate-100">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-slate-800 mb-4">安心・安全な取引の流れ</h2>
+        <p class="text-slate-600">対面取引 × QRコード確認で、トラブルを防ぎます。</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <!-- Step 1 -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow relative text-center">
+          <div class="w-16 h-16 rounded-2xl bg-violet-50 flex items-center justify-center mb-6 mx-auto">
+            <svg class="w-8 h-8 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-800 mb-3">1. 探す & リクエスト</h3>
+          <p class="text-slate-600 leading-relaxed text-sm">
+            武蔵野大学生の出品から欲しい教科書を見つけ、購入リクエストを送ります。
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow relative text-center">
+          <div class="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center mb-6 mx-auto">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-800 mb-3">2. 手数料を先に支払う</h3>
+          <p class="text-slate-600 leading-relaxed text-sm">
+            出品者が承認したら、取引手数料だけをPayPayまたはカードで先に支払います。商品代金は会った時に直接支払います。
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow relative text-center">
+          <div class="w-16 h-16 rounded-2xl bg-emerald-50 flex items-center justify-center mb-6 mx-auto">
+            <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"></path></svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-800 mb-3">3. 会う & 確定</h3>
+          <p class="text-slate-600 leading-relaxed text-sm">
+            正門前など指定した場所で対面受け渡し。QRコードを見せ合って取引完了です。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- App Preview Section (動画デモ) -->
+  <section id="demo" class="bg-white py-20 md:py-28 border-b border-slate-100">
+    <div class="container mx-auto px-4">
+      <div class="max-w-5xl mx-auto">
+        <!-- 見出し -->
+        <div class="text-center mb-12 md:mb-16">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-100 text-violet-700 text-sm font-bold mb-4">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" clip-rule="evenodd"></path></svg>
+            実際の画面
+          </div>
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+            出品から購入・受け渡しまで、動画で
+          </h2>
+          <p class="text-slate-600 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+            出品側・購入側、それぞれの画面の流れをご覧いただけます。<br class="hidden md:block">
+            対面でのQR受け渡しまで、この2本で一通り分かります。
+          </p>
+        </div>
+
+        <!-- 動画2本 + 説明 -->
+        <div class="grid md:grid-cols-5 gap-10 md:gap-16 items-center">
+          <!-- スマホフレーム風動画 -->
+          <div class="md:col-span-2 flex justify-center gap-6">
+            <!-- 出品編 -->
+            <div class="flex flex-col items-center gap-2">
+              <div class="relative">
+                <div class="absolute -inset-3 bg-gradient-to-br from-violet-400/30 via-blue-400/20 to-emerald-400/30 rounded-[2.5rem] blur-2xl"></div>
+                <div class="relative w-[135px] sm:w-[155px] aspect-[9/19] rounded-[2rem] bg-slate-900 p-2 shadow-2xl">
+                  <div class="absolute top-2 left-1/2 -translate-x-1/2 w-14 h-4 bg-slate-900 rounded-b-xl z-10"></div>
+                  <video
+                    class="w-full h-full object-cover rounded-[1.6rem] bg-black"
+                    src="demo/seller-demo.mp4"
+                    poster="demo/seller-demo-poster.jpg"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    aria-label="Musalink の出品フローのデモ動画"
+                  ></video>
+                </div>
+              </div>
+              <span class="text-xs font-bold text-slate-500 mt-2">出品編</span>
+            </div>
+
+            <!-- 購入編 -->
+            <div class="flex flex-col items-center gap-2">
+              <div class="relative">
+                <div class="absolute -inset-3 bg-gradient-to-br from-blue-400/30 via-indigo-400/20 to-violet-400/30 rounded-[2.5rem] blur-2xl"></div>
+                <div class="relative w-[135px] sm:w-[155px] aspect-[9/19] rounded-[2rem] bg-slate-900 p-2 shadow-2xl">
+                  <div class="absolute top-2 left-1/2 -translate-x-1/2 w-14 h-4 bg-slate-900 rounded-b-xl z-10"></div>
+                  <video
+                    class="w-full h-full object-cover rounded-[1.6rem] bg-black"
+                    src="demo/buyer-demo.mp4"
+                    poster="demo/buyer-demo-poster.jpg"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    aria-label="Musalink の購入フローのデモ動画"
+                  ></video>
+                </div>
+              </div>
+              <span class="text-xs font-bold text-slate-500 mt-2">購入編</span>
+            </div>
+          </div>
+
+          <!-- 説明ステップ -->
+          <div class="md:col-span-3 space-y-6">
+            <div class="flex gap-4 items-start">
+              <div class="flex-shrink-0 w-9 h-9 rounded-full bg-slate-900 text-white font-bold text-sm flex items-center justify-center">1</div>
+              <div>
+                <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-1">3タップで出品</h3>
+                <p class="text-sm md:text-base text-slate-600 leading-relaxed">ISBNから自動入力。カテゴリ・価格・状態を選んで、写真を1枚撮るだけ。</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 items-start">
+              <div class="flex-shrink-0 w-9 h-9 rounded-full bg-slate-900 text-white font-bold text-sm flex items-center justify-center">2</div>
+              <div>
+                <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-1">気になる商品にリクエスト</h3>
+                <p class="text-sm md:text-base text-slate-600 leading-relaxed">武蔵野大学生限定だから安心。気になったらすぐ購入リクエストを送れます。</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 items-start">
+              <div class="flex-shrink-0 w-9 h-9 rounded-full bg-slate-900 text-white font-bold text-sm flex items-center justify-center">3</div>
+              <div>
+                <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-1">承認されたら手数料を先払い</h3>
+                <p class="text-sm md:text-base text-slate-600 leading-relaxed">取引手数料だけをPayPayまたはカードで先に支払います。商品代金は対面で渡します。</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4 items-start">
+              <div class="flex-shrink-0 w-9 h-9 rounded-full bg-slate-900 text-white font-bold text-sm flex items-center justify-center">4</div>
+              <div>
+                <h3 class="text-lg md:text-xl font-bold text-slate-800 mb-1">対面でQR認証して取引完了</h3>
+                <p class="text-sm md:text-base text-slate-600 leading-relaxed">待ち合わせ場所でQRコードを見せ合うだけで取引完了です。</p>
+              </div>
+            </div>
+
+            <div class="pt-2">
+              <p class="text-xs text-slate-500 flex items-center gap-2">
+                <svg class="w-3.5 h-3.5 text-slate-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                動画は自動再生・ループ・ミュート（音声なし）
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Textbook Guide Section -->
+  <section id="guide" class="py-20 bg-slate-50 border-b border-slate-100">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <span class="text-violet-600 font-bold text-sm tracking-wider mb-2 block">買う前・売る前に</span>
+        <h2 class="text-3xl font-bold text-slate-800 mb-4">教科書の手に入れ方・手放し方</h2>
+        <p class="text-slate-600 max-w-2xl mx-auto">
+          本サービスだけが答えではありません。武蔵野大学の教科書をそろえる方法と手放す方法を、それぞれ他の選択肢と正直に比べたものをまとめました。
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <a href="https://musa-link-prod.web.app/textbook" class="group bg-white p-8 rounded-2xl border border-slate-200 hover:border-violet-300 hover:shadow-md transition-all">
+          <div class="w-12 h-12 rounded-full bg-violet-50 flex items-center justify-center mb-5">
+            <svg class="h-6 w-6 text-violet-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-800 mb-3 group-hover:text-violet-600 transition-colors">教科書を安く買う方法</h3>
+          <p class="text-slate-600 leading-relaxed text-sm mb-4">
+            大学の教科書販売・ネット通販の中古・先輩から譲り受け・学内フリマの4つを、値段だけでなく「いつ買えるか」「手元に届くまで」「指定の版か」で比べています。受付期間を逃したときにどうするかも書きました。
+          </p>
+          <span class="text-violet-700 font-bold text-sm inline-flex items-center gap-1">
+            詳しく読む
+            <svg class="h-4 w-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </span>
+        </a>
+
+        <a href="https://musa-link-prod.web.app/textbook/sell" class="group bg-white p-8 rounded-2xl border border-slate-200 hover:border-emerald-300 hover:shadow-md transition-all">
+          <div class="w-12 h-12 rounded-full bg-emerald-50 flex items-center justify-center mb-5">
+            <svg class="h-6 w-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-800 mb-3 group-hover:text-emerald-600 transition-colors">使い終わった教科書を売る方法</h3>
+          <p class="text-slate-600 leading-relaxed text-sm mb-4">
+            宅配買取・フリマアプリ・後輩に直接・学内フリマの4つを、手取りと手間で比べています。まとめて処分したいのか、数冊を高く手放したいのかで選ぶものが変わります。
+          </p>
+          <span class="text-emerald-700 font-bold text-sm inline-flex items-center gap-1">
+            詳しく読む
+            <svg class="h-4 w-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sustainability / 理念 Section -->
+  <section id="philosophy" class="py-24 bg-white border-b border-slate-100">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <span class="text-emerald-600 font-bold text-sm tracking-wider mb-2 block uppercase">私たちの理念</span>
+        <h2 class="text-3xl font-bold text-slate-800 mb-4">持続可能なキャンパスライフのために</h2>
+        <p class="text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          Musalinkは、単なるフリマアプリではありません。<br>
+          学生同士の支え合いを通じて、より豊かな社会と未来を作るためのプラットフォームです。
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <!-- Goal 1 -->
+        <div class="bg-slate-50 p-8 rounded-2xl hover:bg-slate-100 transition-colors">
+          <div class="w-14 h-14 rounded-full bg-white shadow-sm flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-800 mb-3">脱炭素社会へ (Carbon Neutral)</h3>
+          <p class="text-slate-600 leading-relaxed text-sm">
+            対面での手渡し取引により、配送にかかるCO2排出をゼロに。梱包資材の削減にも貢献し、環境負荷を最小限に抑えます。
+          </p>
+        </div>
+
+        <!-- Goal 2 -->
+        <div class="bg-slate-50 p-8 rounded-2xl hover:bg-slate-100 transition-colors">
+          <div class="w-14 h-14 rounded-full bg-white shadow-sm flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-800 mb-3">資源の循環 (Resource Circularity)</h3>
+          <p class="text-slate-600 leading-relaxed text-sm">
+            読み終わった教科書や不要になった家具を廃棄せず、次の学生へ。学生同士のリユースサイクルを作り出し、廃棄物を削減します。
+          </p>
+        </div>
+
+        <!-- Goal 3 -->
+        <div class="bg-slate-50 p-8 rounded-2xl hover:bg-slate-100 transition-colors">
+          <div class="w-14 h-14 rounded-full bg-white shadow-sm flex items-center justify-center mb-6">
+            <svg class="w-8 h-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+          </div>
+          <h3 class="text-xl font-bold text-slate-800 mb-3">コミュニティの活性化 (Social Impact)</h3>
+          <p class="text-slate-600 leading-relaxed text-sm">
+            「譲る」「受け取る」という行為を通じて、学生同士のつながりを創出。持続可能な学生コミュニティの形成に寄与します。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTAセクション -->
+  <section class="py-20 bg-gradient-to-br from-violet-600 to-indigo-700 text-white text-center">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <h2 class="text-3xl sm:text-4xl font-extrabold mb-4">
+        今すぐ、キャンパスの教科書を見つけよう。
+      </h2>
+      <p class="text-violet-100 mb-8 text-base sm:text-lg">
+        武蔵野大学のアカウントで無料登録。不要な教科書の出品も3分で完了します。
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="https://musa-link-prod.web.app/items" class="w-full sm:w-auto bg-white text-violet-700 hover:bg-slate-100 font-bold px-8 py-4 rounded-xl text-lg shadow-lg hover:-translate-y-0.5 transition-all">
+          教科書を探す
+        </a>
+        <a href="https://musa-link-prod.web.app/items/create" class="w-full sm:w-auto bg-violet-800/60 hover:bg-violet-800 border border-white/20 text-white font-bold px-8 py-4 rounded-xl text-lg transition-all">
+          出品してみる
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="bg-white border-t py-12 text-sm text-slate-500">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex flex-wrap justify-center md:justify-start gap-4 text-xs sm:text-sm">
+        <a href="https://musa-link-prod.web.app/legal/terms" class="hover:text-violet-600 transition-colors">利用規約</a>
+        <a href="https://musa-link-prod.web.app/guide" class="hover:text-violet-600 transition-colors">ご利用ガイド・よくある質問</a>
+        <a href="https://musa-link-prod.web.app/textbook" class="hover:text-violet-600 transition-colors">教科書の買い方・売り方</a>
+        <a href="https://musa-link-prod.web.app/legal/privacy" class="hover:text-violet-600 transition-colors">プライバシーポリシー</a>
+        <a href="https://musa-link-prod.web.app/legal/trade" class="hover:text-violet-600 transition-colors">特定商取引法に基づく表記</a>
+        <a href="https://musa-link-prod.web.app/contact" class="hover:text-violet-600 transition-colors">お問い合わせ</a>
+      </div>
+      <div class="text-center md:text-right">
+        <p class="font-bold text-xs text-slate-400 mb-1">
+          ※本サービスは武蔵野大学の学生有志による非公式プロジェクトです。<br>
+          大学公式のサービスではありません。
+        </p>
+        <p class="text-xs text-slate-400 mt-1">
+          &copy; 2026 Musalink ｜ 運営：<a href="https://fumiproject.dev/" class="hover:text-violet-600 transition-colors underline underline-offset-2 font-medium">ZAX（fumiproject.dev）</a>
+        </p>
+      </div>
+    </div>
+    <div class="container mx-auto px-4 mt-8 pb-4 border-t border-slate-100 pt-6">
+      <p class="text-[10px] text-slate-400 text-center leading-relaxed max-w-4xl mx-auto">
+        運営者は、本サービスの利用により発生したユーザー間のトラブル（金銭トラブル、商品の瑕疵、対人トラブル等を含むがこれに限らない）について、一切の責任を負いません。全ての取引は、ユーザー自身の責任と判断において行ってください。
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

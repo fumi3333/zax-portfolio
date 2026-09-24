@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://fumiproject.dev/resort/area/hokkaido/couple/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://fumiproject.dev/resort/area/nagano/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://fumiproject.dev/resort/area/hokkaido/couple/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://fumiproject.dev/resort/area/shizuoka/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://fumiproject.dev/resort/area/hokkaido/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://fumiproject.dev/resort/area/kanagawa/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
@@ -14,8 +14,8 @@
   <url><loc>https://fumiproject.dev/resort/area/gifu/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://fumiproject.dev/resort/area/tochigi/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://fumiproject.dev/resort/area/hokkaido/high-wage/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://fumiproject.dev/resort/area/hyogo/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://fumiproject.dev/resort/area/shizuoka/dorm-free/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://fumiproject.dev/resort/area/hyogo/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://fumiproject.dev/resort/area/mie/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://fumiproject.dev/resort/area/okinawa/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
   <url><loc>https://fumiproject.dev/resort/area/yamanashi/short/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>

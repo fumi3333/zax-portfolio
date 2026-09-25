@@ -2,7 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://fumiproject.dev/sitemap-pages.xml
-Sitemap: https://fumiproject.dev/musalink/sitemap.xml
 Sitemap: https://fumiproject.dev/resort/sitemap-age.xml
 Sitemap: https://fumiproject.dev/resort/sitemap-analysis.xml
 Sitemap: https://fumiproject.dev/resort/sitemap-area-features.xml
@@ -15,3 +14,7 @@ Sitemap: https://fumiproject.dev/resort/sitemap-spots.xml
 Sitemap: https://fumiproject.dev/resort/sitemap-start.xml
 Sitemap: https://fumiproject.dev/resort/sitemap-worry.xml
 Sitemap: https://fumiproject.dev/resort/sitemap.xml
+Sitemap: https://fumiproject.dev/hikari/sitemap.xml
+Sitemap: https://fumiproject.dev/menkyo/sitemap.xml
+Sitemap: https://fumiproject.dev/musalink/sitemap.xml
+Sitemap: https://fumiproject.dev/taishoku/sitemap.xml

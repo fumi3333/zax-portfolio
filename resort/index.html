@@ -6139,8 +6139,14 @@ function passesWith(j, f){
   if (f.maxDays !== null) {
     const jobMin = getJobMinMonths(j);
     const userMonths = f.maxDays / 30;
-    // 空いている期間が求人の最低勤務期間に届かなければ、その人は応募できない
+    // 空いている期間が求人の最低勤務期間に届かなければ応募できない
     if (jobMin !== null && userMonths < jobMin * 0.9) return false;
+    // 最低勤務期間の記載がない求人は、短期指定（1週間・2週間など1ヶ月未満）のときは
+    // 短期OKの確証（short_term_ok または 期間欄に短期/週間の明記）がない限り合格にしてはいけない
+    if (jobMin === null && userMonths < 0.9) {
+      const isShort = !!(j.short_term_ok || (j.period_label || "").includes("短期") || (j.period_label || "").includes("週間") || (j.period_label || "").includes("日"));
+      if (!isShort) return false;
+    }
   }
 
   // 開始可能月の照合（求人側が開始月を限定している場合だけ効かせる）。
@@ -6167,7 +6173,11 @@ function passesWith(j, f){
   if (f.ski && !hayOf(j).includes("スキー")) return false;
   if (f.car && !j.car_ok) return false;
   if (f.commute && !j.commute_easy) return false;
-  if (f.immediate && !j.immediate_ok) return false;
+  if (f.immediate) {
+    if (!j.immediate_ok) return false;
+    const curM = new Date().getMonth() + 1;
+    if (Array.isArray(j.start_months) && j.start_months.length && !j.start_months.includes(curM)) return false;
+  }
   if (f.wifi && !j.dorm_wifi) return false;
   if (f.dormfree && j.dorm_cost !== 0) return false;
   if (f.zerocost) {
@@ -7204,6 +7214,6 @@ load();
     </div>
   </div>
 </div>
-<nav id="site-nav" style="max-width:860px;margin:32px auto 0;padding:14px 18px 22px;border-top:1px solid #e2e2e2;font-size:12px;line-height:2.1;color:#666"><a href="/resort/" style="color:inherit;font-weight:700">リゾートソート</a>　<a href="/resort/area/" style="color:inherit">エリアから探す</a>　<a href="/resort/spot/" style="color:inherit">リゾート地から探す</a>　<a href="/resort/job/" style="color:inherit">職種から探す</a>　<a href="/resort/feature/" style="color:inherit">条件から探す</a>　<a href="/resort/start/" style="color:inherit">開始月から探す</a>　<a href="/resort/age/" style="color:inherit">年代から探す</a>　<a href="/resort/season/" style="color:inherit">季節</a>　<a href="/resort/worry/" style="color:inherit">よくある疑問</a>　<a href="/resort/ranking/" style="color:inherit">ランキング</a>　<a href="/resort/analysis/" style="color:inherit">調査と分析</a>　<a href="/resort/compare/" style="color:inherit">派遣会社の比較</a>　<a href="/resort/article/" style="color:inherit">記事</a>　<a href="/resort/diary/" style="color:inherit">働いている記録</a>　<a href="/resort/how-to-find/" style="color:inherit">リゾートバイトの探し方</a>　<a href="/resort/movement/" style="color:inherit">求人の動き</a>　<a href="/resort/data/" style="color:inherit">調査データ</a>　<a href="/resort/shindan/" style="color:inherit">条件診断</a>　<a href="/resort/about/" style="color:inherit">サイトについて</a></nav>
+<nav id="site-nav" style="max-width:860px;margin:32px auto 0;padding:14px 18px 22px;border-top:1px solid #e2e2e2;font-size:12px;line-height:2.1;color:#666"><a href="/resort/" style="color:inherit;font-weight:700">リゾートソート</a>　<a href="/resort/area/" style="color:inherit">エリアから探す</a>　<a href="/resort/spot/" style="color:inherit">リゾート地から探す</a>　<a href="/resort/job/" style="color:inherit">職種から探す</a>　<a href="/resort/feature/" style="color:inherit">条件から探す</a>　<a href="/resort/start/" style="color:inherit">開始月から探す</a>　<a href="/resort/age/" style="color:inherit">年代から探す</a>　<a href="/resort/season/" style="color:inherit">季節</a>　<a href="/resort/worry/" style="color:inherit">よくある疑問</a>　<a href="/resort/ranking/" style="color:inherit">ランキング</a>　<a href="/resort/analysis/" style="color:inherit">調査と分析</a>　<a href="/resort/compare/" style="color:inherit">派遣会社の比較</a>　<a href="/resort/article/" style="color:inherit">記事</a>　<a href="/resort/diary/" style="color:inherit">働いている記録</a>　<a href="/resort/how-to-find/" style="color:inherit">リゾートバイトの探し方</a>　<a href="/resort/movement/" style="color:inherit">求人の動き</a>　<a href="/resort/data/" style="color:inherit">調査データ</a>　<a href="/resort/shindan/" style="color:inherit">条件診断</a>　<a href="/resort/about/" style="color:inherit">サイトについて</a>　<a href="/resort/hobby/" style="color:inherit">過ごし方から探す</a></nav>
 </body>
 </html>

@@ -6465,7 +6465,12 @@ function devIosGuide(){
 }
 
 async function devEnable(btn){
-  if (!DEV_OK) { devMsg("このブラウザは通知に対応していません"); return; }
+  const cond = devConditions();
+  if (!cond.q && !cond.pref && !cond.region && !cond.dorm && !cond.wage && !cond.meals && !cond.dormfree) {
+    devMsg("条件が選択されていません。エリアや時給などを指定してから登録してください。");
+    return;
+  }
+  if (!DEV_OK) { devMsg("このブラウザはお知らせ機能に対応していません"); return; }
   if (DEV_IOS && !devStandalone()) { devIosGuide(); return; }
   btn.disabled = true;
   try {
@@ -6476,20 +6481,9 @@ async function devEnable(btn){
     }
     const reg = await navigator.serviceWorker.register("sw.js");
     await navigator.serviceWorker.ready;
-    await devPut("conditions", devConditions());
-    let bg = false;
-    try {
-      if (reg.periodicSync) {
-        const st = await navigator.permissions.query({ name: "periodic-background-sync" });
-        if (st.state === "granted") {
-          await reg.periodicSync.register("rs-new-jobs", { minInterval: 6 * 60 * 60 * 1000 });
-          bg = true;
-        }
-      }
-    } catch (e) { /* 非対応。開いたときに確認する形で動く */ }
-    devMsg(bg ? "この端末に登録しました。新着が入ると自動でお知らせします"
-              : "この端末に登録しました。次にこのページを開いたときにお知らせします", true);
-    if (btn) btn.textContent = "登録済み（条件を更新する）";
+    await devPut("conditions", cond);
+    devMsg("条件を端末に保存しました。次にこのページを開いたときに新着があればお知らせします", true);
+    if (btn) btn.textContent = "保存済み（条件を更新する）";
     btn.disabled = false;
   } catch (e) {
     devMsg("登録できませんでした");
@@ -6936,14 +6930,14 @@ function render(){
         <div id="alert-msg" style="font-size:13px;font-weight:600;margin:6px 0;display:none;"></div>
         ${ALERT_READY_LINE ? "" : `
         <div style="border-top:1px solid var(--line);margin-top:14px;padding-top:14px;text-align:left">
-          <div style="font-weight:700;font-size:14px;margin-bottom:4px">この条件の新着を、この端末で受け取る</div>
+          <div style="font-weight:700;font-size:14px;margin-bottom:4px">この条件に合う新着を、次に開いたときにお知らせ</div>
           <p style="font-size:13px;color:var(--sub);margin:0 0 10px;line-height:1.7">
             条件はお使いの端末の中にだけ保存します。<b>当サイトのサーバーには送りません。</b>
-            メールアドレスの登録も不要です。いつでもブラウザの設定から解除できます。
+            メールアドレスの登録も不要です。次回このページを開いたときに、条件に合う新着があれば画面上部でお知らせします。
           </p>
           <button type="button" id="dev-alert-btn" onclick="devEnable(this)"
             style="padding:11px 20px;background:#047857;color:#fff;border:none;border-radius:24px;font-weight:700;font-size:14px;cursor:pointer">
-            新着をこの端末で受け取る
+            次に開いたときにお知らせ
           </button>
           <div id="dev-alert-msg" style="display:none;font-size:13px;font-weight:600;margin-top:8px"></div>
           <div id="dev-ios-guide" style="display:none;margin-top:12px;padding:12px 14px;background:var(--bg);border:1px dashed var(--line);border-radius:8px;font-size:13px;line-height:1.9">

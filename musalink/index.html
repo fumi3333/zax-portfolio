@@ -12,8 +12,12 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Musalink（ムサリンク）｜武蔵野大学生専用教科書フリマアプリ</title>
-  <meta name="description" content="先輩から、次の誰かへ。Musalink（ムサリンク）は、武蔵野大学の学生限定で教科書や学用品を安全・手渡しで売買・継承できるマーケットプレイスです。大学メール認証・QRコード対面取引で安心。">
+  <title>Musalink（ムサリンク）｜武蔵野大学の教科書フリマ・テキスト売買・古本手渡しアプリ</title>
+  <meta name="description" content="武蔵野大学生専用の教科書フリマアプリ「Musalink（ムサリンク）」。武蔵野大学（有明・武蔵野キャンパス）の教科書・テキスト・参考書・学用品を先輩後輩で安全手渡し売買。大学メール認証・QRコード確認で安心取引。">
+  <meta name="keywords" content="武蔵野大学 教科書,武蔵野大学 教科書 フリマ,武蔵野大学 テキスト,武蔵野大 フリマ,Musalink,ムサリンク,武蔵野大学 古本,武蔵野大学 教科書 安く買う,武蔵野大学 履修,武蔵野大学 教科書 譲渡">
+  <meta name="application-name" content="Musalink">
+  <meta name="apple-mobile-web-app-title" content="Musalink">
+  <meta name="theme-color" content="#7c3aed">
   <link rel="canonical" href="https://fumiproject.dev/musalink/">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -21,15 +25,15 @@
 
   <!-- OGP / Twitter Card -->
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Musalink">
+  <meta property="og:site_name" content="Musalink（ムサリンク）">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:url" content="https://fumiproject.dev/musalink/">
-  <meta property="og:title" content="Musalink（ムサリンク）｜武蔵野大学生専用教科書フリマアプリ">
-  <meta property="og:description" content="先輩から、次の誰かへ。Musalinkは武蔵野大学の学生限定で教科書を安全に手渡しできる学内フリマアプリです。">
+  <meta property="og:title" content="Musalink（ムサリンク）｜武蔵野大学の教科書フリマ・テキスト売買・古本手渡しアプリ">
+  <meta property="og:description" content="武蔵野大学生専用の教科書フリマアプリ。武蔵野大学の教科書やテキストをキャンパス内で安全・対面手渡しで安く売買・継承できます。">
   <meta property="og:image" content="https://fumiproject.dev/og.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Musalink（ムサリンク）｜武蔵野大学生専用教科書フリマアプリ">
-  <meta name="twitter:description" content="先輩から、次の誰かへ。武蔵野大学の学生限定で教科書を安全・手渡しで売買できる学内フリマアプリ。">
+  <meta name="twitter:title" content="Musalink（ムサリンク）｜武蔵野大学の教科書フリマ・テキスト売買・古本手渡しアプリ">
+  <meta name="twitter:description" content="武蔵野大学生専用の教科書フリマアプリ。武蔵野大学の教科書やテキストをキャンパス内で安全・対面手渡しで安く売買・継承できます。">
   <meta name="twitter:image" content="https://fumiproject.dev/og.png">
 
   <!-- Tailwind CSS CDN & Fonts -->
@@ -53,27 +57,69 @@
         "@type": "WebSite",
         "@id": "https://fumiproject.dev/musalink/#website",
         "name": "Musalink",
-        "alternateName": "ムサリンク",
+        "alternateName": ["ムサリンク", "武蔵野大学教科書フリマMusalink"],
         "url": "https://fumiproject.dev/musalink/",
-        "description": "武蔵野大学の学生同士が教科書や生活用品を対面で受け渡しするフリマアプリ（学生による個人開発。大学公式のサービスではありません）。",
+        "description": "武蔵野大学の学生同士が教科書や講義テキストをキャンパス内で対面手渡し売買・譲渡する学生専用マーケットプレイス。",
         "inLanguage": "ja"
+      },
+      {
+        "@type": "EducationalOrganization",
+        "@id": "https://fumiproject.dev/musalink/#target-university",
+        "name": "武蔵野大学",
+        "alternateName": "Musashino University",
+        "url": "https://www.musashino-u.ac.jp/"
       },
       {
         "@type": "WebApplication",
         "@id": "https://fumiproject.dev/musalink/#webapp",
-        "name": "Musalink",
+        "name": "Musalink（ムサリンク）",
         "url": "https://fumiproject.dev/musalink/",
         "applicationCategory": "ShoppingApplication",
         "operatingSystem": "Web",
         "browserRequirements": "JavaScriptが有効なブラウザ",
         "inLanguage": "ja",
-        "description": "武蔵野大学の在学生だけが使えるフリマアプリ。大学メールアドレスで在学確認を行い、キャンパス周辺での対面手渡しとQRコードの読み取りで取引が完了します。",
+        "description": "武蔵野大学の在学生限定の教科書フリマアプリ。大学メールアドレス（@stu.musashino-u.ac.jp）で本人確認を行い、有明・武蔵野キャンパス周辺で教科書を対面手渡し売買。",
         "audience": {
           "@type": "EducationalAudience",
           "educationalRole": "student",
           "audienceType": "武蔵野大学の在学生"
         },
-        "isPartOf": { "@id": "https://fumiproject.dev/musalink/#website" }
+        "isPartOf": { "@id": "https://fumiproject.dev/musalink/#website" },
+        "author": {
+          "@type": "Organization",
+          "name": "ZAX",
+          "url": "https://fumiproject.dev/"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://fumiproject.dev/musalink/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "武蔵野大学の教科書はMusalinkで安く買えますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "はい。Musalink（ムサリンク）では、武蔵野大学の先輩学生が履修後に不要になった専門書・語学テキスト・教養科目の教科書を出品しています。郵送料がかからない対面手渡しのため、定価より安く教科書を買い揃えることができます。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "武蔵野大学のどのキャンパスで受け渡しができますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "有明キャンパスおよび武蔵野キャンパスの学内（正門前、図書館前、学生ホール等）や最寄り駅付近で、出品者と購入者が相談して安全に対面手渡しできます。"
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "安全に利用できる仕組みはありますか？",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "武蔵野大学の学生メールアドレスによる本人認証と、対面時のQRコード読み取り認証を採用しており、学外の不審者の利用を防ぎ安全に取引が行えます。"
+            }
+          }
+        ]
       }
     ]
   }

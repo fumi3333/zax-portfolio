@@ -5854,8 +5854,19 @@ function currentConditions(){
   };
 }
 
+const IS_DEV = (() => {
+  try {
+    const params = new URLSearchParams(location.search);
+    if (params.get("dev") === "1" || params.get("ignore") === "1") {
+      localStorage.setItem("rs_ignore", "true");
+      return true;
+    }
+    return localStorage.getItem("rs_ignore") === "true";
+  } catch (e) { return false; }
+})();
+
 function logEvent(type, payload){
-  if (!LOG_ENDPOINT) return;
+  if (IS_DEV || !LOG_ENDPOINT) return;
   LOG_QUEUE.push({
     t: type, sid: SID, seq: ++SEQ,
     ts: Date.now(),

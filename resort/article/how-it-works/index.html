@@ -35,7 +35,7 @@ blockquote{margin:16px 0;padding:2px 16px;border-left:3px solid var(--line);colo
 .back{display:inline-block;margin-top:40px;padding:10px 18px;background:var(--ink);
  color:var(--bg);text-decoration:none;border-radius:6px;font-size:14px;font-weight:600}
 </style>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-F1K4SHC9LB"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-F1K4SHC9LB");</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F1K4SHC9LB"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-F1K4SHC9LB");</script><script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","yo8p8svvl7");</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "リゾートソート", "item": "https://fumiproject.dev/resort/"}, {"@type": "ListItem", "position": 2, "name": "記事", "item": "https://fumiproject.dev/resort/article/"}, {"@type": "ListItem", "position": 3, "name": "リゾートバイト求人を4社から集めて横断検索を作るまで", "item": "https://fumiproject.dev/resort/article/how-it-works/"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "リゾートバイト求人を4社から集めて横断検索を作るまで", "mainEntityOfPage": "https://fumiproject.dev/resort/article/how-it-works/", "image": "https://fumiproject.dev/resort/ogp.png", "author": {"@type": "Person", "name": "ZAX", "url": "https://fumiproject.dev/"}, "publisher": {"@type": "Organization", "name": "リゾートソート", "url": "https://fumiproject.dev/resort/"}, "inLanguage": "ja", "description": "各社が公開している求人データをどう集め、どう共通の項目に揃えているか。素朴な文字列マッチが壊れた実例も含めて、このサイトの作り方を公開しています。", "datePublished": "2026-09-12"}</script></head>
 <body>
 <main>
@@ -50,14 +50,14 @@ blockquote{margin:16px 0;padding:2px 16px;border-left:3px solid var(--line);colo
 <p>resort sort（リゾートソート）：リゾートバイトの求人を、派遣会社をまたいで条件で絞り込めるWebアプリです。時給・寮タイプ・食事・通勤条件で横断検索でき、各社の公式求人ページへ直接遷移します。現在3社・6,704件を掲載しています。</p>
 <p>https://fumiproject.dev/resort/</p>
 <p>作るにあたって4社から14,328件の求人を取得し、共通のスキーマに正規化しました。この記事は、その過程で分かったことの記録です。</p>
-<h3>結論として、こうなりました</h3>
+<h2>結論として、こうなりました</h2>
 <ul>
 <li>求人サイトの大半は <b>JobPosting の JSON-LD を公開している</b>。14,328件中14,314件（99.9%）に入っていた。正規表現でHTMLを漁る必要はほぼ無い</li>
 <li>ただし <b>素朴な文字列マッチは2種類の罠で壊れる</b>。最初の実装では寮タイプが全件「個室」になった</li>
 <li>求人ページは施設名を伏せていることが多いが、<b>構造化データには郵便番号と番地が入っている</b>。これで会社をまたいだ同一施設の突き合わせができた</li>
 <li>ただし突き合わせられたのは <b>1,154住所のうち9件（0.8%）</b> だけだった。この機能は主役にできなかった</li>
 </ul>
-<h3>求人サイトは構造化データを公開している</h3>
+<h2>求人サイトは構造化データを公開している</h2>
 <p>最初はHTMLを正規表現で解析するつもりでした。実際、最初に開いた求人ページはJavaScriptで中身を描画していて、取得したHTMLには時給も勤務地も入っていませんでした。</p>
 <p>ところが別の求人ページを開いたら、<code>application/ld+json</code> に <code>JobPosting</code> が丸ごと入っていました。Googleしごと検索に載せるために、各社が機械可読な形で公開しているものです。</p>
 <pre><code>
@@ -98,7 +98,7 @@ def job_posting(html: str) -&gt; dict | None:
 </code></pre>
 <p>職種、時給とその単位、都道府県、市区町村、郵便番号、番地、掲載日、掲載期限。必要なものがほぼ揃っています。単位が <code>HOUR</code> / <code>MONTH</code> で明示されているので、時給と月給の取り違えも起きません。</p>
 <p>ここで一度、判断を間違えました。<b>ある1社について「JSON-LDが無い」と結論して、その会社だけHTMLのラベル解析を書いた</b>のですが、後で30件調べたら28件にJSON-LDが入っていました。最初に開いた1件がたまたま例外だっただけでした。1件見て構造を決めてはいけない、という当たり前の話です。</p>
-<h3>罠①：選択肢の説明が全求人に並んでいる</h3>
+<h2>罠①：選択肢の説明が全求人に並んでいる</h2>
 <p>寮が完全個室か相部屋かは、このサービスの中心的な比較軸です。最初はこう書きました。</p>
 <pre><code>
 if &quot;個室&quot; in html:
@@ -123,7 +123,7 @@ while True:
     triggers.append(td_content[tag_end + 1:close].strip())
     pos = close + 7
 </code></pre>
-<h3>罠②：選択肢マスタがHTMLに埋まっている</h3>
+<h2>罠②：選択肢マスタがHTMLに埋まっている</h2>
 <p>別の会社では、募集終了の判定で同じことが起きました。</p>
 <pre><code>
 is_closed = &quot;募集終了&quot; in html   # 全件 True になる
@@ -154,7 +154,7 @@ def is_closed(j, text, agency):
 </code></pre>
 <p>判定できないときに <code>False</code>（募集中）ではなく <code>None</code>（不明）を返しているのは、不明を募集中に丸めると、終了済みの求人をそのまま掲載することになるからです。</p>
 <p>この判定を入れた結果、<b>取得した14,328件のうち3,075件（21.5%）が募集終了済み</b>でした。サイトマップには終了した求人のURLが長く残るので、これを弾かないとサイトの2割が死んだリンクになります。</p>
-<h3>施設名は伏せられているが、住所は公開されている</h3>
+<h2>施設名は伏せられているが、住所は公開されている</h2>
 <p>リゾートバイトの求人ページには、勤務先の施設名が書かれていないことがほとんどです。「千葉県 白浜」「沖縄県 石垣島」のように地名までしか出ません。派遣会社にとっては、施設名を出すと直接応募されてしまうので当然です。</p>
 <p>これは横断比較にとっては困ります。「同じホテルなのに会社によって時給が違う」を出したくても、同じホテルだと判定できません。</p>
 <p>ところが、JSON-LDの <code>PostalAddress</code> には <code>postalCode</code> と <code>streetAddress</code> が入っていました。表示されていない情報が構造化データには入っている、という状態です。そこで郵便番号と番地を結合キーにしました。</p>
@@ -177,11 +177,11 @@ if p.get(&quot;postal&quot;) and p.get(&quot;street&quot;):
 <tr><td>静岡県 下田市</td><td>1,500円</td><td>1,450円</td><td>50円</td></tr>
 </tbody></table>
 <p>時給400円の差は、月176時間の勤務で70,400円です。仮説は正しくて、カバレッジが足りませんでした。</p>
-<h3>想定される指摘について</h3>
+<h2>想定される指摘について</h2>
 <p><b>スクレイピングして良いのか。</b> 取得前にrobots.txtと利用規約を確認しました。対象各社のrobots.txtは求人ページを Disallow しておらず、うち1社は求人URLを列挙したサイトマップ（1,000件以上）を自ら公開していました。クローラー向けの <code>Crawl-delay: 5</code> が指定されていたのでそれに従い、取得は事実（時給・勤務地・期間・寮・食事）のみに限って、求人票の説明文はコピーしていません。説明文は著作物になり得るので、構造化データの <code>description</code> も保存していません。</p>
 <p><b>なぜ求人ごとの詳細ページを作らないのか。</b> JobPostingの構造化データを自分のサイトに実装すればGoogleしごと検索に載る可能性がありますが、そのためには求人1件ごとの詳細ページが必要になります。6,704枚の薄いページを作ることになり、しかも元の求人ページと同じ内容で競合します。2026年3月のコアアップデートで「大規模なコンテンツの不正利用」が制裁対象として明示されたこともあり、この方向は取りませんでした。代わりに、元サイトが持ち得ない「複数社をまたいだ集計」を都道府県別に出しています。</p>
 <p><b>取れなかったものもあります。</b> 寮タイプは、最初の実装では取得率40%でした。会社ごとのHTML構造に合わせて書き直して96.5%まで上げましたが、残りは判定できていません。判定できないものは推測で埋めず <code>null</code> のままにしています。埋めた瞬間、また全件「個室」に戻るからです。寮費・最低保証時間も、求人ページに記載がないことが多く取れていません。</p>
-<h3>最初の判断に戻ると</h3>
+<h2>最初の判断に戻ると</h2>
 <p>「JavaScriptで描画されているから機械では取れない」という最初の見立ては間違いでした。取れないどころか、各社は検索エンジンのために構造化データを整えて公開していました。</p>
 <p>同じように、「1件見てJSON-LDが無かったから、この会社は無い」も間違いでした。求人サイトを相手にするときは、まずJSON-LDを疑う。そして1件で結論を出さない。この2つだけでも、最初からやっていれば数日は縮まったと思います。</p>
 <p>コードは resort sort の中で動いています。実測データ（時給の分布、募集終了率、会社間の時給差）は下にまとめました。</p>
@@ -195,11 +195,11 @@ if p.get(&quot;postal&quot;) and p.get(&quot;street&quot;):
 <thead><tr><th>勤務地・職種</th><th>給与</th><th>寮</th><th>会社</th><th></th></tr></thead>
 <tbody><tr><td>長野県下高井郡<br><span class='meta'>調理（資格不要）</span></td><td class='n'><b>¥1,900</b><br><span class='meta'>時給</span></td><td>完全個室<br><span class='meta'>寮費無料 3食</span></td><td>グッドマンサービス</td><td><a href='https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&amp;a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1006668%2F' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr><tr><td>長野県下高井郡<br><span class='meta'>調理（要資格）</span></td><td class='n'><b>¥1,850</b><br><span class='meta'>時給</span></td><td>完全個室<br><span class='meta'>寮費無料 2食</span></td><td>グッドマンサービス</td><td><a href='https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&amp;a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1005971%2F' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr><tr><td>長野県下高井郡<br><span class='meta'>調理（資格不要）</span></td><td class='n'><b>¥1,800</b><br><span class='meta'>時給</span></td><td>完全個室<br><span class='meta'>寮費無料 3食</span></td><td>グッドマンサービス</td><td><a href='https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&amp;a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1006334%2F' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr><tr><td>長野県下高井郡山ノ内町<br><span class='meta'>調理</span></td><td class='n'><b>¥1,800</b><br><span class='meta'>時給</span></td><td>完全個室<br><span class='meta'>寮費無料 2食</span></td><td>株式会社ダイブ</td><td><a href='https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&amp;a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F220652' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr><tr><td>神奈川県柄下郡<br><span class='meta'>調理（資格不要）</span></td><td class='n'><b>¥1,800</b><br><span class='meta'>時給</span></td><td>完全個室<br><span class='meta'>寮費無料 2食</span></td><td>グッドマンサービス</td><td><a href='https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&amp;a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1000246%2F' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr><tr><td>静岡県伊東市<br><span class='meta'>レストランサービス</span></td><td class='n'><b>¥1,700</b><br><span class='meta'>時給</span></td><td>完全個室<br><span class='meta'>寮費無料 2食</span></td><td>グッドマンサービス</td><td><a href='https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&amp;a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1006468%2F' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr><tr><td>長野県下高井郡<br><span class='meta'>調理補助</span></td><td class='n'><b>¥1,600</b><br><span class='meta'>時給</span></td><td>完全個室<br><span class='meta'>寮費無料 3食</span></td><td>グッドマンサービス</td><td><a href='https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&amp;a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1007947%2F' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr><tr><td>長野県茅野市<br><span class='meta'>調理</span></td><td class='n'><b>¥1,600</b><br><span class='meta'>時給</span></td><td>完全個室<br><span class='meta'>寮費無料 2食</span></td><td>株式会社ダイブ</td><td><a href='https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&amp;a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F228238' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr><tr><td>神奈川県足柄下郡箱根町<br><span class='meta'>調理（資格不要）</span></td><td class='n'><b>¥1,650</b><br><span class='meta'>時給</span></td><td>完全個室<br><span class='meta'>寮費無料 2食</span></td><td>グッドマンサービス</td><td><a href='https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&amp;a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1000970%2F' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr><tr><td>愛知県<br><span class='meta'>その他</span></td><td class='n'><b>¥1,950</b><br><span class='meta'>時給</span></td><td>完全個室<br><span class='meta'>3食</span></td><td>株式会社ヒューマニック</td><td><a href='https://px.a8.net/svt/ejp?a8mat=4BC7V7+5RSAWI+42GS+63WO2&amp;a8ejpredirect=https%3A%2F%2Fwww.rizoba.com%2Fwork%2F99283%2F' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr><tr><td>北海道虻田郡留寿都村字<br><span class='meta'>調理</span></td><td class='n'><b>¥2,000</b><br><span class='meta'>時給</span></td><td>相部屋<br><span class='meta'>寮費無料 2食</span></td><td>株式会社ダイブ</td><td><a href='https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&amp;a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F232147' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr><tr><td>長野県下高井郡<br><span class='meta'>調理（資格不要）</span></td><td class='n'><b>¥1,600</b><br><span class='meta'>時給</span></td><td>完全個室<br><span class='meta'>寮費無料 3食</span></td><td>グッドマンサービス</td><td><a href='https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&amp;a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1005591%2F' target='_blank' rel='nofollow sponsored noopener'>詳細（公式）</a></td></tr></tbody>
 </table>
-<p><a href="/resort/">条件を決めて求人を探す →</a></p>
+<p><a href="/">条件を決めて求人を探す →</a></p>
 
 <a class="back" href="/resort/">求人を時給順で比較する</a>
 </main>
-<nav id="site-nav" style="max-width:860px;margin:32px auto 0;padding:14px 18px 22px;border-top:1px solid #e2e2e2;font-size:12px;line-height:2.1;color:#666"><a href="/resort/" style="color:inherit;font-weight:700">リゾートソート</a>　<a href="/resort/area/" style="color:inherit">エリアから探す</a>　<a href="/resort/spot/" style="color:inherit">リゾート地から探す</a>　<a href="/resort/job/" style="color:inherit">職種から探す</a>　<a href="/resort/feature/" style="color:inherit">条件から探す</a>　<a href="/resort/start/" style="color:inherit">開始月から探す</a>　<a href="/resort/age/" style="color:inherit">年代から探す</a>　<a href="/resort/season/" style="color:inherit">季節</a>　<a href="/resort/worry/" style="color:inherit">よくある疑問</a>　<a href="/resort/ranking/" style="color:inherit">ランキング</a>　<a href="/resort/analysis/" style="color:inherit">調査と分析</a>　<a href="/resort/compare/" style="color:inherit">派遣会社の比較</a>　<a href="/resort/article/" style="color:inherit">記事</a>　<a href="/resort/diary/" style="color:inherit">働いている記録</a>　<a href="/resort/how-to-find/" style="color:inherit">リゾートバイトの探し方</a>　<a href="/resort/movement/" style="color:inherit">求人の動き</a>　<a href="/resort/data/" style="color:inherit">調査データ</a>　<a href="/resort/shindan/" style="color:inherit">条件診断</a>　<a href="/resort/about/" style="color:inherit">サイトについて</a></nav>
+<nav id="site-nav" style="max-width:860px;margin:32px auto 0;padding:14px 18px 22px;border-top:1px solid #e2e2e2;font-size:12px;line-height:2.1;color:#666"><a href="/resort/" style="color:inherit;font-weight:700">リゾートソート</a>　<a href="/resort/area/" style="color:inherit">エリアから探す</a>　<a href="/resort/spot/" style="color:inherit">リゾート地から探す</a>　<a href="/resort/job/" style="color:inherit">職種から探す</a>　<a href="/resort/feature/" style="color:inherit">条件から探す</a>　<a href="/resort/start/" style="color:inherit">開始月から探す</a>　<a href="/resort/age/" style="color:inherit">年代から探す</a>　<a href="/resort/season/" style="color:inherit">季節</a>　<a href="/resort/worry/" style="color:inherit">よくある疑問</a>　<a href="/resort/ranking/" style="color:inherit">ランキング</a>　<a href="/resort/analysis/" style="color:inherit">調査と分析</a>　<a href="/resort/compare/" style="color:inherit">派遣会社の比較</a>　<a href="/resort/article/" style="color:inherit">記事</a>　<a href="/resort/diary/" style="color:inherit">働いている記録</a>　<a href="/resort/how-to-find/" style="color:inherit">リゾートバイトの探し方</a>　<a href="/resort/movement/" style="color:inherit">求人の動き</a>　<a href="/resort/data/" style="color:inherit">調査データ</a>　<a href="/resort/shindan/" style="color:inherit">条件診断</a>　<a href="/resort/about/" style="color:inherit">サイトについて</a>　<a href="/resort/hobby/" style="color:inherit">過ごし方から探す</a></nav>
 <p id="ad-note" style="max-width:860px;margin:24px auto;padding:0 16px;font-size:.8rem;color:#6b7280;line-height:1.7">当サイトは提携各社のアフィリエイトプログラム（成果報酬型広告）を利用して運営されています。掲載順は提携の有無で変わり、各社から受け取る金額の多寡では変わりません。時給順などを選んだ場合は提携の有無は影響せず、「おすすめ順」では提携先に一律の加点をしています。加点幅は提携先であれば全社同じです。</p>
 <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2" alt=""><img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4BC7V7+5SZ642+51UO+5YJRM" alt=""><img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4BC7V7+5SZ642+51UO+5YJRM" alt=""><img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2" alt=""><img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4BC7V7+5RSAWI+42GS+63WO2" alt="">
 </body>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="icon" type="image/svg+xml" href="/resort/favicon.svg?v=2"><link rel="icon" href="/resort/favicon.ico?v=2" sizes="any"><link rel="apple-touch-icon" href="/resort/apple-touch-icon.png?v=2"><link rel="manifest" href="/resort/manifest.webmanifest"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="リゾートソート"><meta name="theme-color" content="#1f6f5c"><meta property="og:image" content="https://fumiproject.dev/resort/ogp.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="/resort/favicon.svg"><link rel="icon" href="/resort/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/resort/apple-touch-icon.png"><link rel="manifest" href="/resort/manifest.webmanifest"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="リゾートソート"><meta name="theme-color" content="#1f6f5c"><meta property="og:image" content="https://fumiproject.dev/resort/ogp.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
 <title>派遣会社の差は、条件をそろえると時給66円ぶんまで縮む｜重回帰で検証</title>
 <meta name="description" content="リゾートバイトの時給は、どの派遣会社を選ぶかでどれだけ変わるのか。県・職種・寮タイプ・期間をそろえた重回帰で、会社そのものの効果を取り出しました。">
 <link rel="canonical" href="https://fumiproject.dev/resort/analysis/agency-effect/">
@@ -49,17 +49,17 @@ footer{margin-top:44px;padding-top:14px;border-top:1px solid var(--line);
 <h2>結果：場所と仕事のほうが、会社よりずっと効く</h2>
 <table>
 <tr><th>説明に使ったもの</th><th>時給のばらつきをどれだけ説明できたか</th></tr>
-<tr><td>会社だけ</td><td class=num>5.5%</td></tr>
+<tr><td>会社だけ</td><td class=num>5.6%</td></tr>
 <tr><td>会社＋県＋職種＋寮＋期間</td><td class=num>39.3%</td></tr>
 </table>
-<p>会社だけでは時給のばらつきの<b>5.5%</b>しか説明できませんでした。
+<p>会社だけでは時給のばらつきの<b>5.6%</b>しか説明できませんでした。
 県・職種・寮・期間を加えると<b>39.3%</b>まで上がります。
 <b>どこで何の仕事をするかのほうが、どの会社を通すかより大きく効いている</b>ということです。</p>
 
 <h2>会社そのものの効果（ワクトリを基準にした差）</h2>
 <table>
 <tr><th>会社</th><th>そのまま比べた差</th><th>条件をそろえた差</th><th>95%信頼区間</th><th>判定</th></tr>
-<tr><td>グッドマンサービス（リゾートバイト.com）</td><td class=num>+59円</td><td class=num><b>+66円</b></td><td class=num>+58 〜 +74</td><td>差があると言える</td></tr><tr><td>株式会社アルファスタッフ（アルファ・リゾート）</td><td class=num>+49円</td><td class=num><b>+44円</b></td><td class=num>+29 〜 +59</td><td>差があると言える</td></tr><tr><td>株式会社ヒューマニック（リゾバ.com）</td><td class=num>+34円</td><td class=num><b>+41円</b></td><td class=num>+32 〜 +49</td><td>差があると言える</td></tr><tr><td>株式会社ダイブ（リゾートバイトダイブ）</td><td class=num>-36円</td><td class=num><b>+9円</b></td><td class=num>-0 〜 +18</td><td>差があるとは言えない</td></tr><tr><td>株式会社RESORT CROSS（リゾートクロス）</td><td class=num>+3円</td><td class=num><b>-10円</b></td><td class=num>-26 〜 +7</td><td>差があるとは言えない</td></tr>
+<tr><td>グッドマンサービス（リゾートバイト.com）</td><td class=num>+59円</td><td class=num><b>+66円</b></td><td class=num>+59 〜 +74</td><td>差があると言える</td></tr><tr><td>株式会社アルファスタッフ（アルファ・リゾート）</td><td class=num>+52円</td><td class=num><b>+47円</b></td><td class=num>+31 〜 +62</td><td>差があると言える</td></tr><tr><td>株式会社ヒューマニック（リゾバ.com）</td><td class=num>+35円</td><td class=num><b>+40円</b></td><td class=num>+32 〜 +49</td><td>差があると言える</td></tr><tr><td>株式会社ダイブ（リゾートバイトダイブ）</td><td class=num>-35円</td><td class=num><b>+10円</b></td><td class=num>+1 〜 +20</td><td>差があると言える</td></tr><tr><td>株式会社RESORT CROSS（リゾートクロス）</td><td class=num>+3円</td><td class=num><b>-9円</b></td><td class=num>-25 〜 +7</td><td>差があるとは言えない</td></tr>
 </table>
 <p>「そのまま比べた差」と「条件をそろえた差」がずれている会社は、
 <b>扱っている求人の中身が偏っている</b>ことを意味します。
@@ -86,7 +86,7 @@ footer{margin-top:44px;padding-top:14px;border-top:1px solid var(--line);
 <li>信頼区間が0をまたぐ会社は、差があるとは言えません。小さい差を読み取らないでください。</li>
 </ul>
 
-<p class=updated>集計日：2026-09-27　対象：条件のそろった求人 9,733件（公開中 9,733件のうち）</p>
+<p class=updated>集計日：2026-09-26　対象：条件のそろった求人 9,766件（公開中 9,766件のうち）</p>
 
 <h2>この条件の求人</h2>
 <p class="meta">おすすめ順の上位12件です。時給・寮の種類・寮費・食事・
@@ -105,7 +105,7 @@ footer{margin-top:44px;padding-top:14px;border-top:1px solid var(--line);
 最新の募集状況は各社の公式ページでご確認ください。
 </footer>
 </main>
-<nav id="site-nav" style="max-width:860px;margin:32px auto 0;padding:14px 18px 22px;border-top:1px solid #e2e2e2;font-size:12px;line-height:2.1;color:#666"><a href="/resort/" style="color:inherit;font-weight:700">リゾートソート</a>　<a href="/resort/area/" style="color:inherit">エリアから探す</a>　<a href="/resort/spot/" style="color:inherit">リゾート地から探す</a>　<a href="/resort/job/" style="color:inherit">職種から探す</a>　<a href="/resort/feature/" style="color:inherit">条件から探す</a>　<a href="/resort/start/" style="color:inherit">開始月から探す</a>　<a href="/resort/age/" style="color:inherit">年代から探す</a>　<a href="/resort/season/" style="color:inherit">季節</a>　<a href="/resort/worry/" style="color:inherit">よくある疑問</a>　<a href="/resort/ranking/" style="color:inherit">ランキング</a>　<a href="/resort/analysis/" style="color:inherit">調査と分析</a>　<a href="/resort/compare/" style="color:inherit">派遣会社の比較</a>　<a href="/resort/article/" style="color:inherit">記事</a>　<a href="/resort/diary/" style="color:inherit">働いている記録</a>　<a href="/resort/how-to-find/" style="color:inherit">リゾートバイトの探し方</a>　<a href="/resort/movement/" style="color:inherit">求人の動き</a>　<a href="/resort/data/" style="color:inherit">調査データ</a>　<a href="/resort/shindan/" style="color:inherit">条件診断</a>　<a href="/resort/about/" style="color:inherit">サイトについて</a>　<a href="/resort/hobby/" style="color:inherit">過ごし方から探す</a></nav>
+<nav id="site-nav" style="max-width:860px;margin:32px auto 0;padding:14px 18px 22px;border-top:1px solid #e2e2e2;font-size:12px;line-height:2.1;color:#666"><a href="/resort/" style="color:inherit;font-weight:700">リゾートソート</a>　<a href="/resort/area/" style="color:inherit">エリアから探す</a>　<a href="/resort/spot/" style="color:inherit">リゾート地から探す</a>　<a href="/resort/job/" style="color:inherit">職種から探す</a>　<a href="/resort/feature/" style="color:inherit">条件から探す</a>　<a href="/resort/start/" style="color:inherit">開始月から探す</a>　<a href="/resort/age/" style="color:inherit">年代から探す</a>　<a href="/resort/season/" style="color:inherit">季節</a>　<a href="/resort/worry/" style="color:inherit">よくある疑問</a>　<a href="/resort/ranking/" style="color:inherit">ランキング</a>　<a href="/resort/analysis/" style="color:inherit">調査と分析</a>　<a href="/resort/compare/" style="color:inherit">派遣会社の比較</a>　<a href="/resort/article/" style="color:inherit">記事</a>　<a href="/resort/diary/" style="color:inherit">働いている記録</a>　<a href="/resort/how-to-find/" style="color:inherit">リゾートバイトの探し方</a>　<a href="/resort/movement/" style="color:inherit">求人の動き</a>　<a href="/resort/data/" style="color:inherit">調査データ</a>　<a href="/resort/shindan/" style="color:inherit">条件診断</a>　<a href="/resort/about/" style="color:inherit">サイトについて</a></nav>
 <p id="ad-note" style="max-width:860px;margin:24px auto;padding:0 16px;font-size:.8rem;color:#6b7280;line-height:1.7">当サイトは提携各社のアフィリエイトプログラム（成果報酬型広告）を利用して運営されています。掲載順は提携の有無で変わり、各社から受け取る金額の多寡では変わりません。時給順などを選んだ場合は提携の有無は影響せず、「おすすめ順」では提携先に一律の加点をしています。加点幅は提携先であれば全社同じです。</p>
 <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2" alt=""><img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4BC7V7+5SZ642+51UO+5YJRM" alt=""><img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4BC7V7+5SZ642+51UO+5YJRM" alt=""><img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2" alt=""><img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4BC7V7+5RSAWI+42GS+63WO2" alt="">
 </body>

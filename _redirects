@@ -1,0 +1,45 @@
+# Cloudflare Pages 用（2026-09-29 vercel.json から移植）。Vercel の permanent は 308。
+# ホスト名で分ける resort-sort.fumiproject.dev / sort.fumiproject.dev の転送は、
+# ここでは書けないので Cloudflare の Redirect Rules で設定する（docs は resort-sort-src 側）。
+/about/* /resort/about/:splat 308
+/about /resort/about/ 308
+/area/* /resort/area/:splat 308
+/area /resort/area/ 308
+/article/* /resort/article/:splat 308
+/article /resort/article/ 308
+/compare/* /resort/compare/:splat 308
+/compare /resort/compare/ 308
+/data/* /resort/data/:splat 308
+/data /resort/data/ 308
+/feature/* /resort/feature/:splat 308
+/feature /resort/feature/ 308
+/ranking/* /resort/ranking/:splat 308
+/ranking /resort/ranking/ 308
+/spot/* /resort/spot/:splat 308
+/spot /resort/spot/ 308
+/analysis/* /resort/analysis/:splat 308
+/analysis /resort/analysis/ 308
+/shindan/* /resort/shindan/:splat 308
+/shindan /resort/shindan/ 308
+/worry/* /resort/worry/:splat 308
+/worry /resort/worry/ 308
+/age/* /resort/age/:splat 308
+/age /resort/age/ 308
+/start/* /resort/start/:splat 308
+/start /resort/start/ 308
+/season/* /resort/season/:splat 308
+/season /resort/season/ 308
+/job/* /resort/job/:splat 308
+/job /resort/job/ 308
+/diary/* /resort/diary/:splat 308
+/diary /resort/diary/ 308
+/how-to-find/* /resort/how-to-find/:splat 308
+/how-to-find /resort/how-to-find/ 308
+/movement/* /resort/movement/:splat 308
+/movement /resort/movement/ 308
+/for-agencies/* /resort/for-agencies/:splat 308
+/for-agencies /resort/for-agencies/ 308
+/school/* /menkyo/school/:splat 308
+/school /menkyo/ 308
+/month/* /menkyo/month/:splat 308
+/month /menkyo/ 308

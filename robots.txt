@@ -18,3 +18,4 @@ Sitemap: https://fumiproject.dev/hikari/sitemap.xml
 Sitemap: https://fumiproject.dev/menkyo/sitemap.xml
 Sitemap: https://fumiproject.dev/musalink/sitemap.xml
 Sitemap: https://fumiproject.dev/taishoku/sitemap.xml
+Sitemap: https://fumiproject.dev/jiritsu/sitemap.xml

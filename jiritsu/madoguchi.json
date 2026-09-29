@@ -783,5 +783,41 @@
   "offices": {
    "奥多摩町役場 福祉保健課 福祉係": {}
   }
+ },
+ "檜原村": {
+  "checked": "2026-09-29",
+  "source": "https://www.vill.hinohara.tokyo.jp/soshiki/4-1-0-0-0_1.html",
+  "note": "檜原村の担当は、やすらぎの里内の福祉けんこう課 福祉係です。",
+  "offices": {
+   "檜原村 福祉けんこう課 福祉係（やすらぎの里）": {}
+  }
+ },
+ "大島町": {
+  "checked": "2026-09-29",
+  "source": "https://www.town.oshima.tokyo.jp/soshiki/kenkou/",
+  "note": "大島町の担当は、福祉けんこう課 福祉医療係です。",
+  "offices": {
+   "大島町役場 福祉けんこう課 福祉医療係": {
+    "address": "東京都大島町元町1-1-14"
+   }
+  }
+ },
+ "八丈町": {
+  "checked": "2026-09-29",
+  "source": "https://www.town.hachijo.tokyo.jp/kakuka/kenkou/kenko-top.htm",
+  "note": "八丈町の担当は、福祉健康課 障がい福祉係です。",
+  "offices": {
+   "八丈町役場 福祉健康課 障がい福祉係": {
+    "address": "東京都八丈島八丈町大賀郷2551番地2"
+   }
+  }
+ },
+ "小笠原村": {
+  "checked": "2026-09-29",
+  "source": "https://www.vill.ogasawara.tokyo.jp/sonmin/",
+  "note": "小笠原村の福祉の手続きは、村民課 福祉係が担当しています。自立支援医療の窓口かどうかは村に確かめてください。",
+  "offices": {
+   "小笠原村役場 村民課 福祉係": {}
+  }
  }
 }

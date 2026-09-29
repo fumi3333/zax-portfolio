@@ -11,6 +11,7 @@
 <meta property="og:url" content="https://fumiproject.dev/jiritsu/">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary">
+<script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","yo8p8svvl7");</script>
 <link rel="canonical" href="https://fumiproject.dev/jiritsu/">
 <script type="application/ld+json">
 {
@@ -98,16 +99,15 @@ footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line);
     </fieldset>
     <div class="field">
       <label for="q">病院・薬局の名前（一部だけでも可）</label>
-      <input id="q" type="search" placeholder="例：さくら薬局、〇〇クリニック" autocomplete="off">
+      <input id="q" type="search" placeholder="例：さくら薬局、〇〇クリニック" autocomplete="off" data-clarity-mask="true">
     </div>
     <div class="field">
       <label for="muni">病院・薬局がある区市町村（わからなければそのままで可）</label>
       <select id="muni"><option value="">東京都全体</option></select>
     </div>
-    <p class="meta">選んだ内容はこの端末の中だけで使います。どこにも送りません。</p>
   </div>
 
-  <p class="count" id="count" aria-live="polite">一覧を読み込んでいます…</p>
+  <p class="count" id="count" aria-live="polite" data-clarity-mask="true">一覧を読み込んでいます…</p>
   <div id="none" hidden>
     <p>見つからない時は、次のどちらかの可能性があります。</p>
     <ul>
@@ -115,7 +115,7 @@ footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line);
       <li>その病院・薬局が指定を受けていない：受給者証には書けないので、病院・薬局に直接たずねてください</li>
     </ul>
   </div>
-  <ul class="list" id="list"></ul>
+  <ul class="list" id="list" data-clarity-mask="true"></ul>
   <button class="more" id="more" hidden>さらに表示</button>
 
   <h2>病院や薬局を変える時</h2>
@@ -133,6 +133,7 @@ footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line);
   <footer>
     <p>データの時点：<span id="asof"></span>　出典：<a href="https://www.fukushi.metro.tokyo.lg.jp/shougai/jigyo/shougaifukushi/iryoshiteijoho_s">東京都福祉局「指定自立支援医療機関の情報提供（精神通院医療）」</a>（東京都オープンデータ、CC BY 4.0）をもとに、表記をそろえて作成</p>
     <p>東京都は一覧を毎月差し替えています。過去の一覧は <a href="https://github.com/fumi3333/jiritsu">GitHub（fumi3333/jiritsu）</a> に月ごとに保存し、CSV で公開しています。</p>
+    <p>アクセス解析に Microsoft Clarity を使っています（検索欄の文字と検索結果は記録しない設定）。</p>
     <p><a href="about/">このサイトについて（作った理由・運営者）</a>　作成：<a href="https://fumiproject.dev/">ZAX</a></p>
   </footer>
 </main>

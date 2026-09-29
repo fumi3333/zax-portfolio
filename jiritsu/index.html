@@ -232,17 +232,25 @@ footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line);
   const homeMuni = $("homeMuni"), homeTown = $("homeTown"), homeTownField = $("homeTownField"), box = $("madoguchi");
   d.munis.forEach((m) => homeMuni.add(new Option(m, m)));
   const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
-  const office = (name, o) => {
-    const q = encodeURIComponent(`${o.address} ${name}`);
-    return `<div class="office"><div class="name">${esc(name)}</div><div class="meta">〒${esc(o.postal)} ${esc(o.address)}</div>`
-      + `<div class="meta"><a href="https://www.google.com/maps/search/?api=1&query=${q}" target="_blank" rel="noopener">Google マップで開く</a>　<a href="tel:${o.phone.replace(/[^0-9]/g, "")}">${esc(o.phone)}</a></div></div>`;
+  const office = (m, name, o) => {
+    // 住所を原文で確かめられた窓口は住所で、そうでない窓口は名前で地図を検索する
+    const q = encodeURIComponent(o.address ? `${o.address} ${name}` : `${m} ${name}`);
+    const tel = o.phone ? `　<a href="tel:${o.phone.replace(/[^0-9]/g, "")}">${esc(o.phone)}</a>` : "";
+    const addr = o.address ? `<div class="meta">${o.postal ? "〒" + esc(o.postal) + " " : ""}${esc(o.address)}</div>` : "";
+    return `<div class="office"><div class="name">${esc(name)}</div>${addr}`
+      + `<div class="meta"><a href="https://www.google.com/maps/search/?api=1&query=${q}" target="_blank" rel="noopener">Google マップで開く</a>${tel}</div></div>`;
   };
   function showMadoguchi() {
     const m = homeMuni.value, info = mg[m];
-    homeTownField.hidden = !info;
+    homeTownField.hidden = !(info && info.towns);
     if (!m) { box.innerHTML = ""; return; }
     if (!info) {
       box.innerHTML = `<p>${esc(m)}の窓口は、まだ公式ページで確かめられていません。東京都の案内では、特別区は保健所・保健センター等、市町村は障害者福祉の担当課等が窓口です。${esc(m)}の公式ページで「自立支援医療」を確認してください。</p>`;
+      return;
+    }
+    if (!info.towns) {
+      box.innerHTML = `<p>${esc(info.note)}</p>` + Object.entries(info.offices).map(([n, o]) => office(m, n, o)).join("")
+        + `<p class="meta">出典：<a href="${info.source}" target="_blank" rel="noopener">${esc(m)}公式ページ</a>（${info.checked}に確認）</p>`;
       return;
     }
     if (homeTown.dataset.muni !== m) {
@@ -255,7 +263,7 @@ footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line);
     if (t) {
       const names = info.towns[t];
       if (info.split_note?.[t]) html += `<p><b>${esc(info.split_note[t])}</b>。<a href="${info.area_source}" target="_blank" rel="noopener">受け持ち区域の表（PDF）</a>で番地を確かめてください。</p>`;
-      html += names.map((n) => office(n, info.offices[n])).join("");
+      html += names.map((n) => office(m, n, info.offices[n])).join("");
     } else {
       html += `<p>町名を選ぶと、出す先を1か所に絞れます。</p>`;
     }

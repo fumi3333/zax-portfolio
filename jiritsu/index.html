@@ -90,7 +90,7 @@ footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line);
 <body>
 <main>
   <h1>自立支援医療（精神通院）の指定薬局・病院をさがす（東京都）</h1>
-  <p class="lead">自立支援医療（精神通院）の受給者証に書ける薬局・病院・訪問看護は、東京都が指定したところだけです。通っている病院・薬局の名前を入れると、指定を受けているかどうかと、申請書に書く「コード」を表示します。</p>
+  <p class="lead">自立支援医療（精神通院）の受給者証に書ける薬局・病院・訪問看護は、東京都が指定したところだけです。区市町村と町名から近くの病院・薬局を探すか、名前を入れると、指定を受けているかどうかと、申請書に書く「コード」を表示します。</p>
   <p class="meta">申請書には、通院する医療機関等の住所・名称・電話番号・コードを書きます（出典：<a href="https://www.fukushi.metro.tokyo.lg.jp/shougai/nichijo/tsuuin/seishintsuuin">東京都福祉局</a>の申請書記入見本、2026年9月29日に確認）。</p>
 
   <div class="box">
@@ -98,12 +98,16 @@ footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line);
       <legend>種類</legend>
     </fieldset>
     <div class="field">
-      <label for="q">病院・薬局の名前（一部だけでも可）</label>
-      <input id="q" type="search" placeholder="例：さくら薬局、〇〇クリニック" autocomplete="off" data-clarity-mask="true">
+      <label for="muni">区市町村</label>
+      <select id="muni" data-clarity-mask="true"><option value="">東京都全体</option></select>
+    </div>
+    <div class="field" id="townField" hidden>
+      <label for="town">町名（例：池上、久が原）</label>
+      <select id="town" data-clarity-mask="true"><option value="">すべての町</option></select>
     </div>
     <div class="field">
-      <label for="muni">病院・薬局がある区市町村（わからなければそのままで可）</label>
-      <select id="muni"><option value="">東京都全体</option></select>
+      <label for="q">名前・住所の一部（わからなければ空欄で可）</label>
+      <input id="q" type="search" placeholder="例：さくら薬局、〇〇クリニック、駅名" autocomplete="off" data-clarity-mask="true">
     </div>
   </div>
 
@@ -150,7 +154,21 @@ footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line);
   // 全角・半角、ひらがな・カタカナ、ハイフンや空白のちがいを無視して比べる
   const norm = (s) => s.normalize("NFKC").replace(/[ぁ-ゖ]/g, (c) => String.fromCharCode(c.charCodeAt(0) + 0x60))
     .replace(/[-‐‑‒–—―−ー－]/g, "-").replace(/\s+/g, "").toLowerCase();
-  d.rows.forEach((r) => { r.key = norm(r[2] + r[3] + r[6]); });
+  d.rows.forEach((r) => {
+    r.key = norm(r[2] + r[3] + r[6]);
+    // 住所から区市町村名を外し、最初の数字の手前までを町名とする（例：大田区池上６－１ → 池上）
+    r.town = r[3].replace(d.munis[r[1]], "").replace(/^東京都/, "").match(/^[^0-9０-９－-]+/)?.[0].trim() || "";
+  });
+  const townSel = $("town"), townField = $("townField");
+  function fillTowns() {
+    const mi = muniSel.value, kind = document.querySelector("input[name=kind]:checked").value;
+    townSel.length = 1;
+    townField.hidden = mi === "";
+    if (mi === "") return;
+    const counts = {};
+    d.rows.forEach((r) => { if (r[1] === +mi && r[0] === kind && r.town) counts[r.town] = (counts[r.town] || 0) + 1; });
+    Object.keys(counts).sort((a, b) => a.localeCompare(b, "ja")).forEach((t) => townSel.add(new Option(`${t}（${counts[t]}）`, t)));
+  }
   $("asof").textContent = d.as_of.replace(/^(\d+)-(\d+)-(\d+)$/, (_, y, m, day) => `${y}年${+m}月${+day}日`);
   d.munis.forEach((m, i) => muniSel.add(new Option(m, i)));
   Object.entries(d.kinds).forEach(([k, label], i) => {
@@ -179,13 +197,15 @@ footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line);
     none.hidden = true;
     // 東京都全体のままで名前も空だと件数が多すぎるので、どちらかを入れてもらう
     if (mi === "" && words.length === 0) { hits = []; count.textContent = "名前を入れるか、区市町村を選んでください。"; render(true); return; }
-    hits = d.rows.filter((r) => r[0] === kind && (mi === "" || r[1] === +mi) && words.every((w) => r.key.includes(w)));
-    count.textContent = `${mi === "" ? "東京都全体" : d.munis[mi]}の${d.kinds[kind]}：${hits.length}件`;
+    const town = mi === "" ? "" : townSel.value;
+    hits = d.rows.filter((r) => r[0] === kind && (mi === "" || r[1] === +mi) && (town === "" || r.town === town) && words.every((w) => r.key.includes(w)));
+    count.textContent = `${mi === "" ? "東京都全体" : d.munis[mi] + town}の${d.kinds[kind]}：${hits.length}件`;
     none.hidden = hits.length > 0;
     render(true);
   }
-  muniSel.addEventListener("change", update);
-  $("kinds").addEventListener("change", update);
+  muniSel.addEventListener("change", () => { fillTowns(); update(); });
+  townSel.addEventListener("change", update);
+  $("kinds").addEventListener("change", () => { const t = townSel.value; fillTowns(); townSel.value = [...townSel.options].some((o) => o.value === t) ? t : ""; update(); });
   q.addEventListener("input", update);
   more.addEventListener("click", () => render(false));
   update();

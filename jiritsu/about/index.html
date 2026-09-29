@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>このサイトについて｜精神通院の指定医療機関をさがす</title>
+<meta name="description" content="自立支援医療（精神通院）を使っている運営者が、東京都の指定医療機関の一覧を月ごとに保存し、区市町村ごとに探せるようにしたサイトです。作った理由、データの出どころ、運営者情報を載せています。">
+<link rel="canonical" href="https://fumiproject.dev/jiritsu/about/">
+<style>
+:root {
+  --bg: #ffffff; --surface: #f5f6f8; --text: #1a1a1c; --muted: #4d4f55;
+  --line: #d4d6dc; --accent: #0b4fb3; --focus: #f5a623;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #16171a; --surface: #202227; --text: #eceef2; --muted: #b3b6bd;
+    --line: #3a3d44; --accent: #7fb0ff;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text);
+  font: 16px/1.8 "Noto Sans JP", system-ui, -apple-system, "Hiragino Sans", sans-serif; }
+main { max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; }
+h1 { font-size: 1.6rem; line-height: 1.4; margin: 0 0 8px; }
+h2 { font-size: 1.15rem; margin: 40px 0 8px; }
+p, ul { margin: 0 0 12px; }
+ul { padding-left: 1.3em; }
+a { color: var(--accent); }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.meta { color: var(--muted); font-size: 0.95rem; }
+.back { display: inline-block; margin-top: 40px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>このサイトについて</h1>
+  <p class="meta">最終更新日：2026年9月29日｜運営：ZAX（fumiproject.dev）</p>
+
+  <h2>何ができるサイトか</h2>
+  <p>自立支援医療（精神通院）で使える、東京都が指定した薬局・病院・診療所・訪問看護を、名前の一部や区市町村から探せます。申請書に書く医療機関の「コード」も表示します。</p>
+  <p>もとにしているのは、東京都福祉局が毎月差し替えて公開している指定の一覧です。差し替え前の一覧は東京都のページからたどれなくなるため、このサイトでは月ごとに保存し、CSV として公開しています。</p>
+
+  <h2>作った理由</h2>
+  <p>運営者自身が、自立支援医療（精神通院）を使っています。</p>
+  <p>最初の申請は高校生の時で、手続きは母がしてくれました。そのため、大学生になってからも、何をどこに出せばいいのかをよく分かっていませんでした。自分で手続きをした時は、必要な書類を持っていっていなかったり、マイナンバーカードの期限が切れていて、代わりに健康保険被保険者資格証明書が必要になったりして、役所には3回ほど通いました。医療費の上限を管理する紙（自己負担上限額管理票）を毎回出す必要があることも、最近まで知りませんでした。</p>
+  <p>制度のしくみそのものは、今は AI に聞けばかなり分かります。一方で、「今月、自分の区で指定を受けている薬局はどこか」「申請書に書くコードは何か」といった最新の一覧は、AI も正確には持っていません。東京都の一覧は Excel や PDF で、薬局だけで約7,000件あり、スマートフォンで探すのは大変です。そこで、東京都の公開データを使って、通っている病院・薬局の名前を入れるだけで、指定を受けているかどうかとコードが出るようにしました。</p>
+
+  <h2>データについて</h2>
+  <ul>
+    <li>出典：<a href="https://www.fukushi.metro.tokyo.lg.jp/shougai/jigyo/shougaifukushi/iryoshiteijoho_s">東京都福祉局「指定自立支援医療機関の情報提供（精神通院医療）」</a>（東京都オープンデータカタログ <a href="https://catalog.data.metro.tokyo.lg.jp/dataset/t000054d0000000056">t000054d0000000056</a>、CC BY 4.0）。病院・診療所、薬局、訪問看護事業者等の3つの一覧を使い、毎月の新規指定・廃止の一覧もあわせて保存しています</li>
+    <li>2026年4月1日時点の版から、月ごとに保存しています。それより前の版は、東京都のページから取得できませんでした</li>
+    <li>毎日自動で東京都のページを確認し、一覧が差し替わったら保存します。保存したデータと仕組みは <a href="https://github.com/fumi3333/jiritsu">GitHub（fumi3333/jiritsu）</a> で公開しています</li>
+    <li>医療機関の評価や順位は付けていません。並び順は東京都の一覧のとおりです</li>
+    <li>最新の正確な情報は、東京都のページと各医療機関で確認してください</li>
+  </ul>
+
+  <h2>これから</h2>
+  <p>申請の手続きそのものを軽くしたいと考えています。一部の自治体では、診断書が要らない更新や病院・薬局の変更をマイナポータルから申請できるようになっています（例：<a href="https://www.city.hachioji.tokyo.jp/kurashi/welfare/005/004/p034456.html">八王子市</a>）。この流れを広げ、診断書を写真で送るだけでスマートフォンから申請を終えられる仕組みを、区市町村や東京都と協力して作っていきたいと考えています。</p>
+
+  <h2>運営者情報</h2>
+  <ul>
+    <li>運営者：松田 晴史（屋号：ZAX / fumiproject.dev）</li>
+    <li>在籍：武蔵野大学 経済学部</li>
+    <li>連絡先：<a href="mailto:zax-official@fumiproject.dev">zax-official@fumiproject.dev</a></li>
+  </ul>
+
+  <h2>個人情報の扱い</h2>
+  <p>このサイトは、氏名・連絡先などの個人情報を集めません。選んだ区市町村や入力した文字は、閲覧している端末の中だけで使い、どこにも送りません。アクセス解析のタグも入れていません。</p>
+
+  <a class="back" href="../">← 指定医療機関をさがす</a>
+</main>
+</body>
+</html>

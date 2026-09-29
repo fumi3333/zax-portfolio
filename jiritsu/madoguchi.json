@@ -518,5 +518,270 @@
    },
    "江戸川区の健康サポートセンター": {}
   }
+ },
+ "八王子市": {
+  "checked": "2026-09-29",
+  "source": "https://www.city.hachioji.tokyo.jp/kurashi/welfare/005/004/p004180.html",
+  "note": "八王子市の申請窓口は、障害者福祉課（福祉・自立支援医療担当）です。診断書が要らない更新と病院・薬局の変更は、マイナポータルからオンラインでも申請できます（マイナンバーカードが必要）。",
+  "offices": {
+   "八王子市役所 障害者福祉課": {
+    "address": "八王子市元本郷町三丁目24番1号",
+    "phone": "042-620-7245"
+   }
+  }
+ },
+ "立川市": {
+  "checked": "2026-09-29",
+  "source": "https://www.city.tachikawa.lg.jp/kenko/shogai/1003564/1003641/1003645.html",
+  "note": "立川市の窓口は、障害福祉課 窓口係です。",
+  "offices": {
+   "立川市役所 障害福祉課 窓口係": {
+    "address": "立川市泉町1156-9"
+   }
+  }
+ },
+ "武蔵野市": {
+  "checked": "2026-09-29",
+  "source": "https://www.city.musashino.lg.jp/kenko_fukushi/shogaisha_fukushi/shien_josei/teate_kyufu/1006482.html",
+  "note": "武蔵野市の窓口は、市役所1階14番窓口の障害者福祉課です。",
+  "offices": {
+   "武蔵野市役所 障害者福祉課（1階14番窓口）": {
+    "address": "東京都武蔵野市緑町2-2-28"
+   }
+  }
+ },
+ "三鷹市": {
+  "checked": "2026-09-29",
+  "source": "https://www.city.mitaka.lg.jp/c_service/064/064389.html",
+  "note": "三鷹市の窓口は、市役所1階14番窓口の障がい者支援課 障がい者給付係です。",
+  "offices": {
+   "三鷹市役所 障がい者支援課（1階14番窓口）": {
+    "address": "東京都三鷹市野崎一丁目1番1号"
+   }
+  }
+ },
+ "青梅市": {
+  "checked": "2026-09-29",
+  "source": "https://www.city.ome.tokyo.jp/soshiki/31/330.html",
+  "note": "青梅市は、市役所1階11番窓口の障がい者福祉課で申請します。",
+  "offices": {
+   "青梅市役所 障がい者福祉課（1階11番窓口）": {
+    "address": "東京都青梅市東青梅1丁目11番地の1"
+   }
+  }
+ },
+ "府中市": {
+  "checked": "2026-09-29",
+  "source": "https://www.city.fuchu.tokyo.jp/kenko/shogai/shogainoaru/seishin.html",
+  "note": "府中市の窓口は、障害者福祉課 援護係です。",
+  "offices": {
+   "府中市役所 障害者福祉課 援護係": {}
+  }
+ },
+ "昭島市": {
+  "checked": "2026-09-29",
+  "source": "https://www.city.akishima.lg.jp/li/030/030/080/",
+  "note": "昭島市の窓口は、市役所の障害福祉課です。",
+  "offices": {
+   "昭島市役所 障害福祉課": {}
+  }
+ },
+ "調布市": {
+  "checked": "2026-09-29",
+  "source": "https://www.city.chofu.lg.jp/060050/p035010.html",
+  "note": "調布市は、障害福祉課の窓口か郵送で申請します。",
+  "offices": {
+   "調布市役所 障害福祉課": {}
+  }
+ },
+ "町田市": {
+  "checked": "2026-09-29",
+  "source": "https://www.city.machida.tokyo.jp/iryo/syougai_hukushi/iryohijosei/seisin_jiritu.html",
+  "note": "町田市は、障がい福祉課で申請します。書類は市民センター等では配っていません。診断書を用意する前に、障がい福祉課に確認するよう案内されています。",
+  "offices": {
+   "町田市役所 障がい福祉課": {}
+  }
+ },
+ "小金井市": {
+  "checked": "2026-09-29",
+  "source": "https://www.city.koganei.lg.jp/kenkofukuhsi/shogaishafukushi/iryohijosei/jiritsu.html",
+  "note": "小金井市は、自立生活支援課の窓口に提出します。",
+  "offices": {
+   "小金井市役所 自立生活支援課": {}
+  }
+ },
+ "小平市": {
+  "checked": "2026-09-29",
+  "source": "https://www.city.kodaira.tokyo.jp/kurashi/003/003641.html",
+  "note": "小平市は、障がい者支援課（健康福祉事務センター1階）に提出します。",
+  "offices": {
+   "小平市 障がい者支援課（健康福祉事務センター1階）": {
+    "address": "小平市小川町2-1333"
+   }
+  }
+ },
+ "日野市": {
+  "checked": "2026-09-29",
+  "source": "https://www.city.hino.lg.jp/fukushi/nanbyo/service/kyufu/1003713.html",
+  "note": "日野市の申請窓口は、市役所1階の障害福祉課です。来庁が難しい場合は郵送でも受け付けています（事前に連絡）。",
+  "offices": {
+   "日野市役所 障害福祉課（1階）": {}
+  }
+ },
+ "東村山市": {
+  "checked": "2026-09-29",
+  "source": "https://www.city.higashimurayama.tokyo.jp/kenko/shogai/tetuduki/iryouhijyosei/zirituiryo.html",
+  "note": "東村山市は、障害支援課で手続きします。",
+  "offices": {
+   "東村山市役所 障害支援課": {}
+  }
+ },
+ "国分寺市": {
+  "checked": "2026-09-29",
+  "source": "https://www.city.kokubunji.tokyo.jp/kenkou-fukushi/syougaishien/1011463/1001679.html",
+  "note": "国分寺市の申請窓口は、障害福祉課です。",
+  "offices": {
+   "国分寺市役所 障害福祉課": {}
+  }
+ },
+ "国立市": {
+  "checked": "2026-09-29",
+  "source": "https://www.city.kunitachi.tokyo.jp/soshiki/Dept03/Div02/Sec01/gyomu/0100/iryo/1464587039517.html",
+  "note": "国立市は、市役所1階5番窓口のしょうがいしゃ支援課 手当・給付係で申請します。",
+  "offices": {
+   "国立市役所 しょうがいしゃ支援課 手当・給付係（1階5番窓口）": {
+    "address": "国立市富士見台2-47-1"
+   }
+  }
+ },
+ "福生市": {
+  "checked": "2026-09-29",
+  "source": "https://www.city.fussa.tokyo.jp/life/health/shogai/1005278/1005287.html",
+  "note": "福生市の窓口は、障害福祉課 障害福祉係です。",
+  "offices": {
+   "福生市役所 障害福祉課": {
+    "address": "東京都福生市本町5"
+   }
+  }
+ },
+ "狛江市": {
+  "checked": "2026-09-29",
+  "source": "https://www.city.komae.tokyo.jp/index.cfm/44,6699,339,html",
+  "note": "狛江市は、高齢障がい課 障がい者支援係の窓口で申請します。",
+  "offices": {
+   "狛江市役所 高齢障がい課 障がい者支援係": {
+    "address": "狛江市和泉本町一丁目1番5号",
+    "phone": "03-3430-1249"
+   }
+  }
+ },
+ "東大和市": {
+  "checked": "2026-09-29",
+  "source": "https://www.city.higashiyamato.lg.jp/kenkofukushi/shogaisha/1002997/1003024/1003027.html",
+  "note": "東大和市の窓口は、障害福祉課 相談支援係です。",
+  "offices": {
+   "東大和市役所 障害福祉課 相談支援係": {
+    "address": "東京都東大和市中央3-930"
+   }
+  }
+ },
+ "清瀬市": {
+  "checked": "2026-09-29",
+  "source": "https://www.city.kiyose.lg.jp/kenkouiryouhukusi/syougaisien/syougaisyajosei/1004257.html",
+  "note": "清瀬市の窓口は、障害福祉課です。",
+  "offices": {
+   "清瀬市役所 障害福祉課": {}
+  }
+ },
+ "東久留米市": {
+  "checked": "2026-09-29",
+  "source": "https://www.city.higashikurume.lg.jp/kurashi/fukushi/shogai/1000437.html",
+  "note": "東久留米市の窓口は、障害福祉課です。",
+  "offices": {
+   "東久留米市役所 障害福祉課": {
+    "address": "東京都東久留米市本町3-3-1",
+    "phone": "042-470-7747"
+   }
+  }
+ },
+ "武蔵村山市": {
+  "checked": "2026-09-29",
+  "source": "https://www.city.musashimurayama.lg.jp/kurashi/shougai/1012128/jiritsushien/1000730.html",
+  "note": "武蔵村山市の窓口は、障害福祉課 手当助成係です。",
+  "offices": {
+   "武蔵村山市 障害福祉課 手当助成係": {}
+  }
+ },
+ "多摩市": {
+  "checked": "2026-09-29",
+  "source": "https://www.city.tama.lg.jp/kenkofukushi/1008237/shoigai/iryouhi/1003101.html",
+  "note": "多摩市は、障害福祉課に必要な書類を持って申請します。",
+  "offices": {
+   "多摩市役所 障害福祉課": {
+    "address": "東京都多摩市関戸六丁目12番地1"
+   }
+  }
+ },
+ "稲城市": {
+  "checked": "2026-09-29",
+  "source": "https://www.city.inagi.tokyo.jp/kenko/syougaifukushi/1003530/1003531.html",
+  "note": "稲城市は、障害福祉課の窓口か郵送で申請します。窓口は平日のみで、出張所では申請できません。",
+  "offices": {
+   "稲城市役所 障害福祉課": {
+    "address": "東京都稲城市東長沼2111番地"
+   }
+  }
+ },
+ "羽村市": {
+  "checked": "2026-09-29",
+  "source": "https://www.city.hamura.tokyo.jp/0000002424.html",
+  "note": "羽村市の窓口は、障害福祉課です。",
+  "offices": {
+   "羽村市役所 障害福祉課": {}
+  }
+ },
+ "あきる野市": {
+  "checked": "2026-09-29",
+  "source": "https://www.city.akiruno.tokyo.jp/0000003536.html",
+  "note": "あきる野市の窓口は、市役所1階11番窓口の障がい者支援課 障がい者相談係です。",
+  "offices": {
+   "あきる野市役所 障がい者支援課（1階11番窓口）": {}
+  }
+ },
+ "西東京市": {
+  "checked": "2026-09-29",
+  "source": "https://www.city.nishitokyo.lg.jp/kenko_hukusi/syogaisyasien/iryo/jiritsuseishintsuin.html",
+  "note": "西東京市は、障害福祉課の窓口に直接提出します。難しい場合は郵送もできます。",
+  "offices": {
+   "西東京市役所 障害福祉課（田無庁舎）": {
+    "address": "西東京市南町五丁目6番13号"
+   }
+  }
+ },
+ "瑞穂町": {
+  "checked": "2026-09-29",
+  "source": "https://www.town.mizuho.tokyo.jp/kenkofukushi/004/005/p001326.html",
+  "note": "瑞穂町の窓口は町役場です。受付は平日8時30分〜17時。",
+  "offices": {
+   "瑞穂町役場": {
+    "address": "東京都西多摩郡瑞穂町大字箱根ケ崎2335番地"
+   }
+  }
+ },
+ "日の出町": {
+  "checked": "2026-09-29",
+  "source": "https://www.town.hinode.tokyo.jp/0000000112.html",
+  "note": "日の出町の担当は、福祉総務課 障がい支援係です。",
+  "offices": {
+   "日の出町役場 福祉総務課 障がい支援係": {}
+  }
+ },
+ "奥多摩町": {
+  "checked": "2026-09-29",
+  "source": "https://www.town.okutama.tokyo.jp/1/fukushihokenka/shogaishafukushi/608.html",
+  "note": "奥多摩町の担当は、福祉保健課 福祉係です。",
+  "offices": {
+   "奥多摩町役場 福祉保健課 福祉係": {}
+  }
  }
 }

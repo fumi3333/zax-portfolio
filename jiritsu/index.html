@@ -84,6 +84,9 @@ ul.list li:last-child { border-bottom: 1px solid var(--line); }
 .code b { font-size: 1.4rem; letter-spacing: 0.08em; font-variant-numeric: tabular-nums; }
 .more { margin-top: 16px; font: inherit; padding: 10px 16px; min-height: 44px; border-radius: 6px;
   border: 1px solid var(--accent); background: var(--bg); color: var(--accent); cursor: pointer; }
+details summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; }
+details[open] summary { margin-bottom: 8px; }
+.office { border-top: 1px solid var(--line); padding: 10px 0; }
 footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; }
 </style>
 </head>
@@ -121,6 +124,20 @@ footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line);
   </div>
   <ul class="list" id="list" data-clarity-mask="true"></ul>
   <button class="more" id="more" hidden>さらに表示</button>
+
+  <details class="box" id="next">
+    <summary><b>この後：申請書をどこに出す？</b></summary>
+    <p>出す先は、病院・薬局の場所ではなく、<b>住んでいる</b>区市町村で決まります。</p>
+    <div class="field">
+      <label for="homeMuni">住んでいる区市町村</label>
+      <select id="homeMuni" data-clarity-mask="true"><option value="">選んでください</option></select>
+    </div>
+    <div class="field" id="homeTownField" hidden>
+      <label for="homeTown">住んでいる町名</label>
+      <select id="homeTown" data-clarity-mask="true"><option value="">選んでください</option></select>
+    </div>
+    <div id="madoguchi" data-clarity-mask="true"></div>
+  </details>
 
   <h2>病院や薬局を変える時</h2>
   <p>受給者証に書いた医療機関を変える時は、先にお住まいの区市町村の窓口で「変更申請」が必要です（特別区は保健所・保健センター等、市町村は障害者福祉の担当課等）。</p>
@@ -209,6 +226,44 @@ footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line);
   q.addEventListener("input", update);
   more.addEventListener("click", () => render(false));
   update();
+
+  // 申請書の出し先。公式ページで確かめた区市町村だけ madoguchi.json に載せている
+  const mg = await load("madoguchi.json").catch(() => ({}));
+  const homeMuni = $("homeMuni"), homeTown = $("homeTown"), homeTownField = $("homeTownField"), box = $("madoguchi");
+  d.munis.forEach((m) => homeMuni.add(new Option(m, m)));
+  const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const office = (name, o) => {
+    const q = encodeURIComponent(`${o.address} ${name}`);
+    return `<div class="office"><div class="name">${esc(name)}</div><div class="meta">〒${esc(o.postal)} ${esc(o.address)}</div>`
+      + `<div class="meta"><a href="https://www.google.com/maps/search/?api=1&query=${q}" target="_blank" rel="noopener">Google マップで開く</a>　<a href="tel:${o.phone.replace(/[^0-9]/g, "")}">${esc(o.phone)}</a></div></div>`;
+  };
+  function showMadoguchi() {
+    const m = homeMuni.value, info = mg[m];
+    homeTownField.hidden = !info;
+    if (!m) { box.innerHTML = ""; return; }
+    if (!info) {
+      box.innerHTML = `<p>${esc(m)}の窓口は、まだ公式ページで確かめられていません。東京都の案内では、特別区は保健所・保健センター等、市町村は障害者福祉の担当課等が窓口です。${esc(m)}の公式ページで「自立支援医療」を確認してください。</p>`;
+      return;
+    }
+    if (homeTown.dataset.muni !== m) {
+      homeTown.length = 1;
+      Object.keys(info.towns).sort((a, b) => a.localeCompare(b, "ja")).forEach((t) => homeTown.add(new Option(t, t)));
+      homeTown.dataset.muni = m;
+    }
+    const t = homeTown.value;
+    let html = `<p>${esc(info.note)}</p>`;
+    if (t) {
+      const names = info.towns[t];
+      if (info.split_note?.[t]) html += `<p><b>${esc(info.split_note[t])}</b>。<a href="${info.area_source}" target="_blank" rel="noopener">受け持ち区域の表（PDF）</a>で番地を確かめてください。</p>`;
+      html += names.map((n) => office(n, info.offices[n])).join("");
+    } else {
+      html += `<p>町名を選ぶと、出す先を1か所に絞れます。</p>`;
+    }
+    html += `<p class="meta">出典：<a href="${info.source}" target="_blank" rel="noopener">${esc(m)}公式ページ</a>（${info.checked}に確認）</p>`;
+    box.innerHTML = html;
+  }
+  homeMuni.addEventListener("change", () => { homeTown.value = ""; showMadoguchi(); });
+  homeTown.addEventListener("change", showMadoguchi);
 })();
 </script>
 </body>

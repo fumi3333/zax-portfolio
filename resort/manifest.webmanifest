@@ -1,0 +1,15 @@
+{
+  "name": "リゾートソート｜リゾートバイト求人の横断比較",
+  "short_name": "リゾートソート",
+  "description": "派遣会社のリゾートバイト求人を、時給・寮・食事の条件をそろえて横断で比べられます。",
+  "start_url": "/resort/?from=pwa",
+  "scope": "/resort/",
+  "display": "standalone",
+  "background_color": "#fbfaf8",
+  "theme_color": "#1f6f5c",
+  "lang": "ja",
+  "icons": [
+    { "src": "/resort/apple-touch-icon.png", "sizes": "180x180", "type": "image/png", "purpose": "any" },
+    { "src": "/resort/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

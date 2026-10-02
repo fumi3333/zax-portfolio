@@ -360,6 +360,26 @@
   }
   .banner-close{background:none;border:none;color:inherit;font-size:16px;cursor:pointer;padding:0 6px;line-height:1}
 
+  .cta-sub{font-size:10px;color:var(--sub);margin-top:3px;text-align:center;letter-spacing:-0.02em}
+  .btn-keep{display:inline-block;padding:5px 9px;margin-right:6px;background:var(--bg);border:1px solid var(--line);border-radius:6px;font-size:11px;font-weight:600;color:var(--sub);cursor:pointer;transition:all .15s;vertical-align:middle}
+  .btn-keep:hover{border-color:var(--ink);color:var(--ink)}
+  .btn-keep.kept{background:#fef3c7;border-color:#fde68a;color:#b45309;font-weight:700}
+  @media (prefers-color-scheme:dark){
+    .btn-keep.kept{background:#78350f;border-color:#b45309;color:#fde68a}
+  }
+  .btn-clear-filters{display:inline-flex;align-items:center;gap:4px;padding:6px 12px;background:var(--bg);border:1px solid var(--line);border-radius:6px;font-size:12px;color:var(--sub);cursor:pointer;transition:all .15s;font-family:inherit;font-weight:600}
+  .btn-clear-filters:hover{border-color:var(--ink);color:var(--ink);background:var(--card)}
+  .chip-pill.chip-restore{background:#eff6ff;border-color:#bfdbfe;color:#1d4ed8}
+  .chip-pill.chip-restore:hover{background:#dbeafe;border-color:#93c5fd}
+  .chip-pill.chip-kept{background:#fffbeb;border-color:#fde68a;color:#b45309}
+  .chip-pill.chip-kept:hover{background:#fef3c7;border-color:#fcd34d}
+  .chip-pill.chip-kept.active{background:#b45309;color:#fff;border-color:#b45309}
+  @media (prefers-color-scheme:dark){
+    .chip-pill.chip-restore{background:#1e3a8a;border-color:#3b82f6;color:#93c5fd}
+    .chip-pill.chip-kept{background:#78350f;border-color:#b45309;color:#fde68a}
+    .chip-pill.chip-kept.active{background:#d97706;color:#09090b;border-color:#d97706}
+  }
+
   /* ワンタップ人気条件ピル（横スクロール） */
   .quick-chips-wrapper{
     overflow-x:auto;-webkit-overflow-scrolling:touch;
@@ -546,6 +566,12 @@
   <!-- 最上部：ワンタップ人気条件ピル（横スクロールで即座にリアルタイム絞り込み） -->
   <div class="quick-chips-wrapper">
     <div class="quick-chips-bar">
+      <button type="button" class="chip-pill chip-restore" id="chip-restore-last" onclick="restoreLastSearch()" style="display:none">
+        <span id="chip-restore-text">↺ 前回の条件で探す</span>
+      </button>
+      <button type="button" class="chip-pill chip-kept" id="chip-show-kept" onclick="toggleKeptOnly(this)">
+        <span>★ キープ中</span><span class="chip-badge" id="kept-count-badge">0</span>
+      </button>
       <button type="button" class="chip-pill" id="chip-tooshi" onclick="toggleQuickChip('c-tooshi', this)">
         <span>通しシフト（中抜け無）</span><span class="chip-badge">人気</span>
       </button>
@@ -579,7 +605,10 @@
     </div>
   </div>
 
-  <button type="button" id="filter-toggle" onclick="toggleFilters()" aria-expanded="true" aria-controls="filter-panel">絞り込みを閉じる ▴</button>
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+    <button type="button" id="filter-toggle" onclick="toggleFilters()" aria-expanded="true" aria-controls="filter-panel" style="flex:1;text-align:left;margin-right:10px">絞り込みを閉じる ▴</button>
+    <button type="button" class="btn-clear-filters" onclick="clearAllFilters()" title="選択中の条件をすべて初期化">✕ 条件をクリア</button>
+  </div>
   <div id="filter-panel">
   <div class="filters">
     <div>
@@ -810,6 +839,9 @@
           <label><input type="checkbox" id="c-friends"> 友達・カップル可</label>
         </div>
       </div>
+      <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--line);display:flex;justify-content:flex-end">
+        <button type="button" class="btn-clear-filters" onclick="clearAllFilters()">✕ すべての条件をクリア</button>
+      </div>
     </div>
   </details>
 
@@ -893,11 +925,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_長野県_調理（要資格）_1850', this)" data-key="グッドマンサービス（リゾートバイト.com）_長野県_調理（要資格）_1850" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1005971%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="長野県"
-             data-cat="調理（要資格）" data-wage="1850">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（要資格）" data-wage="1850">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -940,11 +974,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_長野県_調理（資格不要）_1900', this)" data-key="グッドマンサービス（リゾートバイト.com）_長野県_調理（資格不要）_1900" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1006668%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="長野県"
-             data-cat="調理（資格不要）" data-wage="1900">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（資格不要）" data-wage="1900">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -987,11 +1023,13 @@
           <div class="lic">派13-300547</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('株式会社ダイブ（リゾートバイトダイブ）_長野県_調理_1800', this)" data-key="株式会社ダイブ（リゾートバイトダイブ）_長野県_調理_1800" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F220652" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="長野県"
-             data-cat="調理" data-wage="1800">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理" data-wage="1800">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1034,11 +1072,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_長野県_調理（資格不要）_1800', this)" data-key="グッドマンサービス（リゾートバイト.com）_長野県_調理（資格不要）_1800" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1006334%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="長野県"
-             data-cat="調理（資格不要）" data-wage="1800">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（資格不要）" data-wage="1800">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1081,11 +1121,13 @@
           <div class="lic">派13-300547</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('株式会社ダイブ（リゾートバイトダイブ）_北海道_調理_2000', this)" data-key="株式会社ダイブ（リゾートバイトダイブ）_北海道_調理_2000" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F232147" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="北海道"
-             data-cat="調理" data-wage="2000">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理" data-wage="2000">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1128,11 +1170,13 @@
           <div class="lic">派23-300784</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('スタッフエージェント_栃木県_調理師_1850', this)" data-key="スタッフエージェント_栃木県_調理師_1850" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5SZ642+51UO+5YJRM&a8ejpredirect=https%3A%2F%2Fomotena-work.com%2Frecruit%2F17268%2Fshow" target="_blank" rel="noopener nofollow sponsored"
              data-ag="スタッフエージェント" data-pref="栃木県"
-             data-cat="調理師" data-wage="1850">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理師" data-wage="1850">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1175,11 +1219,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_神奈川県_調理（資格不要）_1700', this)" data-key="グッドマンサービス（リゾートバイト.com）_神奈川県_調理（資格不要）_1700" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1000246%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="神奈川県"
-             data-cat="調理（資格不要）" data-wage="1700">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（資格不要）" data-wage="1700">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1222,11 +1268,13 @@
           <div class="lic">派23-300784</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('スタッフエージェント_静岡県_調理師_1900', this)" data-key="スタッフエージェント_静岡県_調理師_1900" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5SZ642+51UO+5YJRM&a8ejpredirect=https%3A%2F%2Fomotena-work.com%2Frecruit%2F18395%2Fshow" target="_blank" rel="noopener nofollow sponsored"
              data-ag="スタッフエージェント" data-pref="静岡県"
-             data-cat="調理師" data-wage="1900">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理師" data-wage="1900">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1269,11 +1317,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_静岡県_レストランサービス_1700', this)" data-key="グッドマンサービス（リゾートバイト.com）_静岡県_レストランサービス_1700" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1006468%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="静岡県"
-             data-cat="レストランサービス" data-wage="1700">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="レストランサービス" data-wage="1700">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1316,11 +1366,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_長野県_調理補助_1600', this)" data-key="グッドマンサービス（リゾートバイト.com）_長野県_調理補助_1600" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1007947%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="長野県"
-             data-cat="調理補助" data-wage="1600">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理補助" data-wage="1600">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1363,11 +1415,13 @@
           <div class="lic">派13-300547</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('株式会社ダイブ（リゾートバイトダイブ）_長野県_調理_1600', this)" data-key="株式会社ダイブ（リゾートバイトダイブ）_長野県_調理_1600" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F220654" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="長野県"
-             data-cat="調理" data-wage="1600">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理" data-wage="1600">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1410,11 +1464,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_石川県_調理（資格不要）_1700', this)" data-key="グッドマンサービス（リゾートバイト.com）_石川県_調理（資格不要）_1700" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1008231%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="石川県"
-             data-cat="調理（資格不要）" data-wage="1700">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（資格不要）" data-wage="1700">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1457,11 +1513,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_北海道_調理（要資格）_2000', this)" data-key="グッドマンサービス（リゾートバイト.com）_北海道_調理（要資格）_2000" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1002546%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="北海道"
-             data-cat="調理（要資格）" data-wage="2000">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（要資格）" data-wage="2000">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1504,11 +1562,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_群馬県_調理（要資格）_1800', this)" data-key="グッドマンサービス（リゾートバイト.com）_群馬県_調理（要資格）_1800" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1002532%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="群馬県"
-             data-cat="調理（要資格）" data-wage="1800">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（要資格）" data-wage="1800">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1551,11 +1611,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_群馬県_調理（資格不要）_1700', this)" data-key="グッドマンサービス（リゾートバイト.com）_群馬県_調理（資格不要）_1700" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1002799%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="群馬県"
-             data-cat="調理（資格不要）" data-wage="1700">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（資格不要）" data-wage="1700">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1598,11 +1660,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_長野県_調理（資格不要）_1600', this)" data-key="グッドマンサービス（リゾートバイト.com）_長野県_調理（資格不要）_1600" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1005591%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="長野県"
-             data-cat="調理（資格不要）" data-wage="1600">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（資格不要）" data-wage="1600">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1645,11 +1709,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_岐阜県_調理（資格不要）_1600', this)" data-key="グッドマンサービス（リゾートバイト.com）_岐阜県_調理（資格不要）_1600" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1006080%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="岐阜県"
-             data-cat="調理（資格不要）" data-wage="1600">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（資格不要）" data-wage="1600">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1692,11 +1758,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_新潟県_調理（要資格）_1500', this)" data-key="グッドマンサービス（リゾートバイト.com）_新潟県_調理（要資格）_1500" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1007522%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="新潟県"
-             data-cat="調理（要資格）" data-wage="1500">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（要資格）" data-wage="1500">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1739,11 +1807,13 @@
           <div class="lic">派13-300854</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('株式会社ヒューマニック（リゾバ.com）_長野県_洋食調理_1800', this)" data-key="株式会社ヒューマニック（リゾバ.com）_長野県_洋食調理_1800" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5RSAWI+42GS+63WO2&a8ejpredirect=https%3A%2F%2Fwww.rizoba.com%2Fwork%2F79549%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社ヒューマニック（リゾバ.com）" data-pref="長野県"
-             data-cat="洋食調理" data-wage="1800">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="洋食調理" data-wage="1800">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1786,11 +1856,13 @@
           <div class="lic">派13-300547</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('株式会社ダイブ（リゾートバイトダイブ）_北海道_その他リゾートバイト_1700', this)" data-key="株式会社ダイブ（リゾートバイトダイブ）_北海道_その他リゾートバイト_1700" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F210907" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="北海道"
-             data-cat="その他リゾートバイト" data-wage="1700">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="その他リゾートバイト" data-wage="1700">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1833,11 +1905,13 @@
           <div class="lic">派13-300547</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('株式会社ダイブ（リゾートバイトダイブ）_北海道_その他リゾートバイト_1700', this)" data-key="株式会社ダイブ（リゾートバイトダイブ）_北海道_その他リゾートバイト_1700" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F214435" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="北海道"
-             data-cat="その他リゾートバイト" data-wage="1700">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="その他リゾートバイト" data-wage="1700">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1880,11 +1954,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_群馬県_調理（資格不要）_1650', this)" data-key="グッドマンサービス（リゾートバイト.com）_群馬県_調理（資格不要）_1650" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1002707%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="群馬県"
-             data-cat="調理（資格不要）" data-wage="1650">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（資格不要）" data-wage="1650">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1927,11 +2003,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_神奈川県_調理（資格不要）_1650', this)" data-key="グッドマンサービス（リゾートバイト.com）_神奈川県_調理（資格不要）_1650" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1000970%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="神奈川県"
-             data-cat="調理（資格不要）" data-wage="1650">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（資格不要）" data-wage="1650">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1974,11 +2052,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_北海道_調理（資格不要）_1500', this)" data-key="グッドマンサービス（リゾートバイト.com）_北海道_調理（資格不要）_1500" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1001293%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="北海道"
-             data-cat="調理（資格不要）" data-wage="1500">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（資格不要）" data-wage="1500">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2021,11 +2101,13 @@
           <div class="lic">派13-300547</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('株式会社ダイブ（リゾートバイトダイブ）_長野県_調理補助_1500', this)" data-key="株式会社ダイブ（リゾートバイトダイブ）_長野県_調理補助_1500" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F220650" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="長野県"
-             data-cat="調理補助" data-wage="1500">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理補助" data-wage="1500">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2068,11 +2150,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_群馬県_None_1600', this)" data-key="グッドマンサービス（リゾートバイト.com）_群馬県_None_1600" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1002552%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="群馬県"
-             data-cat="" data-wage="1600">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="" data-wage="1600">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2115,11 +2199,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_兵庫県_調理（資格不要）_1600', this)" data-key="グッドマンサービス（リゾートバイト.com）_兵庫県_調理（資格不要）_1600" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1004563%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="兵庫県"
-             data-cat="調理（資格不要）" data-wage="1600">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（資格不要）" data-wage="1600">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2162,11 +2248,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_長野県_調理（資格不要）_1600', this)" data-key="グッドマンサービス（リゾートバイト.com）_長野県_調理（資格不要）_1600" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1007097%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="長野県"
-             data-cat="調理（資格不要）" data-wage="1600">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（資格不要）" data-wage="1600">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2209,11 +2297,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_北海道_裏方全般_1700', this)" data-key="グッドマンサービス（リゾートバイト.com）_北海道_裏方全般_1700" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1006156%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="北海道"
-             data-cat="裏方全般" data-wage="1700">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="裏方全般" data-wage="1700">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2256,11 +2346,13 @@
           <div class="lic">派23-300784</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('スタッフエージェント_岐阜県_全般業務_1650', this)" data-key="スタッフエージェント_岐阜県_全般業務_1650" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5SZ642+51UO+5YJRM&a8ejpredirect=https%3A%2F%2Fomotena-work.com%2Frecruit%2F17816%2Fshow" target="_blank" rel="noopener nofollow sponsored"
              data-ag="スタッフエージェント" data-pref="岐阜県"
-             data-cat="全般業務" data-wage="1650">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="全般業務" data-wage="1650">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2303,11 +2395,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_神奈川県_調理（資格不要）_1700', this)" data-key="グッドマンサービス（リゾートバイト.com）_神奈川県_調理（資格不要）_1700" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1000124%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="神奈川県"
-             data-cat="調理（資格不要）" data-wage="1700">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（資格不要）" data-wage="1700">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2350,11 +2444,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_新潟県_調理（資格不要）_1550', this)" data-key="グッドマンサービス（リゾートバイト.com）_新潟県_調理（資格不要）_1550" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1003677%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="新潟県"
-             data-cat="調理（資格不要）" data-wage="1550">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（資格不要）" data-wage="1550">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2397,11 +2493,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_神奈川県_調理（資格不要）_1550', this)" data-key="グッドマンサービス（リゾートバイト.com）_神奈川県_調理（資格不要）_1550" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1001927%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="神奈川県"
-             data-cat="調理（資格不要）" data-wage="1550">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（資格不要）" data-wage="1550">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2444,11 +2542,13 @@
           <div class="lic">派23-300784</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('スタッフエージェント_徳島県_調理師_1650', this)" data-key="スタッフエージェント_徳島県_調理師_1650" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5SZ642+51UO+5YJRM&a8ejpredirect=https%3A%2F%2Fomotena-work.com%2Frecruit%2F6408%2Fshow" target="_blank" rel="noopener nofollow sponsored"
              data-ag="スタッフエージェント" data-pref="徳島県"
-             data-cat="調理師" data-wage="1650">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理師" data-wage="1650">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2491,11 +2591,13 @@
           <div class="lic">派23-300784</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('スタッフエージェント_岐阜県_調理補助_1600', this)" data-key="スタッフエージェント_岐阜県_調理補助_1600" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5SZ642+51UO+5YJRM&a8ejpredirect=https%3A%2F%2Fomotena-work.com%2Frecruit%2F6487%2Fshow" target="_blank" rel="noopener nofollow sponsored"
              data-ag="スタッフエージェント" data-pref="岐阜県"
-             data-cat="調理補助" data-wage="1600">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理補助" data-wage="1600">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2538,11 +2640,13 @@
           <div class="lic">派23-300784</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('スタッフエージェント_岐阜県_仲居_1600', this)" data-key="スタッフエージェント_岐阜県_仲居_1600" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5SZ642+51UO+5YJRM&a8ejpredirect=https%3A%2F%2Fomotena-work.com%2Frecruit%2F17465%2Fshow" target="_blank" rel="noopener nofollow sponsored"
              data-ag="スタッフエージェント" data-pref="岐阜県"
-             data-cat="仲居" data-wage="1600">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="仲居" data-wage="1600">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2585,11 +2689,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_静岡県_ナイトフロント_1500', this)" data-key="グッドマンサービス（リゾートバイト.com）_静岡県_ナイトフロント_1500" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1000765%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="静岡県"
-             data-cat="ナイトフロント" data-wage="1500">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="ナイトフロント" data-wage="1500">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2632,11 +2738,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_沖縄県_調理（資格不要）_1500', this)" data-key="グッドマンサービス（リゾートバイト.com）_沖縄県_調理（資格不要）_1500" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1004709%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="沖縄県"
-             data-cat="調理（資格不要）" data-wage="1500">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（資格不要）" data-wage="1500">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2679,11 +2787,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_栃木県_調理（資格不要）_1500', this)" data-key="グッドマンサービス（リゾートバイト.com）_栃木県_調理（資格不要）_1500" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1006205%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="栃木県"
-             data-cat="調理（資格不要）" data-wage="1500">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（資格不要）" data-wage="1500">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2726,11 +2836,13 @@
           <div class="lic">派23-300784</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('スタッフエージェント_山梨県_仲居_1650', this)" data-key="スタッフエージェント_山梨県_仲居_1650" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5SZ642+51UO+5YJRM&a8ejpredirect=https%3A%2F%2Fomotena-work.com%2Frecruit%2F17500%2Fshow" target="_blank" rel="noopener nofollow sponsored"
              data-ag="スタッフエージェント" data-pref="山梨県"
-             data-cat="仲居" data-wage="1650">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="仲居" data-wage="1650">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2773,11 +2885,13 @@
           <div class="lic">派23-300784</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('スタッフエージェント_山梨県_全般業務_1650', this)" data-key="スタッフエージェント_山梨県_全般業務_1650" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5SZ642+51UO+5YJRM&a8ejpredirect=https%3A%2F%2Fomotena-work.com%2Frecruit%2F17502%2Fshow" target="_blank" rel="noopener nofollow sponsored"
              data-ag="スタッフエージェント" data-pref="山梨県"
-             data-cat="全般業務" data-wage="1650">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="全般業務" data-wage="1650">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2820,11 +2934,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_長野県_調理（要資格）_1500', this)" data-key="グッドマンサービス（リゾートバイト.com）_長野県_調理（要資格）_1500" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1008206%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="長野県"
-             data-cat="調理（要資格）" data-wage="1500">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（要資格）" data-wage="1500">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2867,11 +2983,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_神奈川県_調理補助_1600', this)" data-key="グッドマンサービス（リゾートバイト.com）_神奈川県_調理補助_1600" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1001405%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="神奈川県"
-             data-cat="調理補助" data-wage="1600">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理補助" data-wage="1600">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2914,11 +3032,13 @@
           <div class="lic">派13-300547</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('株式会社ダイブ（リゾートバイトダイブ）_静岡県_フロント・ベル_1400', this)" data-key="株式会社ダイブ（リゾートバイトダイブ）_静岡県_フロント・ベル_1400" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F228628" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="静岡県"
-             data-cat="フロント・ベル" data-wage="1400">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="フロント・ベル" data-wage="1400">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2961,11 +3081,13 @@
           <div class="lic">派13-300547</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('株式会社ダイブ（リゾートバイトダイブ）_静岡県_フロント・ベル_1400', this)" data-key="株式会社ダイブ（リゾートバイトダイブ）_静岡県_フロント・ベル_1400" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F228631" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="静岡県"
-             data-cat="フロント・ベル" data-wage="1400">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="フロント・ベル" data-wage="1400">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3008,11 +3130,13 @@
           <div class="lic">派13-300547</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('株式会社ダイブ（リゾートバイトダイブ）_静岡県_フロント・ベル_1400', this)" data-key="株式会社ダイブ（リゾートバイトダイブ）_静岡県_フロント・ベル_1400" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F228632" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="静岡県"
-             data-cat="フロント・ベル" data-wage="1400">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="フロント・ベル" data-wage="1400">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3055,11 +3179,13 @@
           <div class="lic">派13-300547</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('株式会社ダイブ（リゾートバイトダイブ）_静岡県_仲居・客室係（簡易和装）_1400', this)" data-key="株式会社ダイブ（リゾートバイトダイブ）_静岡県_仲居・客室係（簡易和装）_1400" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F228633" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="静岡県"
-             data-cat="仲居・客室係（簡易和装）" data-wage="1400">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="仲居・客室係（簡易和装）" data-wage="1400">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3102,11 +3228,13 @@
           <div class="lic">派13-300547</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('株式会社ダイブ（リゾートバイトダイブ）_静岡県_仲居・客室係（簡易和装）_1400', this)" data-key="株式会社ダイブ（リゾートバイトダイブ）_静岡県_仲居・客室係（簡易和装）_1400" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F228635" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="静岡県"
-             data-cat="仲居・客室係（簡易和装）" data-wage="1400">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="仲居・客室係（簡易和装）" data-wage="1400">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3149,11 +3277,13 @@
           <div class="lic">派13-300547</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('株式会社ダイブ（リゾートバイトダイブ）_静岡県_仲居・客室係（簡易和装）_1400', this)" data-key="株式会社ダイブ（リゾートバイトダイブ）_静岡県_仲居・客室係（簡易和装）_1400" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F228636" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="静岡県"
-             data-cat="仲居・客室係（簡易和装）" data-wage="1400">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="仲居・客室係（簡易和装）" data-wage="1400">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3196,11 +3326,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_静岡県_仲居・客室係_1450', this)" data-key="グッドマンサービス（リゾートバイト.com）_静岡県_仲居・客室係_1450" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1000049%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="静岡県"
-             data-cat="仲居・客室係" data-wage="1450">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="仲居・客室係" data-wage="1450">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3243,11 +3375,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_福島県_調理（資格不要）_1600', this)" data-key="グッドマンサービス（リゾートバイト.com）_福島県_調理（資格不要）_1600" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1000793%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="福島県"
-             data-cat="調理（資格不要）" data-wage="1600">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（資格不要）" data-wage="1600">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3290,11 +3424,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_長野県_フロント_1400', this)" data-key="グッドマンサービス（リゾートバイト.com）_長野県_フロント_1400" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1003012%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="長野県"
-             data-cat="フロント" data-wage="1400">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="フロント" data-wage="1400">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3337,11 +3473,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_兵庫県_仲居・客室係_1440', this)" data-key="グッドマンサービス（リゾートバイト.com）_兵庫県_仲居・客室係_1440" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1003530%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="兵庫県"
-             data-cat="仲居・客室係" data-wage="1440">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="仲居・客室係" data-wage="1440">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3384,11 +3522,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_新潟県_調理（要資格）_1400', this)" data-key="グッドマンサービス（リゾートバイト.com）_新潟県_調理（要資格）_1400" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1007543%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="新潟県"
-             data-cat="調理（要資格）" data-wage="1400">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（要資格）" data-wage="1400">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3431,11 +3571,13 @@
           <div class="lic">派13-300547</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('株式会社ダイブ（リゾートバイトダイブ）_和歌山県_調理_1500', this)" data-key="株式会社ダイブ（リゾートバイトダイブ）_和歌山県_調理_1500" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F209854" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="和歌山県"
-             data-cat="調理" data-wage="1500">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理" data-wage="1500">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3478,11 +3620,13 @@
           <div class="lic">派13-300854</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('株式会社ヒューマニック（リゾバ.com）_群馬県_その他調理_1800', this)" data-key="株式会社ヒューマニック（リゾバ.com）_群馬県_その他調理_1800" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5RSAWI+42GS+63WO2&a8ejpredirect=https%3A%2F%2Fwww.rizoba.com%2Fwork%2F87511%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社ヒューマニック（リゾバ.com）" data-pref="群馬県"
-             data-cat="その他調理" data-wage="1800">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="その他調理" data-wage="1800">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3525,11 +3669,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_神奈川県_調理（資格不要）_1700', this)" data-key="グッドマンサービス（リゾートバイト.com）_神奈川県_調理（資格不要）_1700" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1001429%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="神奈川県"
-             data-cat="調理（資格不要）" data-wage="1700">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（資格不要）" data-wage="1700">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3572,11 +3718,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_静岡県_調理（資格不要）_1800', this)" data-key="グッドマンサービス（リゾートバイト.com）_静岡県_調理（資格不要）_1800" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1001079%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="静岡県"
-             data-cat="調理（資格不要）" data-wage="1800">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（資格不要）" data-wage="1800">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3619,11 +3767,13 @@
           <div class="lic">派13-300547</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('株式会社ダイブ（リゾートバイトダイブ）_長野県_調理補助_1600', this)" data-key="株式会社ダイブ（リゾートバイトダイブ）_長野県_調理補助_1600" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F236923" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="長野県"
-             data-cat="調理補助" data-wage="1600">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理補助" data-wage="1600">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3666,11 +3816,13 @@
           <div class="lic">派23-300784</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('スタッフエージェント_岐阜県_仲居_1600', this)" data-key="スタッフエージェント_岐阜県_仲居_1600" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5SZ642+51UO+5YJRM&a8ejpredirect=https%3A%2F%2Fomotena-work.com%2Frecruit%2F4117%2Fshow" target="_blank" rel="noopener nofollow sponsored"
              data-ag="スタッフエージェント" data-pref="岐阜県"
-             data-cat="仲居" data-wage="1600">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="仲居" data-wage="1600">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3713,11 +3865,13 @@
           <div class="lic">派23-300784</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('スタッフエージェント_北海道_調理師_1600', this)" data-key="スタッフエージェント_北海道_調理師_1600" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5SZ642+51UO+5YJRM&a8ejpredirect=https%3A%2F%2Fomotena-work.com%2Frecruit%2F18185%2Fshow" target="_blank" rel="noopener nofollow sponsored"
              data-ag="スタッフエージェント" data-pref="北海道"
-             data-cat="調理師" data-wage="1600">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理師" data-wage="1600">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3760,11 +3914,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_神奈川県_仲居・客室係_1500', this)" data-key="グッドマンサービス（リゾートバイト.com）_神奈川県_仲居・客室係_1500" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1000241%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="神奈川県"
-             data-cat="仲居・客室係" data-wage="1500">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="仲居・客室係" data-wage="1500">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3807,11 +3963,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_静岡県_調理（資格不要）_1500', this)" data-key="グッドマンサービス（リゾートバイト.com）_静岡県_調理（資格不要）_1500" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1001058%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="静岡県"
-             data-cat="調理（資格不要）" data-wage="1500">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（資格不要）" data-wage="1500">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3854,11 +4012,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_栃木県_館内全般業務_1500', this)" data-key="グッドマンサービス（リゾートバイト.com）_栃木県_館内全般業務_1500" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1000356%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="栃木県"
-             data-cat="館内全般業務" data-wage="1500">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="館内全般業務" data-wage="1500">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3901,11 +4061,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_熊本県_調理（資格不要）_1500', this)" data-key="グッドマンサービス（リゾートバイト.com）_熊本県_調理（資格不要）_1500" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1000607%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="熊本県"
-             data-cat="調理（資格不要）" data-wage="1500">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（資格不要）" data-wage="1500">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3948,11 +4110,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_岐阜県_調理（資格不要）_1500', this)" data-key="グッドマンサービス（リゾートバイト.com）_岐阜県_調理（資格不要）_1500" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1004592%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="岐阜県"
-             data-cat="調理（資格不要）" data-wage="1500">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（資格不要）" data-wage="1500">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3995,11 +4159,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_静岡県_調理（資格不要）_1500', this)" data-key="グッドマンサービス（リゾートバイト.com）_静岡県_調理（資格不要）_1500" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1001095%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="静岡県"
-             data-cat="調理（資格不要）" data-wage="1500">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（資格不要）" data-wage="1500">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4042,11 +4208,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_静岡県_調理（資格不要）_1500', this)" data-key="グッドマンサービス（リゾートバイト.com）_静岡県_調理（資格不要）_1500" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1001107%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="静岡県"
-             data-cat="調理（資格不要）" data-wage="1500">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（資格不要）" data-wage="1500">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4089,11 +4257,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_神奈川県_レストランサービス_1500', this)" data-key="グッドマンサービス（リゾートバイト.com）_神奈川県_レストランサービス_1500" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1001753%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="神奈川県"
-             data-cat="レストランサービス" data-wage="1500">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="レストランサービス" data-wage="1500">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4136,11 +4306,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_岐阜県_調理（資格不要）_1500', this)" data-key="グッドマンサービス（リゾートバイト.com）_岐阜県_調理（資格不要）_1500" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1002216%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="岐阜県"
-             data-cat="調理（資格不要）" data-wage="1500">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（資格不要）" data-wage="1500">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4183,11 +4355,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_岐阜県_調理補助_1450', this)" data-key="グッドマンサービス（リゾートバイト.com）_岐阜県_調理補助_1450" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1004596%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="岐阜県"
-             data-cat="調理補助" data-wage="1450">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理補助" data-wage="1450">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4230,11 +4404,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_北海道_館内全般業務_1500', this)" data-key="グッドマンサービス（リゾートバイト.com）_北海道_館内全般業務_1500" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1005409%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="北海道"
-             data-cat="館内全般業務" data-wage="1500">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="館内全般業務" data-wage="1500">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4277,11 +4453,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_茨城県_調理（資格不要）_1500', this)" data-key="グッドマンサービス（リゾートバイト.com）_茨城県_調理（資格不要）_1500" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1005762%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="茨城県"
-             data-cat="調理（資格不要）" data-wage="1500">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（資格不要）" data-wage="1500">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4324,11 +4502,13 @@
           <div class="lic">派23-300784</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('スタッフエージェント_岐阜県_フロント_1650', this)" data-key="スタッフエージェント_岐阜県_フロント_1650" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5SZ642+51UO+5YJRM&a8ejpredirect=https%3A%2F%2Fomotena-work.com%2Frecruit%2F17174%2Fshow" target="_blank" rel="noopener nofollow sponsored"
              data-ag="スタッフエージェント" data-pref="岐阜県"
-             data-cat="フロント" data-wage="1650">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="フロント" data-wage="1650">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4371,11 +4551,13 @@
           <div class="lic">派23-300784</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('スタッフエージェント_静岡県_調理師_1700', this)" data-key="スタッフエージェント_静岡県_調理師_1700" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5SZ642+51UO+5YJRM&a8ejpredirect=https%3A%2F%2Fomotena-work.com%2Frecruit%2F17592%2Fshow" target="_blank" rel="noopener nofollow sponsored"
              data-ag="スタッフエージェント" data-pref="静岡県"
-             data-cat="調理師" data-wage="1700">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理師" data-wage="1700">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4418,11 +4600,13 @@
           <div class="lic">派13-300547</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('株式会社ダイブ（リゾートバイトダイブ）_東京都_調理_2000', this)" data-key="株式会社ダイブ（リゾートバイトダイブ）_東京都_調理_2000" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F198504" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="東京都"
-             data-cat="調理" data-wage="2000">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理" data-wage="2000">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4465,11 +4649,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_長野県_調理補助_1400', this)" data-key="グッドマンサービス（リゾートバイト.com）_長野県_調理補助_1400" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1006049%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="長野県"
-             data-cat="調理補助" data-wage="1400">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理補助" data-wage="1400">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4512,11 +4698,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_栃木県_フロント_1400', this)" data-key="グッドマンサービス（リゾートバイト.com）_栃木県_フロント_1400" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1001361%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="栃木県"
-             data-cat="フロント" data-wage="1400">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="フロント" data-wage="1400">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4559,11 +4747,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_栃木県_レストランサービス_1400', this)" data-key="グッドマンサービス（リゾートバイト.com）_栃木県_レストランサービス_1400" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1001412%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="栃木県"
-             data-cat="レストランサービス" data-wage="1400">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="レストランサービス" data-wage="1400">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4606,11 +4796,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_栃木県_レストランサービス_1400', this)" data-key="グッドマンサービス（リゾートバイト.com）_栃木県_レストランサービス_1400" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1001455%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="栃木県"
-             data-cat="レストランサービス" data-wage="1400">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="レストランサービス" data-wage="1400">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4653,11 +4845,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_静岡県_館内全般業務_1500', this)" data-key="グッドマンサービス（リゾートバイト.com）_静岡県_館内全般業務_1500" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1001870%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="静岡県"
-             data-cat="館内全般業務" data-wage="1500">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="館内全般業務" data-wage="1500">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4700,11 +4894,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_神奈川県_館内全般業務_1500', this)" data-key="グッドマンサービス（リゾートバイト.com）_神奈川県_館内全般業務_1500" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1002650%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="神奈川県"
-             data-cat="館内全般業務" data-wage="1500">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="館内全般業務" data-wage="1500">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4747,11 +4943,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_石川県_レストランサービス_1400', this)" data-key="グッドマンサービス（リゾートバイト.com）_石川県_レストランサービス_1400" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1002329%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="石川県"
-             data-cat="レストランサービス" data-wage="1400">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="レストランサービス" data-wage="1400">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4794,11 +4992,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_神奈川県_調理（資格不要）_1700', this)" data-key="グッドマンサービス（リゾートバイト.com）_神奈川県_調理（資格不要）_1700" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1002822%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="神奈川県"
-             data-cat="調理（資格不要）" data-wage="1700">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（資格不要）" data-wage="1700">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4841,11 +5041,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_山梨県_フロント_1400', this)" data-key="グッドマンサービス（リゾートバイト.com）_山梨県_フロント_1400" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1004378%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="山梨県"
-             data-cat="フロント" data-wage="1400">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="フロント" data-wage="1400">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4888,11 +5090,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_静岡県_館内全般業務_1450', this)" data-key="グッドマンサービス（リゾートバイト.com）_静岡県_館内全般業務_1450" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1004415%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="静岡県"
-             data-cat="館内全般業務" data-wage="1450">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="館内全般業務" data-wage="1450">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4935,11 +5139,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_長野県_調理（資格不要）_1600', this)" data-key="グッドマンサービス（リゾートバイト.com）_長野県_調理（資格不要）_1600" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1004517%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="長野県"
-             data-cat="調理（資格不要）" data-wage="1600">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（資格不要）" data-wage="1600">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4982,11 +5188,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_神奈川県_館内全般業務_1400', this)" data-key="グッドマンサービス（リゾートバイト.com）_神奈川県_館内全般業務_1400" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1004995%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="神奈川県"
-             data-cat="館内全般業務" data-wage="1400">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="館内全般業務" data-wage="1400">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5029,11 +5237,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_長野県_館内全般業務_1400', this)" data-key="グッドマンサービス（リゾートバイト.com）_長野県_館内全般業務_1400" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1002870%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="長野県"
-             data-cat="館内全般業務" data-wage="1400">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="館内全般業務" data-wage="1400">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5076,11 +5286,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_千葉県_レストランサービス_1400', this)" data-key="グッドマンサービス（リゾートバイト.com）_千葉県_レストランサービス_1400" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1005517%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="千葉県"
-             data-cat="レストランサービス" data-wage="1400">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="レストランサービス" data-wage="1400">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5123,11 +5335,13 @@
           <div class="lic">派23-300784</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('スタッフエージェント_兵庫県_全般業務_1600', this)" data-key="スタッフエージェント_兵庫県_全般業務_1600" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5SZ642+51UO+5YJRM&a8ejpredirect=https%3A%2F%2Fomotena-work.com%2Frecruit%2F5775%2Fshow" target="_blank" rel="noopener nofollow sponsored"
              data-ag="スタッフエージェント" data-pref="兵庫県"
-             data-cat="全般業務" data-wage="1600">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="全般業務" data-wage="1600">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5170,11 +5384,13 @@
           <div class="lic">派23-300784</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('スタッフエージェント_富山県_調理師_1850', this)" data-key="スタッフエージェント_富山県_調理師_1850" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5SZ642+51UO+5YJRM&a8ejpredirect=https%3A%2F%2Fomotena-work.com%2Frecruit%2F17955%2Fshow" target="_blank" rel="noopener nofollow sponsored"
              data-ag="スタッフエージェント" data-pref="富山県"
-             data-cat="調理師" data-wage="1850">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理師" data-wage="1850">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5217,11 +5433,13 @@
           <div class="lic">派13-300547</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('株式会社ダイブ（リゾートバイトダイブ）_静岡県_レストランサービス_1400', this)" data-key="株式会社ダイブ（リゾートバイトダイブ）_静岡県_レストランサービス_1400" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F228614" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="静岡県"
-             data-cat="レストランサービス" data-wage="1400">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="レストランサービス" data-wage="1400">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5264,11 +5482,13 @@
           <div class="lic">派13-300547</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('株式会社ダイブ（リゾートバイトダイブ）_静岡県_レストランサービス_1400', this)" data-key="株式会社ダイブ（リゾートバイトダイブ）_静岡県_レストランサービス_1400" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F228615" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="静岡県"
-             data-cat="レストランサービス" data-wage="1400">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="レストランサービス" data-wage="1400">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5311,11 +5531,13 @@
           <div class="lic">派13-300547</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('株式会社ダイブ（リゾートバイトダイブ）_長野県_調理_1800', this)" data-key="株式会社ダイブ（リゾートバイトダイブ）_長野県_調理_1800" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5R6VAQ+4Z92+BW8O2&a8ejpredirect=https%3A%2F%2Fresortbaito-dive.com%2Fworks%2F231166" target="_blank" rel="noopener nofollow sponsored"
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="長野県"
-             data-cat="調理" data-wage="1800">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理" data-wage="1800">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5358,11 +5580,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_群馬県_調理（資格不要）_1500', this)" data-key="グッドマンサービス（リゾートバイト.com）_群馬県_調理（資格不要）_1500" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1001080%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="群馬県"
-             data-cat="調理（資格不要）" data-wage="1500">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（資格不要）" data-wage="1500">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5405,11 +5629,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_栃木県_調理（資格不要）_1700', this)" data-key="グッドマンサービス（リゾートバイト.com）_栃木県_調理（資格不要）_1700" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1000316%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="栃木県"
-             data-cat="調理（資格不要）" data-wage="1700">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（資格不要）" data-wage="1700">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5452,11 +5678,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_長野県_調理（資格不要）_1500', this)" data-key="グッドマンサービス（リゾートバイト.com）_長野県_調理（資格不要）_1500" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1000955%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="長野県"
-             data-cat="調理（資格不要）" data-wage="1500">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="調理（資格不要）" data-wage="1500">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5499,11 +5727,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_岐阜県_スキー場スタッフ_1350', this)" data-key="グッドマンサービス（リゾートバイト.com）_岐阜県_スキー場スタッフ_1350" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1005766%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="岐阜県"
-             data-cat="スキー場スタッフ" data-wage="1350">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="スキー場スタッフ" data-wage="1350">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5546,11 +5776,13 @@
           <div class="lic">派13-302871</div>
           
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep" onclick="toggleKeep('グッドマンサービス（リゾートバイト.com）_岐阜県_スキー場その他_1350', this)" data-key="グッドマンサービス（リゾートバイト.com）_岐阜県_スキー場その他_1350" title="候補としてキープ">☆ キープ</button>
           <a class="cta" href="https://px.a8.net/svt/ejp?a8mat=4BC7V7+5QLFOY+3OHQ+BW8O2&a8ejpredirect=https%3A%2F%2Fwww.resortbaito.com%2F1005781%2F" target="_blank" rel="noopener nofollow sponsored"
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="岐阜県"
-             data-cat="スキー場その他" data-wage="1350">空き確認・応募（公式）</a>
-          <div class="lic">9時間前に掲載を確認</div>
+             data-cat="スキー場その他" data-wage="1350">空き枠を確認（公式）</a>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">9時間前に掲載を確認</div>
         </td>
       </tr>
           </tbody>
@@ -6079,6 +6311,8 @@ function init(){
   });
   applyUrlParams();
   collapseFiltersOnPhone();
+  updateKeptBadge();
+  showRestoreChip();
 }
 
 // ★2026-09-18：スマホ実測で、最初の求人が画面の1,137px下にあった。
@@ -6152,6 +6386,165 @@ function applyUrlParams(){
     if (btn) btn.setAttribute("aria-expanded", "true");
     render();
   }
+}
+
+// ==========================================
+// キープ（検討中）機能
+// ==========================================
+function getKeptKeys() {
+  try {
+    return JSON.parse(localStorage.getItem("rs_kept_jobs") || "[]");
+  } catch(e) { return []; }
+}
+function setKeptKeys(keys) {
+  try {
+    localStorage.setItem("rs_kept_jobs", JSON.stringify(keys));
+  } catch(e) {}
+}
+function jobKeyOf(j) {
+  return (j.agency || "") + "_" + (j.prefecture || "") + "_" + (j.job_category || "") + "_" + (j.wage_min || "");
+}
+function toggleKeep(key, btn) {
+  let keys = getKeptKeys();
+  const idx = keys.indexOf(key);
+  if (idx >= 0) {
+    keys.splice(idx, 1);
+    if (btn) { btn.classList.remove("kept"); btn.textContent = "☆ キープ"; }
+  } else {
+    keys.push(key);
+    if (btn) { btn.classList.add("kept"); btn.textContent = "★ キープ中"; }
+  }
+  setKeptKeys(keys);
+  updateKeptBadge();
+  if (isKeptOnlyMode) render();
+}
+function updateKeptBadge() {
+  const keys = getKeptKeys();
+  const b = document.getElementById("kept-count-badge");
+  if (b) b.textContent = keys.length;
+}
+let isKeptOnlyMode = false;
+function toggleKeptOnly(btn) {
+  isKeptOnlyMode = !isKeptOnlyMode;
+  if (btn) {
+    if (isKeptOnlyMode) btn.classList.add("active");
+    else btn.classList.remove("active");
+  }
+  render();
+}
+
+// ==========================================
+// 前回検索条件の保存とワンタップ復元
+// ==========================================
+function saveLastSearch(cond) {
+  if (!cond) return;
+  const hasCond = cond.reg || cond.pref || cond.dorm || (cond.wage > 0) || (cond.netWage > 0) || cond.meals || cond.catRx || cond.q || cond.dateSpecified || (cond.checks && cond.checks.length);
+  if (!hasCond) return;
+
+  const labels = [];
+  if (cond.pref) labels.push(cond.pref);
+  else if (cond.reg) labels.push(cond.reg);
+  if (cond.dorm) labels.push(cond.dorm);
+  if (cond.wage > 0) labels.push(`時給${cond.wage}円〜`);
+  if (cond.netWage > 0) labels.push(`手取${Math.round(cond.netWage/10000)}万〜`);
+  if (cond.q) labels.push(cond.q);
+
+  const checkList = [];
+  ["tooshi","nakanuke","lessot","extend","friendly","deai","newdorm","roombath","onsen","convenience","ski","car","commute","immediate","wifi","dormfree","zerocost","newbie","friends"].forEach(k => {
+    if (cond[k]) checkList.push(k);
+  });
+
+  const savedObj = {
+    filters: {
+      reg: cond.reg || "", pref: cond.pref || "", dorm: cond.dorm || "",
+      wage: cond.wage || 0, netWage: cond.netWage || 0, meals: cond.meals || "",
+      cat: document.getElementById("f-cat") ? document.getElementById("f-cat").value : "",
+      q: cond.q || "", sDate: cond.sDate || "",
+      eDate: document.getElementById("f-end-date") ? document.getElementById("f-end-date").value : "",
+      tSel: document.getElementById("f-term-select") ? document.getElementById("f-term-select").value : "",
+      checks: checkList
+    },
+    summary: labels.slice(0, 2).join("・") || "前回の条件"
+  };
+  try {
+    localStorage.setItem("rs_last_search", JSON.stringify(savedObj));
+    showRestoreChip();
+  } catch(e) {}
+}
+
+function showRestoreChip() {
+  try {
+    const raw = localStorage.getItem("rs_last_search");
+    if (!raw) return;
+    const saved = JSON.parse(raw);
+    const chip = document.getElementById("chip-restore-last");
+    const txt = document.getElementById("chip-restore-text");
+    if (chip && txt && saved.summary) {
+      txt.textContent = `↺ 前回復元: ${saved.summary}`;
+      chip.style.display = "inline-flex";
+    }
+  } catch(e) {}
+}
+
+function restoreLastSearch() {
+  try {
+    const raw = localStorage.getItem("rs_last_search");
+    if (!raw) return;
+    const { filters } = JSON.parse(raw);
+    if (!filters) return;
+
+    const set = (id, v) => { const e = document.getElementById(id); if (e) e.value = v || (id === "f-wage" || id === "f-net-wage" ? "0" : ""); };
+    set("f-region", filters.reg);
+    set("f-pref", filters.pref);
+    set("f-dorm", filters.dorm);
+    set("f-wage", filters.wage);
+    set("f-net-wage", filters.netWage);
+    set("f-meals", filters.meals);
+    set("f-cat", filters.cat);
+    set("f-q", filters.q);
+    set("f-start-date", filters.sDate);
+    set("f-end-date", filters.eDate);
+    set("f-term-select", filters.tSel);
+
+    document.querySelectorAll(".checks input[type=checkbox]").forEach(c => {
+      const k = c.id.replace("c-", "");
+      c.checked = filters.checks ? filters.checks.includes(k) : false;
+      syncChipState(c.id);
+    });
+
+    F = null;
+    render();
+    updateToggleLabel();
+    const panel = document.getElementById("filter-panel");
+    const btn = document.getElementById("filter-toggle");
+    if (panel) panel.classList.remove("closed");
+    if (btn) btn.setAttribute("aria-expanded", "true");
+  } catch(e) {}
+}
+
+// ==========================================
+// 条件をすべてクリア
+// ==========================================
+function clearAllFilters() {
+  const set = (id, v) => { const e = document.getElementById(id); if (e) e.value = v; };
+  ["f-region","f-pref","f-dorm","f-meals","f-cat","f-q","f-start-date","f-end-date","f-term-select"].forEach(id => set(id, ""));
+  set("f-wage", "0");
+  set("f-net-wage", "0");
+  document.querySelectorAll(".checks input[type=checkbox]").forEach(c => {
+    c.checked = false;
+    syncChipState(c.id);
+  });
+  document.querySelectorAll(".quick-chips-bar .chip-pill").forEach(p => {
+    if (p.id !== "chip-restore-last" && p.id !== "chip-show-kept") p.classList.remove("active");
+  });
+  isKeptOnlyMode = false;
+  const keptChip = document.getElementById("chip-show-kept");
+  if (keptChip) keptChip.classList.remove("active");
+
+  F = null;
+  render();
+  updateToggleLabel();
+  updateUrlParams();
 }
 
 // ★2026-09-19：ここは求人1件ごとに document.getElementById を20回以上
@@ -6975,11 +7368,18 @@ function render(){
   // 以前は求人1件ごとにDOMを引いていて、12,879件×20回になっていた。
   F = readFilters();
   refreshScoreDay();
-  const matched = JOBS.filter(passes);
+  saveLastSearch(F);
+
+  const keptKeys = getKeptKeys();
+  let matched = JOBS.filter(passes);
+  if (isKeptOnlyMode) {
+    matched = matched.filter(j => keptKeys.includes(jobKeyOf(j)));
+  }
+
   const sortMode = (document.getElementById("f-sort") || {}).value || "recommend";
   const unknown = matched.filter(j => j._periodUnknown).length;
   const el0 = document.getElementById("count");
-  el0.textContent = `該当 ${matched.length.toLocaleString()} 件 / 全 ${JOBS.length.toLocaleString()} 件`;
+  el0.textContent = `該当 ${matched.length.toLocaleString()} 件 / 全 ${JOBS.length.toLocaleString()} 件${isKeptOnlyMode ? '（★キープ中の求人のみ表示中）' : ''}`;
   if (unknown > 0) {
     el0.textContent += `（うち ${unknown.toLocaleString()} 件は期間の記載がなく判定不可）`;
   }
@@ -6998,6 +7398,7 @@ function render(){
 
   updateToggleLabel();
   updateAdvCount();
+  updateKeptBadge();
 
   const sn = document.getElementById("sort-note");
   if (sn) {
@@ -7013,6 +7414,17 @@ function render(){
 
   const el = document.getElementById("results");
   if (!matched.length) {
+    if (isKeptOnlyMode) {
+      el.innerHTML = `
+        <div class="empty" style="background:var(--card);border:1px solid var(--line);border-radius:10px;padding:32px 18px;text-align:center;margin:16px 0">
+          <div style="font-weight:700;font-size:16px;color:var(--ink);margin-bottom:8px">★ キープ中の求人はまだありません</div>
+          <p style="font-size:13px;color:var(--sub);margin:0 auto 16px;max-width:480px;line-height:1.8">
+            気になる求人の「☆ キープ」ボタンを押すと、ここに一覧でキープして後から比較できます。
+          </p>
+          <button type="button" class="btn-chip active" onclick="toggleKeptOnly(document.getElementById('chip-show-kept'))">すべての求人を表示する</button>
+        </div>`;
+      return;
+    }
     const cond = currentConditions();
     const condParts = [];
     if (cond.pref) condParts.push(cond.pref);
@@ -7098,11 +7510,6 @@ function render(){
   }
 
   const PAGE = 100;
-  // ★2026-09-19：ここだけ3社を直書きしていた。A8で9/14にダイブと
-  //   ヒューマニックの提携が承認され、PARTNERS（おすすめ順の加点）には
-  //   反映されていたのに、「提携公式」バッジと応募ボタンの文言は
-  //   古い3社のままだった。派遣会社には「加点幅は提携先であれば全社同じ」
-  //   と説明しているので、表示だけ食い違うのは良くない。PARTNERS から引く。
   const partnerAgencies = PARTNERS;
   const sorted = matched.sort((a,b) => {
     const isHourlyA = a.wage_type === "時給";
@@ -7120,9 +7527,6 @@ function render(){
   const rows = shown.map(j => {
     const dCost = j.dorm_cost;
     const dRaw = j.dorm_label || "";
-    // ★2026-09-19：dorm_label はこちらの語彙なので整形は不要。
-    //   整形関数の中に各社の原文を例として書いていて、それ自体が
-    //   書いてあり、それが公開HTMLに残っていた。関数ごと消した。
     const dRawClean = dRaw;
     let dBadge = "";
     if (dCost === 0) {
@@ -7138,9 +7542,10 @@ function render(){
       : "";
     const isPart = partnerAgencies.some(p => (j.agency || "").includes(p));
     const partBadge = isPart ? '<span class="badge badge-partner">提携公式</span>' : '';
-    const btnText = isPart ? '空き確認・応募（公式）' : '空き状況・詳細（公式）';
+    const btnText = isPart ? '空き枠を確認（公式）' : '空き状況・詳細（公式）';
+    const jKey = jobKeyOf(j);
+    const isKept = keptKeys.includes(jKey);
 
-    // 各社のタグ文言はそのまま持たず、生成側で判定した結果だけを受け取る
     const hasTooshi = !!j.f_tooshi;
     const hasNakanuke = !!j.f_nakanuke;
     const hasLessOt = !!j.f_lessot;
@@ -7220,11 +7625,13 @@ function render(){
           <div class="lic">${LICENSE_BY_AGENCY[j.agency] || ""}</div>
           ${AGENCY_NOTES[j.agency] ? '<div class="lic" style="color:var(--warn)">※' + AGENCY_NOTES[j.agency] + '</div>' : ""}
         </td>
-        <td>
+        <td style="text-align:right">
+          <button type="button" class="btn-keep ${isKept ? 'kept' : ''}" onclick="toggleKeep('${jKey}', this)" data-key="${jKey}" title="候補としてキープ">${isKept ? '★ キープ中' : '☆ キープ'}</button>
           <a class="cta" href="${linkUrlOf(j)}" target="_blank" rel="noopener nofollow sponsored"
              data-ag="${j.agency || ''}" data-pref="${j.prefecture || ''}" data-cat="${j.job_category || ''}"
              data-wage="${j.wage_min || ''}" data-mm="${j.min_months == null ? '' : j.min_months}">${btnText}</a>
-          <div class="lic">${ago(j.fetched_at)}</div>
+          <div class="cta-sub">各社の公式ページへ移動します</div>
+          <div class="lic" style="margin-top:2px">${ago(j.fetched_at)}</div>
         </td>
       </tr>`;
   }).join("");

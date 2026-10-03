@@ -108,6 +108,10 @@ footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line);
       <label for="town">町名（例：池上、久が原）</label>
       <select id="town" data-clarity-mask="true"><option value="">すべての町</option></select>
     </div>
+    <div class="field" id="chomeField" hidden>
+      <label for="chome">丁目（住所の町名のあとの数字。例：6）</label>
+      <select id="chome" data-clarity-mask="true"><option value="">すべて</option></select>
+    </div>
     <div class="field">
       <label for="q">名前・住所の一部（わからなければ空欄で可）</label>
       <input id="q" type="search" placeholder="例：さくら薬局、〇〇クリニック、駅名" autocomplete="off" data-clarity-mask="true">
@@ -175,6 +179,7 @@ footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line);
     r.key = norm(r[2] + r[3] + r[6]);
     // 住所から区市町村名を外し、最初の数字の手前までを町名とする（例：大田区池上６－１ → 池上）
     r.town = r[3].replace(d.munis[r[1]], "").replace(/^東京都/, "").match(/^[^0-9０-９－-]+/)?.[0].trim() || "";
+    r.chome = (() => { const a = r.town ? r[3].normalize("NFKC").split(r.town.normalize("NFKC"))[1] : ""; const m = (a || "").match(/^\s*(\d{1,2})(?!\d)/); return m ? m[1] : ""; })();
   });
   const townSel = $("town"), townField = $("townField");
   function fillTowns() {
@@ -185,6 +190,19 @@ footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line);
     const counts = {};
     d.rows.forEach((r) => { if (r[1] === +mi && r[0] === kind && r.town) counts[r.town] = (counts[r.town] || 0) + 1; });
     Object.keys(counts).sort((a, b) => a.localeCompare(b, "ja")).forEach((t) => townSel.add(new Option(`${t}（${counts[t]}）`, t)));
+  }
+  const chomeSel = $("chome"), chomeField = $("chomeField");
+  function fillChomes() {
+    const mi = muniSel.value, kind = document.querySelector("input[name=kind]:checked").value, town = townSel.value;
+    chomeSel.length = 1;
+    chomeField.hidden = true;
+    if (mi === "" || town === "") return;
+    const counts = {};
+    d.rows.forEach((r) => { if (r[1] === +mi && r[0] === kind && r.town === town && r.chome) counts[r.chome] = (counts[r.chome] || 0) + 1; });
+    const keys = Object.keys(counts).sort((a, b) => a - b);
+    if (keys.length < 2) return;
+    keys.forEach((c) => chomeSel.add(new Option(`${c}（${counts[c]}）`, c)));
+    chomeField.hidden = false;
   }
   $("asof").textContent = d.as_of.replace(/^(\d+)-(\d+)-(\d+)$/, (_, y, m, day) => `${y}年${+m}月${+day}日`);
   d.munis.forEach((m, i) => muniSel.add(new Option(m, i)));
@@ -215,14 +233,17 @@ footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line);
     // 東京都全体のままで名前も空だと件数が多すぎるので、どちらかを入れてもらう
     if (mi === "" && words.length === 0) { hits = []; count.textContent = "名前を入れるか、区市町村を選んでください。"; render(true); return; }
     const town = mi === "" ? "" : townSel.value;
-    hits = d.rows.filter((r) => r[0] === kind && (mi === "" || r[1] === +mi) && (town === "" || r.town === town) && words.every((w) => r.key.includes(w)));
-    count.textContent = `${mi === "" ? "東京都全体" : d.munis[mi] + town}の${d.kinds[kind]}：${hits.length}件`;
+    const chome = (mi === "" || town === "" || chomeField.hidden) ? "" : chomeSel.value;
+    hits = d.rows.filter((r) => r[0] === kind && (mi === "" || r[1] === +mi) && (town === "" || r.town === town) && (chome === "" || r.chome === chome) && words.every((w) => r.key.includes(w)));
+    count.textContent = `${mi === "" ? "東京都全体" : d.munis[mi] + town + (chome ? chome + "丁目付近" : "")}の${d.kinds[kind]}：${hits.length}件`;
+    if (hits.length > 20 && mi !== "" && town === "") count.textContent += "（町名を選ぶと数件に絞れます）";
     none.hidden = hits.length > 0;
     render(true);
   }
-  muniSel.addEventListener("change", () => { fillTowns(); update(); });
-  townSel.addEventListener("change", update);
-  $("kinds").addEventListener("change", () => { const t = townSel.value; fillTowns(); townSel.value = [...townSel.options].some((o) => o.value === t) ? t : ""; update(); });
+  muniSel.addEventListener("change", () => { fillTowns(); fillChomes(); update(); });
+  townSel.addEventListener("change", () => { fillChomes(); update(); });
+  chomeSel.addEventListener("change", update);
+  $("kinds").addEventListener("change", () => { const t = townSel.value; fillTowns(); townSel.value = [...townSel.options].some((o) => o.value === t) ? t : ""; fillChomes(); update(); });
   q.addEventListener("input", update);
   more.addEventListener("click", () => render(false));
   update();

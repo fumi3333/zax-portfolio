@@ -1,4 +1,4 @@
-/* menkyo-sort Vanilla JS App with Skyscanner-Style Calendar & Keep Feature */
+/* menkyo-sort Vanilla JS App with Skyscanner-Style Calendar, Keep Feature & Side-by-Side Comparison */
 document.addEventListener('DOMContentLoaded', () => {
   const cardsContainer = document.getElementById('school-list');
   if (!cardsContainer) return;
@@ -25,6 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const keepFilterBtn = document.getElementById('btn-keep-filter');
   const keepCountBadge = document.getElementById('keep-count');
   const restoreBtn = document.getElementById('btn-restore-search');
+  const compareBtn = document.getElementById('btn-open-compare');
+  const compareModal = document.getElementById('compare-modal');
+  const compareModalClose = document.getElementById('compare-modal-close');
+  const compareModalBody = document.getElementById('compare-modal-body');
 
   // 内部状態
   let selectedDate = null; // 'YYYY-MM-DD'
@@ -54,6 +58,10 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateKeepUI() {
     const kept = getKeptSlugs();
     if (keepCountBadge) keepCountBadge.textContent = kept.length;
+
+    if (compareBtn) {
+      compareBtn.style.display = kept.length >= 1 ? 'inline-flex' : 'none';
+    }
 
     cards.forEach(card => {
       const slug = card.dataset.schoolSlug;
@@ -110,6 +118,154 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // 横並び一括比較モーダル
+  function renderCompareModal() {
+    if (!compareModalBody) return;
+    const keptSlugs = getKeptSlugs();
+    const schoolsMeta = window.SCHOOLS_META || {};
+
+    if (keptSlugs.length === 0) {
+      compareModalBody.innerHTML = `
+        <div style="text-align:center;padding:40px 20px;color:var(--sub);">
+          <p style="font-size:15px;margin-bottom:8px;">キープされている教習所がありません。</p>
+          <p style="font-size:12px;">一覧の「★ キープ」ボタンを押すと、最大4校まで料金や条件を横並びで比較できます。</p>
+        </div>
+      `;
+      return;
+    }
+
+    const keptSchools = keptSlugs.map(slug => ({ slug, ...(schoolsMeta[slug] || {}) })).filter(s => s.name);
+
+    let headerCols = '<th style="width:120px;background:var(--card);">項目</th>';
+    let rowName = '<th>教習所名</th>';
+    let rowLocation = '<th>所在地</th>';
+    let rowMinPrice = '<th>AT最安値</th>';
+    let rowDays = '<th>最短日数</th>';
+    let rowDiff = '<th>サイト間価格差</th>';
+    let rowSeason = '<th>時期による価格差</th>';
+    let rowFeatures = '<th>特徴・設備</th>';
+    let rowLinks = '<th>公式サイト</th>';
+    let rowActions = '<th>キープ解除</th>';
+
+    keptSchools.forEach(s => {
+      headerCols += `<th class="compare-school-col" style="background:var(--card);font-weight:700;"><a href="./school/${s.slug}/" target="_blank" style="color:var(--ink);text-decoration:none;">${s.name} ↗</a></th>`;
+      rowName += `<td><b>${s.name}</b></td>`;
+      rowLocation += `<td>${s.pref} (${s.region || ''})</td>`;
+      rowMinPrice += `<td><span class="compare-school-price">¥${(s.min_price || 0).toLocaleString()}〜</span></td>`;
+      rowDays += `<td>AT: 最短14日間<br>MT: 最短16日間</td>`;
+      
+      const siteDiffText = s.site_diff > 0 ? `<span class="price-diff-badge">最大 ¥${s.site_diff.toLocaleString()} 差</span>` : '<span style="color:var(--sub);">同一価格帯</span>';
+      rowDiff += `<td>${siteDiffText}</td>`;
+
+      const seasonDiffText = s.season_diff > 0 ? `最大 ¥${s.season_diff.toLocaleString()} 差` : '<span style="color:var(--sub);">-</span>';
+      rowSeason += `<td>${seasonDiffText}</td>`;
+
+      const feats = (s.features || []).slice(0, 4).map(f => `<span class="tag" style="margin:2px;">${f}</span>`).join('');
+      rowFeatures += `<td>${feats || '<span style="color:var(--sub);">-</span>'}</td>`;
+
+      let sourceBtns = '';
+      const sources = s.sources || {};
+      for (const [siteName, url] of Object.entries(sources)) {
+        sourceBtns += `<a href="${url}" target="_blank" rel="nofollow noopener" class="btn-agency" style="display:inline-block;margin:2px;">${siteName} ↗</a>`;
+      }
+      rowLinks += `<td><div class="agency-btns">${sourceBtns || '<a href="./school/' + s.slug + '/" class="btn-agency">詳細を見る</a>'}</div></td>`;
+
+      rowActions += `<td><button type="button" class="btn-clear-filters modal-unkeep-btn" data-slug="${s.slug}" style="padding:4px 8px;font-size:11px;">✕ 削除</button></td>`;
+    });
+
+    compareModalBody.innerHTML = `
+      <div style="overflow-x:auto;">
+        <table class="compare-table">
+          <thead><tr>${headerCols}</tr></thead>
+          <tbody>
+            <tr>${rowLocation}</tr>
+            <tr>${rowMinPrice}</tr>
+            <tr>${rowDays}</tr>
+            <tr>${rowDiff}</tr>
+            <tr>${rowSeason}</tr>
+            <tr>${rowFeatures}</tr>
+            <tr>${rowLinks}</tr>
+            <tr>${rowActions}</tr>
+          </tbody>
+        </table>
+      </div>
+    `;
+
+    // モーダル内のキープ解除ボタンイベント
+    compareModalBody.querySelectorAll('.modal-unkeep-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const slug = btn.dataset.slug;
+        let kept = getKeptSlugs().filter(s => s !== slug);
+        setKeptSlugs(kept);
+        updateKeepUI();
+        renderCompareModal();
+        if (keepOnly) applyFilters();
+      });
+    });
+  }
+
+  function openCompareModal() {
+    if (!compareModal) return;
+    renderCompareModal();
+    compareModal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    sendLog('open_compare', { keptCount: getKeptSlugs().length });
+  }
+
+  function closeCompareModal() {
+    if (!compareModal) return;
+    compareModal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  if (compareBtn) {
+    compareBtn.addEventListener('click', openCompareModal);
+  }
+  if (compareModalClose) {
+    compareModalClose.addEventListener('click', closeCompareModal);
+  }
+  if (compareModal) {
+    compareModal.addEventListener('click', (e) => {
+      if (e.target === compareModal) closeCompareModal();
+    });
+  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && compareModal && compareModal.style.display === 'flex') {
+      closeCompareModal();
+    }
+  });
+
+  // スカイスキャナー型カレンダー：卒業予定日逆算計算ヘルパー
+  const WEEKDAYS = ['日', '月', '火', '水', '木', '金', '土'];
+  function formatGraduationSchedule(dateStr, minPrice) {
+    const [y, m, d] = dateStr.split('-').map(Number);
+    const startDate = new Date(y, m - 1, d);
+    const startW = WEEKDAYS[startDate.getDay()];
+
+    // AT最短: 14日間（開始日を含めて14日目 = +13日）
+    const atGradDate = new Date(startDate);
+    atGradDate.setDate(atGradDate.getDate() + 13);
+    const atM = atGradDate.getMonth() + 1;
+    const atD = atGradDate.getDate();
+    const atW = WEEKDAYS[atGradDate.getDay()];
+
+    // MT最短: 16日間（開始日を含めて16日目 = +15日）
+    const mtGradDate = new Date(startDate);
+    mtGradDate.setDate(mtGradDate.getDate() + 15);
+    const mtM = mtGradDate.getMonth() + 1;
+    const mtD = mtGradDate.getDate();
+    const mtW = WEEKDAYS[mtGradDate.getDay()];
+
+    return `
+      <div>
+        <span>入校: <b>${y}年${m}月${d}日(${startW})</b></span>
+        <span style="margin:0 6px;color:var(--sub);">→</span>
+        <span>最短卒業目安: <b>AT ${atM}月${atD}日(${atW}) [14日間]</b> / <b>MT ${mtM}月${mtD}日(${mtW}) [16日間]</b></span>
+        <span style="margin-left:8px;padding-left:8px;border-left:1px solid var(--line);">最安実測: <b>¥${minPrice.toLocaleString()}〜</b></span>
+      </div>
+    `;
+  }
+
   // スカイスキャナー型カレンダー：月切り替えタブ
   calMonthBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -145,8 +301,7 @@ document.addEventListener('DOMContentLoaded', () => {
       cell.classList.add('active');
 
       if (calActiveBar && calSelectedInfo) {
-        const [y, m, d] = dateStr.split('-');
-        calSelectedInfo.innerHTML = `選択中: <b>${y}年${parseInt(m,10)}月${parseInt(d,10)}日入校</b> (最安実測: <b>¥${minPrice.toLocaleString()}〜</b>)`;
+        calSelectedInfo.innerHTML = formatGraduationSchedule(dateStr, minPrice);
         calActiveBar.style.display = 'flex';
       }
 
@@ -245,7 +400,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const cardRegion = card.dataset.region || '';
       const cardPref = card.dataset.pref || '';
       const cardRooms = card.dataset.rooms || '';
-      const cardFeatures = (card.dataset.features || '').toLowerCase();
       const minPrice = parseInt(card.dataset.minPrice || '0', 10);
       const siteDiff = parseInt(card.dataset.siteDiff || '0', 10);
       const seasonDiff = parseInt(card.dataset.seasonDiff || '0', 10);
@@ -424,6 +578,13 @@ document.addEventListener('DOMContentLoaded', () => {
       date: selectedDate
     });
   });
+
+  // モバイル固定バーのスクロール
+  if (mobileBar) {
+    mobileBar.addEventListener('click', () => {
+      cardsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
 
   // 初期化実行
   updateKeepUI();

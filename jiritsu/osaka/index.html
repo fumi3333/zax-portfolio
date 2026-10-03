@@ -141,7 +141,7 @@ footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line);
   <ul class="list" id="list" data-clarity-mask="true"></ul>
   <button class="more" id="more" hidden>さらに表示</button>
 
-  <details class="box" id="next" open><summary><b>この後：申請書をどこに出す？</b></summary><p>出す先は、病院・薬局の場所ではなく、<b>お住まいの区</b>の窓口です（大阪市の案内：「新規申請の場合はお住まいの区の窓口受付日が有効期間の始期」）。窓口の場所と必要書類は、<a href="https://www.city.osaka.lg.jp/kenko/page/0000005863.html" target="_blank" rel="noopener">大阪市の公式ページ</a>で確認してください。</p></details>
+  <details class="box" id="next" open><summary><b>この後：申請書をどこに出す？</b></summary><p>出す先は、病院・薬局の場所ではなく、<b>お住まいの区</b>の窓口です。</p><div class="field"><label for="homeMuni">住んでいる区</label><select id="homeMuni" data-clarity-mask="true"><option value="">選んでください</option></select></div><div id="madoguchi" data-clarity-mask="true"></div></details>
 
   <h2>病院や薬局を変える時</h2><p>受給者証に書いた医療機関を変える時は、お住まいの区の窓口での手続きが要ります（大阪市の必要書類一覧に「医療機関変更・追加」の項目があります）。</p><p class="meta">出典：<a href="https://www.city.osaka.lg.jp/kenko/page/0000005863.html">大阪市「自立支援医療（精神通院）」</a></p>
 
@@ -223,6 +223,35 @@ footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line);
   more.addEventListener("click", () => render(false));
   update();
 
+})();
+</script>
+
+
+<script>
+(async () => {
+  const box = document.getElementById("madoguchi"), sel = document.getElementById("homeMuni");
+  const mg = await fetch("madoguchi.json").then((r) => r.json()).catch(() => ({}));
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const tel = (p) => `<a href="tel:${p.replace(/[^0-9]/g, "")}">${esc(p)}</a>`;
+  const map = (q) => `<a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}" target="_blank" rel="noopener">Google マップで開く</a>`;
+  Object.keys(mg).filter((k) => !k.startsWith("_")).forEach((k) => sel.add(new Option(k, k)));
+  sel.addEventListener("change", () => {
+    const m = sel.value, o = mg[m];
+    if (!o) { box.innerHTML = ""; return; }
+    let h = `<div class="office"><div class="name">${esc(o.name)}</div>`;
+    if (o.offices) {
+      h += o.offices.map((f) => `<div class="meta">${esc(f.where)}　${tel(f.phone)}　${map("浜松市 " + f.where.replace("内", ""))}</div>`).join("");
+    } else {
+      h += `<div class="meta">〒${esc(o.postal)} ${esc(o.address)}</div>`;
+      if (o.phone) h += `<div class="meta">${esc(o.section)}　${tel(o.phone)}</div>`;
+      else h += `<div class="meta">電話番号は<a href="${esc(o.list_url)}" target="_blank" rel="noopener">${esc(m)}役所の担当一覧</a>で確認できます</div>`;
+      h += `<div class="meta">${map(o.address + " " + m + "役所")}</div>`;
+    }
+    h += "</div>";
+    if (mg._note) h += `<p class="meta">${esc(mg._note)}</p>`;
+    h += `<p class="meta">出典：<a href="${esc(mg._source)}" target="_blank" rel="noopener">公式ページ</a>（${esc(mg._checked)}に確認）</p>`;
+    box.innerHTML = h;
+  });
 })();
 </script>
 </body>

@@ -1,0 +1,157 @@
+{
+ "_note": "所在地は大阪市の「保健福祉センター（自立支援医療（精神通院）担当課）」のページによります。電話番号は、区の担当一覧ページに「自立支援医療（精神通院）」の担当と明記されている区だけ表示しています。",
+ "_source": "https://www.city.osaka.lg.jp/fukushi/page/0000371237.html",
+ "_checked": "2026-10-03",
+ "北区": {
+  "name": "北区保健福祉センター（自立支援医療担当）",
+  "postal": "530-8401",
+  "address": "大阪市北区扇町2-1-27",
+  "list_url": "https://www.city.osaka.lg.jp/kita/soshiki_list.html",
+  "section": "健康課健康づくり担当",
+  "phone": "06-6313-9882"
+ },
+ "都島区": {
+  "name": "都島区保健福祉センター（自立支援医療担当）",
+  "postal": "534-8501",
+  "address": "大阪市都島区中野町2-16-20",
+  "list_url": "https://www.city.osaka.lg.jp/miyakojima/soshiki_list.html"
+ },
+ "福島区": {
+  "name": "福島区保健福祉センター（自立支援医療担当）",
+  "postal": "553-8501",
+  "address": "大阪市福島区大開1-8-1",
+  "list_url": "https://www.city.osaka.lg.jp/fukushima/soshiki_list.html"
+ },
+ "此花区": {
+  "name": "此花区保健福祉センター（自立支援医療担当）",
+  "postal": "554-8501",
+  "address": "大阪市此花区春日出北1-8-4",
+  "list_url": "https://www.city.osaka.lg.jp/konohana/soshiki_list.html"
+ },
+ "中央区": {
+  "name": "中央区保健福祉センター（自立支援医療担当）",
+  "postal": "541-8518",
+  "address": "大阪市中央区久太郎町1-2-27",
+  "list_url": "https://www.city.osaka.lg.jp/chuo/soshiki_list.html"
+ },
+ "西区": {
+  "name": "西区保健福祉センター（自立支援医療担当）",
+  "postal": "550-8501",
+  "address": "大阪市西区新町4-5-14",
+  "list_url": "https://www.city.osaka.lg.jp/nishi/soshiki_list.html"
+ },
+ "港区": {
+  "name": "港区保健福祉センター（自立支援医療担当）",
+  "postal": "552-8510",
+  "address": "大阪市港区市岡1-15-25",
+  "list_url": "https://www.city.osaka.lg.jp/minato/soshiki_list.html"
+ },
+ "大正区": {
+  "name": "大正区保健福祉センター（自立支援医療担当）",
+  "postal": "551-8501",
+  "address": "大阪市大正区千島2-7-95",
+  "list_url": "https://www.city.osaka.lg.jp/taisho/soshiki_list.html"
+ },
+ "天王寺区": {
+  "name": "天王寺区保健福祉センター（自立支援医療担当）",
+  "postal": "543-8501",
+  "address": "大阪市天王寺区真法院町20-33",
+  "list_url": "https://www.city.osaka.lg.jp/tennoji/soshiki_list.html",
+  "section": "保健福祉課福祉サービスグループ",
+  "phone": "06-6774-9857"
+ },
+ "浪速区": {
+  "name": "浪速区保健福祉センター（自立支援医療担当）",
+  "postal": "556-8501",
+  "address": "大阪市浪速区敷津東1-4-20",
+  "list_url": "https://www.city.osaka.lg.jp/naniwa/soshiki_list.html"
+ },
+ "西淀川区": {
+  "name": "西淀川区保健福祉センター（自立支援医療担当）",
+  "postal": "555-8501",
+  "address": "大阪市西淀川区御幣島1-2-10",
+  "list_url": "https://www.city.osaka.lg.jp/nishiyodogawa/soshiki_list.html",
+  "section": "保健福祉課総合福祉グループ（障がい者支援チーム）",
+  "phone": "06-6478-9954"
+ },
+ "淀川区": {
+  "name": "淀川区保健福祉センター（自立支援医療担当）",
+  "postal": "532-8501",
+  "address": "大阪市淀川区十三東2-3-3",
+  "list_url": "https://www.city.osaka.lg.jp/yodogawa/soshiki_list.html"
+ },
+ "東淀川区": {
+  "name": "東淀川区保健福祉センター（自立支援医療担当）",
+  "postal": "533-8501",
+  "address": "大阪市東淀川区豊新2-1-4",
+  "list_url": "https://www.city.osaka.lg.jp/higashiyodogawa/soshiki_list.html"
+ },
+ "東成区": {
+  "name": "東成区保健福祉センター（自立支援医療担当）",
+  "postal": "537-8501",
+  "address": "大阪市東成区大今里西2-8-4",
+  "list_url": "https://www.city.osaka.lg.jp/higashinari/soshiki_list.html"
+ },
+ "生野区": {
+  "name": "生野区保健福祉センター（自立支援医療担当）",
+  "postal": "544-8501",
+  "address": "大阪市生野区勝山南3-1-19",
+  "list_url": "https://www.city.osaka.lg.jp/ikuno/soshiki_list.html"
+ },
+ "旭区": {
+  "name": "旭区保健福祉センター（自立支援医療担当）",
+  "postal": "535-8501",
+  "address": "大阪市旭区大宮1-1-17",
+  "list_url": "https://www.city.osaka.lg.jp/asahi/soshiki_list.html"
+ },
+ "城東区": {
+  "name": "城東区保健福祉センター（自立支援医療担当）",
+  "postal": "536-8510",
+  "address": "大阪市城東区中央3-5-45",
+  "list_url": "https://www.city.osaka.lg.jp/joto/soshiki_list.html",
+  "section": "保健福祉課(保健福祉センター)福祉グループ",
+  "phone": "06-6930-9857"
+ },
+ "鶴見区": {
+  "name": "鶴見区保健福祉センター（自立支援医療担当）",
+  "postal": "538-8510",
+  "address": "大阪市鶴見区横堤5-4-19",
+  "list_url": "https://www.city.osaka.lg.jp/tsurumi/soshiki_list.html"
+ },
+ "阿倍野区": {
+  "name": "阿倍野区保健福祉センター（自立支援医療担当）",
+  "postal": "545-8501",
+  "address": "大阪市阿倍野区文の里1-1-40",
+  "list_url": "https://www.city.osaka.lg.jp/abeno/soshiki_list.html"
+ },
+ "住之江区": {
+  "name": "住之江区保健福祉センター（自立支援医療担当）",
+  "postal": "559-8601",
+  "address": "大阪市住之江区御崎3-1-17",
+  "list_url": "https://www.city.osaka.lg.jp/suminoe/soshiki_list.html"
+ },
+ "住吉区": {
+  "name": "住吉区保健福祉センター（自立支援医療担当）",
+  "postal": "558-8501",
+  "address": "大阪市住吉区南住吉3-15-55",
+  "list_url": "https://www.city.osaka.lg.jp/sumiyoshi/soshiki_list.html"
+ },
+ "東住吉区": {
+  "name": "東住吉区保健福祉センター（自立支援医療担当）",
+  "postal": "546-8501",
+  "address": "大阪",
+  "list_url": "https://www.city.osaka.lg.jp/higashisumiyoshi/soshiki_list.html"
+ },
+ "平野区": {
+  "name": "平野区保健福祉センター（自立支援医療担当）",
+  "postal": "547-8580",
+  "address": "大阪市平野区背戸口3-8-19",
+  "list_url": "https://www.city.osaka.lg.jp/hirano/soshiki_list.html"
+ },
+ "西成区": {
+  "name": "西成区保健福祉センター（自立支援医療担当）",
+  "postal": "557-8501",
+  "address": "大阪市西成区岸里1-5-20",
+  "list_url": "https://www.city.osaka.lg.jp/nishinari/soshiki_list.html"
+ }
+}

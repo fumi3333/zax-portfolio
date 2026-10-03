@@ -10,226 +10,192 @@
 <style>
   :root{
     --bg:#ffffff; --card:#ffffff; --ink:#111111; --sub:#666666;
-    --line:#e8e8e8; --line-strong:#cccccc; --accent:#111111; --accent-hover:#333333;
-    --warn:#555555; --warnbg:#f4f4f4; --tagbg:#f8f9fa; --price-red:#dc2626;
-    --highlight-yellow:#fef08a; --accent-purple:#7c3aed; --accent-purple-light:#f3e8ff;
+    --line:#e8e8e8; --accent:#111111; --accent-hover:#333333;
+    --warn:#555555; --warnbg:#f4f4f4;
   }
   @media (prefers-color-scheme:dark){
     :root{
       --bg:#09090b; --card:#121215; --ink:#ededed; --sub:#8e8e93;
-      --line:#27272a; --line-strong:#3f3f46; --accent:#ededed; --accent-hover:#cccccc;
-      --warn:#a1a1aa; --warnbg:#1c1c20; --tagbg:#18181b; --price-red:#ef4444;
-      --highlight-yellow:#854d0e; --accent-purple:#a855f7; --accent-purple-light:#3b0764;
+      --line:#27272a; --accent:#ededed; --accent-hover:#cccccc;
+      --warn:#a1a1aa; --warnbg:#1c1c20;
     }
   }
   *{box-sizing:border-box}
-  body{
-    margin:0;background:var(--bg);color:var(--ink);
-    font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-    font-size:14px;line-height:1.6;-webkit-font-smoothing:antialiased;
-  }
-  header{
-    max-width:980px;margin:0 auto;padding:24px 16px 12px;
-    border-bottom:1px solid var(--line);
-  }
-  h1{font-size:21px;margin:0;letter-spacing:-0.02em;font-weight:700}
-  .lede{font-size:13.5px;color:var(--sub);margin:8px 0 0;line-height:1.65}
-
-  /* Hero Stats Strip */
-  .hero-stats{
-    display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;
-    margin-top:14px;padding:12px;background:var(--tagbg);border:1px solid var(--line);border-radius:8px;
-  }
-  .hero-stat-cell{text-align:center}
-  .hero-stat-val{font-family:"JetBrains Mono",monospace;font-size:16px;font-weight:700;color:var(--ink)}
-  .hero-stat-lbl{font-size:11px;color:var(--sub);margin-top:1px}
-
-  /* 更新バナー */
-  .update-banner{
-    max-width:980px;margin:12px auto 0;padding:10px 14px;
-    background:var(--warnbg);border:1px solid var(--line);border-radius:8px;
-    font-size:12px;color:var(--ink);display:flex;align-items:center;justify-content:space-between;gap:8px;
-  }
-  .update-banner b{color:var(--accent-purple);font-weight:700}
-  .banner-close{background:none;border:none;color:var(--sub);cursor:pointer;font-size:14px;padding:0 4px}
-
-  /* ナビゲーションタブバー */
-  .nav-tabs{
-    max-width:980px;margin:12px auto 0;padding:0 16px;
-    display:flex;gap:8px;overflow-x:auto;border-bottom:1px solid var(--line);padding-bottom:8px;
-  }
-  .nav-tab{
-    padding:5px 12px;border-radius:6px;font-size:12.5px;font-weight:600;
-    color:var(--sub);white-space:nowrap;text-decoration:none;
-  }
-  .nav-tab.active{background:var(--ink);color:var(--bg)}
-  .nav-tab:hover:not(.active){background:var(--tagbg);color:var(--ink)}
-
-  main{max-width:980px;margin:0 auto;padding:16px}
-
-  /* 横スクロール人気条件ピルバー */
-  .quick-chips-wrapper{
-    position:relative;margin-bottom:14px;
-  }
-  .quick-chips-bar{
-    display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;
-    scrollbar-width:none;-ms-overflow-style:none;
-  }
-  .quick-chips-bar::-webkit-scrollbar{display:none}
-  .chip-pill{
-    display:inline-flex;align-items:center;gap:4px;
-    background:var(--card);color:var(--ink);
-    border:1px solid var(--line-strong);border-radius:20px;
-    padding:6px 12px;font-size:12.5px;font-weight:600;
-    white-space:nowrap;cursor:pointer;transition:all 0.15s ease;
-    flex-shrink:0;user-select:none;
-  }
-  .chip-pill:hover{border-color:var(--ink);background:var(--tagbg)}
-  .chip-pill.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-  .chip-badge{
-    font-size:10px;padding:1px 5px;border-radius:10px;
-    background:var(--tagbg);color:var(--sub);font-family:"JetBrains Mono",monospace;
-  }
-  .chip-pill.active .chip-badge{background:rgba(255,255,255,0.25);color:#fff}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font:15px/1.6 system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif}
+  a{color:inherit;text-decoration:none}
+  a:hover{text-decoration:underline}
+  header{padding:20px 16px 10px;max-width:980px;margin:0 auto}
+  h1{font-size:22px;margin:0 0 6px;display:flex;align-items:baseline;letter-spacing:-0.02em}
+  .lede{color:var(--sub);font-size:13px;margin:0}
+  main{max-width:980px;margin:0 auto;padding:0 16px 40px}
 
   /* フィルターパネル */
-  .filters{
-    display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;
-    background:var(--card);padding:14px;border-radius:8px;border:1px solid var(--line);
-    margin-bottom:16px;
-  }
-  .filters label{font-size:11px;color:var(--sub);display:block;margin-bottom:3px;font-weight:600}
-  .filters select,.filters input{
-    width:100%;padding:7px 9px;border:1px solid var(--line-strong);
-    border-radius:6px;background:var(--card);color:var(--ink);font-size:13px;
-  }
+  .filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;
+           background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:14px}
+  label{display:block;font-size:12px;color:var(--sub);margin-bottom:5px;font-weight:600}
+  select,input{width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:6px;
+               background:var(--bg);color:var(--ink);font-size:14px}
+  .count{font-size:13px;color:var(--sub);margin:14px 2px;font-weight:600}
 
-  /* リストカード */
+  /* 教習所カード */
   .school-list{display:flex;flex-direction:column;gap:14px}
-  .group{
-    background:var(--card);border:1px solid var(--line);border-radius:10px;
-    padding:16px;position:relative;transition:border-color 0.15s ease;
-  }
-  .group:hover{border-color:var(--line-strong)}
-  .group-head{
-    display:flex;align-items:baseline;justify-content:space-between;
-    gap:10px;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:10px;flex-wrap:wrap;
-  }
-  .group-head a.school-title{
-    font-size:16px;font-weight:700;color:var(--ink);text-decoration:none;
-  }
-  .group-head a.school-title:hover{text-decoration:underline}
-  .place-sub{
-    font-size:11.5px;color:var(--sub);font-weight:500;
-  }
+  .group{background:var(--card);border:1px solid var(--line);border-radius:10px;margin-bottom:16px;overflow:hidden;transition:border-color 0.15s ease}
+  .group:hover{border-color:var(--ink)}
+  .group-head{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .place{font-weight:700;font-size:16px}
+  .place-sub{font-size:12px;color:var(--sub);margin-top:2px}
+  .wage{font-weight:700;font-size:19px;color:var(--ink);font-variant-numeric:tabular-nums}
+  .tag-row{display:flex;gap:4px;flex-wrap:wrap;margin:10px 0}
+  .badge{display:inline-block;padding:3px 8px;border-radius:4px;font-size:11px;margin-right:4px;background:var(--bg);border:1px solid var(--line);color:var(--ink)}
+  .badge-feature{background:var(--card);border:1px solid var(--line);color:var(--sub)}
 
+  /* 価格ストリップ */
   .price-strip{
     display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;
-    background:var(--tagbg);border-radius:6px;padding:10px 12px;margin-bottom:10px;
+    background:var(--warnbg);border-radius:6px;padding:10px 14px;margin:10px 0;
   }
   .price-cell{display:flex;flex-direction:column}
-  .price-cell .lbl{font-size:10.5px;color:var(--sub);font-weight:600}
-  .price-cell .val{
-    font-family:"JetBrains Mono",monospace;font-size:18px;font-weight:700;color:var(--price-red);
-  }
+  .price-cell .lbl{font-size:11px;color:var(--sub);font-weight:600}
+  .price-cell .val{font-size:15px;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;margin-top:2px}
   .price-diff-badge{
     display:inline-flex;align-items:center;gap:4px;
     font-size:11px;font-weight:700;color:#b91c1c;background:#fef2f2;
-    border:1px solid #fecaca;padding:2px 6px;border-radius:4px;margin-top:2px;
+    border:1px solid #fecaca;padding:2px 6px;border-radius:4px;margin-top:2px;width:fit-content;
+  }
+  @media (prefers-color-scheme:dark){
+    .price-diff-badge{background:#450a0a;border-color:#7f1d1d;color:#fca5a5;}
   }
 
-  .tag-row{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:8px}
-  .tag{
-    font-size:11px;padding:2px 7px;background:var(--tagbg);
-    border:1px solid var(--line);border-radius:4px;color:var(--sub);
-  }
-
-  .group-foot{
-    display:flex;align-items:center;justify-content:space-between;gap:10px;
-    padding-top:10px;border-top:1px solid var(--line);flex-wrap:wrap;
-  }
+  /* ボタン */
+  a.cta{display:inline-block;padding:7px 15px;background:var(--accent);color:var(--bg)!important;font-weight:600;text-decoration:none!important;border-radius:6px;font-size:12px;transition:all .15s}
+  a.cta:hover{background:#7c3aed;color:#ffffff!important;transform:translateY(-1px);box-shadow:0 2px 8px rgba(124,58,237,0.3)}
+  .group-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 16px;border-top:1px solid var(--line);flex-wrap:wrap;background:var(--card)}
   .agency-btns{display:flex;gap:6px;flex-wrap:wrap}
   .btn-agency{
-    font-size:11.5px;padding:5px 9px;border:1px solid var(--line-strong);
-    border-radius:5px;text-decoration:none;color:var(--ink);background:var(--card);font-weight:500;
+    font-size:11.5px;padding:5px 10px;border:1px solid var(--line);
+    border-radius:5px;text-decoration:none;color:var(--ink);background:var(--bg);font-weight:600;
+    transition:all .15s ease;
   }
-  .btn-agency:hover{background:var(--tagbg)}
+  .btn-agency:hover{border-color:var(--ink);background:var(--card)}
 
-  a.cta{
-    display:inline-flex;align-items:center;gap:4px;
-    background:var(--accent);color:var(--bg);padding:7px 14px;
-    border-radius:6px;font-size:12.5px;font-weight:600;text-decoration:none;
-    transition:background 0.15s ease;
+  .btn-keep{display:inline-block;padding:5px 9px;margin-right:6px;background:var(--bg);border:1px solid var(--line);border-radius:6px;font-size:11px;font-weight:600;color:var(--sub);cursor:pointer;transition:all .15s;vertical-align:middle}
+  .btn-keep:hover{border-color:var(--ink);color:var(--ink)}
+  .btn-keep.kept{background:#fef3c7;border-color:#fde68a;color:#b45309;font-weight:700}
+  @media (prefers-color-scheme:dark){
+    .btn-keep.kept{background:#78350f;border-color:#b45309;color:#fde68a}
   }
-  a.cta:hover{background:var(--accent-hover)}
 
-  /* スマホ最下部固定リアルタイム件数バー */
+  .btn-clear-filters{display:inline-flex;align-items:center;gap:4px;padding:6px 12px;background:var(--bg);border:1px solid var(--line);border-radius:6px;font-size:12px;color:var(--sub);cursor:pointer;transition:all .15s;font-family:inherit;font-weight:600}
+  .btn-clear-filters:hover{border-color:var(--ink);color:var(--ink);background:var(--card)}
+
+  /* 横スクロール人気条件ピル */
+  .quick-chips-wrapper{
+    overflow-x:auto;-webkit-overflow-scrolling:touch;
+    margin:0 0 12px;padding:2px 0 6px;
+    scrollbar-width:none;
+  }
+  .quick-chips-wrapper::-webkit-scrollbar{display:none}
+  .quick-chips-bar{
+    display:flex;gap:8px;white-space:nowrap;width:max-content;align-items:center;
+  }
+  .chip-pill{
+    display:inline-flex;align-items:center;gap:5px;
+    padding:7px 14px;background:var(--card);border:1px solid var(--line);
+    border-radius:20px;font-size:13px;font-weight:600;color:var(--ink);
+    cursor:pointer;user-select:none;transition:all .15s ease;font-family:inherit;
+  }
+  .chip-pill:hover{border-color:var(--ink)}
+  .chip-pill.active{
+    background:var(--ink);color:var(--bg);border-color:var(--ink);
+  }
+  .chip-badge{
+    font-size:10px;padding:1px 5px;border-radius:10px;background:var(--bg);border:1px solid var(--line);color:var(--sub);font-weight:500;
+  }
+  .chip-pill.active .chip-badge{
+    background:rgba(255,255,255,0.2);color:#fff;border-color:transparent;
+  }
+  .chip-pill.chip-restore{background:#eff6ff;border-color:#bfdbfe;color:#1d4ed8}
+  .chip-pill.chip-restore:hover{background:#dbeafe;border-color:#93c5fd}
+  .chip-pill.chip-kept{background:#fffbeb;border-color:#fde68a;color:#b45309}
+  .chip-pill.chip-kept:hover{background:#fef3c7;border-color:#fcd34d}
+  .chip-pill.chip-kept.active{background:#b45309;color:#fff;border-color:#b45309}
+  @media (prefers-color-scheme:dark){
+    .chip-pill.chip-restore{background:#1e3a8a;border-color:#3b82f6;color:#93c5fd}
+    .chip-pill.chip-kept{background:#78350f;border-color:#b45309;color:#fde68a}
+    .chip-pill.chip-kept.active{background:#d97706;color:#09090b;border-color:#d97706}
+  }
+
+  /* お知らせバナー */
+  .update-banner{
+    background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;
+    padding:10px 14px;margin:8px auto 14px;max-width:980px;
+    display:flex;align-items:center;justify-content:space-between;
+    font-size:13px;color:#166534;line-height:1.5;
+  }
+  @media (prefers-color-scheme:dark){
+    .update-banner{background:#052e16;border-color:#166534;color:#bbf7d0;}
+  }
+  .banner-close{background:none;border:none;color:inherit;font-size:16px;cursor:pointer;padding:0 6px;line-height:1}
+
+  /* スマホ・PC共通 最下部固定バー */
   .mobile-sticky-bar{
-    display:none;position:fixed;bottom:16px;left:16px;right:16px;z-index:99;
+    display:flex;gap:8px;align-items:center;position:fixed;bottom:20px;left:50%;transform:translateX(-50%);
+    width:min(460px, calc(100% - 32px));
+    z-index:9999;pointer-events:none;
   }
-  @media(max-width:640px){
-    .mobile-sticky-bar{display:block}
+  @media (max-width:768px){
+    .mobile-sticky-bar{bottom:16px;left:16px;right:16px;width:auto;transform:none;}
   }
   .mobile-sticky-btn{
-    width:100%;background:var(--ink);color:var(--bg);
+    pointer-events:auto;flex:1;
+    background:var(--ink);color:var(--bg);
     border:none;border-radius:30px;padding:12px 20px;
-    font-size:13.5px;font-weight:700;box-shadow:0 6px 20px rgba(0,0,0,0.25);
-    display:flex;align-items:center;justify-content:space-between;cursor:pointer;
+    font-size:14px;font-weight:700;font-family:inherit;
+    box-shadow:0 8px 24px rgba(0,0,0,0.22);
+    display:flex;align-items:center;justify-content:space-between;
+    cursor:pointer;transition:transform .15s ease,background .15s ease;
   }
+  .mobile-sticky-btn:active{transform:scale(0.98)}
   .mobile-sticky-count{
-    background:rgba(255,255,255,0.2);padding:2px 8px;border-radius:12px;font-size:12px;
+    background:#059669;color:#fff;padding:3px 10px;border-radius:12px;
+    font-size:13px;font-weight:800;font-variant-numeric:tabular-nums;
   }
 
-  /* SEOアコーディオン */
-  .seo-accordion{
-    margin-top:24px;border:1px solid var(--line);border-radius:8px;background:var(--card);
-  }
-  .seo-accordion summary{
-    padding:12px 16px;font-weight:700;font-size:13px;cursor:pointer;user-select:none;
-  }
-  .seo-accordion-content{
-    padding:0 16px 16px;font-size:12.5px;color:var(--sub);line-height:1.7;border-top:1px solid var(--line);
-  }
-
-  /* 詳細テーブル */
-  .scroller{overflow-x:auto;margin:12px 0}
-  table{width:100%;border-collapse:collapse;font-size:13px;text-align:left}
-  th,td{padding:8px 10px;border:1px solid var(--line)}
-  th{background:var(--tagbg);font-weight:600;white-space:nowrap}
-  .cheapest-cell{background:var(--highlight-yellow);font-weight:700;color:#854d0e}
-
-  /* スカイスキャナー型 入校日最安値カレンダー */
+  /* スカイスキャナー型カレンダー（リゾートソート風） */
   .cal-section{
-    background:var(--card);border:1px solid var(--line-strong);border-radius:10px;
-    padding:16px;margin-bottom:20px;
+    background:var(--card);border:1px solid var(--line);border-radius:10px;
+    padding:16px;margin-bottom:16px;
   }
   .cal-header{
     display:flex;align-items:baseline;justify-content:space-between;margin-bottom:12px;
     flex-wrap:wrap;gap:8px;
   }
   .cal-title{
-    font-size:15px;font-weight:700;display:flex;align-items:center;gap:6px;color:var(--ink);
+    font-size:15px;font-weight:700;display:flex;align-items:center;gap:6px;color:var(--ink);letter-spacing:-0.01em;
   }
   .cal-sub{font-size:12px;color:var(--sub);margin-top:2px;}
   .cal-legend{display:flex;gap:10px;font-size:11px;color:var(--sub);align-items:center;}
   .legend-item{display:inline-flex;align-items:center;gap:4px;}
-  .legend-box{width:10px;height:10px;border-radius:2px;display:inline-block;}
-  .legend-box.cheap{background:#22c55e;}
-  .legend-box.normal{background:#eab308;}
-  .legend-box.peak{background:#ef4444;}
+  .legend-box{width:9px;height:9px;border-radius:2px;display:inline-block;}
+  .legend-box.cheap{background:#16a34a;}
+  .legend-box.normal{background:#d97706;}
+  .legend-box.peak{background:#dc2626;}
 
   .cal-months-tab{
     display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;margin-bottom:12px;scrollbar-width:none;
   }
   .cal-months-tab::-webkit-scrollbar{display:none;}
   .cal-m-btn{
-    display:flex;flex-direction:column;align-items:center;padding:6px 12px;
-    border-radius:8px;border:1px solid var(--line);background:var(--tagbg);
+    display:flex;flex-direction:column;align-items:center;padding:6px 14px;
+    border-radius:20px;border:1px solid var(--line);background:var(--card);
     cursor:pointer;white-space:nowrap;font-size:12px;color:var(--ink);transition:all 0.15s ease;
+    font-family:inherit;
   }
+  .cal-m-btn:hover{border-color:var(--ink);}
   .cal-m-btn.active{background:var(--ink);color:var(--bg);border-color:var(--ink);}
   .cal-m-btn .m-name{font-weight:700;}
-  .cal-m-btn .m-price{font-family:"JetBrains Mono",monospace;font-size:11px;margin-top:2px;}
+  .cal-m-btn .m-price{font-size:11px;margin-top:2px;font-variant-numeric:tabular-nums;}
   .cal-m-btn .m-tag{font-size:9.5px;color:var(--sub);margin-top:1px;}
   .cal-m-btn.active .m-tag{color:rgba(255,255,255,0.7);}
 
@@ -257,41 +223,46 @@
   }
   .cal-d-num{font-size:12px;font-weight:600;}
   .cal-d-price{
-    font-family:"JetBrains Mono",monospace;font-size:10px;margin-top:2px;
-    border-radius:3px;padding:1px 2px;display:block;
+    font-size:10px;margin-top:2px;border-radius:3px;padding:1px 2px;display:block;
+    font-variant-numeric:tabular-nums;
   }
   .cal-d-cnt{font-size:9px;color:var(--sub);margin-top:1px;}
 
-  /* スカイスキャナー風ヒートマップ */
   .level-cheap .cal-d-price{background:#dcfce7;color:#15803d;font-weight:700;}
   .level-normal .cal-d-price{background:#fef9c3;color:#854d0e;}
   .level-peak .cal-d-price{background:#fee2e2;color:#b91c1c;font-weight:700;}
+  @media (prefers-color-scheme:dark){
+    .level-cheap .cal-d-price{background:#052e16;color:#86efac;}
+    .level-normal .cal-d-price{background:#451a03;color:#fde68a;}
+    .level-peak .cal-d-price{background:#450a0a;color:#fca5a5;}
+  }
 
   .cal-active-bar{
-    margin-top:10px;padding:8px 12px;background:var(--tagbg);border:1px dashed var(--line-strong);
+    margin-top:10px;padding:8px 12px;background:var(--warnbg);border:1px dashed var(--line);
     border-radius:6px;display:flex;align-items:center;justify-content:space-between;font-size:12.5px;
   }
-  .cal-active-bar b{color:var(--price-red);}
+  .cal-active-bar b{color:var(--ink);font-weight:700;}
   .cal-clear-btn{
     background:none;border:none;color:var(--sub);cursor:pointer;font-size:12px;text-decoration:underline;
   }
 
-  /* ★キープボタンと復元チップ */
-  .btn-keep{
-    background:var(--card);border:1px solid var(--line-strong);border-radius:4px;
-    padding:4px 8px;font-size:11px;cursor:pointer;color:var(--ink);transition:all 0.15s ease;
+  /* SEO内部リンク アコーディオン */
+  .seo-accordion{
+    margin-top:24px;border:1px solid var(--line);border-radius:10px;background:var(--card);overflow:hidden;
   }
-  .btn-keep:hover{border-color:var(--ink);}
-  .btn-keep.kept{
-    background:#fef08a;border-color:#ca8a04;color:#854d0e;font-weight:700;
+  .seo-accordion summary{
+    padding:14px 18px;font-weight:700;font-size:13px;color:var(--ink);cursor:pointer;user-select:none;
+    display:flex;align-items:center;justify-content:space-between;list-style:none;
   }
-  .keep-filter-pill.active{
-    background:#ca8a04 !important;color:#fff !important;border-color:#ca8a04 !important;
+  .seo-accordion summary::-webkit-details-marker{display:none}
+  .seo-accordion summary:hover{background:var(--bg)}
+  .seo-accordion-content{
+    padding:14px 18px 20px;font-size:12.5px;color:var(--sub);line-height:1.7;border-top:1px dashed var(--line);
   }
 
   footer{
     max-width:980px;margin:32px auto 0;padding:24px 16px 48px;
-    border-top:1px solid var(--line);text-align:center;color:var(--sub);font-size:12px;
+    border-top:1px solid var(--line);color:var(--sub);font-size:12px;
   }
 </style>
 
@@ -300,8 +271,10 @@
 <header>
   <div style="display:flex;align-items:center;justify-content:space-between">
     <h1><a href="https://fumiproject.dev/menkyo/" style="color:inherit;text-decoration:none">合宿免許ソート</a></h1>
-    <div style="display:flex;align-items:center;gap:10px">
-      <a href="https://fumiproject.dev/menkyo/" style="font-size:12px;color:var(--ink);text-decoration:none;font-weight:600;padding:4px 9px;border:1px solid var(--line);border-radius:6px;background:var(--card)">&larr; 一覧に戻る</a>
+    <div style="display:flex;align-items:center;gap:8px">
+      <a href="https://fumiproject.dev/menkyo/" style="font-size:12px;color:var(--ink);text-decoration:none;font-weight:600;padding:5px 9px;border:1px solid var(--line);border-radius:6px;background:var(--card)">&larr; 一覧に戻る</a>
+      <a href="https://fumiproject.dev/#about" style="font-size:12px;color:var(--ink);text-decoration:none;font-weight:600;padding:5px 9px;border:1px solid var(--line);border-radius:6px;background:var(--card)">サイトについて</a>
+      <span style="font-size:11px;color:var(--sub);border:1px solid var(--line);border-radius:3px;padding:1px 5px;letter-spacing:0.04em">PR</span>
     </div>
   </div>
 </header>
@@ -533,12 +506,12 @@
 
     <div style="margin-top:20px;">
       
-              <a href="https://www.menkyo-expert.com/takata/takata-charge/" target="_blank" rel="noopener nofollow" class="cta" style="display:block;text-align:center;padding:10px 16px;font-size:13px;margin-bottom:6px;">
-                【21日前キャンセル無料】合宿免許エキスパート で空き枠確認・予約 &rarr;
+              <a href="https://www.menkyo-expert.com/takata/takata-charge/" target="_blank" rel="noopener nofollow" class="cta" style="display:block;text-align:center;padding:10px 16px;font-size:13px;margin-bottom:8px;">
+                合宿免許エキスパート 公式サイトで空き枠・詳細を見る &rarr;
               </a>
             
-              <a href="https://px.a8.net/svt/ejp?a8mat=4BC9F3+CP8XDE+2C9M+BW0YB&amp;a8ejpredirect=https%3A%2F%2Fwww.drivers-license.jp%2Fschool%2Frikuzentakata%2F" target="_blank" rel="noopener nofollow" class="cta" style="display:block;text-align:center;padding:10px 16px;font-size:13px;margin-bottom:6px;">
-                【21日前キャンセル無料】合宿免許受付センター で空き枠確認・予約 &rarr;
+              <a href="https://px.a8.net/svt/ejp?a8mat=4BC9F3+CP8XDE+2C9M+BW0YB&amp;a8ejpredirect=https%3A%2F%2Fwww.drivers-license.jp%2Fschool%2Frikuzentakata%2F" target="_blank" rel="noopener nofollow" class="cta" style="display:block;text-align:center;padding:10px 16px;font-size:13px;margin-bottom:8px;">
+                合宿免許受付センター 公式サイトで空き枠・詳細を見る &rarr;
               </a>
             
     </div>

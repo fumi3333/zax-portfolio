@@ -302,7 +302,7 @@ footer{border-top:1px solid var(--line);padding:2.5rem 0 4rem;
       教科書フリマ、<wbr>リゾートバイト求人の比較、<wbr>価値観で出会う<wbr>マッチング。<wbr>企画から公開・運用まで<wbr>自社で行っています。
     </p>
     <div class="stats">
-      <div class="stat"><div class="v">3</div><div class="k mono">公開・開発中のサービス</div></div>
+      <div class="stat"><div class="v">4</div><div class="k mono">公開・開発中のサービス</div></div>
       <div class="stat"><div class="v">100%</div><div class="k mono">企画から公開まで自社</div></div>
       <div class="stat"><div class="v">ZAX</div><div class="k mono">屋号・東京都大田区</div></div>
     </div>
@@ -330,7 +330,7 @@ footer{border-top:1px solid var(--line);padding:2.5rem 0 4rem;
 <section id="mission" data-label="使命">
   <div class="band rv">
     <p>住み込みで働く職場、宿舎で寝食を共にする合宿、教科書を譲り合う学内。<b>人が一定期間、同じ場所で密に過ごす環境</b>や、その前に<b>自分に合う条件を比べて選べる仕組み</b>に注目してサービスを作っています。</p>
-    <p>派遣会社をまたいで時給や寮を比較できるリゾートソート、学内で教科書を譲り合えるMusalink、価値観の近い相手と出会えるPreface。
+    <p>派遣会社をまたいで時給や寮を比較できるリゾートソート、全国217校の日程・最安値を比較できる合宿免許ソート、学内で教科書を譲り合えるMusalink、価値観の近い相手と出会えるPreface。
     作って終わりにせず、使った人に実際に役立ったかを確かめながら改善しています。</p>
   </div>
 </section>
@@ -374,6 +374,29 @@ footer{border-top:1px solid var(--line);padding:2.5rem 0 4rem;
           <dt class="mono">使用技術</dt><dd><div class="stack"><span>Python</span><span>JSON-LD</span><span>静的サイト生成</span><span>Cloudflare Workers</span><span>D1</span></div></dd>
           <dt class="mono">内容</dt><dd>会社ごとに違うHTML構造の正規化、募集終了の判定、寮・食事・期間の条件化</dd>
           <dt class="mono">公開先</dt><dd><a class="go" href="/resort/">fumiproject.dev/resort/ →</a></dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="piece rv">
+      <a class="frame" href="/menkyo/">
+        <div style="background:var(--raise);width:100%;height:100%;min-height:220px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:2rem;text-align:center;">
+          <span style="font-family:var(--lat);font-size:1.35rem;font-weight:400;letter-spacing:-.01em;color:var(--ink);">合宿免許ソート</span>
+          <span class="mono" style="margin-top:.4rem;font-size:.76rem;color:var(--muted);letter-spacing:.08em;">217校・大手3社横断最安値検索</span>
+        </div>
+      </a>
+      <div>
+        <div class="ptop"><span class="pname">合宿免許ソート</span><span class="chip">公開中</span></div>
+        <div class="ptag mono">全国217校の合宿免許・最安値日程検索</div>
+        <p class="pdesc">
+          大手3大ポータルに分かれている全国217校の合宿免許プランを、入校日・最安料金・部屋タイプなどの同じ条件で比べられる検索サイトです。
+          航空券比較のようにカレンダーから日別の最安値と空き状況を確認でき、オフシーズンと繁忙期の価格差（最大11万円）を把握して選べます。
+        </p>
+        <dl class="meta">
+          <dt class="mono">担当</dt><dd>設計・実装</dd>
+          <dt class="mono">使用技術</dt><dd><div class="stack"><span>Python</span><span>静的サイト生成</span><span>Skyscanner型カレンダー</span><span>Cloudflare Workers</span><span>D1</span></div></dd>
+          <dt class="mono">内容</dt><dd>複数ポータルからの日程・料金正規化、日別最安値ヒートマップ集計、キープ機能</dd>
+          <dt class="mono">公開先</dt><dd><a class="go" href="/menkyo/">fumiproject.dev/menkyo/ →</a></dd>
         </dl>
       </div>
     </article>

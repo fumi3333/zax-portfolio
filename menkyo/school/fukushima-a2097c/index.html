@@ -198,6 +198,97 @@
   th{background:var(--tagbg);font-weight:600;white-space:nowrap}
   .cheapest-cell{background:var(--highlight-yellow);font-weight:700;color:#854d0e}
 
+  /* スカイスキャナー型 入校日最安値カレンダー */
+  .cal-section{
+    background:var(--card);border:1px solid var(--line-strong);border-radius:10px;
+    padding:16px;margin-bottom:20px;
+  }
+  .cal-header{
+    display:flex;align-items:baseline;justify-content:space-between;margin-bottom:12px;
+    flex-wrap:wrap;gap:8px;
+  }
+  .cal-title{
+    font-size:15px;font-weight:700;display:flex;align-items:center;gap:6px;color:var(--ink);
+  }
+  .cal-sub{font-size:12px;color:var(--sub);margin-top:2px;}
+  .cal-legend{display:flex;gap:10px;font-size:11px;color:var(--sub);align-items:center;}
+  .legend-item{display:inline-flex;align-items:center;gap:4px;}
+  .legend-box{width:10px;height:10px;border-radius:2px;display:inline-block;}
+  .legend-box.cheap{background:#22c55e;}
+  .legend-box.normal{background:#eab308;}
+  .legend-box.peak{background:#ef4444;}
+
+  .cal-months-tab{
+    display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;margin-bottom:12px;scrollbar-width:none;
+  }
+  .cal-months-tab::-webkit-scrollbar{display:none;}
+  .cal-m-btn{
+    display:flex;flex-direction:column;align-items:center;padding:6px 12px;
+    border-radius:8px;border:1px solid var(--line);background:var(--tagbg);
+    cursor:pointer;white-space:nowrap;font-size:12px;color:var(--ink);transition:all 0.15s ease;
+  }
+  .cal-m-btn.active{background:var(--ink);color:var(--bg);border-color:var(--ink);}
+  .cal-m-btn .m-name{font-weight:700;}
+  .cal-m-btn .m-price{font-family:"JetBrains Mono",monospace;font-size:11px;margin-top:2px;}
+  .cal-m-btn .m-tag{font-size:9.5px;color:var(--sub);margin-top:1px;}
+  .cal-m-btn.active .m-tag{color:rgba(255,255,255,0.7);}
+
+  .cal-grids-container{position:relative;}
+  .cal-month-grid{
+    display:grid;grid-template-columns:repeat(7,1fr);gap:4px;user-select:none;
+  }
+  .cal-day-head{
+    text-align:center;font-size:11px;font-weight:700;color:var(--sub);padding:4px 0;
+  }
+  .cal-day-head.sun{color:#dc2626;}
+  .cal-day-head.sat{color:#2563eb;}
+
+  .cal-cell{
+    background:var(--card);border:1px solid var(--line);border-radius:6px;
+    padding:6px 2px;text-align:center;cursor:pointer;transition:all 0.15s ease;
+    min-height:50px;display:flex;flex-direction:column;justify-content:center;
+  }
+  .cal-cell:hover:not(.empty){
+    border-color:var(--ink);transform:translateY(-1px);box-shadow:0 2px 6px rgba(0,0,0,0.06);
+  }
+  .cal-cell.empty{background:transparent;border-color:transparent;cursor:default;}
+  .cal-cell.active{
+    border:2px solid var(--ink) !important;box-shadow:0 0 0 2px rgba(0,0,0,0.1);font-weight:700;
+  }
+  .cal-d-num{font-size:12px;font-weight:600;}
+  .cal-d-price{
+    font-family:"JetBrains Mono",monospace;font-size:10px;margin-top:2px;
+    border-radius:3px;padding:1px 2px;display:block;
+  }
+  .cal-d-cnt{font-size:9px;color:var(--sub);margin-top:1px;}
+
+  /* スカイスキャナー風ヒートマップ */
+  .level-cheap .cal-d-price{background:#dcfce7;color:#15803d;font-weight:700;}
+  .level-normal .cal-d-price{background:#fef9c3;color:#854d0e;}
+  .level-peak .cal-d-price{background:#fee2e2;color:#b91c1c;font-weight:700;}
+
+  .cal-active-bar{
+    margin-top:10px;padding:8px 12px;background:var(--tagbg);border:1px dashed var(--line-strong);
+    border-radius:6px;display:flex;align-items:center;justify-content:space-between;font-size:12.5px;
+  }
+  .cal-active-bar b{color:var(--price-red);}
+  .cal-clear-btn{
+    background:none;border:none;color:var(--sub);cursor:pointer;font-size:12px;text-decoration:underline;
+  }
+
+  /* ★キープボタンと復元チップ */
+  .btn-keep{
+    background:var(--card);border:1px solid var(--line-strong);border-radius:4px;
+    padding:4px 8px;font-size:11px;cursor:pointer;color:var(--ink);transition:all 0.15s ease;
+  }
+  .btn-keep:hover{border-color:var(--ink);}
+  .btn-keep.kept{
+    background:#fef08a;border-color:#ca8a04;color:#854d0e;font-weight:700;
+  }
+  .keep-filter-pill.active{
+    background:#ca8a04 !important;color:#fff !important;border-color:#ca8a04 !important;
+  }
+
   footer{
     max-width:980px;margin:32px auto 0;padding:24px 16px 48px;
     border-top:1px solid var(--line);text-align:center;color:var(--sub);font-size:12px;

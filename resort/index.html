@@ -867,12 +867,8 @@
   </div><!-- /#filter-panel -->
 
   <div class="count" id="count">該当 6,491 件 / 全 6,491 件</div>
-  <!-- 収集19,233件との差がどこから来るのかトップに説明が無く、
-       数が合っていないように見えていた。 -->
-  <div style="font-size:11px;color:var(--sub);margin:-4px 0 8px">
-    集めた求人24,707件のうち、募集が終了したものと、労働者派遣事業の許可番号を
-    確認できなかった会社の分を除いた6,491件を掲載しています。<a href="/resort/data/" style="color:var(--sub)">内訳を見る</a>
-  </div>
+  <!-- 最終更新時間：ビルド時刻。トップの件数のすぐ上に出す -->
+  <div id="updated" style="font-size:14px;font-weight:700;color:var(--ink);margin:2px 0 6px">最終更新：2026年10月4日 06:12（日本時間）<span style="font-weight:400;color:var(--sub);font-size:12px">（毎日更新）</span></div>
   <div id="sortbar" style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:6px 0 10px;font-size:13px;color:var(--sub)">
     <label for="f-sort" style="font-weight:600;color:var(--ink)">並び順</label>
     <select id="f-sort" style="padding:6px 10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);font-size:13px">
@@ -881,13 +877,11 @@
       <option value="net_wage">手取り（月収目安）の高い順</option>
       <option value="wage">時給の高い順</option>
     </select>
-    <span id="sort-note">時給・寮の種類・寮費・食事・勤務期間の記載を合わせて並べています。提携先の求人を少し上に表示しています。</span>
   </div>
   <div id="results">
     <section class="group">
       <div class="group-head">
         <div class="place">求人一覧</div>
-        <div class="place-sub">おすすめ順で表示。時給・寮・食事・勤務期間の記載を合わせて並べています。※手取り額は税・社保控除後の概算（約81%）です。寮費・水光熱費・食事が無料の求人は生活費が浮くため、手取りのほぼ全額がそのまま貯金可能額になります。各社公式ページへ直接遷移できます。</div>
       </div>
       <div class="scroll-hint" style="display:none;font-size:12px;color:var(--sub);margin:0 0 6px 4px">※ 横スクロールで時給・寮・期間・条件をすべて確認できます →</div>
       <div class="scroller">
@@ -950,7 +944,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="長野県"
              data-cat="調理" data-wage="1800">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1146,7 +1140,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="北海道"
              data-cat="調理" data-wage="2000">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1195,7 +1189,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="長野県"
              data-cat="調理" data-wage="1600">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1293,7 +1287,7 @@
              data-ag="株式会社ヒューマニック（リゾバ.com）" data-pref="長野県"
              data-cat="洋食調理" data-wage="1800">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1342,7 +1336,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="北海道"
              data-cat="その他リゾートバイト" data-wage="1700">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1391,7 +1385,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="北海道"
              data-cat="その他リゾートバイト" data-wage="1700">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1636,7 +1630,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="長野県"
              data-cat="調理補助" data-wage="1500">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1881,7 +1875,7 @@
              data-ag="スタッフエージェント" data-pref="岐阜県"
              data-cat="全般業務" data-wage="1650">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1979,7 +1973,7 @@
              data-ag="スタッフエージェント" data-pref="徳島県"
              data-cat="調理師" data-wage="1650">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2028,7 +2022,7 @@
              data-ag="スタッフエージェント" data-pref="岐阜県"
              data-cat="調理補助" data-wage="1600">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2077,7 +2071,7 @@
              data-ag="スタッフエージェント" data-pref="岐阜県"
              data-cat="仲居" data-wage="1600">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2126,7 +2120,7 @@
              data-ag="スタッフエージェント" data-pref="山梨県"
              data-cat="仲居" data-wage="1650">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2175,7 +2169,7 @@
              data-ag="スタッフエージェント" data-pref="山梨県"
              data-cat="全般業務" data-wage="1650">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2224,7 +2218,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="静岡県"
              data-cat="フロント・ベル" data-wage="1400">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2273,7 +2267,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="静岡県"
              data-cat="フロント・ベル" data-wage="1400">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2322,7 +2316,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="静岡県"
              data-cat="フロント・ベル" data-wage="1400">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2371,7 +2365,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="静岡県"
              data-cat="仲居・客室係（簡易和装）" data-wage="1400">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2420,7 +2414,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="静岡県"
              data-cat="仲居・客室係（簡易和装）" data-wage="1400">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2469,7 +2463,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="静岡県"
              data-cat="仲居・客室係（簡易和装）" data-wage="1400">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2567,7 +2561,7 @@
              data-ag="株式会社ヒューマニック（リゾバ.com）" data-pref="新潟県"
              data-cat="和食調理" data-wage="1850">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2616,7 +2610,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="和歌山県"
              data-cat="調理" data-wage="1500">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2665,7 +2659,7 @@
              data-ag="株式会社ヒューマニック（リゾバ.com）" data-pref="群馬県"
              data-cat="その他調理" data-wage="1800">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2812,7 +2806,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="長野県"
              data-cat="調理補助" data-wage="1600">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2861,7 +2855,7 @@
              data-ag="スタッフエージェント" data-pref="岐阜県"
              data-cat="仲居" data-wage="1600">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2910,7 +2904,7 @@
              data-ag="スタッフエージェント" data-pref="北海道"
              data-cat="調理師" data-wage="1600">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3057,7 +3051,7 @@
              data-ag="スタッフエージェント" data-pref="岐阜県"
              data-cat="フロント" data-wage="1650">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3106,7 +3100,7 @@
              data-ag="スタッフエージェント" data-pref="静岡県"
              data-cat="調理師" data-wage="1700">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3155,7 +3149,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="東京都"
              data-cat="調理" data-wage="2000">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3204,7 +3198,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="北海道"
              data-cat="調理補助" data-wage="1450">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3302,7 +3296,7 @@
              data-ag="スタッフエージェント" data-pref="富山県"
              data-cat="調理師" data-wage="1850">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3351,7 +3345,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="静岡県"
              data-cat="レストランサービス" data-wage="1400">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3400,7 +3394,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="静岡県"
              data-cat="レストランサービス" data-wage="1400">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3449,7 +3443,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="長野県"
              data-cat="調理" data-wage="1800">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3547,7 +3541,7 @@
              data-ag="株式会社ヒューマニック（リゾバ.com）" data-pref="神奈川県"
              data-cat="ゴルフ場スタッフ" data-wage="1700">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3645,7 +3639,7 @@
              data-ag="スタッフエージェント" data-pref="神奈川県"
              data-cat="仲居" data-wage="1575">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3792,7 +3786,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="静岡県"
              data-cat="調理" data-wage="1600">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3841,7 +3835,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="北海道"
              data-cat="その他リゾートバイト" data-wage="1600">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3890,7 +3884,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="北海道"
              data-cat="調理補助" data-wage="1420">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3939,7 +3933,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="北海道"
              data-cat="レストランサービス" data-wage="1420">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3988,7 +3982,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="三重県"
              data-cat="仲居・客室係（簡易和装）" data-wage="1380">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4037,7 +4031,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="三重県"
              data-cat="仲居・客室係（簡易和装）" data-wage="1380">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4282,7 +4276,7 @@
              data-ag="スタッフエージェント" data-pref="岐阜県"
              data-cat="仲居" data-wage="1550">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4331,7 +4325,7 @@
              data-ag="スタッフエージェント" data-pref="香川県"
              data-cat="調理師" data-wage="1600">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4429,7 +4423,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="神奈川県"
              data-cat="ゴルフ場" data-wage="1500">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4723,7 +4717,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="岩手県"
              data-cat="調理" data-wage="1500">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4772,7 +4766,7 @@
              data-ag="スタッフエージェント" data-pref="岐阜県"
              data-cat="レストラン（バイキング）" data-wage="1600">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4821,7 +4815,7 @@
              data-ag="スタッフエージェント" data-pref="福井県"
              data-cat="ナイトフロント" data-wage="1500">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4870,7 +4864,7 @@
              data-ag="スタッフエージェント" data-pref="静岡県"
              data-cat="調理師" data-wage="1500">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4919,7 +4913,7 @@
              data-ag="スタッフエージェント" data-pref="北海道"
              data-cat="調理師" data-wage="1600">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4968,7 +4962,7 @@
              data-ag="スタッフエージェント" data-pref="秋田県"
              data-cat="調理師" data-wage="1500">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5017,7 +5011,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="静岡県"
              data-cat="調理" data-wage="1550">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5066,7 +5060,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="静岡県"
              data-cat="調理" data-wage="1550">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5115,7 +5109,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="東京都"
              data-cat="調理" data-wage="1800">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5164,7 +5158,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="東京都"
              data-cat="調理" data-wage="1800">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5213,7 +5207,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="東京都"
              data-cat="調理" data-wage="1800">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5262,7 +5256,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="東京都"
              data-cat="調理" data-wage="1800">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5311,7 +5305,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="東京都"
              data-cat="調理" data-wage="1800">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5360,7 +5354,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="東京都"
              data-cat="調理" data-wage="1800">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5409,7 +5403,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="東京都"
              data-cat="調理" data-wage="1800">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5458,7 +5452,7 @@
              data-ag="スタッフエージェント" data-pref="静岡県"
              data-cat="調理師" data-wage="1600">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5556,7 +5550,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="長野県"
              data-cat="調理補助" data-wage="1300">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5605,7 +5599,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="長野県"
              data-cat="調理" data-wage="1300">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5703,7 +5697,7 @@
              data-ag="株式会社ヒューマニック（リゾバ.com）" data-pref="愛知県"
              data-cat="その他" data-wage="1950">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5752,7 +5746,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="東京都"
              data-cat="調理" data-wage="1600">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5801,7 +5795,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="長崎県"
              data-cat="調理" data-wage="1600">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">2時間前に掲載を確認</div>
         </td>
       </tr>
           </tbody>
@@ -7662,7 +7656,6 @@ function render(){
     <section class="group">
       <div class="group-head">
         <div class="place">求人一覧</div>
-        <div class="place-sub">おすすめ順で表示。時給・寮・食事・勤務期間の記載を合わせて並べています。各社の公式求人ページへ直接遷移できます。</div>
       </div>
       <div class="scroller">
         <table>

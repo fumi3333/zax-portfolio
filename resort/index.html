@@ -540,7 +540,23 @@
     #sortbar{order:3}
     #results{order:4}
     #site-links{order:5}
-    .scroll-hint{display:block!important}
+    .scroll-hint{display:none!important}
+    /* 求人一覧：横に長い表をやめ、1件ごとのカードにする（ボタンを下段にまとめ、求人名を全幅で読めるようにする） */
+    .scroller{overflow-x:visible}
+    .scroller table,.scroller tbody{display:block;width:100%}
+    .scroller thead{display:none}
+    .scroller tr{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;padding:14px 4px;border-bottom:1px solid var(--line)}
+    .scroller td{display:block;padding:0;border:0;white-space:normal;min-width:0}
+    .scroller td:nth-child(1){grid-column:1 / -1}
+    .scroller td:nth-child(6){grid-column:1 / -1}
+    .scroller td:nth-child(7){grid-column:1 / -1;display:flex;flex-wrap:wrap;align-items:center;gap:8px;text-align:left!important;margin-top:4px}
+    .scroller td:nth-child(7) .btn-keep{margin:0;padding:11px 12px;font-size:12px;flex:0 0 auto}
+    .scroller td:nth-child(7) a.cta{flex:1 1 150px;text-align:center;padding:12px 10px;font-size:13px}
+    .scroller td:nth-child(7) .cta-sub,.scroller td:nth-child(7) .lic{flex:1 0 100%;text-align:left;margin:0}
+    .scroller td:nth-child(3)::before{content:"寮　";font-size:11px;color:var(--sub)}
+    .scroller td:nth-child(4)::before{content:"食事　";font-size:11px;color:var(--sub)}
+    .scroller td:nth-child(5)::before{content:"車・通勤　";font-size:11px;color:var(--sub)}
+    .raw{max-width:none}
   }
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F1K4SHC9LB"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-F1K4SHC9LB");</script><script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","yo8p8svvl7");</script>
@@ -931,7 +947,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="長野県"
              data-cat="調理（要資格）" data-wage="1850">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -980,7 +996,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="長野県"
              data-cat="調理（資格不要）" data-wage="1900">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1029,7 +1045,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="長野県"
              data-cat="調理" data-wage="1800">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1078,7 +1094,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="長野県"
              data-cat="調理（資格不要）" data-wage="1800">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1127,7 +1143,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="北海道"
              data-cat="調理" data-wage="2000">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1176,7 +1192,7 @@
              data-ag="スタッフエージェント" data-pref="栃木県"
              data-cat="調理師" data-wage="1850">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1225,7 +1241,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="神奈川県"
              data-cat="調理（資格不要）" data-wage="1700">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1274,7 +1290,7 @@
              data-ag="スタッフエージェント" data-pref="静岡県"
              data-cat="調理師" data-wage="1900">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1323,7 +1339,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="静岡県"
              data-cat="レストランサービス" data-wage="1700">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1372,7 +1388,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="長野県"
              data-cat="調理補助" data-wage="1600">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1421,7 +1437,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="長野県"
              data-cat="調理" data-wage="1600">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1470,7 +1486,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="石川県"
              data-cat="調理（資格不要）" data-wage="1700">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1519,7 +1535,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="北海道"
              data-cat="調理（要資格）" data-wage="2000">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1568,7 +1584,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="群馬県"
              data-cat="調理（要資格）" data-wage="1800">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1617,7 +1633,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="群馬県"
              data-cat="調理（資格不要）" data-wage="1700">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1666,7 +1682,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="長野県"
              data-cat="調理（資格不要）" data-wage="1600">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1715,7 +1731,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="岐阜県"
              data-cat="調理（資格不要）" data-wage="1600">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1764,7 +1780,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="新潟県"
              data-cat="調理（要資格）" data-wage="1500">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1813,7 +1829,7 @@
              data-ag="株式会社ヒューマニック（リゾバ.com）" data-pref="長野県"
              data-cat="洋食調理" data-wage="1800">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1862,7 +1878,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="北海道"
              data-cat="その他リゾートバイト" data-wage="1700">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1911,7 +1927,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="北海道"
              data-cat="その他リゾートバイト" data-wage="1700">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -1960,7 +1976,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="群馬県"
              data-cat="調理（資格不要）" data-wage="1650">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2009,7 +2025,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="神奈川県"
              data-cat="調理（資格不要）" data-wage="1650">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2058,7 +2074,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="北海道"
              data-cat="調理（資格不要）" data-wage="1500">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2107,7 +2123,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="長野県"
              data-cat="調理補助" data-wage="1500">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2156,7 +2172,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="群馬県"
              data-cat="" data-wage="1600">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2205,7 +2221,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="兵庫県"
              data-cat="調理（資格不要）" data-wage="1600">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2254,7 +2270,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="長野県"
              data-cat="調理（資格不要）" data-wage="1600">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2303,7 +2319,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="北海道"
              data-cat="裏方全般" data-wage="1700">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2352,7 +2368,7 @@
              data-ag="スタッフエージェント" data-pref="岐阜県"
              data-cat="全般業務" data-wage="1650">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2401,7 +2417,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="神奈川県"
              data-cat="調理（資格不要）" data-wage="1700">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2450,7 +2466,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="新潟県"
              data-cat="調理（資格不要）" data-wage="1550">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2499,7 +2515,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="神奈川県"
              data-cat="調理（資格不要）" data-wage="1550">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2548,7 +2564,7 @@
              data-ag="スタッフエージェント" data-pref="徳島県"
              data-cat="調理師" data-wage="1650">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2597,7 +2613,7 @@
              data-ag="スタッフエージェント" data-pref="岐阜県"
              data-cat="調理補助" data-wage="1600">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2646,7 +2662,7 @@
              data-ag="スタッフエージェント" data-pref="岐阜県"
              data-cat="仲居" data-wage="1600">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2695,7 +2711,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="静岡県"
              data-cat="ナイトフロント" data-wage="1500">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2744,7 +2760,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="静岡県"
              data-cat="館内全般業務" data-wage="1500">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2793,7 +2809,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="沖縄県"
              data-cat="調理（資格不要）" data-wage="1500">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2842,7 +2858,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="栃木県"
              data-cat="調理（資格不要）" data-wage="1500">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2891,7 +2907,7 @@
              data-ag="スタッフエージェント" data-pref="山梨県"
              data-cat="仲居" data-wage="1650">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2940,7 +2956,7 @@
              data-ag="スタッフエージェント" data-pref="山梨県"
              data-cat="全般業務" data-wage="1650">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -2989,7 +3005,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="長野県"
              data-cat="調理（要資格）" data-wage="1500">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3038,7 +3054,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="静岡県"
              data-cat="フロント・ベル" data-wage="1400">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3087,7 +3103,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="静岡県"
              data-cat="フロント・ベル" data-wage="1400">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3136,7 +3152,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="静岡県"
              data-cat="フロント・ベル" data-wage="1400">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3185,7 +3201,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="静岡県"
              data-cat="仲居・客室係（簡易和装）" data-wage="1400">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3234,7 +3250,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="静岡県"
              data-cat="仲居・客室係（簡易和装）" data-wage="1400">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3283,7 +3299,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="静岡県"
              data-cat="仲居・客室係（簡易和装）" data-wage="1400">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3332,7 +3348,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="静岡県"
              data-cat="仲居・客室係" data-wage="1450">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3381,7 +3397,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="福島県"
              data-cat="調理（資格不要）" data-wage="1600">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3430,7 +3446,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="長野県"
              data-cat="フロント" data-wage="1400">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3479,7 +3495,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="兵庫県"
              data-cat="仲居・客室係" data-wage="1440">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3528,7 +3544,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="新潟県"
              data-cat="調理（要資格）" data-wage="1400">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3577,7 +3593,7 @@
              data-ag="株式会社ヒューマニック（リゾバ.com）" data-pref="新潟県"
              data-cat="和食調理" data-wage="1850">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3626,7 +3642,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="和歌山県"
              data-cat="調理" data-wage="1500">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3675,7 +3691,7 @@
              data-ag="株式会社ヒューマニック（リゾバ.com）" data-pref="群馬県"
              data-cat="その他調理" data-wage="1800">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3724,7 +3740,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="神奈川県"
              data-cat="調理（資格不要）" data-wage="1700">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3773,7 +3789,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="静岡県"
              data-cat="調理（資格不要）" data-wage="1800">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3822,7 +3838,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="長野県"
              data-cat="調理補助" data-wage="1600">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3871,7 +3887,7 @@
              data-ag="スタッフエージェント" data-pref="岐阜県"
              data-cat="仲居" data-wage="1600">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3920,7 +3936,7 @@
              data-ag="スタッフエージェント" data-pref="北海道"
              data-cat="調理師" data-wage="1600">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -3969,7 +3985,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="神奈川県"
              data-cat="レストランサービス" data-wage="1500">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4018,7 +4034,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="静岡県"
              data-cat="調理（資格不要）" data-wage="1500">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4067,7 +4083,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="栃木県"
              data-cat="館内全般業務" data-wage="1500">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4116,7 +4132,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="熊本県"
              data-cat="調理（資格不要）" data-wage="1500">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4165,7 +4181,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="岐阜県"
              data-cat="調理（資格不要）" data-wage="1500">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4214,7 +4230,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="静岡県"
              data-cat="調理（資格不要）" data-wage="1500">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4263,7 +4279,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="静岡県"
              data-cat="調理（資格不要）" data-wage="1500">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4312,7 +4328,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="神奈川県"
              data-cat="レストランサービス" data-wage="1500">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4361,7 +4377,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="岐阜県"
              data-cat="調理（資格不要）" data-wage="1500">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4410,7 +4426,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="岐阜県"
              data-cat="調理補助" data-wage="1450">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4459,7 +4475,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="北海道"
              data-cat="館内全般業務" data-wage="1500">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4508,7 +4524,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="茨城県"
              data-cat="調理（資格不要）" data-wage="1500">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4557,7 +4573,7 @@
              data-ag="スタッフエージェント" data-pref="岐阜県"
              data-cat="フロント" data-wage="1650">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4606,7 +4622,7 @@
              data-ag="スタッフエージェント" data-pref="静岡県"
              data-cat="調理師" data-wage="1700">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4655,7 +4671,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="東京都"
              data-cat="調理" data-wage="2000">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4704,7 +4720,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="北海道"
              data-cat="調理補助" data-wage="1450">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4753,7 +4769,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="長野県"
              data-cat="調理補助" data-wage="1400">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4802,7 +4818,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="栃木県"
              data-cat="フロント" data-wage="1400">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4851,7 +4867,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="栃木県"
              data-cat="レストランサービス" data-wage="1400">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4900,7 +4916,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="栃木県"
              data-cat="レストランサービス" data-wage="1400">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4949,7 +4965,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="神奈川県"
              data-cat="館内全般業務" data-wage="1500">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -4998,7 +5014,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="石川県"
              data-cat="レストランサービス" data-wage="1400">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5047,7 +5063,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="神奈川県"
              data-cat="調理（資格不要）" data-wage="1700">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5096,7 +5112,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="山梨県"
              data-cat="フロント" data-wage="1400">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5145,7 +5161,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="長野県"
              data-cat="調理（資格不要）" data-wage="1600">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5194,7 +5210,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="神奈川県"
              data-cat="館内全般業務" data-wage="1400">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5243,7 +5259,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="長野県"
              data-cat="館内全般業務" data-wage="1400">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5292,7 +5308,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="千葉県"
              data-cat="レストランサービス" data-wage="1400">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5341,7 +5357,7 @@
              data-ag="スタッフエージェント" data-pref="兵庫県"
              data-cat="全般業務" data-wage="1600">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5390,7 +5406,7 @@
              data-ag="スタッフエージェント" data-pref="富山県"
              data-cat="調理師" data-wage="1850">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5439,7 +5455,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="静岡県"
              data-cat="レストランサービス" data-wage="1400">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5488,7 +5504,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="静岡県"
              data-cat="レストランサービス" data-wage="1400">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5537,7 +5553,7 @@
              data-ag="株式会社ダイブ（リゾートバイトダイブ）" data-pref="長野県"
              data-cat="調理" data-wage="1800">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5586,7 +5602,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="群馬県"
              data-cat="調理（資格不要）" data-wage="1500">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5635,7 +5651,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="栃木県"
              data-cat="調理（資格不要）" data-wage="1700">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5684,7 +5700,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="長野県"
              data-cat="調理（資格不要）" data-wage="1500">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5733,7 +5749,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="岐阜県"
              data-cat="スキー場スタッフ" data-wage="1350">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
 
@@ -5782,7 +5798,7 @@
              data-ag="グッドマンサービス（リゾートバイト.com）" data-pref="岐阜県"
              data-cat="スキー場その他" data-wage="1350">空き枠を確認（公式）</a>
           <div class="cta-sub">各社の公式ページへ移動します</div>
-          <div class="lic" style="margin-top:2px">1時間前に掲載を確認</div>
+          <div class="lic" style="margin-top:2px">11時間前に掲載を確認</div>
         </td>
       </tr>
           </tbody>
@@ -5945,7 +5961,7 @@
 
   <details>
     <summary>掲載データについて（正確性と限界）</summary>
-    <p><b>取得元</b>：各派遣会社が公開している求人ページ。取得時点は 2026年10月02日 です。</p>
+    <p><b>取得元</b>：各派遣会社が公開している求人ページ。取得時点は 2026年10月03日 です。</p>
     <p><b>募集終了の扱い</b>：掲載期限が過ぎたものは除外していますが、
       当サイトの取得後に募集が終了している場合があります。
       最新の状況は必ずリンク先の公式ページでご確認ください。</p>

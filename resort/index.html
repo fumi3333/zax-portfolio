@@ -578,7 +578,7 @@
       <span style="font-size:11px;color:var(--sub);border:1px solid var(--line);border-radius:3px;padding:1px 5px;letter-spacing:0.04em">PR</span>
     </div>
   </div>
-  <p class="lede">リゾートソート（りぞーとそーと）は、リゾートバイトの求人を派遣会社をまたいで比べられる無料の検索サイトです。主要5社（グッドマンサービス・ダイブ・スタッフエージェント・ヒューマニック・RESORT CROSS）の公開求人 6,689 件を、時給・寮・食事・期間などの条件で絞り込んで並べ替えられます。運営：ZAX（個人事業）。<span style="display:block;font-size:11px;color:var(--sub);margin-top:4px">長崎県佐世保市のホテル「RE SORT」とは関係ありません。</span></p>
+  <p class="lede">大手5社の公開求人 6,689 件を一括横断検索 <span style="font-size:12px;color:var(--sub);font-weight:400;margin-left:6px">最終更新：10/03 15:54</span></p>
 </header>
 
 <main>
@@ -867,27 +867,20 @@
   </div><!-- /#filter-panel -->
 
   <div class="count" id="count">該当 6,689 件 / 全 6,689 件</div>
-  <!-- 収集19,233件との差がどこから来るのかトップに説明が無く、
-       数が合っていないように見えていた。 -->
-  <div style="font-size:11px;color:var(--sub);margin:-4px 0 8px">
-    集めた求人24,158件のうち、募集が終了したものと、労働者派遣事業の許可番号を
-    確認できなかった会社の分を除いた6,689件を掲載しています。<a href="/resort/data/" style="color:var(--sub)">内訳を見る</a>
-  </div>
   <div id="sortbar" style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:6px 0 10px;font-size:13px;color:var(--sub)">
     <label for="f-sort" style="font-weight:600;color:var(--ink)">並び順</label>
     <select id="f-sort" style="padding:6px 10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);font-size:13px">
-      <option value="recommend">おすすめ順（条件・新着バランス）</option>
-      <option value="recent">新着・更新順（最新確認優先）</option>
-      <option value="net_wage">手取り（月収目安）の高い順</option>
-      <option value="wage">時給の高い順</option>
+      <option value="recommend">おすすめ順</option>
+      <option value="recent">新着・更新順</option>
+      <option value="net_wage">手取りが高い順</option>
+      <option value="wage">時給が高い順</option>
     </select>
-    <span id="sort-note">時給・寮の種類・寮費・食事・勤務期間の記載を合わせて並べています。提携先の求人を少し上に表示しています。</span>
+    <span id="sort-note"></span>
   </div>
   <div id="results">
     <section class="group">
       <div class="group-head">
         <div class="place">求人一覧</div>
-        <div class="place-sub">おすすめ順で表示。時給・寮・食事・勤務期間の記載を合わせて並べています。※手取り額は税・社保控除後の概算（約81%）です。寮費・水光熱費・食事が無料の求人は生活費が浮くため、手取りのほぼ全額がそのまま貯金可能額になります。各社公式ページへ直接遷移できます。</div>
       </div>
       <div class="scroll-hint" style="display:none;font-size:12px;color:var(--sub);margin:0 0 6px 4px">※ 横スクロールで時給・寮・期間・条件をすべて確認できます →</div>
       <div class="scroller">
@@ -7423,15 +7416,7 @@ function render(){
   updateKeptBadge();
 
   const sn = document.getElementById("sort-note");
-  if (sn) {
-    sn.textContent = sortMode === "wage"
-      ? "時給の高い順に並べています。ナイト系など一部の職種が上位に集まることがあります。"
-      : sortMode === "net_wage"
-      ? "想定手取り（月収目安）の高い順に並べています。税・社保控除後の手取り概算で比較できます。"
-      : sortMode === "recent"
-      ? "新着・最新確認された順に並べています。募集枠が直近で確認されたフレッシュな求人から確認できます。"
-      : "時給・寮の種類・寮費・食事・勤務期間の記載を合わせて並べています。直近確認された求人を優先しています。";
-  }
+  if (sn) sn.textContent = "";
   logSearchDebounced(matched.length, unknown);
 
   const el = document.getElementById("results");
@@ -7662,7 +7647,6 @@ function render(){
     <section class="group">
       <div class="group-head">
         <div class="place">求人一覧</div>
-        <div class="place-sub">おすすめ順で表示。時給・寮・食事・勤務期間の記載を合わせて並べています。各社の公式求人ページへ直接遷移できます。</div>
       </div>
       <div class="scroller">
         <table>

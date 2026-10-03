@@ -1,60 +1,60 @@
 {
-  "generated_at": "2026-09-28T15:25:47.522646+09:00",
+  "generated_at": "2026-10-03T15:55:07.658618+09:00",
   "is_today_actual": false,
   "note": "本日分の新着が無かったため、直近の新着から選びました",
   "picks": [
     {
-      "id": "goodman-1008192",
+      "id": "goodman-1008254",
+      "agency": "グッドマンサービス（リゾートバイト.com）",
+      "prefecture": "千葉県",
+      "city": "印旛郡酒々井町",
+      "job_category": "売店・販売",
+      "wage_min": 1650,
+      "dorm_type": "寮なし",
+      "meals_per_day": null,
+      "dorm_cost": null,
+      "posted_at": "2026-10-01",
+      "source_url": "https://www.resortbaito.com/1008254/",
+      "landing_url": "https://fumiproject.dev/resort/area/chiba/",
+      "texts": {
+        "twitter": "【最近追加】千葉県印旛郡酒々井町／売店・販売\n時給1,650円〜（グッドマンサービス）\n寮なし\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/chiba/",
+        "instagram_tiktok": "最近追加の求人です📢\n\n📍千葉県印旛郡酒々井町\n💼売店・販売\n💰時給1,650円〜\n🏠寮なし\n🏢グッドマンサービス\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #千葉"
+      }
+    },
+    {
+      "id": "goodman-1008248",
+      "agency": "グッドマンサービス（リゾートバイト.com）",
+      "prefecture": "福岡県",
+      "city": "福岡市博多区",
+      "job_category": "レストランサービス",
+      "wage_min": 1550,
+      "dorm_type": "完全個室",
+      "meals_per_day": null,
+      "dorm_cost": null,
+      "posted_at": "2026-10-01",
+      "source_url": "https://www.resortbaito.com/1008248/",
+      "landing_url": "https://fumiproject.dev/resort/area/fukuoka/",
+      "texts": {
+        "twitter": "【最近追加】福岡県福岡市博多区／レストランサービス\n時給1,550円〜（グッドマンサービス）\n完全個室\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/fukuoka/",
+        "instagram_tiktok": "最近追加の求人です📢\n\n📍福岡県福岡市博多区\n💼レストランサービス\n💰時給1,550円〜\n🏠完全個室\n🏢グッドマンサービス\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #福岡"
+      }
+    },
+    {
+      "id": "goodman-1008274",
       "agency": "グッドマンサービス（リゾートバイト.com）",
       "prefecture": "大阪府",
-      "city": "大阪市北区",
-      "job_category": "宿泊予約・事務",
-      "wage_min": 1600,
-      "dorm_type": "完全個室",
-      "meals_per_day": 1,
+      "city": "大阪市此花区",
+      "job_category": "館内全般業務",
+      "wage_min": 1500,
+      "dorm_type": "寮なし",
+      "meals_per_day": null,
       "dorm_cost": null,
-      "posted_at": "2026-09-26",
-      "source_url": "https://www.resortbaito.com/1008192/",
+      "posted_at": "2026-10-02",
+      "source_url": "https://www.resortbaito.com/1008274/",
       "landing_url": "https://fumiproject.dev/resort/area/osaka/",
       "texts": {
-        "twitter": "【最近追加】大阪府大阪市北区／宿泊予約・事務\n時給1,600円〜（グッドマンサービス）\n完全個室・食事1食付\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/osaka/",
-        "instagram_tiktok": "最近追加の求人です📢\n\n📍大阪府大阪市北区\n💼宿泊予約・事務\n💰時給1,600円〜\n🏠完全個室・食事1食付\n🏢グッドマンサービス\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #大阪"
-      }
-    },
-    {
-      "id": "alpha-13144",
-      "agency": "株式会社アルファスタッフ（アルファ・リゾート）",
-      "prefecture": "大分県",
-      "city": "由布市",
-      "job_category": "業務全般",
-      "wage_min": 1450,
-      "dorm_type": "完全個室",
-      "meals_per_day": 2,
-      "dorm_cost": 0,
-      "posted_at": "2026-09-25",
-      "source_url": "https://www.a-resort.jp/job/13144",
-      "landing_url": "https://fumiproject.dev/resort/area/oita/",
-      "texts": {
-        "twitter": "【最近追加】大分県由布市／業務全般\n時給1,450円〜（株式会社アルファスタッフ）\n完全個室・食事2食付\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/oita/",
-        "instagram_tiktok": "最近追加の求人です📢\n\n📍大分県由布市\n💼業務全般\n💰時給1,450円〜\n🏠完全個室・食事2食付\n🏢株式会社アルファスタッフ\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #大分"
-      }
-    },
-    {
-      "id": "goodman-1008185",
-      "agency": "グッドマンサービス（リゾートバイト.com）",
-      "prefecture": "石川県",
-      "city": "加賀市",
-      "job_category": "レストランサービス",
-      "wage_min": 1400,
-      "dorm_type": "完全個室",
-      "meals_per_day": 2,
-      "dorm_cost": 0,
-      "posted_at": "2026-09-25",
-      "source_url": "https://www.resortbaito.com/1008185/",
-      "landing_url": "https://fumiproject.dev/resort/area/ishikawa/",
-      "texts": {
-        "twitter": "【最近追加】石川県加賀市／レストランサービス\n時給1,400円〜（グッドマンサービス）\n完全個室・食事2食付\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/ishikawa/",
-        "instagram_tiktok": "最近追加の求人です📢\n\n📍石川県加賀市\n💼レストランサービス\n💰時給1,400円〜\n🏠完全個室・食事2食付\n🏢グッドマンサービス\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #石川"
+        "twitter": "【最近追加】大阪府大阪市此花区／館内全般業務\n時給1,500円〜（グッドマンサービス）\n寮なし\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/osaka/",
+        "instagram_tiktok": "最近追加の求人です📢\n\n📍大阪府大阪市此花区\n💼館内全般業務\n💰時給1,500円〜\n🏠寮なし\n🏢グッドマンサービス\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #大阪"
       }
     }
   ]

@@ -112,6 +112,13 @@ footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line);
       <label for="chome">丁目（住所の町名のあとの数字。例：6）</label>
       <select id="chome" data-clarity-mask="true"><option value="">すべて</option></select>
     </div>
+    <div class="field" id="stationField">
+      <label for="station">最寄りの駅から、近い順に探す（駅名を入れて選ぶ。例：蒲田、池袋）</label>
+      <input id="station" list="stationList" type="search" placeholder="駅名" autocomplete="off" data-clarity-mask="true">
+      <datalist id="stationList"></datalist>
+      <button type="button" id="here" style="margin-top:6px;padding:8px 12px;border:1px solid var(--line,#ccc);border-radius:6px;background:var(--card,#fff);cursor:pointer">現在地から探す</button>
+      <p class="meta" id="stationMsg" aria-live="polite"></p>
+    </div>
     <div class="field">
       <label for="q">名前・住所の一部（わからなければ空欄で可）</label>
       <input id="q" type="search" placeholder="例：さくら薬局、〇〇クリニック、駅名" autocomplete="off" data-clarity-mask="true">
@@ -164,7 +171,7 @@ footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line);
 </main>
 <script>
 (async () => {
-  const PAGE = 50;
+  let PAGE = 50;
   // 一覧は jiritsu リポジトリが毎日更新している。取れない時は同じ場所に置いた控えを使う
   const load = async (u) => { const r = await fetch(u); if (!r.ok) throw 0; return r.json(); };
   const $ = (id) => document.getElementById(id);
@@ -204,6 +211,37 @@ footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line);
     keys.forEach((c) => chomeSel.add(new Option(`${c}（${counts[c]}）`, c)));
     chomeField.hidden = false;
   }
+  // ---- 駅・現在地から近い順（2026-10-04）。住所の位置は国土地理院の住所検索で求めた概算。駅は国土数値情報（駅データ）----
+  let origin = null, originLabel = "";
+  const hav = (o, la, lo) => { const R = 6371000, p = Math.PI / 180; const a = Math.sin((la - o[0]) * p / 2) ** 2 + Math.cos(o[0] * p) * Math.cos(la * p) * Math.sin((lo - o[1]) * p / 2) ** 2; return 2 * R * Math.asin(Math.sqrt(a)); };
+  const stIn = $("station"), stList = $("stationList"), stMsg = $("stationMsg"), stField = $("stationField");
+  const withCoords = d.rows.filter((r) => r[7] != null);
+  if (!withCoords.length) stField.hidden = true;
+  else {
+    const lats = withCoords.map((r) => r[7]), lons = withCoords.map((r) => r[8]);
+    const box = [Math.min(...lats) - 0.08, Math.max(...lats) + 0.08, Math.min(...lons) - 0.08, Math.max(...lons) + 0.08];
+    let stations = null;
+    fetch("stations.json").then((r) => r.json()).then((s) => {
+      stations = {};
+      Object.entries(s).forEach(([n, ps]) => {
+        const inb = ps.filter(([la, lo]) => la >= box[0] && la <= box[1] && lo >= box[2] && lo <= box[3]);
+        if (inb.length) { stations[n] = inb; const o = document.createElement("option"); o.value = n; stList.append(o); }
+      });
+    }).catch(() => {});
+    stIn.addEventListener("change", () => {
+      const v = stIn.value.trim().replace(/駅$/, "");
+      if (!v) { origin = null; stMsg.textContent = ""; update(); return; }
+      if (stations && stations[v]) { origin = stations[v][0]; originLabel = v + "駅"; stMsg.textContent = ""; }
+      else { origin = null; stMsg.textContent = "この駅は、対象の地域に見つかりません。候補から選んでください。"; }
+      update();
+    });
+    $("here").addEventListener("click", () => {
+      if (!navigator.geolocation) { stMsg.textContent = "この端末では現在地を使えません。"; return; }
+      stMsg.textContent = "現在地を確認しています…";
+      navigator.geolocation.getCurrentPosition((p) => { origin = [p.coords.latitude, p.coords.longitude]; originLabel = "現在地"; stIn.value = ""; stMsg.textContent = "位置情報は、この端末の中だけで使い、送信しません。"; update(); },
+        () => { stMsg.textContent = "現在地を取得できませんでした。駅名を入れてください。"; });
+    });
+  }
   $("asof").textContent = d.as_of.replace(/^(\d+)-(\d+)-(\d+)$/, (_, y, m, day) => `${y}年${+m}月${+day}日`);
   d.munis.forEach((m, i) => muniSel.add(new Option(m, i)));
   Object.entries(d.kinds).forEach(([k, label], i) => {
@@ -221,6 +259,7 @@ footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line);
       li.querySelector(".name").textContent = r[2];
       li.querySelector(".code b").textContent = r[6];
       li.querySelector(".addr").textContent = r[3];
+      if (origin && r.dist != null) { const dd = document.createElement("div"); dd.className = "meta"; dd.textContent = `${originLabel}から約${r.dist < 1000 ? Math.round(r.dist / 10) * 10 + "m" : (r.dist / 1000).toFixed(1) + "km"}（住所からの概算の直線距離）`; li.append(dd); }
       list.append(li);
     }
     shown = Math.min(shown + PAGE, hits.length);
@@ -231,12 +270,15 @@ footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line);
     const words = q.value.trim().split(/\s+/).map(norm).filter(Boolean);
     none.hidden = true;
     // 東京都全体のままで名前も空だと件数が多すぎるので、どちらかを入れてもらう
-    if (mi === "" && words.length === 0) { hits = []; count.textContent = "名前を入れるか、区市町村を選んでください。"; render(true); return; }
+    if (mi === "" && words.length === 0 && !origin) { hits = []; count.textContent = "名前を入れるか、区市町村を選んでください。"; render(true); return; }
     const town = mi === "" ? "" : townSel.value;
     const chome = (mi === "" || town === "" || chomeField.hidden) ? "" : chomeSel.value;
     hits = d.rows.filter((r) => r[0] === kind && (mi === "" || r[1] === +mi) && (town === "" || r.town === town) && (chome === "" || r.chome === chome) && words.every((w) => r.key.includes(w)));
+    PAGE = origin ? 5 : 50;
+    if (origin) { hits.forEach((r) => { r.dist = r[7] == null ? null : hav(origin, r[7], r[8]); }); hits = hits.filter((r) => r.dist != null).sort((a, b) => a.dist - b.dist); }
     count.textContent = `${mi === "" ? "東京都全体" : d.munis[mi] + town + (chome ? chome + "丁目付近" : "")}の${d.kinds[kind]}：${hits.length}件`;
     if (hits.length > 20 && mi !== "" && town === "") count.textContent += "（町名を選ぶと数件に絞れます）";
+    if (origin) count.textContent = `${originLabel}から近い順の${d.kinds[kind]}：${hits.length}件（近い${Math.min(5, hits.length)}件を表示。「もっと見る」で続きを表示）`;
     none.hidden = hits.length > 0;
     render(true);
   }

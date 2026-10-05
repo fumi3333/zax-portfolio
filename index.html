@@ -367,12 +367,35 @@ footer{border-top:1px solid var(--line);padding:2.5rem 0 4rem;
         <p class="pdesc">
           派遣会社ごとに分かれているリゾートバイトの求人を、時給・寮・エリアなどの同じ条件で比べられる検索サイトです。
           各社の公開求人を毎日取得して形をそろえ、募集が終わったものは外して表示しています。
+          リゾート地のページには、その市が公開している指定緊急避難場所などのデータを地図で重ねています（例：<a href="/resort/spot/ishigaki/">石垣島</a>）。
         </p>
         <dl class="meta">
           <dt class="mono">担当</dt><dd>設計・実装</dd>
           <dt class="mono">使用技術</dt><dd><div class="stack"><span>Python</span><span>JSON-LD</span><span>静的サイト生成</span><span>Cloudflare Workers</span><span>D1</span></div></dd>
           <dt class="mono">内容</dt><dd>会社ごとに違うHTML構造の正規化、募集終了の判定、寮・食事・期間の条件化</dd>
           <dt class="mono">公開先</dt><dd><a class="go" href="/resort/">fumiproject.dev/resort/ →</a></dd>
+        </dl>
+      </div>
+    </article>
+
+    <article class="piece rv">
+      <a class="frame" href="/jiritsu/">
+        <div style="background:var(--raise);width:100%;height:100%;min-height:220px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:2rem;text-align:center;">
+          <span style="font-family:var(--lat);font-size:1.35rem;font-weight:400;letter-spacing:-.01em;color:var(--ink);">自立支援医療の指定機関さがし</span>
+          <span class="mono" style="margin-top:.4rem;font-size:.76rem;color:var(--muted);letter-spacing:.08em;">東京都・大阪市・京都市・浜松市の公開データ</span>
+        </div>
+      </a>
+      <div>
+        <div class="ptop"><span class="pname">自立支援医療（精神通院）の指定薬局・病院をさがす</span><span class="chip">公開中</span></div>
+        <div class="ptag mono">自治体のオープンデータを使った検索ページ</div>
+        <p class="pdesc">
+          通っている薬局・病院の名前を入れると、自立支援医療（精神通院）の指定を受けているかどうかと、申請書に書く医療機関コードが分かる検索ページです。
+          区市町村や最寄りの駅、現在地から近い順にも探せます。広告は載せていません。
+        </p>
+        <dl class="meta">
+          <dt class="mono">担当</dt><dd>設計・実装</dd>
+          <dt class="mono">使用技術</dt><dd><div class="stack"><span>Python</span><span>オープンデータ</span><span>国土地理院 住所検索API</span><span>静的サイト</span></div></dd>
+          <dt class="mono">公開先</dt><dd><a class="go" href="/jiritsu/">fumiproject.dev/jiritsu/ →</a></dd>
         </dl>
       </div>
     </article>

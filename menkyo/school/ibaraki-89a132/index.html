@@ -13,7 +13,7 @@
     --line:#e8e8e8; --accent:#111111; --accent-hover:#333333;
     --warn:#555555; --warnbg:#f4f4f4;
   }
-  @media (prefers-color-scheme:dark){
+  @media not all{
     :root{
       --bg:#09090b; --card:#121215; --ink:#ededed; --sub:#8e8e93;
       --line:#27272a; --accent:#ededed; --accent-hover:#cccccc;
@@ -63,7 +63,7 @@
     font-size:11px;font-weight:700;color:#b91c1c;background:#fef2f2;
     border:1px solid #fecaca;padding:2px 6px;border-radius:4px;margin-top:2px;width:fit-content;
   }
-  @media (prefers-color-scheme:dark){
+  @media not all{
     .price-diff-badge{background:#450a0a;border-color:#7f1d1d;color:#fca5a5;}
   }
 
@@ -82,7 +82,7 @@
   .btn-keep{display:inline-block;padding:5px 9px;margin-right:6px;background:var(--bg);border:1px solid var(--line);border-radius:6px;font-size:11px;font-weight:600;color:var(--sub);cursor:pointer;transition:all .15s;vertical-align:middle}
   .btn-keep:hover{border-color:var(--ink);color:var(--ink)}
   .btn-keep.kept{background:#fef3c7;border-color:#fde68a;color:#b45309;font-weight:700}
-  @media (prefers-color-scheme:dark){
+  @media not all{
     .btn-keep.kept{background:#78350f;border-color:#b45309;color:#fde68a}
   }
 
@@ -120,7 +120,7 @@
   .chip-pill.chip-kept{background:#fffbeb;border-color:#fde68a;color:#b45309}
   .chip-pill.chip-kept:hover{background:#fef3c7;border-color:#fcd34d}
   .chip-pill.chip-kept.active{background:#b45309;color:#fff;border-color:#b45309}
-  @media (prefers-color-scheme:dark){
+  @media not all{
     .chip-pill.chip-restore{background:#1e3a8a;border-color:#3b82f6;color:#93c5fd}
     .chip-pill.chip-kept{background:#78350f;border-color:#b45309;color:#fde68a}
     .chip-pill.chip-kept.active{background:#d97706;color:#09090b;border-color:#d97706}
@@ -133,7 +133,7 @@
     display:flex;align-items:center;justify-content:space-between;
     font-size:13px;color:#166534;line-height:1.5;
   }
-  @media (prefers-color-scheme:dark){
+  @media not all{
     .update-banner{background:#052e16;border-color:#166534;color:#bbf7d0;}
   }
   .banner-close{background:none;border:none;color:inherit;font-size:16px;cursor:pointer;padding:0 6px;line-height:1}
@@ -231,7 +231,7 @@
   .level-cheap .cal-d-price{background:#dcfce7;color:#15803d;font-weight:700;}
   .level-normal .cal-d-price{background:#fef9c3;color:#854d0e;}
   .level-peak .cal-d-price{background:#fee2e2;color:#b91c1c;font-weight:700;}
-  @media (prefers-color-scheme:dark){
+  @media not all{
     .level-cheap .cal-d-price{background:#052e16;color:#86efac;}
     .level-normal .cal-d-price{background:#451a03;color:#fde68a;}
     .level-peak .cal-d-price{background:#450a0a;color:#fca5a5;}

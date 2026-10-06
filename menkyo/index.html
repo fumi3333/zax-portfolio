@@ -306,7 +306,7 @@
     --line:#e8e8e8; --accent:#111111; --accent-hover:#333333;
     --warn:#555555; --warnbg:#f4f4f4;
   }
-  @media (prefers-color-scheme:dark){
+  @media not all{
     :root{
       --bg:#09090b; --card:#121215; --ink:#ededed; --sub:#8e8e93;
       --line:#27272a; --accent:#ededed; --accent-hover:#cccccc;
@@ -356,7 +356,7 @@
     font-size:11px;font-weight:700;color:#b91c1c;background:#fef2f2;
     border:1px solid #fecaca;padding:2px 6px;border-radius:4px;margin-top:2px;width:fit-content;
   }
-  @media (prefers-color-scheme:dark){
+  @media not all{
     .price-diff-badge{background:#450a0a;border-color:#7f1d1d;color:#fca5a5;}
   }
 
@@ -375,7 +375,7 @@
   .btn-keep{display:inline-block;padding:5px 9px;margin-right:6px;background:var(--bg);border:1px solid var(--line);border-radius:6px;font-size:11px;font-weight:600;color:var(--sub);cursor:pointer;transition:all .15s;vertical-align:middle}
   .btn-keep:hover{border-color:var(--ink);color:var(--ink)}
   .btn-keep.kept{background:#fef3c7;border-color:#fde68a;color:#b45309;font-weight:700}
-  @media (prefers-color-scheme:dark){
+  @media not all{
     .btn-keep.kept{background:#78350f;border-color:#b45309;color:#fde68a}
   }
 
@@ -413,7 +413,7 @@
   .chip-pill.chip-kept{background:#fffbeb;border-color:#fde68a;color:#b45309}
   .chip-pill.chip-kept:hover{background:#fef3c7;border-color:#fcd34d}
   .chip-pill.chip-kept.active{background:#b45309;color:#fff;border-color:#b45309}
-  @media (prefers-color-scheme:dark){
+  @media not all{
     .chip-pill.chip-restore{background:#1e3a8a;border-color:#3b82f6;color:#93c5fd}
     .chip-pill.chip-kept{background:#78350f;border-color:#b45309;color:#fde68a}
     .chip-pill.chip-kept.active{background:#d97706;color:#09090b;border-color:#d97706}
@@ -426,7 +426,7 @@
     display:flex;align-items:center;justify-content:space-between;
     font-size:13px;color:#166534;line-height:1.5;
   }
-  @media (prefers-color-scheme:dark){
+  @media not all{
     .update-banner{background:#052e16;border-color:#166534;color:#bbf7d0;}
   }
   .banner-close{background:none;border:none;color:inherit;font-size:16px;cursor:pointer;padding:0 6px;line-height:1}
@@ -524,7 +524,7 @@
   .level-cheap .cal-d-price{background:#dcfce7;color:#15803d;font-weight:700;}
   .level-normal .cal-d-price{background:#fef9c3;color:#854d0e;}
   .level-peak .cal-d-price{background:#fee2e2;color:#b91c1c;font-weight:700;}
-  @media (prefers-color-scheme:dark){
+  @media not all{
     .level-cheap .cal-d-price{background:#052e16;color:#86efac;}
     .level-normal .cal-d-price{background:#451a03;color:#fde68a;}
     .level-peak .cal-d-price{background:#450a0a;color:#fca5a5;}
@@ -607,7 +607,7 @@
       <span style="font-size:11px;color:var(--sub);border:1px solid var(--line);border-radius:3px;padding:1px 5px;letter-spacing:0.04em">PR</span>
     </div>
   </div>
-  <p class="lede">大手3大予約サイトの公開プラン217校を一括横断比較 <span style="font-size:12px;color:var(--sub);font-weight:400;margin-left:6px">最終更新：10/06 11:53</span></p>
+  <p class="lede">大手3大予約サイトの公開プラン217校を一括横断比較 <span style="font-size:12px;color:var(--sub);font-weight:400;margin-left:6px">最終更新：10/06 19:51</span></p>
 </header>
 
 <main>
@@ -742,7 +742,7 @@
         data-min-price="180400"
         data-site-diff="0"
         data-season-diff="360800"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -785,7 +785,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 78件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -808,7 +808,7 @@
         data-min-price="180400"
         data-site-diff="0"
         data-season-diff="281600"
-        data-rooms="自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,自炊・食事なし,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -851,7 +851,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, 自炊・食事なし, ツイン（2人部屋）</span>
             <span>プラン: 87件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -874,7 +874,7 @@
         data-min-price="180400"
         data-site-diff="0"
         data-season-diff="361900"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -917,7 +917,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 88件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -940,7 +940,7 @@
         data-min-price="180950"
         data-site-diff="0"
         data-season-diff="412170"
-        data-rooms="トリプル（3人部屋）,自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="トリプル（3人部屋）,自炊・食事なし,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -983,7 +983,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, 自炊・食事なし, ツイン（2人部</span>
+            <span>部屋: トリプル（3人部屋）, 自炊・食事なし, シングル（個室</span>
             <span>プラン: 162件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -1006,7 +1006,7 @@
         data-min-price="181500"
         data-site-diff="0"
         data-season-diff="299200"
-        data-rooms="グループ（4名〜）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,グループ（4名〜）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -1049,7 +1049,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: グループ（4名〜）, ツイン（2人部屋）, シングル（個</span>
+            <span>部屋: シングル（個室）, グループ（4名〜）, ツイン（2人部</span>
             <span>プラン: 83件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -1072,7 +1072,7 @@
         data-min-price="181500"
         data-site-diff="0"
         data-season-diff="257400"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -1115,7 +1115,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 61件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -1138,7 +1138,7 @@
         data-min-price="184800"
         data-site-diff="0"
         data-season-diff="361900"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -1181,7 +1181,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 113件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -1204,7 +1204,7 @@
         data-min-price="184800"
         data-site-diff="0"
         data-season-diff="247500"
-        data-rooms="トリプル（3人部屋）,自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="ツイン（2人部屋）,シングル（個室）,自炊・食事なし,トリプル（3人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -1247,7 +1247,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, 自炊・食事なし, ツイン（2人部</span>
+            <span>部屋: ツイン（2人部屋）, シングル（個室）, 自炊・食事なし</span>
             <span>プラン: 90件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -1270,7 +1270,7 @@
         data-min-price="187000"
         data-site-diff="0"
         data-season-diff="313500"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -1313,7 +1313,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 137件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -1336,7 +1336,7 @@
         data-min-price="190300"
         data-site-diff="0"
         data-season-diff="238700"
-        data-rooms="自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="自炊・食事なし,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -1379,7 +1379,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: 自炊・食事なし, シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 50件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -1402,7 +1402,7 @@
         data-min-price="192500"
         data-site-diff="0"
         data-season-diff="239800"
-        data-rooms="トリプル（3人部屋）,自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="ツイン（2人部屋）,自炊・食事なし,シングル（個室）,トリプル（3人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -1445,7 +1445,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, 自炊・食事なし, ツイン（2人部</span>
+            <span>部屋: ツイン（2人部屋）, 自炊・食事なし, シングル（個室）</span>
             <span>プラン: 96件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -1468,7 +1468,7 @@
         data-min-price="192500"
         data-site-diff="0"
         data-season-diff="291500"
-        data-rooms="自炊・食事なし,シングル / ツイン,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,シングル / ツイン,自炊・食事なし,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -1511,7 +1511,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, シングル / ツイン, ツイン（2人部</span>
+            <span>部屋: シングル（個室）, シングル / ツイン, 自炊・食事な</span>
             <span>プラン: 113件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -1534,7 +1534,7 @@
         data-min-price="193600"
         data-site-diff="0"
         data-season-diff="136400"
-        data-rooms="トリプル（3人部屋）,グループ（4名〜）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="ツイン（2人部屋）,シングル（個室）,グループ（4名〜）,トリプル（3人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -1577,7 +1577,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, グループ（4名〜）, ツイン（2</span>
+            <span>部屋: ツイン（2人部屋）, シングル（個室）, グループ（4名</span>
             <span>プラン: 18件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -1600,7 +1600,7 @@
         data-min-price="194000"
         data-site-diff="0"
         data-season-diff="440000"
-        data-rooms="トリプル（3人部屋）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="ツイン（2人部屋）,シングル（個室）,トリプル（3人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -1643,7 +1643,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: ツイン（2人部屋）, シングル（個室）, トリプル（3人</span>
             <span>プラン: 84件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -1666,7 +1666,7 @@
         data-min-price="195000"
         data-site-diff="0"
         data-season-diff="208000"
-        data-rooms="自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,自炊・食事なし,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -1709,7 +1709,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, 自炊・食事なし, ツイン（2人部屋）</span>
             <span>プラン: 55件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -1732,7 +1732,7 @@
         data-min-price="195800"
         data-site-diff="0"
         data-season-diff="169400"
-        data-rooms="自炊・食事なし,ツイン（2人部屋）,トリプル（3人部屋）,シングル（個室）,相部屋（レギュラー）"
+        data-rooms="自炊・食事なし,相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）,トリプル（3人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -1775,7 +1775,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, ツイン（2人部屋）, トリプル（3人部</span>
+            <span>部屋: 自炊・食事なし, 相部屋（レギュラー）, シングル（個室</span>
             <span>プラン: 92件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -1798,7 +1798,7 @@
         data-min-price="195800"
         data-site-diff="0"
         data-season-diff="169400"
-        data-rooms="自炊・食事なし,ツイン（2人部屋）,トリプル（3人部屋）,シングル（個室）,相部屋（レギュラー）"
+        data-rooms="自炊・食事なし,相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）,トリプル（3人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -1841,7 +1841,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, ツイン（2人部屋）, トリプル（3人部</span>
+            <span>部屋: 自炊・食事なし, 相部屋（レギュラー）, シングル（個室</span>
             <span>プラン: 120件</span>
             <span>掲載: 2社横断</span>
           </div>
@@ -1864,7 +1864,7 @@
         data-min-price="195800"
         data-site-diff="0"
         data-season-diff="169400"
-        data-rooms="相部屋（レギュラー）,自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,相部屋（レギュラー）,自炊・食事なし,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -1907,7 +1907,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, 自炊・食事なし, ツイン（2人部</span>
+            <span>部屋: シングル（個室）, 相部屋（レギュラー）, 自炊・食事な</span>
             <span>プラン: 28件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -1930,7 +1930,7 @@
         data-min-price="197500"
         data-site-diff="0"
         data-season-diff="234400"
-        data-rooms="自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="自炊・食事なし,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -1973,7 +1973,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: 自炊・食事なし, シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 52件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -1996,7 +1996,7 @@
         data-min-price="198000"
         data-site-diff="96800"
         data-season-diff="282700"
-        data-rooms="自炊・食事なし,ツイン（2人部屋）,シングル（個室）,グループ（4名〜）,トリプル（3人部屋）"
+        data-rooms="自炊・食事なし,シングル（個室）,グループ（4名〜）,ツイン（2人部屋）,トリプル（3人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -2039,7 +2039,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: 自炊・食事なし, シングル（個室）, グループ（4名〜）</span>
             <span>プラン: 212件</span>
             <span>掲載: 3社横断</span>
           </div>
@@ -2062,7 +2062,7 @@
         data-min-price="198000"
         data-site-diff="0"
         data-season-diff="211200"
-        data-rooms="自炊・食事なし,シングル（個室）"
+        data-rooms="シングル（個室）,自炊・食事なし"
         data-features="">
         
         <div class="group-head">
@@ -2105,7 +2105,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, シングル（個室）</span>
+            <span>部屋: シングル（個室）, 自炊・食事なし</span>
             <span>プラン: 58件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -2128,7 +2128,7 @@
         data-min-price="198000"
         data-site-diff="0"
         data-season-diff="347600"
-        data-rooms="トリプル（3人部屋）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="ツイン（2人部屋）,シングル（個室）,トリプル（3人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -2171,7 +2171,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: ツイン（2人部屋）, シングル（個室）, トリプル（3人</span>
             <span>プラン: 148件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -2194,7 +2194,7 @@
         data-min-price="203500"
         data-site-diff="42900"
         data-season-diff="375100"
-        data-rooms="相部屋（レギュラー）,グループ（4名〜）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,グループ（4名〜）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -2237,7 +2237,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, グループ（4名〜）, ツイン（2</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, グループ（4</span>
             <span>プラン: 108件</span>
             <span>掲載: 2社横断</span>
           </div>
@@ -2260,7 +2260,7 @@
         data-min-price="206800"
         data-site-diff="0"
         data-season-diff="443300"
-        data-rooms="グループ（4名〜）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,グループ（4名〜）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -2303,7 +2303,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: グループ（4名〜）, ツイン（2人部屋）, シングル（個</span>
+            <span>部屋: シングル（個室）, グループ（4名〜）, ツイン（2人部</span>
             <span>プラン: 91件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -2326,7 +2326,7 @@
         data-min-price="208000"
         data-site-diff="0"
         data-season-diff="301000"
-        data-rooms="自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="自炊・食事なし,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -2369,7 +2369,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: 自炊・食事なし, シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 144件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -2392,7 +2392,7 @@
         data-min-price="209000"
         data-site-diff="88000"
         data-season-diff="253000"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,トリプル（3人部屋）,シングル（個室）"
+        data-rooms="ツイン（2人部屋）,相部屋（レギュラー）,シングル（個室）,トリプル（3人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -2435,7 +2435,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, トリプル（</span>
+            <span>部屋: ツイン（2人部屋）, 相部屋（レギュラー）, シングル（</span>
             <span>プラン: 58件</span>
             <span>掲載: 2社横断</span>
           </div>
@@ -2458,7 +2458,7 @@
         data-min-price="209000"
         data-site-diff="0"
         data-season-diff="209000"
-        data-rooms="自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="自炊・食事なし,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -2501,7 +2501,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: 自炊・食事なし, シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 68件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -2524,7 +2524,7 @@
         data-min-price="209000"
         data-site-diff="0"
         data-season-diff="432300"
-        data-rooms="自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,自炊・食事なし,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -2567,7 +2567,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, 自炊・食事なし, ツイン（2人部屋）</span>
             <span>プラン: 142件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -2656,7 +2656,7 @@
         data-min-price="210000"
         data-site-diff="0"
         data-season-diff="193000"
-        data-rooms="トリプル（3人部屋）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="トリプル（3人部屋）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -2699,7 +2699,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: トリプル（3人部屋）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 50件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -2722,7 +2722,7 @@
         data-min-price="214500"
         data-site-diff="0"
         data-season-diff="247000"
-        data-rooms="トリプル（3人部屋）,グループ（4名〜）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="トリプル（3人部屋）,シングル（個室）,グループ（4名〜）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -2765,7 +2765,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, グループ（4名〜）, ツイン（2</span>
+            <span>部屋: トリプル（3人部屋）, シングル（個室）, グループ（4</span>
             <span>プラン: 78件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -2788,7 +2788,7 @@
         data-min-price="215000"
         data-site-diff="0"
         data-season-diff="196000"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -2831,7 +2831,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 70件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -2854,7 +2854,7 @@
         data-min-price="218900"
         data-site-diff="0"
         data-season-diff="231100"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -2897,7 +2897,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 282件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -2920,7 +2920,7 @@
         data-min-price="220000"
         data-site-diff="0"
         data-season-diff="313500"
-        data-rooms="相部屋（レギュラー）,自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="自炊・食事なし,相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -2963,7 +2963,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, 自炊・食事なし, ツイン（2人部</span>
+            <span>部屋: 自炊・食事なし, 相部屋（レギュラー）, シングル（個室</span>
             <span>プラン: 124件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -2986,7 +2986,7 @@
         data-min-price="220000"
         data-site-diff="0"
         data-season-diff="231000"
-        data-rooms="トリプル（3人部屋）,相部屋（レギュラー）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="ツイン（2人部屋）,相部屋（レギュラー）,シングル（個室）,トリプル（3人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -3029,7 +3029,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, 相部屋（レギュラー）, ツイン（</span>
+            <span>部屋: ツイン（2人部屋）, 相部屋（レギュラー）, シングル（</span>
             <span>プラン: 49件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -3052,7 +3052,7 @@
         data-min-price="220000"
         data-site-diff="0"
         data-season-diff="181500"
-        data-rooms="トリプル（3人部屋）,自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="トリプル（3人部屋）,自炊・食事なし,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -3095,7 +3095,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, 自炊・食事なし, ツイン（2人部</span>
+            <span>部屋: トリプル（3人部屋）, 自炊・食事なし, シングル（個室</span>
             <span>プラン: 144件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -3118,7 +3118,7 @@
         data-min-price="220000"
         data-site-diff="0"
         data-season-diff="170500"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,トリプル（3人部屋）,シングル（個室）"
+        data-rooms="トリプル（3人部屋）,相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -3161,7 +3161,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, トリプル（</span>
+            <span>部屋: トリプル（3人部屋）, 相部屋（レギュラー）, シングル</span>
             <span>プラン: 20件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -3184,7 +3184,7 @@
         data-min-price="220000"
         data-site-diff="0"
         data-season-diff="341000"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -3227,7 +3227,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 55件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -3250,7 +3250,7 @@
         data-min-price="220000"
         data-site-diff="0"
         data-season-diff="126500"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -3293,7 +3293,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 16件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -3316,7 +3316,7 @@
         data-min-price="220000"
         data-site-diff="0"
         data-season-diff="170500"
-        data-rooms="トリプル（3人部屋）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="ツイン（2人部屋）,シングル（個室）,トリプル（3人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -3359,7 +3359,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: ツイン（2人部屋）, シングル（個室）, トリプル（3人</span>
             <span>プラン: 14件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -3382,7 +3382,7 @@
         data-min-price="220000"
         data-site-diff="0"
         data-season-diff="137500"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -3425,7 +3425,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 13件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -3448,7 +3448,7 @@
         data-min-price="220000"
         data-site-diff="0"
         data-season-diff="194000"
-        data-rooms="自炊・食事なし,シングル（個室）"
+        data-rooms="シングル（個室）,自炊・食事なし"
         data-features="">
         
         <div class="group-head">
@@ -3491,7 +3491,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, シングル（個室）</span>
+            <span>部屋: シングル（個室）, 自炊・食事なし</span>
             <span>プラン: 24件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -3514,7 +3514,7 @@
         data-min-price="223300"
         data-site-diff="0"
         data-season-diff="185900"
-        data-rooms="自炊・食事なし,シングル（個室）"
+        data-rooms="シングル（個室）,自炊・食事なし"
         data-features="">
         
         <div class="group-head">
@@ -3557,7 +3557,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, シングル（個室）</span>
+            <span>部屋: シングル（個室）, 自炊・食事なし</span>
             <span>プラン: 20件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -3580,7 +3580,7 @@
         data-min-price="225000"
         data-site-diff="0"
         data-season-diff="200000"
-        data-rooms="トリプル（3人部屋）,グループ（4名〜）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="トリプル（3人部屋）,シングル（個室）,グループ（4名〜）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -3623,7 +3623,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, グループ（4名〜）, ツイン（2</span>
+            <span>部屋: トリプル（3人部屋）, シングル（個室）, グループ（4</span>
             <span>プラン: 80件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -3646,7 +3646,7 @@
         data-min-price="225000"
         data-site-diff="0"
         data-season-diff="193000"
-        data-rooms="トリプル（3人部屋）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="ツイン（2人部屋）,シングル（個室）,トリプル（3人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -3689,7 +3689,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: ツイン（2人部屋）, シングル（個室）, トリプル（3人</span>
             <span>プラン: 46件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -3712,7 +3712,7 @@
         data-min-price="225000"
         data-site-diff="0"
         data-season-diff="150000"
-        data-rooms="自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="自炊・食事なし,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -3755,7 +3755,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: 自炊・食事なし, シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 12件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -3778,7 +3778,7 @@
         data-min-price="225500"
         data-site-diff="11000"
         data-season-diff="203500"
-        data-rooms="ツイン（2人部屋）,トリプル（3人部屋）,シングル（個室）,グループ（4名〜）,相部屋（レギュラー）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,グループ（4名〜）,ツイン（2人部屋）,トリプル（3人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -3821,7 +3821,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, トリプル（3人部屋）, シングル（</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, グループ（4</span>
             <span>プラン: 78件</span>
             <span>掲載: 2社横断</span>
           </div>
@@ -3844,7 +3844,7 @@
         data-min-price="225500"
         data-site-diff="0"
         data-season-diff="247500"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -3887,7 +3887,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 24件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -3910,7 +3910,7 @@
         data-min-price="225500"
         data-site-diff="0"
         data-season-diff="170500"
-        data-rooms="自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,自炊・食事なし,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -3953,7 +3953,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, 自炊・食事なし, ツイン（2人部屋）</span>
             <span>プラン: 20件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -3976,7 +3976,7 @@
         data-min-price="225500"
         data-site-diff="0"
         data-season-diff="170500"
-        data-rooms="自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,自炊・食事なし,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -4019,7 +4019,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, 自炊・食事なし, ツイン（2人部屋）</span>
             <span>プラン: 30件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -4108,7 +4108,7 @@
         data-min-price="225500"
         data-site-diff="0"
         data-season-diff="192500"
-        data-rooms="トリプル（3人部屋）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="トリプル（3人部屋）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -4151,7 +4151,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: トリプル（3人部屋）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 50件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -4174,7 +4174,7 @@
         data-min-price="225500"
         data-site-diff="0"
         data-season-diff="192500"
-        data-rooms="トリプル（3人部屋）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="トリプル（3人部屋）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -4217,7 +4217,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: トリプル（3人部屋）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 49件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -4240,7 +4240,7 @@
         data-min-price="225500"
         data-site-diff="0"
         data-season-diff="148500"
-        data-rooms="トリプル（3人部屋）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="トリプル（3人部屋）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -4283,7 +4283,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: トリプル（3人部屋）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 16件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -4306,7 +4306,7 @@
         data-min-price="225500"
         data-site-diff="0"
         data-season-diff="192500"
-        data-rooms="トリプル（3人部屋）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="トリプル（3人部屋）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -4349,7 +4349,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: トリプル（3人部屋）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 50件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -4372,7 +4372,7 @@
         data-min-price="225500"
         data-site-diff="0"
         data-season-diff="170500"
-        data-rooms="自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,自炊・食事なし,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -4415,7 +4415,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, 自炊・食事なし, ツイン（2人部屋）</span>
             <span>プラン: 29件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -4438,7 +4438,7 @@
         data-min-price="225500"
         data-site-diff="0"
         data-season-diff="170500"
-        data-rooms="自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,自炊・食事なし,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -4481,7 +4481,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, 自炊・食事なし, ツイン（2人部屋）</span>
             <span>プラン: 25件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -4504,7 +4504,7 @@
         data-min-price="227000"
         data-site-diff="0"
         data-season-diff="235000"
-        data-rooms="トリプル（3人部屋）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,トリプル（3人部屋）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -4547,7 +4547,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: シングル（個室）, トリプル（3人部屋）, ツイン（2人</span>
             <span>プラン: 77件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -4570,7 +4570,7 @@
         data-min-price="227150"
         data-site-diff="0"
         data-season-diff="240350"
-        data-rooms="自炊・食事なし,グループ（4名〜）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="自炊・食事なし,シングル（個室）,グループ（4名〜）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -4613,7 +4613,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, グループ（4名〜）, ツイン（2人部屋</span>
+            <span>部屋: 自炊・食事なし, シングル（個室）, グループ（4名〜）</span>
             <span>プラン: 98件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -4636,7 +4636,7 @@
         data-min-price="228800"
         data-site-diff="52800"
         data-season-diff="206800"
-        data-rooms="ツイン（2人部屋）,トリプル（3人部屋）,シングル（個室）,グループ（4名〜）,相部屋（レギュラー）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,グループ（4名〜）,ツイン（2人部屋）,トリプル（3人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -4679,7 +4679,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, トリプル（3人部屋）, シングル（</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, グループ（4</span>
             <span>プラン: 148件</span>
             <span>掲載: 2社横断</span>
           </div>
@@ -4702,7 +4702,7 @@
         data-min-price="228800"
         data-site-diff="0"
         data-season-diff="231770"
-        data-rooms="自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="自炊・食事なし,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -4745,7 +4745,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: 自炊・食事なし, シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 127件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -4768,7 +4768,7 @@
         data-min-price="230000"
         data-site-diff="0"
         data-season-diff="245000"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,トリプル（3人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,相部屋（レギュラー）,トリプル（3人部屋）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -4811,7 +4811,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, トリプル（</span>
+            <span>部屋: シングル（個室）, 相部屋（レギュラー）, トリプル（3</span>
             <span>プラン: 60件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -4834,7 +4834,7 @@
         data-min-price="230200"
         data-site-diff="0"
         data-season-diff="242900"
-        data-rooms="相部屋（レギュラー）,自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,相部屋（レギュラー）,自炊・食事なし,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -4877,7 +4877,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, 自炊・食事なし, ツイン（2人部</span>
+            <span>部屋: シングル（個室）, 相部屋（レギュラー）, 自炊・食事な</span>
             <span>プラン: 128件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -4900,7 +4900,7 @@
         data-min-price="231000"
         data-site-diff="0"
         data-season-diff="403700"
-        data-rooms="自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="自炊・食事なし,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -4943,7 +4943,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: 自炊・食事なし, シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 123件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -4966,7 +4966,7 @@
         data-min-price="231000"
         data-site-diff="0"
         data-season-diff="198000"
-        data-rooms="自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,自炊・食事なし,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -5009,7 +5009,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, 自炊・食事なし, ツイン（2人部屋）</span>
             <span>プラン: 38件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -5032,7 +5032,7 @@
         data-min-price="231000"
         data-site-diff="0"
         data-season-diff="154000"
-        data-rooms="自炊・食事なし,グループ（4名〜）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,自炊・食事なし,グループ（4名〜）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -5075,7 +5075,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, グループ（4名〜）, ツイン（2人部屋</span>
+            <span>部屋: シングル（個室）, 自炊・食事なし, グループ（4名〜）</span>
             <span>プラン: 72件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -5098,7 +5098,7 @@
         data-min-price="231000"
         data-site-diff="0"
         data-season-diff="151000"
-        data-rooms="自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,自炊・食事なし,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -5141,7 +5141,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, 自炊・食事なし, ツイン（2人部屋）</span>
             <span>プラン: 40件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -5164,7 +5164,7 @@
         data-min-price="231000"
         data-site-diff="0"
         data-season-diff="121000"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -5207,7 +5207,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 14件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -5230,7 +5230,7 @@
         data-min-price="232100"
         data-site-diff="0"
         data-season-diff="191400"
-        data-rooms="自炊・食事なし,グループ（4名〜）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,自炊・食事なし,グループ（4名〜）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -5273,7 +5273,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, グループ（4名〜）, ツイン（2人部屋</span>
+            <span>部屋: シングル（個室）, 自炊・食事なし, グループ（4名〜）</span>
             <span>プラン: 106件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -5296,7 +5296,7 @@
         data-min-price="232500"
         data-site-diff="0"
         data-season-diff="163800"
-        data-rooms="自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,自炊・食事なし,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -5339,7 +5339,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, 自炊・食事なし, ツイン（2人部屋）</span>
             <span>プラン: 16件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -5362,7 +5362,7 @@
         data-min-price="233200"
         data-site-diff="0"
         data-season-diff="253000"
-        data-rooms="トリプル（3人部屋）,グループ（4名〜）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="トリプル（3人部屋）,シングル（個室）,グループ（4名〜）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -5405,7 +5405,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, グループ（4名〜）, ツイン（2</span>
+            <span>部屋: トリプル（3人部屋）, シングル（個室）, グループ（4</span>
             <span>プラン: 208件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -5428,7 +5428,7 @@
         data-min-price="233200"
         data-site-diff="0"
         data-season-diff="212300"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -5471,7 +5471,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 96件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -5494,7 +5494,7 @@
         data-min-price="233200"
         data-site-diff="0"
         data-season-diff="237600"
-        data-rooms="グループ（4名〜）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,グループ（4名〜）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -5537,7 +5537,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: グループ（4名〜）, ツイン（2人部屋）, シングル（個</span>
+            <span>部屋: シングル（個室）, グループ（4名〜）, ツイン（2人部</span>
             <span>プラン: 98件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -5560,7 +5560,7 @@
         data-min-price="233200"
         data-site-diff="0"
         data-season-diff="338800"
-        data-rooms="グループ（4名〜）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,グループ（4名〜）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -5603,7 +5603,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: グループ（4名〜）, ツイン（2人部屋）, シングル（個</span>
+            <span>部屋: シングル（個室）, グループ（4名〜）, ツイン（2人部</span>
             <span>プラン: 100件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -5626,7 +5626,7 @@
         data-min-price="233200"
         data-site-diff="0"
         data-season-diff="213400"
-        data-rooms="グループ（4名〜）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,グループ（4名〜）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -5669,7 +5669,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: グループ（4名〜）, ツイン（2人部屋）, シングル（個</span>
+            <span>部屋: シングル（個室）, グループ（4名〜）, ツイン（2人部</span>
             <span>プラン: 48件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -5692,7 +5692,7 @@
         data-min-price="235400"
         data-site-diff="0"
         data-season-diff="129800"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -5735,7 +5735,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 22件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -5758,7 +5758,7 @@
         data-min-price="235400"
         data-site-diff="0"
         data-season-diff="161260"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -5801,7 +5801,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 72件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -5824,7 +5824,7 @@
         data-min-price="236000"
         data-site-diff="0"
         data-season-diff="166000"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -5867,7 +5867,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 32件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -5956,7 +5956,7 @@
         data-min-price="236500"
         data-site-diff="0"
         data-season-diff="253000"
-        data-rooms="自炊・食事なし,シングル / ツイン,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,シングル / ツイン,自炊・食事なし,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -5999,7 +5999,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, シングル / ツイン, ツイン（2人部</span>
+            <span>部屋: シングル（個室）, シングル / ツイン, 自炊・食事な</span>
             <span>プラン: 96件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -6022,7 +6022,7 @@
         data-min-price="236500"
         data-site-diff="0"
         data-season-diff="143000"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -6065,7 +6065,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 30件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -6088,7 +6088,7 @@
         data-min-price="236500"
         data-site-diff="0"
         data-season-diff="194500"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -6131,7 +6131,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 36件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -6154,7 +6154,7 @@
         data-min-price="236500"
         data-site-diff="0"
         data-season-diff="181500"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -6197,7 +6197,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 76件</span>
             <span>掲載: 2社横断</span>
           </div>
@@ -6220,7 +6220,7 @@
         data-min-price="236500"
         data-site-diff="0"
         data-season-diff="214500"
-        data-rooms="ツイン（2人部屋）,自炊・食事なし,シングル / ツイン,シングル（個室）"
+        data-rooms="シングル（個室）,シングル / ツイン,自炊・食事なし,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -6263,7 +6263,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, 自炊・食事なし, シングル / ツ</span>
+            <span>部屋: シングル（個室）, シングル / ツイン, 自炊・食事な</span>
             <span>プラン: 72件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -6286,7 +6286,7 @@
         data-min-price="236500"
         data-site-diff="0"
         data-season-diff="126500"
-        data-rooms="自炊・食事なし,グループ（4名〜）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,自炊・食事なし,グループ（4名〜）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -6329,7 +6329,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, グループ（4名〜）, ツイン（2人部屋</span>
+            <span>部屋: シングル（個室）, 自炊・食事なし, グループ（4名〜）</span>
             <span>プラン: 40件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -6352,7 +6352,7 @@
         data-min-price="236500"
         data-site-diff="0"
         data-season-diff="154000"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -6395,7 +6395,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 30件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -6418,7 +6418,7 @@
         data-min-price="236500"
         data-site-diff="0"
         data-season-diff="148500"
-        data-rooms="自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,自炊・食事なし,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -6461,7 +6461,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, 自炊・食事なし, ツイン（2人部屋）</span>
             <span>プラン: 36件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -6484,7 +6484,7 @@
         data-min-price="237500"
         data-site-diff="0"
         data-season-diff="288300"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -6527,7 +6527,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 102件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -6550,7 +6550,7 @@
         data-min-price="237600"
         data-site-diff="0"
         data-season-diff="205700"
-        data-rooms="トリプル（3人部屋）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="トリプル（3人部屋）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -6593,7 +6593,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: トリプル（3人部屋）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 46件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -6616,7 +6616,7 @@
         data-min-price="237600"
         data-site-diff="0"
         data-season-diff="205700"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -6659,7 +6659,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 40件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -6682,7 +6682,7 @@
         data-min-price="237600"
         data-site-diff="0"
         data-season-diff="131500"
-        data-rooms="グループ（4名〜）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,グループ（4名〜）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -6725,7 +6725,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: グループ（4名〜）, ツイン（2人部屋）, シングル（個</span>
+            <span>部屋: シングル（個室）, グループ（4名〜）, ツイン（2人部</span>
             <span>プラン: 34件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -6748,7 +6748,7 @@
         data-min-price="238700"
         data-site-diff="0"
         data-season-diff="201300"
-        data-rooms="トリプル（3人部屋）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="トリプル（3人部屋）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -6791,7 +6791,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: トリプル（3人部屋）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 92件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -6814,7 +6814,7 @@
         data-min-price="239800"
         data-site-diff="0"
         data-season-diff="228800"
-        data-rooms="グループ（4名〜）,ツイン（2人部屋）,シングル（個室）,シングル / ツイン"
+        data-rooms="シングル / ツイン,シングル（個室）,グループ（4名〜）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -6857,7 +6857,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: グループ（4名〜）, ツイン（2人部屋）, シングル（個</span>
+            <span>部屋: シングル / ツイン, シングル（個室）, グループ（4</span>
             <span>プラン: 72件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -6880,7 +6880,7 @@
         data-min-price="239800"
         data-site-diff="0"
         data-season-diff="217800"
-        data-rooms="グループ（4名〜）,ツイン（2人部屋）,シングル（個室）,シングル / ツイン"
+        data-rooms="シングル / ツイン,シングル（個室）,グループ（4名〜）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -6923,7 +6923,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: グループ（4名〜）, ツイン（2人部屋）, シングル（個</span>
+            <span>部屋: シングル / ツイン, シングル（個室）, グループ（4</span>
             <span>プラン: 72件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -6946,7 +6946,7 @@
         data-min-price="239800"
         data-site-diff="0"
         data-season-diff="167200"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -6989,7 +6989,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 24件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -7012,7 +7012,7 @@
         data-min-price="240000"
         data-site-diff="0"
         data-season-diff="167000"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -7055,7 +7055,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 15件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -7078,7 +7078,7 @@
         data-min-price="240000"
         data-site-diff="0"
         data-season-diff="155000"
-        data-rooms="自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="自炊・食事なし,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -7121,7 +7121,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: 自炊・食事なし, シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 11件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -7144,7 +7144,7 @@
         data-min-price="240000"
         data-site-diff="0"
         data-season-diff="155000"
-        data-rooms="自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="自炊・食事なし,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -7187,7 +7187,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: 自炊・食事なし, シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 12件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -7210,7 +7210,7 @@
         data-min-price="240000"
         data-site-diff="0"
         data-season-diff="155000"
-        data-rooms="自炊・食事なし,シングル（個室）"
+        data-rooms="シングル（個室）,自炊・食事なし"
         data-features="">
         
         <div class="group-head">
@@ -7253,7 +7253,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, シングル（個室）</span>
+            <span>部屋: シングル（個室）, 自炊・食事なし</span>
             <span>プラン: 8件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -7276,7 +7276,7 @@
         data-min-price="240000"
         data-site-diff="0"
         data-season-diff="200000"
-        data-rooms="自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="自炊・食事なし,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -7319,7 +7319,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: 自炊・食事なし, シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 21件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -7342,7 +7342,7 @@
         data-min-price="240000"
         data-site-diff="0"
         data-season-diff="210000"
-        data-rooms="自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="自炊・食事なし,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -7385,7 +7385,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: 自炊・食事なし, シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 18件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -7408,7 +7408,7 @@
         data-min-price="240200"
         data-site-diff="0"
         data-season-diff="217900"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,トリプル（3人部屋）,シングル（個室）"
+        data-rooms="トリプル（3人部屋）,相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -7451,7 +7451,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, トリプル（</span>
+            <span>部屋: トリプル（3人部屋）, 相部屋（レギュラー）, シングル</span>
             <span>プラン: 112件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -7474,7 +7474,7 @@
         data-min-price="240900"
         data-site-diff="0"
         data-season-diff="217250"
-        data-rooms="トリプル（3人部屋）,グループ（4名〜）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="ツイン（2人部屋）,シングル（個室）,グループ（4名〜）,トリプル（3人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -7517,7 +7517,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, グループ（4名〜）, ツイン（2</span>
+            <span>部屋: ツイン（2人部屋）, シングル（個室）, グループ（4名</span>
             <span>プラン: 106件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -7540,7 +7540,7 @@
         data-min-price="242000"
         data-site-diff="13750"
         data-season-diff="209000"
-        data-rooms="ツイン（2人部屋）,トリプル（3人部屋）,シングル（個室）,グループ（4名〜）,相部屋（レギュラー）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,グループ（4名〜）,ツイン（2人部屋）,トリプル（3人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -7583,7 +7583,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, トリプル（3人部屋）, シングル（</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, グループ（4</span>
             <span>プラン: 68件</span>
             <span>掲載: 2社横断</span>
           </div>
@@ -7606,7 +7606,7 @@
         data-min-price="242000"
         data-site-diff="0"
         data-season-diff="201300"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -7649,7 +7649,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 57件</span>
             <span>掲載: 2社横断</span>
           </div>
@@ -7672,7 +7672,7 @@
         data-min-price="242000"
         data-site-diff="0"
         data-season-diff="247500"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -7715,7 +7715,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 24件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -7738,7 +7738,7 @@
         data-min-price="242000"
         data-site-diff="0"
         data-season-diff="247500"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -7781,7 +7781,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 24件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -7804,7 +7804,7 @@
         data-min-price="242000"
         data-site-diff="0"
         data-season-diff="247500"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -7847,7 +7847,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 24件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -7870,7 +7870,7 @@
         data-min-price="242000"
         data-site-diff="0"
         data-season-diff="176000"
-        data-rooms="トリプル（3人部屋）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="トリプル（3人部屋）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -7913,7 +7913,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: トリプル（3人部屋）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 36件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -7936,7 +7936,7 @@
         data-min-price="242000"
         data-site-diff="0"
         data-season-diff="220000"
-        data-rooms="グループ（4名〜）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,グループ（4名〜）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -7979,7 +7979,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: グループ（4名〜）, ツイン（2人部屋）, シングル（個</span>
+            <span>部屋: シングル（個室）, グループ（4名〜）, ツイン（2人部</span>
             <span>プラン: 46件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -8002,7 +8002,7 @@
         data-min-price="242000"
         data-site-diff="0"
         data-season-diff="253000"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -8045,7 +8045,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 63件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -8068,7 +8068,7 @@
         data-min-price="242000"
         data-site-diff="0"
         data-season-diff="297000"
-        data-rooms="自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="自炊・食事なし,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -8111,7 +8111,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: 自炊・食事なし, シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 94件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -8200,7 +8200,7 @@
         data-min-price="244800"
         data-site-diff="0"
         data-season-diff="190200"
-        data-rooms="トリプル（3人部屋）,相部屋（レギュラー）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="トリプル（3人部屋）,相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -8243,7 +8243,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, 相部屋（レギュラー）, ツイン（</span>
+            <span>部屋: トリプル（3人部屋）, 相部屋（レギュラー）, シングル</span>
             <span>プラン: 58件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -8266,7 +8266,7 @@
         data-min-price="245300"
         data-site-diff="0"
         data-season-diff="205700"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -8309,7 +8309,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 36件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -8332,7 +8332,7 @@
         data-min-price="245300"
         data-site-diff="0"
         data-season-diff="236500"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -8375,7 +8375,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 84件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -8398,7 +8398,7 @@
         data-min-price="246400"
         data-site-diff="0"
         data-season-diff="147400"
-        data-rooms="トリプル（3人部屋）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="トリプル（3人部屋）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -8441,7 +8441,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: トリプル（3人部屋）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 24件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -8464,7 +8464,7 @@
         data-min-price="247500"
         data-site-diff="0"
         data-season-diff="192500"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -8507,7 +8507,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 54件</span>
             <span>掲載: 2社横断</span>
           </div>
@@ -8530,7 +8530,7 @@
         data-min-price="247500"
         data-site-diff="0"
         data-season-diff="264000"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -8573,7 +8573,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 122件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -8596,7 +8596,7 @@
         data-min-price="247500"
         data-site-diff="0"
         data-season-diff="228800"
-        data-rooms="自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="自炊・食事なし,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -8639,7 +8639,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: 自炊・食事なし, シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 102件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -8662,7 +8662,7 @@
         data-min-price="247500"
         data-site-diff="0"
         data-season-diff="253000"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -8705,7 +8705,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 100件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -8728,7 +8728,7 @@
         data-min-price="247500"
         data-site-diff="0"
         data-season-diff="223300"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -8771,7 +8771,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 100件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -8794,7 +8794,7 @@
         data-min-price="247500"
         data-site-diff="0"
         data-season-diff="115500"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,トリプル（3人部屋）,シングル（個室）"
+        data-rooms="トリプル（3人部屋）,相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -8837,7 +8837,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, トリプル（</span>
+            <span>部屋: トリプル（3人部屋）, 相部屋（レギュラー）, シングル</span>
             <span>プラン: 33件</span>
             <span>掲載: 2社横断</span>
           </div>
@@ -8860,7 +8860,7 @@
         data-min-price="247500"
         data-site-diff="0"
         data-season-diff="176000"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -8903,7 +8903,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 30件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -8926,7 +8926,7 @@
         data-min-price="247500"
         data-site-diff="0"
         data-season-diff="143000"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -8969,7 +8969,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 24件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -8992,7 +8992,7 @@
         data-min-price="248000"
         data-site-diff="0"
         data-season-diff="174000"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,トリプル（3人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,相部屋（レギュラー）,トリプル（3人部屋）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -9035,7 +9035,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, トリプル（</span>
+            <span>部屋: シングル（個室）, 相部屋（レギュラー）, トリプル（3</span>
             <span>プラン: 32件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -9058,7 +9058,7 @@
         data-min-price="248300"
         data-site-diff="0"
         data-season-diff="149100"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -9101,7 +9101,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 20件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -9190,7 +9190,7 @@
         data-min-price="249700"
         data-site-diff="0"
         data-season-diff="279400"
-        data-rooms="自炊・食事なし,ツイン（2人部屋）,シングル（個室）,トリプル（3人部屋）,シングル / ツイン"
+        data-rooms="シングル / ツイン,自炊・食事なし,シングル（個室）,ツイン（2人部屋）,トリプル（3人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -9233,7 +9233,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル / ツイン, 自炊・食事なし, シングル（個室</span>
             <span>プラン: 176件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -9256,7 +9256,7 @@
         data-min-price="249700"
         data-site-diff="0"
         data-season-diff="325600"
-        data-rooms="自炊・食事なし,ツイン（2人部屋）,シングル（個室）,グループ（4名〜）,トリプル（3人部屋）"
+        data-rooms="自炊・食事なし,シングル（個室）,グループ（4名〜）,ツイン（2人部屋）,トリプル（3人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -9299,7 +9299,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: 自炊・食事なし, シングル（個室）, グループ（4名〜）</span>
             <span>プラン: 211件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -9322,7 +9322,7 @@
         data-min-price="253000"
         data-site-diff="0"
         data-season-diff="223300"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -9365,7 +9365,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 64件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -9388,7 +9388,7 @@
         data-min-price="253000"
         data-site-diff="0"
         data-season-diff="231000"
-        data-rooms="トリプル（3人部屋）,グループ（4名〜）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="トリプル（3人部屋）,シングル（個室）,グループ（4名〜）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -9431,7 +9431,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, グループ（4名〜）, ツイン（2</span>
+            <span>部屋: トリプル（3人部屋）, シングル（個室）, グループ（4</span>
             <span>プラン: 96件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -9454,7 +9454,7 @@
         data-min-price="253000"
         data-site-diff="0"
         data-season-diff="198000"
-        data-rooms="トリプル（3人部屋）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="トリプル（3人部屋）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -9497,7 +9497,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: トリプル（3人部屋）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 24件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -9520,7 +9520,7 @@
         data-min-price="253000"
         data-site-diff="0"
         data-season-diff="181500"
-        data-rooms="相部屋（レギュラー）,グループ（4名〜）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,グループ（4名〜）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -9563,7 +9563,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, グループ（4名〜）, ツイン（2</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, グループ（4</span>
             <span>プラン: 60件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -9586,7 +9586,7 @@
         data-min-price="253000"
         data-site-diff="0"
         data-season-diff="236500"
-        data-rooms="自炊・食事なし,グループ（4名〜）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="自炊・食事なし,シングル（個室）,グループ（4名〜）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -9629,7 +9629,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, グループ（4名〜）, ツイン（2人部屋</span>
+            <span>部屋: 自炊・食事なし, シングル（個室）, グループ（4名〜）</span>
             <span>プラン: 94件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -9718,7 +9718,7 @@
         data-min-price="253000"
         data-site-diff="0"
         data-season-diff="170500"
-        data-rooms="トリプル（3人部屋）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="ツイン（2人部屋）,シングル（個室）,トリプル（3人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -9761,7 +9761,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: ツイン（2人部屋）, シングル（個室）, トリプル（3人</span>
             <span>プラン: 54件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -9784,7 +9784,7 @@
         data-min-price="253000"
         data-site-diff="0"
         data-season-diff="199100"
-        data-rooms="グループ（4名〜）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,グループ（4名〜）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -9827,7 +9827,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: グループ（4名〜）, ツイン（2人部屋）, シングル（個</span>
+            <span>部屋: シングル（個室）, グループ（4名〜）, ツイン（2人部</span>
             <span>プラン: 36件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -9850,7 +9850,7 @@
         data-min-price="253000"
         data-site-diff="0"
         data-season-diff="176000"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -9893,7 +9893,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 22件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -9916,7 +9916,7 @@
         data-min-price="253000"
         data-site-diff="0"
         data-season-diff="132000"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -9959,7 +9959,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 5件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -9982,7 +9982,7 @@
         data-min-price="255000"
         data-site-diff="0"
         data-season-diff="155000"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -10025,7 +10025,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 28件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -10048,7 +10048,7 @@
         data-min-price="257400"
         data-site-diff="0"
         data-season-diff="116600"
-        data-rooms="グループ（4名〜）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,グループ（4名〜）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -10091,7 +10091,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: グループ（4名〜）, ツイン（2人部屋）, シングル（個</span>
+            <span>部屋: シングル（個室）, グループ（4名〜）, ツイン（2人部</span>
             <span>プラン: 49件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -10114,7 +10114,7 @@
         data-min-price="258000"
         data-site-diff="35000"
         data-season-diff="225000"
-        data-rooms="トリプル（3人部屋）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="トリプル（3人部屋）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -10157,7 +10157,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: トリプル（3人部屋）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 72件</span>
             <span>掲載: 2社横断</span>
           </div>
@@ -10180,7 +10180,7 @@
         data-min-price="258500"
         data-site-diff="0"
         data-season-diff="192500"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -10223,7 +10223,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 60件</span>
             <span>掲載: 2社横断</span>
           </div>
@@ -10246,7 +10246,7 @@
         data-min-price="258500"
         data-site-diff="0"
         data-season-diff="115500"
-        data-rooms="トリプル（3人部屋）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,トリプル（3人部屋）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -10289,7 +10289,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: シングル（個室）, トリプル（3人部屋）, ツイン（2人</span>
             <span>プラン: 12件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -10312,7 +10312,7 @@
         data-min-price="259000"
         data-site-diff="0"
         data-season-diff="170000"
-        data-rooms="ツイン（2人部屋）,トリプル（3人部屋）,シングル（個室）,グループ（4名〜）,相部屋（レギュラー）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,グループ（4名〜）,ツイン（2人部屋）,トリプル（3人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -10355,7 +10355,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, トリプル（3人部屋）, シングル（</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, グループ（4</span>
             <span>プラン: 73件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -10378,7 +10378,7 @@
         data-min-price="259500"
         data-site-diff="0"
         data-season-diff="110000"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -10421,7 +10421,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 20件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -10444,7 +10444,7 @@
         data-min-price="259600"
         data-site-diff="0"
         data-season-diff="157300"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -10487,7 +10487,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 30件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -10510,7 +10510,7 @@
         data-min-price="260000"
         data-site-diff="10000"
         data-season-diff="253000"
-        data-rooms="トリプル（3人部屋）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="ツイン（2人部屋）,シングル（個室）,トリプル（3人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -10553,7 +10553,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: ツイン（2人部屋）, シングル（個室）, トリプル（3人</span>
             <span>プラン: 56件</span>
             <span>掲載: 2社横断</span>
           </div>
@@ -10642,7 +10642,7 @@
         data-min-price="260000"
         data-site-diff="0"
         data-season-diff="191500"
-        data-rooms="トリプル（3人部屋）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="トリプル（3人部屋）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -10685,7 +10685,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: トリプル（3人部屋）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 36件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -10774,7 +10774,7 @@
         data-min-price="261800"
         data-site-diff="0"
         data-season-diff="177100"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -10817,7 +10817,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 75件</span>
             <span>掲載: 2社横断</span>
           </div>
@@ -10840,7 +10840,7 @@
         data-min-price="262900"
         data-site-diff="0"
         data-season-diff="170500"
-        data-rooms="トリプル（3人部屋）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="トリプル（3人部屋）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -10883,7 +10883,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: トリプル（3人部屋）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 55件</span>
             <span>掲載: 2社横断</span>
           </div>
@@ -10906,7 +10906,7 @@
         data-min-price="262900"
         data-site-diff="0"
         data-season-diff="242000"
-        data-rooms="トリプル（3人部屋）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="ツイン（2人部屋）,シングル（個室）,トリプル（3人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -10949,7 +10949,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: ツイン（2人部屋）, シングル（個室）, トリプル（3人</span>
             <span>プラン: 53件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -10972,7 +10972,7 @@
         data-min-price="264000"
         data-site-diff="0"
         data-season-diff="192500"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,トリプル（3人部屋）,シングル（個室）"
+        data-rooms="ツイン（2人部屋）,相部屋（レギュラー）,シングル（個室）,トリプル（3人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -11015,7 +11015,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, トリプル（</span>
+            <span>部屋: ツイン（2人部屋）, 相部屋（レギュラー）, シングル（</span>
             <span>プラン: 68件</span>
             <span>掲載: 2社横断</span>
           </div>
@@ -11104,7 +11104,7 @@
         data-min-price="264000"
         data-site-diff="0"
         data-season-diff="257000"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -11147,7 +11147,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 64件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -11170,7 +11170,7 @@
         data-min-price="264000"
         data-site-diff="0"
         data-season-diff="177100"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -11213,7 +11213,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 48件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -11236,7 +11236,7 @@
         data-min-price="264000"
         data-site-diff="0"
         data-season-diff="108000"
-        data-rooms="トリプル（3人部屋）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="トリプル（3人部屋）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -11279,7 +11279,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: トリプル（3人部屋）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 15件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -11302,7 +11302,7 @@
         data-min-price="264000"
         data-site-diff="0"
         data-season-diff="96800"
-        data-rooms="グループ（4名〜）,シングル（個室）"
+        data-rooms="シングル（個室）,グループ（4名〜）"
         data-features="">
         
         <div class="group-head">
@@ -11345,7 +11345,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: グループ（4名〜）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, グループ（4名〜）</span>
             <span>プラン: 16件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -11368,7 +11368,7 @@
         data-min-price="264000"
         data-site-diff="0"
         data-season-diff="148500"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -11411,7 +11411,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 9件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -11434,7 +11434,7 @@
         data-min-price="264000"
         data-site-diff="0"
         data-season-diff="148500"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,トリプル（3人部屋）,シングル（個室）"
+        data-rooms="ツイン（2人部屋）,相部屋（レギュラー）,シングル（個室）,トリプル（3人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -11477,7 +11477,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, トリプル（</span>
+            <span>部屋: ツイン（2人部屋）, 相部屋（レギュラー）, シングル（</span>
             <span>プラン: 26件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -11500,7 +11500,7 @@
         data-min-price="264000"
         data-site-diff="0"
         data-season-diff="173360"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -11543,7 +11543,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 21件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -11698,7 +11698,7 @@
         data-min-price="265100"
         data-site-diff="0"
         data-season-diff="177100"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -11741,7 +11741,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 54件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -11764,7 +11764,7 @@
         data-min-price="266200"
         data-site-diff="0"
         data-season-diff="137500"
-        data-rooms="トリプル（3人部屋）,自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="ツイン（2人部屋）,トリプル（3人部屋）,シングル（個室）,自炊・食事なし"
         data-features="">
         
         <div class="group-head">
@@ -11807,7 +11807,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, 自炊・食事なし, ツイン（2人部</span>
+            <span>部屋: ツイン（2人部屋）, トリプル（3人部屋）, シングル（</span>
             <span>プラン: 168件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -11830,7 +11830,7 @@
         data-min-price="266200"
         data-site-diff="0"
         data-season-diff="191400"
-        data-rooms="トリプル（3人部屋）,シングル / ツイン,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="ツイン（2人部屋）,シングル / ツイン,シングル（個室）,トリプル（3人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -11873,7 +11873,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, シングル / ツイン, ツイン（</span>
+            <span>部屋: ツイン（2人部屋）, シングル / ツイン, シングル（</span>
             <span>プラン: 48件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -11896,7 +11896,7 @@
         data-min-price="266200"
         data-site-diff="0"
         data-season-diff="202400"
-        data-rooms="トリプル（3人部屋）,シングル / ツイン,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="ツイン（2人部屋）,シングル / ツイン,シングル（個室）,トリプル（3人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -11939,7 +11939,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, シングル / ツイン, ツイン（</span>
+            <span>部屋: ツイン（2人部屋）, シングル / ツイン, シングル（</span>
             <span>プラン: 48件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -11962,7 +11962,7 @@
         data-min-price="266200"
         data-site-diff="0"
         data-season-diff="102300"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -12005,7 +12005,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 10件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -12028,7 +12028,7 @@
         data-min-price="269500"
         data-site-diff="0"
         data-season-diff="143000"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -12071,7 +12071,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 42件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -12094,7 +12094,7 @@
         data-min-price="269500"
         data-site-diff="0"
         data-season-diff="173800"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -12137,7 +12137,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 104件</span>
             <span>掲載: 2社横断</span>
           </div>
@@ -12160,7 +12160,7 @@
         data-min-price="269500"
         data-site-diff="0"
         data-season-diff="148500"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -12203,7 +12203,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 24件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -12226,7 +12226,7 @@
         data-min-price="269500"
         data-site-diff="0"
         data-season-diff="192500"
-        data-rooms="トリプル（3人部屋）,グループ（4名〜）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="トリプル（3人部屋）,シングル（個室）,グループ（4名〜）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -12269,7 +12269,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, グループ（4名〜）, ツイン（2</span>
+            <span>部屋: トリプル（3人部屋）, シングル（個室）, グループ（4</span>
             <span>プラン: 94件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -12292,7 +12292,7 @@
         data-min-price="269500"
         data-site-diff="0"
         data-season-diff="148500"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -12335,7 +12335,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 16件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -12490,7 +12490,7 @@
         data-min-price="269800"
         data-site-diff="0"
         data-season-diff="254000"
-        data-rooms="グループ（4名〜）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,グループ（4名〜）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -12533,7 +12533,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: グループ（4名〜）, ツイン（2人部屋）, シングル（個</span>
+            <span>部屋: シングル（個室）, グループ（4名〜）, ツイン（2人部</span>
             <span>プラン: 45件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -12556,7 +12556,7 @@
         data-min-price="270270"
         data-site-diff="0"
         data-season-diff="186670"
-        data-rooms="自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,自炊・食事なし,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -12599,7 +12599,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, 自炊・食事なし, ツイン（2人部屋）</span>
             <span>プラン: 84件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -12622,7 +12622,7 @@
         data-min-price="270600"
         data-site-diff="0"
         data-season-diff="136400"
-        data-rooms="グループ（4名〜）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,グループ（4名〜）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -12665,7 +12665,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: グループ（4名〜）, ツイン（2人部屋）, シングル（個</span>
+            <span>部屋: シングル（個室）, グループ（4名〜）, ツイン（2人部</span>
             <span>プラン: 20件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -12754,7 +12754,7 @@
         data-min-price="275000"
         data-site-diff="0"
         data-season-diff="143000"
-        data-rooms="トリプル（3人部屋）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="ツイン（2人部屋）,シングル（個室）,トリプル（3人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -12797,7 +12797,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: ツイン（2人部屋）, シングル（個室）, トリプル（3人</span>
             <span>プラン: 24件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -12886,7 +12886,7 @@
         data-min-price="275000"
         data-site-diff="0"
         data-season-diff="220000"
-        data-rooms="トリプル（3人部屋）,自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="ツイン（2人部屋）,シングル（個室）,自炊・食事なし,トリプル（3人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -12929,7 +12929,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, 自炊・食事なし, ツイン（2人部</span>
+            <span>部屋: ツイン（2人部屋）, シングル（個室）, 自炊・食事なし</span>
             <span>プラン: 82件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -12952,7 +12952,7 @@
         data-min-price="280000"
         data-site-diff="0"
         data-season-diff="170000"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -12995,7 +12995,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 18件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -13018,7 +13018,7 @@
         data-min-price="280500"
         data-site-diff="0"
         data-season-diff="150700"
-        data-rooms="トリプル（3人部屋）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="トリプル（3人部屋）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -13061,7 +13061,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: トリプル（3人部屋）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 112件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -13084,7 +13084,7 @@
         data-min-price="280500"
         data-site-diff="0"
         data-season-diff="201300"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -13127,7 +13127,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 28件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -13150,7 +13150,7 @@
         data-min-price="280500"
         data-site-diff="0"
         data-season-diff="250800"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -13193,7 +13193,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 32件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -13216,7 +13216,7 @@
         data-min-price="282700"
         data-site-diff="0"
         data-season-diff="96800"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -13259,7 +13259,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 24件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -13282,7 +13282,7 @@
         data-min-price="285000"
         data-site-diff="0"
         data-season-diff="160000"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -13325,7 +13325,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 24件</span>
             <span>掲載: 2社横断</span>
           </div>
@@ -13348,7 +13348,7 @@
         data-min-price="286000"
         data-site-diff="0"
         data-season-diff="176000"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -13391,7 +13391,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 17件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -13414,7 +13414,7 @@
         data-min-price="286000"
         data-site-diff="0"
         data-season-diff="198000"
-        data-rooms="トリプル（3人部屋）,グループ（4名〜）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="ツイン（2人部屋）,シングル（個室）,グループ（4名〜）,トリプル（3人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -13457,7 +13457,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, グループ（4名〜）, ツイン（2</span>
+            <span>部屋: ツイン（2人部屋）, シングル（個室）, グループ（4名</span>
             <span>プラン: 68件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -13480,7 +13480,7 @@
         data-min-price="286000"
         data-site-diff="0"
         data-season-diff="154000"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,トリプル（3人部屋）,シングル（個室）"
+        data-rooms="ツイン（2人部屋）,相部屋（レギュラー）,シングル（個室）,トリプル（3人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -13523,7 +13523,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, トリプル（</span>
+            <span>部屋: ツイン（2人部屋）, 相部屋（レギュラー）, シングル（</span>
             <span>プラン: 15件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -13546,7 +13546,7 @@
         data-min-price="286000"
         data-site-diff="0"
         data-season-diff="154000"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,トリプル（3人部屋）,シングル（個室）"
+        data-rooms="ツイン（2人部屋）,相部屋（レギュラー）,シングル（個室）,トリプル（3人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -13589,7 +13589,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, トリプル（</span>
+            <span>部屋: ツイン（2人部屋）, 相部屋（レギュラー）, シングル（</span>
             <span>プラン: 15件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -13612,7 +13612,7 @@
         data-min-price="291500"
         data-site-diff="0"
         data-season-diff="115500"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -13655,7 +13655,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 30件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -13678,7 +13678,7 @@
         data-min-price="291500"
         data-site-diff="0"
         data-season-diff="148500"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -13721,7 +13721,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 90件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -13744,7 +13744,7 @@
         data-min-price="291500"
         data-site-diff="0"
         data-season-diff="192500"
-        data-rooms="相部屋（レギュラー）,グループ（4名〜）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,グループ（4名〜）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -13787,7 +13787,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, グループ（4名〜）, ツイン（2</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, グループ（4</span>
             <span>プラン: 33件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -13810,7 +13810,7 @@
         data-min-price="293000"
         data-site-diff="0"
         data-season-diff="190000"
-        data-rooms="トリプル（3人部屋）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="トリプル（3人部屋）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -13853,7 +13853,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: トリプル（3人部屋）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 52件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -13876,7 +13876,7 @@
         data-min-price="294620"
         data-site-diff="0"
         data-season-diff="131180"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -13919,7 +13919,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 24件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -13942,7 +13942,7 @@
         data-min-price="297000"
         data-site-diff="0"
         data-season-diff="159500"
-        data-rooms="トリプル（3人部屋）,自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,トリプル（3人部屋）,自炊・食事なし,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -13985,7 +13985,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, 自炊・食事なし, ツイン（2人部</span>
+            <span>部屋: シングル（個室）, トリプル（3人部屋）, 自炊・食事な</span>
             <span>プラン: 50件</span>
             <span>掲載: 2社横断</span>
           </div>
@@ -14008,7 +14008,7 @@
         data-min-price="299000"
         data-site-diff="0"
         data-season-diff="149000"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -14051,7 +14051,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 24件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -14140,7 +14140,7 @@
         data-min-price="314000"
         data-site-diff="0"
         data-season-diff="151500"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -14183,7 +14183,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 12件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -14206,7 +14206,7 @@
         data-min-price="316800"
         data-site-diff="0"
         data-season-diff="279400"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -14249,7 +14249,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 58件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -14338,7 +14338,7 @@
         data-min-price="319000"
         data-site-diff="0"
         data-season-diff="308000"
-        data-rooms="トリプル（3人部屋）,グループ（4名〜）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="トリプル（3人部屋）,シングル（個室）,グループ（4名〜）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -14381,7 +14381,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: トリプル（3人部屋）, グループ（4名〜）, ツイン（2</span>
+            <span>部屋: トリプル（3人部屋）, シングル（個室）, グループ（4</span>
             <span>プラン: 126件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -14404,7 +14404,7 @@
         data-min-price="320000"
         data-site-diff="0"
         data-season-diff="111000"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -14447,7 +14447,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 42件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -14470,7 +14470,7 @@
         data-min-price="335000"
         data-site-diff="0"
         data-season-diff="79000"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -14513,7 +14513,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 14件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -14536,7 +14536,7 @@
         data-min-price="340000"
         data-site-diff="0"
         data-season-diff="261600"
-        data-rooms="自炊・食事なし,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,自炊・食事なし,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -14579,7 +14579,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 自炊・食事なし, ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, 自炊・食事なし, ツイン（2人部屋）</span>
             <span>プラン: 75件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -14602,7 +14602,7 @@
         data-min-price="341000"
         data-site-diff="0"
         data-season-diff="128000"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -14645,7 +14645,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 48件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -14668,7 +14668,7 @@
         data-min-price="341000"
         data-site-diff="0"
         data-season-diff="167200"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -14711,7 +14711,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 24件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -14866,7 +14866,7 @@
         data-min-price="352000"
         data-site-diff="0"
         data-season-diff="148500"
-        data-rooms="相部屋（レギュラー）,ツイン（2人部屋）,シングル（個室）"
+        data-rooms="相部屋（レギュラー）,シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -14909,7 +14909,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: 相部屋（レギュラー）, ツイン（2人部屋）, シングル（</span>
+            <span>部屋: 相部屋（レギュラー）, シングル（個室）, ツイン（2人</span>
             <span>プラン: 36件</span>
             <span>掲載: 1社横断</span>
           </div>
@@ -14998,7 +14998,7 @@
         data-min-price="357500"
         data-site-diff="0"
         data-season-diff="212005"
-        data-rooms="ツイン（2人部屋）,シングル（個室）"
+        data-rooms="シングル（個室）,ツイン（2人部屋）"
         data-features="">
         
         <div class="group-head">
@@ -15041,7 +15041,7 @@
           </div>
           
           <div style="font-size:12px;color:var(--sub);display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
-            <span>部屋: ツイン（2人部屋）, シングル（個室）</span>
+            <span>部屋: シングル（個室）, ツイン（2人部屋）</span>
             <span>プラン: 20件</span>
             <span>掲載: 1社横断</span>
           </div>

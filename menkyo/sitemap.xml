@@ -26,6 +26,8 @@
   <url><loc>https://fumiproject.dev/menkyo/month/2027-01/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
   <url><loc>https://fumiproject.dev/menkyo/month/2027-02/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
   <url><loc>https://fumiproject.dev/menkyo/month/2027-03/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
+  <url><loc>https://fumiproject.dev/menkyo/pref/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
+  <url><loc>https://fumiproject.dev/menkyo/pref/aichi/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
   <url><loc>https://fumiproject.dev/menkyo/pref/akita/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
   <url><loc>https://fumiproject.dev/menkyo/pref/chiba/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
   <url><loc>https://fumiproject.dev/menkyo/pref/ehime/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
@@ -34,36 +36,32 @@
   <url><loc>https://fumiproject.dev/menkyo/pref/fukushima/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
   <url><loc>https://fumiproject.dev/menkyo/pref/gifu/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
   <url><loc>https://fumiproject.dev/menkyo/pref/gunma/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
+  <url><loc>https://fumiproject.dev/menkyo/pref/hiroshima/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
   <url><loc>https://fumiproject.dev/menkyo/pref/hokkaido/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
   <url><loc>https://fumiproject.dev/menkyo/pref/hyogo/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
   <url><loc>https://fumiproject.dev/menkyo/pref/ibaraki/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
   <url><loc>https://fumiproject.dev/menkyo/pref/ishikawa/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
   <url><loc>https://fumiproject.dev/menkyo/pref/iwate/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
   <url><loc>https://fumiproject.dev/menkyo/pref/kagawa/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
-  <url><loc>https://fumiproject.dev/menkyo/pref/kanagawa/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
   <url><loc>https://fumiproject.dev/menkyo/pref/kochi/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
   <url><loc>https://fumiproject.dev/menkyo/pref/kumamoto/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
-  <url><loc>https://fumiproject.dev/menkyo/pref/kyoto/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
   <url><loc>https://fumiproject.dev/menkyo/pref/mie/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
   <url><loc>https://fumiproject.dev/menkyo/pref/miyazaki/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
   <url><loc>https://fumiproject.dev/menkyo/pref/nagano/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
   <url><loc>https://fumiproject.dev/menkyo/pref/nagasaki/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
-  <url><loc>https://fumiproject.dev/menkyo/pref/nara/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
   <url><loc>https://fumiproject.dev/menkyo/pref/niigata/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
+  <url><loc>https://fumiproject.dev/menkyo/pref/oita/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
   <url><loc>https://fumiproject.dev/menkyo/pref/okayama/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
-  <url><loc>https://fumiproject.dev/menkyo/pref/osaka/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
+  <url><loc>https://fumiproject.dev/menkyo/pref/okinawa/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
   <url><loc>https://fumiproject.dev/menkyo/pref/saga/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
   <url><loc>https://fumiproject.dev/menkyo/pref/saitama/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
-  <url><loc>https://fumiproject.dev/menkyo/pref/shiga/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
   <url><loc>https://fumiproject.dev/menkyo/pref/shimane/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
   <url><loc>https://fumiproject.dev/menkyo/pref/shizuoka/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
   <url><loc>https://fumiproject.dev/menkyo/pref/tochigi/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
   <url><loc>https://fumiproject.dev/menkyo/pref/tokushima/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
   <url><loc>https://fumiproject.dev/menkyo/pref/tottori/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
-  <url><loc>https://fumiproject.dev/menkyo/pref/toyama/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
   <url><loc>https://fumiproject.dev/menkyo/pref/wakayama/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
   <url><loc>https://fumiproject.dev/menkyo/pref/yamagata/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
-  <url><loc>https://fumiproject.dev/menkyo/pref/yamaguchi/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
   <url><loc>https://fumiproject.dev/menkyo/pref/yamanashi/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
   <url><loc>https://fumiproject.dev/menkyo/ranking/cheap/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>
   <url><loc>https://fumiproject.dev/menkyo/ranking/large-discount/</loc><lastmod>2026-10-06</lastmod><changefreq>daily</changefreq></url>

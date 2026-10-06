@@ -40,3 +40,13 @@
 /school https://fumiproject.dev/menkyo/ 301
 /month/* https://fumiproject.dev/menkyo/month/:splat 301
 /month https://fumiproject.dev/menkyo/ 301
+
+# 合宿免許 未掲載府県・旧URLのリダイレクト（Ahrefs 404 / Health Score対策）
+/menkyo/pref/kanagawa* https://fumiproject.dev/menkyo/pref/ 301
+/menkyo/pref/kyoto* https://fumiproject.dev/menkyo/pref/ 301
+/menkyo/pref/nara* https://fumiproject.dev/menkyo/pref/ 301
+/menkyo/pref/osaka* https://fumiproject.dev/menkyo/pref/ 301
+/menkyo/pref/shiga* https://fumiproject.dev/menkyo/pref/ 301
+/menkyo/pref/toyama* https://fumiproject.dev/menkyo/pref/ 301
+/menkyo/pref/yamaguchi* https://fumiproject.dev/menkyo/pref/ 301
+/menkyo/pref/未設定* https://fumiproject.dev/menkyo/pref/ 301

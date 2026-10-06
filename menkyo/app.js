@@ -496,15 +496,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // D1計測
     clearTimeout(logTimer);
     logTimer = setTimeout(() => {
-      sendLog('search', {
-        region: regionVal,
-        room: roomVal,
-        budget: budgetVal,
-        selectedDate: selectedDate,
+      const isDefault = regionVal === 'all' && roomVal === 'all' && budgetVal === 0 && !selectedDate && sortVal === 'price_asc' && !currentQuickChip && !keepOnly;
+      if (isDefault) return; // デフォルト初期表示は無駄な需要ログとして記録しない
+      const evtType = visibleCount === 0 ? 'zero_result' : 'search';
+      sendLog(evtType, {
+        region: regionVal !== 'all' ? regionVal : '',
+        room: roomVal !== 'all' ? roomVal : '',
+        budget: budgetVal > 0 ? budgetVal : '',
+        selectedDate: selectedDate || '',
         sort: sortVal,
-        hitCount: visibleCount
+        hitCount: visibleCount,
+        checks: currentQuickChip ? [currentQuickChip] : (keepOnly ? ['kept_only'] : [])
       });
-    }, 500);
+    }, 1200);
   }
 
   // 検索条件の保存と復元
@@ -539,45 +543,126 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch (e) {}
   }
 
-  // Demand Logging (Cloudflare Worker D1)
+  // --- 需要ログ・行動テレメトリ (Cloudflare Worker + D1) ------------------
   const DEMAND_ENDPOINT = 'https://resort-demand.hrf-mtd.workers.dev/';
-  function sendLog(eventType, payload) {
+  const T0 = Date.now();
+  let SEQ = 0;
+  let LOG_QUEUE = [];
+
+  const SID = (() => {
     try {
-      const data = JSON.stringify({
-        type: eventType,
-        genre: 'menkyo',
-        timestamp: new Date().toISOString(),
-        url: window.location.href,
-        referrer: document.referrer || '',
-        ...payload
-      });
+      let s = sessionStorage.getItem('ms_sid');
+      if (!s) { s = Math.random().toString(36).slice(2, 12); sessionStorage.setItem('ms_sid', s); }
+      return s;
+    } catch (e) { return 'nostore'; }
+  })();
+
+  const UID = (() => {
+    try {
+      let u = localStorage.getItem('ms_uid');
+      if (!u) {
+        u = (typeof crypto !== 'undefined' && crypto.randomUUID)
+          ? crypto.randomUUID()
+          : Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2);
+        localStorage.setItem('ms_uid', u);
+      }
+      return u;
+    } catch (e) { return ''; }
+  })();
+
+  const REFERRER = (() => {
+    try {
+      const r = document.referrer || '';
+      if (r && r.includes('fumiproject.dev')) return '';
+      return r.slice(0, 200);
+    } catch (e) { return ''; }
+  })();
+
+  const IS_DEV = (() => {
+    try {
+      const p = new URLSearchParams(location.search);
+      if (p.get('dev') === '1' || p.get('ignore') === '1') {
+        localStorage.setItem('ms_ignore', 'true');
+        return true;
+      }
+      return localStorage.getItem('ms_ignore') === 'true';
+    } catch (e) { return false; }
+  })();
+
+  function flushLog() {
+    if (!LOG_QUEUE.length) return;
+    const body = JSON.stringify({ v: 1, events: LOG_QUEUE });
+    LOG_QUEUE = [];
+    try {
       if (navigator.sendBeacon) {
-        navigator.sendBeacon(DEMAND_ENDPOINT, data);
+        navigator.sendBeacon(DEMAND_ENDPOINT, new Blob([body], { type: 'application/json' }));
       } else {
         fetch(DEMAND_ENDPOINT, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: data,
+          body,
           keepalive: true
         }).catch(() => {});
       }
     } catch (e) {}
   }
 
-  // アウトバウンドクリック計測
+  function sendLog(eventType, payload) {
+    if (IS_DEV) return;
+    const p = payload || {};
+    const evt = {
+      t: eventType,
+      sid: SID,
+      uid: UID,
+      seq: ++SEQ,
+      ts: Date.now(),
+      el: Math.round((Date.now() - T0) / 1000),
+      path: location.pathname.slice(0, 60),
+      ref: REFERRER,
+      // 検索・絞り込み
+      q: p.q || p.school || p.schoolSlug || '',
+      region: p.region || (regionSelect && regionSelect.value !== 'all' ? regionSelect.value : ''),
+      dorm: p.room || (roomSelect && roomSelect.value !== 'all' ? roomSelect.value : ''),
+      wage: p.budget ? String(p.budget) : (p.minPrice ? String(p.minPrice) : ''),
+      start: p.date || p.selectedDate || selectedDate || '',
+      checks: Array.isArray(p.checks) ? p.checks.join(',') : (p.sort || (sortSelect ? sortSelect.value : '')),
+      results: Number.isFinite(p.hitCount) ? p.hitCount : (Number.isFinite(p.results) ? p.results : null),
+      // アウトバウンド送客
+      ag: p.agency || p.site || p.label || '',
+      pref: p.pref || '',
+      cat: p.plan || p.room || '',
+      outbound_url: (p.destination || p.outbound_url || '').slice(0, 300)
+    };
+    LOG_QUEUE.push(evt);
+    if (LOG_QUEUE.length >= 10 || eventType === 'outbound' || eventType === 'search' || eventType === 'zero_result') {
+      flushLog();
+    }
+  }
+
+  window.addEventListener('pagehide', flushLog);
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') flushLog();
+  });
+
+  // 初回ページビュー計測
+  sendLog('pageview', { hitCount: cards.length });
+
+  // アウトバウンドクリック計測（教習所カード・外部リンク）
   document.addEventListener('click', (e) => {
     const link = e.target.closest('a[target="_blank"]');
     if (!link) return;
     const card = link.closest('.group');
-    const schoolName = card ? (card.querySelector('.school-title')?.innerText?.trim() || '') : '';
+    const schoolName = card ? (card.querySelector('.place')?.innerText?.trim() || '') : '';
+    const prefName = card ? (card.querySelector('.place-sub')?.innerText?.trim() || '') : '';
     const href = link.getAttribute('href') || '';
     sendLog('outbound', {
       school: schoolName,
+      pref: prefName,
       label: link.innerText?.trim() || '',
       destination: href,
       date: selectedDate
     });
-  });
+  }, true);
 
   // モバイル固定バーのスクロール
   if (mobileBar) {

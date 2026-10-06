@@ -427,5 +427,73 @@
 <footer>
   <p>&copy; 2026 menkyo-sort. All rights reserved.</p>
 </footer>
+
+<script>
+(() => {
+  const ENDPOINT = "https://resort-demand.hrf-mtd.workers.dev/";
+  const T0 = Date.now();
+  let SEQ = 0;
+  const SID = (() => {
+    try {
+      let s = sessionStorage.getItem("ms_sid");
+      if (!s) { s = Math.random().toString(36).slice(2, 12); sessionStorage.setItem("ms_sid", s); }
+      return s;
+    } catch(e) { return "nostore"; }
+  })();
+  const UID = (() => {
+    try {
+      let u = localStorage.getItem("ms_uid");
+      if (!u) {
+        u = (typeof crypto !== "undefined" && crypto.randomUUID)
+          ? crypto.randomUUID()
+          : Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2);
+        localStorage.setItem("ms_uid", u);
+      }
+      return u;
+    } catch(e) { return ""; }
+  })();
+  const REF = (() => {
+    try {
+      const r = document.referrer || "";
+      if (r && r.includes("fumiproject.dev")) return "";
+      return r.slice(0, 200);
+    } catch(e) { return ""; }
+  })();
+  function send(type, payload) {
+    try {
+      const p = payload || {};
+      const body = JSON.stringify({
+        v: 1,
+        events: [{
+          t: type, sid: SID, uid: UID, seq: ++SEQ, ts: Date.now(),
+          el: Math.round((Date.now() - T0) / 1000),
+          path: location.pathname.slice(0, 60),
+          ref: REF,
+          q: "[\u611b\u5a9b\u770c]\u516b\u5e61\u6d5c\u81ea\u52d5\u8eca\u6559\u7fd2\u6240",
+          pref: "\u611b\u5a9b\u770c",
+          region: "\u4e2d\u56fd\u30fb\u56db\u56fd",
+          wage: "227000",
+          ag: p.ag || "",
+          outbound_url: (p.outbound_url || "").slice(0, 300)
+        }]
+      });
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon(ENDPOINT, new Blob([body], { type: "application/json" }));
+      } else {
+        fetch(ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json" }, body, keepalive: true }).catch(() => {});
+      }
+    } catch(e) {}
+  }
+  send("pageview", {});
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest && e.target.closest("a.cta");
+    if (!a) return;
+    send("outbound", {
+      ag: (a.innerText || "").replace(/サイト.*$/, "").trim(),
+      outbound_url: a.href || ""
+    });
+  }, true);
+})();
+</script>
 </body>
 </html>

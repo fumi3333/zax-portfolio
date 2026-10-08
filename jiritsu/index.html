@@ -237,18 +237,37 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
 
 
 /* ============================================================
-   @media print : A4印刷完全最適化スタイル
+   @media print : A4 1枚印刷完全最適化スタイル
    ============================================================ */
 @media print {
   @page { size: A4 portrait; margin: 8mm 10mm; }
-  body * { visibility: hidden; }
-  #printPaper, #printPaper * { visibility: visible; }
-  #printPaper {
-    position: absolute; left: 0; top: 0; width: 100%; max-width: 100%; margin: 0; padding: 0;
-    color: #000 !important; background: #fff !important; font-size: 10.5pt; line-height: 1.45;
+  html, body {
+    margin: 0 !important; padding: 0 !important;
+    background: #fff !important; color: #000 !important;
+    height: auto !important; min-height: 0 !important;
+    overflow: visible !important;
   }
+  main, .modal-overlay, footer, details, #searchBox, .tray-box, .privacy-banner {
+    display: none !important;
+  }
+  #printPaper {
+    display: block !important;
+    position: static !important;
+    width: 100% !important; max-width: 100% !important;
+    margin: 0 !important; padding: 0 !important;
+    color: #000 !important; background: #fff !important;
+    font-size: 9pt; line-height: 1.35;
+  }
+  .sheet-header { margin-bottom: 8px !important; padding-bottom: 4px !important; }
+  .sheet-title { font-size: 14pt !important; }
+  .sheet-subtitle { font-size: 8.5pt !important; }
+  .sheet-date-box { font-size: 9pt !important; margin-bottom: 6px !important; }
+  .sheet-table { margin-bottom: 8px !important; font-size: 9pt !important; }
+  .sheet-table th, .sheet-table td { padding: 4px 6px !important; }
+  .cut-line { margin: 10px 0 8px !important; }
+  .label-box { padding: 8px 12px !important; margin-top: 6px !important; max-width: 420px !important; }
+  .label-dest { font-size: 13pt !important; margin: 6px 0 !important; }
   .no-print { display: none !important; }
-  .page-break { page-break-after: always; }
 }
 
 /* A4用紙の様式テーブルスタイル */
@@ -725,11 +744,16 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
       // イベントリスナー
       const selectBtn = li.querySelector(".btn-select");
       selectBtn.addEventListener("click", () => {
-        const item = { name: r[2], code: r[6], addr: r[3], tel: r[4] || "" };
+        const muniName = (r[1] != null && d.munis[r[1]]) ? d.munis[r[1]] : "";
+        const item = { name: r[2], code: r[6], addr: r[3], tel: r[4] || "", muni: muniName };
         if (kind === "yakkyoku") {
           selectedPharm = item;
         } else {
           selectedHosp = item;
+        }
+        if (muniName && (!targetMuniSelect.value || targetMuniSelect.value === "千代田区")) {
+          targetMuniSelect.value = muniName;
+          homeMuni.value = muniName;
         }
         updateTrayUI();
         window.scrollTo({ top: $("trayBox").offsetTop - 20, behavior: "smooth" });
@@ -758,7 +782,14 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
     render(true);
   }
 
-  muniSel.addEventListener("change", () => { fillTowns(); fillChomes(); update(); });
+  muniSel.addEventListener("change", () => {
+    fillTowns(); fillChomes(); update();
+    if (muniSel.value !== "" && d.munis[muniSel.value]) {
+      const selectedMuniName = d.munis[muniSel.value];
+      targetMuniSelect.value = selectedMuniName;
+      homeMuni.value = selectedMuniName;
+    }
+  });
   townSel.addEventListener("change", () => { fillChomes(); update(); });
   chomeSel.addEventListener("change", update);
   $("kinds").addEventListener("change", () => { const t = townSel.value; fillTowns(); townSel.value = [...townSel.options].some((o) => o.value === t) ? t : ""; fillChomes(); update(); });
@@ -873,6 +904,14 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
   });
 
   openApplyModalBtn.addEventListener("click", () => {
+    // 提出先自治体のスマート自動判定
+    if (muniSel.value !== "" && d.munis[muniSel.value]) {
+      targetMuniSel.value = d.munis[muniSel.value];
+    } else if (selectedHosp && selectedHosp.muni) {
+      targetMuniSel.value = selectedHosp.muni;
+    } else if (selectedPharm && selectedPharm.muni) {
+      targetMuniSel.value = selectedPharm.muni;
+    }
     refreshPreview();
     applyModal.hidden = false;
     startSafetyGate();

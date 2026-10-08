@@ -3,16 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>自立支援医療（精神通院）の指定薬局・病院をさがす｜東京都・申請書のコードつき</title>
-<meta name="description" content="通っている薬局・病院の名前を入れると、東京都の自立支援医療（精神通院）の指定を受けているかどうかと、申請書に書く医療機関コードを表示します。東京都の公開データをもとに毎月更新しています。">
+<title>自立支援医療（精神通院）の指定薬局・病院をさがす｜東京都・申請書PDF作成対応</title>
+<meta name="description" content="通っている薬局・病院の名前を入れると、東京都の自立支援医療（精神通院）の指定コードを表示。そのまま申請書（東京都公式様式）や封筒の宛名ラベルをスマホだけで作成・印刷できます。個人情報は端末内完結で外部送信されません。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="自立支援医療（精神通院）の指定薬局・病院をさがす｜東京都">
-<meta property="og:description" content="名前を入れると、指定を受けているかどうかと申請書に書くコードが分かります。東京都の公開データをもとに毎月更新。">
+<meta property="og:description" content="名前を入れると指定コードが分かり、そのまま申請書・宛名ラベルをスマホで作成できます。東京都オープンデータ準拠。">
 <meta property="og:url" content="https://fumiproject.dev/jiritsu/">
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary">
 <script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","yq3tbrhjfy");</script>
 <link rel="canonical" href="https://fumiproject.dev/jiritsu/">
+<script src="qrcode.min.js"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -22,7 +23,7 @@
   "url": "https://fumiproject.dev/jiritsu/",
   "sameAs": "https://github.com/fumi3333/jiritsu",
   "inLanguage": "ja",
-  "keywords": ["自立支援医療", "精神通院医療", "指定医療機関", "東京都", "薬局", "訪問看護", "オープンデータ"],
+  "keywords": ["自立支援医療", "精神通院医療", "指定医療機関", "東京都", "薬局", "訪問看護", "オープンデータ", "申請書"],
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "isAccessibleForFree": true,
   "temporalCoverage": "2026-04-01/..",
@@ -39,63 +40,225 @@
 :root {
   --bg: #ffffff; --surface: #f5f6f8; --text: #1a1a1c; --muted: #4d4f55;
   --line: #d4d6dc; --accent: #0b4fb3; --accent-text: #ffffff; --focus: #f5a623;
+  --success: #1b7a3a; --success-bg: #eaf5ed;
 }
 @media not all {
   :root:not([data-theme="light"]) {
     --bg: #16171a; --surface: #202227; --text: #eceef2; --muted: #b3b6bd;
     --line: #3a3d44; --accent: #7fb0ff; --accent-text: #0d1220; --focus: #f5a623;
+    --success: #6cd98f; --success-bg: #132b1b;
   }
 }
 * { box-sizing: border-box; }
 body {
   margin: 0; background: var(--bg); color: var(--text);
-  font: 16px/1.75 "Noto Sans JP", system-ui, -apple-system, "Hiragino Sans", sans-serif;
+  font: 18px/1.8 "Noto Sans JP", system-ui, -apple-system, "Hiragino Sans", sans-serif;
 }
-main { max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; }
-h1 { font-size: 1.6rem; line-height: 1.4; margin: 0 0 12px; font-weight: 700; }
-h2 { font-size: 1.15rem; margin: 40px 0 8px; font-weight: 700; }
+main { max-width: 760px; margin: 0 auto; padding: 24px 16px 80px; }
+h1 { font-size: 1.85rem; line-height: 1.35; margin: 0 0 12px; font-weight: 800; }
+h2 { font-size: 1.3rem; margin: 36px 0 10px; font-weight: 800; }
 p { margin: 0 0 12px; }
 a { color: var(--accent); }
-.lead { font-size: 1.05rem; }
-.box { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px; margin: 20px 0; }
-label { display: block; font-weight: 700; margin: 0 0 6px; }
-select, input[type="search"] {
-  width: 100%; font: inherit; color: var(--text); background: var(--bg);
-  border: 1px solid var(--muted); border-radius: 6px; padding: 10px 12px; min-height: 48px;
+.lead { font-size: 1.15rem; font-weight: 600; line-height: 1.6; }
+.box { background: var(--surface); border: 2px solid var(--line); border-radius: 10px; padding: 18px; margin: 20px 0; }
+label { display: block; font-weight: 700; font-size: 1.05rem; margin: 0 0 8px; }
+select, input[type="search"], input[type="text"], input[type="tel"], input[type="date"] {
+  width: 100%; font: inherit; font-size: 1.1rem; color: var(--text); background: var(--bg);
+  border: 2px solid var(--muted); border-radius: 8px; padding: 12px 14px; min-height: 52px;
 }
-.field { margin-bottom: 16px; }
-.kinds { display: flex; flex-wrap: wrap; gap: 8px; border: 0; padding: 0; margin: 0 0 16px; }
-.kinds legend { font-weight: 700; margin-bottom: 6px; padding: 0; }
+.field { margin-bottom: 20px; }
+.kinds { display: flex; flex-wrap: wrap; gap: 10px; border: 0; padding: 0; margin: 0 0 18px; }
+.kinds legend { font-weight: 800; font-size: 1.1rem; margin-bottom: 8px; padding: 0; }
 .kinds label { font-weight: 400; margin: 0; }
 .kinds input { position: absolute; opacity: 0; }
 .kinds span {
-  display: inline-block; padding: 10px 16px; min-height: 44px; border: 1px solid var(--muted);
-  border-radius: 999px; cursor: pointer;
+  display: inline-block; padding: 12px 20px; min-height: 50px; border: 2px solid var(--muted);
+  border-radius: 999px; cursor: pointer; font-size: 1.05rem; font-weight: 700;
 }
-.kinds input:checked + span { background: var(--accent); color: var(--accent-text); border-color: var(--accent); font-weight: 700; }
+.kinds input:checked + span { background: var(--accent); color: var(--accent-text); border-color: var(--accent); font-weight: 800; }
 :focus-visible, .kinds input:focus-visible + span { outline: 3px solid var(--focus); outline-offset: 2px; }
-.count { font-weight: 700; margin: 8px 0 12px; }
+.count { font-weight: 800; font-size: 1.1rem; margin: 12px 0 16px; }
 ul.list { list-style: none; margin: 0; padding: 0; }
-ul.list li { border-top: 1px solid var(--line); padding: 14px 2px; }
-ul.list li:last-child { border-bottom: 1px solid var(--line); }
-.name { font-weight: 700; font-size: 1.05rem; }
-.meta { color: var(--muted); font-size: 0.95rem; }
-.code { margin: 4px 0; }
-.code b { font-size: 1.4rem; letter-spacing: 0.08em; font-variant-numeric: tabular-nums; }
-.more { margin-top: 16px; font: inherit; padding: 10px 16px; min-height: 44px; border-radius: 6px;
-  border: 1px solid var(--accent); background: var(--bg); color: var(--accent); cursor: pointer; }
-details summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; }
-details[open] summary { margin-bottom: 8px; }
-.office { border-top: 1px solid var(--line); padding: 10px 0; }
-footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; }
+ul.list li { border-top: 2px solid var(--line); padding: 18px 2px; }
+ul.list li:last-child { border-bottom: 2px solid var(--line); }
+.name { font-weight: 800; font-size: 1.25rem; line-height: 1.4; }
+.meta { color: var(--muted); font-size: 0.98rem; }
+.code { margin: 6px 0; font-size: 1.1rem; }
+.code b { font-size: 1.6rem; letter-spacing: 0.08em; font-variant-numeric: tabular-nums; color: var(--accent); }
+.more { margin-top: 18px; font: inherit; font-size: 1.1rem; font-weight: 700; padding: 12px 20px; min-height: 50px; border-radius: 8px;
+  border: 2px solid var(--accent); background: var(--bg); color: var(--accent); cursor: pointer; }
+details summary { cursor: pointer; min-height: 48px; font-size: 1.1rem; display: flex; align-items: center; }
+details[open] summary { margin-bottom: 10px; }
+.office { border-top: 1px solid var(--line); padding: 12px 0; }
+footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.92rem; }
+
+/* ---- 新機能：プライバシー安心バナー ---- */
+.privacy-banner {
+  background: #edf5ff; border: 2px solid #8ab8fd; border-radius: 10px;
+  padding: 14px 18px; margin: 16px 0 24px; font-size: 1.05rem; line-height: 1.6; font-weight: 600;
+}
+.privacy-banner b { color: #0b4fb3; font-weight: 800; }
+
+/* ---- 新機能：選択中トレイ（トレイバー） ---- */
+.tray-box {
+  background: var(--surface); border: 2px solid var(--accent); border-radius: 10px;
+  padding: 18px; margin: 20px 0; position: relative;
+}
+.tray-title { font-weight: 800; font-size: 1.15rem; margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center; }
+.tray-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 18px; }
+@media (min-width: 600px) { .tray-grid { grid-template-columns: 1fr 1fr; } }
+.tray-card {
+  background: var(--bg); border: 2px solid var(--line); border-radius: 8px; padding: 12px 14px;
+}
+.tray-card-label { font-size: 0.9rem; font-weight: 800; color: var(--muted); margin-bottom: 4px; }
+.tray-card-name { font-weight: 800; font-size: 1.1rem; margin-bottom: 2px; }
+.tray-card-code { font-size: 0.95rem; color: var(--accent); font-weight: 700; }
+.tray-card-empty { color: var(--muted); font-size: 0.95rem; }
+.tray-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.btn-primary {
+  background: var(--accent); color: var(--accent-text); border: none; border-radius: 8px;
+  font: inherit; font-size: 1.15rem; font-weight: 800; padding: 14px 24px; cursor: pointer; min-height: 54px;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.btn-primary:disabled { opacity: 0.45; cursor: not-allowed; }
+.btn-secondary {
+  background: var(--bg); color: var(--text); border: 2px solid var(--line); border-radius: 8px;
+  font: inherit; font-size: 1rem; font-weight: 700; padding: 10px 16px; cursor: pointer; min-height: 48px;
+}
+
+/* ---- アイテム内アクションボタン ---- */
+.item-actions { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 10px; }
+.btn-select {
+  background: #eef4ff; border: 2px solid var(--accent); color: var(--accent);
+  padding: 8px 18px; border-radius: 8px; font-size: 1rem; font-weight: 800; cursor: pointer;
+  min-height: 44px;
+}
+.btn-select:hover { background: var(--accent); color: var(--accent-text); }
+.btn-pop {
+  background: transparent; border: 2px solid var(--line); color: var(--muted);
+  padding: 8px 14px; border-radius: 8px; font-size: 0.95rem; font-weight: 600; cursor: pointer;
+}
+.btn-pop:hover { border-color: var(--muted); color: var(--text); }
+
+/* ---- モーダル共通 ---- */
+.modal-overlay {
+  position: fixed; inset: 0; background: rgba(0, 0, 0, 0.65);
+  display: flex; align-items: center; justify-content: center; padding: 16px;
+  z-index: 1000; overflow-y: auto;
+}
+.modal-overlay[hidden] {
+  display: none !important;
+}
+.modal-dialog {
+  background: var(--bg); color: var(--text); width: 100%; max-width: 680px;
+  max-height: 90vh; overflow-y: auto; border-radius: 10px; padding: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 1px solid var(--line);
+}
+.modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 1px solid var(--line); padding-bottom: 12px; }
+.modal-header h3 { margin: 0; font-size: 1.25rem; font-weight: 700; }
+.modal-close { background: transparent; border: none; font-size: 1.5rem; cursor: pointer; color: var(--muted); }
+
+/* ---- ガイド＆チェックリスト ---- */
+.guide-box {
+  background: #fdfaf0; border: 1px solid #ebd9a4; border-radius: 8px; padding: 14px 16px; margin: 16px 0;
+  font-size: 0.92rem;
+}
+.guide-box h4 { margin: 0 0 8px; font-size: 1rem; color: #825c00; }
+.checklist { list-style: none; padding: 0; margin: 8px 0; }
+.checklist li { margin: 6px 0; display: flex; align-items: center; gap: 8px; }
+
+/* ---- 印刷プレビュー用 (画面表示時) ---- */
+#printPreviewWrap {
+  border: 1px solid #ccc; background: #fff; color: #000; padding: 16px; margin: 16px 0;
+  font-family: "Noto Sans JP", sans-serif; font-size: 12px; line-height: 1.5;
+}
+
+/* ============================================================
+   @media print : A4印刷完全最適化スタイル
+   ============================================================ */
+@media print {
+  @page { size: A4 portrait; margin: 8mm 10mm; }
+  body * { visibility: hidden; }
+  #printPaper, #printPaper * { visibility: visible; }
+  #printPaper {
+    position: absolute; left: 0; top: 0; width: 100%; max-width: 100%; margin: 0; padding: 0;
+    color: #000 !important; background: #fff !important; font-size: 10.5pt; line-height: 1.45;
+  }
+  .no-print { display: none !important; }
+  .page-break { page-break-after: always; }
+}
+
+/* A4用紙の様式テーブルスタイル */
+.sheet-header { text-align: center; margin-bottom: 12px; border-bottom: 2px solid #000; padding-bottom: 6px; }
+.sheet-title { font-size: 15pt; font-weight: 700; letter-spacing: 0.1em; }
+.sheet-subtitle { font-size: 9pt; margin-top: 2px; }
+.sheet-date-box { display: flex; justify-content: space-between; font-size: 9.5pt; margin-bottom: 8px; }
+.sheet-table { width: 100%; border-collapse: collapse; margin-bottom: 12px; font-size: 9.5pt; }
+.sheet-table th, .sheet-table td { border: 1px solid #000; padding: 5px 8px; vertical-align: middle; }
+.sheet-table th { background: #f0f0f0 !important; font-weight: 700; text-align: left; width: 22%; }
+.sheet-table td { background: #fff !important; }
+.sub-table { width: 100%; border-collapse: collapse; margin-top: 4px; }
+.sub-table td { border: 1px solid #888; padding: 3px 6px; }
+.cut-line {
+  border-top: 1px dashed #444; margin: 16px 0 12px; text-align: center; position: relative;
+}
+.cut-label {
+  position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
+  background: #fff; padding: 0 10px; font-size: 8.5pt; color: #555;
+}
+.label-box {
+  border: 2px solid #000; border-radius: 4px; padding: 12px 16px; margin-top: 8px;
+  background: #fff; width: 100%; max-width: 440px; margin-left: auto; margin-right: auto;
+}
+.label-postal { font-size: 11pt; font-weight: 700; margin-bottom: 4px; }
+.label-addr { font-size: 10pt; line-height: 1.4; margin-bottom: 8px; }
+.label-dest { font-size: 14pt; font-weight: 700; text-align: center; margin: 8px 0; border-bottom: 1px solid #000; padding-bottom: 4px; }
+.label-sender { font-size: 8.5pt; border-top: 1px dotted #888; padding-top: 4px; color: #444; }
+
+/* 窓口POP印刷スタイル */
+#popPrintPaper { text-align: center; padding: 24px 16px; }
+.pop-card { border: 3px solid var(--accent); border-radius: 12px; padding: 24px; max-width: 480px; margin: 0 auto; }
+.pop-qr { display: flex; justify-content: center; margin: 16px 0; }
 </style>
 </head>
 <body>
 <main>
-  <h1>自立支援医療（精神通院）の指定薬局・病院をさがす（東京都）</h1>
-  <p class="lead">自立支援医療（精神通院）の受給者証に書ける薬局・病院・訪問看護は、東京都が指定したところだけです。区市町村と町名から近くの病院・薬局を探すか、名前を入れると、指定を受けているかどうかと、申請書に書く「コード」を表示します。</p>
-  <p class="meta">申請書には、通院する医療機関等の住所・名称・電話番号・コードを書きます（出典：<a href="https://www.fukushi.metro.tokyo.lg.jp/shougai/nichijo/tsuuin/seishintsuuin">東京都福祉局</a>の申請書記入見本、2026年9月29日に確認）。</p>
+  <h1>自立支援医療の申請書をつくる（東京都）</h1>
+  
+  <!-- 個人情報保護・端末内完結の安心バナー -->
+  <div class="privacy-banner">
+    🔒 <b>入力した情報はあなたの端末内だけで処理されます。</b> 外部への送信・保存は一切ありません。
+  </div>
 
+  <p class="lead">通っている病院と薬局を選ぶだけで、東京都の公式申請書と封筒の宛名ラベルができます。</p>
+
+  <!-- 選択中トレイ（病院と薬局をキープして申請書へ） -->
+  <div class="tray-box" id="trayBox">
+    <div class="tray-title">
+      <span>選択中の医療機関</span>
+      <button type="button" class="btn-secondary" id="trayClearBtn" style="min-height:36px;padding:4px 12px;font-size:0.9rem">やり直す</button>
+    </div>
+    <div class="tray-grid">
+      <div class="tray-card" id="trayHospitalCard">
+        <div class="tray-card-label">① 指定病院・診療所</div>
+        <div class="tray-card-name" id="trayHospName"><span class="tray-card-empty">未選択（下の一覧から選択）</span></div>
+        <div class="tray-card-code" id="trayHospCode"></div>
+      </div>
+      <div class="tray-card" id="trayPharmacyCard">
+        <div class="tray-card-label">② 指定薬局</div>
+        <div class="tray-card-name" id="trayPharmName"><span class="tray-card-empty">未選択（下の一覧から選択）</span></div>
+        <div class="tray-card-code" id="trayPharmCode"></div>
+      </div>
+    </div>
+    <div class="tray-actions">
+      <button type="button" class="btn-primary" id="openApplyModalBtn" disabled>
+        申請書（PDF）をつくる
+      </button>
+      <span class="meta" id="trayTip" style="font-size:0.95rem;font-weight:600">※病院か薬局を1つ以上選ぶと作成できます</span>
+    </div>
+  </div>
+
+  <!-- 検索ボックス -->
   <div class="box">
     <fieldset class="kinds" id="kinds">
       <legend>種類</legend>
@@ -152,44 +315,267 @@ footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line);
 
   <h2>病院や薬局を変える時</h2>
   <p>受給者証に書いた医療機関を変える時は、先にお住まいの区市町村の窓口で「変更申請」が必要です（特別区は保健所・保健センター等、市町村は障害者福祉の担当課等）。</p>
-  <p class="meta">出典：<a href="https://www.fukushi.metro.tokyo.lg.jp/shougai/nichijo/tsuuin/seishintsuuin">東京都福祉局「自立支援医療（精神通院医療）について」</a>（2026年9月28日に確認）</p>
-
-  <h2>これからやりたいこと</h2>
-  <p>今できるのは、申請書に書く医療機関とコードを探すところまでです。</p>
-  <p>自立支援医療の申請は、診断書や保険の書類をそろえて区市町村の窓口に出すまでに、書類の不足などで何度も足を運ぶことがあります。制度を知っていても、この手続きの途中で止まってしまう人がいると考えています。</p>
-  <p>一部の自治体では、診断書が要らない更新や病院・薬局の変更を、マイナポータルから申請できるようになっています（例：<a href="https://www.city.hachioji.tokyo.jp/kurashi/welfare/005/004/p034456.html">八王子市</a>）。この流れを広げ、診断書を写真で送るだけでスマートフォンから申請を終えられる仕組みを、区市町村や東京都と協力して作っていきたいと考えています。</p>
+  <p class="meta">出典：<a href="https://www.fukushi.metro.tokyo.lg.jp/shougai/nichijo/tsuuin/seishintsuuin" target="_blank" rel="noopener">東京都福祉局「自立支援医療（精神通院医療）について」</a>（2026年9月28日に確認）</p>
 
   <h2>この一覧について</h2>
   <p>並び順は東京都の一覧のとおりです。医療機関の評価や順位は付けていません。最新の正確な情報は、東京都のページと各医療機関で確認してください。</p>
 
   <footer>
-    <p>データの時点：<span id="asof"></span>　出典：<a href="https://www.fukushi.metro.tokyo.lg.jp/shougai/jigyo/shougaifukushi/iryoshiteijoho_s">東京都福祉局「指定自立支援医療機関の情報提供（精神通院医療）」</a>（東京都オープンデータ、CC BY 4.0）をもとに、表記をそろえて作成</p>
-    <p>東京都は一覧を毎月差し替えています。過去の一覧は <a href="https://github.com/fumi3333/jiritsu">GitHub（fumi3333/jiritsu）</a> に月ごとに保存し、CSV で公開しています。</p>
+    <p>データの時点：<span id="asof"></span>　出典：<a href="https://www.fukushi.metro.tokyo.lg.jp/shougai/jigyo/shougaifukushi/iryoshiteijoho_s" target="_blank" rel="noopener">東京都福祉局「指定自立支援医療機関の情報提供（精神通院医療）」</a>（東京都オープンデータ、CC BY 4.0）をもとに、表記をそろえて作成</p>
+    <p>東京都は一覧を毎月差し替えています。過去の一覧は <a href="https://github.com/fumi3333/jiritsu" target="_blank" rel="noopener">GitHub（fumi3333/jiritsu）</a> に月ごとに保存し、CSV で公開しています。</p>
     <p>アクセス解析に Microsoft Clarity を使っています（検索欄の文字と検索結果は記録しない設定）。</p>
     <p><a href="about/">このサイトについて（作った理由・運営者）</a>　<a href="osaka/">大阪市版</a>　作成：<a href="https://fumiproject.dev/">ZAX</a></p>
   </footer>
 </main>
+
+<!-- ============================================================
+     モーダル 1: 申請書フォーム＆プレビュー
+     ============================================================ -->
+<div class="modal-overlay" id="applyModal" hidden>
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h3>自立支援医療（精神通院）申請書をつくる</h3>
+      <button type="button" class="modal-close" id="closeApplyModalBtn" aria-label="閉じる">×</button>
+    </div>
+    
+    <div class="privacy-banner" style="margin-top:0">
+      <b>【完全端末内完結】</b> 入力した情報は外部へ送信されません。印刷後は端末を閉じれば消去されます。
+    </div>
+
+    <!-- フォーム入力エリア -->
+    <div id="formSection">
+      <div class="field">
+        <label for="appType">申請区分</label>
+        <select id="appType">
+          <option value="新規">新規（はじめて自立支援医療を申請する）</option>
+          <option value="再認定" selected>再認定（1年ごとの更新）</option>
+          <option value="変更">変更（病院・薬局・住所が変わった）</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="applicantName">受診者（あなた）のお名前</label>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          <input type="text" id="applicantName" placeholder="氏名（例：山田 太郎）" required>
+          <input type="text" id="applicantKana" placeholder="フリガナ（例：ヤマダ タロウ）">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="applicantBirth">生年月日</label>
+        <input type="date" id="applicantBirth">
+      </div>
+
+      <div class="field">
+        <label for="applicantZip">郵便番号・ご住所</label>
+        <input type="text" id="applicantZip" placeholder="郵便番号（例：145-0065）" style="margin-bottom:6px">
+        <input type="text" id="applicantAddr" placeholder="住所（例：東京都大田区東雪谷〇-〇-〇）">
+      </div>
+
+      <div class="field">
+        <label for="applicantTel">日中連絡が取れる電話番号</label>
+        <input type="tel" id="applicantTel" placeholder="例：090-1234-5678">
+      </div>
+
+      <div class="field">
+        <label for="insuranceType">加入医療保険（健康保険証の区分）</label>
+        <select id="insuranceType">
+          <option value="健保（社会保険・組合等）">健康保険（社会保険・組合健保・協会けんぽ）</option>
+          <option value="区市町村国保">区市町村 国民健康保険</option>
+          <option value="共済">共済組合</option>
+          <option value="後期高齢者">後期高齢者医療</option>
+          <option value="生保">生活保護</option>
+          <option value="その他">その他</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="insuranceNum">保険証の記号・番号（任意・未記入可）</label>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          <input type="text" id="insuranceKigo" placeholder="記号（例：12-34）">
+          <input type="text" id="insuranceNum" placeholder="番号（例：56789）">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="targetMuniSelect">提出先の区市町村（宛名ラベル用）</label>
+        <select id="targetMuniSelect"></select>
+      </div>
+
+      <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap">
+        <button type="button" class="btn-primary" id="generatePdfBtn" style="flex:1">
+          申請書プレビュー＆印刷へ進む
+        </button>
+        <button type="button" class="btn-secondary" id="cancelApplyBtn">キャンセル</button>
+      </div>
+    </div>
+
+    <!-- プレビュー＆印刷エリア（最初は非表示） -->
+    <div id="previewSection" hidden>
+      <div class="guide-box">
+        <h4 style="font-size:1.15rem;margin-bottom:10px">提出までの3ステップ</h4>
+        <ol style="margin:4px 0 8px;padding-left:22px;line-height:1.7;font-size:1.05rem;font-weight:600">
+          <li>下のボタンから<b>PDFを保存</b>する。</li>
+          <li><b>コンビニ（セブンやファミマのLINE）</b>にPDFを送って20円で印刷する。</li>
+          <li>下部の<b>宛名ラベル</b>を封筒に貼り、診断書と保険証コピーを入れてポストに投函する。</li>
+        </ol>
+      </div>
+
+      <div class="checklist" style="font-size:1.05rem;font-weight:600">
+        <div style="font-size:1.1rem;font-weight:800;margin-bottom:8px">封筒に入れるもの：</div>
+        <li><input type="checkbox" id="chk1"> <label for="chk1">印刷した申請書</label></li>
+        <li><input type="checkbox" id="chk2"> <label for="chk2">病院の診断書原本（※更新で不要な年を除く）</label></li>
+        <li><input type="checkbox" id="chk3"> <label for="chk3">健康保険証のコピー</label></li>
+      </div>
+
+      <div style="margin:20px 0;display:flex;gap:12px;flex-wrap:wrap">
+        <button type="button" class="btn-primary" id="doPrintBtn" style="font-size:1.2rem;padding:14px 28px">
+          この内容で印刷する（PDF保存）
+        </button>
+        <button type="button" class="btn-secondary" id="backToFormBtn">内容を直す</button>
+      </div>
+
+      <!-- 画面内プレビュー枠 -->
+      <div id="printPreviewWrap">
+        <!-- JSで同期レンダリング -->
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============================================================
+     モーダル 2: 医療機関・薬局向け 窓口案内POP作成
+     ============================================================ -->
+<div class="modal-overlay" id="popModal" hidden>
+  <div class="modal-dialog">
+    <div class="modal-header">
+      <h3>窓口案内用 QRコードPOP（A4印刷）</h3>
+      <button type="button" class="modal-close" id="closePopModalBtn" aria-label="閉じる">×</button>
+    </div>
+    <p class="meta">クリニックの受付や薬局のカウンターに置いていただくことで、患者様がスマホで待ち時間に自立支援医療の申請書を作成できます。</p>
+    
+    <div id="popCardWrap" class="pop-card">
+      <h2 style="font-size:1.3rem;margin:0 0 8px;color:var(--accent)" id="popOrgName">〇〇クリニック</h2>
+      <p style="font-size:0.9rem;margin:0 0 12px;color:var(--muted)" id="popOrgCode">医療機関コード：13xxxxxx</p>
+      
+      <div style="background:#f5f8ff;border:1px solid #cce0ff;border-radius:8px;padding:12px;margin-bottom:16px">
+        <b style="font-size:1.05rem;color:#0b4fb3;display:block;margin-bottom:4px">自立支援医療の申請書をスマホで簡単作成</b>
+        <span style="font-size:0.85rem;color:#333">このQRコードを読み取ると、当院のコードがあらかじめ入った状態で申請書が立ち上がります。待ち時間にスマホで作成できます。</span>
+      </div>
+
+      <div class="pop-qr" id="popQrCode"></div>
+      <p style="font-size:0.8rem;color:#666;margin:4px 0 0" id="popTargetUrl"></p>
+    </div>
+
+    <div style="margin-top:20px;display:flex;gap:12px;justify-content:center">
+      <button type="button" class="btn-primary" id="printPopBtn">このPOPを印刷する</button>
+      <button type="button" class="btn-secondary" id="cancelPopBtn">閉じる</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     印刷専用コンテナ (普段は非表示、print時に全画面出力)
+     ============================================================ -->
+<div id="printPaper" class="no-print">
+  <!-- 印刷時に動的挿入 -->
+</div>
+
 <script>
 (async () => {
   let PAGE = 50;
-  // 一覧は jiritsu リポジトリが毎日更新している。取れない時は同じ場所に置いた控えを使う
   const load = async (u) => { const r = await fetch(u); if (!r.ok) throw 0; return r.json(); };
   const $ = (id) => document.getElementById(id);
   const muniSel = $("muni"), q = $("q"), list = $("list"), count = $("count"), more = $("more"), none = $("none");
+  
+  // 一覧データ取得
   const d = await load("https://raw.githubusercontent.com/fumi3333/jiritsu/main/site/data.json")
     .catch(() => load("data.json"))
     .catch(() => { count.textContent = "一覧を読み込めませんでした。時間をおいて、もう一度開いてください。"; throw 0; });
   const geo = await load("geo.json").catch(() => ({}));
   d.rows.forEach((r) => { if (r[7] == null && geo[r[3]]) { r[7] = geo[r[3]][0]; r[8] = geo[r[3]][1]; } });
-  // 全角・半角、ひらがな・カタカナ、ハイフンや空白のちがいを無視して比べる
+  
   const norm = (s) => s.normalize("NFKC").replace(/[ぁ-ゖ]/g, (c) => String.fromCharCode(c.charCodeAt(0) + 0x60))
     .replace(/[-‐‑‒–—―−ー－]/g, "-").replace(/\s+/g, "").toLowerCase();
   d.rows.forEach((r) => {
     r.key = norm(r[2] + r[3] + r[6]);
-    // 住所から区市町村名を外し、最初の数字の手前までを町名とする（例：大田区池上６－１ → 池上）
     r.town = r[3].replace(d.munis[r[1]], "").replace(/^東京都/, "").match(/^[^0-9０-９－-]+/)?.[0].trim() || "";
     r.chome = (() => { const a = r.town ? r[3].normalize("NFKC").split(r.town.normalize("NFKC"))[1] : ""; const m = (a || "").match(/^\s*(\d{1,2})(?!\d)/); return m ? m[1] : ""; })();
   });
+
+  // ---- 選択トレイ状態管理 (病院・薬局) ----
+  let selectedHosp = null;
+  let selectedPharm = null;
+
+  function updateTrayUI() {
+    const hn = $("trayHospName"), hc = $("trayHospCode");
+    const pn = $("trayPharmName"), pc = $("trayPharmCode");
+    const openBtn = $("openApplyModalBtn"), tip = $("trayTip");
+
+    if (selectedHosp) {
+      hn.textContent = selectedHosp.name;
+      hc.textContent = `コード: ${selectedHosp.code} (${selectedHosp.addr})`;
+    } else {
+      hn.innerHTML = '<span class="tray-card-empty">未選択（下の一覧から選択）</span>';
+      hc.textContent = "";
+    }
+
+    if (selectedPharm) {
+      pn.textContent = selectedPharm.name;
+      pc.textContent = `コード: ${selectedPharm.code} (${selectedPharm.addr})`;
+    } else {
+      pn.innerHTML = '<span class="tray-card-empty">未選択（下の一覧から選択）</span>';
+      pc.textContent = "";
+    }
+
+    const hasAny = !!(selectedHosp || selectedPharm);
+    openBtn.disabled = !hasAny;
+    tip.textContent = hasAny ? "準備完了：ボタンを押して申請書を作成できます" : "※病院または薬局を1つ以上選ぶと作成できます";
+    if (hasAny) {
+      try { sessionStorage.setItem("jiritsu_tray", JSON.stringify({ hosp: selectedHosp, pharm: selectedPharm })); } catch (e) {}
+    }
+  }
+
+  $("trayClearBtn").addEventListener("click", () => {
+    selectedHosp = null;
+    selectedPharm = null;
+    try { sessionStorage.removeItem("jiritsu_tray"); } catch (e) {}
+    updateTrayUI();
+  });
+
+  // セッション復元
+  try {
+    const saved = JSON.parse(sessionStorage.getItem("jiritsu_tray") || "null");
+    if (saved) {
+      selectedHosp = saved.hosp || null;
+      selectedPharm = saved.pharm || null;
+      updateTrayUI();
+    }
+  } catch (e) {}
+
+  // ---- URLクエリパラメータ解析 (?h=1234567, ?p=1234567, ?m=大田区) ----
+  const urlParams = new URLSearchParams(window.location.search);
+  const qHospCode = urlParams.get("h") || urlParams.get("hospital");
+  const qPharmCode = urlParams.get("p") || urlParams.get("pharmacy");
+  const qMuni = urlParams.get("m") || urlParams.get("muni");
+
+  if (qHospCode) {
+    const matchH = d.rows.find(r => (r[6] === qHospCode || r[6] === qHospCode.replace(/^13/, "")) && (r[0] === "byouin" || r[0] === "病院・診療所"));
+    if (matchH) {
+      selectedHosp = { name: matchH[2], code: matchH[6], addr: matchH[3], tel: matchH[4] || "" };
+      updateTrayUI();
+    }
+  }
+  if (qPharmCode) {
+    const matchP = d.rows.find(r => (r[6] === qPharmCode || r[6] === qPharmCode.replace(/^13/, "")) && (r[0] === "yakkyoku" || r[0] === "薬局"));
+    if (matchP) {
+      selectedPharm = { name: matchP[2], code: matchP[6], addr: matchP[3], tel: matchP[4] || "" };
+      updateTrayUI();
+    }
+  }
+
+  // 区市町村・町名・丁目の絞り込み
   const townSel = $("town"), townField = $("townField");
   function fillTowns() {
     const mi = muniSel.value, kind = document.querySelector("input[name=kind]:checked").value;
@@ -213,7 +599,8 @@ footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line);
     keys.forEach((c) => chomeSel.add(new Option(`${c}（${counts[c]}）`, c)));
     chomeField.hidden = false;
   }
-  // ---- 駅・現在地から近い順（2026-10-04）。住所の位置は国土地理院の住所検索で求めた概算。駅は国土数値情報（駅データ）----
+
+  // 駅検索
   let origin = null, originLabel = "";
   const hav = (o, la, lo) => { const R = 6371000, p = Math.PI / 180; const a = Math.sin((la - o[0]) * p / 2) ** 2 + Math.cos(o[0] * p) * Math.cos(la * p) * Math.sin((lo - o[1]) * p / 2) ** 2; return 2 * R * Math.asin(Math.sqrt(a)); };
   const stIn = $("station"), stList = $("stationList"), stMsg = $("stationMsg"), stField = $("stationField");
@@ -240,10 +627,11 @@ footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line);
     $("here").addEventListener("click", () => {
       if (!navigator.geolocation) { stMsg.textContent = "この端末では現在地を使えません。"; return; }
       stMsg.textContent = "現在地を確認しています…";
-      navigator.geolocation.getCurrentPosition((p) => { origin = [p.coords.latitude, p.coords.longitude]; originLabel = "現在地"; stIn.value = ""; stMsg.textContent = "位置情報は、この端末の中だけで使い、送信しません。"; update(); },
+      navigator.geolocation.getCurrentPosition((p) => { origin = [p.coords.latitude, p.coords.longitude]; originLabel = "現在地"; stIn.value = ""; stMsg.textContent = "位置情報は端末内のみで使われ、送信されません。"; update(); },
         () => { stMsg.textContent = "現在地を取得できませんでした。駅名を入れてください。"; });
     });
   }
+
   $("asof").textContent = d.as_of.replace(/^(\d+)-(\d+)-(\d+)$/, (_, y, m, day) => `${y}年${+m}月${+day}日`);
   d.munis.forEach((m, i) => muniSel.add(new Option(m, i)));
   Object.entries(d.kinds).forEach(([k, label], i) => {
@@ -251,27 +639,64 @@ footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line);
     l.innerHTML = `<input type="radio" name="kind" value="${k}"${i === 0 ? " checked" : ""}><span>${label}</span>`;
     $("kinds").append(l);
   });
+
+  // リスト描画
   let shown = 0, hits = [];
   function render(reset) {
     if (reset) { list.textContent = ""; shown = 0; }
     for (const r of hits.slice(shown, shown + PAGE)) {
       const li = document.createElement("li");
       const tel = r[4] ? `<a href="tel:${r[4].replace(/[^0-9]/g, "")}">${r[4]}</a>` : "";
-      li.innerHTML = `<div class="name"></div><div class="code">申請書に書くコード：<b></b></div><div class="meta addr"></div><div class="meta">${tel}</div>`;
-      li.querySelector(".name").textContent = r[2];
-      li.querySelector(".code b").textContent = r[6];
-      li.querySelector(".addr").textContent = r[3];
-      if (origin && r.dist != null) { const dd = document.createElement("div"); dd.className = "meta"; dd.textContent = `${originLabel}から約${r.dist < 1000 ? Math.round(r.dist / 10) * 10 + "m" : (r.dist / 1000).toFixed(1) + "km"}（住所からの概算の直線距離）`; li.append(dd); }
+      
+      const kind = r[0]; // yakkyoku / byouin / houkan
+      const kindLabel = d.kinds[kind] || kind;
+      const btnLabel = kind === "yakkyoku" ? "薬局に指定する" : (kind === "houkan" ? "訪問看護に指定" : "病院に指定する");
+      
+      li.innerHTML = `
+        <div class="name">${r[2]}</div>
+        <div class="code">申請書に書くコード：<b>${r[6]}</b></div>
+        <div class="meta addr">${r[3]}</div>
+        <div class="meta">${tel}</div>
+        <div class="item-actions">
+          <button type="button" class="btn-select" data-code="${r[6]}" data-kind="${kind}">${btnLabel}</button>
+          <button type="button" class="btn-pop" data-code="${r[6]}" data-name="${r[2]}" data-kind="${kindLabel}">窓口案内QR作成</button>
+        </div>
+      `;
+
+      if (origin && r.dist != null) {
+        const dd = document.createElement("div"); dd.className = "meta";
+        dd.textContent = `${originLabel}から約${r.dist < 1000 ? Math.round(r.dist / 10) * 10 + "m" : (r.dist / 1000).toFixed(1) + "km"}（直線距離）`;
+        li.insertBefore(dd, li.querySelector(".item-actions"));
+      }
+
+      // イベントリスナー
+      const selectBtn = li.querySelector(".btn-select");
+      selectBtn.addEventListener("click", () => {
+        const item = { name: r[2], code: r[6], addr: r[3], tel: r[4] || "" };
+        if (kind === "yakkyoku") {
+          selectedPharm = item;
+        } else {
+          selectedHosp = item;
+        }
+        updateTrayUI();
+        window.scrollTo({ top: $("trayBox").offsetTop - 20, behavior: "smooth" });
+      });
+
+      const popBtn = li.querySelector(".btn-pop");
+      popBtn.addEventListener("click", () => {
+        openPopModal(r[2], r[6], kind);
+      });
+
       list.append(li);
     }
     shown = Math.min(shown + PAGE, hits.length);
     more.hidden = shown >= hits.length;
   }
+
   function update() {
     const mi = muniSel.value, kind = document.querySelector("input[name=kind]:checked").value;
     const words = q.value.trim().split(/\s+/).map(norm).filter(Boolean);
     none.hidden = true;
-    // 東京都全体のままで名前も空だと件数が多すぎるので、どちらかを入れてもらう
     if (mi === "" && words.length === 0 && !origin) { hits = []; count.textContent = "名前を入れるか、区市町村を選んでください。"; render(true); return; }
     const town = mi === "" ? "" : townSel.value;
     const chome = (mi === "" || town === "" || chomeField.hidden) ? "" : chomeSel.value;
@@ -280,10 +705,11 @@ footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line);
     if (origin) { hits.forEach((r) => { r.dist = r[7] == null ? null : hav(origin, r[7], r[8]); }); hits = hits.filter((r) => r.dist != null).sort((a, b) => a.dist - b.dist); }
     count.textContent = `${mi === "" ? "東京都全体" : d.munis[mi] + town + (chome ? chome + "丁目付近" : "")}の${d.kinds[kind]}：${hits.length}件`;
     if (hits.length > 20 && mi !== "" && town === "") count.textContent += "（町名を選ぶと数件に絞れます）";
-    if (origin) count.textContent = `${originLabel}から近い順の${d.kinds[kind]}：${hits.length}件（近い${Math.min(5, hits.length)}件を表示。「もっと見る」で続きを表示）`;
+    if (origin) count.textContent = `${originLabel}から近い順の${d.kinds[kind]}：${hits.length}件（近い${Math.min(5, hits.length)}件を表示）`;
     none.hidden = hits.length > 0;
     render(true);
   }
+
   muniSel.addEventListener("change", () => { fillTowns(); fillChomes(); update(); });
   townSel.addEventListener("change", () => { fillChomes(); update(); });
   chomeSel.addEventListener("change", update);
@@ -292,30 +718,42 @@ footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line);
   more.addEventListener("click", () => render(false));
   update();
 
-  // 申請書の出し先。公式ページで確かめた区市町村だけ madoguchi.json に載せている
+  // 窓口情報
   const mg = await load("madoguchi.json").catch(() => ({}));
   const homeMuni = $("homeMuni"), homeTown = $("homeTown"), homeTownField = $("homeTownField"), box = $("madoguchi");
-  d.munis.forEach((m) => homeMuni.add(new Option(m, m)));
-  const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const targetMuniSelect = $("targetMuniSelect");
+
+  d.munis.forEach((m) => {
+    homeMuni.add(new Option(m, m));
+    targetMuniSelect.add(new Option(m, m));
+  });
+
+  if (qMuni && d.munis.includes(qMuni)) {
+    homeMuni.value = qMuni;
+    targetMuniSelect.value = qMuni;
+  }
+
+  const esc = (s) => (s || "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
   const office = (m, name, o) => {
-    // 住所を原文で確かめられた窓口は住所で、そうでない窓口は名前で地図を検索する
-    const q = encodeURIComponent(o.address ? `${o.address} ${name}` : `${m} ${name}`);
+    const qMap = encodeURIComponent(o.address ? `${o.address} ${name}` : `${m} ${name}`);
     const tel = o.phone ? `　<a href="tel:${o.phone.replace(/[^0-9]/g, "")}">${esc(o.phone)}</a>` : "";
     const addr = o.address ? `<div class="meta">${o.postal ? "〒" + esc(o.postal) + " " : ""}${esc(o.address)}</div>` : "";
     return `<div class="office"><div class="name">${esc(name)}</div>${addr}`
-      + `<div class="meta"><a href="https://www.google.com/maps/search/?api=1&query=${q}" target="_blank" rel="noopener">Google マップで開く</a>${tel}</div></div>`;
+      + `<div class="meta"><a href="https://www.google.com/maps/search/?api=1&query=${qMap}" target="_blank" rel="noopener">Google マップで開く</a>${tel}</div></div>`;
   };
+
   function showMadoguchi() {
     const m = homeMuni.value, info = mg[m];
     homeTownField.hidden = !(info && info.towns);
     if (!m) { box.innerHTML = ""; return; }
+    targetMuniSelect.value = m;
     if (!info) {
-      box.innerHTML = `<p>${esc(m)}の窓口は、まだ公式ページで確かめられていません。東京都の案内では、特別区は保健所・保健センター等、市町村は障害者福祉の担当課等が窓口です。${esc(m)}の公式ページで「自立支援医療」を確認してください。</p>`;
+      box.innerHTML = `<p>${esc(m)}の窓口は、特別区は保健所・保健センター等、市町村は障害者福祉担当課です。公式ページでご確認ください。</p>`;
       return;
     }
     if (!info.towns) {
       box.innerHTML = `<p>${esc(info.note)}</p>` + Object.entries(info.offices).map(([n, o]) => office(m, n, o)).join("")
-        + `<p class="meta">出典：<a href="${info.source}" target="_blank" rel="noopener">${esc(m)}公式ページ</a>（${info.checked}に確認）</p>`;
+        + `<p class="meta">出典：<a href="${info.source}" target="_blank" rel="noopener">${esc(m)}公式ページ</a></p>`;
       return;
     }
     if (homeTown.dataset.muni !== m) {
@@ -327,16 +765,256 @@ footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line);
     let html = `<p>${esc(info.note)}</p>`;
     if (t) {
       const names = info.towns[t];
-      if (info.split_note?.[t]) html += `<p><b>${esc(info.split_note[t])}</b>。<a href="${info.area_source}" target="_blank" rel="noopener">受け持ち区域の表（PDF）</a>で番地を確かめてください。</p>`;
+      if (info.split_note?.[t]) html += `<p><b>${esc(info.split_note[t])}</b>。</p>`;
       html += names.map((n) => office(m, n, info.offices[n])).join("");
     } else {
       html += `<p>町名を選ぶと、出す先を1か所に絞れます。</p>`;
     }
-    html += `<p class="meta">出典：<a href="${info.source}" target="_blank" rel="noopener">${esc(m)}公式ページ</a>（${info.checked}に確認）</p>`;
+    html += `<p class="meta">出典：<a href="${info.source}" target="_blank" rel="noopener">${esc(m)}公式ページ</a></p>`;
     box.innerHTML = html;
   }
   homeMuni.addEventListener("change", () => { homeTown.value = ""; showMadoguchi(); });
   homeTown.addEventListener("change", showMadoguchi);
+  if (homeMuni.value) showMadoguchi();
+
+  // ============================================================
+  // 申請書作成モーダル・印刷ロジック
+  // ============================================================
+  const applyModal = $("applyModal");
+  const openApplyModalBtn = $("openApplyModalBtn");
+  const closeApplyModalBtn = $("closeApplyModalBtn");
+  const cancelApplyBtn = $("cancelApplyBtn");
+  const generatePdfBtn = $("generatePdfBtn");
+  const formSection = $("formSection");
+  const previewSection = $("previewSection");
+  const backToFormBtn = $("backToFormBtn");
+  const doPrintBtn = $("doPrintBtn");
+  const printPreviewWrap = $("printPreviewWrap");
+  const printPaper = $("printPaper");
+
+  openApplyModalBtn.addEventListener("click", () => {
+    formSection.hidden = false;
+    previewSection.hidden = true;
+    applyModal.hidden = false;
+  });
+  closeApplyModalBtn.addEventListener("click", () => { applyModal.hidden = true; });
+  cancelApplyBtn.addEventListener("click", () => { applyModal.hidden = true; });
+
+  // 今日の日付を和暦で整形
+  function getTodayWareki() {
+    const d = new Date();
+    const y = d.getFullYear() - 2018; // 令和
+    return { reiwa: y, month: d.getMonth() + 1, day: d.getDate() };
+  }
+
+  // 提出先窓口の情報を取得
+  function getOfficeDestination(muniName) {
+    const info = mg[muniName];
+    if (info && info.offices) {
+      const firstOfficeKey = Object.keys(info.offices)[0];
+      const off = info.offices[firstOfficeKey];
+      return {
+        postal: off.postal || "",
+        address: off.address || `${muniName}役所内`,
+        name: `${muniName} ${firstOfficeKey} 行`
+      };
+    }
+    return {
+      postal: "",
+      address: `東京都${muniName} 障害福祉担当課`,
+      name: `${muniName}役所 自立支援医療担当 御中`
+    };
+  }
+
+  // A4申請書HTMLの生成
+  function renderApplicationSheetHtml() {
+    const today = getTodayWareki();
+    const appType = $("appType").value;
+    const name = $("applicantName").value || "（未記入）";
+    const kana = $("applicantKana").value || "";
+    const birth = $("applicantBirth").value || "未入力";
+    const zip = $("applicantZip").value || "";
+    const addr = $("applicantAddr").value || "（未記入）";
+    const tel = $("applicantTel").value || "（未記入）";
+    const insType = $("insuranceType").value;
+    const insKigo = $("insuranceKigo").value || "";
+    const insNum = $("insuranceNum").value || "";
+    const destMuni = $("targetMuniSelect").value || "大田区";
+    const dest = getOfficeDestination(destMuni);
+
+    const hospName = selectedHosp ? selectedHosp.name : "（未指定）";
+    const hospCode = selectedHosp ? selectedHosp.code : "";
+    const hospAddr = selectedHosp ? selectedHosp.addr : "";
+    const hospTel = selectedHosp ? selectedHosp.tel : "";
+
+    const pharmName = selectedPharm ? selectedPharm.name : "（未指定）";
+    const pharmCode = selectedPharm ? selectedPharm.code : "";
+    const pharmAddr = selectedPharm ? selectedPharm.addr : "";
+    const pharmTel = selectedPharm ? selectedPharm.tel : "";
+
+    return `
+      <div class="sheet-header">
+        <div class="sheet-title">自立支援医療（精神通院医療）支給認定申請書</div>
+        <div class="sheet-subtitle">（東京都障害者の日常生活及び社会生活を総合的に支援する法律施行細則 様式第2号 準拠）</div>
+      </div>
+
+      <div class="sheet-date-box">
+        <div>提出先：<b>東京都知事 殿</b>（提出窓口：${esc(destMuni)}）</div>
+        <div>申請日：令和 ${today.reiwa} 年 ${today.month} 月 ${today.day} 日</div>
+      </div>
+
+      <table class="sheet-table">
+        <tr>
+          <th>申請区分</th>
+          <td colspan="3">
+            <b>【 ${esc(appType)} 】</b>
+            <span style="font-size:8pt;color:#555;margin-left:8px">（新規：初めての受給 ／ 再認定：1年毎の更新 ／ 変更：医療機関の変更）</span>
+          </td>
+        </tr>
+        <tr>
+          <th>受診者氏名</th>
+          <td>
+            <div style="font-size:8pt;color:#555">${esc(kana)}</div>
+            <b style="font-size:12pt">${esc(name)}</b>
+          </td>
+          <th style="width:18%">生年月日</th>
+          <td>${esc(birth)}</td>
+        </tr>
+        <tr>
+          <th>現住所</th>
+          <td colspan="3">
+            ${zip ? "〒" + esc(zip) + " " : ""}${esc(addr)}
+          </td>
+        </tr>
+        <tr>
+          <th>日中連絡先</th>
+          <td colspan="3">${esc(tel)}</td>
+        </tr>
+        <tr>
+          <th>加入医療保険</th>
+          <td colspan="3">
+            区分：<b>${esc(insType)}</b>
+            ${insKigo || insNum ? `　｜　記号・番号：${esc(insKigo)} ${esc(insNum)}` : ""}
+          </td>
+        </tr>
+        <tr>
+          <th style="vertical-align:top">指定医療機関<br>(病院・診療所)</th>
+          <td colspan="3">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <b style="font-size:11pt">${esc(hospName)}</b>
+              <div style="border:1px solid #000;padding:2px 8px;font-size:10pt">
+                医療機関コード：<b style="font-size:12pt;letter-spacing:1px">${esc(hospCode)}</b>
+              </div>
+            </div>
+            <div style="font-size:8.5pt;color:#444;margin-top:4px">${esc(hospAddr)} ${hospTel ? "TEL:" + esc(hospTel) : ""}</div>
+          </td>
+        </tr>
+        <tr>
+          <th style="vertical-align:top">指定薬局</th>
+          <td colspan="3">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <b style="font-size:11pt">${esc(pharmName)}</b>
+              <div style="border:1px solid #000;padding:2px 8px;font-size:10pt">
+                薬局コード：<b style="font-size:12pt;letter-spacing:1px">${esc(pharmCode)}</b>
+              </div>
+            </div>
+            <div style="font-size:8.5pt;color:#444;margin-top:4px">${esc(pharmAddr)} ${pharmTel ? "TEL:" + esc(pharmTel) : ""}</div>
+          </td>
+        </tr>
+      </table>
+
+      <!-- 封筒貼り付け用 宛名ラベル -->
+      <div class="cut-line">
+        <span class="cut-label">✂ ここを切り取って封筒（角2または長3）に貼ってください</span>
+      </div>
+
+      <div class="label-box">
+        <div class="label-postal">${dest.postal ? "〒 " + esc(dest.postal) : "〒 [郵便番号]"}</div>
+        <div class="label-addr">${esc(dest.address)}</div>
+        <div class="label-dest">${esc(dest.name)}</div>
+        <div class="label-sender">
+          差出人：〒${esc(zip)} ${esc(addr)}<br>
+          氏名：${esc(name)}
+        </div>
+      </div>
+    `;
+  }
+
+  generatePdfBtn.addEventListener("click", () => {
+    const html = renderApplicationSheetHtml();
+    printPreviewWrap.innerHTML = html;
+    printPaper.innerHTML = html;
+    formSection.hidden = true;
+    previewSection.hidden = false;
+  });
+
+  backToFormBtn.addEventListener("click", () => {
+    formSection.hidden = false;
+    previewSection.hidden = true;
+  });
+
+  doPrintBtn.addEventListener("click", () => {
+    printPaper.classList.remove("no-print");
+    window.print();
+    printPaper.classList.add("no-print");
+  });
+
+  // ============================================================
+  // 窓口POPモーダル & QRコード生成ロジック
+  // ============================================================
+  const popModal = $("popModal");
+  const popOrgName = $("popOrgName");
+  const popOrgCode = $("popOrgCode");
+  const popQrCode = $("popQrCode");
+  const popTargetUrl = $("popTargetUrl");
+  const closePopModalBtn = $("closePopModalBtn");
+  const cancelPopBtn = $("cancelPopBtn");
+  const printPopBtn = $("printPopBtn");
+
+  function openPopModal(name, code, kind) {
+    popOrgName.textContent = name;
+    popOrgCode.textContent = `${kind}コード：${code}`;
+    
+    // パラメータ付きURL (hまたはp)
+    const paramKey = kind === "薬局" ? "p" : "h";
+    const targetUrl = `https://fumiproject.dev/jiritsu/?${paramKey}=${code}`;
+    popTargetUrl.textContent = targetUrl;
+
+    // QRコード生成
+    popQrCode.innerHTML = "";
+    if (window.QRCode) {
+      new QRCode(popQrCode, {
+        text: targetUrl,
+        width: 160,
+        height: 160,
+        colorDark: "#0b4fb3",
+        colorLight: "#ffffff",
+        correctLevel: QRCode.CorrectLevel.M
+      });
+    } else {
+      popQrCode.innerHTML = `<img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(targetUrl)}" alt="QR Code">`;
+    }
+
+    popModal.hidden = false;
+  }
+
+  closePopModalBtn.addEventListener("click", () => { popModal.hidden = true; });
+  cancelPopBtn.addEventListener("click", () => { popModal.hidden = true; });
+
+  printPopBtn.addEventListener("click", () => {
+    const popContent = $("popCardWrap").outerHTML;
+    printPaper.innerHTML = `
+      <div id="popPrintPaper">
+        <h1 style="font-size:18pt;margin-bottom:16px;text-align:center">患者様向け 窓口案内</h1>
+        ${popContent}
+        <p style="font-size:9pt;color:#666;margin-top:24px;text-align:center">自立支援医療（精神通院）申請書作成支援サービス（東京都オープンデータ準拠）</p>
+      </div>
+    `;
+    printPaper.classList.remove("no-print");
+    window.print();
+    printPaper.classList.add("no-print");
+  });
+
 })();
 </script>
 </body>

@@ -109,11 +109,24 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
 @media (min-width: 600px) { .tray-grid { grid-template-columns: 1fr 1fr; } }
 .tray-card {
   background: var(--bg); border: 2px solid var(--line); border-radius: 8px; padding: 12px 14px;
+  cursor: pointer; transition: border-color 0.15s, background 0.15s;
 }
-.tray-card-label { font-size: 0.9rem; font-weight: 800; color: var(--muted); margin-bottom: 4px; }
-.tray-card-name { font-weight: 800; font-size: 1.1rem; margin-bottom: 2px; }
+.tray-card:hover {
+  border-color: var(--accent); background: #f6f9fe;
+}
+.tray-card:focus-visible {
+  outline: 3px solid var(--focus); outline-offset: 2px;
+}
+.tray-card-label {
+  font-size: 0.95rem; font-weight: 800; color: var(--muted); margin-bottom: 4px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.tray-card-action {
+  font-size: 0.85rem; font-weight: 700; color: var(--accent);
+}
+.tray-card-name { font-weight: 800; font-size: 1.15rem; margin-bottom: 2px; }
 .tray-card-code { font-size: 0.95rem; color: var(--accent); font-weight: 700; }
-.tray-card-empty { color: var(--muted); font-size: 0.95rem; }
+.tray-card-empty { color: var(--accent); font-size: 1rem; text-decoration: underline; font-weight: 700; }
 .tray-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
 .btn-primary {
   background: var(--accent); color: var(--accent-text); border: none; border-radius: 8px;
@@ -130,15 +143,11 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
 .item-actions { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 10px; }
 .btn-select {
   background: #eef4ff; border: 2px solid var(--accent); color: var(--accent);
-  padding: 8px 18px; border-radius: 8px; font-size: 1rem; font-weight: 800; cursor: pointer;
-  min-height: 44px;
+  padding: 10px 22px; border-radius: 8px; font-size: 1.05rem; font-weight: 800; cursor: pointer;
+  min-height: 48px;
 }
 .btn-select:hover { background: var(--accent); color: var(--accent-text); }
-.btn-pop {
-  background: transparent; border: 2px solid var(--line); color: var(--muted);
-  padding: 8px 14px; border-radius: 8px; font-size: 0.95rem; font-weight: 600; cursor: pointer;
-}
-.btn-pop:hover { border-color: var(--muted); color: var(--text); }
+
 
 /* ---- モーダル共通 ---- */
 .modal-overlay {
@@ -293,14 +302,20 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
       <button type="button" class="btn-secondary" id="trayClearBtn" style="min-height:36px;padding:4px 12px;font-size:0.9rem">やり直す</button>
     </div>
     <div class="tray-grid">
-      <div class="tray-card" id="trayHospitalCard">
-        <div class="tray-card-label">① 指定病院・診療所</div>
-        <div class="tray-card-name" id="trayHospName"><span class="tray-card-empty">未選択（下の一覧から選択）</span></div>
+      <div class="tray-card" id="trayHospitalCard" role="button" tabindex="0" title="押して病院・診療所を選ぶ">
+        <div class="tray-card-label">
+          <span>① 指定病院・診療所</span>
+          <span class="tray-card-action" id="trayHospAction">押して選ぶ ＞</span>
+        </div>
+        <div class="tray-card-name" id="trayHospName"><span class="tray-card-empty">未選択（押して選ぶ）</span></div>
         <div class="tray-card-code" id="trayHospCode"></div>
       </div>
-      <div class="tray-card" id="trayPharmacyCard">
-        <div class="tray-card-label">② 指定薬局</div>
-        <div class="tray-card-name" id="trayPharmName"><span class="tray-card-empty">未選択（下の一覧から選択）</span></div>
+      <div class="tray-card" id="trayPharmacyCard" role="button" tabindex="0" title="押して薬局を選ぶ">
+        <div class="tray-card-label">
+          <span>② 指定薬局</span>
+          <span class="tray-card-action" id="trayPharmAction">押して選ぶ ＞</span>
+        </div>
+        <div class="tray-card-name" id="trayPharmName"><span class="tray-card-empty">未選択（押して選ぶ）</span></div>
         <div class="tray-card-code" id="trayPharmCode"></div>
       </div>
     </div>
@@ -313,7 +328,7 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
   </div>
 
   <!-- 検索ボックス -->
-  <div class="box">
+  <div class="box" id="searchBox">
     <fieldset class="kinds" id="kinds">
       <legend>種類</legend>
     </fieldset>
@@ -518,24 +533,28 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
   let selectedPharm = null;
 
   function updateTrayUI() {
-    const hn = $("trayHospName"), hc = $("trayHospCode");
-    const pn = $("trayPharmName"), pc = $("trayPharmCode");
+    const hn = $("trayHospName"), hc = $("trayHospCode"), ha = $("trayHospAction");
+    const pn = $("trayPharmName"), pc = $("trayPharmCode"), pa = $("trayPharmAction");
     const openBtn = $("openApplyModalBtn"), tip = $("trayTip");
 
     if (selectedHosp) {
       hn.textContent = selectedHosp.name;
       hc.textContent = `コード: ${selectedHosp.code} (${selectedHosp.addr})`;
+      if (ha) ha.textContent = "変更する ＞";
     } else {
-      hn.innerHTML = '<span class="tray-card-empty">未選択（下の一覧から選択）</span>';
+      hn.innerHTML = '<span class="tray-card-empty">未選択（押して選ぶ）</span>';
       hc.textContent = "";
+      if (ha) ha.textContent = "押して選ぶ ＞";
     }
 
     if (selectedPharm) {
       pn.textContent = selectedPharm.name;
       pc.textContent = `コード: ${selectedPharm.code} (${selectedPharm.addr})`;
+      if (pa) pa.textContent = "変更する ＞";
     } else {
-      pn.innerHTML = '<span class="tray-card-empty">未選択（下の一覧から選択）</span>';
+      pn.innerHTML = '<span class="tray-card-empty">未選択（押して選ぶ）</span>';
       pc.textContent = "";
+      if (pa) pa.textContent = "押して選ぶ ＞";
     }
 
     const hasAny = !!(selectedHosp || selectedPharm);
@@ -545,6 +564,32 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
       try { sessionStorage.setItem("jiritsu_tray", JSON.stringify({ hosp: selectedHosp, pharm: selectedPharm })); } catch (e) {}
     }
   }
+
+  function jumpToSelect(kind) {
+    const radio = document.querySelector(`input[name="kind"][value="${kind}"]`);
+    if (radio) {
+      radio.checked = true;
+      const t = townSel.value;
+      fillTowns();
+      townSel.value = [...townSel.options].some((o) => o.value === t) ? t : "";
+      fillChomes();
+      update();
+    }
+    const target = $("searchBox") || $("kinds");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+
+  $("trayHospitalCard").addEventListener("click", () => jumpToSelect("byouin"));
+  $("trayHospitalCard").addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); jumpToSelect("byouin"); }
+  });
+
+  $("trayPharmacyCard").addEventListener("click", () => jumpToSelect("yakkyoku"));
+  $("trayPharmacyCard").addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); jumpToSelect("yakkyoku"); }
+  });
 
   $("trayClearBtn").addEventListener("click", () => {
     selectedHosp = null;
@@ -668,7 +713,6 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
         <div class="meta">${tel}</div>
         <div class="item-actions">
           <button type="button" class="btn-select" data-code="${r[6]}" data-kind="${kind}">${btnLabel}</button>
-          <button type="button" class="btn-pop" data-code="${r[6]}" data-name="${r[2]}" data-kind="${kindLabel}">窓口案内QR作成</button>
         </div>
       `;
 
@@ -689,11 +733,6 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
         }
         updateTrayUI();
         window.scrollTo({ top: $("trayBox").offsetTop - 20, behavior: "smooth" });
-      });
-
-      const popBtn = li.querySelector(".btn-pop");
-      popBtn.addEventListener("click", () => {
-        openPopModal(r[2], r[6], kindLabel);
       });
 
       list.append(li);

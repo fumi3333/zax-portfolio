@@ -469,8 +469,8 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
       <p style="font-size:0.9rem;margin:0 0 12px;color:var(--muted)" id="popOrgCode">医療機関コード：13xxxxxx</p>
       
       <div style="background:#f5f8ff;border:1px solid #cce0ff;border-radius:8px;padding:12px;margin-bottom:16px">
-        <b style="font-size:1.05rem;color:#0b4fb3;display:block;margin-bottom:4px">自立支援医療の申請書をスマホで簡単作成</b>
-        <span style="font-size:0.85rem;color:#333">このQRコードを読み取ると、当院のコードがあらかじめ入った状態で申請書が立ち上がります。待ち時間にスマホで作成できます。</span>
+        <b style="font-size:1.05rem;color:#0b4fb3;display:block;margin-bottom:4px">自立支援医療の申請書をスマホで作成</b>
+        <span style="font-size:0.88rem;color:#333">このQRコードを読み取ると、指定コードがあらかじめ入った状態で申請書と宛名ラベルが立ち上がります。待ち時間にスマホで作成できます。</span>
       </div>
 
       <div class="pop-qr" id="popQrCode"></div>
@@ -693,7 +693,7 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
 
       const popBtn = li.querySelector(".btn-pop");
       popBtn.addEventListener("click", () => {
-        openPopModal(r[2], r[6], kind);
+        openPopModal(r[2], r[6], kindLabel);
       });
 
       list.append(li);

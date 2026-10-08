@@ -169,9 +169,63 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
 
 /* ---- 印刷プレビュー用 (画面表示時) ---- */
 #printPreviewWrap {
-  border: 1px solid #ccc; background: #fff; color: #000; padding: 16px; margin: 16px 0;
-  font-family: "Noto Sans JP", sans-serif; font-size: 12px; line-height: 1.5;
+  border: 2px solid var(--line); background: #fff; color: #000; padding: 16px; margin: 16px 0;
+  font-family: "Noto Sans JP", sans-serif; font-size: 13px; line-height: 1.5;
 }
+
+/* 画面プレビュー時の手書き箇所（赤太枠ハイライト） */
+.handwrite-box {
+  outline: 3px solid #d9383a;
+  outline-offset: -2px;
+  background-color: #fff8f8 !important;
+  position: relative;
+}
+.handwrite-badge {
+  display: inline-block;
+  background: #d9383a;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-bottom: 4px;
+}
+.handwrite-alert {
+  background: #fff2f2;
+  border: 2px solid #d9383a;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin: 16px 0;
+}
+.handwrite-alert h4 {
+  margin: 0 0 6px;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #a61c1e;
+}
+.handwrite-alert p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #333;
+}
+
+/* 3秒カウントダウン安全ゲート */
+.gate-wrap {
+  background: var(--surface);
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  padding: 18px;
+  margin-top: 18px;
+  text-align: center;
+}
+.gate-timer {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: #333;
+}
+
 
 /* ============================================================
    @media print : A4印刷完全最適化スタイル
@@ -227,7 +281,7 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
   
   <!-- 個人情報保護・端末内完結の安心バナー -->
   <div class="privacy-banner">
-    <b>入力した情報は端末内だけで処理されます。</b> 外部への送信や保存はありません。
+    <b>お名前やご住所などの個人情報は入力不要です。</b> 病院・薬局のコードと宛名だけを印刷し、お名前は印刷後に紙へ手書きします。
   </div>
 
   <p class="lead">通っている病院と薬局を選ぶだけで、東京都の公式申請書と封筒の宛名ラベルができます。</p>
@@ -329,115 +383,70 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
 </main>
 
 <!-- ============================================================
-     モーダル 1: 申請書フォーム＆プレビュー
+     モーダル 1: 申請書作成＆手書き確認プレビュー
      ============================================================ -->
 <div class="modal-overlay" id="applyModal" hidden>
   <div class="modal-dialog">
     <div class="modal-header">
-      <h3>自立支援医療（精神通院）申請書をつくる</h3>
+      <h3 style="font-size:1.3rem;font-weight:800">自立支援医療 申請書プレビュー</h3>
       <button type="button" class="modal-close" id="closeApplyModalBtn" aria-label="閉じる">×</button>
     </div>
     
     <div class="privacy-banner" style="margin-top:0">
-      <b>【完全端末内完結】</b> 入力した情報は外部へ送信されません。印刷後は端末を閉じれば消去されます。
+      <b>氏名・住所は入力不要です。</b> コードと宛名だけを印刷し、お名前は印刷後に紙へ手書きします。
     </div>
 
-    <!-- フォーム入力エリア -->
-    <div id="formSection">
-      <div class="field">
-        <label for="appType">申請区分</label>
-        <select id="appType">
-          <option value="新規">新規（はじめて自立支援医療を申請する）</option>
+    <!-- 区分と自治体の基本選択（2項目のみ） -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px">
+      <div>
+        <label for="appType" style="font-size:1rem;margin-bottom:4px">申請区分</label>
+        <select id="appType" style="min-height:46px;font-size:1rem">
           <option value="再認定" selected>再認定（1年ごとの更新）</option>
-          <option value="変更">変更（病院・薬局・住所が変わった）</option>
+          <option value="新規">新規（はじめて申請）</option>
+          <option value="変更">変更（病院・薬局が変わった）</option>
         </select>
       </div>
-
-      <div class="field">
-        <label for="applicantName">受診者（あなた）のお名前</label>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-          <input type="text" id="applicantName" placeholder="氏名（例：山田 太郎）" required>
-          <input type="text" id="applicantKana" placeholder="フリガナ（例：ヤマダ タロウ）">
-        </div>
-      </div>
-
-      <div class="field">
-        <label for="applicantBirth">生年月日</label>
-        <input type="date" id="applicantBirth">
-      </div>
-
-      <div class="field">
-        <label for="applicantZip">郵便番号・ご住所</label>
-        <input type="text" id="applicantZip" placeholder="郵便番号（例：145-0065）" style="margin-bottom:6px">
-        <input type="text" id="applicantAddr" placeholder="住所（例：東京都大田区東雪谷〇-〇-〇）">
-      </div>
-
-      <div class="field">
-        <label for="applicantTel">日中連絡が取れる電話番号</label>
-        <input type="tel" id="applicantTel" placeholder="例：090-1234-5678">
-      </div>
-
-      <div class="field">
-        <label for="insuranceType">加入医療保険（健康保険証の区分）</label>
-        <select id="insuranceType">
-          <option value="健保（社会保険・組合等）">健康保険（社会保険・組合健保・協会けんぽ）</option>
-          <option value="区市町村国保">区市町村 国民健康保険</option>
-          <option value="共済">共済組合</option>
-          <option value="後期高齢者">後期高齢者医療</option>
-          <option value="生保">生活保護</option>
-          <option value="その他">その他</option>
-        </select>
-      </div>
-
-      <div class="field">
-        <label for="insuranceNum">保険証の記号・番号（任意・未記入可）</label>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-          <input type="text" id="insuranceKigo" placeholder="記号（例：12-34）">
-          <input type="text" id="insuranceNum" placeholder="番号（例：56789）">
-        </div>
-      </div>
-
-      <div class="field">
-        <label for="targetMuniSelect">提出先の区市町村（宛名ラベル用）</label>
-        <select id="targetMuniSelect"></select>
-      </div>
-
-      <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap">
-        <button type="button" class="btn-primary" id="generatePdfBtn" style="flex:1">
-          申請書プレビュー＆印刷へ進む
-        </button>
-        <button type="button" class="btn-secondary" id="cancelApplyBtn">キャンセル</button>
+      <div>
+        <label for="targetMuniSelect" style="font-size:1rem;margin-bottom:4px">提出先（お住まいの自治体）</label>
+        <select id="targetMuniSelect" style="min-height:46px;font-size:1rem"></select>
       </div>
     </div>
 
-    <!-- プレビュー＆印刷エリア（最初は非表示） -->
-    <div id="previewSection" hidden>
-      <div class="guide-box">
-        <h4 style="font-size:1.15rem;margin-bottom:10px">提出までの3ステップ</h4>
-        <ol style="margin:4px 0 8px;padding-left:22px;line-height:1.7;font-size:1.05rem;font-weight:600">
-          <li>下のボタンから<b>PDFを保存</b>する。</li>
-          <li><b>コンビニ（セブンやファミマのLINE）</b>にPDFを送って20円で印刷する。</li>
-          <li>下部の<b>宛名ラベル</b>を封筒に貼り、診断書と保険証コピーを入れてポストに投函する。</li>
-        </ol>
-      </div>
+    <!-- 赤枠の手書き注意アラート -->
+    <div class="handwrite-alert">
+      <h4>印刷後、赤枠の箇所に黒ボールペンで手書きしてください</h4>
+      <p>病院・薬局コードと提出先は印字されます。お名前・ご住所・保険証区分は印刷後に手書きして提出します。</p>
+    </div>
 
-      <div class="checklist" style="font-size:1.05rem;font-weight:600">
-        <div style="font-size:1.1rem;font-weight:800;margin-bottom:8px">封筒に入れるもの：</div>
-        <li><input type="checkbox" id="chk1"> <label for="chk1">印刷した申請書</label></li>
-        <li><input type="checkbox" id="chk2"> <label for="chk2">病院の診断書原本（※更新で不要な年を除く）</label></li>
-        <li><input type="checkbox" id="chk3"> <label for="chk3">健康保険証のコピー</label></li>
-      </div>
+    <!-- 画面内プレビュー枠（赤太枠ハイライト付き） -->
+    <div id="printPreviewWrap">
+      <!-- JSで同期レンダリング -->
+    </div>
 
-      <div style="margin:20px 0;display:flex;gap:12px;flex-wrap:wrap">
-        <button type="button" class="btn-primary" id="doPrintBtn" style="font-size:1.2rem;padding:14px 28px">
-          この内容で印刷する（PDF保存）
+    <div class="guide-box">
+      <h4 style="font-size:1.1rem;margin-bottom:8px">封筒に入れて送るもの（チェックリスト）</h4>
+      <ul class="checklist" style="font-size:1rem;font-weight:600">
+        <li>[ ] 印刷した申請書（赤枠の箇所を手書きしたもの）</li>
+        <li>[ ] 病院の診断書原本（※更新で診断書が不要な年を除く）</li>
+        <li>[ ] 健康保険証のコピー</li>
+      </ul>
+      <p style="margin:8px 0 0;font-size:0.95rem;color:var(--muted)">※下部の宛名ラベルを封筒に貼り、ポストに投函すると申請完了です。</p>
+    </div>
+
+    <!-- 3秒カウントダウン安全ゲート -->
+    <div class="gate-wrap">
+      <div class="gate-timer" id="gateTimerText">手書きする箇所を確認してください（残り 3 秒）</div>
+      <div style="margin-bottom:14px">
+        <label style="display:inline-flex;align-items:center;gap:8px;font-size:1.05rem;cursor:pointer">
+          <input type="checkbox" id="gateChk" disabled style="width:20px;height:20px">
+          <span id="gateChkLabel">赤枠の箇所を印刷後に手書きすることを確認しました</span>
+        </label>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <button type="button" class="btn-primary" id="doPrintBtn" disabled style="flex:1;font-size:1.2rem;min-height:56px">
+          確認中（残り 3 秒）
         </button>
-        <button type="button" class="btn-secondary" id="backToFormBtn">内容を直す</button>
-      </div>
-
-      <!-- 画面内プレビュー枠 -->
-      <div id="printPreviewWrap">
-        <!-- JSで同期レンダリング -->
+        <button type="button" class="btn-secondary" id="cancelApplyBtn" style="min-height:56px;padding:0 20px">閉じる</button>
       </div>
     </div>
 
@@ -784,21 +793,58 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
   const openApplyModalBtn = $("openApplyModalBtn");
   const closeApplyModalBtn = $("closeApplyModalBtn");
   const cancelApplyBtn = $("cancelApplyBtn");
-  const generatePdfBtn = $("generatePdfBtn");
-  const formSection = $("formSection");
-  const previewSection = $("previewSection");
-  const backToFormBtn = $("backToFormBtn");
+  const appTypeSel = $("appType");
+  const targetMuniSel = $("targetMuniSelect");
   const doPrintBtn = $("doPrintBtn");
+  const gateChk = $("gateChk");
+  const gateTimerText = $("gateTimerText");
   const printPreviewWrap = $("printPreviewWrap");
   const printPaper = $("printPaper");
 
-  openApplyModalBtn.addEventListener("click", () => {
-    formSection.hidden = false;
-    previewSection.hidden = true;
-    applyModal.hidden = false;
+  let gateInterval = null;
+
+  function startSafetyGate() {
+    if (gateInterval) clearInterval(gateInterval);
+    let remain = 3;
+    gateChk.disabled = true;
+    gateChk.checked = false;
+    doPrintBtn.disabled = true;
+    gateTimerText.textContent = `手書きする箇所を確認してください（残り ${remain} 秒）`;
+    doPrintBtn.textContent = `確認中（残り ${remain} 秒）`;
+
+    gateInterval = setInterval(() => {
+      remain--;
+      if (remain > 0) {
+        gateTimerText.textContent = `手書きする箇所を確認してください（残り ${remain} 秒）`;
+        doPrintBtn.textContent = `確認中（残り ${remain} 秒）`;
+      } else {
+        clearInterval(gateInterval);
+        gateInterval = null;
+        gateTimerText.innerHTML = `<span style="color:var(--success);font-weight:800">赤枠の手書き箇所の確認が完了しました</span>`;
+        gateChk.disabled = false;
+        gateChk.checked = true;
+        doPrintBtn.disabled = false;
+        doPrintBtn.textContent = "この内容で印刷する（PDF保存）";
+      }
+    }, 1000);
+  }
+
+  gateChk.addEventListener("change", () => {
+    doPrintBtn.disabled = !gateChk.checked;
   });
-  closeApplyModalBtn.addEventListener("click", () => { applyModal.hidden = true; });
-  cancelApplyBtn.addEventListener("click", () => { applyModal.hidden = true; });
+
+  openApplyModalBtn.addEventListener("click", () => {
+    refreshPreview();
+    applyModal.hidden = false;
+    startSafetyGate();
+  });
+
+  function closeModal() {
+    if (gateInterval) { clearInterval(gateInterval); gateInterval = null; }
+    applyModal.hidden = true;
+  }
+  closeApplyModalBtn.addEventListener("click", closeModal);
+  cancelApplyBtn.addEventListener("click", closeModal);
 
   // 今日の日付を和暦で整形
   function getTodayWareki() {
@@ -826,20 +872,11 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
     };
   }
 
-  // A4申請書HTMLの生成
-  function renderApplicationSheetHtml() {
+  // A4申請書HTMLの生成 (isPreview: 画面表示用赤太枠ハイライトモード)
+  function renderApplicationSheetHtml(isPreview = false) {
     const today = getTodayWareki();
-    const appType = $("appType").value;
-    const name = $("applicantName").value || "（未記入）";
-    const kana = $("applicantKana").value || "";
-    const birth = $("applicantBirth").value || "未入力";
-    const zip = $("applicantZip").value || "";
-    const addr = $("applicantAddr").value || "（未記入）";
-    const tel = $("applicantTel").value || "（未記入）";
-    const insType = $("insuranceType").value;
-    const insKigo = $("insuranceKigo").value || "";
-    const insNum = $("insuranceNum").value || "";
-    const destMuni = $("targetMuniSelect").value || "大田区";
+    const appType = appTypeSel.value;
+    const destMuni = targetMuniSel.value || "大田区";
     const dest = getOfficeDestination(destMuni);
 
     const hospName = selectedHosp ? selectedHosp.name : "（未指定）";
@@ -851,6 +888,9 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
     const pharmCode = selectedPharm ? selectedPharm.code : "";
     const pharmAddr = selectedPharm ? selectedPharm.addr : "";
     const pharmTel = selectedPharm ? selectedPharm.tel : "";
+
+    const hwClass = isPreview ? ' class="handwrite-box"' : '';
+    const hwBadge = isPreview ? '<div class="handwrite-badge">印刷後に手書き</div>' : '';
 
     return `
       <div class="sheet-header">
@@ -865,60 +905,78 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
 
       <table class="sheet-table">
         <tr>
-          <th>申請区分</th>
+          <th style="width:20%">申請区分</th>
           <td colspan="3">
-            <b>【 ${esc(appType)} 】</b>
-            <span style="font-size:8pt;color:#555;margin-left:8px">（新規：初めての受給 ／ 再認定：1年毎の更新 ／ 変更：医療機関の変更）</span>
+            <b style="font-size:12pt">【 ${esc(appType)} 】</b>
+            <span style="font-size:8.5pt;color:#555;margin-left:8px">（新規：初めての受給 ／ 再認定：1年毎の更新 ／ 変更：医療機関の変更）</span>
           </td>
         </tr>
         <tr>
           <th>受診者氏名</th>
-          <td>
-            <div style="font-size:8pt;color:#555">${esc(kana)}</div>
-            <b style="font-size:12pt">${esc(name)}</b>
+          <td${hwClass} style="min-height:48px">
+            ${hwBadge}
+            <div style="font-size:9pt;color:#777">フリガナ：</div>
+            <div style="font-size:11pt;color:${isPreview ? '#a61c1e' : '#999'};font-weight:700;margin-top:2px">
+              ${isPreview ? '（お名前を手書き）' : '　'}
+            </div>
           </td>
-          <th style="width:18%">生年月日</th>
-          <td>${esc(birth)}</td>
+          <th style="width:16%">生年月日</th>
+          <td${hwClass}>
+            ${hwBadge}
+            <div style="font-size:10pt;color:${isPreview ? '#a61c1e' : '#999'}">
+              ${isPreview ? '（生年月日を手書き）' : '　'}
+            </div>
+          </td>
         </tr>
         <tr>
           <th>現住所</th>
-          <td colspan="3">
-            ${zip ? "〒" + esc(zip) + " " : ""}${esc(addr)}
+          <td colspan="3"${hwClass} style="min-height:44px">
+            ${hwBadge}
+            <div style="font-size:10pt;color:${isPreview ? '#a61c1e' : '#999'}">
+              ${isPreview ? '（郵便番号・ご住所を手書き）' : '　'}
+            </div>
           </td>
         </tr>
         <tr>
           <th>日中連絡先</th>
-          <td colspan="3">${esc(tel)}</td>
+          <td colspan="3"${hwClass}>
+            ${hwBadge}
+            <div style="font-size:10pt;color:${isPreview ? '#a61c1e' : '#999'}">
+              ${isPreview ? '（電話番号を手書き）' : '　'}
+            </div>
+          </td>
         </tr>
         <tr>
           <th>加入医療保険</th>
-          <td colspan="3">
-            区分：<b>${esc(insType)}</b>
-            ${insKigo || insNum ? `　｜　記号・番号：${esc(insKigo)} ${esc(insNum)}` : ""}
+          <td colspan="3"${hwClass}>
+            ${hwBadge}
+            <div style="font-size:10pt;color:${isPreview ? '#a61c1e' : '#999'}">
+              ${isPreview ? '（健康保険証の区分・記号番号を手書き）' : '　'}
+            </div>
           </td>
         </tr>
         <tr>
           <th style="vertical-align:top">指定医療機関<br>(病院・診療所)</th>
           <td colspan="3">
-            <div style="display:flex;justify-content:space-between;align-items:center">
-              <b style="font-size:11pt">${esc(hospName)}</b>
-              <div style="border:1px solid #000;padding:2px 8px;font-size:10pt">
-                医療機関コード：<b style="font-size:12pt;letter-spacing:1px">${esc(hospCode)}</b>
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px">
+              <b style="font-size:11.5pt">${esc(hospName)}</b>
+              <div style="border:2px solid #000;padding:2px 10px;font-size:10pt;background:#f9f9f9">
+                医療機関コード：<b style="font-size:12.5pt;letter-spacing:1px">${esc(hospCode || '未指定')}</b>
               </div>
             </div>
-            <div style="font-size:8.5pt;color:#444;margin-top:4px">${esc(hospAddr)} ${hospTel ? "TEL:" + esc(hospTel) : ""}</div>
+            <div style="font-size:8.5pt;color:#444;margin-top:4px">${esc(hospAddr)} ${hospTel ? 'TEL:' + esc(hospTel) : ''}</div>
           </td>
         </tr>
         <tr>
           <th style="vertical-align:top">指定薬局</th>
           <td colspan="3">
-            <div style="display:flex;justify-content:space-between;align-items:center">
-              <b style="font-size:11pt">${esc(pharmName)}</b>
-              <div style="border:1px solid #000;padding:2px 8px;font-size:10pt">
-                薬局コード：<b style="font-size:12pt;letter-spacing:1px">${esc(pharmCode)}</b>
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px">
+              <b style="font-size:11.5pt">${esc(pharmName)}</b>
+              <div style="border:2px solid #000;padding:2px 10px;font-size:10pt;background:#f9f9f9">
+                薬局コード：<b style="font-size:12.5pt;letter-spacing:1px">${esc(pharmCode || '未指定')}</b>
               </div>
             </div>
-            <div style="font-size:8.5pt;color:#444;margin-top:4px">${esc(pharmAddr)} ${pharmTel ? "TEL:" + esc(pharmTel) : ""}</div>
+            <div style="font-size:8.5pt;color:#444;margin-top:4px">${esc(pharmAddr)} ${pharmTel ? 'TEL:' + esc(pharmTel) : ''}</div>
           </td>
         </tr>
       </table>
@@ -929,31 +987,27 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
       </div>
 
       <div class="label-box">
-        <div class="label-postal">${dest.postal ? "〒 " + esc(dest.postal) : "〒 [郵便番号]"}</div>
+        <div class="label-postal">${dest.postal ? '〒 ' + esc(dest.postal) : '〒 [郵便番号]'}</div>
         <div class="label-addr">${esc(dest.address)}</div>
         <div class="label-dest">${esc(dest.name)}</div>
-        <div class="label-sender">
-          差出人：〒${esc(zip)} ${esc(addr)}<br>
-          氏名：${esc(name)}
+        <div class="label-sender"${hwClass} style="margin-top:6px;padding:6px">
+          ${hwBadge}
+          差出人住所：${isPreview ? '<span style="color:#a61c1e">（手書き）</span>' : '　'}<br>
+          差出人氏名：${isPreview ? '<span style="color:#a61c1e">（手書き）</span>' : '　'}
         </div>
       </div>
     `;
   }
 
-  generatePdfBtn.addEventListener("click", () => {
-    const html = renderApplicationSheetHtml();
-    printPreviewWrap.innerHTML = html;
-    printPaper.innerHTML = html;
-    formSection.hidden = true;
-    previewSection.hidden = false;
-  });
+  function refreshPreview() {
+    printPreviewWrap.innerHTML = renderApplicationSheetHtml(true);
+  }
 
-  backToFormBtn.addEventListener("click", () => {
-    formSection.hidden = false;
-    previewSection.hidden = true;
-  });
+  appTypeSel.addEventListener("change", refreshPreview);
+  targetMuniSel.addEventListener("change", refreshPreview);
 
   doPrintBtn.addEventListener("click", () => {
+    printPaper.innerHTML = renderApplicationSheetHtml(false);
     printPaper.classList.remove("no-print");
     window.print();
     printPaper.classList.add("no-print");

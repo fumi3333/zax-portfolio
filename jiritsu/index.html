@@ -480,6 +480,24 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
       <p style="margin:8px 0 0;font-size:0.95rem;color:var(--muted)">※下部の宛名ラベルを封筒に貼り、ポストに投函すると申請完了です。</p>
     </div>
 
+    <!-- カレンダー更新リマインダー（サーバー非保持・スマホ端末完結） -->
+    <div style="background:#f0fdf4;border:2px solid #86efac;border-radius:8px;padding:14px 16px;margin:16px 0">
+      <h4 style="margin:0 0 6px;font-size:1.1rem;font-weight:800;color:#166534">
+        受給者証の更新忘れを防ぐ（10ヶ月後のリマインダー）
+      </h4>
+      <p style="margin:0 0 10px;font-size:0.95rem;font-weight:600;color:#15803d;line-height:1.5">
+        自立支援医療は1年更新です。期限が切れると窓口負担が一時的に3割に戻ってしまいます。スマホのカレンダーに通知予定を保存できます（サーバーには個人情報は一切保存されません）。
+      </p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button type="button" class="btn-secondary" id="addGoogleCalBtn" style="font-size:0.95rem;padding:8px 14px;background:#fff;border-color:#86efac;color:#166534;cursor:pointer">
+          Googleカレンダーに登録
+        </button>
+        <button type="button" class="btn-secondary" id="downloadIcsBtn" style="font-size:0.95rem;padding:8px 14px;background:#fff;border-color:#86efac;color:#166534;cursor:pointer">
+          iPhone / スマホ予定表に追加 (.ics)
+        </button>
+      </div>
+    </div>
+
     <!-- 3秒カウントダウン安全ゲート -->
     <div class="gate-wrap">
       <div class="gate-timer" id="gateTimerText">手書きする箇所を確認してください（残り 3 秒）</div>
@@ -1103,6 +1121,85 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
     window.print();
     printPaper.classList.add("no-print");
   });
+
+  // ============================================================
+  // カレンダー更新リマインダー（端末完結・サーバー非保持）
+  // ============================================================
+  function buildReminderData() {
+    const now = new Date();
+    // 10ヶ月後の午前9時〜10時（有効期限1年の2ヶ月前＝更新手続き開始時期）
+    const targetDate = new Date(now.getFullYear(), now.getMonth() + 10, now.getDate(), 9, 0, 0);
+    const endDate = new Date(now.getFullYear(), now.getMonth() + 10, now.getDate(), 10, 0, 0);
+
+    const pad = n => String(n).padStart(2, '0');
+    const toIsoLocal = d => `${d.getFullYear()}${pad(d.getMonth() + 1)}${pad(d.getDate())}T${pad(d.getHours())}${pad(d.getMinutes())}00`;
+
+    const hCode = selectedHospital ? selectedHospital.code : '';
+    const pCode = selectedPharmacy ? selectedPharmacy.code : '';
+    let resumeUrl = 'https://fumiproject.dev/jiritsu/';
+    const params = [];
+    if (hCode) params.push('h=' + encodeURIComponent(hCode));
+    if (pCode) params.push('p=' + encodeURIComponent(pCode));
+    if (params.length) resumeUrl += '?' + params.join('&');
+
+    const title = '自立支援医療（精神通院）の受給者証 更新手続き';
+    const desc = '自立支援医療（精神通院）の更新受付が始まりました。有効期限が切れると窓口負担が一時的に3割になります。\n\n▼申請書作成はこちら（病院・薬局コード自動入力）：\n' + resumeUrl;
+
+    return {
+      targetDate,
+      endDate,
+      startStamp: toIsoLocal(targetDate),
+      endStamp: toIsoLocal(endDate),
+      title,
+      desc,
+      resumeUrl
+    };
+  }
+
+  const addGoogleCalBtn = $("addGoogleCalBtn");
+  const downloadIcsBtn = $("downloadIcsBtn");
+
+  if (addGoogleCalBtn) {
+    addGoogleCalBtn.addEventListener("click", () => {
+      const d = buildReminderData();
+      const gUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(d.title)}&dates=${d.startStamp}/${d.endStamp}&details=${encodeURIComponent(d.desc)}`;
+      window.open(gUrl, "_blank", "noopener,noreferrer");
+    });
+  }
+
+  if (downloadIcsBtn) {
+    downloadIcsBtn.addEventListener("click", () => {
+      const d = buildReminderData();
+      const ics = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//ZAX//Jiritsu Reminder//JA",
+        "CALSCALE:GREGORIAN",
+        "BEGIN:VEVENT",
+        `SUMMARY:${d.title}`,
+        `DESCRIPTION:${d.desc.replace(/\n/g, "\\n")}`,
+        `DTSTART:${d.startStamp}`,
+        `DTEND:${d.endStamp}`,
+        "STATUS:CONFIRMED",
+        "BEGIN:VALARM",
+        "TRIGGER:-PT15M",
+        "ACTION:DISPLAY",
+        "DESCRIPTION:Reminder",
+        "END:VALARM",
+        "END:VEVENT",
+        "END:VCALENDAR"
+      ].join("\r\n");
+
+      const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "自立支援医療_更新リマインダー.ics";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(a.href);
+    });
+  }
 
   // ============================================================
   // 窓口POPモーダル & QRコード生成ロジック

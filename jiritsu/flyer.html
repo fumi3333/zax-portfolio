@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>自立支援医療（精神通院）申請書作成案内 - 院内・薬局掲示用POP</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 15mm;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "BIZ UDPGothic", sans-serif;
+      color: #1a1a1a;
+      line-height: 1.6;
+      background: #f8fafc;
+      padding: 20px;
+    }
+    .sheet {
+      max-width: 210mm;
+      margin: 0 auto;
+      background: #fff;
+      border: 1px solid #cbd5e1;
+      padding: 24mm 20mm;
+      min-height: 297mm;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    @media print {
+      body {
+        background: #fff;
+        padding: 0;
+      }
+      .sheet {
+        border: none;
+        padding: 0;
+        width: 100%;
+        min-height: auto;
+      }
+      .no-print {
+        display: none !important;
+      }
+    }
+    .badge {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      color: #0369a1;
+      background: #e0f2fe;
+      border: 1px solid #bae6fd;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: 26px;
+      line-height: 1.35;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+    .lead {
+      font-size: 15px;
+      color: #475569;
+      margin-bottom: 24px;
+      border-bottom: 2px solid #0284c7;
+      padding-bottom: 14px;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .card {
+      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+      border-radius: 6px;
+      padding: 16px;
+    }
+    .card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 6px;
+    }
+    .card-body {
+      font-size: 13px;
+      color: #334155;
+      line-height: 1.5;
+    }
+    .how-to {
+      border: 2px dashed #94a3b8;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 24px;
+      background: #fafafa;
+    }
+    .how-to-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: #1e293b;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      text-align: center;
+    }
+    .step-num {
+      width: 28px;
+      height: 28px;
+      background: #0284c7;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+      margin: 0 auto 8px;
+    }
+    .step-text {
+      font-size: 13px;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 4px;
+    }
+    .step-sub {
+      font-size: 11px;
+      color: #64748b;
+      line-height: 1.4;
+    }
+    .cta-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 2px solid #0284c7;
+      border-radius: 8px;
+      padding: 20px 24px;
+      background: #f0f9ff;
+    }
+    .cta-text {
+      flex: 1;
+      padding-right: 24px;
+    }
+    .cta-text h2 {
+      font-size: 20px;
+      color: #0c4a6e;
+      margin-bottom: 6px;
+    }
+    .cta-text p {
+      font-size: 13px;
+      color: #0369a1;
+      line-height: 1.5;
+    }
+    .cta-url {
+      font-family: monospace;
+      font-size: 13px;
+      font-weight: 700;
+      color: #0284c7;
+      margin-top: 6px;
+    }
+    .qr-box {
+      text-align: center;
+      background: #fff;
+      padding: 10px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+    }
+    .qr-box img {
+      width: 130px;
+      height: 130px;
+      display: block;
+    }
+    .qr-box span {
+      font-size: 11px;
+      color: #64748b;
+      margin-top: 4px;
+      display: block;
+    }
+    .footer-note {
+      font-size: 11px;
+      color: #64748b;
+      line-height: 1.5;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 14px;
+      margin-top: 16px;
+    }
+    .print-bar {
+      max-width: 210mm;
+      margin: 0 auto 16px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+    }
+    .btn-print {
+      background: #0284c7;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .btn-print:hover {
+      background: #0369a1;
+    }
+  </style>
+</head>
+<body>
+  <div class="print-bar no-print">
+    <button class="btn-print" onclick="window.print()">この案内POPをA4で印刷する</button>
+  </div>
+
+  <div class="sheet">
+    <div>
+      <div class="badge">東京都オープンデータ活用｜患者様・窓口向けご案内</div>
+      <h1>自立支援医療（精神通院）の申請書・宛名が<br>スマホから1分で自動作成できます</h1>
+      <p class="lead">
+        病院名・薬局名を選ぶだけで、指定コード・提出先窓口入りの申請書（東京都公式様式第2号）と封筒宛名ラベルを作成できます。
+      </p>
+
+      <div class="features">
+        <div class="card">
+          <div class="card-title">1. コードの手書き・調べ直し不要</div>
+          <div class="card-body">
+            東京都内の指定医療機関・薬局オープンデータを完全収録。名称を選ぶだけで7桁のコードが自動反映されます。
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">2. 宛名ラベルも同時に印刷</div>
+          <div class="card-body">
+            お住まいの自治体（区市町村の担当窓口）が自動判定され、定形封筒用の宛名ラベルもA4用紙1枚で同時に印刷できます。
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">3. 個人情報は一切保持しません</div>
+          <div class="card-body">
+            氏名・住所・生年月日は印刷後に紙へ直接ご自身で記入する安全設計です。サーバーへ個人データは送信されません。
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-title">4. 利用料金は無料・登録不要</div>
+          <div class="card-body">
+            ログインやアカウント作成は不要です。スマートフォンやパソコンのブラウザからすぐにご利用いただけます。
+          </div>
+        </div>
+      </div>
+
+      <div class="how-to">
+        <div class="how-to-title">かんたん作成の3ステップ</div>
+        <div class="steps">
+          <div>
+            <div class="step-num">1</div>
+            <div class="step-text">通院先を選ぶ</div>
+            <div class="step-sub">通っている精神科・心療内科と利用する薬局を検索</div>
+          </div>
+          <div>
+            <div class="step-num">2</div>
+            <div class="step-text">お住まいの区市町村を選ぶ</div>
+            <div class="step-sub">申請書の提出先窓口（保健所・障害福祉課等）が自動セット</div>
+          </div>
+          <div>
+            <div class="step-num">3</div>
+            <div class="step-text">A4用紙に印刷する</div>
+            <div class="step-sub">公式申請書＋宛名ラベルを出力。氏名・住所を手書きして提出</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-container">
+        <div class="cta-text">
+          <h2>二次元バーコードからすぐ使えます</h2>
+          <p>スマートフォンのカメラで右のコードを読み取るか、下記URLへアクセスしてください。</p>
+          <div class="cta-url">https://fumiproject.dev/jiritsu/</div>
+        </div>
+        <div class="qr-box">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=https%3A%2F%2Ffumiproject.dev%2Fjiritsu%2F" alt="自立支援医療申請書作成ツールQRコード">
+          <span>スマートフォンで読取</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      ※ 本ツールは東京都オープンデータカタログ掲載の「自立支援医療指定医療機関（精神通院）」一覧データを利用して個人開発（ZAX）されたものです。東京都および各自治体の公認システムではありません。様式は東京都公式様式第2号に準拠しています。申請要件等の詳細は各区市町村の担当窓口へご確認ください。
+    </div>
+  </div>
+</body>
+</html>

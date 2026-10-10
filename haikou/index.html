@@ -31,7 +31,7 @@ footer{margin-top:28px;font-size:12px;color:var(--sub)}
 <body>
 <main>
 <h1>活用先を募集している廃校を条件で探す</h1>
-<p class="sm" style="margin:0 0 8px">最終確認日：2026年10月10日（毎日確認しています）　文部科学省の一覧：2026-10-01時点</p>
+<p class="sm" style="margin:0 0 8px">最終確認：<span id="ck" data-t="2026-10-10T11:15:10+00:00">2026年10月10日</span>　文部科学省の一覧：2026-10-01時点</p>
 <p class="lead">文部科学省の「現在活用用途を募集している廃校施設の一覧」（2026-10-01時点）に載っている423件を、条件で絞り込めます。売却の募集は189件、貸付の募集は222件です（両方を募集しているものを含みます）。一覧は文部科学省の毎月の更新に合わせて自動で取り込んでいます。</p>
 <form id="f" onsubmit="return false">
 <label>都道府県<select name="p"><option value="">すべて</option><option value="北海道">北海道</option><option value="青森県">青森県</option><option value="岩手県">岩手県</option><option value="宮城県">宮城県</option><option value="秋田県">秋田県</option><option value="山形県">山形県</option><option value="福島県">福島県</option><option value="茨城県">茨城県</option><option value="栃木県">栃木県</option><option value="群馬県">群馬県</option><option value="埼玉県">埼玉県</option><option value="千葉県">千葉県</option><option value="新潟県">新潟県</option><option value="石川県">石川県</option><option value="福井県">福井県</option><option value="山梨県">山梨県</option><option value="長野県">長野県</option><option value="岐阜県">岐阜県</option><option value="静岡県">静岡県</option><option value="愛知県">愛知県</option><option value="三重県">三重県</option><option value="京都府">京都府</option><option value="大阪府">大阪府</option><option value="兵庫県">兵庫県</option><option value="和歌山県">和歌山県</option><option value="鳥取県">鳥取県</option><option value="島根県">島根県</option><option value="岡山県">岡山県</option><option value="広島県">広島県</option><option value="山口県">山口県</option><option value="香川県">香川県</option><option value="愛媛県">愛媛県</option><option value="高知県">高知県</option><option value="福岡県">福岡県</option><option value="佐賀県">佐賀県</option><option value="長崎県">長崎県</option><option value="熊本県">熊本県</option><option value="宮崎県">宮崎県</option><option value="鹿児島県">鹿児島県</option></select></label>
@@ -39,7 +39,7 @@ footer{margin-top:28px;font-size:12px;color:var(--sub)}
 <label>土地面積（㎡以上）<input name="l" type="number" min="0" step="1000" placeholder="例 5000"></label>
 <label>耐震<select name="se"><option value="">指定しない</option><option value="1">新耐震・補強済と書かれている</option></select></label>
 <label>都市計画区域<select name="z"><option value="">すべて</option><option>市街化区域</option><option>市街化調整区域</option><option>都市計画区域外</option></select></label>
-<label>施設<select name="kd"><option value="">すべて</option><option>小学校</option><option>中学校</option><option>高等学校</option><option>小中学校</option><option>幼稚園</option><option>その他</option><option>特別支援学校</option><option>義務教育学校</option></select></label>
+<label>施設<select name="kd"><option value="">すべて</option><option>小学校</option><option>中学校</option><option>高等学校</option><option>小中学校</option><option>幼稚園</option><option>その他</option><option>義務教育学校</option><option>特別支援学校</option></select></label>
 <label>キーワード<input name="q" placeholder="例 体育館 温泉 IC"></label>
 <label>並べ替え<select name="s"><option value="new">新しく載った順</option><option value="area">エリア順（北から）</option><option value="l">土地面積の広い順</option><option value="ls">土地面積の狭い順</option><option value="b">竣工の新しい順</option><option value="k">施設の種類順</option></select></label>
 </form>
@@ -74,6 +74,7 @@ function run(){
 }
 const U=new URLSearchParams(location.search);for(const [k,v] of U){if(f[k])f[k].value=v}
 f.addEventListener('input',run);run();
+{const c=document.getElementById('ck'),t=new Date(c.dataset.t),h=Math.floor((Date.now()-t)/36e5);const d=t.toLocaleString('ja-JP',{timeZone:'Asia/Tokyo',month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'});c.textContent=(h<1?'1時間以内':h+'時間前')+'（'+d+'）';}
 </script>
 </body>
 </html>

@@ -71,6 +71,7 @@ function run(){
  const body='探している条件（地域・土地面積・売却か貸付か・使い道など）：\n\n会社名・お名前：\n';
  document.getElementById('m').href='mailto:zax-official@fumiproject.dev?subject='+encodeURIComponent('廃校の新着通知の希望')+'&body='+encodeURIComponent(body);
 }
+const U=new URLSearchParams(location.search);for(const [k,v] of U){if(f[k])f[k].value=v}
 f.addEventListener('input',run);run();
 </script>
 </body>

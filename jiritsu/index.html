@@ -440,11 +440,11 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
     </div>
     
     <div class="privacy-banner" style="margin-top:0">
-      <b>氏名・住所は入力不要です。</b> コードと宛名だけを印刷し、お名前は印刷後に紙へ手書きします。
+      <b>個人情報の入力は任意です。</b> 空欄のままでも病院・薬局コードと宛名を印字し、印刷後に紙へ手書きできます（入力された場合も端末内でのみ処理され、外部送信されません）。
     </div>
 
-    <!-- 区分と自治体の基本選択（2項目のみ） -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px">
+    <!-- 区分と自治体の基本選択 -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px">
       <div>
         <label for="appType" style="font-size:1rem;margin-bottom:4px">申請区分</label>
         <select id="appType" style="min-height:46px;font-size:1rem">
@@ -459,10 +459,57 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
       </div>
     </div>
 
-    <!-- 赤枠の手書き注意アラート -->
-    <div class="handwrite-alert">
-      <h4>印刷後、赤枠の箇所に黒ボールペンで手書きしてください</h4>
-      <p>病院・薬局コードと提出先は印字されます。お名前・ご住所・保険証区分は印刷後に手書きして提出します。</p>
+    <!-- 任意入力アコーディオン -->
+    <details id="optionalPersonalDetails" style="margin:0 0 16px;border:2px solid var(--line);border-radius:8px;padding:12px 14px;background:var(--surface)">
+      <summary style="font-weight:700;font-size:1.02rem;cursor:pointer">
+        氏名・住所・保険証をあらかじめ印字する（任意・空欄のまま手書き可）
+      </summary>
+      <p style="font-size:0.88rem;color:var(--muted);margin:8px 0 12px;line-height:1.5">
+        ※空欄のままにして印刷後に手書きすることもできます。入力した情報はブラウザ内でのみ印字に使われ、サーバーには一切送信されません。
+      </p>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div>
+          <label for="applicantName" style="font-size:0.95rem;margin-bottom:4px">受診者氏名・フリガナ（任意）</label>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <input type="text" id="applicantName" placeholder="氏名（例：山田 太郎）" autocomplete="name" data-clarity-mask="true" style="min-height:44px;font-size:0.95rem">
+            <input type="text" id="applicantKana" placeholder="フリガナ（例：ヤマダ タロウ）" data-clarity-mask="true" style="min-height:44px;font-size:0.95rem">
+          </div>
+        </div>
+        <div>
+          <label for="applicantBirth" style="font-size:0.95rem;margin-bottom:4px">生年月日（任意）</label>
+          <input type="date" id="applicantBirth" data-clarity-mask="true" style="min-height:44px;font-size:0.95rem">
+        </div>
+        <div>
+          <label for="applicantZip" style="font-size:0.95rem;margin-bottom:4px">郵便番号・ご住所（任意）</label>
+          <input type="text" id="applicantZip" placeholder="郵便番号（例：145-0065）" data-clarity-mask="true" style="min-height:44px;font-size:0.95rem;margin-bottom:6px">
+          <input type="text" id="applicantAddr" placeholder="住所（例：東京都大田区東雪谷〇-〇-〇）" autocomplete="street-address" data-clarity-mask="true" style="min-height:44px;font-size:0.95rem">
+        </div>
+        <div>
+          <label for="applicantTel" style="font-size:0.95rem;margin-bottom:4px">日中連絡先 電話番号（任意）</label>
+          <input type="tel" id="applicantTel" placeholder="例：090-1234-5678" autocomplete="tel" data-clarity-mask="true" style="min-height:44px;font-size:0.95rem">
+        </div>
+        <div>
+          <label for="insuranceType" style="font-size:0.95rem;margin-bottom:4px">加入医療保険（任意）</label>
+          <select id="insuranceType" data-clarity-mask="true" style="min-height:44px;font-size:0.95rem;margin-bottom:6px">
+            <option value="">未選択（印刷後に手書き）</option>
+            <option value="健康保険（社保・組合・協会けんぽ）">健康保険（社会保険・組合健保・協会けんぽ）</option>
+            <option value="区市町村 国民健康保険">区市町村 国民健康保険</option>
+            <option value="後期高齢者医療制度">後期高齢者医療制度</option>
+            <option value="共済組合">共済組合</option>
+            <option value="生活保護（医療扶助）">生活保護（医療扶助）</option>
+          </select>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <input type="text" id="insuranceKigo" placeholder="記号（例：12-34）" data-clarity-mask="true" style="min-height:44px;font-size:0.95rem">
+            <input type="text" id="insuranceNum" placeholder="番号（例：56789）" data-clarity-mask="true" style="min-height:44px;font-size:0.95rem">
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <!-- 手書き／印字確認アラート -->
+    <div class="handwrite-alert" id="handwriteAlert">
+      <h4 id="handwriteAlertTitle">印刷後、赤枠の箇所に黒ボールペンで手書きしてください</h4>
+      <p id="handwriteAlertDesc">病院・薬局コードと提出先は印字されます。未入力の箇所（赤枠）は印刷後に手書きして提出します。</p>
     </div>
 
     <!-- 画面内プレビュー枠（赤太枠ハイライト付き） -->
@@ -902,26 +949,95 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
   const printPreviewWrap = $("printPreviewWrap");
   const printPaper = $("printPaper");
 
+  // 任意入力項目
+  const appNameIn = $("applicantName");
+  const appKanaIn = $("applicantKana");
+  const appBirthIn = $("applicantBirth");
+  const appZipIn = $("applicantZip");
+  const appAddrIn = $("applicantAddr");
+  const appTelIn = $("applicantTel");
+  const insTypeSel = $("insuranceType");
+  const insKigoIn = $("insuranceKigo");
+  const insNumIn = $("insuranceNum");
+
+  function saveOptionalData() {
+    try {
+      const data = {
+        name: appNameIn?.value || "",
+        kana: appKanaIn?.value || "",
+        birth: appBirthIn?.value || "",
+        zip: appZipIn?.value || "",
+        addr: appAddrIn?.value || "",
+        tel: appTelIn?.value || "",
+        insType: insTypeSel?.value || "",
+        insKigo: insKigoIn?.value || "",
+        insNum: insNumIn?.value || ""
+      };
+      sessionStorage.setItem("jiritsu_applicant", JSON.stringify(data));
+    } catch (e) {}
+  }
+
+  function loadOptionalData() {
+    try {
+      const saved = JSON.parse(sessionStorage.getItem("jiritsu_applicant") || "null");
+      if (saved) {
+        if (appNameIn && saved.name) appNameIn.value = saved.name;
+        if (appKanaIn && saved.kana) appKanaIn.value = saved.kana;
+        if (appBirthIn && saved.birth) appBirthIn.value = saved.birth;
+        if (appZipIn && saved.zip) appZipIn.value = saved.zip;
+        if (appAddrIn && saved.addr) appAddrIn.value = saved.addr;
+        if (appTelIn && saved.tel) appTelIn.value = saved.tel;
+        if (insTypeSel && saved.insType) insTypeSel.value = saved.insType;
+        if (insKigoIn && saved.insKigo) insKigoIn.value = saved.insKigo;
+        if (insNumIn && saved.insNum) insNumIn.value = saved.insNum;
+        if (saved.name || saved.addr || saved.birth) {
+          const optDetails = $("optionalPersonalDetails");
+          if (optDetails) optDetails.open = true;
+        }
+      }
+    } catch (e) {}
+  }
+  loadOptionalData();
+
+  function checkHasHandwriting() {
+    const name = appNameIn ? appNameIn.value.trim() : "";
+    const birth = appBirthIn ? appBirthIn.value.trim() : "";
+    const addr = appAddrIn ? appAddrIn.value.trim() : "";
+    const tel = appTelIn ? appTelIn.value.trim() : "";
+    const ins = (insTypeSel ? insTypeSel.value : "") || (insKigoIn ? insKigoIn.value.trim() : "") || (insNumIn ? insNumIn.value.trim() : "");
+    return !(name && birth && addr && tel && ins);
+  }
+
   let gateInterval = null;
 
   function startSafetyGate() {
     if (gateInterval) clearInterval(gateInterval);
+    const hasHw = checkHasHandwriting();
     let remain = 3;
     gateChk.disabled = true;
     gateChk.checked = false;
     doPrintBtn.disabled = true;
-    gateTimerText.textContent = `手書きする箇所を確認してください（残り ${remain} 秒）`;
+    gateTimerText.textContent = hasHw
+      ? `手書きする箇所を確認してください（残り ${remain} 秒）`
+      : `印字内容を確認してください（残り ${remain} 秒）`;
     doPrintBtn.textContent = `確認中（残り ${remain} 秒）`;
+    $("gateChkLabel").textContent = hasHw
+      ? "赤枠の箇所を印刷後に手書きすることを確認しました"
+      : "印字内容を確認しました（印刷後の手書きは不要です）";
 
     gateInterval = setInterval(() => {
       remain--;
       if (remain > 0) {
-        gateTimerText.textContent = `手書きする箇所を確認してください（残り ${remain} 秒）`;
+        gateTimerText.textContent = hasHw
+          ? `手書きする箇所を確認してください（残り ${remain} 秒）`
+          : `印字内容を確認してください（残り ${remain} 秒）`;
         doPrintBtn.textContent = `確認中（残り ${remain} 秒）`;
       } else {
         clearInterval(gateInterval);
         gateInterval = null;
-        gateTimerText.innerHTML = `<span style="color:var(--success);font-weight:800">赤枠の手書き箇所の確認が完了しました</span>`;
+        gateTimerText.innerHTML = hasHw
+          ? `<span style="color:var(--success);font-weight:800">赤枠の手書き箇所の確認が完了しました</span>`
+          : `<span style="color:var(--success);font-weight:800">印字内容の確認が完了しました</span>`;
         gateChk.disabled = false;
         gateChk.checked = true;
         doPrintBtn.disabled = false;
@@ -962,6 +1078,20 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
     return { reiwa: y, month: d.getMonth() + 1, day: d.getDate() };
   }
 
+  // 生年月日を和暦表示に整形
+  function formatBirth(str) {
+    if (!str) return "";
+    const parts = str.split("-");
+    if (parts.length !== 3) return str;
+    const y = parseInt(parts[0], 10), m = parseInt(parts[1], 10), d = parseInt(parts[2], 10);
+    let era = "";
+    if (y > 2018) era = `令和${y - 2018}年`;
+    else if (y > 1988) era = `平成${y - 1988}年`;
+    else if (y > 1925) era = `昭和${y - 1925}年`;
+    else era = `${y}年`;
+    return `${era} ${m}月 ${d}日生（西暦${y}年）`;
+  }
+
   // 提出先窓口の情報を取得
   function getOfficeDestination(muniName) {
     const info = mg[muniName];
@@ -998,8 +1128,142 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
     const pharmAddr = selectedPharm ? selectedPharm.addr : "";
     const pharmTel = selectedPharm ? selectedPharm.tel : "";
 
+    const appName = appNameIn ? appNameIn.value.trim() : "";
+    const appKana = appKanaIn ? appKanaIn.value.trim() : "";
+    const appBirth = appBirthIn ? appBirthIn.value.trim() : "";
+    const appZip = appZipIn ? appZipIn.value.trim() : "";
+    const appAddr = appAddrIn ? appAddrIn.value.trim() : "";
+    const appTel = appTelIn ? appTelIn.value.trim() : "";
+    const insType = insTypeSel ? insTypeSel.value : "";
+    const insKigo = insKigoIn ? insKigoIn.value.trim() : "";
+    const insNum = insNumIn ? insNumIn.value.trim() : "";
+
     const hwClass = isPreview ? ' class="handwrite-box"' : '';
     const hwBadge = isPreview ? '<div class="handwrite-badge">印刷後に手書き</div>' : '';
+
+    // 受診者氏名セル
+    let nameCellHtml = "";
+    if (appName) {
+      nameCellHtml = `
+        <div style="font-size:8.5pt;color:#555">${appKana ? 'フリガナ：' + esc(appKana) : ''}</div>
+        <b style="font-size:12.5pt">${esc(appName)}</b>
+      `;
+    } else {
+      nameCellHtml = `
+        <div${hwClass} style="padding:4px">
+          ${hwBadge}
+          <div style="font-size:9pt;color:#777">フリガナ：</div>
+          <div style="font-size:11pt;color:${isPreview ? '#a61c1e' : '#999'};font-weight:700;margin-top:2px">
+            ${isPreview ? '（お名前を手書き）' : '　'}
+          </div>
+        </div>
+      `;
+    }
+
+    // 生年月日セル
+    let birthCellHtml = "";
+    if (appBirth) {
+      birthCellHtml = `<b style="font-size:10.5pt">${esc(formatBirth(appBirth))}</b>`;
+    } else {
+      birthCellHtml = `
+        <div${hwClass} style="padding:4px">
+          ${hwBadge}
+          <div style="font-size:10pt;color:${isPreview ? '#a61c1e' : '#999'}">
+            ${isPreview ? '（生年月日を手書き）' : '　'}
+          </div>
+        </div>
+      `;
+    }
+
+    // 現住所セル
+    let addrCellHtml = "";
+    if (appAddr) {
+      addrCellHtml = `<div style="font-size:10.5pt">${appZip ? '〒 ' + esc(appZip) + ' ' : ''}${esc(appAddr)}</div>`;
+    } else {
+      addrCellHtml = `
+        <div${hwClass} style="padding:4px">
+          ${hwBadge}
+          <div style="font-size:10pt;color:${isPreview ? '#a61c1e' : '#999'}">
+            ${isPreview ? '（郵便番号・ご住所を手書き）' : '　'}
+          </div>
+        </div>
+      `;
+    }
+
+    // 日中連絡先セル
+    let telCellHtml = "";
+    if (appTel) {
+      telCellHtml = `<div style="font-size:10.5pt">${esc(appTel)}</div>`;
+    } else {
+      telCellHtml = `
+        <div${hwClass} style="padding:4px">
+          ${hwBadge}
+          <div style="font-size:10pt;color:${isPreview ? '#a61c1e' : '#999'}">
+            ${isPreview ? '（電話番号を手書き）' : '　'}
+          </div>
+        </div>
+      `;
+    }
+
+    // 加入医療保険セル
+    let insCellHtml = "";
+    if (insType || insKigo || insNum) {
+      insCellHtml = `
+        <div style="font-size:10pt">
+          ${insType ? '区分：<b>' + esc(insType) + '</b>' : ''}
+          ${(insKigo || insNum) ? `　｜　記号・番号：${esc(insKigo)} ${esc(insNum)}` : ''}
+        </div>
+      `;
+    } else {
+      insCellHtml = `
+        <div${hwClass} style="padding:4px">
+          ${hwBadge}
+          <div style="font-size:10pt;color:${isPreview ? '#a61c1e' : '#999'}">
+            ${isPreview ? '（健康保険証の区分・記号番号を手書き）' : '　'}
+          </div>
+        </div>
+      `;
+    }
+
+    // 宛名ラベル差出人欄
+    let senderHtml = "";
+    if (appAddr && appName) {
+      senderHtml = `
+        <div style="font-size:9.5pt;margin-top:6px;padding:6px;line-height:1.6">
+          差出人：${esc(appZip ? '〒' + appZip + ' ' : '')}${esc(appAddr)}<br>
+          氏　名：<b>${esc(appName)}</b>
+        </div>
+      `;
+    } else {
+      senderHtml = `
+        <div class="label-sender"${hwClass} style="margin-top:6px;padding:6px">
+          ${hwBadge}
+          差出人住所：${appAddr ? esc(appAddr) : (isPreview ? '<span style="color:#a61c1e">（手書き）</span>' : '　')}<br>
+          差出人氏名：${appName ? esc(appName) : (isPreview ? '<span style="color:#a61c1e">（手書き）</span>' : '　')}
+        </div>
+      `;
+    }
+
+    // アラートのリアルタイム更新
+    const alertEl = $("handwriteAlert");
+    const alertTitle = $("handwriteAlertTitle");
+    const alertDesc = $("handwriteAlertDesc");
+    const hasHw = checkHasHandwriting();
+    if (alertEl && alertTitle && alertDesc) {
+      if (hasHw) {
+        alertEl.style.borderColor = "#d9383a";
+        alertEl.style.backgroundColor = "#fff2f2";
+        alertTitle.style.color = "#a61c1e";
+        alertTitle.textContent = "印刷後、赤枠の箇所に黒ボールペンで手書きしてください";
+        alertDesc.textContent = "病院・薬局コードと提出先は印字されます。未入力の箇所（赤枠）は印刷後に手書きして提出します。";
+      } else {
+        alertEl.style.borderColor = "#86efac";
+        alertEl.style.backgroundColor = "#f0fdf4";
+        alertTitle.style.color = "#166534";
+        alertTitle.textContent = "すべての項目が印字されます";
+        alertDesc.textContent = "印刷後の手書き箇所はありません。印刷してそのまま封筒に同封できます。";
+      }
+    }
 
     return `
       <div class="sheet-header">
@@ -1022,47 +1286,21 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
         </tr>
         <tr>
           <th>受診者氏名</th>
-          <td${hwClass} style="min-height:48px">
-            ${hwBadge}
-            <div style="font-size:9pt;color:#777">フリガナ：</div>
-            <div style="font-size:11pt;color:${isPreview ? '#a61c1e' : '#999'};font-weight:700;margin-top:2px">
-              ${isPreview ? '（お名前を手書き）' : '　'}
-            </div>
-          </td>
+          <td style="min-height:48px">${nameCellHtml}</td>
           <th style="width:16%">生年月日</th>
-          <td${hwClass}>
-            ${hwBadge}
-            <div style="font-size:10pt;color:${isPreview ? '#a61c1e' : '#999'}">
-              ${isPreview ? '（生年月日を手書き）' : '　'}
-            </div>
-          </td>
+          <td>${birthCellHtml}</td>
         </tr>
         <tr>
           <th>現住所</th>
-          <td colspan="3"${hwClass} style="min-height:44px">
-            ${hwBadge}
-            <div style="font-size:10pt;color:${isPreview ? '#a61c1e' : '#999'}">
-              ${isPreview ? '（郵便番号・ご住所を手書き）' : '　'}
-            </div>
-          </td>
+          <td colspan="3" style="min-height:44px">${addrCellHtml}</td>
         </tr>
         <tr>
           <th>日中連絡先</th>
-          <td colspan="3"${hwClass}>
-            ${hwBadge}
-            <div style="font-size:10pt;color:${isPreview ? '#a61c1e' : '#999'}">
-              ${isPreview ? '（電話番号を手書き）' : '　'}
-            </div>
-          </td>
+          <td colspan="3">${telCellHtml}</td>
         </tr>
         <tr>
           <th>加入医療保険</th>
-          <td colspan="3"${hwClass}>
-            ${hwBadge}
-            <div style="font-size:10pt;color:${isPreview ? '#a61c1e' : '#999'}">
-              ${isPreview ? '（健康保険証の区分・記号番号を手書き）' : '　'}
-            </div>
-          </td>
+          <td colspan="3">${insCellHtml}</td>
         </tr>
         <tr>
           <th style="vertical-align:top">指定医療機関<br>(病院・診療所)</th>
@@ -1099,11 +1337,7 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
         <div class="label-postal">${dest.postal ? '〒 ' + esc(dest.postal) : '〒 [郵便番号]'}</div>
         <div class="label-addr">${esc(dest.address)}</div>
         <div class="label-dest">${esc(dest.name)}</div>
-        <div class="label-sender"${hwClass} style="margin-top:6px;padding:6px">
-          ${hwBadge}
-          差出人住所：${isPreview ? '<span style="color:#a61c1e">（手書き）</span>' : '　'}<br>
-          差出人氏名：${isPreview ? '<span style="color:#a61c1e">（手書き）</span>' : '　'}
-        </div>
+        ${senderHtml}
       </div>
     `;
   }
@@ -1114,6 +1348,19 @@ footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line);
 
   appTypeSel.addEventListener("change", refreshPreview);
   targetMuniSel.addEventListener("change", refreshPreview);
+
+  [appNameIn, appKanaIn, appBirthIn, appZipIn, appAddrIn, appTelIn, insTypeSel, insKigoIn, insNumIn].forEach(el => {
+    if (el) {
+      el.addEventListener("input", () => {
+        refreshPreview();
+        saveOptionalData();
+      });
+      el.addEventListener("change", () => {
+        refreshPreview();
+        saveOptionalData();
+      });
+    }
+  });
 
   doPrintBtn.addEventListener("click", () => {
     printPaper.innerHTML = renderApplicationSheetHtml(false);

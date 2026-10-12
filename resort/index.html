@@ -6685,9 +6685,9 @@ function passesWith(j, f){
     const userMonths = f.maxDays / 30;
     // 空いている期間が求人の最低勤務期間に届かなければ応募できない
     if (jobMin !== null && userMonths < jobMin * 0.9) return false;
-    // 最低勤務期間の記載がない求人は、短期指定（1週間・2週間など1ヶ月未満）のときは
-    // 短期OKの確証（short_term_ok または 期間欄に短期/週間の明記）がない限り合格にしてはいけない
-    if (jobMin === null && userMonths < 0.9) {
+    // 最低勤務期間の明記がない求人は、1ヶ月以下の指定（28日などを含む）のときは
+    // 短期OKの確証（short_term_ok または 期間欄に短期/週間/日の明記）がない限り除外する
+    if (jobMin === null && userMonths <= 1.05) {
       const isShort = !!(j.short_term_ok || (j.period_label || "").includes("短期") || (j.period_label || "").includes("週間") || (j.period_label || "").includes("日"));
       if (!isShort) return false;
     }

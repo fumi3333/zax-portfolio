@@ -644,8 +644,22 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.visibilityState === 'hidden') flushLog();
   });
 
-  // 初回ページビュー計測
-  sendLog('pageview', { hitCount: cards.length });
+  // 学校ページなどから「この地方で比べる」で来たとき（?region=東北）は、その地方で絞り込んだ状態で開く
+  let FROM_LINK = '';
+  try {
+    const qp = new URLSearchParams(location.search);
+    const r = qp.get('region');
+    if (r && regionSelect && [...regionSelect.options].some(o => o.value === r)) {
+      regionSelect.value = r;
+      FROM_LINK = qp.get('from') || '';
+      if (restoreBtn) restoreBtn.style.display = 'none';
+      applyFilters();
+      setTimeout(() => cardsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' }), 300);
+    }
+  } catch (e) {}
+
+  // 初回ページビュー計測（学校ページからの導線で来た場合は checks に from_school を残す）
+  sendLog('pageview', { hitCount: cards.filter(c => c.style.display !== 'none').length, checks: FROM_LINK ? ['from_' + FROM_LINK] : [] });
 
   // アウトバウンドクリック計測（教習所カード・外部リンク）
   document.addEventListener('click', (e) => {

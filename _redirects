@@ -50,3 +50,5 @@
 /menkyo/pref/toyama* https://fumiproject.dev/menkyo/pref/ 301
 /menkyo/pref/yamaguchi* https://fumiproject.dev/menkyo/pref/ 301
 /menkyo/pref/未設定* https://fumiproject.dev/menkyo/pref/ 301
+/resort/research/report/* /resort/research/reports/:splat 301
+/resort/research/report /resort/research/ 301

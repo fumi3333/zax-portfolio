@@ -52,3 +52,6 @@
 /menkyo/pref/未設定* https://fumiproject.dev/menkyo/pref/ 301
 /resort/research/report/* /resort/research/reports/:splat 301
 /resort/research/report /resort/research/ 301
+/musalink https://musalink.fumiproject.dev/ 301
+/musalink/ https://musalink.fumiproject.dev/ 301
+/musalink/* https://musalink.fumiproject.dev/:splat 301

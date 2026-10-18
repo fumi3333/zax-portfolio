@@ -1,60 +1,60 @@
 {
-  "generated_at": "2026-10-16T23:11:20.069562+09:00",
+  "generated_at": "2026-10-18T19:20:47.867370+09:00",
   "is_today_actual": false,
   "note": "本日分の新着が無かったため、直近の新着から選びました",
   "picks": [
     {
-      "id": "resortcross-nagano-other-1478",
-      "agency": "株式会社RESORT CROSS（リゾートクロス）",
-      "prefecture": "長野県",
-      "city": "飯山市大字",
-      "job_category": "レストランサービス",
-      "wage_min": 1800,
-      "dorm_type": null,
+      "id": "goodman-1008495",
+      "agency": "グッドマンサービス（リゾートバイト.com）",
+      "prefecture": "石川県",
+      "city": "加賀市",
+      "job_category": "調理（資格不要）",
+      "wage_min": 1600,
+      "dorm_type": "完全個室",
       "meals_per_day": 2,
       "dorm_cost": 0,
-      "posted_at": "2026-10-09",
-      "source_url": "https://resort-cross.com/works/koshinetsu/nagano/nagano-other/1478/",
-      "landing_url": "https://fumiproject.dev/resort/area/nagano/",
+      "posted_at": "2026-10-16",
+      "source_url": "https://www.resortbaito.com/1008495/",
+      "landing_url": "https://fumiproject.dev/resort/area/ishikawa/",
       "texts": {
-        "twitter": "【最近追加】長野県飯山市大字／レストランサービス\n時給1,800円〜（株式会社RESORT CROSS）\n食事2食付\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/nagano/",
-        "instagram_tiktok": "最近追加の求人です📢\n\n📍長野県飯山市大字\n💼レストランサービス\n💰時給1,800円〜\n🏠食事2食付\n🏢株式会社RESORT CROSS\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #長野"
+        "twitter": "【最近追加】石川県加賀市／調理（資格不要）\n時給1,600円〜（グッドマンサービス）\n完全個室・食事2食付\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/ishikawa/",
+        "instagram_tiktok": "最近追加の求人です📢\n\n📍石川県加賀市\n💼調理（資格不要）\n💰時給1,600円〜\n🏠完全個室・食事2食付\n🏢グッドマンサービス\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #石川"
       }
     },
     {
-      "id": "staffagent-18557",
-      "agency": "スタッフエージェント",
-      "prefecture": "兵庫県",
-      "city": "南あわじ市",
-      "job_category": "調理師",
-      "wage_min": 1460,
-      "dorm_type": "完全個室",
-      "meals_per_day": null,
-      "dorm_cost": 0,
-      "posted_at": "2026-10-09",
-      "source_url": "https://omotena-work.com/recruit/18557/show",
-      "landing_url": "https://fumiproject.dev/resort/area/hyogo/",
-      "texts": {
-        "twitter": "【最近追加】兵庫県南あわじ市／調理師\n時給1,460円〜（スタッフエージェント）\n完全個室\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/hyogo/",
-        "instagram_tiktok": "最近追加の求人です📢\n\n📍兵庫県南あわじ市\n💼調理師\n💰時給1,460円〜\n🏠完全個室\n🏢スタッフエージェント\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #兵庫"
-      }
-    },
-    {
-      "id": "staffagent-17129",
-      "agency": "スタッフエージェント",
-      "prefecture": "沖縄県",
-      "city": "石垣市",
+      "id": "goodman-1008461",
+      "agency": "グッドマンサービス（リゾートバイト.com）",
+      "prefecture": "北海道",
+      "city": "虻田郡",
       "job_category": "調理補助",
-      "wage_min": 1400,
-      "dorm_type": "完全個室",
-      "meals_per_day": null,
-      "dorm_cost": 0,
-      "posted_at": "2026-10-09",
-      "source_url": "https://omotena-work.com/recruit/17129/show",
-      "landing_url": "https://fumiproject.dev/resort/area/okinawa/",
+      "wage_min": 1650,
+      "dorm_type": "相部屋",
+      "meals_per_day": 1,
+      "dorm_cost": null,
+      "posted_at": "2026-10-15",
+      "source_url": "https://www.resortbaito.com/1008461/",
+      "landing_url": "https://fumiproject.dev/resort/area/hokkaido/",
       "texts": {
-        "twitter": "【最近追加】沖縄県石垣市／調理補助\n時給1,400円〜（スタッフエージェント）\n完全個室\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/okinawa/",
-        "instagram_tiktok": "最近追加の求人です📢\n\n📍沖縄県石垣市\n💼調理補助\n💰時給1,400円〜\n🏠完全個室\n🏢スタッフエージェント\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #沖縄"
+        "twitter": "【最近追加】北海道虻田郡／調理補助\n時給1,650円〜（グッドマンサービス）\n相部屋・食事1食付\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/hokkaido/",
+        "instagram_tiktok": "最近追加の求人です📢\n\n📍北海道虻田郡\n💼調理補助\n💰時給1,650円〜\n🏠相部屋・食事1食付\n🏢グッドマンサービス\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #北海道"
+      }
+    },
+    {
+      "id": "goodman-1008501",
+      "agency": "グッドマンサービス（リゾートバイト.com）",
+      "prefecture": "東京都",
+      "city": "渋谷区",
+      "job_category": "レストランサービス",
+      "wage_min": 1500,
+      "dorm_type": "寮なし",
+      "meals_per_day": null,
+      "dorm_cost": null,
+      "posted_at": "2026-10-17",
+      "source_url": "https://www.resortbaito.com/1008501/",
+      "landing_url": "https://fumiproject.dev/resort/area/tokyo/",
+      "texts": {
+        "twitter": "【最近追加】東京都渋谷区／レストランサービス\n時給1,500円〜（グッドマンサービス）\n寮なし\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/tokyo/",
+        "instagram_tiktok": "最近追加の求人です📢\n\n📍東京都渋谷区\n💼レストランサービス\n💰時給1,500円〜\n🏠寮なし\n🏢グッドマンサービス\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #東京"
       }
     }
   ]

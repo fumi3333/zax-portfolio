@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>公的不動産・廃校インテリジェンス「PRE Scout」実演デモ動画集</title>
+  <meta name="description" content="全国1,741自治体の公有地・都有地・廃校公募を横断集約したデータベース「PRE Scout」のターゲット別実演デモ動画です。">
+  <style>
+    :root {
+      --primary: #003e92;
+      --primary-hover: #002d6b;
+      --bg: #f8f9fa;
+      --surface: #ffffff;
+      --border: #e0e2e5;
+      --text: #1a1a1a;
+      --text-muted: #555555;
+      --badge-bg: #e6eef8;
+      --badge-text: #003e92;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Hiragino Sans", "Meiryo", sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 0 16px 60px;
+    }
+    header {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 40px 0 24px;
+      border-bottom: 2px solid var(--border);
+    }
+    .tag {
+      display: inline-block;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    .lead {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 800px;
+    }
+    .stats-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px dashed var(--border);
+    }
+    .stat-item {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .stat-item strong {
+      color: var(--primary);
+      font-size: 15px;
+    }
+    main {
+      max-width: 1040px;
+      margin: 32px auto 0;
+    }
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-title::before {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 20px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    @media (max-width: 580px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+    .card-featured {
+      grid-column: 1 / -1;
+      border: 2px solid var(--primary);
+    }
+    .video-wrapper {
+      position: relative;
+      background: #000;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+    }
+    video {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: contain;
+    }
+    .card-body {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-badge {
+      display: inline-block;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      font-size: 12px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+      align-self: flex-start;
+    }
+    .card-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+    .card-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      flex: 1;
+    }
+    .feature-list {
+      list-style: none;
+      font-size: 13px;
+      color: var(--text);
+      background: var(--bg);
+      padding: 12px;
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .feature-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+    .feature-list li::before {
+      content: "✔";
+      color: var(--primary);
+      font-weight: bold;
+    }
+    footer {
+      max-width: 1040px;
+      margin: 40px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px;
+      margin-top: 40px;
+      text-align: center;
+    }
+    .contact-box h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    .contact-box p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    .contact-btn {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+      padding: 12px 28px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .contact-btn:hover {
+      background: var(--primary-hover);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <span class="tag">BtoB インテリジェンス・実演デモ</span>
+    <h1>公的不動産・廃校データベース「PRE Scout」実演動画集</h1>
+    <p class="lead">
+      全国1,741の地方自治体が公表する遊休都有地・公有財産売却・募集廃校・サウンディング公募を横断集約したシステムです。
+      手作業での自治体ホームページ巡回をゼロにし、面積・用途・条件での一発検索と募集要項への直結を実現します。
+    </p>
+    <div class="stats-bar">
+      <div class="stat-item">集約データ規模：<strong>全国 1,872件</strong></div>
+      <div class="stat-item">公有地・都有地：<strong>1,099件</strong></div>
+      <div class="stat-item">募集廃校：<strong>419件</strong></div>
+      <div class="stat-item">財務局国有財産：<strong>354件</strong></div>
+      <div class="stat-item">土地面積データ保有率：<strong>90.7%</strong></div>
+    </div>
+  </header>
+
+  <main>
+    <div class="section-title">実演デモ動画一覧（全4本）</div>
+
+    <div class="grid">
+      <!-- 1. メイン総合実演デモ -->
+      <div class="card card-featured">
+        <div class="video-wrapper">
+          <video controls playsinline preload="metadata">
+            <source src="./product_demo_btob.mp4" type="video/mp4">
+            お使いのブラウザは動画再生に対応していません。
+          </video>
+        </div>
+        <div class="card-body">
+          <span class="card-badge">全体像・操作画面（46秒）</span>
+          <h2 class="card-title">①【総合実演デモ】システム全体像と横断検索機能</h2>
+          <p class="card-desc">
+            全国の自治体公募を毎日巡回して新着案件を集約する仕組み、長野県・敷地面積5,000㎡以上などの複合絞り込み、および自治体公式の公募ページや募集要項PDFへの直行フローをコンパクトに実演しています。
+          </p>
+          <ul class="feature-list">
+            <li>全国1,800件超の公的不動産を横断検索する実際の操作画面</li>
+            <li>エリア × 敷地面積 × 用途地域による瞬時のスクリーニング</li>
+            <li>自治体の公募ページおよび募集要項調書へのダイレクト直結</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 2. デベロッパー向け -->
+      <div class="card">
+        <div class="video-wrapper">
+          <video controls playsinline preload="metadata">
+            <source src="./zoom_sales_developer.mp4" type="video/mp4">
+            お使いのブラウザは動画再生に対応していません。
+          </video>
+        </div>
+        <div class="card-body">
+          <span class="card-badge">デベロッパー・仕入れ（35秒）</span>
+          <h2 class="card-title">②【デベロッパー向け】公有地・都有地仕入れの効率化</h2>
+          <p class="card-desc">
+            全国の自治体ホームページを巡回する仕入れ担当者の作業時間をゼロに。エリア・面積・用途地域で絞り込み、社内検討に必要な条件だけを素早く抽出します。
+          </p>
+          <ul class="feature-list">
+            <li>手作業での自治体HP巡回・見落としを完全に防止</li>
+            <li>敷地面積3,000㎡以上、住宅・商業用地などの適格抽出</li>
+            <li>一次原本PDFへ直行し、社内企画・稟議の立ち上げを短縮</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 3. 再エネ・インフラ開発向け -->
+      <div class="card">
+        <div class="video-wrapper">
+          <video controls playsinline preload="metadata">
+            <source src="./zoom_sales_renewable.mp4" type="video/mp4">
+            お使いのブラウザは動画再生に対応していません。
+          </video>
+        </div>
+        <div class="card-body">
+          <span class="card-badge">再エネ・蓄電池・DC（35秒）</span>
+          <h2 class="card-title">③【再エネ・インフラ開発向け】10,000㎡超メガ用地探索</h2>
+          <p class="card-desc">
+            太陽光、系統用蓄電池、データセンター向けに、10,000㎡から50,000㎡を超える広大な自治体遊休地を一括抽出。一般競争入札前のサウンディング市場調査も網羅します。
+          </p>
+          <ul class="feature-list">
+            <li>敷地10,000㎡以上のメガ公有地・都有地・跡地を網羅</li>
+            <li>用途地域・地盤・面積スペックを一覧で比較・机上判定</li>
+            <li>公募前のサウンディング調査を捕捉し、事前対話の機会を確保</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 4. 廃校リノベ・グランピング向け -->
+      <div class="card">
+        <div class="video-wrapper">
+          <video controls playsinline preload="metadata">
+            <source src="./zoom_sales_haikou.mp4" type="video/mp4">
+            お使いのブラウザは動画再生に対応していません。
+          </video>
+        </div>
+        <div class="card-body">
+          <span class="card-badge">廃校リノベ・宿泊開発（37秒）</span>
+          <h2 class="card-title">④【廃校リノベ・グランピング向け】全国400校超の募集廃校</h2>
+          <p class="card-desc">
+            文部科学省の公募案件を含む、全国400校以上の募集廃校をデータベース化。グラウンドや体育館の有無、延床面積、構造（RC等）、新耐震基準、譲渡/賃貸条件を一覧で比較できます。
+          </p>
+          <ul class="feature-list">
+            <li>全国400校超の募集廃校（敷地・体育館付）を完全網羅</li>
+            <li>建築年（昭和・平成）、新耐震基準、延床面積スペック</li>
+            <li>売却・無償貸与・サウンディング等の引渡し条件を事前確認</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- お問い合わせ・個別デモ -->
+    <div class="contact-box">
+      <h3>貴社の仕入れ基準に合わせた個別デモを実施中</h3>
+      <p>ご希望のエリア、面積規模（㎡）、用途に合わせた実際のデータ抽出や画面操作を、オンライン（Zoom等）にてご案内いたします。</p>
+      <a href="mailto:s2527084@stu.musashino-u.ac.jp?subject=PRE%20Scout%20個別デモ・お問い合わせ" class="contact-btn">個別デモ・お問い合わせ（メール）</a>
+    </div>
+  </main>
+
+  <footer>
+    <div>
+      開発・運営：松田 晴史（武蔵野大学 経済学部 2年）<br>
+      連絡先：s2527084@stu.musashino-u.ac.jp
+    </div>
+    <div>
+      音声合成協力：VOICEVOX:ずんだもん
+    </div>
+  </footer>
+
+</body>
+</html>

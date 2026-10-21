@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>公的不動産・廃校インテリジェンス実演デモ動画集</title>
-  <meta name="description" content="全国1,741自治体の公有地・都有地・廃校公募を横断集約したデータベースのターゲット別実演デモ動画です。">
+  <title>公有地ソート｜全国自治体の都有地・公有地・廃校データベース実演デモ動画集</title>
+  <meta name="description" content="全国1,959自治体・財産区の公有地・都有地・廃校公募を横断集約した「公有地ソート」の実演デモ動画です。">
   <style>
     :root {
       --primary: #003e92;
@@ -123,11 +123,13 @@
       width: 100%;
       aspect-ratio: 16 / 9;
     }
-    video {
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      display: block;
-      object-fit: contain;
+      border: 0;
     }
     .card-body {
       padding: 20px;
@@ -168,6 +170,7 @@
       display: flex;
       flex-direction: column;
       gap: 6px;
+      margin-bottom: 12px;
     }
     .feature-list li {
       display: flex;
@@ -178,6 +181,19 @@
       content: "✔";
       color: var(--primary);
       font-weight: bold;
+    }
+    .yt-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      align-self: flex-start;
+    }
+    .yt-link-btn:hover {
+      text-decoration: underline;
     }
     footer {
       max-width: 1040px;
@@ -226,11 +242,11 @@
 <body>
 
   <header>
-    <span class="tag">BtoB インテリジェンス・実演デモ</span>
-    <h1>公的不動産・廃校データベース実演動画集</h1>
+    <span class="tag">BtoB 都有地・公有地・廃校インテリジェンス</span>
+    <h1>公有地ソート 実演デモ動画集</h1>
     <p class="lead">
-      全国1,741の地方自治体が公表する遊休都有地・公有財産売却・募集廃校・サウンディング公募を横断集約したシステムです。
-      手作業での自治体ホームページ巡回をゼロにし、面積・用途・条件での一発検索と募集要項への直結を実現します。
+      全国1,959自治体・財産区が公表する遊休都有地・公有財産売却・募集廃校・サウンディング公募を横断集約した「公有地ソート」の実演動画です。
+      自治体ホームページの巡回工数をゼロにし、敷地面積・用途地域・最低入札価格での絞り込みと募集要項原本への直結を実現します。
     </p>
     <div class="stats-bar">
       <div class="stat-item">集約データ規模：<strong>全国 1,872件</strong></div>
@@ -242,20 +258,17 @@
   </header>
 
   <main>
-    <div class="section-title">実演デモ動画一覧（全4本）</div>
+    <div class="section-title">実演デモ動画一覧（全4本・公式YouTube限定公開）</div>
 
     <div class="grid">
       <!-- 1. メイン総合実演デモ -->
       <div class="card card-featured">
         <div class="video-wrapper">
-          <video controls playsinline preload="metadata">
-            <source src="./product_demo_btob.mp4" type="video/mp4">
-            お使いのブラウザは動画再生に対応していません。
-          </video>
+          <iframe src="https://www.youtube.com/embed/AlNX4D5r1xY" title="公有地ソート｜全国自治体の都有地・公有地・廃校データベース実演デモ（総合編）" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="card-body">
           <span class="card-badge">全体像・操作画面（46秒）</span>
-          <h2 class="card-title">①【総合実演デモ】システム全体像と横断検索機能</h2>
+          <h2 class="card-title">①【総合実演デモ】公有地ソートの全体像と横断検索機能</h2>
           <p class="card-desc">
             全国の自治体公募を毎日巡回して新着案件を集約する仕組み、長野県・敷地面積5,000㎡以上などの複合絞り込み、および自治体公式の公募ページや募集要項PDFへの直行フローをコンパクトに実演しています。
           </p>
@@ -264,16 +277,14 @@
             <li>エリア × 敷地面積 × 用途地域による瞬時のスクリーニング</li>
             <li>自治体の公募ページおよび募集要項調書へのダイレクト直結</li>
           </ul>
+          <a href="https://youtu.be/AlNX4D5r1xY" target="_blank" rel="noopener noreferrer" class="yt-link-btn">▶ YouTubeで直接開く（限定公開）</a>
         </div>
       </div>
 
       <!-- 2. デベロッパー向け -->
       <div class="card">
         <div class="video-wrapper">
-          <video controls playsinline preload="metadata">
-            <source src="./zoom_sales_developer.mp4" type="video/mp4">
-            お使いのブラウザは動画再生に対応していません。
-          </video>
+          <iframe src="https://www.youtube.com/embed/jwv-bvJxH6k" title="公有地ソート｜デベロッパー・商業開発向け都有地・公有地絞り込み実演" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="card-body">
           <span class="card-badge">デベロッパー・仕入れ（35秒）</span>
@@ -286,16 +297,14 @@
             <li>敷地面積3,000㎡以上、住宅・商業用地などの適格抽出</li>
             <li>一次原本PDFへ直行し、社内企画・稟議の立ち上げを短縮</li>
           </ul>
+          <a href="https://youtu.be/jwv-bvJxH6k" target="_blank" rel="noopener noreferrer" class="yt-link-btn">▶ YouTubeで直接開く（限定公開）</a>
         </div>
       </div>
 
       <!-- 3. 再エネ・インフラ開発向け -->
       <div class="card">
         <div class="video-wrapper">
-          <video controls playsinline preload="metadata">
-            <source src="./zoom_sales_renewable.mp4" type="video/mp4">
-            お使いのブラウザは動画再生に対応していません。
-          </video>
+          <iframe src="https://www.youtube.com/embed/86LmQuXKA-o" title="公有地ソート｜太陽光・蓄電池・再エネ用地の全国自治体都有地スクリーニング実演" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="card-body">
           <span class="card-badge">再エネ・蓄電池・DC（35秒）</span>
@@ -308,16 +317,14 @@
             <li>用途地域・地盤・面積スペックを一覧で比較・机上判定</li>
             <li>公募前のサウンディング調査を捕捉し、事前対話の機会を確保</li>
           </ul>
+          <a href="https://youtu.be/86LmQuXKA-o" target="_blank" rel="noopener noreferrer" class="yt-link-btn">▶ YouTubeで直接開く（限定公開）</a>
         </div>
       </div>
 
       <!-- 4. 廃校リノベ・グランピング向け -->
       <div class="card">
         <div class="video-wrapper">
-          <video controls playsinline preload="metadata">
-            <source src="./zoom_sales_haikou.mp4" type="video/mp4">
-            お使いのブラウザは動画再生に対応していません。
-          </video>
+          <iframe src="https://www.youtube.com/embed/uOutIVgvAis" title="公有地ソート｜全国の廃校・旧小中学校公募・サウンディング調査実演" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="card-body">
           <span class="card-badge">廃校リノベ・宿泊開発（37秒）</span>
@@ -330,6 +337,7 @@
             <li>建築年（昭和・平成）、新耐震基準、延床面積スペック</li>
             <li>売却・無償貸与・サウンディング等の引渡し条件を事前確認</li>
           </ul>
+          <a href="https://youtu.be/uOutIVgvAis" target="_blank" rel="noopener noreferrer" class="yt-link-btn">▶ YouTubeで直接開く（限定公開）</a>
         </div>
       </div>
     </div>
@@ -340,14 +348,14 @@
       <p>ご希望のエリア、面積規模（㎡）、用途に合わせた実際のデータ抽出や画面操作を、オンライン（Zoom等）にてご案内いたします。</p>
       <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 16px;">
         <a href="https://fumiproject.dev/haikou/" class="contact-btn" style="background: #4a5568;">実際の検索画面を開く（Web版）</a>
-        <a href="mailto:s2527084@stu.musashino-u.ac.jp?subject=公的不動産・廃校データベース個別デモ・お問い合わせ" class="contact-btn">個別デモ・お問い合わせ（メール）</a>
+        <a href="mailto:s2527084@stu.musashino-u.ac.jp?subject=公有地ソート個別デモ・お問い合わせ" class="contact-btn">個別デモ・お問い合わせ（メール）</a>
       </div>
     </div>
   </main>
 
   <footer>
     <div>
-      開発・運営：松田 晴史（武蔵野大学 経済学部 2年）<br>
+      開発・運営：松田 晴史（武蔵野大学 経済学部 2年 / 屋号: ZAX）<br>
       連絡先：s2527084@stu.musashino-u.ac.jp
     </div>
     <div>

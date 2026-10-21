@@ -366,15 +366,87 @@
       </div>
     </div>
 
-    <!-- お問い合わせ・個別デモ -->
-    <div class="contact-box">
-      <h3>貴社の仕入れ基準に合わせた個別デモを実施中</h3>
-      <p>ご希望のエリア、面積規模（㎡）、用途に合わせた実際のデータ抽出や画面操作を、オンライン（Zoom等）にてご案内いたします。</p>
-      <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 16px;">
-        <a href="https://fumiproject.dev/haikou/" class="contact-btn" style="background: #4a5568;">実際の検索画面を開く（Web版）</a>
-        <a href="mailto:s2527084@stu.musashino-u.ac.jp?subject=公有地ソート個別デモ・お問い合わせ" class="contact-btn">個別デモ・お問い合わせ（メール）</a>
+    <!-- お問い合わせ・個別デモフォーム -->
+    <div class="contact-box" style="text-align: left; max-width: 800px; margin: 48px auto 0 auto; padding: 40px; background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
+      <div style="text-align: center; margin-bottom: 28px;">
+        <span style="background: #e0f2fe; color: #0284c7; font-size: 0.85rem; font-weight: 700; padding: 4px 14px; border-radius: 20px;">無料サンプル抽出・個別デモ</span>
+        <h3 style="font-size: 1.5rem; font-weight: 800; color: #1e293b; margin: 12px 0 8px 0;">貴社の仕入れ基準に合わせた物件データを無料でお送りします</h3>
+        <p style="font-size: 0.95rem; color: #64748b; line-height: 1.6; margin: 0;">ご希望のエリア、面積規模（㎡）、用途に合わせた公有地・都有地・廃校のサンプルリストを抽出いたします。オンライン（Zoom等）での実演案内も可能です。</p>
+      </div>
+
+      <form id="lead-form" onsubmit="handleFormSubmit(event)" style="display: flex; flex-direction: column; gap: 20px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div>
+            <label style="display: block; font-size: 0.9rem; font-weight: 700; color: #334155; margin-bottom: 6px;">貴社名・事業者名 <span style="font-size: 0.75rem; color: #94a3b8; font-weight: normal;">(任意)</span></label>
+            <input type="text" id="form-company" placeholder="例: 〇〇開発株式会社" style="width: 100%; padding: 12px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; box-sizing: border-box;">
+          </div>
+          <div>
+            <label style="display: block; font-size: 0.9rem; font-weight: 700; color: #334155; margin-bottom: 6px;">ご担当者名 <span style="color: #ef4444;">*</span></label>
+            <input type="text" id="form-name" required placeholder="例: 山田 太郎" style="width: 100%; padding: 12px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; box-sizing: border-box;">
+          </div>
+        </div>
+
+        <div>
+          <label style="display: block; font-size: 0.9rem; font-weight: 700; color: #334155; margin-bottom: 6px;">メールアドレス <span style="color: #ef4444;">*</span></label>
+          <input type="email" id="form-email" required placeholder="例: yamada@example.com" style="width: 100%; padding: 12px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; box-sizing: border-box;">
+        </div>
+
+        <div>
+          <label style="display: block; font-size: 0.9rem; font-weight: 700; color: #334155; margin-bottom: 8px;">探している事業用途 <span style="font-size: 0.75rem; color: #94a3b8; font-weight: normal;">(複数選択可)</span></label>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; font-size: 0.9rem; color: #334155;">
+            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;"><input type="checkbox" name="purpose" value="系統用蓄電池・再エネ"> 系統用蓄電池 / 再エネ用地</label>
+            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;"><input type="checkbox" name="purpose" value="不動産・住宅開発"> 不動産・住宅・商業開発用地</label>
+            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;"><input type="checkbox" name="purpose" value="廃校活用・グランピング"> 廃校活用 / グランピング / サウナ</label>
+            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;"><input type="checkbox" name="purpose" value="データセンター・物流"> データセンター / 物流・工場用地</label>
+          </div>
+        </div>
+
+        <div>
+          <label style="display: block; font-size: 0.9rem; font-weight: 700; color: #334155; margin-bottom: 6px;">ご希望のエリア・面積・ご要望 <span style="font-size: 0.75rem; color: #94a3b8; font-weight: normal;">(任意)</span></label>
+          <textarea id="form-details" rows="3" placeholder="例: 関東圏で10,000㎡以上の平坦地を探している / 体育館付きの廃校公募を比較したい / Zoomで実際の操作を見たい など" style="width: 100%; padding: 12px 14px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; box-sizing: border-box; resize: vertical;"></textarea>
+        </div>
+
+        <button type="submit" id="form-submit-btn" style="width: 100%; padding: 16px; background: #0284c7; color: #ffffff; font-size: 1.05rem; font-weight: 800; border: none; border-radius: 8px; cursor: pointer; transition: background 0.2s ease;">
+          無料サンプルリスト・個別相談を申し込む（送信）
+        </button>
+      </form>
+
+      <div id="form-success-msg" style="display: none; margin-top: 20px; padding: 20px; background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 8px; text-align: center;">
+        <div style="font-size: 1.1rem; font-weight: 800; color: #166534; margin-bottom: 6px;">✓ お問い合わせを受け付けました</div>
+        <p style="font-size: 0.9rem; color: #15803d; margin: 0;">ご入力いただいたメールアドレス宛に、24時間以内に担当者（松田）よりご希望条件のサンプルデータをお送りいたします。</p>
+      </div>
+
+      <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-top: 28px; padding-top: 20px; border-top: 1px solid #e2e8f0;">
+        <a href="https://fumiproject.dev/haikou/" class="contact-btn" style="background: #475569; font-size: 0.9rem; padding: 10px 20px;">実際の検索画面を開く（Web版）</a>
+        <a href="mailto:s2527084@stu.musashino-u.ac.jp?subject=公有地ソート個別相談" class="contact-btn" style="background: #64748b; font-size: 0.9rem; padding: 10px 20px;">メールで直接連絡する</a>
       </div>
     </div>
+
+    <script>
+      function handleFormSubmit(e) {
+        e.preventDefault();
+        const company = document.getElementById('form-company').value.trim();
+        const name = document.getElementById('form-name').value.trim();
+        const email = document.getElementById('form-email').value.trim();
+        const details = document.getElementById('form-details').value.trim();
+        
+        const purposes = Array.from(document.querySelectorAll('input[name="purpose"]:checked'))
+          .map(cb => cb.value)
+          .join(', ');
+
+        const subject = encodeURIComponent('【公有地ソート】無料サンプルリスト・個別相談の申し込み');
+        const bodyText = `■ お名前: ${name}\n■ 貴社名: ${company || '未記入'}\n■ メールアドレス: ${email}\n■ 探している用途: ${purposes || '未選択'}\n■ ご希望条件・要望:\n${details || '特になし'}\n\n---\n※公有地ソート Webデモポータルより送信`;
+        const body = encodeURIComponent(bodyText);
+
+        // mailto リンクを開いて確実に送信可能にする
+        const mailtoUrl = `mailto:s2527084@stu.musashino-u.ac.jp?subject=${subject}&body=${body}`;
+        window.location.href = mailtoUrl;
+
+        // UI上に送信完了メッセージを表示
+        document.getElementById('lead-form').style.display = 'none';
+        document.getElementById('form-success-msg').style.display = 'block';
+      }
+    </script>
   </main>
 
   <footer>

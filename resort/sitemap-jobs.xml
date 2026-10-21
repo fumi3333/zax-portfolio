@@ -756,10 +756,7 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-214758/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-214764/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-214835/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-231255/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-215039/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-215978/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-216035/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-216243/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242895/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242896/</loc></url>
@@ -807,6 +804,7 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-220703/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-220753/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-220754/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-220767/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-220789/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-223660/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-220866/</loc></url>
@@ -955,7 +953,7 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-227565/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-227654/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-227655/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-227704/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244833/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-227794/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-227795/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-227796/</loc></url>
@@ -1123,6 +1121,7 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000072/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000074/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000084/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1000089/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000090/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000165/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000097/</loc></url>
@@ -1153,6 +1152,7 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000156/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000158/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000160/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1000164/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000168/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000169/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000170/</loc></url>
@@ -1189,7 +1189,6 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000258/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000259/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000268/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1000270/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000273/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000274/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000275/</loc></url>
@@ -1234,7 +1233,6 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000392/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000393/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000405/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1000406/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000411/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000421/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000424/</loc></url>
@@ -1297,13 +1295,11 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000638/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001818/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000646/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1004592/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1000652/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1000649/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000654/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000655/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000658/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000660/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1000663/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000670/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000674/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000675/</loc></url>
@@ -1510,6 +1506,7 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001223/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001225/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001226/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1001228/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001236/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001240/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001243/</loc></url>
@@ -1555,17 +1552,16 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001395/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001396/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001399/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1001401/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1003125/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1001800/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001414/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001416/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001420/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001423/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001816/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1006989/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1001427/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001433/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001438/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1007773/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1001440/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001441/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001443/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001444/</loc></url>
@@ -1660,7 +1656,6 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001717/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001720/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001721/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1001722/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001727/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001732/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001733/</loc></url>
@@ -1683,7 +1678,6 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001793/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001795/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001799/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1001800/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001801/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001802/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001809/</loc></url>
@@ -1702,7 +1696,6 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001850/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001853/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001857/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1007405/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001861/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001863/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001865/</loc></url>
@@ -1744,7 +1737,6 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001953/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001954/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001955/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1001957/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001959/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001960/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001961/</loc></url>
@@ -1785,10 +1777,9 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002090/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002093/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002096/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1002957/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1002098/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002101/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002105/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1002108/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002109/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002111/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002114/</loc></url>
@@ -1810,7 +1801,7 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002164/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002165/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002166/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1002506/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1002168/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002169/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002171/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002172/</loc></url>
@@ -1905,7 +1896,7 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1006765/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002438/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002441/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1002442/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1007863/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002445/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002446/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002447/</loc></url>
@@ -1933,6 +1924,7 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002501/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002502/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002504/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1002506/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002507/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002508/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002510/</loc></url>
@@ -2010,7 +2002,7 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002701/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002704/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002707/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1006729/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1002709/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002712/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002713/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002716/</loc></url>
@@ -2018,7 +2010,6 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002728/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002729/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002732/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1007863/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002734/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002735/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002736/</loc></url>
@@ -2031,11 +2022,9 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002750/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002751/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002754/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1002756/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002762/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002765/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002766/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1002769/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002772/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002774/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002775/</loc></url>
@@ -2044,7 +2033,6 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1004460/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002782/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002784/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1002785/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002786/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002788/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002792/</loc></url>
@@ -2099,6 +2087,7 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002952/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002953/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002954/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1002957/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002958/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002960/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002962/</loc></url>
@@ -2128,6 +2117,7 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1003126/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1003133/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1003155/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1003161/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1003163/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1003175/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1003178/</loc></url>
@@ -2236,7 +2226,7 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1003886/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1003887/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1003888/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1004139/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1004151/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1003891/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1003894/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1003911/</loc></url>
@@ -2325,6 +2315,7 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1004435/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1004438/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1004442/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1004444/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1006565/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1004455/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1004465/</loc></url>
@@ -2369,6 +2360,7 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1006622/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1004589/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1004591/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1004592/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1004596/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1004599/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1004606/</loc></url>
@@ -2435,6 +2427,7 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1004935/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1004938/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1004940/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1006304/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1004948/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1004951/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1004952/</loc></url>
@@ -2533,6 +2526,7 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1007071/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1005175/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1008461/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1005178/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1005180/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1005182/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1005183/</loc></url>
@@ -2772,7 +2766,6 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1006299/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1006300/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1006301/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1006304/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1006312/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1006319/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1006320/</loc></url>
@@ -2835,7 +2828,7 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1006704/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1006716/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1006720/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1006721/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1006729/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1006739/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1006743/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1006751/</loc></url>
@@ -2872,6 +2865,7 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1006961/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1006975/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1006976/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1006989/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1007007/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1007012/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1007032/</loc></url>
@@ -2896,6 +2890,7 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1007380/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1007396/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1007404/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1007405/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1007412/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1007429/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1007441/</loc></url>
@@ -2955,7 +2950,6 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1007759/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1007761/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1007762/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1007763/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1007770/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1007771/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1007779/</loc></url>
@@ -2974,7 +2968,6 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1007833/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1007835/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1007839/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1007843/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1007849/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1007850/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1007859/</loc></url>
@@ -3670,7 +3663,7 @@
   <url><loc>https://fumiproject.dev/resort/w/humanic-100791/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-100824/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-100837/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/humanic-100838/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/humanic-93332/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-100854/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-100858/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-101017/</loc></url>
@@ -3689,6 +3682,7 @@
   <url><loc>https://fumiproject.dev/resort/w/humanic-101261/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-101266/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-101308/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/humanic-101335/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-101370/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-101393/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-101443/</loc></url>
@@ -3719,7 +3713,6 @@
   <url><loc>https://fumiproject.dev/resort/w/humanic-101744/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-101746/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-101750/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/humanic-101777/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-101793/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-101799/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-101832/</loc></url>
@@ -3736,7 +3729,6 @@
   <url><loc>https://fumiproject.dev/resort/w/humanic-101965/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-101997/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-101999/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/humanic-102002/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-102005/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-102018/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-102037/</loc></url>
@@ -3828,9 +3820,7 @@
   <url><loc>https://fumiproject.dev/resort/w/humanic-103437/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-103466/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-103495/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/humanic-103508/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-32882/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/humanic-33076/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-33081/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-33190/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-33573/</loc></url>
@@ -3842,7 +3832,6 @@
   <url><loc>https://fumiproject.dev/resort/w/humanic-34647/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-34881/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-34994/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/humanic-35115/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-35537/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-35846/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-36099/</loc></url>
@@ -3866,7 +3855,6 @@
   <url><loc>https://fumiproject.dev/resort/w/humanic-39514/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-39732/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-39846/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/humanic-39848/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-39899/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-40127/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-40357/</loc></url>
@@ -3888,7 +3876,6 @@
   <url><loc>https://fumiproject.dev/resort/w/humanic-44269/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-45258/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-45270/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/humanic-45519/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-45632/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-45646/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-45696/</loc></url>
@@ -3922,7 +3909,6 @@
   <url><loc>https://fumiproject.dev/resort/w/humanic-51483/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-51486/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-51492/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/humanic-51803/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-51945/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-51982/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-52307/</loc></url>
@@ -3976,6 +3962,7 @@
   <url><loc>https://fumiproject.dev/resort/w/humanic-61910/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-62012/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-62103/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/humanic-62141/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-62298/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-63479/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-63563/</loc></url>
@@ -4028,6 +4015,7 @@
   <url><loc>https://fumiproject.dev/resort/w/humanic-72899/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-72911/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-73003/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/humanic-73284/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-73634/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-73763/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-73813/</loc></url>
@@ -4055,10 +4043,10 @@
   <url><loc>https://fumiproject.dev/resort/w/humanic-77336/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-77487/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-77503/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/humanic-77593/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-77615/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-77673/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-77854/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/humanic-78157/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-78216/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-78217/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-78240/</loc></url>
@@ -4070,7 +4058,6 @@
   <url><loc>https://fumiproject.dev/resort/w/humanic-78821/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-78856/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-78903/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/humanic-78925/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-79405/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-79549/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-80009/</loc></url>
@@ -4079,6 +4066,7 @@
   <url><loc>https://fumiproject.dev/resort/w/humanic-81046/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-81103/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-81272/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/humanic-81897/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-82050/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-82052/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-82439/</loc></url>
@@ -4210,7 +4198,6 @@
   <url><loc>https://fumiproject.dev/resort/w/humanic-92810/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-93148/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-93149/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/humanic-93207/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-93351/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-93362/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-93434/</loc></url>
@@ -4265,7 +4252,6 @@
   <url><loc>https://fumiproject.dev/resort/w/humanic-95351/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-95367/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-95379/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/humanic-95381/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-95445/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-95538/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-95586/</loc></url>
@@ -4303,6 +4289,7 @@
   <url><loc>https://fumiproject.dev/resort/w/humanic-96809/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-96810/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-96811/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/humanic-96928/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-97027/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-97051/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-97096/</loc></url>
@@ -4375,7 +4362,6 @@
   <url><loc>https://fumiproject.dev/resort/w/humanic-99694/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-99739/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-99777/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/humanic-99829/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-99916/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-99922/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/humanic-99924/</loc></url>
@@ -4389,6 +4375,8 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001489/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/resortcross-unzen-onsen-1415/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1001097/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1001426/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1001431/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1008142/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/resortcross-unzen-onsen-1416/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1007670/</loc></url>
@@ -4410,7 +4398,7 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1005190/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1005274/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1005422/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1005585/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1006874/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1006407/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1006568/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1006630/</loc></url>
@@ -4444,6 +4432,7 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002771/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1004001/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1004049/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1004631/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1005295/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1007165/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1007167/</loc></url>
@@ -4484,7 +4473,6 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-237029/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-237030/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-237035/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-237036/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-237050/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-237053/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-237054/</loc></url>
@@ -4576,6 +4564,7 @@
   <url><loc>https://fumiproject.dev/resort/w/staffagent-3947/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/staffagent-3951/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/staffagent-3996/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/staffagent-4022/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/staffagent-4027/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/staffagent-7672/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/staffagent-4035/</loc></url>
@@ -4594,7 +4583,6 @@
   <url><loc>https://fumiproject.dev/resort/w/staffagent-4228/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/staffagent-4234/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/staffagent-4247/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/staffagent-4250/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/staffagent-4257/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/staffagent-4263/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/staffagent-4274/</loc></url>
@@ -5056,7 +5044,6 @@
   <url><loc>https://fumiproject.dev/resort/w/staffagent-17370/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/staffagent-17371/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/staffagent-17377/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/staffagent-17382/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/staffagent-17385/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/staffagent-17393/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/staffagent-17395/</loc></url>
@@ -5126,7 +5113,6 @@
   <url><loc>https://fumiproject.dev/resort/w/staffagent-17576/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/staffagent-17577/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/staffagent-17578/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/staffagent-17579/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/staffagent-17581/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/staffagent-17582/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/staffagent-17583/</loc></url>
@@ -5592,6 +5578,7 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1004315/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/resortcross-yuzawa-1421/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1004333/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1008368/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/resortcross-ito-onsen-1423/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/resortcross-ito-onsen-1424/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/resortcross-yamaguchi-1425/</loc></url>
@@ -5725,7 +5712,6 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1008248/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1008254/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1008256/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1008257/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1008261/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1008263/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1008265/</loc></url>
@@ -5736,7 +5722,6 @@
   <url><loc>https://fumiproject.dev/resort/w/resortcross-shiga-kogen-utsukushigahara-kogen-1436/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000200/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/resortcross-shiga-kogen-utsukushigahara-kogen-1455/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1000511/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000669/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000828/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000983/</loc></url>
@@ -5762,7 +5747,6 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1006313/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1006428/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1006645/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1007059/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1007129/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1007162/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1008266/</loc></url>
@@ -5822,7 +5806,6 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-238015/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-238017/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-238018/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-238028/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-238057/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-238058/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-238059/</loc></url>
@@ -5841,8 +5824,8 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1005952/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1006244/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1006246/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1006259/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1006474/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-238089/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-238090/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/resortcross-miyako-1457/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-238093/</loc></url>
@@ -5927,22 +5910,18 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-238235/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-238259/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-238260/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-238265/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-238267/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-238268/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-238269/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-238270/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-238278/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000827/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/staffagent-6626/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002865/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1008363/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1003543/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1004583/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1005991/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1006318/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1006813/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1007055/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1007134/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1007649/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1007650/</loc></url>
@@ -5953,7 +5932,6 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-238300/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1008339/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1008340/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-238302/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1008343/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-238330/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-238332/</loc></url>
@@ -5991,7 +5969,6 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1005265/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-238445/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1006811/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1006874/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-238448/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1006937/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-238449/</loc></url>
@@ -6061,7 +6038,6 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1006615/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1007474/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1007619/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1008368/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1008369/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1008371/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1008374/</loc></url>
@@ -6176,8 +6152,6 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-238906/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-238907/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-238918/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-243682/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-238920/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-238925/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243844/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243846/</loc></url>
@@ -6204,7 +6178,6 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-239074/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-239075/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-239092/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-239094/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-239104/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-239111/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/staffagent-18555/</loc></url>
@@ -6299,7 +6272,6 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1008435/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-239290/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1008436/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-239291/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1008437/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1008441/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-239294/</loc></url>
@@ -6366,7 +6338,6 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1008473/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-239446/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-239449/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-239453/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-239455/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-239456/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-239465/</loc></url>
@@ -6728,7 +6699,7 @@
   <url><loc>https://fumiproject.dev/resort/w/bgood-632/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/bgood-648/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/bgood-65/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/bgood-650/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/bgood-936/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/bgood-659/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/bgood-66/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/bgood-665/</loc></url>
@@ -6783,7 +6754,6 @@
   <url><loc>https://fumiproject.dev/resort/w/bgood-924/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/bgood-927/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/bgood-929/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/bgood-936/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/bgood-947/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/bgood-951/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/bgood-959/</loc></url>
@@ -6810,7 +6780,6 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1007142/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1007204/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-239599/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1008486/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1008487/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1008492/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244107/</loc></url>
@@ -6836,7 +6805,6 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-239707/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-239708/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-239709/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-239710/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-239711/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-239712/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-239732/</loc></url>
@@ -6862,8 +6830,6 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-239883/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-239901/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-239927/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-239928/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-239932/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-239936/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242335/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-239944/</loc></url>
@@ -6901,7 +6867,6 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-240129/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240130/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240131/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-240134/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240136/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240137/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240145/</loc></url>
@@ -6909,7 +6874,6 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-240147/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240148/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240149/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-240163/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240186/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240187/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240188/</loc></url>
@@ -6933,7 +6897,6 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-240264/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240265/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240269/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-240279/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240285/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240286/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241271/</loc></url>
@@ -6941,7 +6904,6 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-240328/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240329/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240332/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-240373/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240379/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240380/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240389/</loc></url>
@@ -6953,7 +6915,6 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-240398/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240418/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240419/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-240428/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240435/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240437/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240445/</loc></url>
@@ -7006,13 +6967,12 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-240590/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240591/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240592/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-240594/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244774/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242813/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240598/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240599/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240605/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240610/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-240611/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240612/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1004481/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240616/</loc></url>
@@ -7044,8 +7004,7 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-240723/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240728/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240732/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-244354/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-240742/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-245043/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240743/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240747/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240749/</loc></url>
@@ -7106,17 +7065,12 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-240931/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240933/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240936/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-241030/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-242570/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-240937/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-240938/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240944/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240947/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-240952/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240955/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240956/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-240957/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-240962/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-240965/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-240966/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240969/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240970/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240973/</loc></url>
@@ -7128,7 +7082,6 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-244652/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240983/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240989/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-240995/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240998/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-240999/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241000/</loc></url>
@@ -7138,17 +7091,14 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-241015/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241018/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241019/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-241021/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241024/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241026/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-241028/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241029/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241031/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241035/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241040/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241043/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241044/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-241045/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241046/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242568/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242569/</loc></url>
@@ -7156,7 +7106,6 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-241053/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241062/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241065/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-241066/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241075/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241085/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241086/</loc></url>
@@ -7171,11 +7120,8 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-241180/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241183/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241190/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-241193/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-241194/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241195/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241196/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-241197/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241198/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241200/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241216/</loc></url>
@@ -7183,7 +7129,6 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-241218/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241221/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241222/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-241235/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241238/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241240/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241248/</loc></url>
@@ -7211,7 +7156,6 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-241295/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241296/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241297/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-241299/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241301/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241302/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241304/</loc></url>
@@ -7223,13 +7167,10 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-241364/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241365/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241366/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-241375/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241377/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241378/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241384/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-241385/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241388/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-241389/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241390/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241393/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241395/</loc></url>
@@ -7398,7 +7339,6 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-241946/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241948/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241950/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-241959/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241964/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241984/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-241985/</loc></url>
@@ -7419,16 +7359,11 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-242010/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242012/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242022/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-242028/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-242031/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-242034/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242036/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242039/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-242040/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242043/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242044/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242054/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-242055/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242056/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242061/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242063/</loc></url>
@@ -7459,16 +7394,9 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-242176/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242180/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242182/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-242190/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-242194/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-242196/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242197/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242198/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-242199/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242200/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-242204/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-242206/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-242207/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242208/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242209/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242210/</loc></url>
@@ -7491,9 +7419,7 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-242292/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242293/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242301/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-242304/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242306/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-242307/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242328/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242329/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242332/</loc></url>
@@ -7520,7 +7446,6 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-242443/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242449/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242450/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-242452/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242458/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242466/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242474/</loc></url>
@@ -7544,10 +7469,6 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-242543/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242551/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242567/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-242573/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-242576/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-242579/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-242580/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242588/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242604/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242611/</loc></url>
@@ -7581,7 +7502,6 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1004571/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1004741/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1004886/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/goodman-1004887/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1005270/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242663/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1005335/</loc></url>
@@ -7598,7 +7518,6 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1008511/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1008513/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1008519/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-242683/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242693/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242698/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242699/</loc></url>
@@ -7621,7 +7540,6 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-242774/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242775/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242780/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-242781/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242795/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242801/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242803/</loc></url>
@@ -7632,7 +7550,6 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-242820/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242822/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242830/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-242851/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242853/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242857/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242858/</loc></url>
@@ -7670,24 +7587,15 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-242941/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242943/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242951/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-242952/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242953/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-242954/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-242955/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242956/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242957/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-242959/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-242960/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-242961/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242962/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-242968/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242973/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242977/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242978/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-242979/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242980/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242982/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-242986/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242988/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242990/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-242993/</loc></url>
@@ -7725,7 +7633,6 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-243107/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243106/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243110/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-243120/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243126/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243127/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243128/</loc></url>
@@ -7757,7 +7664,6 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-243186/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243187/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243188/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-243197/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243202/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243205/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243207/</loc></url>
@@ -7767,10 +7673,8 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-243222/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243223/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243245/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-243238/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243247/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243257/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-243278/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243284/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243285/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243288/</loc></url>
@@ -7784,7 +7688,6 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-243314/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243315/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243317/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-243321/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243345/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243346/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243347/</loc></url>
@@ -7812,8 +7715,6 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-243425/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243429/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243434/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-243437/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-243438/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243445/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243448/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243456/</loc></url>
@@ -7853,7 +7754,6 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-243620/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243625/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243651/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-243652/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243655/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243656/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243657/</loc></url>
@@ -7866,8 +7766,6 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-243670/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243672/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243675/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-243676/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-243677/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243678/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/staffagent-17360/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1000995/</loc></url>
@@ -7876,7 +7774,9 @@
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002280/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/staffagent-18570/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1002731/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-243682/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/staffagent-18571/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1003125/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/bgood-1916/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/staffagent-18572/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/goodman-1005700/</loc></url>
@@ -7905,7 +7805,6 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-243709/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243712/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243715/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-243716/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243717/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243718/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243724/</loc></url>
@@ -7940,9 +7839,7 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-243807/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243808/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243809/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-243814/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243815/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-243816/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243817/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243818/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243819/</loc></url>
@@ -7962,7 +7859,6 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-243864/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243865/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243869/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-243876/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243878/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243879/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243880/</loc></url>
@@ -7990,8 +7886,6 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-243936/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243937/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243941/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-243954/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-243955/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-243992/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244000/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244001/</loc></url>
@@ -8061,7 +7955,6 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-244178/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244179/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244181/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-244183/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244203/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244207/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244208/</loc></url>
@@ -8100,12 +7993,10 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-244301/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244302/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244303/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-244304/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244305/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244306/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244308/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244312/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-244314/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244316/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244319/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244330/</loc></url>
@@ -8115,9 +8006,7 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-244339/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244340/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244343/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-244346/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244351/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-244353/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244362/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244365/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244367/</loc></url>
@@ -8168,8 +8057,6 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-244488/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244489/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244490/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-244491/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-244492/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244499/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244500/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244503/</loc></url>
@@ -8190,9 +8077,6 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-244555/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244558/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244559/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-244560/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-244561/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-244562/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244574/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244575/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244578/</loc></url>
@@ -8252,8 +8136,6 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-244667/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244670/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244672/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-244677/</loc></url>
-  <url><loc>https://fumiproject.dev/resort/w/dive-244679/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244690/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244691/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244698/</loc></url>
@@ -8265,4 +8147,172 @@
   <url><loc>https://fumiproject.dev/resort/w/dive-244721/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244722/</loc></url>
   <url><loc>https://fumiproject.dev/resort/w/dive-244723/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/staffagent-18577/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1000672/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/staffagent-18578/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1000840/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244726/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/staffagent-18579/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1001851/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1002843/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1004394/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244729/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1006163/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244732/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1007004/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244731/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1007221/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1007248/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244733/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1008533/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1008537/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1008540/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244736/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1008541/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1008542/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1008545/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/goodman-1008546/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244740/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244741/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244742/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244743/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244744/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244745/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244746/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244747/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244748/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244749/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244751/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244753/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244755/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244756/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244757/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244758/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244759/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244760/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244762/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244763/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244764/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244766/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244767/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244769/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244779/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244780/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244781/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244784/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244785/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244786/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244794/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244798/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244799/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244801/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244803/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244804/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244805/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244809/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244810/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244816/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244817/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244818/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244820/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244821/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244822/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244824/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244826/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244827/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244830/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244832/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244835/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244838/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244846/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244847/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244854/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244855/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244856/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244857/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244861/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244862/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244864/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244873/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244878/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244879/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244884/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244885/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244891/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244893/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244896/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244897/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244898/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244901/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244914/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244915/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244919/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244924/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244925/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244926/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244928/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244929/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244933/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244934/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244938/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244941/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244947/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244956/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244957/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244958/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244960/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244961/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244962/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244963/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244964/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244965/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244966/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244967/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244968/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244969/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244970/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244972/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244973/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244974/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244975/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244976/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244977/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244978/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244979/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244980/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244981/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244982/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244984/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244988/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244989/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244991/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244992/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244996/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-244999/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-245000/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-245007/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-245014/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-245021/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-245024/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-245025/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-245026/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-245029/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-245031/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-245032/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-245033/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-245036/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-245037/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-245038/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-245039/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-245040/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-245041/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-245042/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-245044/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-245045/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-245046/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-245047/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-245050/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-245051/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-245057/</loc></url>
+  <url><loc>https://fumiproject.dev/resort/w/dive-245058/</loc></url>
 </urlset>

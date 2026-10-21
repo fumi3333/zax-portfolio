@@ -1,0 +1,6 @@
+# Large video and audio temporary builds
+demo/*.mp4
+demo/metan_zundamon/
+*.wav
+node_modules/
+.DS_Store

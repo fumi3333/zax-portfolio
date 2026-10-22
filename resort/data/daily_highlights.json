@@ -1,60 +1,60 @@
 {
-  "generated_at": "2026-10-22T12:39:29.599854+09:00",
+  "generated_at": "2026-10-23T05:11:02.729723+09:00",
   "is_today_actual": true,
   "note": "",
   "picks": [
     {
-      "id": "goodman-1007221",
-      "agency": "グッドマンサービス（リゾートバイト.com）",
-      "prefecture": "島根県",
-      "city": "江津市",
-      "job_category": "調理（資格不要）",
-      "wage_min": 1700,
-      "dorm_type": "完全個室",
-      "meals_per_day": 2,
-      "dorm_cost": null,
-      "posted_at": "2026-08-29",
-      "source_url": "https://www.resortbaito.com/1007221/",
-      "landing_url": "https://fumiproject.dev/resort/area/shimane/",
-      "texts": {
-        "twitter": "【本日追加】島根県江津市／調理（資格不要）\n時給1,700円〜（グッドマンサービス）\n完全個室・食事2食付\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/shimane/",
-        "instagram_tiktok": "本日追加の求人です📢\n\n📍島根県江津市\n💼調理（資格不要）\n💰時給1,700円〜\n🏠完全個室・食事2食付\n🏢グッドマンサービス\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #島根"
-      }
-    },
-    {
-      "id": "dive-244820",
+      "id": "dive-245303",
       "agency": "株式会社ダイブ（リゾートバイトダイブ）",
-      "prefecture": "岐阜県",
-      "city": "下呂市幸田",
-      "job_category": "仲居・客室係（簡易和装）",
-      "wage_min": 1650,
+      "prefecture": null,
+      "city": null,
+      "job_category": null,
+      "wage_min": 2000,
       "dorm_type": "完全個室",
-      "meals_per_day": 2,
+      "meals_per_day": 1,
       "dorm_cost": null,
-      "posted_at": "2026-10-21T10:31:30.000+09:00",
-      "source_url": "https://resortbaito-dive.com/works/244820",
-      "landing_url": "https://fumiproject.dev/resort/area/gifu/",
+      "posted_at": null,
+      "source_url": "https://resortbaito-dive.com/works/245303",
+      "landing_url": "https://fumiproject.dev/resort/",
       "texts": {
-        "twitter": "【本日追加】岐阜県下呂市幸田／仲居・客室係（簡易和装）\n時給1,650円〜（株式会社ダイブ）\n完全個室・食事2食付\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/gifu/",
-        "instagram_tiktok": "本日追加の求人です📢\n\n📍岐阜県下呂市幸田\n💼仲居・客室係（簡易和装）\n💰時給1,650円〜\n🏠完全個室・食事2食付\n🏢株式会社ダイブ\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #岐阜"
+        "twitter": "【本日追加】／\n時給2,000円〜（株式会社ダイブ）\n完全個室・食事1食付\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/",
+        "instagram_tiktok": "本日追加の求人です📢\n\n📍\n💼\n💰時給2,000円〜\n🏠完全個室・食事1食付\n🏢株式会社ダイブ\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #"
       }
     },
     {
-      "id": "goodman-1008541",
-      "agency": "グッドマンサービス（リゾートバイト.com）",
-      "prefecture": "大阪府",
-      "city": "大阪市北区",
-      "job_category": "フロント",
-      "wage_min": 1600,
+      "id": "dive-245306",
+      "agency": "株式会社ダイブ（リゾートバイトダイブ）",
+      "prefecture": "静岡県",
+      "city": "下田市相玉",
+      "job_category": "売店・販売",
+      "wage_min": 2000,
       "dorm_type": "完全個室",
-      "meals_per_day": null,
+      "meals_per_day": 1,
       "dorm_cost": null,
-      "posted_at": "2026-10-21",
-      "source_url": "https://www.resortbaito.com/1008541/",
-      "landing_url": "https://fumiproject.dev/resort/area/osaka/",
+      "posted_at": "2026-10-22T21:13:59.000+09:00",
+      "source_url": "https://resortbaito-dive.com/works/245306",
+      "landing_url": "https://fumiproject.dev/resort/area/shizuoka/",
       "texts": {
-        "twitter": "【本日追加】大阪府大阪市北区／フロント\n時給1,600円〜（グッドマンサービス）\n完全個室\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/osaka/",
-        "instagram_tiktok": "本日追加の求人です📢\n\n📍大阪府大阪市北区\n💼フロント\n💰時給1,600円〜\n🏠完全個室\n🏢グッドマンサービス\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #大阪"
+        "twitter": "【本日追加】静岡県下田市相玉／売店・販売\n時給2,000円〜（株式会社ダイブ）\n完全個室・食事1食付\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/shizuoka/",
+        "instagram_tiktok": "本日追加の求人です📢\n\n📍静岡県下田市相玉\n💼売店・販売\n💰時給2,000円〜\n🏠完全個室・食事1食付\n🏢株式会社ダイブ\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #静岡"
+      }
+    },
+    {
+      "id": "dive-245261",
+      "agency": "株式会社ダイブ（リゾートバイトダイブ）",
+      "prefecture": "北海道",
+      "city": "上川郡新得町",
+      "job_category": "その他リゾートバイト",
+      "wage_min": 1700,
+      "dorm_type": "相部屋",
+      "meals_per_day": 3,
+      "dorm_cost": 0,
+      "posted_at": "2026-10-22T18:32:29.000+09:00",
+      "source_url": "https://resortbaito-dive.com/works/245261",
+      "landing_url": "https://fumiproject.dev/resort/area/hokkaido/",
+      "texts": {
+        "twitter": "【本日追加】北海道上川郡新得町／その他リゾートバイト\n時給1,700円〜（株式会社ダイブ）\n相部屋・食事3食付\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/hokkaido/",
+        "instagram_tiktok": "本日追加の求人です📢\n\n📍北海道上川郡新得町\n💼その他リゾートバイト\n💰時給1,700円〜\n🏠相部屋・食事3食付\n🏢株式会社ダイブ\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #北海道"
       }
     }
   ]

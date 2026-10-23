@@ -288,11 +288,8 @@ footer{border-top:1px solid var(--line);padding:2.5rem 0 4rem;
 <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="サイトメニュー">
   <ol>
     <li><a href="#work"><span class="n">01</span><span class="lbl">実績</span></a></li>
-    <li><a href="#process"><span class="n">02</span><span class="lbl">進め方</span></a></li>
-    <li><a href="#skills"><span class="n">03</span><span class="lbl">できること</span></a></li>
-    <li><a href="#faq"><span class="n">04</span><span class="lbl">よくある質問</span></a></li>
-    <li><a href="#about"><span class="n">05</span><span class="lbl">事業概要</span></a></li>
-    <li><a href="#contact"><span class="n">06</span><span class="lbl">お問い合わせ</span></a></li>
+    <li><a href="#about"><span class="n">02</span><span class="lbl">事業概要</span></a></li>
+    <li><a href="#contact"><span class="n">03</span><span class="lbl">お問い合わせ</span></a></li>
   </ol>
 </div>
 
@@ -479,73 +476,6 @@ footer{border-top:1px solid var(--line);padding:2.5rem 0 4rem;
   </div>
 </section>
 
-<details class="contract rv">
-  <summary>受託開発のご案内（進め方・できること・よくある質問）</summary>
-<section id="process" data-label="進め方">
-  <div class="head rv"><h2>進め方</h2><span class="hr"></span></div>
-  <div class="flow rv" id="flow">
-    <div class="node"><span class="mono">1</span>
-      <h3>まず、困っていることを伺います</h3>
-      <p>いきなり「何を作るか」から入りません。今どこで手間がかかっているか、何が売上を止めているかを先に聞きます。オンラインでも対面でも構いません。</p></div>
-    <div class="node"><span class="mono">2</span>
-      <h3>つくる前に、解決するかを確認します</h3>
-      <p>「これを作れば解決しますか」を、簡単な画面イメージや文章で先にお見せします。ここで違うとなれば、作らずに方針を変えます。着手前なので費用は発生しません。</p></div>
-    <div class="node"><span class="mono">3</span>
-      <h3>費用とスケジュールをお出しします</h3>
-      <p>やることを分解して、金額と期間を書面でお渡しします。あとから追加費用が発生する場合は、その時点で必ず先にご相談します。</p></div>
-    <div class="node"><span class="mono">4</span>
-      <h3>途中経過を、こまめにお見せします</h3>
-      <p>完成まで何も見えない、という進め方はしません。動く画面を段階的にお見せして、その都度ご意見を反映します。</p></div>
-    <div class="node"><span class="mono">5</span>
-      <h3>公開して、そこから直します</h3>
-      <p>公開して終わりではありません。実際に使われて分かることの方が多いので、そこからの調整までを想定して設計します。</p></div>
-  </div>
-</section>
-
-<section id="skills" data-label="できること">
-  <div class="head rv"><h2>できること</h2><span class="hr"></span></div>
-  <div class="two rv">
-    <div class="prose">
-      <p><span class="lead">Webサービスを、動く形にして公開するところまで。</span>
-      画面をつくる、データベースを設計する、ログインや決済を組み込む、サーバーに載せて公開する。
-      このひと通りを一人でやってきました。</p>
-      <div class="stack" style="font-size:.78rem">
-        <span>TypeScript</span><span>React</span><span>Next.js</span><span>Python</span>
-        <span>Firebase</span><span>Supabase</span><span>Prisma</span><span>Tailwind</span>
-        <span>Gemini API</span><span>Vercel</span><span>Git</span>
-      </div>
-      <p class="aside">ここに挙げた技術は、実際に手を動かして使ったものだけです。</p>
-    </div>
-    <dl class="defs">
-      <dt class="mono">対応領域</dt><dd>Webサービス、予約・注文の仕組み、社内向けツール、手作業の自動化、AIを使った機能開発</dd>
-      <dt class="mono">対応外</dt><dd>大規模な基幹システム、既存の大規模コードの改修、デザインのみのご依頼</dd>
-      <dt class="mono">対応地域</dt><dd>オンライン中心。都内であれば対面での打ち合わせも可能です</dd>
-    </dl>
-  </div>
-</section>
-
-<section id="faq" data-label="よくある質問">
-  <div class="head rv"><h2>よくある質問</h2><span class="hr"></span></div>
-  <div class="rv">
-    <details class="qa"><summary>費用はどのくらいかかりますか？</summary>
-      <div class="ans">内容によって大きく変わるため、お話を伺ってから見積もりをお出ししています。小規模なツールで3万円〜が目安です。</div></details>
-    <details class="qa"><summary>相談だけでも大丈夫ですか？</summary>
-      <div class="ans">はい。ご相談は無料です。伺った上で「作らない方がいい」と判断した場合は、正直にそうお伝えします。</div></details>
-    <details class="qa"><summary>どのくらいの期間でできますか？</summary>
-      <div class="ans">小規模なツールで2〜4週間、本格的なWebサービスで2〜3ヶ月が目安です。着手前に必ずスケジュールをお出しします。</div></details>
-    <details class="qa"><summary>公開したあとの修正もお願いできますか？</summary>
-      <div class="ans">はい。公開して実際に使われてから分かることの方が多いので、その後の調整までを前提に設計しています。</div></details>
-    <details class="qa"><summary>途中で内容を変更したくなったら？</summary>
-      <div class="ans">段階的に画面をお見せしながら進めるので、途中の変更にも対応できます。費用や期間に影響が出る場合は、作業を進める前に必ずご相談します。</div></details>
-    <details class="qa"><summary>作ったものの権利はどうなりますか？</summary>
-      <div class="ans">納品したものの著作権は、原則としてご依頼主に譲渡します。詳細は契約時に書面で取り決めます。</div></details>
-    <details class="qa"><summary>できないことはありますか？</summary>
-      <div class="ans">あります。その場合は引き受ける前に「できません」とお伝えします。引き受けてから止まるより、そのほうがお互いに損が少ないと考えています。</div></details>
-  </div>
-</section>
-
-</details>
-
 <section id="about" data-label="事業概要">
   <div class="head rv"><h2>事業概要</h2><span class="hr"></span></div>
   <div class="two rv">
@@ -554,11 +484,11 @@ footer{border-top:1px solid var(--line);padding:2.5rem 0 4rem;
       <dt class="mono">代表</dt><dd>松田 晴史</dd>
       <dt class="mono">事業形態</dt><dd>個人事業</dd>
       <dt class="mono">所在地</dt><dd>東京都大田区（詳細住所は契約時に書面でお伝えします）</dd>
-      <dt class="mono">事業内容</dt><dd>Webサービスの企画・開発・運用、業務システムの受託開発、AIを活用した機能開発</dd>
+      <dt class="mono">事業内容</dt><dd>Webサービスの企画・開発・運用</dd>
       <dt class="mono">連絡先</dt><dd><!--email_off--><a class="go" href="mailto:zax-official@fumiproject.dev">zax-official@fumiproject.dev</a><!--/email_off--></dd>
     </dl>
     <div class="prose">
-      <p class="aside">お取引にあたって必要な情報（詳細住所・電話番号など）は、ご依頼時に書面でお渡しします。</p>
+      <p class="aside">お取引にあたって必要な情報（詳細住所・電話番号など）は、ご契約時に書面でお渡しします。</p>
     </div>
   </div>
 </section>
@@ -568,8 +498,7 @@ footer{border-top:1px solid var(--line);padding:2.5rem 0 4rem;
   <div class="two rv">
     <div class="prose">
       <!--email_off--><a class="mailto" href="mailto:zax-official@fumiproject.dev">zax-official@fumiproject.dev</a><!--/email_off-->
-      <p><span class="lead">ご相談は無料です。</span>「こういうことをしたい」だけ書いて送ってください。
-      実現できるかどうか、いくらぐらいかを整理してお返しします。</p>
+      <p>各サービスについてのお問い合わせは、こちらのメールにお送りください。</p>
     </div>
     <dl class="defs">
       <dt class="mono">受付</dt><dd>メールは24時間受付（返信は平日日中）</dd>

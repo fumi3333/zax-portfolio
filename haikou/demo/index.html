@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "z2168qvqb2");
+    // 会社ごとのリンクの記号（?c=）を Clarity にも渡し、録画・ヒートマップを会社ごとに絞れるようにする
+    (function(){ var c=(new URLSearchParams(location.search).get('c')||'').replace(/[^a-z0-9]/gi,'').slice(0,16); if(c){ window.clarity('set','company',c); window.clarity('identify',c); } })();
+</script>
 <link rel="icon" type="image/svg+xml" href="/haikou/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/haikou/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/haikou/favicon-16x16.png">
@@ -396,7 +405,7 @@
         </tbody>
       </table>
     </div>
-    <p style="font-size: 12px; color: var(--gov-muted); margin: 12px 0 24px;">このページは改善のため、閲覧と操作（絞り込みの条件・リンクのクリック）を Google アナリティクスで記録しています。</p>
+    <p style="font-size: 12px; color: var(--gov-muted); margin: 12px 0 24px;">このページは改善のため、閲覧と操作（絞り込みの条件・リンクのクリック）を Google アナリティクスと Microsoft Clarity で記録しています。</p>
   </div>
 
   <script>

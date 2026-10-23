@@ -1,60 +1,60 @@
 {
-  "generated_at": "2026-10-23T20:21:54.168893+09:00",
+  "generated_at": "2026-10-24T07:16:42.889963+09:00",
   "is_today_actual": true,
   "note": "",
   "picks": [
     {
-      "id": "dive-245303",
+      "id": "dive-235891",
       "agency": "株式会社ダイブ（リゾートバイトダイブ）",
-      "prefecture": null,
-      "city": null,
-      "job_category": null,
-      "wage_min": 2000,
+      "prefecture": "新潟県",
+      "city": "南魚沼郡湯沢町三国",
+      "job_category": "調理",
+      "wage_min": 1800,
       "dorm_type": "完全個室",
-      "meals_per_day": 1,
+      "meals_per_day": 3,
       "dorm_cost": null,
-      "posted_at": null,
-      "source_url": "https://resortbaito-dive.com/works/245303",
-      "landing_url": "https://fumiproject.dev/resort/",
+      "posted_at": "2026-09-17T10:51:03.000+09:00",
+      "source_url": "https://resortbaito-dive.com/works/235891",
+      "landing_url": "https://fumiproject.dev/resort/area/niigata/",
       "texts": {
-        "twitter": "【本日追加】／\n時給2,000円〜（株式会社ダイブ）\n完全個室・食事1食付\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/",
-        "instagram_tiktok": "本日追加の求人です📢\n\n📍\n💼\n💰時給2,000円〜\n🏠完全個室・食事1食付\n🏢株式会社ダイブ\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #"
+        "twitter": "【本日追加】新潟県南魚沼郡湯沢町三国／調理\n時給1,800円〜（株式会社ダイブ）\n完全個室・食事3食付\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/niigata/",
+        "instagram_tiktok": "本日追加の求人です📢\n\n📍新潟県南魚沼郡湯沢町三国\n💼調理\n💰時給1,800円〜\n🏠完全個室・食事3食付\n🏢株式会社ダイブ\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #新潟"
       }
     },
     {
-      "id": "dive-245306",
+      "id": "dive-223326",
       "agency": "株式会社ダイブ（リゾートバイトダイブ）",
-      "prefecture": "静岡県",
-      "city": "下田市相玉",
-      "job_category": "売店・販売",
-      "wage_min": 2000,
+      "prefecture": "東京都",
+      "city": "新宿区歌舞伎町",
+      "job_category": "調理",
+      "wage_min": 1800,
       "dorm_type": "完全個室",
-      "meals_per_day": 1,
+      "meals_per_day": null,
       "dorm_cost": null,
-      "posted_at": "2026-10-22T21:13:59.000+09:00",
-      "source_url": "https://resortbaito-dive.com/works/245306",
-      "landing_url": "https://fumiproject.dev/resort/area/shizuoka/",
+      "posted_at": "2026-07-29T17:43:25.000+09:00",
+      "source_url": "https://resortbaito-dive.com/works/223326",
+      "landing_url": "https://fumiproject.dev/resort/area/tokyo/",
       "texts": {
-        "twitter": "【本日追加】静岡県下田市相玉／売店・販売\n時給2,000円〜（株式会社ダイブ）\n完全個室・食事1食付\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/shizuoka/",
-        "instagram_tiktok": "本日追加の求人です📢\n\n📍静岡県下田市相玉\n💼売店・販売\n💰時給2,000円〜\n🏠完全個室・食事1食付\n🏢株式会社ダイブ\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #静岡"
+        "twitter": "【本日追加】東京都新宿区歌舞伎町／調理\n時給1,800円〜（株式会社ダイブ）\n完全個室\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/tokyo/",
+        "instagram_tiktok": "本日追加の求人です📢\n\n📍東京都新宿区歌舞伎町\n💼調理\n💰時給1,800円〜\n🏠完全個室\n🏢株式会社ダイブ\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #東京"
       }
     },
     {
-      "id": "dive-245261",
+      "id": "dive-231625",
       "agency": "株式会社ダイブ（リゾートバイトダイブ）",
       "prefecture": "北海道",
-      "city": "上川郡新得町",
+      "city": "勇払郡占冠村",
       "job_category": "その他リゾートバイト",
       "wage_min": 1700,
-      "dorm_type": "相部屋",
+      "dorm_type": "完全個室",
       "meals_per_day": 3,
-      "dorm_cost": 0,
-      "posted_at": "2026-10-22T18:32:29.000+09:00",
-      "source_url": "https://resortbaito-dive.com/works/245261",
+      "dorm_cost": null,
+      "posted_at": "2026-08-31T16:50:53.000+09:00",
+      "source_url": "https://resortbaito-dive.com/works/231625",
       "landing_url": "https://fumiproject.dev/resort/area/hokkaido/",
       "texts": {
-        "twitter": "【本日追加】北海道上川郡新得町／その他リゾートバイト\n時給1,700円〜（株式会社ダイブ）\n相部屋・食事3食付\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/hokkaido/",
-        "instagram_tiktok": "本日追加の求人です📢\n\n📍北海道上川郡新得町\n💼その他リゾートバイト\n💰時給1,700円〜\n🏠相部屋・食事3食付\n🏢株式会社ダイブ\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #北海道"
+        "twitter": "【本日追加】北海道勇払郡占冠村／その他リゾートバイト\n時給1,700円〜（株式会社ダイブ）\n完全個室・食事3食付\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/hokkaido/",
+        "instagram_tiktok": "本日追加の求人です📢\n\n📍北海道勇払郡占冠村\n💼その他リゾートバイト\n💰時給1,700円〜\n🏠完全個室・食事3食付\n🏢株式会社ダイブ\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #北海道"
       }
     }
   ]

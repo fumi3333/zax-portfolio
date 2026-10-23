@@ -396,12 +396,13 @@
             <th style="width: 120px;">土地面積(㎡)</th>
             <th style="width: 140px;">用途地域</th>
             <th style="width: 100px;">締切</th>
+            <th style="width: 100px;" title="このサービスが自治体のページで初めて見つけた日（自治体の公開日とは限りません）">掲載を見つけた日</th>
             <th style="width: 130px;">種別 / 対話</th>
             <th style="width: 150px;">公式のリンク</th>
           </tr>
         </thead>
         <tbody id="table-body">
-          <tr><td colspan="8" class="loading-spinner">公有地データを読み込み中...</td></tr>
+          <tr><td colspan="9" class="loading-spinner">公有地データを読み込み中...</td></tr>
         </tbody>
       </table>
     </div>
@@ -480,7 +481,7 @@
       document.getElementById('sub-count').textContent = `（全 ${rawData.length.toLocaleString()} 件中）`;
 
       if (count === 0) {
-        tbody.innerHTML = `<tr><td colspan="8" style="text-align: center; padding: 40px; color: var(--muted);">条件に合致する物件が見つかりませんでした。条件を広げてみてください。</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="9" style="text-align: center; padding: 40px; color: var(--muted);">条件に合致する物件が見つかりませんでした。条件を広げてみてください。</td></tr>`;
         return;
       }
 
@@ -505,6 +506,7 @@
           <td class="tag-land">${landStr}</td>
           <td>${youtoStr}</td>
           <td>${dlStr}</td>
+          <td>${it.first_seen ? escapeHtml(it.first_seen) : '<span style="color: #64748b;">-</span>'}</td>
           <td>${typeBadge}<div style="font-size:10px;color:#64748b">${escapeHtml(it.certainty || '')}</div></td>
           <td>${urlBtn}</td>
         `;
@@ -515,7 +517,7 @@
 
       if (count > 100) {
         const trNotice = document.createElement('tr');
-        trNotice.innerHTML = `<td colspan="8" style="text-align: center; padding: 12px; color: var(--muted); background: #1e293b;">※ 表示パフォーマンス向上のため上位100件を表示中（全 ${count} 件は右上の「CSV出力」で全件ダウンロード可能）</td>`;
+        trNotice.innerHTML = `<td colspan="9" style="text-align: center; padding: 12px; color: var(--muted); background: #1e293b;">※ 表示パフォーマンス向上のため上位100件を表示中（全 ${count} 件は右上の「CSV出力」で全件ダウンロード可能）</td>`;
         tbody.appendChild(trNotice);
       }
     }
@@ -594,13 +596,13 @@
     // CSV出力
     document.getElementById('btn-download-csv').addEventListener('click', () => {
       track('csv', { n: String(currentFiltered.length) });
-      let csv = "\uFEFF都道府県,自治体,物件名/公募名,土地面積(㎡),用途地域,価格(円),締切,種別,公式のリンク,掲載ページ\n";
+      let csv = "\uFEFF都道府県,自治体,物件名/公募名,土地面積(㎡),用途地域,価格(円),締切,掲載を見つけた日,種別,公式のリンク,掲載ページ\n";
       currentFiltered.forEach(r => {
         const titleClean = (r.title || '').replace(/"/g, '""');
         const landVal = r.land || '';
         const youtoVal = (r.youto || '').replace(/"/g, '""');
         const isSnd = r.sounding ? 'サウンディング対話あり' : '公募/売却';
-        csv += `"${r.pref}","${r.muni}","${titleClean}","${landVal}","${youtoVal}","${r.price || ''}","${r.deadline || ''}","${r.kind || isSnd}","${r.url}","${r.page || ''}"\n`;
+        csv += `"${r.pref}","${r.muni}","${titleClean}","${landVal}","${youtoVal}","${r.price || ''}","${r.deadline || ''}","${r.first_seen || ''}","${r.kind || isSnd}","${r.url}","${r.page || ''}"\n`;
       });
 
       const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });

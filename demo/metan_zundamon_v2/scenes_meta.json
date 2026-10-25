@@ -1,0 +1,188 @@
+[
+  {
+    "id": "scene_01",
+    "speaker_name": "四国めたん",
+    "speaker_id": 2,
+    "text": "全国1,959の自治体が公開する、最新の廃校・公有地・サウンディング公募を横断検索できるデータベースを構築しました。",
+    "slide_title": "全国自治体の廃校・公有地 横断検索データベース",
+    "slide_subtitle": "全国1,959自治体・財務局の公有財産公募を毎朝自動巡回・集約",
+    "badge": "一次データ集約基盤",
+    "stats": [
+      [
+        "対象自治体数",
+        "全国1,959自治体"
+      ],
+      [
+        "集約データ規模",
+        "10,800件超"
+      ],
+      [
+        "更新頻度",
+        "毎朝自動更新"
+      ]
+    ],
+    "points": [
+      "全国市区町村・都道府県・財務局が公示する売却・貸付情報を集約",
+      "民間ポータルに掲載されない自治体公式の入札・公募案件を網羅",
+      "公募前のサウンディング型市場調査（民間対話）も早期検知"
+    ],
+    "audio_file": "C:\\zax-portfolio\\demo\\metan_zundamon_v2\\audio\\scene_01.wav",
+    "duration": 10.122666666666667,
+    "slide_png": "C:\\zax-portfolio\\demo\\metan_zundamon_v2\\slides\\scene_01.png"
+  },
+  {
+    "id": "scene_02",
+    "speaker_name": "ずんだもん",
+    "speaker_id": 3,
+    "text": "全国の自治体サイトに分散する公募PDFを探すのって、見落としも多くて膨大な工数がかかるのだ…！",
+    "slide_title": "用地仕入れ・開発担当者が直面する構造的課題",
+    "slide_subtitle": "自治体サイトの奥深くに分散・埋没する募集要項PDF",
+    "badge": "業界の課題",
+    "stats": [
+      [
+        "HP構造",
+        "自治体ごとに非統一"
+      ],
+      [
+        "情報開示形式",
+        "PDF調書に埋没"
+      ],
+      [
+        "手作業巡回工数",
+        "月100時間超"
+      ]
+    ],
+    "points": [
+      "自治体ごとにページ構成・更新頻度・告知形式が完全にバラバラ",
+      "PDF調書の中にしか面積・価格・用途地域が書かれていない問題",
+      "公募期間が短く、気づいたときには申請締切が過ぎているリスク"
+    ],
+    "audio_file": "C:\\zax-portfolio\\demo\\metan_zundamon_v2\\audio\\scene_02.wav",
+    "duration": 8.245333333333333,
+    "slide_png": "C:\\zax-portfolio\\demo\\metan_zundamon_v2\\slides\\scene_02.png"
+  },
+  {
+    "id": "scene_03",
+    "speaker_name": "四国めたん",
+    "speaker_id": 2,
+    "text": "このシステムなら、敷地面積や用途地域で瞬時に絞り込み、自治体の公式募集要項PDFへ直接ジャンプできるのよ。",
+    "slide_title": "直感的な条件絞り込み × 自治体公式PDFへの直接直結",
+    "slide_subtitle": "エリア × 敷地面積 × 用途地域 × 公募種別で瞬時にスクリーニング",
+    "badge": "機能と特徴",
+    "stats": [
+      [
+        "検索スピード",
+        "瞬時（0.1秒）"
+      ],
+      [
+        "原本PDF直結",
+        "ワンクリック"
+      ],
+      [
+        "案件種別",
+        "公有地・廃校・サウンディング"
+      ]
+    ],
+    "points": [
+      "「敷地10,000㎡以上」「商業・工業地域」「体育館付き校舎」等で抽出",
+      "物件カードから自治体公式の募集要項PDF・仕様書へ即座にアクセス",
+      "社内検討・土地仕入れ・企画立案までのリードタイムを大幅短縮"
+    ],
+    "audio_file": "C:\\zax-portfolio\\demo\\metan_zundamon_v2\\audio\\scene_03.wav",
+    "duration": 8.608,
+    "slide_png": "C:\\zax-portfolio\\demo\\metan_zundamon_v2\\slides\\scene_03.png"
+  },
+  {
+    "id": "scene_04",
+    "speaker_name": "ずんだもん",
+    "speaker_id": 3,
+    "text": "観光宿泊やグランピング用地、再エネ・系統用蓄電所のメガ用地、廃校リノベまで幅広く探せるのだ！",
+    "slide_title": "幅広い事業者の仕入れ・拠点開発ニーズに対応",
+    "slide_subtitle": "観光宿泊・インフラ再エネ・公民連携（PPP）の主要ユースケース",
+    "badge": "主要ユースケース",
+    "stats": [
+      [
+        "観光・リゾート開発",
+        "宿泊施設・グランピング"
+      ],
+      [
+        "再エネ・蓄電所",
+        "1万〜5万㎡メガ用地"
+      ],
+      [
+        "廃校利活用",
+        "体育館・校舎リノベ"
+      ]
+    ],
+    "points": [
+      "観光宿泊：景観に優れた自然公園周辺や遊休保養地の公募物件",
+      "再エネ・蓄電池：特別高圧・高圧連系を見込める広大な事業用地",
+      "公民連携（PPP）：公有地を活用した商業・地域賑わい創出事業"
+    ],
+    "audio_file": "C:\\zax-portfolio\\demo\\metan_zundamon_v2\\audio\\scene_04.wav",
+    "duration": 9.44,
+    "slide_png": "C:\\zax-portfolio\\demo\\metan_zundamon_v2\\slides\\scene_04.png"
+  },
+  {
+    "id": "scene_05",
+    "speaker_name": "四国めたん",
+    "speaker_id": 2,
+    "text": "全国に散らばる一次データを透明化し、官民の遊休資産を最適に活用するために開発されたわ。",
+    "slide_title": "散在する一次データを集約し、官民連携を加速する",
+    "slide_subtitle": "行政情報の非対称性を解消し、地域の遊休資産と民間活力を直結",
+    "badge": "開発思想",
+    "stats": [
+      [
+        "データ網羅性",
+        "全国47都道府県"
+      ],
+      [
+        "更新性",
+        "毎朝最新案件検知"
+      ],
+      [
+        "客観性",
+        "行政公式原本100%"
+      ]
+    ],
+    "points": [
+      "散在する行政データをクローラーで統合し、誰もがアクセス可能に",
+      "公募前のサウンディング型市場調査を捉え、民間提案の機会を創出",
+      "遊休都有地・公有地・廃校の有効活用を通じた地域経済の活性化"
+    ],
+    "audio_file": "C:\\zax-portfolio\\demo\\metan_zundamon_v2\\audio\\scene_05.wav",
+    "duration": 7.136,
+    "slide_png": "C:\\zax-portfolio\\demo\\metan_zundamon_v2\\slides\\scene_05.png"
+  },
+  {
+    "id": "scene_06",
+    "speaker_name": "ずんだもん",
+    "speaker_id": 3,
+    "text": "現在ベータ版を試験運用中なのだ！ご希望のエリアや面積を教えてもらえれば、合致する公募PDFを整理してお届けするのだ！",
+    "slide_title": "ベータ版 試験運用中｜無料お試し受付中",
+    "slide_subtitle": "ご希望条件（エリア・面積・用途）の公募PDFを無償で整理送付いたします",
+    "badge": "試験利用・無料お試し",
+    "stats": [
+      [
+        "デモ画面",
+        "fumiproject.dev/haikou/demo/"
+      ],
+      [
+        "お試し送付",
+        "条件指定で無料作成"
+      ],
+      [
+        "連絡先",
+        "zax-official@fumiproject.dev"
+      ]
+    ],
+    "points": [
+      "デモ画面にて全国1,959自治体のリアルなデータベースを操作可能",
+      "探しているエリアや面積条件をご連絡いただければ、該当PDFを整理送付",
+      "ご関心のある方はメールまたはお問い合わせフォームよりお気軽にどうぞ"
+    ],
+    "audio_file": "C:\\zax-portfolio\\demo\\metan_zundamon_v2\\audio\\scene_06.wav",
+    "duration": 10.368,
+    "slide_png": "C:\\zax-portfolio\\demo\\metan_zundamon_v2\\slides\\scene_06.png"
+  }
+]

@@ -334,6 +334,7 @@
           <label>種別・サウンディング</label>
           <select id="type-select">
             <option value="">すべて</option>
+            <option value="d:手に入る">手に入る（売却・無償譲渡）</option>
             <option value="d:売却">買える（売却）</option>
             <option value="d:貸付">借りられる（貸付）</option>
             <option value="d:譲与">無償で譲られる（譲与）</option>
@@ -559,7 +560,8 @@
         if (type === 'sounding' && !d.sounding) return false;
         if (type === 'has_land' && !d.land) return false;
         if (type.startsWith('k:') && d.kind !== type.slice(2)) return false;
-        if (type.startsWith('d:') && !(d.deal || []).includes(type.slice(2))) return false;   // 取引（売却・貸付・譲与）
+        if (type === 'd:手に入る' && !(d.deal || []).some(x => x === '売却' || x === '譲与')) return false;   // 売却（有償）と譲与（無償）のどちらでも、自分のものになる
+        if (type.startsWith('d:') && type !== 'd:手に入る' && !(d.deal || []).includes(type.slice(2))) return false;   // 取引（売却・貸付・譲与）
         if (type.startsWith('m:') && !(d.method || []).includes(type.slice(2))) return false;  // 進め方（入札・先着順など）
         return true;
       });

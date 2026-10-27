@@ -1,60 +1,60 @@
 {
-  "generated_at": "2026-10-26T06:11:43.748640+09:00",
+  "generated_at": "2026-10-27T20:49:59.729170+09:00",
   "is_today_actual": true,
   "note": "",
   "picks": [
     {
-      "id": "wakutori-22374",
-      "agency": "ワクトリ",
-      "prefecture": "神奈川県",
-      "city": "箱根",
-      "job_category": "和食調理",
-      "wage_min": 1550,
+      "id": "dive-246164",
+      "agency": "株式会社ダイブ（リゾートバイトダイブ）",
+      "prefecture": "愛知県",
+      "city": "名古屋市中区錦",
+      "job_category": "調理補助",
+      "wage_min": 1800,
       "dorm_type": "完全個室",
       "meals_per_day": 2,
       "dorm_cost": null,
-      "posted_at": "2026-08-27",
-      "source_url": "https://work-trip.jp/search/details/?job_id=22374",
-      "landing_url": "https://fumiproject.dev/resort/area/kanagawa/",
+      "posted_at": "2026-10-26T18:04:28.000+09:00",
+      "source_url": "https://resortbaito-dive.com/works/246164",
+      "landing_url": "https://fumiproject.dev/resort/area/aichi/",
       "texts": {
-        "twitter": "【本日追加】神奈川県箱根／和食調理\n時給1,550円〜（ワクトリ）\n完全個室・食事2食付\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/kanagawa/",
-        "instagram_tiktok": "本日追加の求人です📢\n\n📍神奈川県箱根\n💼和食調理\n💰時給1,550円〜\n🏠完全個室・食事2食付\n🏢ワクトリ\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #神奈川"
+        "twitter": "【本日追加】愛知県名古屋市中区錦／調理補助\n時給1,800円〜（株式会社ダイブ）\n完全個室・食事2食付\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/aichi/",
+        "instagram_tiktok": "本日追加の求人です📢\n\n📍愛知県名古屋市中区錦\n💼調理補助\n💰時給1,800円〜\n🏠完全個室・食事2食付\n🏢株式会社ダイブ\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #愛知"
       }
     },
     {
-      "id": "wakutori-22054",
-      "agency": "ワクトリ",
+      "id": "dive-245861",
+      "agency": "株式会社ダイブ（リゾートバイトダイブ）",
+      "prefecture": null,
+      "city": null,
+      "job_category": null,
+      "wage_min": 1800,
+      "dorm_type": "完全個室",
+      "meals_per_day": 2,
+      "dorm_cost": null,
+      "posted_at": null,
+      "source_url": "https://resortbaito-dive.com/works/245861",
+      "landing_url": "https://fumiproject.dev/resort/",
+      "texts": {
+        "twitter": "【本日追加】／\n時給1,800円〜（株式会社ダイブ）\n完全個室・食事2食付\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/",
+        "instagram_tiktok": "本日追加の求人です📢\n\n📍\n💼\n💰時給1,800円〜\n🏠完全個室・食事2食付\n🏢株式会社ダイブ\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #"
+      }
+    },
+    {
+      "id": "dive-245725",
+      "agency": "株式会社ダイブ（リゾートバイトダイブ）",
       "prefecture": "東京都",
-      "city": "23区",
-      "job_category": "洋食調理",
-      "wage_min": 1700,
-      "dorm_type": null,
+      "city": "墨田区横綱",
+      "job_category": "フロント・ベル",
+      "wage_min": 1750,
+      "dorm_type": "完全個室",
       "meals_per_day": null,
       "dorm_cost": null,
-      "posted_at": "2026-07-08",
-      "source_url": "https://work-trip.jp/search/details/?job_id=22054",
+      "posted_at": "2026-10-26T10:53:35.000+09:00",
+      "source_url": "https://resortbaito-dive.com/works/245725",
       "landing_url": "https://fumiproject.dev/resort/area/tokyo/",
       "texts": {
-        "twitter": "【本日追加】東京都23区／洋食調理\n時給1,700円〜（ワクトリ）\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/tokyo/",
-        "instagram_tiktok": "本日追加の求人です📢\n\n📍東京都23区\n💼洋食調理\n💰時給1,700円〜\n🏢ワクトリ\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #東京"
-      }
-    },
-    {
-      "id": "jobresort-48202",
-      "agency": "株式会社トラストワイ（ジョブリゾート）",
-      "prefecture": "静岡県",
-      "city": "熱海市",
-      "job_category": "静岡県",
-      "wage_min": 1450,
-      "dorm_type": "完全個室",
-      "meals_per_day": 2,
-      "dorm_cost": null,
-      "posted_at": "2026-10-25",
-      "source_url": "https://jobresort.jp/work/48202/?utm_source=google_jobs&utm_medium=organic",
-      "landing_url": "https://fumiproject.dev/resort/area/shizuoka/",
-      "texts": {
-        "twitter": "【本日追加】静岡県熱海市／静岡県\n時給1,450円〜（株式会社トラストワイ）\n完全個室・食事2食付\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/shizuoka/",
-        "instagram_tiktok": "本日追加の求人です📢\n\n📍静岡県熱海市\n💼静岡県\n💰時給1,450円〜\n🏠完全個室・食事2食付\n🏢株式会社トラストワイ\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #静岡"
+        "twitter": "【本日追加】東京都墨田区横綱／フロント・ベル\n時給1,750円〜（株式会社ダイブ）\n完全個室\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/tokyo/",
+        "instagram_tiktok": "本日追加の求人です📢\n\n📍東京都墨田区横綱\n💼フロント・ベル\n💰時給1,750円〜\n🏠完全個室\n🏢株式会社ダイブ\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #東京"
       }
     }
   ]

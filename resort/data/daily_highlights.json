@@ -1,60 +1,60 @@
 {
-  "generated_at": "2026-10-27T20:49:59.729170+09:00",
+  "generated_at": "2026-10-28T06:26:16.899349+09:00",
   "is_today_actual": true,
   "note": "",
   "picks": [
     {
-      "id": "dive-246164",
-      "agency": "株式会社ダイブ（リゾートバイトダイブ）",
-      "prefecture": "愛知県",
-      "city": "名古屋市中区錦",
-      "job_category": "調理補助",
-      "wage_min": 1800,
+      "id": "alpha-3329",
+      "agency": "株式会社アルファスタッフ（アルファ・リゾート）",
+      "prefecture": "北海道",
+      "city": "勇払郡占冠村",
+      "job_category": "ドライバー",
+      "wage_min": 1700,
       "dorm_type": "完全個室",
       "meals_per_day": 2,
-      "dorm_cost": null,
-      "posted_at": "2026-10-26T18:04:28.000+09:00",
-      "source_url": "https://resortbaito-dive.com/works/246164",
-      "landing_url": "https://fumiproject.dev/resort/area/aichi/",
+      "dorm_cost": 0,
+      "posted_at": "2024-01-31",
+      "source_url": "https://www.a-resort.jp/job/3329",
+      "landing_url": "https://fumiproject.dev/resort/area/hokkaido/",
       "texts": {
-        "twitter": "【本日追加】愛知県名古屋市中区錦／調理補助\n時給1,800円〜（株式会社ダイブ）\n完全個室・食事2食付\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/aichi/",
-        "instagram_tiktok": "本日追加の求人です📢\n\n📍愛知県名古屋市中区錦\n💼調理補助\n💰時給1,800円〜\n🏠完全個室・食事2食付\n🏢株式会社ダイブ\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #愛知"
+        "twitter": "【本日追加】北海道勇払郡占冠村／ドライバー\n時給1,700円〜（株式会社アルファスタッフ）\n完全個室・食事2食付\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/hokkaido/",
+        "instagram_tiktok": "本日追加の求人です📢\n\n📍北海道勇払郡占冠村\n💼ドライバー\n💰時給1,700円〜\n🏠完全個室・食事2食付\n🏢株式会社アルファスタッフ\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #北海道"
       }
     },
     {
-      "id": "dive-245861",
+      "id": "dive-246418",
       "agency": "株式会社ダイブ（リゾートバイトダイブ）",
-      "prefecture": null,
-      "city": null,
-      "job_category": null,
-      "wage_min": 1800,
+      "prefecture": "長野県",
+      "city": "北佐久郡軽井沢町",
+      "job_category": "調理",
+      "wage_min": 1650,
       "dorm_type": "完全個室",
       "meals_per_day": 2,
       "dorm_cost": null,
-      "posted_at": null,
-      "source_url": "https://resortbaito-dive.com/works/245861",
-      "landing_url": "https://fumiproject.dev/resort/",
+      "posted_at": "2026-10-27T15:05:31.000+09:00",
+      "source_url": "https://resortbaito-dive.com/works/246418",
+      "landing_url": "https://fumiproject.dev/resort/area/nagano/",
       "texts": {
-        "twitter": "【本日追加】／\n時給1,800円〜（株式会社ダイブ）\n完全個室・食事2食付\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/",
-        "instagram_tiktok": "本日追加の求人です📢\n\n📍\n💼\n💰時給1,800円〜\n🏠完全個室・食事2食付\n🏢株式会社ダイブ\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #"
+        "twitter": "【本日追加】長野県北佐久郡軽井沢町／調理\n時給1,650円〜（株式会社ダイブ）\n完全個室・食事2食付\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/nagano/",
+        "instagram_tiktok": "本日追加の求人です📢\n\n📍長野県北佐久郡軽井沢町\n💼調理\n💰時給1,650円〜\n🏠完全個室・食事2食付\n🏢株式会社ダイブ\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #長野"
       }
     },
     {
-      "id": "dive-245725",
-      "agency": "株式会社ダイブ（リゾートバイトダイブ）",
+      "id": "goodman-1001966",
+      "agency": "グッドマンサービス（リゾートバイト.com）",
       "prefecture": "東京都",
-      "city": "墨田区横綱",
-      "job_category": "フロント・ベル",
-      "wage_min": 1750,
+      "city": "港区",
+      "job_category": "ナイトフロント",
+      "wage_min": 1600,
       "dorm_type": "完全個室",
-      "meals_per_day": null,
+      "meals_per_day": 2,
       "dorm_cost": null,
-      "posted_at": "2026-10-26T10:53:35.000+09:00",
-      "source_url": "https://resortbaito-dive.com/works/245725",
+      "posted_at": "2026-07-15",
+      "source_url": "https://www.resortbaito.com/1001966/",
       "landing_url": "https://fumiproject.dev/resort/area/tokyo/",
       "texts": {
-        "twitter": "【本日追加】東京都墨田区横綱／フロント・ベル\n時給1,750円〜（株式会社ダイブ）\n完全個室\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/tokyo/",
-        "instagram_tiktok": "本日追加の求人です📢\n\n📍東京都墨田区横綱\n💼フロント・ベル\n💰時給1,750円〜\n🏠完全個室\n🏢株式会社ダイブ\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #東京"
+        "twitter": "【本日追加】東京都港区／ナイトフロント\n時給1,600円〜（グッドマンサービス）\n完全個室・食事2食付\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/tokyo/",
+        "instagram_tiktok": "本日追加の求人です📢\n\n📍東京都港区\n💼ナイトフロント\n💰時給1,600円〜\n🏠完全個室・食事2食付\n🏢グッドマンサービス\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #東京"
       }
     }
   ]

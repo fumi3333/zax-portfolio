@@ -139,8 +139,8 @@ footer .big{font-family:var(--serif);font-size:clamp(3rem,12vw,10rem);line-heigh
 </header>
 
 <section class="hero grid">
-  <h1>散らばった公開情報を集めて、<em>比べられる形</em>にそろえる。</h1>
-  <p class="lead">リゾートバイトの求人、全国の公有地と廃校、合宿免許、自立支援医療の申請書。各社や自治体のページにばらばらに載っている情報を毎日集め、同じ項目に直して、並べ替えて選べるWebサービスを作っています。</p>
+  <h1>人が、新しい土地で<em>仲間と出会う</em>きっかけをつくる。</h1>
+  <p class="lead">そのための入口として、リゾートバイトの求人や全国の公有地など、各社や自治体に散らばった情報を集め、条件を比べて選べるWebサービスにしています。</p>
   <dl class="spec">
     <div><dt>Name</dt><dd>ZAX（個人事業）</dd></div>
     <div><dt>Founder</dt><dd>松田 晴史</dd></div>
@@ -165,7 +165,6 @@ footer .big{font-family:var(--serif);font-size:clamp(3rem,12vw,10rem);line-heigh
 
 <figure class="peek" id="peek" aria-hidden="true"><img alt="" id="peek-img"><figcaption class="mono" id="peek-cap"></figcaption></figure>
 
-<main id="works"></main>
 
 <section id="about" class="sec grid">
   <h2>About<small>事業概要</small></h2>
@@ -202,22 +201,13 @@ var esc=function(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&
 var pad=function(n){return(n<10?"0":"")+n};
 var st={live:"Live",dev:"In dev"};
 
-// 詳細
-document.getElementById("works").innerHTML=W.map(function(w){
-  return '<article class="work grid" id="'+w.id+'">'
-   +'<div class="meta"><span class="n">'+pad(w.no)+'</span><span class="mono">'+esc(w.f)+'</span></div>'
-   +'<div class="txt"><h3>'+esc(w.nm)+'</h3><p class="what">'+esc(w.what)+'</p>'+w.body.map(function(p){return"<p>"+p+"</p>"}).join("")
-   +'<a class="go" href="'+w.url+'">'+esc(w.host)+' ↗</a></div>'
-   +'<figure><a href="'+w.url+'" tabindex="-1" aria-hidden="true"><img src="'+w.img+'" width="1280" height="800" loading="lazy" alt="'+esc(w.nm)+'の画面"></a>'
-   +'<figcaption class="mono"><span>'+esc(w.host)+'</span></figcaption></figure></article>';
-}).join("");
 
 // 一覧（並べ替え）
 var tb=document.querySelector("#ix tbody"), key="no", dir=1;
 function draw(){
   var rows=W.slice().sort(function(a,b){var x=a[key],y=b[key];return(x>y?1:x<y?-1:a.no-b.no)*dir});
   tb.innerHTML=rows.map(function(w){
-    return '<tr class="row" data-id="'+w.id+'"><td class="c-no">'+pad(w.no)+'</td><td class="c-nm"><a href="#'+w.id+'">'+esc(w.nm)+'</a></td>'
+    return '<tr class="row" data-id="'+w.id+'"><td class="c-no">'+pad(w.no)+'</td><td class="c-nm"><a href="'+w.url+'">'+esc(w.nm)+'</a></td>'
      +'<td class="c-what">'+esc(w.what)+'</td><td class="c-f">'+esc(w.f)+'</td></tr>';
   }).join("");
   [].forEach.call(document.querySelectorAll("#ix th button"),function(b){
@@ -227,7 +217,7 @@ function draw(){
 [].forEach.call(document.querySelectorAll("#ix th button"),function(b){
   b.addEventListener("click",function(){ if(key===b.dataset.k)dir=-dir; else{key=b.dataset.k;dir=1} draw(); });
 });
-tb.addEventListener("click",function(e){var r=e.target.closest("tr.row");if(r&&e.target.tagName!=="A")location.hash=r.dataset.id});
+tb.addEventListener("click",function(e){var r=e.target.closest("tr.row");if(r&&e.target.tagName!=="A")location.href=W.filter(function(x){return x.id===r.dataset.id})[0].url});
 draw();
 
 // 行に乗せると、その作品の画面を右下に出す（パソコン幅だけ）

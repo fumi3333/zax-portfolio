@@ -16,8 +16,8 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ZAX｜条件を比べて選べるWebサービスをつくる個人事業</title>
-<meta name="description" content="リゾートバイト求人の比較（リゾートソート）、全国の公有地・廃校の一覧（公有地ソート）、合宿免許の比較、自立支援医療の申請書づくりなど。散らばった公開情報を同じ形にそろえ、比べて選べるWebサービスを企画から運用まで作っています。">
+<title>ZAX｜人が新しい土地で仲間と出会うきっかけをつくる</title>
+<meta name="description" content="人が新しい土地で、一緒に働く仲間と出会うきっかけをつくる個人事業です。その入口として、リゾートバイト求人の比較（リゾートソート）、全国の公有地・廃校の一覧、合宿免許の比較、自立支援医療の申請書づくりなどのWebサービスを作っています。">
 <link rel="canonical" href="https://fumiproject.dev/">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -26,265 +26,233 @@
 <meta property="og:site_name" content="ZAX">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:url" content="https://fumiproject.dev/">
-<meta property="og:title" content="ZAX｜条件を比べて選べるWebサービスをつくる個人事業">
-<meta property="og:description" content="リゾートバイト求人の比較（リゾートソート）、全国の公有地・廃校の一覧（公有地ソート）、合宿免許の比較、自立支援医療の申請書づくりなど。散らばった公開情報を同じ形にそろえ、比べて選べるWebサービスを企画から運用まで作っています。">
+<meta property="og:title" content="ZAX｜人が新しい土地で仲間と出会うきっかけをつくる">
+<meta property="og:description" content="人が新しい土地で、一緒に働く仲間と出会うきっかけをつくる個人事業です。その入口として、リゾートバイト求人の比較（リゾートソート）、全国の公有地・廃校の一覧、合宿免許の比較、自立支援医療の申請書づくりなどのWebサービスを作っています。">
 <meta property="og:image" content="https://fumiproject.dev/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ZAX｜条件を比べて選べるWebサービスをつくる個人事業">
-<meta name="twitter:description" content="リゾートバイト求人の比較（リゾートソート）、全国の公有地・廃校の一覧（公有地ソート）、合宿免許の比較、自立支援医療の申請書づくりなど。散らばった公開情報を同じ形にそろえ、比べて選べるWebサービスを企画から運用まで作っています。">
+<meta name="twitter:title" content="ZAX｜人が新しい土地で仲間と出会うきっかけをつくる">
+<meta name="twitter:description" content="人が新しい土地で、一緒に働く仲間と出会うきっかけをつくる個人事業です。その入口として、リゾートバイト求人の比較（リゾートソート）、全国の公有地・廃校の一覧、合宿免許の比較、自立支援医療の申請書づくりなどのWebサービスを作っています。">
 <meta name="twitter:image" content="https://fumiproject.dev/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;700;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600&family=Noto+Sans+JP:wght@400;500&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
 <style>
 :root{
-  --ground:#FFFFFF; --raise:#F6F6F4; --ink:#111111; --sub:#5A5A5A; --faint:#9A9A9A;
-  --line:#E6E6E3; --rule:#111111; --link:#123B8F; --live:#0F7B4E; --dev:#9A6200;
-  --jp:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
-  --lat:"Inter","Noto Sans JP",system-ui,sans-serif;
+  --paper:#F3F1EC; --sheet:#FBFAF7; --ink:#191917; --sub:#5F5D57; --faint:#A3A09A;
+  --hair:rgba(25,25,23,.14); --hair2:rgba(25,25,23,.32); --mark:#B23A1C;
+  --min:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
+  --serif:"Instrument Serif",Georgia,serif;
   --mono:"JetBrains Mono",ui-monospace,monospace;
-  --pad:clamp(1rem,4.5vw,4.5rem); --max:80rem;
+  --pad:clamp(1rem,3.6vw,3.25rem);
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --ground:#0C0C0C; --raise:#161616; --ink:#F2F2F0; --sub:#A6A6A6; --faint:#6E6E6E;
-  --line:#262626; --rule:#F2F2F0; --link:#9DB8FF; --live:#4CC38A; --dev:#E0A84A;
+@media (prefers-color-scheme:dark){:root{
+  --paper:#121211; --sheet:#181816; --ink:#ECEAE4; --sub:#A29F98; --faint:#68665F;
+  --hair:rgba(236,234,228,.13); --hair2:rgba(236,234,228,.3); --mark:#E07A5A;
 }}
-:root[data-theme="dark"]{
-  --ground:#0C0C0C; --raise:#161616; --ink:#F2F2F0; --sub:#A6A6A6; --faint:#6E6E6E;
-  --line:#262626; --rule:#F2F2F0; --link:#9DB8FF; --live:#4CC38A; --dev:#E0A84A;
-}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--jp);font-size:16px;line-height:1.8;
-  font-feature-settings:"palt" 1;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-a{color:var(--link);text-underline-offset:.2em;text-decoration-thickness:1px}
-a:hover{text-decoration-thickness:2px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.9;
+  font-feature-settings:"palt" 1;-webkit-font-smoothing:antialiased}
+a{color:inherit}
 img{display:block;max-width:100%;height:auto}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
-.mono{font-family:var(--mono);font-size:.75rem;letter-spacing:.04em;color:var(--sub)}
-.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:var(--ink);color:var(--ground);padding:.5rem 1rem;z-index:9}
+.mono{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--sub)}
+.page{padding:0 var(--pad)}
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:clamp(.75rem,1.6vw,1.5rem)}
 
-/* ヘッダー */
-.top{border-bottom:1px solid var(--line)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:1rem}
-.brand{font-family:var(--lat);font-weight:700;letter-spacing:.18em;font-size:1rem;color:var(--ink);text-decoration:none}
-.top nav{display:flex;gap:clamp(.9rem,2.5vw,2rem);font-size:.875rem}
-.top nav a{color:var(--ink);text-decoration:none}
-.top nav a:hover{color:var(--link)}
+/* 上端 */
+.bar{display:flex;justify-content:space-between;align-items:center;height:56px;border-bottom:1px solid var(--hair)}
+.logo{font-family:var(--serif);font-size:26px;letter-spacing:.02em;text-decoration:none;line-height:1}
+.bar nav{display:flex;gap:clamp(1rem,3vw,2.25rem)}
+.bar nav a{text-decoration:none}
+.bar nav a:hover{color:var(--mark)}
 
 /* 冒頭 */
-.hero{padding:clamp(3.5rem,9vw,8rem) 0 clamp(2.5rem,6vw,4.5rem);border-bottom:1px solid var(--rule)}
-.hero .eyebrow{margin:0 0 1.75rem}
-.hero h1{margin:0;font-weight:900;font-size:clamp(2.1rem,6.2vw,5.4rem);line-height:1.18;letter-spacing:-.02em;max-width:14em}
-.hero .lead{margin:clamp(1.5rem,3vw,2.25rem) 0 0;max-width:38em;font-size:clamp(1rem,1.4vw,1.125rem);color:var(--sub)}
-.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:clamp(2.5rem,5vw,3.5rem) 0 0;border-top:1px solid var(--line)}
-.facts div{padding:1.1rem 1rem 0 0}
-.facts dt{order:2;font-size:.8125rem;color:var(--sub)}
-.facts dd{margin:0;font-family:var(--lat);font-weight:600;font-size:clamp(1.6rem,3.4vw,2.6rem);line-height:1.1;letter-spacing:-.02em}
-.facts div{display:flex;flex-direction:column-reverse;gap:.35rem}
+.hero{padding:clamp(4rem,11vw,9.5rem) 0 clamp(3rem,7vw,5.5rem);border-bottom:1px solid var(--hair2)}
+.hero h1{grid-column:1/10;margin:0;word-break:auto-phrase;font-family:var(--min);font-weight:500;font-size:clamp(2.3rem,6.4vw,6.2rem);line-height:1.22;letter-spacing:.01em}
+.hero h1 em{font-style:normal;color:var(--mark)}
+.hero .lead{grid-column:1/7;margin:clamp(2rem,4vw,3rem) 0 0;color:var(--sub);font-size:15px}
+.spec{grid-column:9/13;align-self:end;margin:0;border-top:1px solid var(--hair2)}
+.spec div{display:flex;justify-content:space-between;gap:1rem;padding:.55rem 0;border-bottom:1px solid var(--hair)}
+.spec dt{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--sub)}
+.spec dd{margin:0;font-size:13px;text-align:right}
 
-/* 目次（作品の一覧） */
-.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;padding:clamp(3rem,7vw,5.5rem) 0 1.25rem;border-bottom:1px solid var(--rule)}
-.sec-head h2{margin:0;font-weight:900;font-size:clamp(1.5rem,3.2vw,2.25rem);letter-spacing:-.01em}
-.index{list-style:none;margin:0;padding:0}
-.index li{border-bottom:1px solid var(--line)}
-.index a{display:grid;grid-template-columns:3.5rem minmax(0,1.1fr) minmax(0,1.6fr) 5.5rem;gap:1rem;align-items:baseline;padding:1rem 0;color:var(--ink);text-decoration:none}
-.index a:hover .nm{color:var(--link)}
-.index .no{font-family:var(--mono);font-size:.8125rem;color:var(--faint)}
-.index .nm{font-weight:700;font-size:1.0625rem}
-.index .what{color:var(--sub);font-size:.9375rem}
-.st{font-family:var(--mono);font-size:.75rem;text-align:right}
-.st[data-s="live"]{color:var(--live)}.st[data-s="dev"]{color:var(--dev)}
+/* 一覧（並べ替えられる表） */
+.ix-head{display:flex;justify-content:space-between;align-items:end;padding:clamp(3rem,6vw,4.5rem) 0 .9rem}
+.ix-head h2{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(2.2rem,4.5vw,3.6rem);line-height:1;letter-spacing:-.01em}
+.ix-head h2 small{font-family:var(--min);font-size:.42em;margin-left:.6em;vertical-align:.35em;color:var(--sub);letter-spacing:.05em}
+.ix{width:100%;border-collapse:collapse;table-layout:fixed}
+.ix th{padding:0;border-top:1px solid var(--hair2);border-bottom:1px solid var(--hair2);text-align:left;font-weight:400}
+.ix th button{all:unset;cursor:pointer;display:block;width:100%;padding:.65rem 0;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--sub)}
+.ix th button:hover,.ix th button[aria-sort]{color:var(--ink)}
+.ix th button::after{content:"";display:inline-block;width:.9em;margin-left:.35em;color:var(--mark)}
+.ix th button[aria-sort="ascending"]::after{content:"↑"}
+.ix th button[aria-sort="descending"]::after{content:"↓"}
+.ix td{padding:1.05rem 0;border-bottom:1px solid var(--hair);vertical-align:baseline}
+.ix tr.row{cursor:pointer}
+.ix tr.row:hover td,.ix tr.row:focus-within td{background:var(--sheet)}
+.ix .c-no{width:7%;font-family:var(--mono);font-size:12px;color:var(--faint)}
+.ix .c-nm{width:30%}
+.ix .c-nm a{font-family:var(--min);font-weight:500;font-size:clamp(1.15rem,1.9vw,1.6rem);line-height:1.35;text-decoration:none}
+.ix tr.row:hover .c-nm a{color:var(--mark)}
+.ix .c-what{width:47%;color:var(--sub);padding-right:1.5rem}
+.ix .c-f{width:16%;font-size:13px;text-align:right}
+.ix .c-d{width:11%;font-family:var(--mono);font-size:12px;font-variant-numeric:tabular-nums}
+.ix .c-s{width:11%;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;text-align:right}
+.ix .c-s i{font-style:normal;display:inline-block;width:6px;height:6px;border-radius:50%;background:currentColor;margin-right:.5em;vertical-align:.1em}
+.ix .live{color:var(--ink)}.ix .dev{color:var(--faint)}
+.ix th.c-f button{text-align:right}
 
-/* 作品 */
-.work{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(1.5rem,4vw,4rem);padding:clamp(3rem,6vw,5rem) 0;border-bottom:1px solid var(--line);scroll-margin-top:1rem}
-.work .no{font-family:var(--mono);font-size:.8125rem;color:var(--faint);display:flex;justify-content:space-between;border-top:2px solid var(--rule);padding-top:.75rem}
-.work h3{margin:1.25rem 0 .35rem;font-weight:900;font-size:clamp(1.5rem,2.6vw,2.1rem);line-height:1.3;letter-spacing:-.01em;word-break:auto-phrase}
-.work .what{margin:0;font-weight:700;color:var(--sub)}
-.work .body{margin:1.25rem 0 0}
-.work .body p{margin:0 0 .9em}
-.work dl{margin:1.5rem 0 0;display:grid;grid-template-columns:5.5em minmax(0,1fr);border-top:1px solid var(--line)}
-.work dt,.work dd{margin:0;padding:.6rem 0;border-bottom:1px solid var(--line);font-size:.875rem}
-.work dt{color:var(--sub)}
-.work .go{display:inline-block;margin-top:1.5rem;font-weight:700}
-.shot{margin:0;align-self:start}
-.shot a{display:block;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--raise)}
-.shot img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top}
-.shot figcaption{margin-top:.6rem}
+/* 表の上に重ねる画面の見本（パソコン幅だけ） */
+.peek{position:fixed;right:var(--pad);bottom:var(--pad);width:min(30vw,420px);margin:0;pointer-events:none;opacity:0;background:var(--sheet);border:1px solid var(--hair2);padding:8px 8px 6px;box-shadow:0 18px 40px rgba(0,0,0,.12);z-index:5}
+.peek.on{opacity:1}
+.peek img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top}
+.peek figcaption{margin-top:6px}
 
-/* 事業概要・お問い合わせ */
-.two{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(1.5rem,4vw,4rem);padding:2rem 0 clamp(3rem,6vw,5rem)}
-.two p{margin:0;color:var(--sub)}
-table{width:100%;border-collapse:collapse;font-size:.9375rem}
-th,td{text-align:left;vertical-align:top;padding:.85rem 0;border-bottom:1px solid var(--line)}
-th{width:7em;font-weight:500;color:var(--sub)}
-.mail{font-family:var(--lat);font-weight:600;font-size:clamp(1.25rem,3vw,2rem);letter-spacing:-.01em;word-break:break-all}
-footer{border-top:1px solid var(--rule);padding:1.5rem 0 3rem}
-footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+/* 作品ごと */
+.work{padding:clamp(3.5rem,7vw,6rem) 0;border-bottom:1px solid var(--hair);scroll-margin-top:1rem}
+.work .meta{grid-column:1/4;display:flex;flex-direction:column;gap:.35rem}
+.work .meta .n{font-family:var(--serif);font-size:clamp(3rem,6vw,5.5rem);line-height:.9;color:var(--faint)}
+.work .txt{grid-column:4/8}
+.work h3{margin:0 0 .25rem;font-family:var(--min);font-weight:600;font-size:clamp(1.6rem,2.8vw,2.4rem);line-height:1.35}
+.work .what{margin:0 0 1.4rem;word-break:auto-phrase;font-family:var(--min);font-size:1.05rem;color:var(--sub)}
+.work .txt p{margin:0 0 1em}
+.work .go{display:inline-block;margin-top:.6rem;font-family:var(--mono);font-size:12px;letter-spacing:.04em;text-decoration:none;border-bottom:1px solid var(--hair2);padding-bottom:2px}
+.work .go:hover{color:var(--mark);border-color:var(--mark)}
+.work figure{grid-column:8/13;margin:0;align-self:start}
+.work figure a{display:block;background:var(--sheet);border:1px solid var(--hair2);padding:8px}
+.work figure img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top}
+.work figcaption{margin-top:.6rem;display:flex;justify-content:space-between}
 
-@media (max-width:760px){
-  .top nav a:not(:last-child){display:none}
-  .facts{grid-template-columns:1fr 1fr}
-  .facts div:last-child{grid-column:1/-1}
-  .index a{grid-template-columns:2.25rem minmax(0,1fr) 4.5rem;row-gap:.15rem}
-  .index .what{grid-column:2/3;grid-row:2}
-  .work,.two{grid-template-columns:1fr}
-  .shot{margin-top:.5rem}
-  .work dl{grid-template-columns:4.75em minmax(0,1fr)}
+/* 事業概要・連絡先 */
+.sec{padding:clamp(3.5rem,7vw,6rem) 0;border-bottom:1px solid var(--hair2)}
+.sec h2{grid-column:1/4;margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(2rem,3.6vw,3rem);line-height:1}
+.sec h2 small{display:block;font-family:var(--min);font-size:.4em;margin-top:.8em;color:var(--sub);letter-spacing:.05em}
+.sec .body{grid-column:4/13}
+.facts{width:100%;border-collapse:collapse}
+.facts th,.facts td{text-align:left;padding:.85rem 0;border-bottom:1px solid var(--hair);font-weight:400;vertical-align:top}
+.facts tr:first-child th,.facts tr:first-child td{border-top:1px solid var(--hair2)}
+.facts th{width:22%;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--sub);padding-top:1.05rem}
+.mail{font-family:var(--serif);font-size:clamp(1.8rem,4.6vw,3.8rem);line-height:1.1;text-decoration:none;word-break:break-all}
+.mail:hover{color:var(--mark)}
+.sec .note{margin:1.5rem 0 0;color:var(--sub)}
+footer{display:flex;justify-content:space-between;align-items:end;padding:2rem 0 2.5rem}
+footer .big{font-family:var(--serif);font-size:clamp(3rem,12vw,10rem);line-height:.8;letter-spacing:-.02em}
+
+@media (max-width:900px){
+  .hero h1,.hero .lead,.spec{grid-column:1/-1}
+  .spec{margin-top:2.5rem}
+  .ix .c-what,.ix .c-f,.ix th.c-what,.ix th.c-f{display:none}
+  .ix .c-no{width:14%}.ix .c-nm{width:86%}
+  .peek{display:none}
+  .work .meta,.work .txt,.work figure{grid-column:1/-1}
+  .work .meta{flex-direction:row;justify-content:space-between;align-items:baseline;margin-bottom:1rem}
+  .work figure{margin-top:1.5rem}
+  .sec h2,.sec .body{grid-column:1/-1}
+  .sec h2{margin-bottom:1.5rem}
 }
-@media print{.top nav,.shot{display:none}}
+@media (max-width:520px){
+  .bar nav a:not(:last-child){display:none}
+  .ix .c-s{font-size:10px}
+}
+@media (prefers-reduced-motion:no-preference){.peek{transition:opacity .12s linear}}
 </style>
 </head>
 <body>
-<a class="skip" href="#work">本文へ</a>
-<header class="top">
-  <div class="wrap">
-    <a class="brand" href="/">ZAX</a>
-    <nav aria-label="ページ内">
-      <a href="#work">作ったもの</a>
-      <a href="#about">事業概要</a>
-      <a href="/profile/">プロフィール</a>
-    </nav>
-  </div>
+<div class="page">
+<header class="bar">
+  <a class="logo" href="/">ZAX</a>
+  <nav class="mono" aria-label="ページ内"><a href="#index">Index</a><a href="#about">About</a></nav>
 </header>
 
-<main>
-<section class="hero">
-  <div class="wrap">
-    <p class="eyebrow mono">ZAX — 個人事業</p>
-    <h1>条件を比べて選べる<br>Webサービスを<br>つくっています。</h1>
-    <p class="lead">リゾートバイトの求人、全国の公有地や廃校、合宿免許、自立支援医療の申請書。各社や自治体のページに散らばっている公開情報を、毎日集めて同じ形にそろえ、比べて選べるようにしています。企画から公開・運用まで自社で行っています。</p>
+<section class="hero grid">
+  <h1>人が、新しい土地で<em>仲間と出会う</em>きっかけをつくる。</h1>
+  <p class="lead">そのための入口として、リゾートバイトの求人や全国の公有地など、各社や自治体に散らばった情報を集め、条件を比べて選べるWebサービスにしています。</p>
+  <dl class="spec">
+    <div><dt>Name</dt><dd>ZAX（個人事業）</dd></div>
+    <div><dt>Founder</dt><dd>松田 晴史</dd></div>
+  </dl>
+</section>
+
+<section id="index">
+  <div class="ix-head">
+    <h2>Index<small>作ったもの</small></h2>
+    <span class="mono">見出しを押すと並べ替えます</span>
+  </div>
+  <table class="ix" id="ix">
+    <thead><tr>
+      <th class="c-no"><button data-k="no">No.</button></th>
+      <th class="c-nm"><button data-k="nm">Name</button></th>
+      <th class="c-what"><button data-k="what">What</button></th>
+      <th class="c-f"><button data-k="f">Field</button></th>
+    </tr></thead>
+    <tbody></tbody>
+  </table>
+</section>
+
+<figure class="peek" id="peek" aria-hidden="true"><img alt="" id="peek-img"><figcaption class="mono" id="peek-cap"></figcaption></figure>
+
+
+<section id="about" class="sec grid">
+  <h2>About<small>事業概要</small></h2>
+  <div class="body">
+    <table class="facts">
+      <tr><th>屋号</th><td>ZAX</td></tr>
+      <tr><th>代表</th><td>松田 晴史（<a href="/profile/">プロフィール</a>）</td></tr>
+      <tr><th>事業形態</th><td>個人事業</td></tr>
+      <tr><th>事業内容</th><td>Webサービスの企画・開発・運用</td></tr>
+    </table>
   </div>
 </section>
 
-<section id="work" aria-labelledby="work-h">
-  <div class="wrap">
-    <div class="sec-head"><h2 id="work-h">作ったもの</h2><span class="mono" id="n-all"></span></div>
-    <ol class="index" id="index"></ol>
 
-    <article class="work" id="resort" data-status="live">
-      <div>
-        <div class="no"><span>01</span><span class="st" data-s="live">公開中</span></div>
-        <h3>リゾートソート</h3>
-        <p class="what">リゾートバイト求人の横断検索</p>
-        <div class="body">
-          <p>派遣会社ごとに分かれているリゾートバイトの求人を、時給・寮・食事・期間などの同じ条件で比べられる検索サイトです。各社の公開求人を毎日確かめ、募集が終わったものは外しています。</p>
-          <p>集めた求人は、会社名や施設名が分からない形に集計して、月ごとの<a href="/resort/research/">労働条件レポート</a>としても公開しています。</p>
-        </div>
-        <a class="go" href="/resort/">fumiproject.dev/resort/ →</a>
-      </div>
-      <figure class="shot"><a href="/resort/" tabindex="-1" aria-hidden="true"><img src="/images/works/resort.jpg" width="1280" height="800" alt="リゾートソートの検索画面" fetchpriority="high"></a></figure>
-    </article>
-
-    <article class="work" id="koyuchi" data-status="live">
-      <div>
-        <div class="no"><span>02</span><span class="st" data-s="live">公開中</span></div>
-        <h3>公有地ソート</h3>
-        <p class="what">全国の公有地・公共施設・廃校の売却・貸付・公募の一覧</p>
-        <div class="body">
-          <p>自治体や財務局のページに散らばっている、公有地や公共施設の売却・貸付・公募の情報を毎日集めて、一つの一覧で探せるようにしています。掲載が確認できなくなったものは一覧から外します。</p>
-          <p>廃校施設の活用募集は、別の<a href="/haikou/">廃校の物件検索</a>でも探せます。</p>
-        </div>
-        <a class="go" href="/koyuchi/">fumiproject.dev/koyuchi/ →</a>
-      </div>
-      <figure class="shot"><a href="/koyuchi/" tabindex="-1" aria-hidden="true"><img src="/images/works/koyuchi.jpg" width="1280" height="800" alt="公有地ソートの一覧画面" loading="lazy"></a></figure>
-    </article>
-
-    <article class="work" id="menkyo" data-status="live">
-      <div>
-        <div class="no"><span>03</span><span class="st" data-s="live">公開中</span></div>
-        <h3>合宿免許ソート</h3>
-        <p class="what">合宿免許のプランを、入校日と料金で比べる検索</p>
-        <div class="body">
-          <p>大手の予約サイトに分かれている合宿免許のプランを、入校日・料金・部屋タイプなどの同じ条件で比べられる検索サイトです。カレンダーから、日ごとの最安値と空き状況を確かめられます。</p>
-        </div>
-        <a class="go" href="/menkyo/">fumiproject.dev/menkyo/ →</a>
-      </div>
-      <figure class="shot"><a href="/menkyo/" tabindex="-1" aria-hidden="true"><img src="/images/works/menkyo.jpg" width="1280" height="800" alt="合宿免許ソートの日別最安値カレンダー" loading="lazy"></a></figure>
-    </article>
-
-    <article class="work" id="jiritsu" data-status="live">
-      <div>
-        <div class="no"><span>04</span><span class="st" data-s="live">公開中</span></div>
-        <h3>自立支援医療の申請書をつくる（東京都）</h3>
-        <p class="what">病院と薬局を選ぶと、申請書と宛名ラベルを印刷できるツール</p>
-        <div class="body">
-          <p>通っている病院と薬局を選ぶと、東京都の申請書と封筒の宛名ラベルをA4で印刷できます。医療機関のコードと提出先は自動で印字し、お名前やご住所は印刷した紙に手書きします。ページには個人情報の入力欄がありません。</p>
-          <p>東京都が公開している指定医療機関の一覧（オープンデータ）を使っています。</p>
-        </div>
-        <a class="go" href="/jiritsu/">fumiproject.dev/jiritsu/ →</a>
-      </div>
-      <figure class="shot"><a href="/jiritsu/" tabindex="-1" aria-hidden="true"><img src="/images/works/jiritsu.jpg" width="1280" height="800" alt="自立支援医療の申請書をつくる画面" loading="lazy"></a></figure>
-    </article>
-
-    <article class="work" id="musalink" data-status="live">
-      <div>
-        <div class="no"><span>05</span><span class="st" data-s="live">公開中</span></div>
-        <h3>Musalink</h3>
-        <p class="what">教科書BOXの在庫サイト（武蔵野大学）</p>
-        <div class="body">
-          <p>武蔵野大学の教科書BOXに、どの本があるかをスマホで見られる在庫サイトです。使い終わった教科書を無料で置き、必要な人が持っていきます。</p>
-          <p>学生団体「武蔵野工房」（<a href="https://x.com/musashinotech">@musashinotech</a>）のプロジェクトとして運営しています。</p>
-        </div>
-        <a class="go" href="/musalink/">fumiproject.dev/musalink/ →</a>
-      </div>
-      <figure class="shot"><a href="/musalink/" tabindex="-1" aria-hidden="true"><img src="/images/works/musalink.jpg" width="1280" height="800" alt="Musalinkのトップ画面" loading="lazy"></a></figure>
-    </article>
-
-    <article class="work" id="preface" data-status="dev">
-      <div>
-        <div class="no"><span>06</span><span class="st" data-s="dev">開発中</span></div>
-        <h3>Preface</h3>
-        <p class="what">価値観をもとにした出会い</p>
-        <div class="body">
-          <p>60問の診断で価値観を数値にして、近い相手を探すアプリです。出会ったあとの振り返りから利用者の理解を更新し、次の出会いの選び方に反映します。</p>
-        </div>
-        <a class="go" href="https://preface.fumiproject.dev/">preface.fumiproject.dev →</a>
-      </div>
-      <figure class="shot"><a href="https://preface.fumiproject.dev/" tabindex="-1" aria-hidden="true"><img src="/images/works/preface.jpg" width="1280" height="800" alt="Prefaceのトップ画面" loading="lazy"></a></figure>
-    </article>
-  </div>
-</section>
-
-<section id="about" aria-labelledby="about-h">
-  <div class="wrap">
-    <div class="sec-head"><h2 id="about-h">事業概要</h2></div>
-    <div class="two">
-      <p>Webサービスの企画・開発・運用を、個人事業として行っています。</p>
-      <table>
-        <tr><th>屋号</th><td>ZAX</td></tr>
-        <tr><th>代表</th><td>松田 晴史（<a href="/profile/">プロフィール</a>）</td></tr>
-        <tr><th>事業形態</th><td>個人事業</td></tr>
-        <tr><th>事業内容</th><td>Webサービスの企画・開発・運用</td></tr>
-      </table>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<footer>
-  <div class="wrap mono"><span>ZAX</span></div>
-</footer>
+<footer><span class="big">ZAX</span></footer>
+</div>
 
 <script>
-// 件数と目次は、下の作品の並びから作る（数字を文章に直書きしない）
-(function(){
-  var ws=[].slice.call(document.querySelectorAll('.work'));
-  document.getElementById('n-all').textContent=ws.length+'件';
-  var ol=document.getElementById('index');
-  ws.forEach(function(w){
-    var li=document.createElement('li'), a=document.createElement('a');
-    a.href='#'+w.id;
-    var st=w.querySelector('.st');
-    a.innerHTML='<span class="no">'+w.querySelector('.no span').textContent+'</span><span class="nm"></span><span class="what"></span><span class="st" data-s="'+st.dataset.s+'">'+st.textContent+'</span>';
-    a.querySelector('.nm').textContent=w.querySelector('h3').textContent;
-    a.querySelector('.what').textContent=w.querySelector('.what').textContent;
-    li.appendChild(a); ol.appendChild(li);
+// 作品のデータ。一覧・詳細はここから作る（文章と表で数字や名前がずれないように）
+var W=[
+ {id:"resort",nm:"リゾートソート",what:"リゾートバイト求人を、時給・寮・食事で比べる",f:"仕事",url:"/resort/",host:"fumiproject.dev/resort/",
+  body:["派遣会社ごとに分かれているリゾートバイトの求人を、時給・寮・食事・期間などの同じ項目で比べられる検索サイトです。各社の公開求人を毎日確かめ、募集が終わったものは外しています。","集めた求人は、会社名や施設名が分からない形に集計し、月ごとの<a href=\"/resort/research/\">労働条件レポート</a>としても公開しています。"]},
+ {id:"koyuchi",nm:"公有地ソート",what:"全国の公有地・廃校の売却・貸付・公募を一覧に",f:"土地",url:"/koyuchi/",host:"fumiproject.dev/koyuchi/",
+  body:["自治体や財務局のページに散らばっている、公有地や公共施設の売却・貸付・公募の情報を毎日集めて、一つの一覧で探せるようにしています。掲載が確認できなくなったものは外します。","廃校施設の活用募集は、<a href=\"/haikou/\">廃校の物件検索</a>でも探せます。"]},
+ {id:"menkyo",nm:"合宿免許ソート",what:"合宿免許のプランを、入校日と料金で比べる",f:"免許",url:"/menkyo/",host:"fumiproject.dev/menkyo/",
+  body:["大手の予約サイトに分かれている合宿免許のプランを、入校日・料金・部屋タイプなどの同じ項目で比べられる検索サイトです。カレンダーから、日ごとの最安値と空き状況を確かめられます。"]},
+ {id:"jiritsu",nm:"自立支援医療の申請書をつくる",what:"病院と薬局を選ぶと、申請書と宛名ラベルを印刷",f:"医療",url:"/jiritsu/",host:"fumiproject.dev/jiritsu/",
+  body:["通っている病院と薬局を選ぶと、東京都の申請書と封筒の宛名ラベルをA4で印刷できます。医療機関のコードと提出先は自動で印字し、お名前やご住所は印刷した紙に手書きします。ページには個人情報の入力欄がありません。","東京都が公開している指定医療機関の一覧（オープンデータ）を使っています。"]},
+ {id:"musalink",nm:"Musalink",what:"大学の教科書BOXの在庫を、スマホで見る",f:"大学",url:"/musalink/",host:"fumiproject.dev/musalink/",
+  body:["武蔵野大学の教科書BOXに、どの本があるかをスマホで見られる在庫サイトです。使い終わった教科書を無料で置き、必要な人が持っていきます。","学生団体「武蔵野工房」（<a href=\"https://x.com/musashinotech\">@musashinotech</a>）のプロジェクトとして運営しています。"]}
+];
+W.forEach(function(w,i){w.no=i+1;w.img="/images/works/"+w.id+".jpg"});
+var esc=function(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})};
+var pad=function(n){return(n<10?"0":"")+n};
+var st={live:"Live",dev:"In dev"};
+
+
+// 一覧（並べ替え）
+var tb=document.querySelector("#ix tbody"), key="no", dir=1;
+function draw(){
+  var rows=W.slice().sort(function(a,b){var x=a[key],y=b[key];return(x>y?1:x<y?-1:a.no-b.no)*dir});
+  tb.innerHTML=rows.map(function(w){
+    return '<tr class="row" data-id="'+w.id+'"><td class="c-no">'+pad(w.no)+'</td><td class="c-nm"><a href="'+w.url+'">'+esc(w.nm)+'</a></td>'
+     +'<td class="c-what">'+esc(w.what)+'</td><td class="c-f">'+esc(w.f)+'</td></tr>';
+  }).join("");
+  [].forEach.call(document.querySelectorAll("#ix th button"),function(b){
+    if(b.dataset.k===key)b.setAttribute("aria-sort",dir>0?"ascending":"descending");else b.removeAttribute("aria-sort");
   });
-})();
+}
+[].forEach.call(document.querySelectorAll("#ix th button"),function(b){
+  b.addEventListener("click",function(){ if(key===b.dataset.k)dir=-dir; else{key=b.dataset.k;dir=1} draw(); });
+});
+tb.addEventListener("click",function(e){var r=e.target.closest("tr.row");if(r&&e.target.tagName!=="A")location.href=W.filter(function(x){return x.id===r.dataset.id})[0].url});
+draw();
+
+// 行に乗せると、その作品の画面を右下に出す（パソコン幅だけ）
+var pk=document.getElementById("peek"),pi=document.getElementById("peek-img"),pc=document.getElementById("peek-cap");
+tb.addEventListener("mouseover",function(e){var r=e.target.closest("tr.row");if(!r)return;var w=W.filter(function(x){return x.id===r.dataset.id})[0];pi.src=w.img;pc.textContent=w.host;pk.classList.add("on")});
+tb.addEventListener("mouseleave",function(){pk.classList.remove("on")});
 </script>
 </body>
 </html>

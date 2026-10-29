@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="/resort/favicon.svg?v=2"><link rel="icon" href="/resort/favicon.ico?v=2" sizes="any"><link rel="apple-touch-icon" href="/resort/apple-touch-icon.png?v=2"><link rel="manifest" href="/resort/manifest.webmanifest"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="リゾートソート"><meta name="theme-color" content="#1f6f5c"><meta property="og:image" content="https://fumiproject.dev/resort/ogp.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><script async src="https://www.googletagmanager.com/gtag/js?id=G-F1K4SHC9LB"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-F1K4SHC9LB");</script><script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","z1p4b3osph");</script><meta property="og:title" content="作成済み動画・デモ一覧ギャラリー">
+  <title>作成済み動画・デモ一覧ギャラリー</title>
+  <style>
+    :root {
+      --gov-blue: #003e92;
+      --gov-blue-hover: #002b66;
+      --gov-blue-light: #e8f0fa;
+      --gov-text: #1a1a1a;
+      --gov-text-muted: #595959;
+      --gov-border: #b3b3b3;
+      --gov-border-light: #e0e0e0;
+      --gov-bg: #f4f5f7;
+      --gov-card-bg: #ffffff;
+      --gov-accent: #00885a;
+      --gov-accent-hover: #006644;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--gov-bg);
+      color: var(--gov-text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Kaku Gothic ProN', 'BIZ UDPGothic', 'Segoe UI', Meiryo, sans-serif;
+      padding: 32px 20px;
+      line-height: 1.6;
+      font-size: 14px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    header {
+      background: var(--gov-card-bg);
+      border: 1px solid var(--gov-border-light);
+      border-top: 4px solid var(--gov-blue);
+      padding: 20px 24px;
+      border-radius: 4px;
+    }
+    h1 { font-size: 22px; font-weight: 700; color: var(--gov-text); }
+    p.sub { color: var(--gov-text-muted); font-size: 14px; margin-top: 4px; }
+    
+    .section-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--gov-text);
+      margin-bottom: 16px;
+      border-left: 4px solid var(--gov-blue);
+      padding-left: 10px;
+    }
+    
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--gov-card-bg);
+      border: 1px solid var(--gov-border-light);
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .media-box {
+      background: #000;
+      position: relative;
+      aspect-ratio: 16 / 9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    video, img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .info {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+    .info h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--gov-text);
+    }
+    .badge {
+      display: inline-block;
+      font-size: 12px;
+      padding: 2px 8px;
+      border-radius: 2px;
+      font-weight: 700;
+      width: fit-content;
+    }
+    .badge-audio {
+      background: #e8f0fa;
+      color: var(--gov-blue);
+      border: 1px solid #b3cdf2;
+    }
+    .badge-silent {
+      background: #f0f0f0;
+      color: #555555;
+      border: 1px solid #cccccc;
+    }
+    .badge-gif {
+      background: #e6f4ea;
+      color: var(--gov-accent);
+      border: 1px solid #ceead6;
+    }
+    .desc {
+      font-size: 13px;
+      color: var(--gov-text-muted);
+      line-height: 1.5;
+      flex: 1;
+    }
+    .meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      color: var(--gov-text-muted);
+      border-top: 1px solid var(--gov-border-light);
+      padding-top: 10px;
+      margin-top: 4px;
+    }
+    .file-link {
+      color: var(--gov-blue);
+      text-decoration: underline;
+      font-weight: 600;
+    }
+    .file-link:hover { text-decoration: none; color: var(--gov-blue-hover); }
+  </style>
+</head>
+<body>
+<span id="pr-notice" style="margin:0 0 12px;font-size:11px;color:#71717a;display:inline-block;padding:2px 6px;background:#f4f4f5;border:1px solid #e4e4e7;border-radius:4px;font-weight:600;">PR</span>
+
+  <div class="container">
+    <header>
+      <h1>作成済み動画・デモ一覧ギャラリー</h1>
+      <p class="sub">最新のグラフ組み込み解説動画、海外向け英語動画、実機操作動画、メール用GIFアニメを一括再生・確認できます。</p>
+    </header>
+
+    <!-- 1. 3ステップの使い方解説動画（音声あり・最新） -->
+    <section>
+      <div class="section-title">
+        <span>3ステップの使い方実演動画（ナレーション付き・最新改訂版）</span>
+      </div>
+      <div class="grid">
+        <!-- 日本語 使い方実演版（ずんだもん） -->
+        <div class="card">
+          <div class="media-box">
+            <video controls playsinline preload="metadata">
+              <source src="demo_usage_zundamon.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="info">
+            <span class="badge badge-audio">実機録画＋ずんだもん音声（約48秒）</span>
+            <h3>【最新版】3ステップの使い方（新着・絞り込み・公式PDF直行）</h3>
+            <p class="desc">
+              1. 朝、条件に合う新着がメール/Slackに届く → 2. 開くとエリア・面積・種別で整理されている → 3. 自治体公式ページ・PDFへ直接移動できる、実際のブラウザ操作を録画キャプチャした実演動画です（VOICEVOX:ずんだもん）。
+            </p>
+            <div class="meta">
+              <span>demo_usage_zundamon.mp4 (3.30MB)</span>
+              <a href="demo_usage_zundamon.mp4" download class="file-link">ダウンロード</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 英語 使い方実演版 -->
+        <div class="card">
+          <div class="media-box">
+            <video controls playsinline preload="metadata">
+              <source src="demo_usage_en.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="info">
+            <span class="badge badge-audio">英語音声（Zira・約40秒）</span>
+            <h3>【海外版】How It Works: Automated Public Land Screening</h3>
+            <p class="desc">
+              海外投資ファンド・開発企業向け。1. Daily Alerts → 2. Criteria Screening → 3. Direct Municipal Tender PDFs の実用フローを英語ナレーションで解説。
+            </p>
+            <div class="meta">
+              <span>demo_usage_en.mp4 (0.94MB)</span>
+              <a href="demo_usage_en.mp4" download class="file-link">ダウンロード</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 客観データ図解版 -->
+        <div class="card">
+          <div class="media-box">
+            <video controls playsinline preload="metadata">
+              <source src="demo_mvp_chart_ja.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="info">
+            <span class="badge badge-audio">日本語音声（Haruka・約58秒）</span>
+            <h3>【図解版】全国自治体巡回証明と足切り短縮グラフ</h3>
+            <p class="desc">
+              全国1,961自治体中1,883サイトの毎日巡回実績（円グラフ）と、足切り短縮の構造（棒グラフ）を提示した客観的実証解説動画。
+            </p>
+            <div class="meta">
+              <span>demo_mvp_chart_ja.mp4 (1.04MB)</span>
+              <a href="demo_mvp_chart_ja.mp4" download class="file-link">ダウンロード</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 業種別 実機操作キャプチャ動画（無音・30秒） -->
+    <section>
+      <div class="section-title">
+        <span>業種別 実機操作キャプチャ動画（30秒・無音）</span>
+      </div>
+      <div class="grid">
+        <!-- リゾート -->
+        <div class="card">
+          <div class="media-box">
+            <video controls playsinline preload="metadata">
+              <source src="screencast_resort.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="info">
+            <span class="badge badge-silent">無音（操作キャプチャ・約30秒）</span>
+            <h3>宿泊・グランピング・廃校向け</h3>
+            <p class="desc">長野県 / 5,000㎡以上 / 用途非線引の条件で旧七二会中学校跡地（14,250㎡）を一瞬で抽出し、CSV出力する実演。</p>
+            <div class="meta">
+              <span>screencast_resort.mp4 (0.11MB)</span>
+              <a href="screencast_resort.mp4" download class="file-link">ダウンロード</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 太陽光・インフラ -->
+        <div class="card">
+          <div class="media-box">
+            <video controls playsinline preload="metadata">
+              <source src="screencast_energy.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="info">
+            <span class="badge badge-silent">無音（操作キャプチャ・約30秒）</span>
+            <h3>太陽光・蓄電池・インフラ向け</h3>
+            <p class="desc">全国 / 10,000㎡以上 / 随時売却（即購入可能・先着順）の平坦公有地を一瞬で抽出する実演。</p>
+            <div class="meta">
+              <span>screencast_energy.mp4 (0.12MB)</span>
+              <a href="screencast_energy.mp4" download class="file-link">ダウンロード</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 物流・産業用地 -->
+        <div class="card">
+          <div class="media-box">
+            <video controls playsinline preload="metadata">
+              <source src="screencast_logistics.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="info">
+            <span class="badge badge-silent">無音（操作キャプチャ・約30秒）</span>
+            <h3>物流・倉庫・産業用地向け</h3>
+            <p class="desc">全国 / 5,000㎡以上 / 準工業地域の産業用地・幹線道路沿い物件を一瞬で抽出しCSV出力する実演。</p>
+            <div class="meta">
+              <span>screencast_logistics.mp4 (0.14MB)</span>
+              <a href="screencast_logistics.mp4" download class="file-link">ダウンロード</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. メール本文埋め込み用 GIFアニメ（約60KB） -->
+    <section>
+      <div class="section-title">
+        <span>メール本文埋め込み用 軽量GIFアニメ（約60KB・自動ループ）</span>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <div class="media-box">
+            <img src="screencast_resort.gif" alt="宿泊向けGIF">
+          </div>
+          <div class="info">
+            <span class="badge badge-gif">GIFアニメ（64KB）</span>
+            <h3>宿泊・グランピング営業メール用</h3>
+            <p class="desc">メール本文に直接貼ることで、受信者がメールを開いた瞬間に操作が目に飛び込んできます。</p>
+            <div class="meta">
+              <span>screencast_resort.gif (64KB)</span>
+              <a href="screencast_resort.gif" download class="file-link">保存</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="media-box">
+            <img src="screencast_energy.gif" alt="太陽光向けGIF">
+          </div>
+          <div class="info">
+            <span class="badge badge-gif">GIFアニメ（67KB）</span>
+            <h3>太陽光・インフラ営業メール用</h3>
+            <p class="desc">1万㎡超の随時売却物件を絞り込む様子がループ再生されます。</p>
+            <div class="meta">
+              <span>screencast_energy.gif (67KB)</span>
+              <a href="screencast_energy.gif" download class="file-link">保存</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="media-box">
+            <img src="screencast_logistics.gif" alt="物流向けGIF">
+          </div>
+          <div class="info">
+            <span class="badge badge-gif">GIFアニメ（76KB）</span>
+            <h3>物流・倉庫営業メール用</h3>
+            <p class="desc">準工業地域の産業用地を抽出する様子がループ再生されます。</p>
+            <div class="meta">
+              <span>screencast_logistics.gif (76KB)</span>
+              <a href="screencast_logistics.gif" download class="file-link">保存</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+<nav id="site-nav" style="max-width:860px;margin:32px auto 0;padding:14px 18px 22px;border-top:1px solid #e2e2e2;font-size:12px;line-height:2.1;color:#666"><a href="/resort/" style="color:inherit;font-weight:700">リゾートソート</a>　<a href="/resort/area/" style="color:inherit">エリアから探す</a>　<a href="/resort/spot/" style="color:inherit">リゾート地から探す</a>　<a href="/resort/job/" style="color:inherit">職種から探す</a>　<a href="/resort/feature/" style="color:inherit">条件から探す</a>　<a href="/resort/start/" style="color:inherit">開始月から探す</a>　<a href="/resort/age/" style="color:inherit">年代から探す</a>　<a href="/resort/season/" style="color:inherit">季節</a>　<a href="/resort/worry/" style="color:inherit">よくある疑問</a>　<a href="/resort/ranking/" style="color:inherit">ランキング</a>　<a href="/resort/analysis/" style="color:inherit">調査と分析</a>　<a href="/resort/compare/" style="color:inherit">派遣会社の比較</a>　<a href="/resort/article/" style="color:inherit">記事</a>　<a href="/resort/diary/" style="color:inherit">働いている記録</a>　<a href="/resort/furusato/" style="color:inherit">ふるさとワーホリ</a>　<a href="/resort/how-to-find/" style="color:inherit">リゾートバイトの探し方</a>　<a href="/resort/movement/" style="color:inherit">求人の動き</a>　<a href="/resort/data/" style="color:inherit">調査データ</a>　<a href="/resort/shindan/" style="color:inherit">条件診断</a>　<a href="/resort/about/" style="color:inherit">サイトについて</a></nav>
+<p id="ad-note" style="max-width:860px;margin:24px auto;padding:0 16px;font-size:.8rem;color:#6b7280;line-height:1.7">当サイトは提携各社のアフィリエイトプログラム（成果報酬型広告）を利用して運営されています。掲載順は提携の有無で変わり、各社から受け取る金額の多寡では変わりません。時給順などを選んだ場合は提携の有無は影響せず、「おすすめ順」では提携先に一律の加点をしています。加点幅は提携先であれば全社同じです。</p>
+</body>
+</html>

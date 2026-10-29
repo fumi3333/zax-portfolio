@@ -1,60 +1,60 @@
 {
-  "generated_at": "2026-10-30T02:10:09.380239+09:00",
+  "generated_at": "2026-10-30T06:24:44.408622+09:00",
   "is_today_actual": true,
   "note": "",
   "picks": [
     {
-      "id": "dive-247040",
+      "id": "dive-247438",
       "agency": "株式会社ダイブ（リゾートバイトダイブ）",
-      "prefecture": "東京都",
-      "city": "港区北青山",
-      "job_category": "売店・販売",
-      "wage_min": 1700,
+      "prefecture": "長野県",
+      "city": "下高井郡野沢温泉村豊郷",
+      "job_category": "調理",
+      "wage_min": 1800,
       "dorm_type": "完全個室",
-      "meals_per_day": null,
+      "meals_per_day": 2,
       "dorm_cost": null,
-      "posted_at": "2026-10-28T21:37:00.000+09:00",
-      "source_url": "https://resortbaito-dive.com/works/247040",
-      "landing_url": "https://fumiproject.dev/resort/area/tokyo/",
+      "posted_at": "2026-10-29T18:08:32.000+09:00",
+      "source_url": "https://resortbaito-dive.com/works/247438",
+      "landing_url": "https://fumiproject.dev/resort/area/nagano/",
       "texts": {
-        "twitter": "【本日追加】東京都港区北青山／売店・販売\n時給1,700円〜（株式会社ダイブ）\n完全個室\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/tokyo/",
-        "instagram_tiktok": "本日追加の求人です📢\n\n📍東京都港区北青山\n💼売店・販売\n💰時給1,700円〜\n🏠完全個室\n🏢株式会社ダイブ\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #東京"
+        "twitter": "【本日追加】長野県下高井郡野沢温泉村豊郷／調理\n時給1,800円〜（株式会社ダイブ）\n完全個室・食事2食付\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/nagano/",
+        "instagram_tiktok": "本日追加の求人です📢\n\n📍長野県下高井郡野沢温泉村豊郷\n💼調理\n💰時給1,800円〜\n🏠完全個室・食事2食付\n🏢株式会社ダイブ\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #長野"
       }
     },
     {
-      "id": "dive-246806",
+      "id": "dive-247345",
       "agency": "株式会社ダイブ（リゾートバイトダイブ）",
-      "prefecture": "北海道",
-      "city": "富良野市中御料",
-      "job_category": "調理補助",
-      "wage_min": 1600,
+      "prefecture": "静岡県",
+      "city": "伊豆市八木沢",
+      "job_category": "調理",
+      "wage_min": 1650,
       "dorm_type": "完全個室",
       "meals_per_day": 2,
-      "dorm_cost": 0,
-      "posted_at": "2026-10-28T14:09:01.000+09:00",
-      "source_url": "https://resortbaito-dive.com/works/246806",
-      "landing_url": "https://fumiproject.dev/resort/area/hokkaido/",
+      "dorm_cost": null,
+      "posted_at": "2026-10-29T15:53:57.000+09:00",
+      "source_url": "https://resortbaito-dive.com/works/247345",
+      "landing_url": "https://fumiproject.dev/resort/area/shizuoka/",
       "texts": {
-        "twitter": "【本日追加】北海道富良野市中御料／調理補助\n時給1,600円〜（株式会社ダイブ）\n完全個室・食事2食付\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/hokkaido/",
-        "instagram_tiktok": "本日追加の求人です📢\n\n📍北海道富良野市中御料\n💼調理補助\n💰時給1,600円〜\n🏠完全個室・食事2食付\n🏢株式会社ダイブ\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #北海道"
+        "twitter": "【本日追加】静岡県伊豆市八木沢／調理\n時給1,650円〜（株式会社ダイブ）\n完全個室・食事2食付\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/shizuoka/",
+        "instagram_tiktok": "本日追加の求人です📢\n\n📍静岡県伊豆市八木沢\n💼調理\n💰時給1,650円〜\n🏠完全個室・食事2食付\n🏢株式会社ダイブ\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #静岡"
       }
     },
     {
-      "id": "goodman-1000551",
-      "agency": "グッドマンサービス（リゾートバイト.com）",
-      "prefecture": "東京都",
-      "city": "江東区",
-      "job_category": "調理（資格不要）",
-      "wage_min": 1700,
-      "dorm_type": "寮なし",
+      "id": "dive-247411",
+      "agency": "株式会社ダイブ（リゾートバイトダイブ）",
+      "prefecture": "群馬県",
+      "city": "利根郡みなかみ町",
+      "job_category": "調理",
+      "wage_min": 1650,
+      "dorm_type": "完全個室",
       "meals_per_day": 2,
       "dorm_cost": null,
-      "posted_at": "2026-07-09",
-      "source_url": "https://www.resortbaito.com/1000551/",
-      "landing_url": "https://fumiproject.dev/resort/area/tokyo/",
+      "posted_at": "2026-10-29T17:41:34.000+09:00",
+      "source_url": "https://resortbaito-dive.com/works/247411",
+      "landing_url": "https://fumiproject.dev/resort/area/gunma/",
       "texts": {
-        "twitter": "【本日追加】東京都江東区／調理（資格不要）\n時給1,700円〜（グッドマンサービス）\n寮なし・食事2食付\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/tokyo/",
-        "instagram_tiktok": "本日追加の求人です📢\n\n📍東京都江東区\n💼調理（資格不要）\n💰時給1,700円〜\n🏠寮なし・食事2食付\n🏢グッドマンサービス\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #東京"
+        "twitter": "【本日追加】群馬県利根郡みなかみ町／調理\n時給1,650円〜（株式会社ダイブ）\n完全個室・食事2食付\n全リゾバ会社の求人から横断で探せるのはリゾートソートだけ\nhttps://fumiproject.dev/resort/area/gunma/",
+        "instagram_tiktok": "本日追加の求人です📢\n\n📍群馬県利根郡みなかみ町\n💼調理\n💰時給1,650円〜\n🏠完全個室・食事2食付\n🏢株式会社ダイブ\n\n全部のリゾートバイト会社の求人をまとめて比較できるのはリゾートソートだけ。\nプロフィールのリンクから探せます。\n\n#リゾートバイト #リゾバ #住み込みバイト #短期バイト #群馬"
       }
     }
   ]

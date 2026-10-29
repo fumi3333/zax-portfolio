@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ja">
-<head>
+<head><meta name="vercel-toolbar" content="off">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>全国の公有地・公共施設 売却・貸付・公募の一覧｜掲載中2,553件</title>
@@ -15,6 +15,17 @@ form{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1
 label{font-size:13px;color:var(--sub);display:flex;flex-direction:column;gap:4px}select,input{font:inherit;padding:6px 8px;border:1px solid var(--line);border-radius:6px;background:#fff}
 .item{border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin:0 0 8px}.tag{font-size:12px;border:1px solid var(--line);border-radius:4px;padding:1px 6px;margin-right:4px;background:#fff}
 .sm{font-size:13px;color:var(--sub)}a{color:var(--acc)}
+
+@media (max-width:600px){
+main{padding:14px 12px 40px}
+h1{font-size:19px;line-height:1.4}
+form{grid-template-columns:1fr;gap:8px;padding:10px}
+p,label{font-size:13.5px}
+.item{padding:8px 10px}
+}
+/* Vercel Toolbar & Feedback overlay 完全非表示 */
+vercel-live-feedback,#vercel-toolbar,[data-vercel-toolbar],div:has(> vercel-live-feedback){
+display:none!important;visibility:hidden!important;pointer-events:none!important;width:0!important;height:0!important;opacity:0!important}
 </style>
 </head>
 <body>

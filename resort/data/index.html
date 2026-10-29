@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ja">
-<head>
+<head><meta name="vercel-toolbar" content="off">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="icon" type="image/svg+xml" href="/resort/favicon.svg?v=2"><link rel="icon" href="/resort/favicon.ico?v=2" sizes="any"><link rel="apple-touch-icon" href="/resort/apple-touch-icon.png?v=2"><link rel="manifest" href="/resort/manifest.webmanifest"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="リゾートソート"><meta name="theme-color" content="#1f6f5c"><meta property="og:image" content="https://fumiproject.dev/resort/ogp.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
@@ -21,8 +21,21 @@ h2{font-size:19px;margin:34px 0 10px;padding-top:16px;border-top:1px solid var(-
 p{margin:12px 0}
 ul{padding-left:20px}li{margin:6px 0}
 a{color:var(--ink)}
+
 table{border-collapse:collapse;width:100%;font-size:14px;margin:14px 0;
- display:block;overflow-x:auto;white-space:nowrap}
+ display:block;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y}
+@media (max-width:640px){
+main{padding:16px 12px 48px}
+h1{font-size:20px}
+h2{font-size:17px;margin:24px 0 8px;padding-top:12px}
+p,li{font-size:14px;line-height:1.7}
+.lead{padding:12px 12px;font-size:13.5px}
+th,td{padding:6px 8px;font-size:12.5px}
+}
+/* Vercel Toolbar & Feedback overlay 完全非表示 */
+vercel-live-feedback,#vercel-toolbar,[data-vercel-toolbar],div:has(> vercel-live-feedback){
+display:none!important;visibility:hidden!important;pointer-events:none!important;width:0!important;height:0!important;opacity:0!important}
+
 th,td{border:1px solid var(--line);padding:7px 10px;text-align:left}
 th{background:var(--mark)}
 td.n{text-align:right}

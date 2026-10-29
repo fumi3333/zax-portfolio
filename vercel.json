@@ -270,6 +270,10 @@
         {
           "key": "Referrer-Policy",
           "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "x-vercel-skip-toolbar",
+          "value": "1"
         }
       ]
     }
